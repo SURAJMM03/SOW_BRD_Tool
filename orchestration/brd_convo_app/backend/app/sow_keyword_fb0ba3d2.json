@@ -1,0 +1,276 @@
+{
+  "0": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "1": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "This Statement of Work (SOW) is entered into between Google and Bristlecone Incorporated under the <LEGAL: specify governing Master Services Agreement / Inbound Services Agreement / Consulting Agreement and date>.\n\n| Field | Details |\n|---|---|\n| Contract / SOW ID | <CONFIRM: contract ID> |\n| SOW Effective Date | <CONFIRM: effective date> |\n| SOW End Date | <CONFIRM: end date> |\n| Governing Agreement | <LEGAL: specify governing agreement and date> |\n| Amendment / Supersedes | None |\n| Agreement Duration | 18 months |\n| Delivery Location | Taiwan; offshore delivery support |",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "2": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "This Statement of Work covers Google’s Silicon COT Supply Chain Implementation, establishing the process, data, and system foundation required for Google’s direct operating model with TSMC and OSAT partners across supplier visibility, ERP traceability, product test and quality, global trade, and wafer-level supply planning. The engagement is structured as a phased implementation spanning E2Open, SAP S/4HANA, and Kinaxis, with Google’s internal middleware and API framework supporting key integrations and with scope beginning at the point manufacturing and test data is exchanged from fab and OSAT partners into Google’s planning and execution landscape.\n\n- Establish structured data exchange and lot-level traceability across the manufacturing lifecycle to improve direct cost visibility, supply certainty, and yield insight.\n- Implement the ERP, supplier collaboration, test-data, and planning capabilities needed to support wafer-level planning, yield-aware decision-making, and scalable execution under the COT model.\n- Enable phased business adoption through process design, system configuration, and user-facing change support aligned to impacted planning, sourcing, and operations teams.\n\nDeferred scope and design decisions, including planning architecture, trade-compliance system scope, test-data design choices, and selected integration behaviors, are captured in Section 10 (Key Assumptions) and Section 21 (Key Observations).",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "3.1": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "Google is expanding its Silicon COT supply chain capabilities and needs a clearer operational and system baseline before finalizing the target design and delivery plan. The current landscape spans foundry and OSAT back-end operations, existing SAP enterprise structures, E2Open-based supply collaboration, and Kinaxis planning considerations that must be assessed together.\n\nKey business drivers for this engagement are to establish the current-state baseline, define the target operating model for the COT process, and confirm the system architecture needed to support scale. Priority focus areas include subcontracting settlement, batch and lot traceability, full genealogy from wafer lot through finished goods, COT cost model and FICO readiness, master and transactional data requirements, and end-to-end data flows across SAP S/4HANA, E2Open, and Kinaxis.\n\nGoogle also needs to address growth and complexity risks in planning. The current Kinaxis environment must be evaluated for capacity, scenario simulation needs, future silicon planning volume, and the trade-off between a shared instance and an isolated model. The engagement is intended to reduce operational disruption risk, close connectivity and organizational-model gaps, and produce a validated basis for to-be design, effort estimates, and phased implementation.",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "3.2": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "- Establish end-to-end visibility, traceability, and structured data exchange across the silicon supply chain spanning TSMC, OSAT partners, wafer, die-bank, assembly, and finished-goods lifecycle.\n- Adopt the Customer Owned Tooling (COT) operating model for Google’s Silicon business, including direct collaboration with TSMC and OSAT partners.\n- Enable a single planning layer using Kinaxis integrated with SAP S/4HANA and E2Open to support demand, supply, constraint, and collaboration processes.\n- Deliver yield-aware, capacity-aware, and scenario-based planning to improve allocation, prioritization, and decision speed across silicon manufacturing.\n- Configure Kinaxis and SAP PP/MM to support the silicon manufacturing process based on approved to-be business processes and requirements.\n- Improve supplier commit-versus-plan transparency, end-to-end WIP tracking, and cost transparency across the silicon supply chain.\n- Provide structured audit trail, full lot genealogy, and manufacturing traceability to support compliance and operational analysis.\n- Execute the program in phased releases over approximately 18 months, progressing from foundational lot traceability to broader analytical and planning capabilities.\n- Deliver organizational change management, stakeholder readiness, communications, training, and end-user adoption tracking to support sustained process and system adoption.",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "3.3": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "The target-state process will support Google’s direct COT model with SAP S/4HANA as the system of record for procurement, traceability, and cost capture, E2Open as the external collaboration layer with foundry and OSAT partners, and Kinaxis as the planning platform for demand, supply, and yield-aware planning.\n\n- Demand, forecast, and commit signals flow between Kinaxis, E2Open, and SAP to support wafer and downstream supply planning.\n- Google issues inventory purchase orders to TSMC for wafer and raw material procurement, and uses a subcontracting purchase order model for OSAT processing of Google-issued components.\n- Schedule agreements are used for high-volume or rolling TSMC wafer orders where confirmed, rather than discrete purchase orders.\n- SAP maintains the target-state master and transactional backbone for material types, batch classes, BOMs, purchase orders, goods receipts, process orders, cost documents, and supplier/partner master data.\n- Lot-level traceability is maintained across the manufacturing chain from wafer lot through probe, die bank, assembly, test, and finished goods.\n- E2Open manages external message exchange for purchase orders, purchase order changes, forecasts, commits, and related supplier collaboration transactions with TSMC and OSAT partners.\n- The process boundary is defined as lot-level collaboration in E2Open, with unit-level test and analytics handled outside this scope in the test or analytics hub.\n- Yield, cost, and genealogy data are structured to improve financial visibility and support COT cost-model integration with SAP FICO.\n- OSAT capacity constraints and handoff visibility are incorporated into planning, with WIP and yield signals informing downstream supply decisions.\n- Geographic, enterprise-structure, and partner-model design will be finalized during Explore based on in-scope plants, legal entities, company codes, plants, storage locations, purchasing organizations, and OSAT partner representation in SAP.\n\nA detailed process-flow diagram and final to-be variant will be confirmed during Explore based on the validated AS-IS baseline and resolved design decisions for raw-material procurement, OSAT commercial model, and Kinaxis-driven PO automation.",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.5": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.6": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.7": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "5": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "6": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "6.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "6.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "8": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "9": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "10": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "11": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "12": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "12.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "12.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.5": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "14": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "14.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "15": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "17": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "18": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "20": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "21": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "23": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "24": {
+    "status": "not-started",
+    "custom_instructions": ""
+  }
+}

@@ -1,0 +1,31 @@
+fastapi>=0.110
+numpy>=1.26
+python-dotenv>=1.0
+uvicorn[standard]>=0.27
+pydantic>=2.6
+python-multipart>=0.0.9
+requests>=2.31
+httpx>=0.25
+# DOCX export
+python-docx>=1.1.2
+# Excel support (.xlsx and .xls)
+openpyxl>=3.1
+xlrd>=2.0
+# PowerPoint support (.pptx) — image extraction + chunking
+python-pptx>=0.6.23
+# PDF support
+PyMuPDF>=1.23
+# Image dimension probing (decorative-icon vs. real-diagram filter)
+Pillow>=10.0
+# OpenAI — embeddings, vision, keyword extraction, AND Azure OpenAI generation
+openai>=1.0.0
+# Azure AD auth for Azure OpenAI generation (LLM_PROVIDER=azure; uses `az login`)
+azure-identity>=1.15.0
+# Agent dependencies
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-openai>=0.2.0
+langgraph>=0.2.0
+mcp>=1.0.0
+# Anthropic Claude SDK — document generation (BRD sections)
+anthropic>=0.18.0

@@ -1,0 +1,52 @@
+# ---- Secrets / credentials (NEVER commit) ----
+.env
+*.env
+!*.env.example
+*.key
+*.pem
+secrets.*
+
+# ---- Python ----
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# ---- Node ----
+node_modules/
+package-lock.json
+
+# ---- Databases ----
+*.db
+*.sqlite
+*.sqlite3
+
+# ---- App runtime / generated data ----
+orchestration/brd_convo_app/backend/output/
+orchestration/brd_convo_app/backend/outputs/
+orchestration/brd_convo_app/backend/app/static/exports/
+orchestration/brd_convo_app/backend/app/document_imports/
+orchestration/brd_convo_app/backend/app/document_versions/
+orchestration/brd_convo_app/backend/app/extracted_images/
+orchestration/brd_convo_app/backend/app/uploads/
+orchestration/brd_convo_app/backend/app/debug_llm_mapping/
+orchestration/brd_convo_app/backend/app/sow_uploads/
+agents/brd_agent/output/
+
+# ---- Editor / OS ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ---- Cowork working backups (optional) ----
+*.bak_cowork
+*.bak_cowork2
+*.bak_cowork3
+*.bak_brand
+*.bak_edit
+*.bak_rich
+*.bak_merge

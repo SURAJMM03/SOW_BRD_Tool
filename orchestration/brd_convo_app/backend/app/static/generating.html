@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kinaxis Blueprint Document - Generation Monitor</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#F7F7F7;--surface:#FFFFFF;--surface2:#F0F0F0;--surface3:#E8E8E8;
+      --border:#DDDDDD;--border-hover:#AAAAAA;
+      --accent:#0070C0;--accent-soft:rgba(0,112,192,0.08);--accent-glow:rgba(0,112,192,0.15);
+      --navy:#003366;--green:#0F6E56;--green-soft:rgba(15,110,86,0.10);
+      --amber:#854F0B;--amber-soft:rgba(133,79,11,0.10);
+      --red:#A32D2D;--red-soft:rgba(163,45,45,0.10);
+      --text:#1A1A1A;--text-sec:#777777;--text-dim:#AAAAAA;
+      --radius:6px;--radius-lg:10px;
+      --font:'Segoe UI',system-ui,sans-serif;--mono:'Consolas','Courier New',monospace;
+    }
+    body{height:100vh;background:var(--bg);color:var(--text);font-family:var(--font);font-size:14px;display:flex;flex-direction:column;overflow:hidden}
+    .topnav{min-height:52px;background:var(--navy);color:#fff;padding:0 12px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:relative;gap:8px;flex-wrap:wrap}
+    .topnav::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(100,160,247,.4),transparent)}
+    .nav-left{display:flex;align-items:center;gap:14px;min-width:0}
+    .logo{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff;flex-shrink:0}
+    .title-wrap{min-width:0}
+    .title{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#fff}
+    .subtitle{font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.05em;text-transform:uppercase;margin-top:1px}
+    .steps{display:flex;align-items:center;gap:4px;margin-left:2px}
+    .step{display:flex;align-items:center;gap:6px;padding:4px 12px;border-radius:7px;font-size:11px;font-weight:500;color:rgba(255,255,255,.4);cursor:default;user-select:none;transition:color .15s,background .15s}
+    .step.done{color:#3dd68c;cursor:pointer}
+    .step.done:hover{color:#5fffa0}
+    .step.active{background:rgba(255,255,255,.1);color:#fff}
+    .sn{width:20px;height:20px;border-radius:5px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);font-size:10px;font-weight:700}
+    .done .sn{background:#3dd68c;border-color:#3dd68c;color:var(--navy)}
+    .active .sn{background:var(--accent);border-color:var(--accent);color:#fff}
+    .line{width:20px;height:1px;background:rgba(255,255,255,.2)}
+    .actions{display:flex;align-items:center;gap:3px;flex-wrap:wrap;justify-content:flex-end;flex:1 1 auto;min-width:0}
+    .btn{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:var(--radius);padding:6px 10px;font-family:var(--font);font-size:12px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:opacity .15s,border-color .15s,color .15s,background .15s;white-space:nowrap}
+    .btn:hover:not(:disabled){opacity:.85}
+    .topnav .actions .btn{height:28px;padding:4px 8px;font-size:11px;line-height:1.2;gap:4px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff}
+    .topnav .actions .btn:hover:not(:disabled){background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.32);opacity:1;color:#fff}
+    .btn:disabled{opacity:.55;cursor:not-allowed}
+    .hidden{display:none!important}
+    .btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+    .btn-primary:hover{background:#005EA8;color:#fff}
+    .btn-green{background:#E1F5EE;border-color:var(--green);color:var(--green)}
+    .btn-amber{background:#FFF8E1;border-color:#F59E0B;color:#92400E}
+    .topnav .actions .btn-amber{background:#FFF8E1;border-color:#F59E0B;color:#92400E}
+    .topnav .actions .btn-amber:hover:not(:disabled){background:#FFF2C2;border-color:#F59E0B;color:#92400E}
+    .topnav .actions .btn-green{background:#E1F5EE;border-color:var(--green);color:var(--green)}
+    .topnav .actions .btn-green:hover:not(:disabled){background:#D5F0E6;border-color:var(--green);color:var(--green)}
+    .page{flex:1;min-height:0;display:grid;grid-template-columns:330px minmax(0,1fr);gap:0;overflow:hidden}
+    .side{border-right:1px solid var(--border);background:var(--surface);display:flex;flex-direction:column;min-height:0;overflow:hidden}
+    .side-head{padding:18px 20px;border-bottom:1px solid var(--border)}
+    .side-body{flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column}
+    .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--text-sec);font-weight:800;margin-bottom:7px}
+    .project-name{font-size:17px;font-weight:600;line-height:1.25;color:var(--navy)}
+    .project-meta{font-size:12px;color:var(--text-sec);margin-top:6px}
+    .metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:16px 20px;border-bottom:1px solid var(--border);flex:0 0 auto}
+    .metric{border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--surface2);padding:12px}
+    .metric-val{font-size:20px;font-weight:700;color:var(--navy)}
+    .metric-label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-sec);margin-top:3px}
+    .control-panel{padding:18px 20px;border-bottom:1px solid var(--border);display:grid;gap:14px;flex:0 0 auto}
+    .field{display:grid;gap:6px}
+    .field label{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--text-sec)}
+    .field input,.field select{width:100%;height:34px;border:1px solid var(--border);border-radius:var(--radius);background:#fff;color:var(--text);font:13px var(--font);padding:0 10px;outline:none}
+    .field input:focus,.field select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,112,192,.10)}
+    .checks{display:grid;gap:9px}
+    .check{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-sec)}
+    .check input{width:16px;height:16px;accent-color:var(--accent)}
+    .strategy{padding:18px 20px;flex:0 0 auto}
+    .strategy h3{font-size:13px;color:var(--navy);margin-bottom:10px}
+    .strategy-item{display:flex;gap:10px;margin-bottom:13px}
+    .dot{width:20px;height:20px;border-radius:6px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0}
+    .strategy-item strong{display:block;font-size:12px;color:var(--text);margin-bottom:2px}
+    .strategy-item span{display:block;font-size:11.5px;line-height:1.45;color:var(--text-sec)}
+    .main{min-width:0;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+    .hero{padding:18px 24px 16px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:18px}
+    .hero h1{font-size:20px;font-weight:600;color:var(--navy);letter-spacing:0}
+    .hero p{font-size:13px;color:var(--text-sec);margin-top:6px;max-width:760px;line-height:1.5}
+    .progress-wrap{min-width:270px}
+    .progress-top{display:flex;justify-content:space-between;font-size:11px;color:var(--text-sec);font-weight:700;margin-bottom:7px}
+    .progress{height:8px;background:var(--surface2);border-radius:999px;overflow:hidden;border:1px solid var(--border)}
+    .progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--accent));transition:width .25s}
+    .content{flex:1;min-height:0;padding:20px 24px;display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:18px;overflow:hidden}
+    .panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);min-height:0;display:flex;flex-direction:column;overflow:hidden}
+    .panel-head{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .panel-title{font-size:13px;font-weight:800;color:var(--text);letter-spacing:.04em;text-transform:uppercase}
+    .panel-note{font-size:11px;color:var(--text-sec)}
+    .section-list{overflow:auto;padding:8px}
+    .section-row{display:grid;grid-template-columns:72px minmax(0,1fr) 88px;gap:12px;align-items:center;padding:11px 12px;border-radius:8px;border:1px solid transparent}
+    .section-row+.section-row{margin-top:4px}
+    .section-row:hover{background:var(--surface2);border-color:var(--border)}
+    .section-row.running{background:var(--accent-soft);border-color:rgba(0,112,192,.22)}
+    .section-row.done{background:var(--green-soft)}
+    .section-row.failed{background:var(--red-soft)}
+    .section-row.focused{outline:2px solid var(--accent);outline-offset:-2px;background:var(--accent-soft)}
+    .sid{font:700 12px var(--mono);color:var(--navy)}
+    .section-title{font-size:13px;font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .section-sub{font-size:11px;color:var(--text-sec);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .badge{justify-self:end;border:1px solid var(--border);background:var(--surface2);color:var(--text-sec);border-radius:999px;padding:4px 9px;font-size:10px;font-weight:800;text-transform:uppercase}
+    .badge.done{background:var(--green-soft);border-color:rgba(15,110,86,.25);color:var(--green)}
+    .badge.running{background:var(--accent-soft);border-color:rgba(0,112,192,.25);color:var(--accent)}
+    .badge.failed{background:var(--red-soft);border-color:rgba(163,45,45,.22);color:var(--red)}
+    .right-stack{display:grid;gap:18px;min-height:0;grid-template-rows:auto minmax(0,1fr)}
+    .current{padding:18px}
+    .current-label{font-size:11px;color:var(--text-sec);font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+    .current-title{font-size:17px;font-weight:600;color:var(--navy);margin-top:8px}
+    .current-text{font-size:12.5px;color:var(--text-sec);line-height:1.5;margin-top:8px}
+    .token-box{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .token-stat{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px}
+    .token-stat strong{font-size:17px;color:var(--navy)}
+    .token-stat span{display:block;font-size:10px;color:var(--text-sec);text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+    .log{overflow:auto;padding:12px 14px;font:12px/1.55 var(--mono);color:#314155;background:#FBFBFB}
+    .log-line{padding:4px 0;border-bottom:1px solid rgba(0,0,0,.04)}
+    .log-line.ok{color:var(--green)}
+    .log-line.warn{color:var(--amber)}
+    .log-line.err{color:var(--red)}
+    .qc-body{padding:14px 18px;font-size:12px;color:var(--text-sec);line-height:1.5}
+    .qc-score{font-size:30px;font-weight:800;color:var(--navy);margin-bottom:4px}
+    .toast{position:fixed;right:20px;top:66px;z-index:20;display:grid;gap:8px}
+    .toast-msg{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:8px;box-shadow:0 8px 28px rgba(0,0,0,.14);padding:11px 14px;font-size:12px;min-width:260px}
+    .export-modal{position:fixed;inset:0;background:rgba(0,0,0,.42);z-index:40;display:none;align-items:center;justify-content:center;padding:20px}
+    .export-modal.open{display:flex}
+    .export-card{width:min(440px,100%);background:#fff;border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:0 18px 60px rgba(0,0,0,.22);padding:22px}
+    .export-card h3{font-size:18px;font-weight:600;color:var(--navy);margin-bottom:8px}
+    .export-card p{font-size:13px;color:var(--text-sec);line-height:1.5;margin-bottom:14px}
+    .quality-score{font-size:34px;font-weight:800;color:var(--navy);margin:8px 0 4px}
+    .quality-detail{font-size:12px;color:var(--text-sec);line-height:1.45;margin-bottom:16px}
+    .quality-findings{max-height:180px;overflow:auto;border:1px solid var(--border);border-radius:var(--radius);background:#FAFAFA;margin-bottom:16px;padding:8px 10px;font-size:12px;color:var(--text)}
+    .quality-findings:empty{display:none}
+    .quality-finding{padding:6px 0;border-bottom:1px solid #EEE;line-height:1.4}
+    .quality-finding:last-child{border-bottom:0}
+    .quality-finding strong{color:var(--red);font-weight:700}
+    .export-actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+    ::-webkit-scrollbar{width:5px;height:5px}
+    ::-webkit-scrollbar-track{background:transparent}
+    ::-webkit-scrollbar-thumb{background:#CCCCCC;border-radius:3px}
+    @media(max-width:1000px){.page{grid-template-columns:1fr}.side{display:none}.content{grid-template-columns:1fr;overflow:auto}.hero{flex-direction:column}.progress-wrap{width:100%}.steps{display:none}}
+    @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<script>
+  (function(){
+    if(!sessionStorage.getItem("auth_user")) window.location.replace("/");
+  })();
+</script>
+
+<nav class="topnav">
+  <div class="nav-left">
+    <div class="logo">K</div>
+    <div class="title-wrap">
+      <div class="title" id="top-title">Blueprint Document Automation</div>
+      <div class="subtitle">Generation Monitor</div>
+    </div>
+    <div class="steps">
+      <div class="step done" onclick="go('/projects')"><span class="sn">&#10003;</span><span>Projects</span></div>
+      <div class="line"></div>
+      <div class="step done" onclick="goUpload()"><span class="sn">&#10003;</span><span>Upload</span></div>
+      <div class="line"></div>
+      <div class="step done" onclick="goEditor()"><span class="sn">3</span><span>Template Editor</span></div>
+      <div class="line"></div>
+      <div class="step active"><span class="sn">4</span><span>Generating</span></div>
+    </div>
+  </div>
+  <div class="actions">
+    <button class="btn" onclick="goEditor()">Back to Editor</button>
+    <button class="btn btn-amber" id="btn-quality-agent" onclick="runQualityCheck()" title="Check document quality before export"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;vertical-align:middle;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Quality Check</button>
+    <button class="btn" id="btn-user-stories" onclick="openUserStoriesModal()" title="Generate User Stories from the approved BRD" style="background:#E6F1FB;border:1px solid #0070C0;color:#003366;font-weight:600;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;vertical-align:middle;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg> User Stories</button>
+    <button class="btn btn-green hidden" id="btn-export-ready" onclick="exportDocument()" title="Assemble all approved sections into DOCX"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;vertical-align:middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Export</button>
+  </div>
+</nav>
+
+<div class="page">
+  <aside class="side">
+    <div class="side-head">
+      <div class="eyebrow">Project</div>
+      <div class="project-name" id="project-name">Loading project</div>
+      <div class="project-meta" id="project-meta">Preparing generation workspace</div>
+    </div>
+    <div class="side-body">
+    <div class="metric-grid">
+      <div class="metric"><div class="metric-val" id="m-total">0</div><div class="metric-label">Sections</div></div>
+      <div class="metric"><div class="metric-val" id="m-done">0</div><div class="metric-label">Completed</div></div>
+      <div class="metric"><div class="metric-val" id="m-run">0</div><div class="metric-label">Running</div></div>
+      <div class="metric"><div class="metric-val" id="m-fail">0</div><div class="metric-label">Failed</div></div>
+      <div class="metric"><div class="metric-val" id="m-pending">0</div><div class="metric-label">Pending (selected)</div></div>
+      <div class="metric"><div class="metric-val" id="m-notsel">0</div><div class="metric-label">Not selected</div></div>
+    </div>
+    <div class="control-panel">
+      <div class="field">
+        <label for="mode">Generation mode</label>
+        <select id="mode">
+          <option value="missing">Only missing sections</option>
+          <option value="all">Regenerate all sections</option>
+        </select>
+      </div>
+      <div class="checks">
+        <label class="check"><input id="use-web" type="checkbox" /> Include web search</label>
+        <label class="check"><input id="auto-quality" type="checkbox" checked /> Run quality check after generation</label>
+      </div>
+      <button class="btn btn-primary" id="start-btn" onclick="startOptimizedRun()">Start Optimized Generation</button>
+      <button class="btn" id="stop-btn" onclick="requestStop()" disabled>Stop After Current Section</button>
+    </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <section class="hero">
+      <div>
+        <h1>Section-wise Generation</h1>
+        <p>This page runs the Blueprint generation in smaller section calls, using only selected keywords, pinned source chunks, and compact prompts. That keeps token usage predictable and makes failures easier to retry.</p>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-top"><span id="progress-text">0 of 0 complete</span><span id="progress-pct">0%</span></div>
+        <div class="progress"><div class="progress-bar" id="progress-bar"></div></div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="panel">
+        <div class="panel-head">
+          <div>
+            <div class="panel-title">Generation Queue</div>
+            <div class="panel-note" id="queue-note">Loading sections...</div>
+          </div>
+          <button class="btn" onclick="refreshState()">Refresh</button>
+        </div>
+        <div class="section-list" id="section-list"></div>
+      </div>
+
+      <div class="right-stack">
+        <div class="panel current">
+          <div class="current-label">Current operation</div>
+          <div class="current-title" id="current-title">Idle</div>
+          <div class="current-text" id="current-text">Load a project and start optimized generation when ready.</div>
+          <div class="token-box">
+            <div class="token-stat"><strong id="kw-count">0</strong><span>Keywords sent</span></div>
+            <div class="token-stat"><strong id="prompt-size">0</strong><span>Approx prompt tokens</span></div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-head">
+            <div class="panel-title">Run Log</div>
+            <div class="panel-note" id="log-count">0 events</div>
+          </div>
+          <div class="log" id="log"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div class="export-modal" id="export-modal" role="dialog" aria-modal="true" aria-labelledby="export-title">
+  <div class="export-card">
+    <h3 id="export-title">Generation complete</h3>
+    <p id="export-message">Your selected section generation is complete. Do you want to export the document now?</p>
+    <div class="quality-score" id="quality-score">--%</div>
+    <div class="quality-detail" id="quality-detail">Run Quality Check to unlock export.</div>
+    <div class="quality-findings" id="quality-findings"></div>
+    <div class="export-actions">
+      <button class="btn" onclick="closeExportPrompt()">Review first</button>
+      <button class="btn hidden" id="modal-continue-sow" onclick="location.href='/sow?project_id='+encodeURIComponent(PROJECT_ID)">Continue to SOW &rarr;</button>
+      <button class="btn btn-green hidden" id="modal-export-ready" onclick="exportDocument()">Export Document</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const params = new URLSearchParams(location.search);
+const PROJECT_ID = params.get("project_id") || "";
+const REQUESTED_RUN = (params.get("run") || "").toLowerCase();
+const REQUESTED_SECTION_ID = params.get("section_id") || "";
+const REQUESTED_SECTION_IDS = (params.get("sections") || "")
+  .split(",")
+  .map(s => s.trim())
+  .filter(Boolean);
+const AUTO_START = params.get("autostart") === "1";
+let sections = [];
+let approved = {};
+let runState = {};
+let clientContext = {};
+let focusedSectionId = REQUESTED_SECTION_ID || REQUESTED_SECTION_IDS[0] || "";
+let qualityPassed = false;
+let lastQualityResult = null;
+let stopRequested = false;
+let running = false;
+let logEvents = 0;
+// ── Idempotency guards ──────────────────────────────────────────────────────
+// __initDone  — prevents init() running twice (browser back-nav, hot-reload)
+// __qualityRunning — prevents overlapping quality-check calls
+let __initDone = false;
+let __qualityRunning = false;
+// ── Helpers ─────────────────────────────────────────────────────────────────
+function sleep(ms){ return new Promise(r=>setTimeout(r,ms)); }
+function _queueId(){ return Math.random().toString(36).slice(2,8).toUpperCase(); }
+
+function go(path){ window.location.href = path; }
+// Same-window navigation. The editor restores the user's configuration from its
+// sessionStorage snapshot on load (see CR1 in screen3.html), so returning here
+// does not lose document keywords, prompt edits, structure or client context.
+function goEditor(){ window.location.href = PROJECT_ID ? `/editor?project_id=${PROJECT_ID}` : "/editor"; }
+function goUpload(){ window.location.href = PROJECT_ID ? `/upload?project_id=${PROJECT_ID}` : "/projects"; }
+function toast(msg){
+  const wrap=document.getElementById("toast");
+  const el=document.createElement("div");
+  el.className="toast-msg";
+  el.textContent=msg;
+  wrap.appendChild(el);
+  setTimeout(()=>el.remove(),3200);
+}
+function addLog(text,type){
+  logEvents++;
+  const log=document.getElementById("log");
+  const line=document.createElement("div");
+  line.className=`log-line ${type||""}`;
+  line.textContent=`${new Date().toLocaleTimeString()}  ${text}`;
+  log.appendChild(line);
+  log.scrollTop=log.scrollHeight;
+  document.getElementById("log-count").textContent=`${logEvents} events`;
+}
+function approxTokens(text){ return Math.ceil((text || "").length / 4); }
+function statusFor(sec){
+  if(runState[sec.id]) return runState[sec.id];
+  if(approved[sec.id]) return "done";
+  if(sec.status === "generated" || sec.output) return "generated";
+  // Persisted failure status survives server restarts so metrics stay accurate.
+  if(sec.status === "failed") return "failed";
+  return "pending";
+}
+function setCurrent(title,text,kwCount,promptTokens){
+  document.getElementById("current-title").textContent=title;
+  document.getElementById("current-text").textContent=text;
+  document.getElementById("kw-count").textContent=kwCount || 0;
+  document.getElementById("prompt-size").textContent=promptTokens || 0;
+}
+function updateMetrics(){
+  // CR4 — metrics reflect the whole document (every section), not just the
+  // sections queued for this run, so progress mirrors the real generation
+  // state shown in the full section list below.
+  const all=sections;
+  const total=all.length;
+  // Completed = generated and/or saved content exists for the section.
+  const completed=all.filter(s=>{const st=statusFor(s);return st==="done"||st==="generated";}).length;
+  const runningCount=all.filter(s=>statusFor(s)==="running").length;
+  const failed=all.filter(s=>statusFor(s)==="failed").length;
+  // Pending = only the SELECTED/targeted sections still to generate (this run's
+  // remaining work). Not-selected = pending sections that were NOT selected.
+  const _targeted=targetSections();
+  const _targetedIds=new Set(_targeted.map(s=>s.id));
+  const pending=_targeted.filter(s=>statusFor(s)==="pending").length;
+  const notSelected=all.filter(s=>statusFor(s)==="pending" && !_targetedIds.has(s.id)).length;
+  // Progress reflects the SELECTED sections: all selected generated → 100%.
+  const selTotal=_targeted.length;
+  const selDone=_targeted.filter(s=>{const st=statusFor(s);return st==="done"||st==="generated";}).length;
+  const pct=selTotal?Math.round(selDone/selTotal*100):0;
+  document.getElementById("m-total").textContent=total;
+  document.getElementById("m-done").textContent=completed;
+  document.getElementById("m-run").textContent=runningCount;
+  document.getElementById("m-fail").textContent=failed;
+  const pendEl=document.getElementById("m-pending"); if(pendEl) pendEl.textContent=pending;
+  const nsEl=document.getElementById("m-notsel"); if(nsEl) nsEl.textContent=notSelected;
+  document.getElementById("progress-text").textContent=`${selDone} of ${selTotal} complete`;
+  document.getElementById("progress-pct").textContent=`${pct}%`;
+  document.getElementById("progress-bar").style.width=`${pct}%`;
+  document.getElementById("queue-note").textContent=`${failed ? failed + " failed, " : ""}${pending} remaining`;
+}
+function queueSections(){
+  return targetSections();
+}
+function renderSections(){
+  const list=document.getElementById("section-list");
+  list.innerHTML="";
+  // CR4 — display EVERY document section together with its current status, so
+  // users can tell at a glance which sections are Completed, Generating or
+  // Waiting. The active run still only generates the queue (targetSections);
+  // sections outside the run are shown as Waiting.
+  const all=sections;
+  if(!all.length){
+    list.innerHTML='<div style="padding:22px;color:var(--text-sec);font-size:13px;">No sections found for this project.</div>';
+    updateMetrics();
+    return;
+  }
+  const targetIds=new Set(queueSections().map(s=>s.id));
+  for(const sec of all){
+    const st=statusFor(sec);
+    const inRun=targetIds.has(sec.id);
+    const row=document.createElement("div");
+    row.className=`section-row ${st==="done"?"done":st==="running"?"running":st==="failed"?"failed":""}`;
+    row.dataset.sid=sec.id;
+    if(sec.id===focusedSectionId) row.classList.add("focused");
+    row.addEventListener("click",()=>focusSection(sec.id));
+    const docKw=(sec.doc_keywords||[]).length;
+    const webKw=(sec.web_keywords||[]).length;
+    const pinned=(sec.pinned_chunk_ids||[]).length+(sec.pinned_image_ids||[]).length;
+    // Status vocabulary: Completed / Not Selected / Waiting / Running / Failed.
+    let label;
+    if(st==="done"||st==="generated") label="Completed";
+    else if(st==="running") label="Running";
+    else if(st==="failed") label="Failed";
+    else label=inRun?"Waiting":"Not Selected";
+    row.innerHTML=`
+      <div class="sid">${sec.id}</div>
+      <div>
+        <div class="section-title">${escapeHtml(sec.title||sec.id)}</div>
+        <div class="section-sub">${docKw} doc kw &middot; ${webKw} web kw &middot; ${pinned} pinned source${pinned===1?"":"s"}</div>
+      </div>
+      <div class="badge ${st==="done"?"done":st==="running"?"running":st==="failed"?"failed":""}">${label}</div>`;
+    list.appendChild(row);
+  }
+  updateMetrics();
+}
+function focusSection(sectionId){
+  focusedSectionId=sectionId;
+  document.querySelectorAll(".section-row").forEach(row=>{
+    const match=row.dataset.sid===sectionId;
+    row.classList.toggle("focused",match);
+    if(match) row.scrollIntoView({block:"center",behavior:"smooth"});
+  });
+}
+function escapeHtml(s){
+  return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+async function refreshState(){
+  if(!PROJECT_ID){
+    setCurrent("No project selected","Open this page from the editor so the project_id is included.",0,0);
+    addLog("No project_id was provided in the URL.","err");
+    return;
+  }
+  try{
+    const [projectRes, sectionsRes, statusRes, contextRes] = await Promise.all([
+      fetch(`/api/projects/${PROJECT_ID}`),
+      fetch(`/api/sections?project_id=${PROJECT_ID}`),
+      fetch(`/api/document/status?project_id=${PROJECT_ID}`),
+      fetch(`/api/project/${PROJECT_ID}/client-context`)
+    ]);
+    const project = projectRes.ok ? await projectRes.json() : {};
+    const secData = await sectionsRes.json();
+    const docStatus = await statusRes.json();
+    clientContext = contextRes.ok ? await contextRes.json() : {};
+    sections = secData.sections || [];
+    approved = docStatus.approved || {};
+    document.getElementById("project-name").textContent = project.name || "Blueprint Project";
+    document.getElementById("project-meta").textContent = project.client ? `Client: ${project.client}` : `Project ID: ${PROJECT_ID}`;
+    renderSections();
+    addLog(`Loaded ${sections.length} sections for project ${PROJECT_ID}.`,"ok");
+  }catch(e){
+    addLog(`Could not load project state: ${e.message}`,"err");
+    toast("Could not load generation state.");
+  }
+}
+function targetSections(){
+  if(REQUESTED_RUN==="current" && REQUESTED_SECTION_ID){
+    return sections.filter(sec=>sec.id===REQUESTED_SECTION_ID);
+  }
+  if(REQUESTED_RUN==="selected" && REQUESTED_SECTION_IDS.length){
+    const byId=new Map(sections.map(sec=>[sec.id,sec]));
+    return REQUESTED_SECTION_IDS.map(id=>byId.get(id)).filter(Boolean);
+  }
+  const mode=document.getElementById("mode").value;
+  if(mode==="all") return sections.slice();
+  return sections.filter(sec=>!approved[sec.id]);
+}
+function applyRequestedRun(){
+  const modeEl=document.getElementById("mode");
+  const qualityEl=document.getElementById("auto-quality");
+  if(REQUESTED_RUN==="all"){
+    // Leave mode as default ("missing") so autostart only generates unsaved sections.
+    // User can manually switch to "Regenerate all sections" in the dropdown if needed.
+    qualityEl.checked=true;
+  }else if(REQUESTED_RUN==="current" || REQUESTED_RUN==="selected"){
+    modeEl.value="missing";
+    qualityEl.checked=false;
+  }
+}
+function requestedRunLabel(){
+  if(REQUESTED_RUN==="current") return REQUESTED_SECTION_ID ? `section ${REQUESTED_SECTION_ID}` : "current section";
+  if(REQUESTED_RUN==="selected") return `${REQUESTED_SECTION_IDS.length} selected section(s)`;
+  if(REQUESTED_RUN==="all") return "all sections";
+  return "missing sections";
+}
+function qualityScore(data){
+  const total=Math.max(1,Number(data.total_sections||0));
+  const generated=Number(data.generated_sections||0);
+  if(data.verdict==="ready" && generated>=total) return 100;
+  return Math.max(0,Math.min(99,Math.round((generated/total)*100)));
+}
+function scopedQualityResult(){
+  const queue=queueSections();
+  const findings=[];
+  let generated=0;
+  for(const sec of queue){
+    const st=statusFor(sec);
+    if(st==="done" || st==="generated"){
+      generated++;
+    }else if(runState[sec.id]==="failed"){
+      // One clear finding per failed section. The specific cause is now shown
+      // in the Run Log (e.g. "HTTP 500 — Generation failed for section 1.1: …").
+      findings.push({
+        section_id:sec.id,
+        severity:"error",
+        message:"Section generation failed — see the Run Log for the underlying error."
+      });
+    }else{
+      findings.push({
+        section_id:sec.id,
+        severity:"error",
+        message:"Section has not been generated and saved yet."
+      });
+    }
+  }
+  const hasErrors=findings.some(f=>f.severity==="error");
+  return {
+    verdict:hasErrors ? "incomplete" : "ready",
+    total_sections:queue.length,
+    generated_sections:generated,
+    missing_sections:Math.max(0,queue.length-generated),
+    findings,
+    finding_counts:{
+      error:findings.filter(f=>f.severity==="error").length,
+      warning:findings.filter(f=>f.severity==="warning").length,
+      info:findings.filter(f=>f.severity==="info").length
+    },
+    scoped:true
+  };
+}
+function isScopedRun(){
+  return REQUESTED_RUN==="current" || REQUESTED_RUN==="selected";
+}
+function setExportVisibility(visible){
+  document.getElementById("btn-export-ready")?.classList.toggle("hidden",!visible);
+  document.getElementById("modal-export-ready")?.classList.toggle("hidden",!visible);
+}
+function showQualityPrompt(data){
+  const score=qualityScore(data);
+  const counts=data.finding_counts||{};
+  const findings=data.findings||data.issues||[];
+  const ready=score===100 && data.verdict==="ready";
+  qualityPassed=ready;
+  lastQualityResult=data;
+  setExportVisibility(ready);
+  document.getElementById("export-title").textContent=ready ? "Quality check passed" : "Quality check needs review";
+  document.getElementById("export-message").textContent=ready
+    ? (data.scoped ? "The selected section check is 100% ready. Export is now available." : "The document quality check is 100% ready. Export is now available.")
+    : (data.scoped ? "The selected sections are not 100% ready yet. Review the findings before export." : "The document is not 100% ready yet. Review the findings before export.");
+  document.getElementById("quality-score").textContent=`${score}%`;
+  document.getElementById("quality-detail").textContent=
+    `Verdict: ${data.verdict || "unknown"} - Generated: ${data.generated_sections || 0}/${data.total_sections || 0} - Errors: ${counts.error || 0} - Warnings: ${counts.warning || 0} - Info: ${counts.info || 0}`;
+  const findingsEl=document.getElementById("quality-findings");
+  if(findingsEl){
+    findingsEl.innerHTML=findings.slice(0,8).map(f=>{
+      const sid=f.section_id ? `Section ${escapeHtml(f.section_id)}: ` : "";
+      return `<div class="quality-finding"><strong>${escapeHtml(f.severity||"issue")}</strong> - ${sid}${escapeHtml(f.message||"Review required.")}</div>`;
+    }).join("");
+    if(findings.length>8){
+      findingsEl.innerHTML+=`<div class="quality-finding">+ ${findings.length-8} more finding(s). Review the Template Editor before export.</div>`;
+    }
+  }
+  document.getElementById("export-modal")?.classList.add("open");
+}
+function showExportPrompt(failedCount){
+  const modal=document.getElementById("export-modal");
+  const msg=document.getElementById("export-message");
+  if(!modal || !msg) return;
+  document.getElementById("export-title").textContent="Generation complete";
+  msg.textContent = failedCount
+    ? `Generation finished, but ${failedCount} section(s) failed. Run Quality Check after review to unlock export.`
+    : "Generation completed. Run Quality Check to confirm the document is 100% ready before export.";
+  document.getElementById("quality-score").textContent=lastQualityResult ? `${qualityScore(lastQualityResult)}%` : "--%";
+  document.getElementById("quality-detail").textContent=lastQualityResult ? "Latest quality result shown above." : "Export is locked until Quality Check returns 100%.";
+  const findingsEl=document.getElementById("quality-findings");
+  if(findingsEl) findingsEl.innerHTML="";
+  setExportVisibility(qualityPassed);
+  modal.classList.add("open");
+}
+function closeExportPrompt(){
+  document.getElementById("export-modal")?.classList.remove("open");
+}
+// ── Server-side background generation ───────────────────────────────────────
+// Generation runs on the SERVER (not in this page). We POST to start/merge a
+// run, then poll for live status, so the run keeps going — and the queue/log
+// keep updating — even when the user navigates back to the Template Editor in
+// the same window. On reload this page reconnects to any in-progress run.
+let _polling=false;     // guards against overlapping poll loops
+let _logIndex=0;        // index of the last server log line already shown
+
+async function requestStop(){
+  stopRequested=true;
+  addLog("Stop requested. The current section will finish first.","warn");
+  document.getElementById("stop-btn").disabled=true;
+  try{
+    await fetch("/api/generation/stop",{
+      method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({project_id:PROJECT_ID})
+    });
+  }catch(_){}
+}
+
+// Apply a /api/generation/status payload to the page (statuses, log, current op).
+function applyServerStatus(st){
+  if(!st || !st.active) return;
+  runState={};
+  const map=st.statuses||{};
+  for(const sid in map){
+    const v=map[sid];
+    runState[sid]= v==="running" ? "running" : v==="done" ? "done" : v==="failed" ? "failed" : "pending";
+  }
+  if(Array.isArray(st.log)){ for(const ev of st.log){ addLog(ev.text, ev.type); } }
+  if(typeof st.log_total==="number") _logIndex=st.log_total;
+  running=!!st.running;
+  if(st.current){
+    focusedSectionId=st.current;
+    const sec=sections.find(s=>s.id===st.current);
+    setCurrent(`Generating ${st.current}`, sec ? (sec.title||st.current) : st.current, 0, 0);
+  }else if(running){
+    setCurrent("Working…","The generation queue is being processed on the server.",0,0);
+  }
+  document.getElementById("start-btn").disabled=running;
+  document.getElementById("stop-btn").disabled=!running;
+  renderSections();
+}
+
+async function fetchGenerationStatus(){
+  try{
+    const r=await fetch(`/api/generation/status?project_id=${encodeURIComponent(PROJECT_ID)}&since=${_logIndex}`);
+    if(!r.ok) return null;
+    return await r.json();
+  }catch(_){ return null; }
+}
+
+// Poll the server run until it finishes, then finalize the UI.
+async function pollGenerationStatus(){
+  if(_polling) return;
+  _polling=true;
+  let sawRun=false;
+  try{
+    while(true){
+      const st=await fetchGenerationStatus();
+      if(!st || !st.active) break;       // no run on the server
+      sawRun=true;
+      applyServerStatus(st);
+      if(!st.running) break;             // run finished
+      await sleep(2000);
+    }
+  }finally{ _polling=false; }
+  if(!sawRun) return;
+  // ── Finalize after a real run ended ──────────────────────────────────────
+  await refreshState();                  // reload approved content / outputs
+  running=false;
+  document.getElementById("start-btn").disabled=false;
+  document.getElementById("stop-btn").disabled=true;
+  let failedCount=0;
+  for(const s of sections){ if(statusFor(s)==="failed") failedCount++; }
+  setCurrent(stopRequested ? "Stopped" : "Generation complete",
+             stopRequested ? "Run stopped after the last completed section." : "Review the quality check results, then export.",0,0);
+  stopRequested=false;
+  if(document.getElementById("auto-quality").checked){
+    try{ await runQualityCheck(); }catch(_){}
+  }
+  showExportPrompt(failedCount);
+}
+
+async function startOptimizedRun(){
+  document.getElementById("start-btn").disabled=true;
+  try{
+    await refreshState();
+    const targets=targetSections();
+    if(!targets.length){
+      toast("All sections are already saved.");
+      addLog("No missing sections to generate.","warn");
+      document.getElementById("start-btn").disabled=false;
+      return;
+    }
+    const includeWeb=document.getElementById("use-web").checked;
+    let data;
+    try{
+      const r=await fetch("/api/generation/start",{
+        method:"POST",headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({project_id:PROJECT_ID, section_ids:targets.map(s=>s.id), include_web:includeWeb})
+      });
+      data=await r.json();
+    }catch(e){
+      addLog(`Could not start generation: ${e.message}`,"err");
+      toast("Could not start generation.");
+      document.getElementById("start-btn").disabled=false;
+      return;
+    }
+    if(!data || !data.ok){
+      addLog(`Could not start generation: ${(data&&data.error)||"unknown error"}`,"err");
+      toast((data&&data.error)||"Could not start generation.");
+      document.getElementById("start-btn").disabled=false;
+      return;
+    }
+    stopRequested=false;
+    document.getElementById("stop-btn").disabled=false;
+    if(data.merged){ toast(`Added ${(data.added||[]).length} section(s) to the running queue.`); }
+    else { _logIndex=0; toast("Generation started on the server."); }  // fresh run → read log from start
+    pollGenerationStatus();
+  }catch(e){
+    addLog(`Could not start generation: ${e.message}`,"err");
+    document.getElementById("start-btn").disabled=false;
+  }
+}
+async function runQualityCheck(){
+  if(!PROJECT_ID) return;
+  if(__qualityRunning){
+    addLog("Quality check already in progress — ignoring duplicate request.","warn");
+    return;
+  }
+  __qualityRunning=true;
+  const btn=document.getElementById("btn-quality-agent");
+  if(btn){btn.disabled=true;btn.textContent="Checking...";}
+  setExportVisibility(false);
+  qualityPassed=false;
+  const scoped=isScopedRun();
+  setCurrent("Running quality check", scoped ? "Checking only the selected generation queue sections." : "Agent review is checking missing sections, placeholders, short content, unresolved images, and LLM review findings.",0,0);
+  addLog(scoped ? "Scoped quality check started for selected queue sections." : "Quality check agent started.");
+  try{
+    const data=scoped
+      ? scopedQualityResult()
+      : await (await fetch(`/api/projects/${PROJECT_ID}/quality-check`,{method:"POST"})).json();
+    const score=qualityScore(data);
+    const issues=data.issues || [];
+    const counts=data.finding_counts||{};
+    const totalFindings=(counts.error||0)+(counts.warning||0)+(counts.info||0)+(issues.length||0);
+    addLog(`Quality score: ${score}%. Verdict: ${data.verdict || "unknown"}. Findings: ${totalFindings}.`, score===100 ? "ok" : "warn");
+    showQualityPrompt(data);
+    toast(`Quality check: ${score}%`);
+  }catch(e){
+    addLog(`Quality check failed: ${e.message}`,"err");
+    toast("Quality check failed.");
+  }finally{
+    __qualityRunning=false;
+    if(btn){
+      btn.disabled=false;
+      btn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;vertical-align:middle;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Quality Check';
+    }
+  }
+}
+let _exporting=false;
+async function exportDocument(){
+  if(!PROJECT_ID) return;
+  if(!qualityPassed){
+    showExportPrompt(0);
+    toast("Run Quality Check until it reaches 100% before export.");
+    return;
+  }
+  if(_exporting) return;   // guard against double-click / both buttons
+  _exporting=true;
+  var _expBtns=[document.getElementById("btn-export-ready"),document.getElementById("modal-export-ready")];
+  _expBtns.forEach(function(b){ if(b){ b.disabled=true; b.style.opacity=".6"; b.style.pointerEvents="none"; } });
+  addLog("Export requested.");
+  try{
+    const raw=sessionStorage.getItem("auth_user");
+    const user=raw ? JSON.parse(raw) : {};
+
+    // For scoped runs (run=selected or run=current), pass ONLY the targeted
+    // section ids so the backend never exports the full approved store.
+    // This is the strict filter — no ancestor auto-inclusion.
+    const scopedIds = isScopedRun() ? queueSections().map(s => s.id) : [];
+    if(scopedIds.length){
+      addLog(`Export scoped to ${scopedIds.length} section(s): ${scopedIds.join(", ")}.`);
+    }
+
+    const exportPayload = {
+      project_id:PROJECT_ID,
+      user_email:user.email||"",
+      user_name:user.email||"",
+      revision_description:"Generated from optimized section-wise flow",
+    };
+    if(scopedIds.length){
+      exportPayload.section_ids = scopedIds;
+    }
+
+    const res=await fetch("/api/document/export",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(exportPayload)
+    });
+    const data=await res.json();
+    if(!data.ok) throw new Error(data.error || "Export failed");
+    addLog(`Export ready: ${data.filename}`,"ok");
+    if(data.warnings && data.warnings.length){
+      data.warnings.forEach(w=>addLog(`Warning: ${w}`,"err"));
+      toast("Exported with warnings — see log.");
+    }
+    document.getElementById("modal-continue-sow")?.classList.remove("hidden");
+    window.location.href=data.docx_url;
+  }catch(e){
+    addLog(`Export failed: ${e.message}`,"err");
+    toast("Export failed.");
+  }finally{
+    _exporting=false;
+    _expBtns.forEach(function(b){ if(b){ b.disabled=false; b.style.opacity=""; b.style.pointerEvents=""; } });
+  }
+}
+async function init(){
+  // Guard against double-invocation (browser back-nav, HMR, test harness).
+  if(__initDone) return;
+  __initDone=true;
+  applyRequestedRun();
+  await refreshState();
+  // Reconnect to a server-side run that may already be in progress (e.g. the
+  // user navigated to the editor and back). This restores the live queue, log
+  // and progress and keeps polling until it finishes.
+  const st=await fetchGenerationStatus();
+  if(st && st.active){
+    if(st.running){ pollGenerationStatus(); }
+    else { applyServerStatus(st); }
+  }
+  if(AUTO_START){
+    addLog(`Auto-start requested for ${requestedRunLabel()}.`,"ok");
+    setTimeout(()=>startOptimizedRun(),250);
+  }
+}
+init();
+
+// ─── User Stories (generate from approved BRD) ───
+function openUserStoriesModal(){
+  document.getElementById("us-modal-backdrop").style.display="flex";
+  document.getElementById("us-stories-list").innerHTML="";
+  document.getElementById("us-status-msg").textContent="";
+  document.getElementById("us-download-btn").style.display="none";
+  document.getElementById("us-copy-btn").style.display="none";
+  document.getElementById("us-count-badge").textContent="";
+  loadExistingUserStories();
+}
+function closeUserStoriesModal(){ document.getElementById("us-modal-backdrop").style.display="none"; }
+function _usQuery(){ return PROJECT_ID ? ("?project_id="+encodeURIComponent(PROJECT_ID)) : ""; }
+async function loadExistingUserStories(){
+  try{
+    const data=await (await fetch("/api/project/user-stories"+_usQuery())).json();
+    if(data.stories && data.stories.length>0){ renderUserStories(data.stories); }
+    else { document.getElementById("us-status-msg").textContent="No user stories yet. Click Generate to create them from your approved BRD sections."; }
+  }catch(e){}
+}
+async function generateUserStories(){
+  const btn=document.getElementById("us-generate-btn"), statusEl=document.getElementById("us-status-msg"), listEl=document.getElementById("us-stories-list");
+  btn.disabled=true; btn.textContent="Generating…";
+  statusEl.textContent="Analysing approved BRD sections and generating user stories…"; statusEl.style.color="#003366";
+  listEl.innerHTML='<div style="display:flex;align-items:center;gap:10px;padding:32px 0;justify-content:center;color:#888;"><div style="width:20px;height:20px;border:2px solid #0070C0;border-top-color:transparent;border-radius:50%;animation:spin 0.8s linear infinite;"></div><span>Analysing BRD and generating user stories with AI…</span></div>';
+  try{
+    const res=await fetch("/api/project/generate-user-stories",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({project_id:PROJECT_ID||null})});
+    const data=await res.json();
+    if(!res.ok){ throw new Error(data.detail||"Generation failed"); }
+    renderUserStories(data.stories);
+    statusEl.textContent="✓ Generated "+data.count+" user stories from approved BRD sections."; statusEl.style.color="#0F6E56";
+    document.getElementById("us-download-btn").style.display="inline-flex";
+    document.getElementById("us-copy-btn").style.display="inline-flex";
+  }catch(e){ listEl.innerHTML=""; statusEl.textContent="Error: "+e.message; statusEl.style.color="#A32D2D"; }
+  finally{ btn.disabled=false; btn.textContent="Generate"; }
+}
+function renderUserStories(stories){
+  const listEl=document.getElementById("us-stories-list"), countEl=document.getElementById("us-count-badge");
+  countEl.textContent=stories.length+" stories";
+  const pc={"High":{bg:"#FEE2E2",border:"#EF4444",text:"#991B1B"},"Medium":{bg:"#FEF3C7",border:"#F59E0B",text:"#92400E"},"Low":{bg:"#E1F5EE",border:"#0F6E56",text:"#0F6E56"}};
+  listEl.innerHTML=stories.map(function(s,i){
+    const p=pc[s.priority]||pc["Medium"];
+    const ac=(s.acceptance_criteria||[]).map(function(a,j){return '<div style="display:flex;gap:8px;padding:5px 0;border-bottom:1px solid #F3F4F6;"><span style="flex-shrink:0;font-size:11px;font-weight:600;color:#6B7280;min-width:20px;">'+(j+1)+'.</span><span style="font-size:12px;color:#374151;line-height:1.5;">'+(a||"")+'</span></div>';}).join("");
+    return '<div style="background:#FAFAFA;border:1px solid #E5E7EB;border-radius:8px;padding:16px;margin-bottom:12px;"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px;gap:8px;"><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;"><span style="font-size:11px;font-weight:700;color:#6B7280;background:#E5E7EB;padding:2px 8px;border-radius:4px;font-family:monospace;">'+(s.id||("US-"+String(i+1).padStart(3,"0")))+'</span><span style="font-size:14px;font-weight:600;color:#1F2937;">'+(s.title||"")+'</span></div><span style="font-size:11px;font-weight:600;padding:2px 10px;border-radius:12px;flex-shrink:0;background:'+p.bg+';color:'+p.text+';border:1px solid '+p.border+';">'+(s.priority||"Medium")+'</span></div><div style="background:#E6F1FB;border-left:3px solid #0070C0;border-radius:4px;padding:10px 12px;margin-bottom:10px;font-size:13px;line-height:1.6;color:#003366;">As a <strong>'+(s.as_a||"")+'</strong>, I want <strong>'+(s.i_want||"")+'</strong>, so that <strong>'+(s.so_that||"")+'</strong>.</div>'+(ac?'<div style="margin-top:8px;"><div style="font-size:11px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">Acceptance Criteria</div>'+ac+'</div>':'')+(s.section_source?'<div style="margin-top:8px;font-size:11px;color:#9CA3AF;">Source: '+s.section_source+'</div>':'')+'</div>';
+  }).join("");
+  document.getElementById("us-download-btn").style.display="inline-flex";
+  document.getElementById("us-copy-btn").style.display="inline-flex";
+}
+function downloadUserStories(){ window.location.href="/api/project/user-stories/download"+_usQuery(); }
+function copyUserStoriesToClipboard(){
+  fetch("/api/project/user-stories"+_usQuery()).then(function(r){return r.json();}).then(function(data){
+    const lines=[];
+    (data.stories||[]).forEach(function(s){ lines.push("["+s.id+"] "+s.title); lines.push("Priority: "+(s.priority||"Medium")); lines.push("As a "+s.as_a+", I want "+s.i_want+", so that "+s.so_that+"."); (s.acceptance_criteria||[]).forEach(function(a,i){lines.push("  "+(i+1)+". "+a);}); lines.push("Source: "+(s.section_source||"")); lines.push(""); });
+    navigator.clipboard.writeText(lines.join("\n")).then(function(){toast("User stories copied to clipboard");}).catch(function(){toast("Copy failed - use Download instead");});
+  });
+}
+(function(){ var b=document.getElementById("us-modal-backdrop"); if(b){ b.addEventListener("click", function(e){ if(e.target===this) closeUserStoriesModal(); }); } })();
+
+</script>
+<div id="us-modal-backdrop" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:500;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:14px;width:760px;max-width:96vw;max-height:92vh;display:flex;flex-direction:column;box-shadow:0 24px 64px rgba(0,0,0,.28);overflow:hidden;">
+    <div style="background:#003366;padding:18px 24px 16px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;">
+      <div>
+        <div style="font-size:16px;font-weight:700;color:#fff;display:flex;align-items:center;gap:8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg> Generate User Stories</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.7);margin-top:3px;">Extract structured user stories from the approved BRD sections</div>
+      </div>
+      <button onclick="closeUserStoriesModal()" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;font-size:18px;width:30px;height:30px;border-radius:6px;cursor:pointer;line-height:1;">&#215;</button>
+    </div>
+    <div style="padding:12px 20px;border-bottom:1px solid #E5E7EB;display:flex;align-items:center;gap:10px;flex-shrink:0;background:#FAFAFA;">
+      <button id="us-generate-btn" onclick="generateUserStories()" style="display:inline-flex;align-items:center;gap:6px;padding:7px 16px;background:#0070C0;border:none;border-radius:6px;color:#fff;font-size:13px;font-weight:600;cursor:pointer;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Generate</button>
+      <button id="us-download-btn" onclick="downloadUserStories()" style="display:none;align-items:center;gap:6px;padding:7px 14px;background:#fff;border:1px solid #0070C0;border-radius:6px;color:#003366;font-size:13px;font-weight:600;cursor:pointer;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download .txt</button>
+      <button id="us-copy-btn" onclick="copyUserStoriesToClipboard()" style="display:none;align-items:center;gap:6px;padding:7px 14px;background:#fff;border:1px solid #E5E7EB;border-radius:6px;color:#374151;font-size:13px;cursor:pointer;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy All</button>
+      <span id="us-count-badge" style="margin-left:auto;font-size:12px;background:#E6F1FB;color:#003366;padding:3px 10px;border-radius:12px;font-weight:600;"></span>
+    </div>
+    <div id="us-status-msg" style="padding:8px 20px 0;font-size:12px;min-height:24px;color:#6B7280;flex-shrink:0;"></div>
+    <div id="us-stories-list" style="flex:1;overflow-y:auto;padding:16px 20px;"></div>
+  </div>
+</div>
+</body>
+</html>

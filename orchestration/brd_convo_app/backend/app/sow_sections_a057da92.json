@@ -1,0 +1,21 @@
+{
+  "active": [
+    {
+      "id": "1",
+      "title": "Cover Page",
+      "level": 1
+    },
+    {
+      "id": "2",
+      "title": "Agreement Details",
+      "level": 1
+    },
+    {
+      "id": "3",
+      "title": "Executive Summary",
+      "level": 1
+    }
+  ],
+  "archived": [],
+  "template_id": "c4ce70c8"
+}

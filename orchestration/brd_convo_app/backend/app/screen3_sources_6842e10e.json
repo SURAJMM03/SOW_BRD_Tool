@@ -1,0 +1,249 @@
+{
+  "1.4": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "Required field: Dependent Requirements will be auto calculated compared to current-state of running MRP to get these results (no action needed from users)., Required field: Supply Planning & Order Management, Optional field: Replaces current process to import product forecast and calculate base materials needed to create end-products, dilutions required etc - this would become automated in system in future-state., Optional field: Planners, Site schedulers, Optional field: YES, Optional field: YES, Optional field: YES, Optional field: YES\nRequired field: All external Forecast Upload directly ha"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "Required field: Returnable Products tracking information will be fed manually into Maestro (via a sheet created in Maestro). Believed that this process is currently manual also TBC how/where it is stored., Required field: Production Planning, Inventory Management, Optional field: Interface change. Data entry required (similar to now), Optional field: Production Planners, maybe Product Managers or Site, Optional field: YES\nRequired field: Reports will be standardized based on the user roles within Maestro., Required field: Reporting, Optional field: Further decisions on reports created for impl"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: FINAL-WorkshopSchedule (2)",
+        "snippet": "15 | 1 | 8 | 8 | 0 | Follow-up with IXOM change managers to assist with any queries they may have to contribute to their change plans. | Workshops: Change Management | 8 | 1 | 1\n16 | 3 | 24 | 24 | 0 | Any further follow-ups required for NZ-specific use cases that may deviate from AU ChlorAlkali, Traded Bulk and Traded Packaged BU solutions that have not already been captured. | Workshops: NZ-Specific Inputs | 24 | 2 | 1 | 1\n26 | 208 | 121 | 116 | 102\n223\n-15 | hours\n-1.875 | days | 2 hours per session where possible\n8 hours info capture\n6 hours for draft\nplayback/validate to IXOM\n294 | feedbac"
+      },
+      {
+        "doc_name": "20260624_130304_BD_20260623_161955.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Table of Contents\n1  Introduction\n1.3  Purpose\nSection 1: Introduction\n1. Introduction\n1.1 Background\nArchlin is a specialty chemicals manufacturing company undertaking a Phase 1 investment in integrated Supply Management capabilities.\nArchlin currently operates SAP S/4HANA as the ERP system supporting in-scope planning and transactional data.\nArchlin’s current planning maturity reflects integrated planning with some automation, while continued reliance on Excel-based consolidation, manual review, and planner-driven coordination creates delays in the planning cycle.\nArchlin currently experienc"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W- Sales & Operational Planning",
+        "snippet": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W- Sales & Operational Planning\nColumns: Sales & Operational Planning Workshop Attendees | Details | Deliverable/s | Solution Blueprint population | IXOM Attendees | Notes | Duration\nDetails: Aggregate supply planning, Unconstrained approval, user cases finalization., Duration: 4 hours initial session + follow-ups as required\nSales & Operational Planning Workshop Attendees: #, Details: IXOM TO PROVIDE GUIDANCE: Recommended structure of initial workshops based on in-scope BUs (Traded Packaged, Traded Bulk, ChlorAlka"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W- NZ-Specific",
+        "snippet": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W- NZ-Specific\nColumns: NZ-Specific Workshop Attendees | Details | Deliverable/s | Solution Blueprint population | IXOM Attendees | Notes | Duration\nNZ-Specific Workshop Attendees: #, Details: IXOM TO PROVIDE GUIDANCE: Recommended structure of initial workshops based on in-scope BUs (Traded Packaged, Traded Bulk, ChlorAlkali, NZ):\nNZ-Specific Workshop Attendees: 1, Details: 1\nNZ-Specific Workshop Attendees: 2\nNZ-Specific Workshop Attendees: 3\nNZ-Specific Workshop Attendees: 4\nNZ-Specific Workshop Attendees: 5\nNZ-Sp"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements\nColumns: After Discovery session, before follow-up\nFunctional Requirements & Design | Kinaxis Input | Differences in requirements/processes/solutions/change management per BU\nAfter Discovery session, before follow-up: Kinaxis Resource for Solution\n1 | Demand Planning | Ability to have an automated forecasting tool which sources and consolidates historical and current sales data and predicts future demand for a selectable period (e.g. last year, current year and next financial year) | Forecast algorithms | Must Have | Yes | 9 | Wi"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "Also need to faciltiate tiered pricing based on volumes ordered. Standard it is not there. But we can customise this to build in the business rules. New requirement added. | Not noted | - suggested Kinaxis solution (future-state process)\n'- why this solution (reasoning)\n2 | Demand Planning | Ability to upload data from external sources to feed into creation of Demand Plans including customer forecasts, actual tank levels at Ixom / customer sites | Data sources | Demand Planning | Must Have | Yes | 9 | Will stay in SAP ? - Master data that is available in SAP will be transferred to Maestro | Im"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "2025-03-05 | 4 | Demand Planning | Ability to integrate with the product cost and Customer and ShipTo pricing models to support financial forecasts with the ability to do scenario modelling and predictive pricing based on a variety of methods at plant / customer / period (e.g. statistical & historical). This relates to all types of Planning | Scenario Planning | Demand Planning | Must Have | Yes | 9 | Consensus Demand PLanning | Pricing based on customer/Shipto/grography/ time, instead of using the ASP/ std unit cost use pricing procedure | Pricing may be different based on the ShipTo or the C"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "- Supplier (based on products they supply to us)\nExport all reports of that subset, to then do what we want with. | Closed loop report (Exportable)-Custom Workbook report.\n8 | Demand Planning | Ability to extract the forecast at configurable levels, e.g. Product level and submit / resubmit forecasts for approval, including to one or more approvers | Notifications / Approval | Demand Planning | Should Have | Yes | 3 | S&OP cycle Approval, Scenario comment/ commit | For S&OP hardcoded approvals/ workflow, for midcycle we just need acknowledgement approval\nOverride in case person is unavailable |"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM\nColumns: Required field | Required field | Optional field | Optional field | Optional field | Optional field | Optional field | Optional field | Optional field | Optional field | Optional field | Optional field\nOptional field: BU Affected\nRequired field: Potential Change to Operations, Required field: Process Affected, Optional field: Other Notes, Optional field: Associated Actions/Decisions, Optional field: Roles Affected, Optional field: Workstream, Optional field: Traded Bulk, Optional field: Traded Packaged, Optional field:"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "Product Manager to overwrite, then notify user group.\nEach product manager to have their own forecast\nDetailed overwrites for their own product group\nPlus a statistical to constantly compare and refine.\nProduct manager may want to overwrite one of their customers' rolling view with the statistical view., Optional field: Decision Register #02, Optional field: Demand Planers, Supply Planners, Product Managers\nBMs, Optional field: Demand Planning, Optional field: YES, Optional field: YES, Optional field: YES, Optional field: YES, Optional field: 2025-03-05, Optional field: Demand Planning Stream "
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "3rd party transport/\nNZ BLT Fleet, Optional field: Distribution Planning Stream 2, Optional field: YES, Optional field: YES, Optional field: YES, Optional field: YES\nRequired field: Historical data cleansing will be required of IXOM team. Product order data, including ShipTo. Product, Customer, Site., Required field: New process, Optional field: Initially at least 12 months of historical data to cleanse and then monthly actuals (once a month). Likely to be the demand planners have the first go at it and then what they do is they'll sit down and have that discussion with the PM and manage anyth"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "Required field: Sales & Operational Planning processes (and potentially many more that will come through into the system as Task Flows) have individual tasks visibly assigned to individuals and/or groups and the dashboards highlight who may be late in completing tasks. Percieved accountability throughout processes may be higher than current processes., Required field: S&OP Processes, potentially quite a few more., Optional field: Demand Planners, Supply Planners, Finance Team, Product Managers, Commercial Team, Account Managers, Distr. Planners, Site Schedulers/Managers more, Optional field: S"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "Required field: Current process to export POs, stock, pricing and product master data from SAP will be replaced with automated integration., Required field: Current export from SAP into spreadsheets and PowerBI etc as required, also into SAP., Optional field: Managing errors (exception reports etc), Optional field: Planning team, Plus finance, production planners (currently exporting open process orders), Optional field: Demand & Supply Planning, Optional field: YES, Optional field: YES, Optional field: YES, Optional field: YES\nRequired field: Planning excel files will be replaced with Maestro"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "Required field: Constraints Optimiser (Supply.AI) will handle production planning in a more automated way compared to current human efforts. Production planners will need to input and prioritise constraints within the system. Maestro will then provide results for the production planner to review and edit as required. Anticipated to take less time overall however the process will be quite different. All the master data and transactional data need to be setup correctly to ensure optimization to work effeciently.  Both the PartSource and BOM records must accurately reflect jurisdictional controls"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "Required field: System access, roles and responsibilities will need to be decided and assigned to all users. Ex. System Administrator (manage users, roles and access), System Integration, Author, Viewer. User groups will need to be defined to best manage access., Optional field: IT, potentially planning team (may lose current responsibilities to IT)\nRequired field: IT or other role to be determined by IXOM will need to manage the 3 Maestro environments: Development, Quality (testing), Production (live), Optional field: IT or TBC\nRequired field: Purchase Requisitions will be created in Maestro "
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "A step further, What if there are multiple suppliers of individual components and we select based on price?  Yes. Can it be automatically set to buy the cheapest one?\nDifferent makes/IDs of the same product made at the same site can also be segmented to feature in different BOMs if needed.\nMultiple suppliers of a raw material, each with separate product codes > these can be fed into a parent raw material that can be inputted into the BOM. How does the backflush work? This would be primarily in ERP/SAP system - Maestro can indicate this.\nWhat is Maestro's ability to deal with very detailed fore"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "13 | Demand Planning | Ability to automatically notify (email, in-system notifications, dashboard) the submitter once the forecast has been approved by all approvers | Notifications / Approval | Demand Planning | Should Have | Yes | 3 | Scenario comment | Can be done via Scenario commit/comment, Workbook command\n2025-03-05 | 14 | Demand Planning | Ability to manually update the forecasts in real-time, including modify, cancel, reset (to original values) and apply a change to multiple products all with reason code and comments | Systems integration | Demand Planning | Must Have | Yes | 9 | S&OP"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "17 | Demand Planning | Ability to create graphical representations of Forecasts and see constraints | Reporting | Demand Planning | Must Have | Yes | 9 | Fit\n18 | Demand Planning | Ability to generate Reports, Analytics, and Insights to support Demand Planning (e.g. SLOBs, Pipeline Provision Report, Blocked Products) | Reporting | Demand Planning | Must Have | Yes | 9 | Custom Reports, As per Ixom Layout | Custom Reports, As per Ixom Layout | Custom Reports as per IXOM layout.\n19 | Demand Planning | Ability to generate Reports, Analytics, and Insights to measure Forecast vs. Actuals | Reportin"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "23 | Demand Planning | Ability to allow the users to adjust and refine the statistical forecasts based on various demand levers, like price change, seasonality, economic conditions, new product launch, marketing etc. | Forecast algorithms | Demand Planning | Must Have | Yes | 9 | Maestro supports both uni-variate and multi-variate, time series statistical models. The statistical forecasting engine is highly flexible as there is no rigid forecasting \"pyramid\" and you can generate a statistical forecast at any combination of the product-customer-location levels. Our \"BestFit\" forecasting techniq"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "In addition, Maestro offers a robust Consensus Demand Planning capability that allows planners to incorporate forecast adjustments or make over-rides at any level and intersection of the product/customer/channel hierarchies. In addition, Maestro supports the incorporation of multiple forecast streams (e.g. Marketing, Sales, Customer, Finance, POS, etc.) into the resulting Consensus Demand Plan using forecast weights. The excel-like interface is very intuitive and facilitates easy input of adjustments. While Maestro offers standard categories of adjustments out-of-the-box (e.g. promotion, distr"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "Planners can then navigate through the hierarchies and filters to visualize at the desired level. | S&OP Forecast Item Management | Fit\n25 | Demand Planning | Ability to manage forecasts using multiple demand hierarchies at the same time, and to forecast each SKU item or grouping of SKUs at different levels of the hierarchies (channel or product hierarchies) | Heirarchies | Master Data (Specific to IBP) | Must Have | Yes | 9 | Forecast accuracy and error tracking for all forecasting streams, across all hierarchy levels and different lags is standard capability in Maestro. It is possible to mod"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "27 | Demand Planning | Ability to adjust the statistical model used to generate the forecast at each level | Forecast algorithms | Demand Planning | Must Have | Yes | 9 | Yes, planners can influence and adjust the forecast at all levels of hierarchies. Hierachies in Maestro are dynamic and can be created around any type of product, location, customer attribute or data point. The tool will then aggregate or disaggregate any changes based on what level the adjustment w"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: ARCHIVE_V2-WorkshopSchedule",
+        "snippet": "Workshops: Demand Planning Area: Optimiser, On-site commences 3rd March: #3&#4 AU Cloralkali\nWorkshops: Demand Planning Area: Workshops: Distribution Planning Area, 20th?: #1 Kick-off: Core, ELT\nWorkshops: Demand Planning Area: Stream 1: Packaged (warehouse) ANZ, On-site commences 3rd March: #3&#4 NZ, Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): #12 BU Playback - Traded Bulk\nWorkshops: Demand Planning Area: Stream 2: Bulk (liquids) AU, 20th?: #2 Kick-off: All Attendees, On-site commences 3rd March: Distribution Planning Intro\nWorkshops: "
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: FINAL-WorkshopSchedule (2)",
+        "snippet": "15 | 1 | 8 | 8 | 0 | Follow-up with IXOM change managers to assist with any queries they may have to contribute to their change plans. | Workshops: Change Management | 8 | 1 | 1\n16 | 3 | 24 | 24 | 0 | Any further follow-ups required for NZ-specific use cases that may deviate from AU ChlorAlkali, Traded Bulk and Traded Packaged BU solutions that have not already been captured. | Workshops: NZ-Specific Inputs | 24 | 2 | 1 | 1\n26 | 208 | 121 | 116 | 102\n223\n-15 | hours\n-1.875 | days | 2 hours per session where possible\n8 hours info capture\n6 hours for draft\nplayback/validate to IXOM\n294 | feedbac"
+      },
+      {
+        "doc_name": "2. Day2_Ixom Structure V2.xlsx",
+        "heading_path": "2. Day2_Ixom Structure V2.xlsx — Sheet: Distribution Sites",
+        "snippet": "2. Day2_Ixom Structure V2.xlsx — Sheet: Distribution Sites\nColumns: AU Distribution | NZ Distribution | AU Distribution Trucks | NZ Distribution Trucks\nAU Distribution: Plant, NZ Distribution: Plant, AU Distribution Trucks: Plant, NZ Distribution Trucks: Plant\nAU Distribution: D300, NZ Distribution: Z300, AU Distribution Trucks: N600, NZ Distribution Trucks: Z600\nAU Distribution: D303, NZ Distribution: Z301, AU Distribution Trucks: Q600, NZ Distribution Trucks: Z601\nAU Distribution: D304, NZ Distribution: Z302, AU Distribution Trucks: S600, NZ Distribution Trucks: Z602\nAU Distribution: N313, N"
+      },
+      {
+        "doc_name": "2. Day2_Ixom Structure V2.xlsx",
+        "heading_path": "2. Day2_Ixom Structure V2.xlsx — Sheet: Distribution Sites",
+        "snippet": "AU Distribution: S311, NZ Distribution: Z364\nAU Distribution: S315, NZ Distribution: Z369\nAU Distribution: S317, NZ Distribution: Z371\nAU Distribution: T300, NZ Distribution: Z377\nAU Distribution: T309, NZ Distribution: Z379\nAU Distribution: T316, NZ Distribution: Z381\nAU Distribution: T318, NZ Distribution: Z383\nAU Distribution: T319, NZ Distribution: Z384\nAU Distribution: T320, NZ Distribution: Z385\nAU Distribution: T321, NZ Distribution: Z386\nAU Distribution: V302, NZ Distribution: Z387\nAU Distribution: V305, NZ Distribution: Z389\nAU Distribution: V306, NZ Distribution: Z390\nAU Distribution"
+      },
+      {
+        "doc_name": "2. Day2_Ixom Structure V2.xlsx",
+        "heading_path": "2. Day2_Ixom Structure V2.xlsx — Sheet: Manufacturing & Toll Sites",
+        "snippet": "2. Day2_Ixom Structure V2.xlsx — Sheet: Manufacturing & Toll Sites\nColumns: AU Manufacturing | NZ Manufacturing | AU TOLL Manufacturing | NZ TOLL Manufacturing\nAU Manufacturing: Plant, NZ Manufacturing: Plant, AU TOLL Manufacturing: Plant, NZ TOLL Manufacturing: Plant\nAU Manufacturing: D106, NZ Manufacturing: Z100, AU TOLL Manufacturing: N210, NZ TOLL Manufacturing: Z205\nAU Manufacturing: N106, NZ Manufacturing: Z103, AU TOLL Manufacturing: N217, NZ TOLL Manufacturing: Z206\nAU Manufacturing: N113, NZ Manufacturing: Z104, AU TOLL Manufacturing: N222, NZ TOLL Manufacturing: Z209\nAU Manufacturing"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W- Distribution Planning ",
+        "snippet": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W- Distribution Planning\nColumns: Distribution Planning Workshop Attendees | Details | Deliverable/s | Solution Blueprint population | IXOM Attendees | Notes | Duration\nDetails: Distribution locations replenishment, cross location inventory visibility and redistribution, Metrics, User cases finalization, Duration: 12 hours of workshops factored into quote\n4 hours initial session + follow-ups as required\nDistribution Planning Workshop Attendees: #, Details: IXOM TO PROVIDE GUIDANCE: Recommended structure of initial "
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM\nColumns: Required field | Required field | Optional field | Optional field | Optional field | Optional field | Optional field | Optional field | Optional field | Optional field | Optional field | Optional field\nOptional field: BU Affected\nRequired field: Potential Change to Operations, Required field: Process Affected, Optional field: Other Notes, Optional field: Associated Actions/Decisions, Optional field: Roles Affected, Optional field: Workstream, Optional field: Traded Bulk, Optional field: Traded Packaged, Optional field:"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W- Production & Material Plan",
+        "snippet": "Production & Material Plan Area Workshop Attendees: 15, Details: Manufacturing\nProduction & Material Plan Area Workshop Attendees: 16, Details: Supply Chain - Planning\nProduction & Material Plan Area Workshop Attendees: 17, Details: Traded Bulk\nProduction & Material Plan Area Workshop Attendees: 18, Details: Traded Packaged\nProduction & Material Plan Area Workshop Attendees: 19, Details: TBC\nProduction & Material Plan Area Workshop Attendees: 20, Details: Distribution\nProduction & Material Plan Area Workshop Attendees: 21\nProduction & Material Plan Area Workshop Attendees: 22\nProduction & Mate"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W- Sales & Operational Planning",
+        "snippet": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W- Sales & Operational Planning\nColumns: Sales & Operational Planning Workshop Attendees | Details | Deliverable/s | Solution Blueprint population | IXOM Attendees | Notes | Duration\nDetails: Aggregate supply planning, Unconstrained approval, user cases finalization., Duration: 4 hours initial session + follow-ups as required\nSales & Operational Planning Workshop Attendees: #, Details: IXOM TO PROVIDE GUIDANCE: Recommended structure of initial workshops based on in-scope BUs (Traded Packaged, Traded Bulk, ChlorAlka"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W- NZ-Specific",
+        "snippet": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W- NZ-Specific\nColumns: NZ-Specific Workshop Attendees | Details | Deliverable/s | Solution Blueprint population | IXOM Attendees | Notes | Duration\nNZ-Specific Workshop Attendees: #, Details: IXOM TO PROVIDE GUIDANCE: Recommended structure of initial workshops based on in-scope BUs (Traded Packaged, Traded Bulk, ChlorAlkali, NZ):\nNZ-Specific Workshop Attendees: 1, Details: 1\nNZ-Specific Workshop Attendees: 2\nNZ-Specific Workshop Attendees: 3\nNZ-Specific Workshop Attendees: 4\nNZ-Specific Workshop Attendees: 5\nNZ-Sp"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "Product Manager to overwrite, then notify user group.\nEach product manager to have their own forecast\nDetailed overwrites for their own product group\nPlus a statistical to constantly compare and refine.\nProduct manager may want to overwrite one of their customers' rolling view with the statistical view., Optional field: Decision Register #02, Optional field: Demand Planers, Supply Planners, Product Managers\nBMs, Optional field: Demand Planning, Optional field: YES, Optional field: YES, Optional field: YES, Optional field: YES, Optional field: 2025-03-05, Optional field: Demand Planning Stream "
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "3rd party transport/\nNZ BLT Fleet, Optional field: Distribution Planning Stream 2, Optional field: YES, Optional field: YES, Optional field: YES, Optional field: YES\nRequired field: Historical data cleansing will be required of IXOM team. Product order data, including ShipTo. Product, Customer, Site., Required field: New process, Optional field: Initially at least 12 months of historical data to cleanse and then monthly actuals (once a month). Likely to be the demand planners have the first go at it and then what they do is they'll sit down and have that discussion with the PM and manage anyth"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "Required field: Sales & Operational Planning processes (and potentially many more that will come through into the system as Task Flows) have individual tasks visibly assigned to individuals and/or groups and the dashboards highlight who may be late in completing tasks. Percieved accountability throughout processes may be higher than current processes., Required field: S&OP Processes, potentially quite a few more., Optional field: Demand Planners, Supply Planners, Finance Team, Product Managers, Commercial Team, Account Managers, Distr. Planners, Site Schedulers/Managers more, Optional field: S"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "Required field: Current process to export POs, stock, pricing and product master data from SAP will be replaced with automated integration., Required field: Current export from SAP into spreadsheets and PowerBI etc as required, also into SAP., Optional field: Managing errors (exception reports etc), Optional field: Planning team, Plus finance, production planners (currently exporting open process orders), Optional field: Demand & Supply Planning, Optional field: YES, Optional field: YES, Optional field: YES, Optional field: YES\nRequired field: Planning excel files will be replaced with Maestro"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "Required field: Constraints Optimiser (Supply.AI) will handle production planning in a more automated way compared to current human efforts. Production planners will need to input and prioritise constraints within the system. Maestro will then provide results for the production planner to review and edit as required. Anticipated to take less time overall however the process will be quite different. All the master data and transactional data need to be setup correctly to ensure optimization to work effeciently.  Both the PartSource and BOM records must accurately reflect jurisdictional controls"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "Required field: System access, roles and responsibilities will need to be decided and assigned to all users. Ex. System Administrator (manage users, roles and access), System Integration, Author, Viewer. User groups will need to be defined to best manage access., Optional field: IT, potentially planning team (may lose current responsibilities to IT)\nRequired field: IT or other role to be determined by IXOM will need to manage the 3 Maestro environments: Development, Quality (testing), Production (live), Optional field: IT or TBC\nRequired field: Purchase Requisitions will be created in Maestro "
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "Required field: Dependent Requirements will be auto calculated compared to current-state of running MRP to get these results (no action needed from users)., Required field: Supply Planning & Order Management, Optional field: Replaces current process to import product forecast and calculate base materials needed to create end-products, dilutions required etc - this would become automated in system in future-state., Optional field: Planners, Site schedulers, Optional field: YES, Optional field: YES, Optional field: YES, Optional field: YES\nRequired field: All external Forecast Upload directly ha"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "Required field: Returnable Products tracking information will be fed manually into Maestro (via a sheet created in Maestro). Believed that this process is currently manual also TBC how/where it is stored., Required field: Production Planning, Inventory Management, Optional field: Interface change. Data entry required (similar to now), Optional field: Production Planners, maybe Product Managers or Site, Optional field: YES\nRequired field: Reports will be standardized based on the user roles within Maestro., Required field: Reporting, Optional field: Further decisions on reports created for impl"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: FINAL-WorkshopSchedule (2)",
+        "snippet": "Amit | Amit late (around 10am)\nCass\nPeter\nDavid\nPH 10-Mar ANZ: CONSOLIDATION, 8.2 Traded-Bulk focus: PLAYBACK W/KINAXIS INPUT\n8.2 Traded-Bulk focus: essential\n2 | 0.5 | 4 | 2 | 2 | Blueprint project kick of meeting With super user team, quick dedmonstration of Kinaxis modules/capabilities | Kick-Off: Workshop Attendee  (All workshop attendees) | 2\n3 | 1 | 8 | 4.5 | 3.5 | 1 | Workshop: Business Unit Leaders & Key SMEs/BMs Steering sessions (2hr per BU plus playback) | 4 | 0.5\n4 | 1 | 8 | 4.5 | 3.5 | 1 | 4 | 0.5\n5 | Detailed AS IS Process - Explaining current process in detail, Data mapping, For"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: FINAL-WorkshopSchedule (2)",
+        "snippet": "8.2 Traded-Bulk focus: 2, PH 24-Mar NZ: WAIT KINAXIS\n8.2 Traded-Bulk focus: 1\nPH 24-Mar NZ: WAIT KINAXIS\n3 | 3 | 1 | 1\n8.2 Traded-Bulk focus: 2\n9 | Defining and adjusting production parameters, managing constraints, user cases finalization (production planners, material planners - purchase of raw materials) | Workshops: Production & Material Plan Area | commercial\nPH 24-Mar NZ: 4, Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): WAIT KINAXIS\nPH 24-Mar NZ: 1\nPH 24-Mar NZ: CONSOLIDATION, Anticipate Constraints Optimiser Commence (or can we com"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: ARCHIVE_V2-WorkshopSchedule",
+        "snippet": "Workshops: Demand Planning Area: may or may not need 6 hours, On-site commences 3rd March: #5.1\n3 | 1 | 1 | 0.5\nWorkshops: Demand Planning Area: may or may not need 6 hours\n3 | 1 | 1 | 0.5\nWorkshops: Demand Planning Area: BOM analysis, inventory policy,KPIs\nStocking strategies; SLOBS; Dependent requirements; Safety stock (calcs, formulas); Cycle stock; Taret Inventory levels; ABC classification; reorder points; Lead times;, 20th?: non-commercial\nFree Day: 1\nWorkshops: Demand Planning Area: Aggregate supply planning, unconstrained approval. Data reporting, dashboards, transparency of informatio"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: ARCHIVE_V2-WorkshopSchedule",
+        "snippet": "Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): 4\nWorkshops: Demand Planning Area: 14 hours for consolidation, Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): CONSOLIDATION\nAnticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): 4\nWorkshops: Demand Planning Area: Kinaxis-lead (assumed 20 hours of sessions,, 20th?: manufacturing, Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): 4\nAnticipate "
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: ARCHIVE_V2-WorkshopSchedule",
+        "snippet": "28.000000000000004 | 224.00000000000003 | 167 | 100.99999999999999 | 110\n277\nWorkshops: Demand Planning Area: hours\nWorkshops: Demand Planning Area: days\n8 hours info capture | 4 | 4 | 4 | 3\n6 hours for draft | 4 | 4 | 4\nplayback/validate to IXOM | 4 | 4 | 4\n294 | feedback edits | 4 | 4 | 4\nWorkshops: Demand Planning Area: hours\nWorkshops: Demand Planning Area: days\npresent back to IXOM | 4 | 4 | 4\n4 | 4 | 4\nWorkshops: Constrain Optimistation"
+      }
+    ],
+    "gen_source": "doc"
+  }
+}

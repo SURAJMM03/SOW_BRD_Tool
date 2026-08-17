@@ -1,0 +1,18 @@
+# IMAGE FEATURE - PYTHON DEPENDENCIES
+# Add to your project's requirements.txt or create new file
+ 
+# Core image processing
+pymupdf==1.23.4
+ 
+# Already have (but listing for completeness)
+python-docx>=0.8.11
+openai>=1.0.0
+requests>=2.31.0
+fastapi>=0.104.0
+ 
+# Optional but recommended
+rank-bm25>=0.2.2
+ 
+# Development/Testing (optional)
+pytest>=7.4.0
+python-dotenv>=1.0.0

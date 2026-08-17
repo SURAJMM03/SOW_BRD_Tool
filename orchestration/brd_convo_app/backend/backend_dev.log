@@ -1,0 +1,361 @@
+INFO:     Started server process [18720]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8010 (Press CTRL+C to quit)
+INFO:     127.0.0.1:59842 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64214 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51620 - "GET /sow-workflow?project_id=e61eb428 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63145 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51583 - "POST /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51583 - "GET /choose HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51583 - "GET /sow-projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51583 - "GET /api/projects?workflow=sow HTTP/1.1" 200 OK
+2026-07-30 10:02:19,162 | INFO | ProjectRoutes | Created project c493d110: COT SC
+INFO:     127.0.0.1:51233 - "POST /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51233 - "GET /sow-upload?project_id=c493d110 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51233 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51233 - "GET /api/projects/c493d110/repositories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51233 - "GET /api/repositories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51233 - "GET /static/chat_widget.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:51233 - "GET /api/chat/scopes?project_id=c493d110 HTTP/1.1" 200 OK
+2026-07-30 10:02:27,939 | INFO | ProjectRoutes | Ingested Google’s Silicon COT Supply Chain Proposal.pptx \u2192 c493d110 (source, 10260441 bytes)
+2026-07-30 10:02:27,946 | INFO | ProjectRoutes | Chunking started in background for 5802d6a8
+INFO:     127.0.0.1:53182 - "POST /api/upload HTTP/1.1" 200 OK
+2026-07-30 10:02:27,950 | INFO | ChunkingPipeline | Processing Google’s Silicon COT Supply Chain Proposal.pptx (project=c493d110, file=5802d6a8)
+INFO:     127.0.0.1:53182 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53182 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53182 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+2026-07-30 10:02:37,655 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53182 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+2026-07-30 10:02:40,407 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53182 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53182 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+2026-07-30 10:02:46,913 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53182 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53182 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+2026-07-30 10:02:53,249 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53182 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53182 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+2026-07-30 10:02:58,898 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53182 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+2026-07-30 10:03:02,296 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53182 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+2026-07-30 10:03:06,090 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53182 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53182 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53182 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53182 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53182 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53182 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+2026-07-30 10:03:36,389 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-07-30 10:03:36,390 | WARNING | ChunkingPipeline | Vision describe failed for 'PPTX: Google’s Silicon COT Supply Chain Proposal.pptx, Slide 77 image: Picture 7': Error code: 400 - {'error': {'message': "You uploaded an unsupported image. Please make sure your image has of one the following formats: ['png', 'jpeg', 'gif', 'webp'].", 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_image_format'}}
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+2026-07-30 10:03:37,641 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:03:38,498 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+2026-07-30 10:03:44,828 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+2026-07-30 10:03:51,679 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+2026-07-30 10:03:54,837 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+2026-07-30 10:04:00,866 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+2026-07-30 10:04:04,865 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:04:04,942 | INFO | ChunkingPipeline | PPTX Google’s Silicon COT Supply Chain Proposal.pptx: 104 slides, 11 image(s) described
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+2026-07-30 10:04:16,955 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:04:17,118 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:04:17,243 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:04:17,822 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+2026-07-30 10:04:23,818 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+2026-07-30 10:04:29,173 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+2026-07-30 10:04:32,493 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:04:32,500 | INFO | ChunkingPipeline | Generating embeddings for 129 chunks from Google’s Silicon COT Supply Chain Proposal.pptx …
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+2026-07-30 10:04:35,467 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-30 10:04:35,519 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-30 10:04:36,672 | INFO | ChunkingPipeline | Embeddings ready for Google’s Silicon COT Supply Chain Proposal.pptx
+2026-07-30 10:04:36,672 | INFO | ChunkingPipeline | Produced 129 chunks from Google’s Silicon COT Supply Chain Proposal.pptx (keywords via LLM batch (20/call))
+2026-07-30 10:04:36,673 | INFO | ChunkingPipeline | Saved 0 chunks to C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\uploads\c493d110\chunks.json
+2026-07-30 10:04:36,899 | INFO | ChunkingPipeline | Saved 129 chunks to C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\uploads\c493d110\chunks.json
+INFO:     127.0.0.1:62593 - "GET /api/projects/c493d110/files HTTP/1.1" 200 OK
+2026-07-30 10:04:37,996 | WARNING | app.image_extractor | pptx image extract failed on slide 3 shape Graphic 22: no embedded image
+2026-07-30 10:04:37,996 | WARNING | app.image_extractor | pptx image extract failed on slide 3 shape Graphic 23: no embedded image
+2026-07-30 10:04:37,996 | WARNING | app.image_extractor | pptx image extract failed on slide 3 shape Graphic 24: no embedded image
+2026-07-30 10:04:38,214 | WARNING | app.image_extractor | pptx image extract failed on slide 18 shape Graphic 17: no embedded image
+2026-07-30 10:04:38,236 | WARNING | app.image_extractor | pptx image extract failed on slide 23 shape Graphic 24: no embedded image
+2026-07-30 10:04:38,243 | WARNING | app.image_extractor | pptx image extract failed on slide 27 shape Graphic 21: no embedded image
+2026-07-30 10:04:38,243 | WARNING | app.image_extractor | pptx image extract failed on slide 27 shape Graphic 23: no embedded image
+2026-07-30 10:04:38,244 | WARNING | app.image_extractor | pptx image extract failed on slide 27 shape Graphic 31: no embedded image
+2026-07-30 10:04:38,244 | WARNING | app.image_extractor | pptx image extract failed on slide 27 shape Graphic 33: no embedded image
+2026-07-30 10:04:38,244 | WARNING | app.image_extractor | pptx image extract failed on slide 27 shape Graphic 35: no embedded image
+2026-07-30 10:04:38,244 | WARNING | app.image_extractor | pptx image extract failed on slide 27 shape Graphic 37: no embedded image
+2026-07-30 10:04:38,245 | WARNING | app.image_extractor | pptx image extract failed on slide 29 shape Graphic 80: no embedded image
+2026-07-30 10:04:38,246 | WARNING | app.image_extractor | pptx image extract failed on slide 29 shape Graphic 83: no embedded image
+2026-07-30 10:04:38,246 | WARNING | app.image_extractor | pptx image extract failed on slide 29 shape Graphic 86: no embedded image
+2026-07-30 10:04:38,246 | WARNING | app.image_extractor | pptx image extract failed on slide 29 shape Graphic 89: no embedded image
+2026-07-30 10:04:38,247 | WARNING | app.image_extractor | pptx image extract failed on slide 29 shape Graphic 92: no embedded image
+2026-07-30 10:04:38,265 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 34: no embedded image
+2026-07-30 10:04:38,266 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 35: no embedded image
+2026-07-30 10:04:38,267 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 36: no embedded image
+2026-07-30 10:04:38,267 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 37: no embedded image
+2026-07-30 10:04:38,267 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 38: no embedded image
+2026-07-30 10:04:38,268 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 39: no embedded image
+2026-07-30 10:04:38,268 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 40: no embedded image
+2026-07-30 10:04:38,269 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 77: no embedded image
+2026-07-30 10:04:38,269 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 78: no embedded image
+2026-07-30 10:04:38,270 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 79: no embedded image
+2026-07-30 10:04:38,271 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 80: no embedded image
+2026-07-30 10:04:38,271 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 81: no embedded image
+2026-07-30 10:04:38,271 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 82: no embedded image
+2026-07-30 10:04:38,271 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 83: no embedded image
+2026-07-30 10:04:38,272 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 84: no embedded image
+2026-07-30 10:04:38,272 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 85: no embedded image
+2026-07-30 10:04:38,272 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 86: no embedded image
+2026-07-30 10:04:38,295 | WARNING | app.image_extractor | pptx image extract failed on slide 36 shape Graphic 61: no embedded image
+2026-07-30 10:04:38,299 | WARNING | app.image_extractor | pptx image extract failed on slide 37 shape Graphic 61: no embedded image
+2026-07-30 10:04:38,314 | WARNING | app.image_extractor | pptx image extract failed on slide 41 shape Graphic 30: no embedded image
+2026-07-30 10:04:38,315 | WARNING | app.image_extractor | pptx image extract failed on slide 41 shape Graphic 32: no embedded image
+2026-07-30 10:04:38,363 | WARNING | app.image_extractor | pptx image extract failed on slide 63 shape Graphic 120: no embedded image
+2026-07-30 10:04:38,363 | WARNING | app.image_extractor | pptx image extract failed on slide 63 shape Graphic 121: no embedded image
+2026-07-30 10:04:38,378 | WARNING | app.image_extractor | pptx image extract failed on slide 64 shape Graphic 145: no embedded image
+2026-07-30 10:04:38,395 | WARNING | app.image_extractor | pptx image extract failed on slide 66 shape Graphic 25: no embedded image
+2026-07-30 10:04:38,395 | WARNING | app.image_extractor | pptx image extract failed on slide 66 shape Graphic 26: no embedded image
+2026-07-30 10:04:38,444 | WARNING | app.image_extractor | pptx image extract failed on slide 69 shape Graphic 30: no embedded image
+2026-07-30 10:04:38,445 | WARNING | app.image_extractor | pptx image extract failed on slide 69 shape Graphic 32: no embedded image
+2026-07-30 10:04:38,459 | WARNING | app.image_extractor | pptx image extract failed on slide 71 shape Image 3: no embedded image
+2026-07-30 10:04:38,477 | WARNING | app.image_extractor | pptx image extract failed on slide 74 shape Graphic 5: no embedded image
+2026-07-30 10:04:38,803 | WARNING | app.image_extractor | pptx image extract failed on slide 77 shape Graphic 9: no embedded image
+2026-07-30 10:04:38,803 | WARNING | app.image_extractor | pptx image extract failed on slide 77 shape Graphic 11: no embedded image
+2026-07-30 10:04:38,866 | WARNING | app.image_extractor | pptx image extract failed on slide 100 shape Graphic 61: no embedded image
+2026-07-30 10:04:38,873 | WARNING | app.image_extractor | pptx image extract failed on slide 103 shape Graphic 61: no embedded image
+2026-07-30 10:04:39,154 | INFO | app.image_extractor | Extracted 64 images from pptx Google’s Silicon COT Supply Chain Proposal.pptx
+2026-07-30 10:04:39,154 | INFO | app.image_extractor | Deduped 64 \u2192 62 images from Google’s Silicon COT Supply Chain Proposal.pptx before vision
+INFO:     127.0.0.1:62593 - "GET /sow-templates?project_id=c493d110 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62593 - "GET /api/sow-templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62593 - "GET /api/sow-templates/resolve/c493d110 HTTP/1.1" 200 OK
+2026-07-30 10:04:42,394 | INFO | SOWTemplateRoutes | Applied SOW template 17c3837e (Bristlecone SOW Master Template) to project c493d110 — 58 sections
+INFO:     127.0.0.1:62593 - "POST /api/sow-templates/17c3837e/apply/c493d110 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62593 - "GET /sow-workflow?project_id=c493d110 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62593 - "GET /api/sow/sections?project_id=c493d110 HTTP/1.1" 200 OK
+2026-07-30 10:04:42,546 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:04:42,551 | INFO | app.image_extractor | Analyzed image 7708e0bbe6ed.png: A-1 Solution for SAP S/4HANA logo
+2026-07-30 10:04:44,488 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:04:44,494 | INFO | app.image_extractor | Analyzed image 423cd1944fb6.jpg: PLM Central Integration Diagram
+2026-07-30 10:04:46,291 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:04:46,293 | INFO | app.image_extractor | Analyzed image ef4d5494e6f7.jpg: Google BigQuery Logo
+2026-07-30 10:04:48,321 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:04:48,323 | INFO | app.image_extractor | Analyzed image 15aa16cb3962.png: E2Open Supply Chain Management Logo
+2026-07-30 10:04:50,559 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:04:50,560 | INFO | app.image_extractor | Analyzed image 46b718a66550.png: SAP S/4HANA ERP Logo
+2026-07-30 10:04:52,527 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:04:52,528 | INFO | app.image_extractor | Analyzed image 4ebeb75c2956.png: Key Considerations for Supply Chain Implementation
+2026-07-30 10:04:54,574 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:04:54,575 | INFO | app.image_extractor | Analyzed image 6802262d29e4.png: Sales & Distribution Core Processes Overview
+2026-07-30 10:04:56,470 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:04:56,471 | INFO | app.image_extractor | Analyzed image 9a44b2b0236a.png: Make to Stock End-to-End Process Flow
+2026-07-30 10:04:58,449 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:04:58,450 | INFO | app.image_extractor | Analyzed image 21c7d65fd807.png: Returnable Packaging Process Flow
+2026-07-30 10:05:00,080 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:00,091 | INFO | app.image_extractor | Analyzed image 22152e51078a.jpg: Integration of Global Template with Local Requirements
+2026-07-30 10:05:01,790 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:01,791 | INFO | app.image_extractor | Analyzed image 24a4cf718c57.png: S/4HANA Implementation Services Portal Overview
+2026-07-30 10:05:04,108 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:04,111 | INFO | app.image_extractor | Analyzed image 0b724006e470.png: Order To Cash ERP Process Modules Overview
+2026-07-30 10:05:06,468 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:06,470 | INFO | app.image_extractor | Analyzed image 51606ac936ea.png: S4NOW Logo
+2026-07-30 10:05:09,140 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:09,144 | INFO | app.image_extractor | Analyzed image 548e57357272.png: SEMICON Production Order Dashboard in SAP Fiori
+2026-07-30 10:05:12,411 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:12,412 | INFO | app.image_extractor | Analyzed image 4988ac5fef3d.png: SAP Production Order Workbench for Semiconductor Operations
+2026-07-30 10:05:15,115 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:15,123 | INFO | app.image_extractor | Analyzed image 98cf156d3111.png: No diagram or content displayed
+2026-07-30 10:05:17,638 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:17,640 | INFO | app.image_extractor | Analyzed image ac7885a1304f.png: Corporate Logo with Directional Motif
+2026-07-30 10:05:20,005 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:20,061 | INFO | app.image_extractor | Analyzed image 62e4bb90d982.png: UCT Company Logo
+2026-07-30 10:05:22,044 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:22,045 | INFO | app.image_extractor | Analyzed image ebab0fc2c037.png: KLA-Tencor Logo
+2026-07-30 10:05:26,249 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:26,250 | INFO | app.image_extractor | Analyzed image 0c90cfa6a1ca.png: End-to-End Silicon COT Supply Chain Flow
+2026-07-30 10:05:27,992 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:27,994 | INFO | app.image_extractor | Analyzed image 59cc4f582f23.jpg: Vishay Company Logo
+2026-07-30 10:05:33,255 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:33,256 | INFO | app.image_extractor | Analyzed image 3a59d0f0cac3.jpg: NVIDIA Corporate Logo
+2026-07-30 10:05:34,963 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:34,964 | INFO | app.image_extractor | Analyzed image 51db165db7ef.png: Google logo branding
+2026-07-30 10:05:38,476 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:38,477 | INFO | app.image_extractor | Analyzed image 98b78411e056.png: SAP EWM Inbound Process Flowchart
+2026-07-30 10:05:41,930 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:41,931 | INFO | app.image_extractor | Analyzed image dd7b7784edaf.png: SAP EWM Transaction Codes Cheat Sheet
+2026-07-30 10:05:44,690 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:44,691 | INFO | app.image_extractor | Analyzed image a9d23f0e8dc4.png: SAP EWM Warehouse Task Product Creation Workflow
+2026-07-30 10:05:47,669 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:47,672 | INFO | app.image_extractor | Analyzed image 26bccee1f6f5.png: Warehouse Terminology Mapping: Blue Yonder vs SAP EWM
+2026-07-30 10:05:50,409 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:50,410 | INFO | app.image_extractor | Analyzed image cb39588ed511.png: System-Guided Kit Order Picking Steps
+2026-07-30 10:05:52,383 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:52,384 | INFO | app.image_extractor | Analyzed image d5e0b53c7fbb.png: Bristlecone company logo
+2026-07-30 10:05:54,847 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:54,848 | INFO | app.image_extractor | Analyzed image b7cf4c151609.png: Team or User Group Icon
+2026-07-30 10:05:57,100 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:57,102 | INFO | app.image_extractor | Analyzed image 6fe6c2e7b732.png: Global connectivity symbol
+2026-07-30 10:05:58,840 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:05:58,841 | INFO | app.image_extractor | Analyzed image 10d61ded3675.png: Distribution Process Icon
+2026-07-30 10:06:00,460 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:00,461 | INFO | app.image_extractor | Analyzed image 52332f558b4e.png: Performance monitoring icon
+2026-07-30 10:06:02,327 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:02,328 | INFO | app.image_extractor | Analyzed image 3f43ea8b3568.png: End-to-End Silicon Supply Chain Process Overview
+2026-07-30 10:06:04,377 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:04,378 | INFO | app.image_extractor | Analyzed image b6e27344bcb2.png: IBPNOW Logo and Branding
+2026-07-30 10:06:06,637 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:06,639 | INFO | app.image_extractor | Analyzed image d866d97c993a.png: Celestica Company Logo
+2026-07-30 10:06:09,521 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:09,522 | INFO | app.image_extractor | Analyzed image 488b19b06af2.png: Palo Alto Networks Logo
+2026-07-30 10:06:11,496 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:11,497 | INFO | app.image_extractor | Analyzed image c03e75a45469.png: SMSC Corporate Logo
+2026-07-30 10:06:13,297 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:13,299 | INFO | app.image_extractor | Analyzed image 1311a7b2f095.png: PMC-Sierra Company Logo
+2026-07-30 10:06:16,533 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:16,542 | INFO | app.image_extractor | Analyzed image 93f59d9aef21.jpg: Digital Strategy for Supply Chain Optimization
+2026-07-30 10:06:19,547 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:19,548 | INFO | app.image_extractor | Analyzed image a83d1340946b.jpg: Supply chain analytics dashboard visualizations
+2026-07-30 10:06:24,860 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:24,861 | INFO | app.image_extractor | Analyzed image 666541580eb0.jpg: Semiconductor wafer inspection in cleanroom facility
+2026-07-30 10:06:27,043 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:27,045 | INFO | app.image_extractor | Analyzed image 5b0bf327918e.png: SAP S/4HANA platform logo
+2026-07-30 10:06:28,691 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:28,692 | INFO | app.image_extractor | Analyzed image 7b6611549a5e.png: Validated Document Icon
+2026-07-30 10:06:30,710 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:30,711 | INFO | app.image_extractor | Analyzed image 4d881ed01565.png: Circular Process Flow Diagram
+2026-07-30 10:06:32,838 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:32,843 | INFO | app.image_extractor | Analyzed image 0f248ceed10d.png: Stylized concentric circle logo
+2026-07-30 10:06:34,847 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:34,850 | INFO | app.image_extractor | Analyzed image 5ad7933e69cf.png: User synchronization icon
+2026-07-30 10:06:37,485 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:37,486 | INFO | app.image_extractor | Analyzed image ab28c1ba0ba6.png: Google Silicon COT Supply Chain Overview
+2026-07-30 10:06:39,196 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:39,197 | INFO | app.image_extractor | Analyzed image 0fa42a06023c.png: Silicon COT Supply Chain Architecture Overview
+2026-07-30 10:06:40,907 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:40,908 | INFO | app.image_extractor | Analyzed image 689305094e2e.png: End-to-End Supply Chain Process Flow
+2026-07-30 10:06:42,459 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:42,464 | INFO | app.image_extractor | Analyzed image 85e85b70d26a.png: Silicon Labs company logo
+2026-07-30 10:06:44,814 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:44,815 | INFO | app.image_extractor | Analyzed image 75d1b333b27c.png: Solution Architecture Overview for COT Supply Chain
+2026-07-30 10:06:46,858 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:46,860 | INFO | app.image_extractor | Analyzed image fcb06d106e23.png: Silicon COT Supply Chain Process Flow
+2026-07-30 10:06:49,272 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:49,275 | INFO | app.image_extractor | Analyzed image 6a888bb8ecba.png: Semiconductor COT Supply Chain Architecture
+2026-07-30 10:06:51,040 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:51,041 | INFO | app.image_extractor | Analyzed image f8e587f8606f.png: Analog Devices company logo
+2026-07-30 10:06:52,833 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:52,834 | INFO | app.image_extractor | Analyzed image d5d0eeb10eed.png: Dialog Semiconductor Logo
+2026-07-30 10:06:54,374 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:54,376 | INFO | app.image_extractor | Analyzed image 3206bf67a35b.png: Freescale Semiconductor Company Logo
+2026-07-30 10:06:55,945 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:55,947 | INFO | app.image_extractor | Analyzed image aa84a6500550.png: ATI Company Logo
+2026-07-30 10:06:57,798 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:57,804 | INFO | app.image_extractor | Analyzed image 44b6ac36651a.gif: Maxim Integrated company logo
+2026-07-30 10:06:59,793 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:06:59,796 | INFO | app.image_extractor | Analyzed image 6eb6ffbbca9c.jpg: ON Semiconductor Logo
+2026-07-30 10:07:01,974 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:01,976 | INFO | app.image_extractor | Analyzed image 9a1ae7bd3955.gif: Novellus Company Logo
+2026-07-30 10:07:03,599 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:03,601 | INFO | app.image_extractor | Analyzed image 0ebf866931e1.png: E2OPEN Company Logo
+2026-07-30 10:07:03,602 | INFO | app.image_extractor | Extracted 62 images from Google’s Silicon COT Supply Chain Proposal.pptx
+2026-07-30 10:07:03,770 | INFO | app.image_extractor | Appended 0 new images to image_chunks.json (total: 3372)
+2026-07-30 10:07:03,776 | INFO | ProjectRoutes | Image extraction complete for 5802d6a8: 62 found, 0 new
+2026-07-30 10:07:03,810 | INFO | rerun_vision | APP_DIR      : C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app
+2026-07-30 10:07:03,810 | INFO | rerun_vision | image_chunks : C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-07-30 10:07:03,811 | INFO | rerun_vision | extracted_dir: C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images
+2026-07-30 10:07:03,884 | INFO | ProjectRoutes | Vision retry: 62 image(s) from Google’s Silicon COT Supply Chain Proposal.pptx still need analysis — running now.
+2026-07-30 10:07:08,880 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:11,602 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:13,753 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:15,524 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:17,299 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:19,200 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:21,034 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:23,055 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:25,039 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:26,907 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:28,678 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:30,918 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:32,921 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:35,152 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:37,119 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:39,420 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:41,408 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:44,792 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:47,136 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:49,283 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:51,098 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:52,891 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:54,522 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:07:57,700 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:01,523 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:04,333 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:06,726 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:09,236 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:11,035 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:13,142 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:14,861 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:17,178 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:19,184 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:21,618 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:23,678 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:25,377 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:27,444 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:29,181 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:31,056 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:35,465 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:38,280 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:42,224 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:44,194 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:46,048 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:48,062 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:49,803 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:51,666 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:53,456 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:55,526 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:57,447 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:08:59,096 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:09:01,142 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:09:03,375 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:09:05,621 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:09:07,500 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:09:09,550 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:09:11,351 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:09:12,898 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:09:14,802 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:09:16,942 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:09:18,585 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:09:20,730 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-30 10:09:20,763 | INFO | ProjectRoutes | Vision retry: updated 62 image(s) from Google’s Silicon COT Supply Chain Proposal.pptx (skipped 0).
+2026-07-30 10:09:20,826 | WARNING | app.image_index | rank_bm25 not available, using simple TF search
+2026-07-30 10:09:20,881 | INFO | app.image_index | Loaded 3372 images from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-07-30 10:09:20,881 | INFO | app.image_index | Image index loaded: C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-07-30 10:09:20,913 | WARNING | app.image_index | rank_bm25 not available, using simple TF search
+2026-07-30 10:09:20,955 | INFO | app.image_index | Loaded 3372 images from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-07-30 10:09:20,960 | INFO | app.image_index | Image index reloaded: 3372 records
+2026-07-30 10:09:20,961 | INFO | ProjectRoutes | Image index reloaded after upload: 3372 records
+2026-07-30 10:09:20,962 | INFO | ProjectRoutes | Chunking complete for 5802d6a8 — 129 chunks (project total: 129)
+INFO:     127.0.0.1:49674 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49674 - "GET /favicon.ico HTTP/1.1" 404 Not Found

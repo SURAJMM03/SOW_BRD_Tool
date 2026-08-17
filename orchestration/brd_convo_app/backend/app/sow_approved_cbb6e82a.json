@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "1": {
+      "content": "This Statement of Work (SOW) is entered into between Google and Bristlecone Incorporated under the <LEGAL: confirm governing agreement type and date>.\n\n| Field | Details |\n|---|---|\n| Contract / SOW ID | <CONFIRM: contract or SOW ID> |\n| SOW Effective Date | <CONFIRM: effective date> |\n| SOW End Date | 18 months from SOW Effective Date |\n| Governing Agreement | <LEGAL: confirm governing agreement type and date> |\n| Amendment / Supersedes | New SOW; does not supersede any prior SOW unless otherwise stated in the executed agreement |\n| Agreement Duration | 18 months |\n| Delivery Location | Onsite (North America) and Offshore |",
+      "approved_at": "2026-08-17T07:13:39.268508"
+    },
+    "0": {
+      "content": "| Field | Details |\n|---|---|\n| Client Name | Google |\n| Project Name | Google Silicon COT Supply Chain |\n| Engagement Type | Implementation |\n| Contract ID | <CONFIRM: contract ID / SOW ID> |\n| Effective Date | <CONFIRM: effective date and end date> |\n| End Date | <CONFIRM: effective date and end date> |\n| Document Version | v1.0 |\n| Prepared by | Bristlecone Inc. |\n| Review Status | Draft |",
+      "approved_at": "2026-08-17T07:11:58.920649"
+    },
+    "2": {
+      "content": "This SOW covers Bristlecone’s implementation services for Google Silicon COT Supply Chain, centered on a global template-based S/4HANA transformation with integrated supply chain process enablement, implementation delivery, user adoption support, and related planning, testing, and deployment activities across onsite and offshore teams.\n\n- Establish and sign off a global design template using industry best practices, fit-to-standard workshops, stakeholder participation, and localization requirements.\n- Deliver the implementation through structured phases including blueprinting, integration and data validation, sprint-based build, testing, training, and hypercare.\n- Enable business adoption and sustained value realization through governance, change management, training, and ongoing enhancement support.\n\nDeferred scope decisions, project dependencies, and assumption-based items are identified in Section 10 (Key Assumptions) and Section 21 (Key Observations).",
+      "approved_at": "2026-08-13T08:26:54.923679"
+    },
+    "3.1": {
+      "content": "Google is undertaking this engagement to define and implement a standardized Silicon COT Supply Chain operating model on SAP S/4HANA, using a global template approach that balances common processes with site and regional requirements. The current landscape requires a clear AS-IS baseline across foundry and OSAT operations, including core PO flows, subcontracting settlement, batch and lot traceability, enterprise structure, and current use of E2Open for supply collaboration.\n\nKey pain points include fragmented process ownership, regional variation, master data harmonization needs, integration dependencies across MES, PLM, E2Open, and Kinaxis, and gaps between the current operating model and the target COT model. Business drivers for this engagement are to establish a signed global design template, enable consistent processes across AOI manufacturing and distribution plants, improve traceability and data flow design, and create a sprint-based execution plan aligned to validated business and technical requirements.",
+      "approved_at": "2026-08-13T08:28:07.229090"
+    },
+    "3.2": {
+      "content": "- Establish the AS-IS baseline for Silicon COT Supply Chain processes, systems, data flows, and organizational structure.\n- Define and validate a global TO-BE template for supply chain processes, including required localization.\n- Harmonize master data, process design, and enterprise structure for the Silicon business unit.\n- Define end-to-end integration requirements across SAP S/4HANA, E2Open, Kinaxis, and other boundary systems.\n- Validate subcontracting, traceability, yield recording, and cost-model requirements for the target operating model.\n- Align business and IT stakeholders on scope, dependencies, governance, and design assumptions.\n- Develop a detailed sprint-based execution plan with clear priorities, ownership, and delivery milestones.",
+      "approved_at": "2026-08-13T08:28:07.229090"
+    },
+    "3.3": {
+      "content": "The target-state process flow begins with a documented AS-IS assessment across front-end and back-end operations, followed by TO-BE process blueprinting, technical mapping, and execution planning. The TO-BE model is intended to support standardized supply chain processes across foundry, OSAT, manufacturing, and distribution operations, with defined integration boundaries between SAP S/4HANA, E2Open, Kinaxis, and other connected systems.\n\n<IMAGE id=\"689305094e2e\"/>\n\nAt a high level, the intended flow covers demand and supply collaboration inputs, procurement and subcontracting transactions, lot-based material movement and genealogy tracking, yield and cost capture, and downstream reporting and analytics. The final TO-BE design will incorporate global governance, local regulatory and operational requirements, validated data flows, and stakeholder sign-off before build and deployment proceed.",
+      "approved_at": "2026-08-13T08:28:07.229090"
+    }
+  }
+}

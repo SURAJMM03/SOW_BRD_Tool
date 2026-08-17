@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kinaxis Blueprint Document — Help</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#F7F7F7;--surface:#FFFFFF;--surface2:#F0F0F0;--surface3:#E8E8E8;
+      --border:#DDDDDD;--border-hover:#AAAAAA;
+      --accent:#0070C0;--accent-glow:rgba(0,112,192,0.15);--accent-soft:rgba(0,112,192,0.08);
+      --green:#0F6E56;--green-soft:rgba(15,110,86,0.1);
+      --amber:#854F0B;--amber-soft:rgba(133,79,11,0.1);
+      --red:#A32D2D;--red-soft:rgba(163,45,45,0.1);
+      --text:#1A1A1A;--text-sec:#666666;--text-dim:#AAAAAA;
+      --r:6px;--rlg:10px;
+      --font:'Segoe UI',system-ui,sans-serif;
+    }
+    body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:100vh;display:flex;flex-direction:column}
+
+    /* NAV */
+    .topnav{background:var(--surface);border-bottom:1px solid var(--border);padding:0 28px;height:52px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:relative}
+    .topnav::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.3}
+    .nav-left{display:flex;align-items:center;gap:12px}
+    .logo-mark{width:32px;height:32px;background:#003366;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff;box-shadow:0 2px 10px var(--accent-glow)}
+    .nav-title{font-size:14px;font-weight:600}
+    .nav-subtitle{font-size:10px;color:var(--text-dim);letter-spacing:.5px;text-transform:uppercase}
+    .nav-links{display:flex;gap:4px}
+    .nav-link{padding:5px 12px;border-radius:7px;font-size:12px;font-weight:500;color:var(--text-sec);text-decoration:none;transition:all .15s}
+    .nav-link:hover{background:var(--surface2);color:var(--text)}
+    .nav-link.active{background:var(--accent-soft);color:var(--accent)}
+
+    /* LAYOUT */
+    .page{display:flex;flex:1;overflow:hidden;height:calc(100vh - 52px)}
+
+    /* SIDEBAR TOC */
+    .toc{width:260px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto;padding:20px 0}
+    .toc-title{font-size:11px;font-weight:700;color:var(--text-dim);text-transform:uppercase;letter-spacing:.6px;padding:0 20px 10px}
+    .toc-link{display:block;padding:6px 20px;font-size:12px;color:var(--text-sec);text-decoration:none;border-left:3px solid transparent;transition:all .12s;line-height:1.4}
+    .toc-link:hover{color:var(--text);background:var(--bg)}
+    .toc-link.active{color:var(--accent);border-left-color:var(--accent);background:var(--accent-soft);font-weight:600}
+    .toc-link.sub{padding-left:32px;font-size:11px}
+    .toc-section{margin-top:16px}
+    .toc-phase{font-size:10px;font-weight:700;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px;padding:4px 20px 2px}
+
+    /* CONTENT */
+    .content{flex:1;overflow-y:auto;padding:40px 52px;max-width:900px}
+
+    /* TYPOGRAPHY */
+    .page-header{margin-bottom:36px}
+    .page-header h1{font-size:26px;font-weight:800;letter-spacing:-.5px;color:#0a1628;margin-bottom:6px}
+    .page-header p{font-size:14px;color:var(--text-sec);line-height:1.6}
+    .badge-row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+    .badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+    .badge-blue{background:var(--accent-soft);color:var(--accent);border:1px solid rgba(0,112,192,.2)}
+    .badge-green{background:var(--green-soft);color:var(--green);border:1px solid rgba(15,110,86,.2)}
+    .badge-amber{background:var(--amber-soft);color:var(--amber);border:1px solid rgba(133,79,11,.2)}
+
+    h2{font-size:18px;font-weight:800;letter-spacing:-.3px;margin-bottom:4px;color:#0a1628;display:flex;align-items:center;gap:10px}
+    h2 .phase-num{width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    h3{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px;text-transform:uppercase;letter-spacing:.4px}
+    p{font-size:13px;color:var(--text-sec);line-height:1.65;margin-bottom:10px}
+    .section-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px 24px;margin-bottom:24px}
+    .section-card + .section-card{margin-top:0}
+    .phase-divider{border:none;border-top:2px solid var(--border);margin:36px 0 28px}
+
+    /* CHECKLIST */
+    .checklist{list-style:none;margin:0 0 10px}
+    .checklist li{display:flex;align-items:flex-start;gap:10px;padding:5px 0;font-size:13px;color:var(--text-sec);border-bottom:1px solid var(--surface3);line-height:1.45}
+    .checklist li:last-child{border-bottom:none}
+    .checklist li::before{content:'';width:16px;height:16px;border:2px solid var(--border);border-radius:3px;flex-shrink:0;margin-top:1px;background:var(--surface)}
+    .checklist li.sub{padding-left:24px;font-size:12px}
+    .checklist li.sub::before{width:12px;height:12px;border-color:#ddd}
+
+    /* STEPS */
+    .steps{list-style:none;counter-reset:step;margin:0}
+    .steps li{counter-increment:step;display:flex;gap:14px;padding:10px 0;border-bottom:1px solid var(--surface3);font-size:13px;color:var(--text-sec);line-height:1.5}
+    .steps li:last-child{border-bottom:none}
+    .steps li::before{content:counter(step);width:22px;height:22px;border-radius:50%;background:var(--accent);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+    .steps li strong{color:var(--text)}
+    .steps li code{background:var(--surface2);padding:1px 6px;border-radius:4px;font-size:11px;font-family:monospace;color:var(--accent)}
+
+    /* WARNING / TIP boxes */
+    .tip{background:#F0F9FF;border:1px solid #BAE6FD;border-radius:8px;padding:12px 16px;font-size:12px;color:#075985;line-height:1.55;margin:12px 0}
+    .tip strong{color:#0369A1}
+    .warn{background:#FFFBEB;border:1px solid #FDE68A;border-radius:8px;padding:12px 16px;font-size:12px;color:#78350F;line-height:1.55;margin:12px 0}
+    .warn strong{color:#92400E}
+    .success{background:var(--green-soft);border:1px solid rgba(15,110,86,.25);border-radius:8px;padding:12px 16px;font-size:12px;color:var(--green);line-height:1.55;margin:12px 0}
+
+    /* TABLE */
+    table{width:100%;border-collapse:collapse;font-size:12px;margin:10px 0}
+    th{background:var(--surface2);padding:8px 12px;text-align:left;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--text-sec);border-bottom:2px solid var(--border)}
+    td{padding:8px 12px;border-bottom:1px solid var(--surface3);color:var(--text-sec);vertical-align:top;line-height:1.4}
+    tr:last-child td{border-bottom:none}
+    td strong{color:var(--text)}
+    td code{background:var(--surface2);padding:1px 5px;border-radius:3px;font-size:11px;font-family:monospace;color:var(--accent)}
+
+    /* UPLOAD ORDER */
+    .upload-order{display:flex;flex-direction:column;gap:6px;margin:10px 0}
+    .upload-row{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px 14px}
+    .upload-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .upload-label{font-size:12px;font-weight:600;color:var(--text);flex:1}
+    .upload-note{font-size:11px;color:var(--text-sec)}
+
+    /* SEARCH PILL */
+    .search-example{display:inline-block;background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:2px 10px;font-size:11px;color:var(--accent);font-weight:500;margin:2px}
+
+    /* KEYWORD TABLE */
+    .kw-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+    .kw-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px 14px}
+    .kw-section{font-size:11px;font-weight:700;color:var(--accent);margin-bottom:4px}
+    .kw-list{font-size:11px;color:var(--text-sec);line-height:1.6}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){.toc{display:none}.content{padding:28px 24px}}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="topnav">
+  <div class="nav-left">
+    <div class="logo-mark">BC</div>
+    <div>
+      <div class="nav-title">Blueprint Document Agent</div>
+      <div class="nav-subtitle">Kinaxis · BristleCone</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="/projects"     class="nav-link">Projects</a>
+    <a href="/upload"       class="nav-link">Upload</a>
+    <a href="/editor"       class="nav-link">Editor</a>
+    <a href="/repositories" class="nav-link">Repositories</a>
+    <a href="/image-repo"   class="nav-link">Image Library</a>
+    <a href="/templates"    class="nav-link">Templates</a>
+    <a href="/help"         class="nav-link active">Help</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- SIDEBAR TOC -->
+  <nav class="toc" id="toc">
+    <div class="toc-title">Contents</div>
+
+    <div class="toc-section">
+      <div class="toc-phase">Overview</div>
+      <a href="#overview"    class="toc-link" onclick="setActive(this)">What is this tool?</a>
+      <a href="#upload-order" class="toc-link" onclick="setActive(this)">Recommended upload order</a>
+    </div>
+
+    <div class="toc-section">
+      <div class="toc-phase">Phase 1 — Gather</div>
+      <a href="#workshops"   class="toc-link" onclick="setActive(this)">Workshops &amp; transcripts</a>
+      <a href="#source-docs" class="toc-link" onclick="setActive(this)">Client source documents</a>
+      <a href="#screenshots" class="toc-link" onclick="setActive(this)">Kinaxis screenshots</a>
+      <a href="#diagrams"    class="toc-link" onclick="setActive(this)">Process diagrams</a>
+      <a href="#userstories" class="toc-link" onclick="setActive(this)">User story sheet</a>
+    </div>
+
+    <div class="toc-section">
+      <div class="toc-phase">Phase 2 — Setup</div>
+      <a href="#create-project" class="toc-link" onclick="setActive(this)">Create a project</a>
+      <a href="#upload-docs"    class="toc-link" onclick="setActive(this)">Upload source documents</a>
+      <a href="#upload-images"  class="toc-link" onclick="setActive(this)">Upload images</a>
+      <a href="#apply-template" class="toc-link" onclick="setActive(this)">Apply a template</a>
+    </div>
+
+    <div class="toc-section">
+      <div class="toc-phase">Phase 3 — Author</div>
+      <a href="#section-workflow" class="toc-link" onclick="setActive(this)">Section workflow</a>
+      <a href="#browse-chunks"    class="toc-link" onclick="setActive(this)">Browse Chunks</a>
+      <a href="#browse-images"    class="toc-link" onclick="setActive(this)">Browse Images</a>
+      <a href="#generate"         class="toc-link" onclick="setActive(this)">Generate &amp; review</a>
+      <a href="#keywords"         class="toc-link" onclick="setActive(this)">Keyword reference</a>
+    </div>
+
+    <div class="toc-section">
+      <div class="toc-phase">Phase 4 — Export</div>
+      <a href="#quality-check" class="toc-link" onclick="setActive(this)">Quality check</a>
+      <a href="#export"        class="toc-link" onclick="setActive(this)">Export to Word</a>
+    </div>
+
+    <div class="toc-section">
+      <div class="toc-phase">Reference</div>
+      <a href="#troubleshoot" class="toc-link" onclick="setActive(this)">Troubleshooting</a>
+      <a href="#search-tips"  class="toc-link" onclick="setActive(this)">Search tips</a>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <div class="content" id="mainContent">
+
+    <!-- HEADER -->
+    <div class="page-header" id="overview">
+      <h1>Author's Guide &amp; Cheat Sheet</h1>
+      <p>Everything you need to prepare, set up, and author a Blueprint Document for a Kinaxis RapidResponse implementation using the Blueprint Document Agent.</p>
+      <div class="badge-row">
+        <span class="badge badge-blue">BristleCone Accelerator</span>
+        <span class="badge badge-green">Kinaxis RapidResponse</span>
+        <span class="badge badge-amber">Pre-read before your first Blueprint Document</span>
+      </div>
+    </div>
+
+    <!-- WHAT IS THIS TOOL -->
+    <div class="section-card">
+      <h3>What does this tool do?</h3>
+      <p>The Blueprint Document Agent is an AI-assisted authoring tool that generates Blueprint Document sections from your uploaded source materials (workshop transcripts, RFPs, SOWs, existing blueprints) and process images (Kinaxis screenshots, swimlane diagrams). It does <strong>not</strong> fabricate content — it synthesises from what you upload.</p>
+      <div class="tip"><strong>Key principle:</strong> The quality of the output is directly proportional to the quality and completeness of what you upload. Garbage in, garbage out — complete transcripts in, polished Blueprint Document out.</div>
+    </div>
+
+    <!-- UPLOAD ORDER -->
+    <hr class="phase-divider" id="upload-order">
+    <h2><span class="phase-num">★</span> Recommended Upload Order</h2>
+    <p>Upload in this sequence so each layer builds on the previous one.</p>
+    <div class="upload-order">
+      <div class="upload-row"><div class="upload-num">1</div><div class="upload-label">Workshop transcripts</div><div class="upload-note">Most important — drives all section content</div></div>
+      <div class="upload-row"><div class="upload-num">2</div><div class="upload-label">User story XLSX</div><div class="upload-note">Acceptance criteria &amp; process details per story</div></div>
+      <div class="upload-row"><div class="upload-num">3</div><div class="upload-label">RFP / SOW</div><div class="upload-note">Scope boundaries, client name, deliverables</div></div>
+      <div class="upload-row"><div class="upload-num">4</div><div class="upload-label">Existing blueprint / design doc</div><div class="upload-note">Prior-phase context if available</div></div>
+      <div class="upload-row"><div class="upload-num">5</div><div class="upload-label">Process diagrams (PNG/JPEG) → Image Library</div><div class="upload-note">Level 2 &amp; Level 3 flows first</div></div>
+      <div class="upload-row"><div class="upload-num">6</div><div class="upload-label">Kinaxis screenshots → Image Library</div><div class="upload-note">One per named user story or config screen</div></div>
+      <div class="upload-row"><div class="upload-num">7</div><div class="upload-label">IT / data architecture docs</div><div class="upload-note">Interface specs, ETL designs</div></div>
+    </div>
+
+    <!-- PHASE 1 -->
+    <hr class="phase-divider">
+    <h2><span class="phase-num">1</span> Gather — Before You Open the Tool</h2>
+
+    <div class="section-card" id="workshops">
+      <h3>Workshops &amp; Transcripts</h3>
+      <ul class="checklist">
+        <li>All functional design workshops completed — Demand Planning, Supply Planning, Inventory, Data Integration, Governance</li>
+        <li>Workshop transcripts exported as <code>.docx</code> or <code>.txt</code> — one file per workstream</li>
+        <li>Transcripts cleaned up (remove filler, add context where the recording was unclear)</li>
+        <li>Meeting notes / whiteboard photos consolidated into a single notes document</li>
+        <li>Action items and open questions list noted separately (these signal gaps the agent cannot fill)</li>
+      </ul>
+      <div class="warn"><strong>Do not start authoring if workshops are incomplete.</strong> The agent will generate plausible-sounding but generic content for any area with no transcript — which is worse than a blank section because it looks complete but isn't.</div>
+    </div>
+
+    <div class="section-card" id="source-docs">
+      <h3>Client Source Documents</h3>
+      <ul class="checklist">
+        <li>RFP or RFI from the client</li>
+        <li>Signed SOW or contract (confirms scope boundary)</li>
+        <li>Current-state process maps (as-is)</li>
+        <li>Organisation chart or RACI (for governance section)</li>
+        <li>Data integration specification / IT architecture document</li>
+        <li>Any existing blueprint from a prior engagement phase</li>
+        <li>Client-provided master data specs (part data, site data)</li>
+      </ul>
+    </div>
+
+    <div class="section-card" id="screenshots">
+      <h3>Kinaxis Screenshots</h3>
+      <p>Screenshots make user stories concrete and give the agent visual context to reference. Aim for <strong>one screenshot per named user story or process step</strong>.</p>
+      <ul class="checklist">
+        <li>Planning sheet screenshots — Demand, Supply, Inventory</li>
+        <li>Key RapidResponse screens referenced in scope:
+          <ul class="checklist" style="padding-left:0;margin-top:4px">
+            <li class="sub">Forecast Item configuration</li>
+            <li class="sub">Firm Planned Orders / Order Firming screen</li>
+            <li class="sub">Safety Stock / Min-Max settings</li>
+            <li class="sub">S&amp;OP Demand Snapshot calendar</li>
+            <li class="sub">Batch jobs / scheduled task setup</li>
+            <li class="sub">Custom workbooks or taskflow screens</li>
+          </ul>
+        </li>
+        <li>Screenshots of any configured automation chains</li>
+        <li>Export settings and integration log screens (for data integration section)</li>
+      </ul>
+      <div class="tip"><strong>Format:</strong> Export as <code>PNG</code> or <code>JPEG</code>. Avoid <code>EMF</code> / <code>WMF</code> (vector metafiles) — they may not render. Minimum 100 KB per image for useful vision analysis.</div>
+    </div>
+
+    <div class="section-card" id="diagrams">
+      <h3>Process Diagrams</h3>
+      <ul class="checklist">
+        <li>Level 2 process flow diagrams — one per major process (Demand Planning, Supply Planning, Inventory, Data Integration)</li>
+        <li>Level 3 swimlane diagrams for detailed sub-processes</li>
+        <li>Data flow / integration architecture diagram</li>
+        <li>Kinaxis standard process library diagrams (if licensed)</li>
+        <li>Any RACI or governance diagrams</li>
+      </ul>
+      <div class="tip"><strong>Export as PNG or JPEG from Visio or PowerPoint.</strong> PowerPoint diagrams — save each slide as an image, or export as PPTX and upload the whole file (images are extracted automatically).</div>
+    </div>
+
+    <div class="section-card" id="userstories">
+      <h3>User Story Sheet</h3>
+      <ul class="checklist">
+        <li>User story spreadsheet (<code>.xlsx</code>) with columns: ID · Role · User Story · Acceptance Criteria · Priority · Blueprint Document Section</li>
+        <li>Stories grouped by workstream / Blueprint Document section</li>
+        <li>Reviewed and confirmed by the client (or at least the lead consultant)</li>
+        <li>All acceptance criteria written in measurable terms</li>
+      </ul>
+      <div class="success">Upload the user story XLSX to the repository. When generating any section that describes configured behaviour, pin the relevant user story chunk to that section before generating.</div>
+    </div>
+
+    <!-- PHASE 2 -->
+    <hr class="phase-divider">
+    <h2><span class="phase-num">2</span> Setup — Configure the Tool</h2>
+
+    <div class="section-card" id="create-project">
+      <h3>Step 1 — Create a Project</h3>
+      <ol class="steps">
+        <li>Go to <strong>Projects</strong> → click <strong>New Project</strong></li>
+        <li>Enter <strong>client name</strong>, <strong>project name</strong>, set Status = Active</li>
+        <li>Note the project ID — you'll reference it throughout</li>
+      </ol>
+    </div>
+
+    <div class="section-card" id="upload-docs">
+      <h3>Step 2 — Upload Source Documents</h3>
+      <ol class="steps">
+        <li>Go to <strong>Repositories</strong> → create a new Repository (e.g., <em>"Arclin Source Docs"</em>)</li>
+        <li>Upload files one by one — workshop transcripts first, then RFP, SOW, user stories, existing blueprint</li>
+        <li>Wait for each file to show <code>status = Indexed</code> and a chunk count &gt; 0</li>
+        <li>If any file shows <strong>Indexed, 0 chunks</strong> — click <strong>↻ Re-index</strong> next to it</li>
+        <li>Link this repository to your project: go to <strong>Projects</strong> → select project → <strong>Repositories</strong> tab → Link</li>
+      </ol>
+      <div class="warn"><strong>Accepted formats:</strong> <code>.docx</code> · <code>.pdf</code> · <code>.xlsx</code> · <code>.pptx</code> · <code>.txt</code>. Maximum file size: 50 MB.</div>
+    </div>
+
+    <div class="section-card" id="upload-images">
+      <h3>Step 3 — Upload Images to the Image Library</h3>
+      <ol class="steps">
+        <li>Go to <strong>Image Library</strong> → create a new image Repository (e.g., <em>"Arclin Process Diagrams"</em>)</li>
+        <li>Upload all Kinaxis screenshots and process diagrams</li>
+        <li>Wait for vision analysis — each image receives a <strong>caption</strong> and <strong>keywords</strong> automatically (requires internet connection for GPT-4o)</li>
+        <li>Open the <strong>Editor</strong> for your project → click <strong>Browse Images</strong> → click <strong>Auto-tag Kinaxis</strong> to tag all Level 2 / Level 3 diagrams</li>
+        <li>Link this image Repository to your project: <strong>Projects</strong> → select project → <strong>Image Repositories</strong> tab → Link</li>
+      </ol>
+      <div class="tip">Uploading a whole <strong>PowerPoint file</strong> to a document repository will also extract all embedded slide images automatically and add them to the image index.</div>
+    </div>
+
+    <div class="section-card" id="apply-template">
+      <h3>Step 4 — Apply a Template</h3>
+      <ol class="steps">
+        <li>Go to <strong>Templates</strong> → click <strong>Import</strong> → upload your standard Blueprint Document <code>.docx</code> template (headings drive the section structure)</li>
+        <li>Open the template and configure each section:
+          <ul style="margin:6px 0 0 20px;font-size:12px;color:var(--text-sec);line-height:1.8">
+            <li><strong>Doc keywords</strong> — what the agent searches in uploaded documents</li>
+            <li><strong>Web keywords</strong> — for online research (use sparingly)</li>
+            <li><strong>Custom prompt</strong> — specific instructions for this section</li>
+            <li><strong>Heading Only</strong> toggle — for TOC / executive summary sections (no generation needed)</li>
+          </ul>
+        </li>
+        <li>Click <strong>Apply to Project</strong> → select your project</li>
+      </ol>
+    </div>
+
+    <!-- PHASE 3 -->
+    <hr class="phase-divider">
+    <h2><span class="phase-num">3</span> Author — Section by Section</h2>
+
+    <div class="section-card" id="section-workflow">
+      <h3>Section Workflow (repeat for every section)</h3>
+      <ol class="steps">
+        <li><strong>Open the section</strong> in the Blueprint Document Editor</li>
+        <li><strong>Browse Chunks</strong> — verify source content exists, pin the best 2–3 chunks</li>
+        <li><strong>Browse Images</strong> — find and pin the most relevant diagram + screenshot</li>
+        <li><strong>Generate</strong> — the agent drafts the section from your pinned content</li>
+        <li><strong>Review</strong> — fact-check against transcripts, fix names, edit inline</li>
+        <li><strong>Approve</strong> the section when satisfied</li>
+      </ol>
+      <div class="tip"><strong>Pinning is the single biggest lever for quality.</strong> Pinning 2–3 specific chunks gives far better results than relying on keyword search alone — the agent reads exactly what you pinned instead of guessing.</div>
+    </div>
+
+    <div class="section-card" id="browse-chunks">
+      <h3>Browse Chunks — Tips</h3>
+      <ul class="checklist">
+        <li>Search using <strong>single concepts</strong> first — e.g., <em>"demand forecast"</em>, <em>"S&amp;OP"</em>, <em>"safety stock"</em></li>
+        <li>If no good chunks appear for a section, the source material may be missing — upload it before generating</li>
+        <li>Use <strong>Pin to Section</strong> for the 2–3 chunks most directly relevant to the section topic</li>
+        <li>Use <strong>Use as doc keywords</strong> to extract keywords from selected chunks and add them to the section config</li>
+        <li>For user story sections, always pin the relevant rows from the user story XLSX chunk</li>
+        <li>For data integration sections, pin the interface specification chunk explicitly</li>
+      </ul>
+    </div>
+
+    <div class="section-card" id="browse-images">
+      <h3>Browse Images — Tips</h3>
+      <ul class="checklist">
+        <li>Search by <strong>concept keywords</strong> — <em>"firm planned orders"</em>, <em>"forecast item"</em>, <em>"safety stock"</em></li>
+        <li>Search by <strong>source filename</strong> — e.g., <em>"DEMAND 1"</em> to see all images from that file</li>
+        <li>Use <strong>multiple words</strong> — the search finds images where ALL words appear anywhere in the caption, keywords, or description (e.g., <em>"firm MPS orders"</em>)</li>
+        <li>Filter by <strong>Kinaxis Process Diagram</strong> tag to see only Level 2 / Level 3 process flows</li>
+        <li>Pin 1 process diagram + 1 screenshot per section for best results</li>
+        <li>Click an image to preview it before pinning</li>
+      </ul>
+      <div class="tip">If an image is from a PPTX or uploaded Repository but doesn't appear, check that the file was re-indexed after the initial upload. The image library is searchable immediately after vision analysis completes.</div>
+    </div>
+
+    <div class="section-card" id="generate">
+      <h3>Generate &amp; Review Checklist</h3>
+      <ul class="checklist">
+        <li>Pinned chunks include the primary source for this section's content</li>
+        <li>At least one process diagram is pinned for any process description section</li>
+        <li>Client name appears correctly (not "Client" or "Customer" placeholder)</li>
+        <li>Process steps match what was agreed in workshops — compare against transcript</li>
+        <li>Kinaxis screen references match the actual screenshots pinned</li>
+        <li>Any user story acceptance criteria are measurable, not vague</li>
+        <li>No Lorem Ipsum, "[TBD]", or "[INSERT]" text remains</li>
+        <li>Section length is appropriate — not padded with generic Kinaxis boilerplate</li>
+      </ul>
+      <div class="warn">If a section generates generic boilerplate with no client-specific content, go back to Browse Chunks and pin more specific source material, then regenerate.</div>
+    </div>
+
+    <div class="section-card" id="keywords">
+      <h3>Keyword Reference — By Blueprint Document Section</h3>
+      <p>Use these as starting doc keywords when configuring templates. Tune based on what's in your uploaded documents.</p>
+      <div class="kw-grid">
+        <div class="kw-card">
+          <div class="kw-section">§3 Supply Chain Scope</div>
+          <div class="kw-list">supply chain · scope · network · sites · distribution · S&amp;OP overview · planning horizon</div>
+        </div>
+        <div class="kw-card">
+          <div class="kw-section">§3.1 Supply Chain Map</div>
+          <div class="kw-list">plant · facility · distribution center · geography · network map · site list</div>
+        </div>
+        <div class="kw-card">
+          <div class="kw-section">§4 Demand Planning</div>
+          <div class="kw-list">demand planning · forecast · consensus · S&amp;OP · demand snapshot · forecast item · statistical model</div>
+        </div>
+        <div class="kw-card">
+          <div class="kw-section">§4.x Demand Processes</div>
+          <div class="kw-list">forecast consumption · demand order · inter-site demand · STO demand · forecast accuracy · MAPE</div>
+        </div>
+        <div class="kw-card">
+          <div class="kw-section">§5 Supply Planning</div>
+          <div class="kw-list">supply planning · planned orders · firm orders · MPS · MRP · lead time · safety stock · supply exceptions</div>
+        </div>
+        <div class="kw-card">
+          <div class="kw-section">§5.x Inventory Policy</div>
+          <div class="kw-list">safety stock · min max · ABC · inventory policy · buffer stock · replenishment · reorder point</div>
+        </div>
+        <div class="kw-card">
+          <div class="kw-section">§6 Data Integration</div>
+          <div class="kw-list">data integration · ETL · interface · ERP · SAP · master data · workbook · batch job · automation</div>
+        </div>
+        <div class="kw-card">
+          <div class="kw-section">§7 Implementation</div>
+          <div class="kw-list">implementation · governance · change management · training · go-live · cutover · timeline · milestone</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 4 -->
+    <hr class="phase-divider">
+    <h2><span class="phase-num">4</span> Review &amp; Export</h2>
+
+    <div class="section-card" id="quality-check">
+      <h3>Quality Check</h3>
+      <p>Click the amber <strong>Quality Check</strong> button in the editor toolbar before exporting. The check runs in two passes:</p>
+      <ol class="steps">
+        <li><strong>Structural pass</strong> — flags empty sections, stub content (&lt;80 chars), unresolved image tags, generic "Client Name" placeholders, unfilled <code>[BRACKETS]</code></li>
+        <li><strong>LLM review pass</strong> — GPT-4o reads all section outputs and flags inconsistencies, contradictions, template language, and missing client-specific content</li>
+      </ol>
+      <ul class="checklist" style="margin-top:12px">
+        <li>Fix all <strong>RED</strong> findings before exporting (empty / broken sections)</li>
+        <li>Review all <strong>AMBER</strong> findings — most need a human decision</li>
+        <li>A clean quality check ≠ a perfect document, but it catches the obvious issues</li>
+      </ul>
+    </div>
+
+    <div class="section-card" id="export">
+      <h3>Export to Word</h3>
+      <ol class="steps">
+        <li>All sections approved? Click <strong>Export</strong> in the editor toolbar</li>
+        <li>A <code>.docx</code> file downloads with all text and embedded images</li>
+        <li>Open in Word and apply your firm's document style / cover page template</li>
+        <li>Do a final read-through — check page breaks, image sizing, table formatting</li>
+        <li>Send for internal review before sharing with client</li>
+      </ol>
+    </div>
+
+    <!-- TROUBLESHOOTING -->
+    <hr class="phase-divider">
+    <h2><span class="phase-num">?</span> Troubleshooting</h2>
+
+    <div class="section-card" id="troubleshoot">
+      <table>
+        <thead><tr><th>Problem</th><th>Fix</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Section generates generic content</strong></td><td>Pin 2–3 specific chunks from workshop transcript + the user story sheet before regenerating</td></tr>
+          <tr><td><strong>File shows "Indexed, 0 chunks"</strong></td><td>Click <strong>↻ Re-index</strong> — a required parser was missing at upload time (now fixed)</td></tr>
+          <tr><td><strong>PPTX images not in Browse Images</strong></td><td>Re-index the PPTX file — image extraction now works after python-pptx is installed</td></tr>
+          <tr><td><strong>Image search returns nothing</strong></td><td>Try a single keyword first. Search matches ANY word across caption, keywords, and description. Restart server if images were recently added.</td></tr>
+          <tr><td><strong>"Client Name" in quality check</strong></td><td>Find-replace the placeholder in all sections, then re-run quality check</td></tr>
+          <tr><td><strong>No vision keywords on images</strong></td><td>Check that <code>OPENAI_API_KEY</code> is set in <code>.env</code>. Re-index triggers vision analysis automatically.</td></tr>
+          <tr><td><strong>Quality check crashes</strong></td><td>Ensure all sections are generated (not empty) before running quality check</td></tr>
+          <tr><td><strong>Export has broken images</strong></td><td>Re-pin the missing images to the section and regenerate, then export again</td></tr>
+          <tr><td><strong>Template sections not showing up</strong></td><td>Confirm the template was <strong>Applied to Project</strong> after importing — import alone is not enough</td></tr>
+          <tr><td><strong>Auto-suggest not finding new images</strong></td><td>Restart the server — the BM25 image index reloads on startup. New uploads also trigger a reload automatically.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-card" id="search-tips">
+      <h3>Search Tips — Browse Images &amp; Browse Chunks</h3>
+      <p>Both search boxes match <strong>all words independently</strong> — they don't need to appear as a phrase.</p>
+      <p><strong>Examples that work:</strong></p>
+      <div style="margin:8px 0">
+        <span class="search-example">firm MPS orders</span>
+        <span class="search-example">demand snapshot calendar</span>
+        <span class="search-example">safety stock replenishment</span>
+        <span class="search-example">Level 2 supply</span>
+        <span class="search-example">STO demand ARC</span>
+        <span class="search-example">DEMAND 1</span>
+      </div>
+      <p style="margin-top:10px"><strong>Scope of image search</strong> — searches across: caption · keywords · description · section heading · source filename · tags</p>
+      <p><strong>Scope of chunk search</strong> — searches across: heading · text content · source document name</p>
+      <div class="tip">If you can't find an image, try searching just one distinctive word from the caption (e.g., <em>"firmed"</em> or <em>"snapshot"</em>). The full phrase may not match but individual words will.</div>
+    </div>
+
+    <div style="height:60px"></div>
+  </div><!-- /content -->
+</div><!-- /page -->
+
+<script>
+function setActive(el) {
+  document.querySelectorAll('.toc-link').forEach(l => l.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// Highlight TOC link as user scrolls
+const sections = document.querySelectorAll('[id]');
+const tocLinks = document.querySelectorAll('.toc-link');
+const content  = document.getElementById('mainContent');
+
+content.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(sec => {
+    if (content.scrollTop + 80 >= sec.offsetTop) current = sec.id;
+  });
+  tocLinks.forEach(link => {
+    const href = link.getAttribute('href').slice(1);
+    link.classList.toggle('active', href === current);
+  });
+});
+</script>
+</body>
+</html>

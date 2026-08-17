@@ -1,0 +1,15 @@
+INFO:     Will watch for changes in these directories: ['C:\\Users\\Suraj.mm1\\Downloads\\docgenplatform-feature-doc-quality-fixes-sohan\\infrastructure\\unified_mcp']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [10568] using WatchFiles
+2026-07-30 10:00:04,793 INFO KinaxisHTTP  SSL: certifi bundle applied
+2026-07-30 10:00:04,802 INFO KinaxisHTTP  Loaded .env from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\infrastructure\unified_mcp\.env
+2026-07-30 10:00:06,089 INFO KinaxisHTTP  Web search backend: openai
+INFO:     Started server process [1304]
+INFO:     Waiting for application startup.
+2026-07-30 10:00:06,166 INFO KinaxisHTTP  Doc index ready — 0 chunks from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\infrastructure\unified_mcp\reference_docs
+INFO:     Application startup complete.
+INFO:     127.0.0.1:53781 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53783 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55502 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49684 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54307 - "GET /health HTTP/1.1" 200 OK

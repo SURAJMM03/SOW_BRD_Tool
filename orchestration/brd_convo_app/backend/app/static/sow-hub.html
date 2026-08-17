@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bristlecone SOW — Choose an option</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#F7F7F7;--surface:#FFFFFF;
+      --border:#DDDDDD;--accent:#0070C0;--accent-soft:rgba(0,112,192,0.08);
+      --green:#0F6E56;--green-soft:rgba(15,110,86,0.08);
+      --navy:#003366;
+      --text:#1A1A1A;--text-sec:#777777;
+      --radius:6px;--radius-lg:10px;
+      --font:'Segoe UI',system-ui,sans-serif;
+    }
+    body{min-height:100vh;background:var(--bg);color:var(--text);font-family:var(--font);font-size:14px;display:flex;flex-direction:column}
+    .topnav{min-height:52px;background:var(--surface);border-bottom:1px solid var(--border);padding:0 28px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+    .nav-left{display:flex;align-items:center;gap:12px}
+    .logo-mark{width:32px;height:32px;background:var(--navy);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff}
+    .nav-title{font-size:14px;font-weight:600}
+    .nav-subtitle{font-size:10px;color:var(--text-sec);letter-spacing:.5px;text-transform:uppercase}
+    .back-link{display:flex;align-items:center;gap:5px;padding:6px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text-sec);font-size:11px;font-weight:600;text-decoration:none}
+    .back-link:hover{background:#EFEFEF}
+
+    .wrap{flex:1;max-width:900px;width:100%;margin:0 auto;padding:60px 20px}
+    .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--text-sec);font-weight:800;margin-bottom:8px;text-align:center}
+    h1{font-size:24px;font-weight:600;color:var(--navy);margin-bottom:8px;text-align:center}
+    .lead{font-size:13.5px;color:var(--text-sec);line-height:1.55;text-align:center;max-width:520px;margin:0 auto}
+    .choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px}
+    @media(max-width:700px){.choice-grid{grid-template-columns:1fr}}
+    .choice-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;cursor:pointer;text-align:left;transition:border-color .15s,box-shadow .15s}
+    .choice-card:hover{border-color:var(--accent);box-shadow:0 4px 18px rgba(0,112,192,.10)}
+    .choice-card .dot{width:40px;height:40px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;margin-bottom:14px}
+    .choice-card.review .dot{background:var(--accent-soft);color:var(--accent)}
+    .choice-card.draft .dot{background:var(--green-soft);color:var(--green)}
+    .choice-card h3{font-size:17px;font-weight:650;color:var(--text);margin-bottom:8px}
+    .choice-card p{font-size:12.5px;color:var(--text-sec);line-height:1.55}
+  </style>
+</head>
+<body>
+<script>
+  (function(){
+    if(!sessionStorage.getItem("auth_user")) window.location.replace("/");
+  })();
+</script>
+
+<nav class="topnav">
+  <div class="nav-left">
+    <div class="logo-mark">B</div>
+    <div>
+      <div class="nav-title">Bristlecone SOW Automation</div>
+      <div class="nav-subtitle">SOW Tool</div>
+    </div>
+  </div>
+  <a href="/choose" class="back-link">← Hub</a>
+</nav>
+
+<div class="wrap">
+  <div class="eyebrow">SOW Tool</div>
+  <h1>What do you want to do?</h1>
+  <p class="lead">Pick an option to get started. You can always come back here for the other one.</p>
+
+  <div class="choice-grid">
+    <button class="choice-card review" onclick="window.location.href='/sow'">
+      <div class="dot">R</div>
+      <h3>Review a SOW</h3>
+      <p>Upload or paste an existing/draft SOW document and get a section-by-section
+         report against Bristlecone's checklist, with citations, confidence tags, and top risks.</p>
+    </button>
+    <button class="choice-card draft" onclick="window.location.href='/sow-projects'">
+      <div class="dot">D</div>
+      <h3>Draft a SOW</h3>
+      <p>Draft a new Statement of Work section by section — upload sources, choose Bristlecone's
+         format or a client's own template, generate/review/approve each section, then export.</p>
+    </button>
+  </div>
+</div>
+</body>
+</html>

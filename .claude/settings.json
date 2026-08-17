@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r \"class.*Agent\" \"c:/BristleCone/08-05_BDGAgent 2/08-05_BDGAgent/agents/\" --include=\"*.py\" ! -path \"*/venv/*\" ! -path \"*/__pycache__/*\")",
+      "PowerShell(head -20)",
+      "Bash(pip --version)",
+      "Bash(python3 -c ' *)",
+      "Bash(grep -n \"\\\\\\\\*\\\\\\\\*\\\\|bold\\\\|markdown\" app/sow_section_routes.py)",
+      "Bash(curl -s -D - -o /dev/null \"http://localhost:8010/sow-workflow\")",
+      "Bash(\"./venv/Scripts/python.exe\" -m pip install --quiet playwright)",
+      "Read(//c/Users/Suraj.mm1/Downloads/**)",
+      "Bash(powershell -Command \"Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::OpenRead\\('docgenplatform-dist.zip'\\).Entries | Select-Object -ExpandProperty FullName\")",
+      "Bash(wc -l /tmp_ziplist.txt)",
+      "Bash(grep -i \"venv/\\\\|\\\\.env$\\\\|users\\\\.db\\\\|\\\\.log$\" /tmp_ziplist.txt)"
+    ]
+  }
+}

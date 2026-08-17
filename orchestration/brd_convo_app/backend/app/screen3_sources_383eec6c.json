@@ -1,0 +1,124 @@
+{
+  "2": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "2.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "RemoveInvalidDockCommitments",
+        "snippet": "Chapter 13. Optimizer parameters\nl RemoveInvalidDockCommitments: If true, this parameter instructs the system to remove dock\ncommitments which are not compatible with carrier live/nonlive loading or which are not compatible\nwith available equipment types. This parameter applies primarily to rating calls for Transportation\nPlanner.\nl RespectDomicileBusinessHours: Determines whether business hours should be respected at the\ndomicile pickup and drop off. The following are the allowed values:\no 0: Business hours are not respected at the domicile pickup and the domicile drop off.\nEquipment can be p"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "CheckRequiredEquipmentDockCommitment",
+        "snippet": "means no shipment with positive pieces can be loaded into the compartment.\nl CompartmentMaxSkids0Constraining: This parameter determines whether 0 maximum skids in\ncompartment capacity is constraining. The default value is false. If true, 0 maximum pieces means\nno shipment with positive skids can be loaded into the compartment.\nl ComputeAlternateLoadCosts: When true, alternate costs using planning tariffs will be maintained\nat all times and written back when an optimization is committed.\nl ContainerFaceOutsideOnPallet: If true, each container on pallet must have at least one surface\nfacing out"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Chapter 8. Configuring the Schema File",
+        "snippet": "Chapter 8. Configuring the Schema File\nChapter 8. Configuring the Schema File\nThe Schema file is a text file that serves as a dictionary file when you use flat files as a data source for\nthe Transportation Planner Optimizer.\nThe Schema file includes the following content:\nl Information about Logistics Tariff Manager setup and files.\nl Information about where to locate files that are not found in the data directory specified in the queue\nof the Setup file.\nl A delimiter for parsing data.\nl Formatting information for date and time output specifications.\nl Data file names and the format of each d"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "LoadConfigurationReduceHeightUsage",
+        "snippet": "l LogShipmentScheduling: Provides extra logging for all loads, trips, or webs which contain the\nshipments specified. This should be a comma separated list of shipment identifiers. Useful in tracing\nscheduling issues. This parameter applies to all rating engines. For more information, see Set logging\nconfiguration.\nl LogTariffRating: Provides extra logging for all loads or trips which route or rate using the tariffs\nspecified. This should be a comma separated list of tariff codes. Useful in tracing tariff setup issues.\nLogTariffRating can also be a tariff service pair:\n<tariff code>@<service co"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "WriteDistanceMatrix",
+        "snippet": "Chapter 8. Log functions\nWriteDistanceMatrix writes the complete matrix of distance/time pairs for the current plan. Any\ndistance/time pairs which have not already been computed between locations in the plan will be\ncomputed. The distance matrix can be used for troubleshooting issues, identifying data discrepancies, or\nusing as an override file for future optimizations.\nArgument\nType\nDescription\nDefault\nLower\nLimit\nUpper\nLimit\nAllow\n‘ANY’\nOutputFileName\nText\nUse this argument to specify the output file\nname for the distance matrix. It may be a\nrelative or absolute path. It can have one\nor more"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "UnloadedDistanceAssignment",
+        "snippet": "only the selected route. It is not currently in use.\nl UseAppointmentLengthAsMaxHandlingTime: This parameter controls whether a stop's appointment\nduration will be used as the maximum handling time at the dock. If true, handling time will not be\nincurred which is greater than an appointment defined on a stop. The default value is false.\nl UseAppointmentToAdjustDeliveryElapsedDays: This parameter controls whether to adjust delivery\nelapsed days by origin and destination appointments. The default value is false.\nl UseAxleBalancing: This parameter is used to enable or disable axle balancing const"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Chapter 8. Configuring the Schema File",
+        "snippet": "Canceling a request\n86\nTo cancel a request\n86\nRunning operations\n87\nTo run operations\n87\nTo access the Transportation Planner metadata documentation\n87\nChapter 8. Configuring the Schema File\n88\nLocation of the schema file\n88\nSchema file configuration tasks\n88\nSpecifying the location of files not in the data folder\n88\nSpecifying the delimiter in the schema file\n89\nSpecifying date and time formats\n89\nTime of day and time span formats\n89\nDate formats\n90\nData table formats\n90\nSample schema file\n91\nAppendix A. Python Scripts\n103\nSummary of general scripts\n103\ncancelTMRequest.py\n104\ncisRequest.py\n10"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Chapter 8. Configuring the Schema File",
+        "snippet": "Hubs = \"Hubs.txt\"\nLocation = \"Location.txt\"\nDistanceOverride = \"DistanceOverride.txt\"\nBusinessHours = \"BusinessHours.txt\"\nShipmentLeg = \"ShipmentLeg.txt\"\nTransportation Planner Implementation Guide\n88\n© Copyright 1995-2025 Blue Yonder Group, Inc. - Confidential"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "CheckRequiredEquipmentDockCommitment",
+        "snippet": "Chapter 13. Optimizer parameters\nl CheckRequiredEquipmentDockCommitment: If true, existing dock commitments will be validated to\ndetermine if equipment type restrictions are met. The default value is false.\nl CheckRequiredEquipmentLocationExclusion: If true, will validate if required equipment type and\nlocation are compatible. The default value is true.\nl CheckRestrictedServiceForAllShipments: When true, all shipments on a load must have the same\nhard committed service to use a restricted service. The default value is false.\nl CheckRouteCarrierDockInternalHandling: If true, TryDockScheduling w"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "LoadConfigurationReduceHeightUsage",
+        "snippet": "Chapter 13. Optimizer parameters\nl LoadConfigurationReduceHeightUsage: This parameter defines whether to combine all load spaces\nfor a load into one load space horizontally first before stacking any freight. Freight may still be stacked\nhigher, if needed.\nl LoadConfigurationStackingRuleByLWH: Defines the stacking rule based on the length, width, and\nheight of containers. If the parameter is set to TRUE, only containers with the same length, width, and\nheight are stacked. If the parameter is set to FALSE, stacking does not consider whether the containers\nhave the same length, width or height. T"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "RemoveInvalidDockCommitments",
+        "snippet": "(comma separated values) file. The format for each line in the file is:\nCarrier,Tariff,Service,ResourceType,IsPercentageConstraint,Basis,PenaltyMaxPerUnit,PenaltyMinPerU\nnit. IsPercentageConstraint must be either true or false or it defaults to true. See\nBasisForPercentResourceAllocation for valid values for Basis. Valid ResourceType values are:\no 0 - ALL_RESOURCE (default)\no 1 - CARRIER\no 2 - TARIFF_SERVICE\no 3 - LANE_AVAIALBILITY\no 4 - DOMICILE\no 5 - DUMMY\nIf carrier, tariff, or service are not specified, the definition applies to all (treated as wild card).\nl ResourceUnconstrainedOutsideTim"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "UnloadedDistanceAssignment",
+        "snippet": "Chapter 13. Optimizer parameters\nl UnloadedDistanceAssignment: For intransit unloaded distance between loads on trips, this parameter\ndetermines the distance assignment for reporting and rating.\no If the value is 0, unloaded distance is assigned to the preceding load.\no If the value is 0, unloaded distance is assigned to the preceding load.\no If the value is 1, unloaded distance is assigned to the subsequent load.\no If the value is 2, unloaded distance is split evenly between the loads.\nThe default for this parameter is 0.\nl UnitsLevel: This parameter overrides UnitsLevel defined at item/produ"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "5": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Arclin Manufacturing - Demand Planning",
+        "snippet": "Arclin Manufacturing - Demand Planning\nBlueprint Workshop Notes\nClient Overview\nClient Name: Arclin Manufacturing Inc.\nIndustry: Specialty Chemicals Manufacturing\nHeadquarters: Georgia, USA\nERP System: SAP S/4HANA\nCurrent Planning Tool: Excel-based planning process\nProject Objective: Implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and\nInventory Optimization.\nCurrent Challenges\nDemand planners spend significant time consolidating forecasts from multiple regions.\nForecast accuracy is approximately 68%.\nNo centralized planning platform exists across North America and Europe."
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Demand Planning Requirements",
+        "snippet": "Demand Planning Requirements\nForecast Management\nGenerate statistical baseline forecasts.\nSupport forecast overrides by planners.\nTrack forecast history and changes.\nSupport multiple forecast hierarchies.\nCollaboration\nAllow sales teams to provide forecast input.\nEnable approval workflows.\nProvide forecast comparison reports.\nAnalytics\nMeasure Forecast Accuracy.\nMeasure Forecast Bias.\nTrack MAPE by product family.\nProvide dashboard-based reporting.\nSupply Planning Requirements\nGenerate constrained supply plans.\nIdentify material shortages.\nSupport capacity planning.\nProvide exception-based ale"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Success Criteria",
+        "snippet": "Required Interfaces:\nProduct Master\nCustomer Master\nSales Orders\nInventory Balances\nPurchase Orders\nProduction Orders\nData Refresh Frequency:\nEvery 4 hours\nSuccess Criteria\nForecast Accuracy > 85%\nInventory Reduction > 15%\nPlanning Cycle Reduction > 30%\nImproved Planner Productivity\nSingle Source of Planning Data\nWorkshop Notes\nBusiness users emphasized the need for collaborative forecasting and visibility across regions.\nDemand planners requested automated forecast generation with the ability to manually override\nforecasts when market conditions change.\nSupply planners highlighted recurring i"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "CylinderRollMaxTotalDiameterDifference",
+        "snippet": "following are the allowed values:\no 0: Not allowed\no 1: Front of trailer only (near driver)\no 2: Back of trailer only (near door)\no 3: Both front and back are allowed\nThe default value is 2.\nl CylinderTailEnderMinHeight: Defines the minimum height required for a cylinder to be a tail-ender.\nThe default value is 10000.\nl DaysInventoryPlanningHorizon: This parameter is used to define the inventory planning horizon\nas [EarliestScheduleDate, EarliestScheduleDate + DaysInventoryPlanningHorizon], note that\nEarliestScheduleDate could be overridden by Manager Date or Current Date in options.\nl Disable"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Chapter 2. Transportation Planner",
+        "snippet": "Chapter 2. Transportation Planner\nChapter 2. Transportation Planner\nThis section provides an overview of Transportation Planner and how it can provide a total\ntransportation planning solution.\nTransportation Planner overview\nThe Transportation Planner solution performs the following business functions:\nl Transportation optimization: Optimizations are typically sourced from Transportation Manager. The\noptimization consolidates shipments, designs routes, and assigns carriers and services to\naccommodate all delivery times, services restrictions, and resource constraints. You can perform\noptimizat"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "TryMinimizeFleetSize",
+        "snippet": "Chapter 10. Strategy functions\nFor example, if TryMinimizeFleetSize estimates the number of required vehicles in a solution to be 10\n(based on the total elapsed time for all loads in all domiciles divided by the total time available in the\nplanning horizon), then scheduling is performed using this initial estimate. That is, the Optimizer\nschedules the use of 10 vehicles in the planning horizon. However, it is possible that this estimated\nnumber of vehicles is too low to achieve the moving of all freight on all loads by the end of the planning\nhorizon. In this case, additional vehicles are used"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Chapter 2. Transportation Planner",
+        "snippet": "scheduling, as reflected by the engines included:\nl Shipment Scheduling Engine\nl Optimizer Server (provides routing and rating and processing of optimization requests)\nThe other components of Transportation Planner support your use of these engines:\nl Transportation Manager (installed separately from Transportation Planner)\nl Transportation Planner user interface (web client)\nl Shipment Scheduler user interface (web client)\nl Parameter File Editor\nl Strategy File Editor\nTransportation Planner Implementation Guide\n3\n© Copyright 1995-2025 Blue Yonder Group, Inc. - Confidential"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "TryMinimizeFleetSize",
+        "snippet": "and actual number of vehicles used, until there is no difference, and the lowest number of vehicles\nrequired to transport the required freight within the planning horizon is scheduled.\nNote: This strategy does not switch between equipment types currently.\nThe following table illustrates a sample series of iterations and associated estimated and actual vehicle\nnumbers as a result of running the TryMinimizeFleetSize.\nIteration\nMin. Required Vehicles (Est.)\nActual # Vehicles Scheduled Difference\n1\n10\n20\n10\n2\n(10+20)/2 = 15\n19\n4\n3\n(15+19)/2 = 17\n18\n1\n4\n(17+18)/2 = 17.5, round up to 18 18\n0\nTryRela"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "CylinderRollMaxTotalDiameterDifference",
+        "snippet": "Chapter 13. Optimizer parameters\nl CylinderRollMaxTotalDiameterDifference: Defines the maximum difference allowed between the\ndiameters of the smallest and the biggest cylinders in a roll. The default value is 10000.\nl CylinderRollUpperLayerDoorGap: Cylinder roll stacked on the upper level cannot utilize the side door\ngap determined by this parameter and equipment type's side door location. The default value is 0 and\nit is not constraining.\nl CylinderRollUpperLayerMaxWidth: Defines the maximum width allowed when a cylinder roll is placed\non top of other cylinder rolls. The default value is 100"
+      }
+    ],
+    "gen_source": "doc"
+  }
+}

@@ -1,0 +1,29 @@
+# Kinaxis MCP Server + Test Client requirements
+# Install with: pip install -r unified_mcp/requirements.txt
+
+# HTTP server framework used directly by kinaxis_http_server.py
+# (not a transitive dep of mcp/uvicorn — must be listed explicitly)
+fastapi>=0.110
+uvicorn[standard]>=0.27
+
+# MCP SDK (FastMCP server + stdio client for tests)
+mcp>=1.0.0
+
+# OpenAI (default web search backend)
+openai>=1.60.0
+
+# URL fetching
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+markdownify>=0.11.0
+
+# Document processing (doc_search)
+python-docx>=1.1.0
+pypdf>=4.0.0
+pymupdf>=1.24.0
+
+# Environment variable loading from .env file
+python-dotenv>=1.0.0
+
+# Optional: coloured test output
+colorama>=0.4.6

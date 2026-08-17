@@ -1,0 +1,165 @@
+{
+  "active": [
+    {
+      "id": "1",
+      "title": "Introduction",
+      "group": "Section 1"
+    },
+    {
+      "id": "1.1",
+      "title": "Company Information",
+      "group": "Section 1"
+    },
+    {
+      "id": "1.2",
+      "title": "Current State of Business",
+      "group": "Section 1"
+    },
+    {
+      "id": "1.3",
+      "title": "Purpose",
+      "group": "Section 1"
+    },
+    {
+      "id": "1.4",
+      "title": "Scope",
+      "group": "Section 1"
+    },
+    {
+      "id": "1.5",
+      "title": "Definitions & Acronyms",
+      "group": "Section 1"
+    },
+    {
+      "id": "2",
+      "title": "Benefit Realization",
+      "group": "Section 2"
+    },
+    {
+      "id": "2.1",
+      "title": "Business Issues",
+      "group": "Section 2"
+    },
+    {
+      "id": "2.2",
+      "title": "Value Drivers",
+      "group": "Section 2"
+    },
+    {
+      "id": "3",
+      "title": "Supply Chain Scope",
+      "group": "Section 3"
+    },
+    {
+      "id": "3.1",
+      "title": "Supply Chain Maps",
+      "group": "Section 3"
+    },
+    {
+      "id": "3.2",
+      "title": "Sites",
+      "group": "Section 3"
+    },
+    {
+      "id": "3.3",
+      "title": "Demand Foundation",
+      "group": "Section 3"
+    },
+    {
+      "id": "3.4",
+      "title": "Supply Foundation",
+      "group": "Section 3"
+    },
+    {
+      "id": "3.5",
+      "title": "Inventory Management Foundation",
+      "group": "Section 3"
+    },
+    {
+      "id": "3.6",
+      "title": "Constraints",
+      "group": "Section 3"
+    },
+    {
+      "id": "3.7",
+      "title": "Scenario Structure",
+      "group": "Section 3"
+    },
+    {
+      "id": "4",
+      "title": "Demand Planning",
+      "group": "Section 4"
+    },
+    {
+      "id": "4.1",
+      "title": "Demand Planning Process Overview",
+      "group": "Section 4"
+    },
+    {
+      "id": "4.2",
+      "title": "Forecast Consumption",
+      "group": "Section 4"
+    },
+    {
+      "id": "4.2.1",
+      "title": "Solution Assumptions",
+      "group": "Section 4"
+    },
+    {
+      "id": "4.2.2",
+      "title": "Resources",
+      "group": "Section 4"
+    },
+    {
+      "id": "5",
+      "title": "Supply & Inventory Planning",
+      "group": "Section 5"
+    },
+    {
+      "id": "5.1",
+      "title": "Review and Adjust Planning Parameters",
+      "group": "Section 5"
+    },
+    {
+      "id": "5.2",
+      "title": "Manage Capacity Constraints",
+      "group": "Section 5"
+    },
+    {
+      "id": "5.3",
+      "title": "Resolve Supply Plan Exceptions",
+      "group": "Section 5"
+    },
+    {
+      "id": "5.4",
+      "title": "Resolve Inventory Exceptions",
+      "group": "Section 5"
+    },
+    {
+      "id": "6",
+      "title": "Data Integration",
+      "group": "Section 6"
+    },
+    {
+      "id": "6.1",
+      "title": "Architecture",
+      "group": "Section 6"
+    },
+    {
+      "id": "6.2",
+      "title": "Data Sources",
+      "group": "Section 6"
+    },
+    {
+      "id": "6.3",
+      "title": "Data Files",
+      "group": "Section 6"
+    },
+    {
+      "id": "6.4",
+      "title": "Data Frequency",
+      "group": "Section 6"
+    }
+  ],
+  "archived": []
+}

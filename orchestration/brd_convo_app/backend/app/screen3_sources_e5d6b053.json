@@ -1,0 +1,44 @@
+{
+  "1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Arclin Manufacturing - Demand Planning",
+        "snippet": "Arclin Manufacturing - Demand Planning\nBlueprint Workshop Notes\nClient Overview\nClient Name: Arclin Manufacturing Inc.\nIndustry: Specialty Chemicals Manufacturing\nHeadquarters: Georgia, USA\nERP System: SAP S/4HANA\nCurrent Planning Tool: Excel-based planning process\nProject Objective: Implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and\nInventory Optimization.\nCurrent Challenges\nDemand planners spend significant time consolidating forecasts from multiple regions.\nForecast accuracy is approximately 68%.\nNo centralized planning platform exists across North America and Europe."
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Demand Planning Requirements",
+        "snippet": "Demand Planning Requirements\nForecast Management\nGenerate statistical baseline forecasts.\nSupport forecast overrides by planners.\nTrack forecast history and changes.\nSupport multiple forecast hierarchies.\nCollaboration\nAllow sales teams to provide forecast input.\nEnable approval workflows.\nProvide forecast comparison reports.\nAnalytics\nMeasure Forecast Accuracy.\nMeasure Forecast Bias.\nTrack MAPE by product family.\nProvide dashboard-based reporting.\nSupply Planning Requirements\nGenerate constrained supply plans.\nIdentify material shortages.\nSupport capacity planning.\nProvide exception-based ale"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Success Criteria",
+        "snippet": "Required Interfaces:\nProduct Master\nCustomer Master\nSales Orders\nInventory Balances\nPurchase Orders\nProduction Orders\nData Refresh Frequency:\nEvery 4 hours\nSuccess Criteria\nForecast Accuracy > 85%\nInventory Reduction > 15%\nPlanning Cycle Reduction > 30%\nImproved Planner Productivity\nSingle Source of Planning Data\nWorkshop Notes\nBusiness users emphasized the need for collaborative forecasting and visibility across regions.\nDemand planners requested automated forecast generation with the ability to manually override\nforecasts when market conditions change.\nSupply planners highlighted recurring i"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Arclin Manufacturing - Demand Planning",
+        "snippet": "Arclin Manufacturing - Demand Planning\nBlueprint Workshop Notes\nClient Overview\nClient Name: Arclin Manufacturing Inc.\nIndustry: Specialty Chemicals Manufacturing\nHeadquarters: Georgia, USA\nERP System: SAP S/4HANA\nCurrent Planning Tool: Excel-based planning process\nProject Objective: Implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and\nInventory Optimization.\nCurrent Challenges\nDemand planners spend significant time consolidating forecasts from multiple regions.\nForecast accuracy is approximately 68%.\nNo centralized planning platform exists across North America and Europe."
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Demand Planning Requirements",
+        "snippet": "Demand Planning Requirements\nForecast Management\nGenerate statistical baseline forecasts.\nSupport forecast overrides by planners.\nTrack forecast history and changes.\nSupport multiple forecast hierarchies.\nCollaboration\nAllow sales teams to provide forecast input.\nEnable approval workflows.\nProvide forecast comparison reports.\nAnalytics\nMeasure Forecast Accuracy.\nMeasure Forecast Bias.\nTrack MAPE by product family.\nProvide dashboard-based reporting.\nSupply Planning Requirements\nGenerate constrained supply plans.\nIdentify material shortages.\nSupport capacity planning.\nProvide exception-based ale"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Success Criteria",
+        "snippet": "Required Interfaces:\nProduct Master\nCustomer Master\nSales Orders\nInventory Balances\nPurchase Orders\nProduction Orders\nData Refresh Frequency:\nEvery 4 hours\nSuccess Criteria\nForecast Accuracy > 85%\nInventory Reduction > 15%\nPlanning Cycle Reduction > 30%\nImproved Planner Productivity\nSingle Source of Planning Data\nWorkshop Notes\nBusiness users emphasized the need for collaborative forecasting and visibility across regions.\nDemand planners requested automated forecast generation with the ability to manually override\nforecasts when market conditions change.\nSupply planners highlighted recurring i"
+      }
+    ],
+    "gen_source": "doc"
+  }
+}

@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bristlecone SOW — Draft &amp; Review</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#F7F7F7;--surface:#FFFFFF;--surface2:#F0F0F0;--surface3:#E8E8E8;
+      --border:#DDDDDD;--border-hover:#AAAAAA;
+      --accent:#0070C0;--accent-glow:rgba(0,112,192,0.15);--accent-soft:rgba(0,112,192,0.08);
+      --green:#0F6E56;--green-soft:rgba(15,110,86,0.1);
+      --amber:#854F0B;--amber-soft:rgba(133,79,11,0.1);
+      --red:#A32D2D;--red-soft:rgba(163,45,45,0.1);
+      --text:#1A1A1A;--text-sec:#666666;--text-dim:#999999;
+      --r:6px;--rlg:10px;
+      --font:'Segoe UI',system-ui,sans-serif;--mono:'Consolas','Courier New',monospace;
+    }
+    body{background:var(--bg);color:var(--text);font-family:var(--font);height:100vh;display:flex;flex-direction:column;overflow:hidden}
+
+    .topnav{background:var(--surface);border-bottom:1px solid var(--border);padding:0 20px;height:52px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+    .nav-left{display:flex;align-items:center;gap:12px}
+    .logo-mark{width:32px;height:32px;background:#003366;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff}
+    .nav-title{font-size:14px;font-weight:600}
+    .nav-subtitle{font-size:10px;color:var(--text-dim);letter-spacing:.5px;text-transform:uppercase}
+    .progress-wrap{display:flex;align-items:center;gap:10px}
+    .progress-track{width:160px;height:6px;background:var(--surface3);border-radius:3px;overflow:hidden}
+    .progress-fill{height:100%;background:var(--green);border-radius:3px;transition:width .3s}
+    .progress-label{font-size:11px;color:var(--text-sec);font-weight:600}
+    .nav-right{display:flex;align-items:center;gap:8px}
+    .btn{padding:7px 14px;border-radius:8px;border:1px solid var(--border);background:var(--surface2);color:var(--text-sec);font-family:var(--font);font-size:12px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px}
+    .btn:hover{border-color:var(--accent);color:var(--accent)}
+    .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .btn.primary:hover{background:#3d8fce}
+    .btn.green{background:var(--green);color:#fff;border-color:var(--green)}
+    .btn.green:hover{background:#128063}
+    .btn:disabled{opacity:.5;cursor:not-allowed}
+    .btn svg{width:13px;height:13px}
+    .uname{font-size:12px;font-weight:500}
+    .uav{width:28px;height:28px;border-radius:7px;background:var(--surface3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:11px}
+
+    .body{flex:1;display:flex;min-height:0}
+
+    .sidebar{width:280px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto;padding:10px}
+    .sec-item{display:flex;align-items:center;gap:8px;padding:9px 10px;border-radius:7px;cursor:pointer;margin-bottom:2px;font-size:12px}
+    .sec-item:hover{background:var(--surface2)}
+    .sec-item.active{background:var(--accent-soft);color:var(--accent);font-weight:600}
+    .sec-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;background:var(--border)}
+    .sec-dot.in-progress{background:var(--amber)}
+    .sec-dot.generated{background:var(--green)}
+    .sec-title{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .sec-sub{font-size:10px;color:var(--text-dim);flex-shrink:0}
+    .sec-tbl{font-size:8px;font-family:var(--mono);color:var(--text-dim);border:1px solid var(--border);border-radius:3px;padding:0 4px;flex-shrink:0}
+    .sec-img-badge{font-size:11px;flex-shrink:0;opacity:.75}
+
+    .content{flex:1;display:flex;flex-direction:column;padding:20px 28px;overflow-y:auto;min-width:0}
+    .content-hdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
+    .content-hdr h2{font-size:18px;font-weight:700}
+    .content-hdr .badge{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;padding:3px 9px;border-radius:5px;background:var(--surface3);color:var(--text-dim)}
+    .content-hdr .badge.generated{background:var(--green-soft);color:var(--green)}
+    .content-hdr .badge.in-progress{background:var(--amber-soft);color:var(--amber)}
+
+    .instructions-row{margin-bottom:12px}
+    .instructions-row label{font-size:11px;font-weight:600;color:var(--text-sec);display:block;margin-bottom:5px}
+    .instructions-row textarea{width:100%;min-height:44px;padding:9px 12px;background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:var(--font);font-size:12.5px;resize:vertical;outline:none}
+    .instructions-row textarea:focus{border-color:var(--accent)}
+
+    .action-row{display:flex;gap:8px;margin-bottom:14px}
+
+    .draft-area{flex:1;display:flex;flex-direction:column;min-height:200px}
+    .draft-empty{flex:1;display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:13px;border:1px dashed var(--border);border-radius:var(--rlg);background:var(--surface)}
+    .draft-textarea{flex:1;width:100%;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--rlg);color:var(--text);font-family:var(--mono);font-size:12.5px;line-height:1.6;resize:none;outline:none;display:none}
+    .draft-textarea.visible{display:block}
+    .draft-textarea:focus{border-color:var(--accent)}
+
+    .meta-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .meta-chip{font-size:10px;padding:3px 9px;border-radius:10px;background:var(--surface2);color:var(--text-sec);border:1px solid var(--border)}
+    .meta-chip.img{background:var(--accent-soft);color:var(--accent);border-color:transparent}
+
+    .approve-row{display:flex;justify-content:flex-end;gap:8px;margin-top:14px}
+
+    .attach-panel{margin-top:16px;padding:12px 14px;border:1px solid var(--border);border-radius:var(--rlg);background:var(--surface)}
+    .attach-hdr{font-size:12px;font-weight:600;color:var(--text-sec);margin-bottom:10px}
+    .attach-form{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .attach-form select,.attach-form input[type=text]{padding:7px 10px;border:1px solid var(--border);border-radius:7px;background:var(--surface);color:var(--text);font-family:var(--font);font-size:12px}
+    .attach-form input[type=text]{flex:1;min-width:140px}
+    .attach-form input[type=file]{font-size:11px;max-width:220px}
+    .attach-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .attach-item{display:flex;align-items:center;gap:6px;padding:5px 8px;border:1px solid var(--border);border-radius:8px;font-size:11px;background:var(--surface2)}
+    .attach-item img{width:24px;height:24px;object-fit:cover;border-radius:4px}
+    .attach-item .att-del{cursor:pointer;color:var(--text-dim);font-weight:700;padding:0 2px}
+    .attach-item .att-del:hover{color:var(--red)}
+    .attach-item .att-sub{color:var(--text-dim);font-size:10px}
+
+    .paste-zone{margin-top:8px;padding:9px 12px;border:1px dashed var(--border);border-radius:8px;font-size:11px;color:var(--text-dim);cursor:text;display:flex;align-items:center;gap:8px}
+    .paste-zone:focus{outline:none;border-color:var(--accent);color:var(--accent)}
+    .paste-zone.has-image{border-style:solid;color:var(--text)}
+    .paste-zone img{max-height:36px;border-radius:4px}
+
+    .preview-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:300;display:flex;align-items:center;justify-content:center;padding:30px}
+    .preview-modal{background:var(--surface);border-radius:var(--rlg);width:min(760px,100%);max-height:100%;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+    .preview-modal-hdr{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--border);font-size:13px;font-weight:600}
+    .preview-surface{padding:20px 26px;overflow-y:auto;background:#fff;color:#111}
+
+    .editor-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:310;display:flex;align-items:center;justify-content:center;padding:24px}
+    .editor-modal{background:var(--surface);border-radius:var(--rlg);width:min(1100px,96vw);height:90vh;display:flex;flex-direction:column;box-shadow:0 24px 70px rgba(0,0,0,.35)}
+    .editor-modal-hdr{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--border);flex-shrink:0}
+    .editor-modal-hdr .editor-title{font-size:13px;font-weight:700;flex-shrink:0}
+    .editor-modal-hdr select{flex:1;max-width:360px;padding:7px 10px;border:1px solid var(--border);border-radius:7px;background:var(--surface);color:var(--text);font-family:var(--font);font-size:12px}
+    .editor-modal-body{flex:1;min-height:0;padding:18px 22px}
+    #editor-textarea{width:100%;height:100%;padding:18px 22px;background:var(--surface);border:1px solid var(--border);border-radius:var(--rlg);color:var(--text);font-family:var(--mono);font-size:15px;line-height:1.7;resize:none;outline:none}
+    #editor-textarea:focus{border-color:var(--accent)}
+    .editor-modal-ftr{display:flex;justify-content:flex-end;gap:8px;padding:14px 18px;border-top:1px solid var(--border);flex-shrink:0}
+
+    .tc{position:fixed;top:60px;right:20px;z-index:200;display:flex;flex-direction:column;gap:6px}
+    .t{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:10px 14px;font-size:12px;display:flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(0,0,0,.15);max-width:340px}
+    .t.error{border-color:var(--red)}.t.success{border-color:var(--green)}
+    .spin{animation:spin 1s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+  </style>
+</head>
+<body>
+<script>
+  (function() { if (!sessionStorage.getItem('auth_user')) window.location.replace('/'); })();
+</script>
+
+<nav class="topnav">
+  <div class="nav-left">
+    <div class="logo-mark">B</div>
+    <div><div class="nav-title">Bristlecone SOW Automation</div><div class="nav-subtitle">Draft &amp; Review</div></div>
+  </div>
+  <div class="progress-wrap">
+    <span class="progress-label" id="progress-label">0 / 0 approved</span>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  </div>
+  <div class="nav-right">
+    <button class="btn" id="bulk-btn" onclick="toggleBulkGeneration()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      Draft all remaining
+    </button>
+    <button class="btn green" id="download-btn" disabled onclick="downloadSow()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download SOW
+    </button>
+    <div class="uav" id="nav-uav"></div>
+  </div>
+</nav>
+
+<div class="body">
+  <div class="sidebar" id="sidebar"></div>
+  <div class="content">
+    <div class="content-hdr">
+      <h2 id="sec-title">—</h2>
+      <span class="badge" id="sec-badge">Not started</span>
+    </div>
+
+    <div class="instructions-row">
+      <label>Optional instructions for this section (e.g. specific facts to include, tone, emphasis)</label>
+      <textarea id="instructions" placeholder="Leave blank to draft from the uploaded source material and approved sections alone…"></textarea>
+    </div>
+
+    <div class="action-row">
+      <button class="btn primary" id="gen-btn" onclick="generateCurrentSection()">
+        <svg id="gen-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        <svg id="gen-btn-spinner" class="spin" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9" opacity=".25"/><path d="M21 12a9 9 0 00-9-9"/></svg>
+        <span id="gen-btn-label">Generate</span>
+      </button>
+      <button class="btn" id="preview-btn" disabled onclick="previewCurrentSection()">Preview</button>
+      <button class="btn" id="editor-btn" disabled onclick="openEditor()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3H5a2 2 0 00-2 2v3M16 3h3a2 2 0 012 2v3M8 21H5a2 2 0 01-2-2v-3M16 21h3a2 2 0 002-2v-3"/></svg>
+        Expand editor
+      </button>
+    </div>
+
+    <div class="draft-area">
+      <div class="draft-empty" id="draft-empty">Click "Generate" to draft this section.</div>
+      <textarea class="draft-textarea" id="draft-text" spellcheck="false"></textarea>
+    </div>
+
+    <div class="meta-row" id="meta-row"></div>
+
+    <div class="attach-panel" id="attach-panel">
+      <div class="attach-hdr">
+        <span>📎 Reference material for this section</span>
+      </div>
+      <div class="attach-form">
+        <select id="attach-target"></select>
+        <input type="file" id="attach-file" accept=".png,.jpg,.jpeg,.gif,.bmp,.webp,.docx,.pdf,.pptx,.xlsx" />
+        <input type="text" id="attach-caption" placeholder="Optional caption / description" />
+        <button class="btn" onclick="uploadAttachment()">Attach</button>
+      </div>
+      <div class="paste-zone" id="paste-zone" tabindex="0">📋 Click here, then press Ctrl+V to paste an image copied from PowerPoint/Word</div>
+      <div class="attach-list" id="attach-list"></div>
+    </div>
+
+    <div class="approve-row" id="approve-row" style="display:none">
+      <button class="btn" onclick="discardDraft()">Discard</button>
+      <button class="btn green" onclick="approveCurrentSection()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Approve &amp; Next
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="preview-overlay" id="preview-overlay" style="display:none">
+  <div class="preview-modal">
+    <div class="preview-modal-hdr">
+      <span>Section preview</span>
+      <button class="btn" onclick="closePreview()">Close</button>
+    </div>
+    <div class="preview-surface" id="preview-surface"></div>
+  </div>
+</div>
+
+<div class="editor-overlay" id="editor-overlay" style="display:none">
+  <div class="editor-modal">
+    <div class="editor-modal-hdr">
+      <span class="editor-title" id="editor-title">—</span>
+      <select id="editor-section-select" onchange="editorJumpToSection(this.value)"></select>
+      <button class="btn" onclick="closeEditor()">Close</button>
+    </div>
+    <div class="editor-modal-body">
+      <textarea id="editor-textarea" spellcheck="false"></textarea>
+    </div>
+    <div class="editor-modal-ftr">
+      <button class="btn" onclick="editorDiscard()">Discard</button>
+      <button class="btn green" id="editor-approve-btn" onclick="editorApprove()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Approve &amp; Next
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="tc" id="tc"></div>
+
+<script>
+const PROJECT_ID = new URLSearchParams(window.location.search).get('project_id');
+if (!PROJECT_ID) window.location.href = '/sow-projects';
+
+let sections = [];
+let activeId = null;
+let currentDraft = null; // { content, sources, image_ids } — unapproved preview
+let bulkPolling = null;
+let attachmentsBySection = {}; // { section_id: [attachment, ...] }
+let editorOpen = false;
+
+function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function toast(m,ty='info'){
+  const c=document.getElementById('tc'),t=document.createElement('div');t.className=`t ${ty}`;
+  t.innerHTML=`<span>${ty==='error'?'⚠':ty==='success'?'✓':'ℹ'}</span><span>${esc(m)}</span>`;
+  c.appendChild(t);setTimeout(()=>t.remove(),4000);
+}
+
+async function loadSections(){
+  try {
+    const res = await fetch(`/api/sow/sections?project_id=${PROJECT_ID}`);
+    if (!res.ok) throw new Error();
+    const data = await res.json();
+    sections = data.sections;
+    if (!activeId && sections.length) {
+      activeId = sections.find(s => s.status !== 'generated')?.id || sections[0]?.id;
+    }
+    renderSidebar();
+    renderContent();
+    updateProgress();
+    loadAttachments();
+  } catch(e) {
+    toast('Could not load sections — has a template been applied to this project?', 'error');
+  }
+}
+
+async function loadAttachments(){
+  try {
+    const res = await fetch(`/api/sow/sections/attachments?project_id=${PROJECT_ID}`);
+    if (res.ok) { const data = await res.json(); attachmentsBySection = data.attachments || {}; }
+  } catch(e) {}
+  renderAttachPanel();
+}
+
+function renderAttachPanel(){
+  const s = currentSection();
+  const targetSel = document.getElementById('attach-target');
+  const listEl = document.getElementById('attach-list');
+  if (!s) { targetSel.innerHTML = ''; listEl.innerHTML = ''; return; }
+
+  const family = s.family && s.family.length ? s.family : [{ id: s.id, title: s.title }];
+  targetSel.innerHTML = family.map(f => `<option value="${f.id}">${esc(f.title)}</option>`).join('');
+
+  const items = [];
+  family.forEach(f => {
+    (attachmentsBySection[f.id] || []).forEach(att => {
+      const thumb = att.kind === 'image'
+        ? `<img src="/api/sow/sections/attachments/${att.attachment_id}/file?project_id=${PROJECT_ID}" />`
+        : '📄';
+      items.push(`<span class="attach-item">
+        ${thumb}
+        <span>${esc(att.filename)}</span>
+        ${family.length > 1 ? `<span class="att-sub">(${esc(f.title)})</span>` : ''}
+        <span class="att-del" onclick="deleteAttachment('${f.id}','${att.attachment_id}')" title="Remove">×</span>
+      </span>`);
+    });
+  });
+  listEl.innerHTML = items.join('') || '<span style="font-size:11px;color:var(--text-dim)">No reference material attached yet.</span>';
+}
+
+let pastedImageFile = null; // set by the paste-zone's 'paste' handler below
+
+function resetPasteZone(){
+  const zone = document.getElementById('paste-zone');
+  zone.classList.remove('has-image');
+  zone.textContent = '📋 Click here, then press Ctrl+V to paste an image copied from PowerPoint/Word';
+}
+
+async function uploadAttachment(){
+  const s = currentSection();
+  if (!s) return;
+  const targetId = document.getElementById('attach-target').value;
+  const fileInput = document.getElementById('attach-file');
+  const captionInput = document.getElementById('attach-caption');
+  // A pasted image (from the paste-zone) takes priority over the file
+  // picker, since pasting populates our own variable rather than the
+  // native <input type=file> (browsers don't reliably let JS set that).
+  const file = pastedImageFile || fileInput.files[0];
+  if (!file) { toast('Choose a file, or paste an image, to attach first.', 'error'); return; }
+
+  const form = new FormData();
+  form.append('project_id', PROJECT_ID);
+  form.append('file', file);
+  form.append('caption', captionInput.value.trim());
+
+  try {
+    const res = await fetch(`/api/sow/sections/${targetId}/attachments`, { method: 'POST', body: form });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || 'Upload failed');
+    toast('Attached.', 'success');
+    fileInput.value = '';
+    captionInput.value = '';
+    pastedImageFile = null;
+    resetPasteZone();
+    await loadAttachments();
+  } catch(e) {
+    toast(e.message || 'Upload failed', 'error');
+  }
+}
+
+(function setUpPasteZone(){
+  const zone = document.getElementById('paste-zone');
+  const fileInput = document.getElementById('attach-file');
+  // Picking a file the normal way should drop any previously pasted image,
+  // so the two input methods never silently fight over which one "wins".
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files[0]) { pastedImageFile = null; resetPasteZone(); }
+  });
+  zone.addEventListener('paste', (e) => {
+    const items = (e.clipboardData && e.clipboardData.items) || [];
+    for (const item of items) {
+      if (item.kind === 'file' && item.type.startsWith('image/')) {
+        const blob = item.getAsFile();
+        if (!blob) continue;
+        const ext = (item.type.split('/')[1] || 'png').replace('jpeg', 'jpg');
+        pastedImageFile = new File([blob], `pasted-image-${Date.now()}.${ext}`, { type: item.type });
+        fileInput.value = '';
+        const url = URL.createObjectURL(blob);
+        zone.classList.add('has-image');
+        zone.innerHTML = `<img src="${url}" /><span>Image pasted — click Attach to save it (optionally add a caption first).</span>`;
+        e.preventDefault();
+        return;
+      }
+    }
+    toast('Clipboard did not contain an image.', 'error');
+  });
+})();
+
+async function deleteAttachment(sectionId, attachmentId){
+  try {
+    const res = await fetch(
+      `/api/sow/sections/${sectionId}/attachments/${attachmentId}?project_id=${PROJECT_ID}`,
+      { method: 'DELETE' }
+    );
+    if (!res.ok) { const d = await res.json(); throw new Error(d.detail || 'Delete failed'); }
+    await loadAttachments();
+  } catch(e) {
+    toast(e.message || 'Delete failed', 'error');
+  }
+}
+
+function renderSidebar(){
+  const el = document.getElementById('sidebar');
+  // Only top-level sections are ever listed here — a section with numbered
+  // sub-parts (e.g. "3.1"/"3.2"/"3.3") is drafted together with its parent
+  // in one combined step (see generateCurrentSection), so every entry is
+  // directly clickable/generatable; there's no separate group-header/child
+  // distinction to render any more.
+  el.innerHTML = sections.map(s => {
+    return `<div class="sec-item ${s.id === activeId ? 'active' : ''}" onclick="selectSection('${s.id}')">
+      <span class="sec-dot ${s.status}"></span>
+      <span class="sec-title">${esc(s.title)}</span>
+      ${s.child_count ? `<span class="sec-sub">${s.child_count} sub</span>` : ''}
+      ${s.is_table_section ? '<span class="sec-tbl">TBL</span>' : ''}
+      ${s.image_suggested ? '<span class="sec-img-badge" title="An image/diagram typically helps this section">🖼</span>' : ''}
+    </div>`;
+  }).join('');
+
+  const sel = document.getElementById('editor-section-select');
+  const prevValue = sel.value;
+  sel.innerHTML = sections.map(s => `<option value="${s.id}">${esc(s.title)}</option>`).join('');
+  if (sections.some(s => s.id === prevValue)) sel.value = prevValue;
+}
+
+function updateProgress(){
+  const total = sections.length;
+  const done = sections.filter(s => s.status === 'generated').length;
+  document.getElementById('progress-label').textContent = `${done} / ${total} approved`;
+  document.getElementById('progress-fill').style.width = total ? `${(done/total)*100}%` : '0%';
+  document.getElementById('download-btn').disabled = done === 0;
+}
+
+function currentSection(){ return sections.find(s => s.id === activeId); }
+
+function renderContent(){
+  const s = currentSection();
+  if (!s) return;
+  document.getElementById('sec-title').textContent = s.title
+    + (s.child_count ? ` (${s.child_count} sub-sections drafted together)` : '');
+  const badge = document.getElementById('sec-badge');
+  badge.textContent = s.status === 'generated' ? 'Approved' : s.status === 'in-progress' ? 'Draft pending review' : 'Not started';
+  badge.className = `badge ${s.status}`;
+  document.getElementById('instructions').value = s.custom_instructions || '';
+  document.getElementById('preview-btn').disabled = !(s.draft_content || s.has_content);
+  document.getElementById('editor-btn').disabled = !(s.draft_content || s.has_content);
+  const ta = document.getElementById('draft-text');
+  const meta = document.getElementById('meta-row');
+
+  if (s.draft_content) {
+    // A draft already exists (from an earlier "Generate", or from "Draft all
+    // remaining") — load it straight into the review pane instead of making
+    // the reviewer click Generate again to see what's already there.
+    currentDraft = { content: s.draft_content, sources: s.draft_sources || [], image_ids: [] };
+    ta.value = s.draft_content;
+    ta.classList.add('visible');
+    ta.disabled = false;
+    document.getElementById('draft-empty').style.display = 'none';
+    document.getElementById('approve-row').style.display = 'flex';
+    const chips = (s.draft_sources || []).filter(Boolean).map(src => `<span class="meta-chip">📄 ${esc(src)}</span>`);
+    meta.innerHTML = chips.join('');
+  } else {
+    currentDraft = null;
+    ta.value = '';
+    ta.classList.remove('visible');
+    document.getElementById('draft-empty').style.display = 'flex';
+    document.getElementById('draft-empty').textContent = s.has_content
+      ? 'This section is already approved. Click "Generate" to redraft it.'
+      : 'Click "Generate" to draft this section.';
+    document.getElementById('approve-row').style.display = 'none';
+    meta.innerHTML = '';
+  }
+
+  if (editorOpen) syncEditorFromDraft();
+}
+
+// ── Full-screen editor (Feature 3) ──
+// #editor-textarea mirrors #draft-text at all times: opening the editor
+// copies draft-text -> editor-textarea, every keystroke in the editor
+// writes straight back to draft-text, and switching sections (from the
+// sidebar OR the editor's own dropdown) re-syncs via renderContent() above.
+// This means approveCurrentSection()/discardDraft() (which only ever read
+// draft-text) work completely unmodified — the editor never needs its own
+// save step or its own approve/discard logic.
+function syncEditorFromDraft(){
+  const s = currentSection();
+  document.getElementById('editor-title').textContent = s ? s.title : '—';
+  document.getElementById('editor-textarea').value = document.getElementById('draft-text').value;
+  document.getElementById('editor-approve-btn').style.display =
+    document.getElementById('approve-row').style.display === 'none' ? 'none' : '';
+  const sel = document.getElementById('editor-section-select');
+  if (s) sel.value = s.id;
+}
+
+async function openEditor(){
+  const s = currentSection();
+  if (!s) return;
+  editorOpen = true;
+
+  // #draft-text is deliberately left empty for an already-approved section
+  // with no pending draft (the main pane shows "click Generate to redraft"
+  // instead) — the most common reason to open the editor is to revisit and
+  // tweak exactly that already-approved content, so fetch it fresh instead
+  // of opening on a blank textarea.
+  const ta = document.getElementById('draft-text');
+  if (!ta.value.trim() && s.has_content) {
+    try {
+      const res = await fetch(`/api/sow/sections/${s.id}/content?project_id=${PROJECT_ID}`);
+      const data = await res.json();
+      if (res.ok) {
+        ta.value = data.content;
+        ta.classList.add('visible');
+        ta.disabled = false;
+        document.getElementById('draft-empty').style.display = 'none';
+        document.getElementById('approve-row').style.display = 'flex';
+      }
+    } catch(e) {}
+  }
+
+  syncEditorFromDraft();
+  document.getElementById('editor-overlay').style.display = 'flex';
+  document.getElementById('editor-textarea').focus();
+}
+
+function closeEditor(){
+  editorOpen = false;
+  document.getElementById('editor-overlay').style.display = 'none';
+}
+
+function editorJumpToSection(id){
+  selectSection(id); // reloads draft-text for the new section; renderContent() re-syncs the editor since editorOpen is still true
+}
+
+function editorDiscard(){
+  discardDraft(); // renderContent() re-syncs the editor since editorOpen is still true
+}
+
+async function editorApprove(){
+  await approveCurrentSection(); // reads draft-text (kept in sync below) and auto-advances to the next unapproved section
+  closeEditor();
+}
+
+(function setUpEditorSync(){
+  document.getElementById('editor-textarea').addEventListener('input', (e) => {
+    document.getElementById('draft-text').value = e.target.value;
+  });
+})();
+
+function selectSection(id){
+  activeId = id;
+  renderSidebar();
+  renderContent();
+  renderAttachPanel();
+}
+
+async function generateCurrentSection(){
+  const s = currentSection();
+  if (!s) return;
+  if (s.has_content) {
+    const msg = s.child_count
+      ? `This will replace the previously approved content for "${s.title}" and all ${s.child_count} of its sub-sections. Continue?`
+      : `This will replace the previously approved content for "${s.title}". Continue?`;
+    if (!confirm(msg)) return;
+  }
+  const btn = document.getElementById('gen-btn');
+  const label = document.getElementById('gen-btn-label');
+  const icon = document.getElementById('gen-btn-icon');
+  const spinner = document.getElementById('gen-btn-spinner');
+  btn.disabled = true;
+  icon.style.display = 'none';
+  spinner.style.display = '';
+  label.textContent = 'Generating…';
+  document.getElementById('draft-empty').style.display = 'none';
+  const ta = document.getElementById('draft-text');
+  ta.classList.add('visible');
+  ta.value = 'Drafting this section — this can take a little while…';
+  ta.disabled = true;
+
+  try {
+    const instructions = document.getElementById('instructions').value.trim();
+    const res = await fetch(`/api/sow/sections/${s.id}/generate`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ project_id: PROJECT_ID, custom_instructions: instructions }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || 'Generation failed');
+    currentDraft = data;
+    ta.value = data.content;
+    ta.disabled = false;
+    document.getElementById('approve-row').style.display = 'flex';
+
+    const meta = document.getElementById('meta-row');
+    const chips = [];
+    (data.sources || []).filter(Boolean).forEach(src => chips.push(`<span class="meta-chip">📄 ${esc(src)}</span>`));
+    (data.image_ids || []).forEach(() => chips.push(`<span class="meta-chip img">🖼 diagram suggested</span>`));
+    meta.innerHTML = chips.join('');
+
+    await loadSectionsQuiet(); // refresh status dot to in-progress
+  } catch(e) {
+    ta.value = '';
+    ta.classList.remove('visible');
+    document.getElementById('draft-empty').style.display = 'flex';
+    document.getElementById('draft-empty').textContent = 'Generation failed — try again.';
+    toast(e.message || 'Generation failed', 'error');
+  } finally {
+    btn.disabled = false;
+    label.textContent = 'Generate';
+    icon.style.display = '';
+    spinner.style.display = 'none';
+  }
+}
+
+function discardDraft(){
+  renderContent();
+}
+
+async function previewCurrentSection(){
+  const s = currentSection();
+  if (!s) return;
+  const surface = document.getElementById('preview-surface');
+  const overlay = document.getElementById('preview-overlay');
+  surface.innerHTML = '<p style="color:#666">Loading preview…</p>';
+  overlay.style.display = 'flex';
+  try {
+    const res = await fetch(`/api/sow/sections/${s.id}/preview?project_id=${PROJECT_ID}`);
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || 'Preview failed');
+    surface.innerHTML = data.html;
+  } catch(e) {
+    surface.innerHTML = `<p style="color:#a32d2d">${esc(e.message || 'Preview failed')}</p>`;
+  }
+}
+
+function closePreview(){
+  document.getElementById('preview-overlay').style.display = 'none';
+}
+
+async function approveCurrentSection(){
+  const s = currentSection();
+  if (!s) return;
+  const content = document.getElementById('draft-text').value;
+  if (!content.trim()) { toast('Nothing to approve.', 'error'); return; }
+  try {
+    const res = await fetch(`/api/sow/sections/${s.id}/approve`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ project_id: PROJECT_ID, content }),
+    });
+    if (!res.ok) { const d = await res.json(); throw new Error(d.detail || 'Approve failed'); }
+    toast(`"${s.title}" approved`, 'success');
+    await loadSections();
+    const next = sections.find(x => x.status !== 'generated');
+    if (next) selectSection(next.id);
+  } catch(e) {
+    toast(e.message || 'Approve failed', 'error');
+  }
+}
+
+async function loadSectionsQuiet(){
+  try {
+    const res = await fetch(`/api/sow/sections?project_id=${PROJECT_ID}`);
+    if (res.ok) { const data = await res.json(); sections = data.sections; renderSidebar(); updateProgress(); }
+  } catch(e) {}
+}
+
+// ── Bulk "generate all remaining" ──
+async function toggleBulkGeneration(){
+  const btn = document.getElementById('bulk-btn');
+  const statusRes = await fetch(`/api/sow/generation/status?project_id=${PROJECT_ID}`);
+  const status = statusRes.ok ? await statusRes.json() : { running: false };
+  if (status.running) {
+    await fetch(`/api/sow/generation/stop?project_id=${PROJECT_ID}`, { method: 'POST' });
+    stopBulkPolling();
+    toast('Stopped drafting.', 'info');
+    return;
+  }
+  try {
+    const res = await fetch('/api/sow/generation/start', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ project_id: PROJECT_ID }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || 'Could not start drafting');
+    if (data.started === 0) { toast('All sections are already approved.', 'info'); return; }
+    toast(`Drafting ${data.started} remaining section(s) — review and approve each one when ready.`, 'success');
+    startBulkPolling();
+  } catch(e) {
+    toast(e.message || 'Could not start drafting', 'error');
+  }
+}
+function startBulkPolling(){
+  document.getElementById('bulk-btn').innerHTML = '<svg class="spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="6" x2="12" y2="12"/></svg> Stop drafting';
+  bulkPolling = setInterval(async () => {
+    const res = await fetch(`/api/sow/generation/status?project_id=${PROJECT_ID}`);
+    const status = res.ok ? await res.json() : { running: false };
+    await loadSections();
+    if (!status.running) stopBulkPolling();
+  }, 2500);
+}
+function stopBulkPolling(){
+  if (bulkPolling) { clearInterval(bulkPolling); bulkPolling = null; }
+  document.getElementById('bulk-btn').innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> Generate all remaining';
+}
+
+async function downloadSow(){
+  const btn = document.getElementById('download-btn');
+  btn.disabled = true;
+  try {
+    const res = await fetch(`/api/sow/document/export?project_id=${PROJECT_ID}`, { method: 'POST' });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || 'Export failed');
+    window.location.href = data.docx_url;
+    toast('SOW exported.', 'success');
+  } catch(e) {
+    toast(e.message || 'Export failed', 'error');
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+(function() {
+  const raw = sessionStorage.getItem('auth_user');
+  const email = raw ? (JSON.parse(raw).email || '') : '';
+  const local = email.split('@')[0];
+  const parts = local.split(/[._]/).filter(Boolean);
+  document.getElementById('nav-uav').textContent = parts.slice(0, 2).map(p => p.charAt(0).toUpperCase()).join('') || '?';
+})();
+
+loadSections();
+</script>
+</body>
+</html>

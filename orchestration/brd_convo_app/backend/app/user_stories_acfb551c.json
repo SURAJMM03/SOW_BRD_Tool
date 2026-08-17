@@ -1,0 +1,285 @@
+{
+  "stories": [
+    {
+      "id": "US-001",
+      "title": "Integrate SAP S/4HANA planning data into RapidResponse",
+      "as_a": "Archlin Supply Planner",
+      "i_want": "SAP S/4HANA supply planning data loaded into Kinaxis RapidResponse",
+      "so_that": "I can plan using a single aligned source of inventory, supply, demand, and planning parameter data",
+      "acceptance_criteria": [
+        "Given SAP S/4HANA is the source system, When the data integration is executed, Then RapidResponse loads on-hand inventory, planned receipts, demand forecasts, supply orders, bills of material, part-source data, constraints, and planning parameters.",
+        "Given data is loaded from SAP S/4HANA, When a planner reviews a part-site record in RapidResponse, Then the record displays the associated inventory, supply, demand, and planning attributes required for Phase 1 Supply Management.",
+        "Given an integration load completes, When load results are reviewed, Then success and exception counts are available for each major data object loaded from SAP S/4HANA."
+      ],
+      "section_source": "Section 1.3 Scope; Section 1.2 Current State of Business",
+      "priority": "High"
+    },
+    {
+      "id": "US-002",
+      "title": "Configure Archlin supply chain sites in RapidResponse",
+      "as_a": "Archlin Supply Chain Administrator",
+      "i_want": "to configure distribution, manufacturing, and virtual sites with required attributes",
+      "so_that": "Archlin's specialty chemicals supply chain network can be represented accurately in RapidResponse",
+      "acceptance_criteria": [
+        "Given a site is created in RapidResponse, When the site record is saved, Then it includes Site Name, Country using ISO Alpha-2 code, Currency, ERP Instance ID, and Type.",
+        "Given a site is configured, When the Type is selected, Then the allowed values are Distribution, Manufacturing, or Virtual.",
+        "Given Archlin sites are available for planning, When planners view the supply chain network, Then manufacturing sites, distribution sites, and virtual sites are distinguishable by site type."
+      ],
+      "section_source": "Section 3.1 Supply Chain Maps",
+      "priority": "High"
+    },
+    {
+      "id": "US-003",
+      "title": "Model material and supply flows across Archlin sites",
+      "as_a": "Archlin Supply Planner",
+      "i_want": "RapidResponse to model site linkages, bills of material, and demand/supply transfer paths",
+      "so_that": "I can understand how demand and supply flow across the specialty chemicals manufacturing network",
+      "acceptance_criteria": [
+        "Given distribution and manufacturing sites are configured, When network relationships are maintained, Then RapidResponse represents links between distribution locations and manufacturing facilities.",
+        "Given a manufacturing site produces make parts, When bills of material are loaded, Then component-to-finished-good relationships are visible for planning.",
+        "Given demand or supply is transferred between nodes, When a planner reviews the network model, Then the source site, destination site, and material flow path are visible."
+      ],
+      "section_source": "Section 3.1 Supply Chain Maps",
+      "priority": "High"
+    },
+    {
+      "id": "US-004",
+      "title": "View period ending inventory by value and volume",
+      "as_a": "Archlin Planner",
+      "i_want": "visibility of period ending inventory in both value and volume across Archlin sites",
+      "so_that": "I can monitor inventory positions and improve inventory planning discipline",
+      "acceptance_criteria": [
+        "Given inventory data and planning projections are available, When I open the period ending inventory view, Then I can see projected inventory by period in both value and volume.",
+        "Given inventory is displayed, When I filter by site, product hierarchy, or planner responsibility, Then the inventory values and volumes update to reflect the selected filter.",
+        "Given inventory projections exist across the planning horizon, When I select a future period, Then the projected period ending inventory value and volume are displayed for that period."
+      ],
+      "section_source": "Section 5.4 Resolve Inventory Exceptions",
+      "priority": "High"
+    },
+    {
+      "id": "US-005",
+      "title": "Analyze inventory trends across the planning horizon",
+      "as_a": "Archlin Supply Planner",
+      "i_want": "to analyze inventory trends by product hierarchy, site, and planner responsibility",
+      "so_that": "I can identify inventory build-up or depletion patterns before they become exceptions",
+      "acceptance_criteria": [
+        "Given period ending inventory projections are available, When I view inventory trends, Then inventory is displayed across multiple planning periods.",
+        "Given inventory trends are displayed, When I group results by product hierarchy, site, or planner responsibility, Then the trend values aggregate according to the selected grouping.",
+        "Given historical inventory data is available, When I compare projected inventory to historical patterns, Then the view displays both actual or historical values and projected values for comparison."
+      ],
+      "section_source": "Section 5.4 Resolve Inventory Exceptions",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-006",
+      "title": "Define and maintain inventory targets",
+      "as_a": "Archlin Planner",
+      "i_want": "to define and adjust inventory targets for ending inventory, minimum stock, maximum stock, and periods of supply",
+      "so_that": "inventory exceptions can be identified against agreed planning thresholds",
+      "acceptance_criteria": [
+        "Given a part, site, or product hierarchy level is selected, When I maintain inventory targets, Then I can enter ending inventory target, minimum stock, maximum stock, minimum periods of supply, and maximum periods of supply.",
+        "Given targets are saved, When inventory projections are recalculated or refreshed, Then the targets are used to evaluate inventory exceptions.",
+        "Given a target is updated, When the change is saved, Then the updated target value is visible for the applicable part, site, hierarchy level, and effective period."
+      ],
+      "section_source": "Section 5.4 Resolve Inventory Exceptions",
+      "priority": "High"
+    },
+    {
+      "id": "US-007",
+      "title": "Maintain time-phased inventory target profiles",
+      "as_a": "Archlin Planner",
+      "i_want": "to maintain time-phased inventory targets",
+      "so_that": "inventory planning can reflect seasonality in specialty chemicals demand",
+      "acceptance_criteria": [
+        "Given a target profile is created, When I assign effective periods, Then different target values can be maintained for different time periods.",
+        "Given time-phased targets exist, When a planner reviews inventory for a selected period, Then the target value effective for that period is used.",
+        "Given a seasonal target profile is updated, When the changes are saved, Then future-period exception calculations use the updated seasonal thresholds."
+      ],
+      "section_source": "Section 5.4 Resolve Inventory Exceptions",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-008",
+      "title": "Configure Inventory Quality Ratio classifications",
+      "as_a": "Archlin Planner",
+      "i_want": "to configure definitions of active, excess, slow-moving, and obsolete inventory",
+      "so_that": "Archlin can measure inventory quality consistently for specialty chemicals products",
+      "acceptance_criteria": [
+        "Given IQR configuration is available, When I define inventory classifications, Then active, excess, slow-moving, and obsolete categories can be maintained.",
+        "Given classification rules are configured, When inventory is evaluated, Then each applicable inventory record is classified according to the configured IQR definitions.",
+        "Given IQR results are calculated, When I review inventory quality, Then I can see the percentage of active inventory compared with excess, slow-moving, and obsolete inventory."
+      ],
+      "section_source": "Section 5.4 Resolve Inventory Exceptions",
+      "priority": "High"
+    },
+    {
+      "id": "US-009",
+      "title": "Monitor Inventory Quality Ratio metrics and trends",
+      "as_a": "Archlin Supply Planner",
+      "i_want": "to monitor Inventory Quality Ratio metrics against targets over time",
+      "so_that": "I can identify deteriorating inventory positions before they negatively impact working capital",
+      "acceptance_criteria": [
+        "Given inventory quality classifications are calculated, When I open the IQR dashboard, Then I can view IQR metrics by period.",
+        "Given corporate IQR targets are maintained, When I review IQR performance, Then actual IQR values are compared against target values.",
+        "Given multiple periods are available, When I view IQR trends, Then I can identify whether active, excess, slow-moving, or obsolete inventory is increasing or decreasing over time."
+      ],
+      "section_source": "Section 5.4 Resolve Inventory Exceptions",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-010",
+      "title": "Detect inventory exceptions against targets",
+      "as_a": "Archlin Supply Planner",
+      "i_want": "RapidResponse to identify parts with inventory levels above or below targets",
+      "so_that": "I can proactively manage inventory exceptions instead of relying on manual spreadsheet analysis",
+      "acceptance_criteria": [
+        "Given inventory projections and targets are available, When exception detection runs, Then parts with period ending inventory below minimum or above maximum thresholds are flagged.",
+        "Given periods of supply thresholds are maintained, When inventory is evaluated, Then parts below minimum periods of supply or above maximum periods of supply are identified.",
+        "Given inventory exceptions are generated, When I review the exception list, Then each exception includes part, site, period, target value, projected value, and deviation."
+      ],
+      "section_source": "Section 5.4 Resolve Inventory Exceptions",
+      "priority": "High"
+    },
+    {
+      "id": "US-011",
+      "title": "Prioritize inventory exceptions",
+      "as_a": "Archlin Supply Planner",
+      "i_want": "to prioritize inventory exceptions by value, service impact, and deviation magnitude",
+      "so_that": "I can focus first on the exceptions with the highest business impact",
+      "acceptance_criteria": [
+        "Given inventory exceptions are available, When I sort or filter the exception list, Then I can prioritize by inventory value, service level impact, and deviation magnitude.",
+        "Given an exception has projected customer or revenue impact, When the exception is displayed, Then the service or revenue impact is visible to support prioritization.",
+        "Given multiple exceptions exist, When I apply filters by site, product family, or planner code, Then only exceptions matching the selected criteria are displayed."
+      ],
+      "section_source": "Section 5.4 Resolve Inventory Exceptions",
+      "priority": "High"
+    },
+    {
+      "id": "US-012",
+      "title": "Identify slow-moving, excess, and obsolete inventory",
+      "as_a": "Archlin Planner",
+      "i_want": "visibility of slow-moving, excess, and obsolete inventories by period across Archlin's network",
+      "so_that": "I can reduce working capital exposure and support write-down decisions",
+      "acceptance_criteria": [
+        "Given aging, demand, and classification criteria are configured, When inventory is evaluated, Then slow-moving, excess, and obsolete inventory positions are identified.",
+        "Given classified inventory exists, When I review the inventory quality view, Then I can see slow-moving, excess, and obsolete inventory by period, part, site, and value.",
+        "Given excess or obsolete inventory is identified, When I drill into the record, Then I can review details supporting the classification."
+      ],
+      "section_source": "Section 5.4 Resolve Inventory Exceptions",
+      "priority": "High"
+    },
+    {
+      "id": "US-013",
+      "title": "Analyze root causes of excess and obsolete inventory",
+      "as_a": "Archlin Supply Planner",
+      "i_want": "to analyze root causes contributing to excess and obsolete inventory positions",
+      "so_that": "I can determine appropriate corrective actions",
+      "acceptance_criteria": [
+        "Given an excess or obsolete inventory record is selected, When I open the analysis view, Then the related demand, supply, inventory, and classification details are displayed.",
+        "Given supporting planning data exists, When I analyze the exception, Then I can identify whether the position is associated with demand reduction, aging inventory, excess supply, or lack of future demand.",
+        "Given root-cause analysis is completed, When I document the finding, Then the reason and recommended action are retained with the inventory exception."
+      ],
+      "section_source": "Section 5.4 Resolve Inventory Exceptions",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-014",
+      "title": "Identify stockouts and expected recovery dates",
+      "as_a": "Archlin Planner",
+      "i_want": "to see parts currently out of stock and their expected recovery dates",
+      "so_that": "I can prioritize stockout resolution and communicate supply recovery expectations",
+      "acceptance_criteria": [
+        "Given on-hand inventory is available, When a part-site has zero stock, Then the part-site is flagged as a stockout.",
+        "Given a stockout has planned supply receipts, When I review the stockout record, Then the expected recovery date is calculated from the planned receipt date that restores inventory availability.",
+        "Given stockout records are displayed, When I review demand impact, Then demand at risk is visible for the affected part-site."
+      ],
+      "section_source": "Section 5.4 Resolve Inventory Exceptions",
+      "priority": "High"
+    },
+    {
+      "id": "US-015",
+      "title": "Prioritize stockouts by revenue and customer impact",
+      "as_a": "Archlin Supply Planner",
+      "i_want": "to prioritize stockout resolution based on revenue and customer impact",
+      "so_that": "I can address the most critical service risks first",
+      "acceptance_criteria": [
+        "Given stockout records exist, When revenue impact is available, Then stockouts display projected late revenue or revenue at risk.",
+        "Given customer impact data is available, When I review stockouts, Then the affected demand or customer impact is visible.",
+        "Given multiple stockouts exist, When I sort the stockout list, Then I can rank stockouts by projected late revenue, recovery date, and demand at risk."
+      ],
+      "section_source": "Section 5.4 Resolve Inventory Exceptions",
+      "priority": "High"
+    },
+    {
+      "id": "US-016",
+      "title": "Simulate inventory transfers between sites",
+      "as_a": "Archlin Supply Planner",
+      "i_want": "to simulate transferring inventory from another Archlin site",
+      "so_that": "I can evaluate whether a transfer can resolve projected late orders before execution",
+      "acceptance_criteria": [
+        "Given a projected late order or inventory shortage exists, When I select a source site with available inventory, Then I can create a simulated inventory transfer to the destination site.",
+        "Given a simulated transfer is created, When the scenario is recalculated, Then the impact on projected late orders and destination inventory is updated.",
+        "Given the source site inventory is used in the simulation, When I review source site impacts, Then the remaining inventory and any new source-site exceptions are displayed."
+      ],
+      "section_source": "Section 5.4 Resolve Inventory Exceptions",
+      "priority": "High"
+    },
+    {
+      "id": "US-017",
+      "title": "Simulate write-down, on-hand adjustment, and inventory type changes",
+      "as_a": "Archlin Supply Planner",
+      "i_want": "to simulate write-downs, physical count corrections, and inventory type classification changes",
+      "so_that": "I can evaluate corrective actions for excess, obsolete, or inaccurate inventory positions",
+      "acceptance_criteria": [
+        "Given excess or obsolete inventory is selected, When I simulate a write-down or disposal quantity, Then the scenario reduces the applicable inventory quantity and value.",
+        "Given a physical count correction is required, When I simulate an on-hand inventory adjustment, Then the scenario updates the inventory quantity for the selected part and site.",
+        "Given inventory is assigned a type such as available, quarantine, or obsolete, When I simulate an inventory type change, Then the scenario reflects the new inventory classification without updating SAP S/4HANA directly."
+      ],
+      "section_source": "Section 5.4 Resolve Inventory Exceptions",
+      "priority": "High"
+    },
+    {
+      "id": "US-018",
+      "title": "Analyze scenario impact on inventory KPIs",
+      "as_a": "Archlin Supply Planner",
+      "i_want": "to compare simulated inventory adjustment scenarios against key inventory KPIs",
+      "so_that": "I can choose the best resolution strategy before submitting changes for execution",
+      "acceptance_criteria": [
+        "Given one or more simulated inventory adjustment scenarios exist, When I run impact analysis, Then the scenario displays impacts to on-time line by due date, period ending inventory value, periods of supply, order issues, inventory exceptions, late demand, projected late revenue, excess value, and obsolete value.",
+        "Given impact results are displayed, When I filter by part, site, or product hierarchy, Then KPI results update to reflect the selected scope.",
+        "Given multiple scenarios exist, When I compare scenarios, Then KPI differences are shown so planners can evaluate alternative resolution strategies."
+      ],
+      "section_source": "Section 5.4 Resolve Inventory Exceptions",
+      "priority": "High"
+    },
+    {
+      "id": "US-019",
+      "title": "Collaborate on inventory exception resolution",
+      "as_a": "Archlin Planner",
+      "i_want": "to collaborate with other planners and document assumptions for inventory exceptions",
+      "so_that": "resolution actions and ownership are clear across supply planning teams",
+      "acceptance_criteria": [
+        "Given an inventory exception is selected, When I create a collaboration item, Then I can assign an owner and document the proposed action or planning assumption.",
+        "Given a collaboration item exists, When users update comments or status, Then the updates are retained with the related inventory exception.",
+        "Given an exception has assigned actions, When I review the exception, Then current owner, status, comments, and action history are visible."
+      ],
+      "section_source": "Section 5.4 Resolve Inventory Exceptions",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-020",
+      "title": "Support manual closed-loop execution into SAP S/4HANA",
+      "as_a": "Archlin Supply Planner",
+      "i_want": "to capture approved inventory adjustments for manual entry into SAP S/4HANA",
+      "so_that": "planning decisions made in RapidResponse can be executed through Archlin's system of record",
+      "acceptance_criteria": [
+        "Given a simulated inventory adjustment is approved, When the planner marks it for execution, Then the adjustment is captured in a consolidated workbook or action list.",
+        "Given approved adjustments are captured, When the action list is reviewed, Then each record includes part, site, adjustment type, quantity or value, target date, owner, and approval status.",
+        "Given an adjustment is manually entered into SAP S/4HANA, When the planner updates the action record, Then the execution status and audit trail are retained in RapidResponse."
+      ],
+      "section_source": "Section 5.4 Resolve Inventory Exceptions",
+      "priority": "High"
+    }
+  ],
+  "project_id": "acfb551c"
+}

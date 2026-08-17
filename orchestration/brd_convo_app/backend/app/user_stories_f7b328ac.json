@@ -1,0 +1,275 @@
+{
+  "stories": [
+    {
+      "id": "US-001",
+      "title": "Load supply management master data from legacy and manual sources",
+      "as_a": "Mahindra supply chain data administrator",
+      "i_want": "to load part, site, sourcing, calendar, inventory policy, and supply master data from legacy HIS ERP and approved manual templates into Kinaxis RapidResponse",
+      "so_that": "planners have a trusted data foundation for Phase 1 supply management planning",
+      "acceptance_criteria": [
+        "Given approved source files or ERP extracts are available, When the data load job is executed, Then part, site, sourcing, calendar, and inventory policy records are created or updated in RapidResponse without manual rekeying",
+        "Given a source record is missing a mandatory field, When the data load is executed, Then the record is rejected and an error message identifies the field, source, and record identifier",
+        "Given duplicate records exist in the source data, When the data load is executed, Then the system applies the defined duplicate handling rule and logs the resolution outcome",
+        "Given the load completes, When the administrator reviews the load summary, Then total records processed, accepted, rejected, and warning counts are displayed"
+      ],
+      "section_source": "Sections 1.4 Scope, 3 Supply Chain Scope, 3.4 Supply Foundation, 3.5 Inventory Management Foundation",
+      "priority": "High"
+    },
+    {
+      "id": "US-002",
+      "title": "Maintain production master data and planning parameters",
+      "as_a": "Mahindra supply planner",
+      "i_want": "to review and update production master data and planning parameters in RapidResponse",
+      "so_that": "supply plans are generated using current manufacturing, sourcing, and planning assumptions",
+      "acceptance_criteria": [
+        "Given I have supply planner access, When I open production master data, Then I can view the relevant parts, sites, sourcing properties, planning calendars, responsible planner, safety stock policy, and low-level code",
+        "Given I update an editable planning parameter, When I save the change, Then the updated value is stored with user, timestamp, and previous value audit details",
+        "Given I enter a value outside the allowed parameter range, When I attempt to save, Then the system prevents the save and displays a validation message",
+        "Given master data has been updated, When supply planning workbooks are refreshed, Then the latest approved master data is used in calculations"
+      ],
+      "section_source": "Section 3.4 Supply Foundation; Section 3.5 Inventory Management Foundation",
+      "priority": "High"
+    },
+    {
+      "id": "US-003",
+      "title": "Model inventory policies at part-site level",
+      "as_a": "Mahindra inventory planner",
+      "i_want": "to define and maintain inventory policies, safety stock policies, min/max parameters, and ABC classifications at part and site level",
+      "so_that": "inventory planning is standardized across Mahindra’s manufacturing sites and distribution centers",
+      "acceptance_criteria": [
+        "Given a part-site combination exists, When I assign an inventory policy, Then the policy is stored against that part-site combination",
+        "Given the FixedLeadTimeSoft safety stock policy is selected, When I save the policy, Then the system applies the configured rules for order point, date rule, calendar, and incremental rule",
+        "Given a part-site has ABC classification assigned, When inventory planning workbooks are opened, Then the ABC code is visible and can be used for filtering and prioritization",
+        "Given min/max values are entered, When the minimum value exceeds the maximum value, Then the system prevents saving and displays a validation error"
+      ],
+      "section_source": "Section 3.5 Inventory Management Foundation",
+      "priority": "High"
+    },
+    {
+      "id": "US-004",
+      "title": "Calculate and review safety stock recommendations",
+      "as_a": "Mahindra inventory planner",
+      "i_want": "RapidResponse to calculate safety stock recommendations using demand history, demand variability, lead time, and service level targets",
+      "so_that": "Mahindra can reduce stockouts while minimizing excess inventory",
+      "acceptance_criteria": [
+        "Given historical demand, lead time, and service level target data are available, When safety stock calculation is executed, Then the system generates a recommended safety stock quantity for each eligible part-site",
+        "Given a 95% service level target is configured for a part-site, When the recommendation is calculated, Then the calculation uses the 95% service level target",
+        "Given a recommendation is generated, When I review it in the Inventory Planning workbook, Then I can see current safety stock, recommended safety stock, variance, and relevant input drivers",
+        "Given required input data is missing for a part-site, When safety stock calculation is executed, Then the system flags the part-site as an exception instead of generating an unsupported recommendation"
+      ],
+      "section_source": "Section 3.5 Inventory Management Foundation; Section 2.2 Value Drivers",
+      "priority": "High"
+    },
+    {
+      "id": "US-005",
+      "title": "Override safety stock recommendations with audit trail",
+      "as_a": "Mahindra inventory planner",
+      "i_want": "to manually adjust or override system-generated safety stock recommendations with a reason code",
+      "so_that": "planning outputs can reflect operational realities while remaining controlled and auditable",
+      "acceptance_criteria": [
+        "Given a safety stock recommendation exists, When I enter an override quantity and reason code, Then the override is saved and used in inventory planning calculations",
+        "Given I attempt to save an override without a reason code, When I submit the change, Then the system prevents the save and prompts for a reason code",
+        "Given an override has been saved, When the audit history is viewed, Then it displays user, timestamp, previous value, new value, and reason code",
+        "Given an override is removed, When the workbook is recalculated, Then the system reverts to the latest calculated recommendation"
+      ],
+      "section_source": "Section 3.5 Inventory Management Foundation",
+      "priority": "High"
+    },
+    {
+      "id": "US-006",
+      "title": "Provide end-to-end inventory visibility across sites and distribution centers",
+      "as_a": "Mahindra supply chain manager",
+      "i_want": "to view inventory balances, projected inventory, period-ending inventory values, and periods of supply across manufacturing sites and distribution centers",
+      "so_that": "I can identify inventory imbalances and take proactive action",
+      "acceptance_criteria": [
+        "Given inventory data is loaded, When I access the inventory visibility dashboard, Then I can view on-hand inventory, projected inventory, period-ending inventory value, and periods of supply by part and site",
+        "Given Mahindra’s network data is available, When I filter by manufacturing site or distribution center, Then the dashboard displays only records for the selected location scope",
+        "Given projected supply and demand transactions exist, When projected inventory is calculated, Then the projection reflects dated receipts, issues, transfers, and current on-hand balance",
+        "Given a user drills from aggregate inventory to detail, When a part-site is selected, Then transaction-level drivers supporting the projection are displayed"
+      ],
+      "section_source": "Sections 3 Supply Chain Scope and 3.5 Inventory Management Foundation",
+      "priority": "High"
+    },
+    {
+      "id": "US-007",
+      "title": "Generate inventory exception alerts",
+      "as_a": "Mahindra inventory planner",
+      "i_want": "the system to identify stockouts, excess inventory, obsolete inventory, slow-moving stock, projected lead time exceptions, and periods of supply below target",
+      "so_that": "I can focus on the highest-priority inventory issues",
+      "acceptance_criteria": [
+        "Given inventory projections are calculated, When projected inventory falls below zero, Then the system creates a stockout exception for the affected part-site and date",
+        "Given inventory exceeds defined excess thresholds, When exception logic is executed, Then the system creates an excess inventory exception with excess quantity and value",
+        "Given inventory has no expected consumption within the configured horizon, When exception logic is executed, Then the system flags the inventory as obsolete or slow-moving according to the defined rule",
+        "Given exceptions exist, When I open the exception view, Then I can filter and sort by exception type, part, site, planner, date, quantity, and value"
+      ],
+      "section_source": "Section 3.5 Inventory Management Foundation; Section 3.6 Constraints",
+      "priority": "High"
+    },
+    {
+      "id": "US-008",
+      "title": "Support exception resolution workflow and collaboration",
+      "as_a": "Mahindra supply planner",
+      "i_want": "to assign, track, comment on, and resolve inventory and supply exceptions",
+      "so_that": "corrective actions are coordinated across business units and dependency on local expertise is reduced",
+      "acceptance_criteria": [
+        "Given an exception is created, When I assign it to a planner, Then the assigned owner, due date, and status are saved",
+        "Given an exception is assigned to me, When I add a comment or corrective action, Then the comment is visible in the exception history with user and timestamp",
+        "Given corrective action has been completed, When I mark the exception as resolved, Then the status changes to resolved and the resolution date is captured",
+        "Given exceptions are resolved, When the exception KPI is refreshed, Then the exception resolution rate reflects resolved versus open exceptions"
+      ],
+      "section_source": "Section 2.1 Business Issues; Section 3.5 Inventory Management Foundation; Section 3.6 Constraints",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-009",
+      "title": "Report excess and obsolete inventory",
+      "as_a": "Mahindra inventory manager",
+      "i_want": "automated excess and obsolete inventory reporting by part, site, quantity, and value",
+      "so_that": "Mahindra can reduce working capital tied up in non-performing inventory",
+      "acceptance_criteria": [
+        "Given inventory balances and policy thresholds are available, When the excess and obsolete report is generated, Then it displays excess quantity, obsolete quantity, excess value, and obsolete value by part-site",
+        "Given report data exists, When I filter by ABC code, planner, site, or inventory class, Then the report returns only matching records",
+        "Given projected consumption changes, When the report is refreshed, Then excess and obsolete calculations are updated using the latest projection",
+        "Given a report is generated, When exported, Then the exported file contains the same filtered records and measures shown in the report"
+      ],
+      "section_source": "Section 3.5 Inventory Management Foundation; Section 2.2 Value Drivers",
+      "priority": "High"
+    },
+    {
+      "id": "US-010",
+      "title": "Plan and evaluate inventory transfers",
+      "as_a": "Mahindra distribution planner",
+      "i_want": "to create and evaluate inventory transfer options using transfer cost, transit time, and transportation mode",
+      "so_that": "inventory can be repositioned to the right warehouse at the right time with controlled freight cost",
+      "acceptance_criteria": [
+        "Given a supply imbalance exists between locations, When I open the Inventory Transfer Workbook, Then I can view source site, destination site, available quantity, required quantity, transit time, transportation mode, and transfer cost",
+        "Given I create a proposed transfer, When the transfer quantity exceeds available inventory at the source, Then the system displays a validation warning",
+        "Given multiple transfer options exist, When I compare options, Then the system displays projected inventory impact, arrival date, transit time, and transfer cost for each option",
+        "Given a transfer proposal is approved for execution, When the closed-loop integration is triggered, Then the approved transfer details are made available for ERP execution or outbound integration"
+      ],
+      "section_source": "Section 3.5 Inventory Management Foundation; Section 2.2 Value Drivers",
+      "priority": "High"
+    },
+    {
+      "id": "US-011",
+      "title": "Manage production orders and work orders",
+      "as_a": "Mahindra supply planner",
+      "i_want": "to view, create, update, and analyze production orders and work orders in RapidResponse",
+      "so_that": "manufacturing supply can be planned and aligned with inventory requirements",
+      "acceptance_criteria": [
+        "Given production order data is loaded, When I open the production order view, Then I can see order number, part, site, quantity, due date, available date, and status",
+        "Given I create or update a planned work order, When mandatory fields are complete and valid, Then the work order is saved and reflected in projected inventory",
+        "Given a work order due date changes, When supply planning is recalculated, Then the available date and projected inventory are updated accordingly",
+        "Given an order is outside the planning horizon, When order issue logic is executed, Then it is excluded from planning horizon issue counts"
+      ],
+      "section_source": "Section 3.4 Supply Foundation; Section 3.5 Inventory Management Foundation",
+      "priority": "High"
+    },
+    {
+      "id": "US-012",
+      "title": "Send approved work orders to ERP",
+      "as_a": "Mahindra supply planning administrator",
+      "i_want": "to send approved RapidResponse work orders to the legacy ERP system",
+      "so_that": "planning decisions can be executed in Mahindra’s operational systems",
+      "acceptance_criteria": [
+        "Given a work order is approved and marked ready for ERP, When the outbound process runs, Then the work order is included in the ERP outbound payload",
+        "Given a work order is not approved, When the outbound process runs, Then the work order is not sent to ERP",
+        "Given ERP outbound completes successfully, When I review the integration log, Then the work order shows sent status with timestamp and batch identifier",
+        "Given ERP rejects a work order, When the response is received, Then the work order is flagged with error status and the rejection message is visible to the administrator"
+      ],
+      "section_source": "Section 3.4 Supply Foundation; Section 3.5 Inventory Management Foundation",
+      "priority": "High"
+    },
+    {
+      "id": "US-013",
+      "title": "Reconcile scheduled receipts between RapidResponse and ERP",
+      "as_a": "Mahindra supply planning administrator",
+      "i_want": "to compare scheduled receipts and orders between RapidResponse and ERP",
+      "so_that": "planning and execution systems remain aligned",
+      "acceptance_criteria": [
+        "Given ERP receipt data and RapidResponse order data are available, When reconciliation is executed, Then the system identifies missing, duplicate, quantity-mismatched, and date-mismatched records",
+        "Given mismatches are found, When I open the reconciliation results, Then each mismatch displays ERP value, RapidResponse value, variance type, and affected order identifier",
+        "Given a mismatch is resolved, When I mark it as reconciled, Then the reconciliation status and resolution comments are saved",
+        "Given reconciliation is rerun after corrections, When no differences remain for an order, Then the order is removed from the open mismatch list"
+      ],
+      "section_source": "Section 3.4 Supply Foundation; Section 1.4 Scope",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-014",
+      "title": "Analyze BOM structure and supply order lateness",
+      "as_a": "Mahindra supply planner",
+      "i_want": "to review BOM structures and analyze late supply orders with reason indicators",
+      "so_that": "I can identify supply constraints impacting plan adherence and inventory availability",
+      "acceptance_criteria": [
+        "Given BOM data is loaded, When I select a finished good or key part, Then the system displays the BOM structure and component relationships",
+        "Given supply orders exist, When I run supply order analysis, Then the system identifies late orders based on due date or available date versus requirement date",
+        "Given a late supply order is identified, When I review the order detail, Then the system displays lateness duration, affected part-site, quantity, and reason indicator where available",
+        "Given late supply orders are filtered by site or planner, When the filter is applied, Then only matching late orders are displayed"
+      ],
+      "section_source": "Section 3.4 Supply Foundation; Section 3.6 Constraints; Section 2.2 Value Drivers",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-015",
+      "title": "Compare supply plan scenarios using supply waterfall",
+      "as_a": "Mahindra supply chain manager",
+      "i_want": "to compare supply plan scenarios and changes over time using a supply waterfall",
+      "so_that": "I can understand plan variation and improve supply plan adherence",
+      "acceptance_criteria": [
+        "Given at least two supply plan snapshots or scenarios exist, When I open the Supply Waterfall view, Then the system displays changes in supply quantities by part, site, and time bucket",
+        "Given supply plan changes exist, When I drill into a change, Then the system displays the contributing order, receipt, transfer, or parameter change where available",
+        "Given I compare scenarios, When the comparison is generated, Then the system highlights increases, decreases, and unchanged supply values",
+        "Given supply waterfall metrics are refreshed, When supply plan adherence is calculated, Then the KPI uses the latest selected baseline and current plan"
+      ],
+      "section_source": "Section 3.4 Supply Foundation; Section 3.6 Constraints; Section 2.2 Value Drivers",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-016",
+      "title": "Create private and public what-if scenarios for supply and inventory planning",
+      "as_a": "Mahindra planner",
+      "i_want": "to create private and public planning scenarios to simulate changes in supply, inventory policies, transfers, and constraints",
+      "so_that": "Mahindra can evaluate corrective actions before committing them to the operational plan",
+      "acceptance_criteria": [
+        "Given I am in the planning environment, When I create a new scenario, Then I can select whether it is private or public based on my access rights",
+        "Given a private scenario is created, When another planner without access searches scenarios, Then the private scenario is not visible to that planner",
+        "Given I modify supply orders, inventory policies, or transfers in a scenario, When I recalculate the scenario, Then projected inventory and exception results update without changing enterprise data",
+        "Given a scenario is approved, When it is promoted according to governance rules, Then approved changes are available for incorporation into the planning baseline"
+      ],
+      "section_source": "Section 2.1 Business Issues; Section 3.7 Scenario Structure; Section 3.5 Inventory Management Foundation",
+      "priority": "High"
+    },
+    {
+      "id": "US-017",
+      "title": "Provide role-based supply and inventory dashboards",
+      "as_a": "Mahindra supply chain leader",
+      "i_want": "role-based dashboards for planners, inventory managers, and leadership",
+      "so_that": "each role can monitor relevant KPIs and act on exceptions efficiently",
+      "acceptance_criteria": [
+        "Given a user logs in with a planner role, When the dashboard opens, Then it displays planner-relevant metrics such as inventory exceptions, stockouts, order issues, and projected lead time exceptions",
+        "Given a user logs in with a manager role, When the dashboard opens, Then it displays management KPIs such as period-ending inventory value, periods of supply, excess obsolete value, inventory quality ratio, and exception resolution rate",
+        "Given dashboard data is refreshed, When source planning data has changed, Then KPI values reflect the latest available planning data",
+        "Given a KPI is displayed, When the user drills into it, Then the underlying part-site or order-level details are shown"
+      ],
+      "section_source": "Section 2.2 Value Drivers; Section 3.5 Inventory Management Foundation; Section 3.6 Constraints",
+      "priority": "High"
+    },
+    {
+      "id": "US-018",
+      "title": "Track Phase 1 benefit realization metrics",
+      "as_a": "Mahindra program sponsor",
+      "i_want": "to track supply management benefit realization metrics for customer service, inventory reduction, resource efficiency, planning cycle time, carrying cost, and premium freight reduction",
+      "so_that": "the business can measure whether the RapidResponse deployment is delivering expected value",
+      "acceptance_criteria": [
+        "Given baseline and current metric data are available, When the benefit realization dashboard is opened, Then it displays baseline value, current value, target range, and percentage improvement for each configured metric",
+        "Given customer service metrics are available, When improvement is calculated, Then the dashboard compares current performance against the target of greater than 25% improvement",
+        "Given excess and obsolete inventory values are available, When reduction is calculated, Then the dashboard compares current performance against the 15% to 25% target reduction range",
+        "Given planning cycle time data is available, When cycle time reduction is calculated, Then the dashboard compares current performance against the 25% to 35% target reduction range"
+      ],
+      "section_source": "Section 2 Benefit Realization; Section 2.2 Value Drivers",
+      "priority": "Medium"
+    }
+  ],
+  "project_id": "f7b328ac"
+}

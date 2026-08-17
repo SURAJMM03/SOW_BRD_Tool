@@ -1,0 +1,242 @@
+{
+  "0": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "3.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "3.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "3.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.5": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.6": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "| # | Integration | Source System | Target System | Notes |\n|---|---|---|---|---|\n| 1 | Real-time transportation integration | S/4HANA TM | Manhattan WMS | Target state requires real-time integration between the new S/4HANA TM system and the existing Manhattan WMS. `<TECH TEAM: confirm integration method, message types, directionality, trigger events, and error-handling approach>` |\n| 2 | Carrier rate engine interface | S/4HANA TM | Project44 | New interface required to support connectivity with the carrier rate engine (Project44). `<TECH TEAM: confirm interface purpose, transaction scope, data exchanged, invocation pattern, and ownership of Project44 connectivity/configuration>` |\n| 3 | Legacy batch EDI integration baseline | Acme Logistics WMS | SAP ECC | Current-state integration exists via nightly batch EDI 850/856 transactions. This interface is documented here as baseline context only; `<CONFIRM: whether this legacy ECC interface remains in scope during transition, requires coexistence support, or is out of scope under this SOW>` |",
+    "draft_sources": [
+      "Acme_Discovery_Notes.docx"
+    ]
+  },
+  "4.7": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "5": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "The proposed solution architecture for Acme Logistics will enable real-time integration between the new SAP S/4HANA Transportation Management (TM) environment and the existing Manhattan WMS, replacing the current nightly batch integration model used between the warehouse platform and SAP ECC for EDI 850 and 856 transaction processing. The target-state architecture is intended to support more timely transportation planning, execution visibility, and downstream coordination across order, warehouse, and carrier-related processes.\n\nThe solution will position SAP S/4HANA TM as the core transportation management platform within the target landscape. Manhattan WMS will remain in place as the warehouse execution system, with interface connectivity designed to support real-time data exchange between the two platforms. In addition, the target architecture will include a new interface to the Project44 carrier rate engine to support carrier-related integration requirements as part of the future-state transportation process.\n\nThe deployment model for the SAP S/4HANA TM solution is `<CONFIRM: deployment model for SAP S/4HANA TM, including hosting approach and environment landscape>`. The integration architecture, including middleware, API framework, message orchestration approach, error-handling design, monitoring framework, and retry mechanisms, is `<TECH TEAM: confirm integration platform and target-state interface design for S/4HANA TM, Manhattan WMS, and Project44>`.\n\nThe high-level architecture is expected to include the following components:\n- SAP S/4HANA TM as the target transportation management application.\n- Manhattan WMS as the retained warehouse management platform.\n- Project44 as the carrier rate engine interface in the target state.\n- Real-time interface connectivity between SAP S/4HANA TM and Manhattan WMS.\n- A new interface between SAP S/4HANA TM and Project44.\n- `<TECH TEAM: confirm whether any additional upstream or downstream systems are in scope for the target architecture>`.\n\nChange governance for the solution architecture will be managed through the project governance and change control process defined elsewhere in this SOW. Any proposed change affecting the agreed architecture, deployment model, interface design, system boundaries, or non-functional requirements shall be reviewed for scope, timeline, resource, and commercial impact before implementation. Architecture decisions that remain open at the time of SOW finalization are listed in Section 21 (Key Observations) and, where applicable, shall be resolved prior to build execution.\n\nIf a finalized target-state architecture diagram is available, it should be inserted in this section. If not yet available, include `<CONFIRM: finalized solution architecture diagram for SAP S/4HANA TM, Manhattan WMS, and Project44>`.",
+    "draft_sources": [
+      "Acme_Discovery_Notes.docx"
+    ]
+  },
+  "6": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "6.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "6.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "8": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "9": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "10": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "11": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "12": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "12.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "12.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.5": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "14": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "14.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "15": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "17": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "18": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "20": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "21": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "23": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "24": {
+    "status": "not-started",
+    "custom_instructions": ""
+  }
+}

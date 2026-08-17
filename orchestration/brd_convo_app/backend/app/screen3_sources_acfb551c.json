@@ -1,0 +1,1171 @@
+{
+  "1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "RapidResponse Solution Blueprint for [customer]\nDocument ID:  [define]\nDocument Revision:  0.1 (Draft)\nIssue Date:  13-Mar-2018\nRevision History\n| Revision | Author Name | Date | Description |  |\n| --- | --- | --- | --- | --- |\n| 0.1 | P.Smithson | 13-Mar-2018 | Initial definition Release 1 |  |\n|  |  |  |  |  |\n|  |  |  |  |  |\n|  |  |  |  |  |"
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Solution Blueprint References",
+        "snippet": "See the Solution Blueprint document for information on the functional requirements, resources utilized and solution design."
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to detail the operating model for RapidResponse to meet the business needs as defined by [insert]\nThe objective of this document is to list the user stories and analytics that provide the scope for this release. Each user story shall provide a reasonable level of technical detail that will enable configuration of the solution.\nDuring the development of the solution, this document will be updated with requirement changes and solution design.  This document, at technical golive, shall provide both the requirements and solution.\nThis document does not include test "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Supply Chain Scope",
+        "snippet": "Below is the scope considered in this Blueprint, mainly there are two BUs in Australia and New Zealand, one is Trading (Traded Bulk, Bulk Liquids, Packaged Goods) and the other one is ChlorAlkali."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "| Type | Description |\n| --- | --- |\n| Decision | Disaggregating the Monthly Consensus Forecast to Daily level for the first 3 Months. |\n| Assumption | Storing the Price at Product/Site/Customer/Date/OrderQuantity requires customization, because Maestro supports the price matrix at the Product/Site/Customer/Date level only but not by order quantity. |\n| Assumption | IXOM Business may come up with a logic to consider the Lot size during the Forecasting and Forecast disaggregation, Maestro doesn’t support the lot size on the Forecasting by default. Customisation required based on the logic the b"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Supply Planning & Order Management",
+        "snippet": "The purpose of the Supply Planning & Order Management is to determine the total requirements of the products/raw materials and come up with a supply plan to satisfy the requirements which includes managing the Purchase Orders (PO) and Purchase Requisition with the Supplier.\nIXOM Business may use Maestro to run the MRP throughout the BOM Structure to identify the necessary supply plan requirements for the purchased products or raw materials.\nBelow is the Level 2 process flow of the Supply Planning & Order Management with the inputs required, processes, and the output given.\nLevel 2 Supply Plann"
+      },
+      {
+        "doc_name": "IBP RapidStart_Issue Tracker.xlsx",
+        "heading_path": "IBP RapidStart_Issue Tracker.xlsx — Sheet: Issue Log",
+        "snippet": "IBP RapidStart_Issue Tracker.xlsx — Sheet: Issue Log\nColumns: IXOM IBP RAPIDSTART MAESTRO  — ISSUE TRACKER\nIXOM IBP RAPIDSTART MAESTRO  — ISSUE TRACKER: Project: IBP RAPIDSTART  |   Version: 1.0   |   Last Updated: 05 May 2026\nIXOM IBP RAPIDSTART MAESTRO  — ISSUE TRACKER: Issue ID\nIXOM IBP RAPIDSTART MAESTRO  — ISSUE TRACKER: IBP-001"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Image: image50.png",
+        "snippet": "[Embedded Image: image50.png]\nStructured Description of image50.png:\nTitle/Context:\n- The image is a process flow diagram for demand planning in a supply chain context, likely part of an Integrated Business Planning (IBP) or ERP blueprint.\nStructure:\n- The diagram is organized into three horizontal sections: Input, Process (Demand Planners), and Output.\n- Each section contains multiple labeled boxes with bullet points or process steps.\nSection 1: Input\n- Four input boxes, each with bullet points:\n1. Stat Forecast Parameters\n- Cleansed Historical Demand Actuals\n2. Forecast input from Customers\n"
+      },
+      {
+        "doc_name": "1.Day1_04May_Workshop Agenda - High Level Business Process #1.docx",
+        "heading_path": "Agenda",
+        "snippet": "Objective\nEstablish a shared understanding of business structure, planning processes, and alignment to Kinaxis Maestro RapidStart capabilities.\nAgenda\n1. Welcome & Context (5 mins)\nIntroductions\nObjectives & scope recap\nRapidStart overview\n2. Business Overview (10 mins)\nBusiness units & functions\nProduct lines\nMarkets & customers\nSupply Chain KPIs and targets.\n3. Site & Operating Structure (10 mins)\nPlants, warehouses, distribution network\nOperating models (MTS / MTO)\nProduct hierarchies\nPlanning ownership across sites\n4. High-Level Planning Process – To be process (50 mins)\nDemand planning\nSu"
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Purpose of this Document",
+        "snippet": "Delete this type of text in the final document….What follows are ideas for material to include.  Use your judgment on how best to present the main ideas. You may be able to re-use material from the Solution Blueprint and update it for what was actually done.\nYou may have separate documents (Word, PowerPoint, Excel) which need not be repeated here but you should reference them so people will know to look for them on a particular issue. Section 7 -is a place to list these.\nWith regard to documenting workbooks, the best place is in the workbook itself as Author Notes, Column Author Notes and comm"
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Purpose of this Document",
+        "snippet": "This document exists to make it easier to support the solution.  It is intended to be a living document that is updated by the customer and Kinaxis as things change.  In order of importance, this is written for the following audiences.\n| Audience | Support Concerns |\n| --- | --- |\n| Kinaxis Support | How the solution is supposed to work What to do when alerts fail. What calls what? If a step fails, how do you recover? How long should processes typically run? How many records are typically modified? Performance issues: key workbooks – what filters should be used? How long do they typically run?"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "2": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "[Embedded Image: image2.png]\nThe image is a screenshot of the Table of Contents from a document titled \"RapidStart Technical Blueprint Template Rev 1.4.docx\". Below is a structured plain-text description focusing on supply chain/ERP-relevant content:\n---\n**Table of Contents**\n**1. INTRODUCTION**\n- 1.1 Company Background (p.6)\n- 1.2 Purpose (p.6)\n- 1.3 Scope (p.8)\n- 1.4 Definitions & Acronyms (p.8)\n- 1.5 Key Business Decisions (p.8)\n- 1.6 Planning Hierarchy Attributes (p.10)\n**2. BENEFIT REALIZATION**\n- 2.1 Quantitative Benefits (p.11)\n- 2.2 Qualitative Benefits (p.11)\n- 2.3 [Customer] Identifi"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Value Drivers",
+        "snippet": "Reduce inventory (ending, excess, obsolete)\nImprove service levels (OTD, planning efficiency)\nPhase-in/phase-out (excess and obsolete)\nEnsure right product is in the right warehouse at the right time (Other – freight costs)\nValue Drivers"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image6.png",
+        "snippet": "[Embedded Image: image6.png]\n**Structured Description of image6.png**\n---\n**1. Main Structure:**\nThe image is a multi-column flowchart/infographic, organized into five main vertical sections:\n- Business Objectives\n- Value Drivers\n- Advanced Planning Capabilities\n- Benefit Range\n---\n**2. Section Details:**\n**A. Business Objectives (Yellow background)**\n- Increase Revenue\n- Reduce Cost\n- COGS (Cost of Goods Sold)\n- SG&A (Selling, General & Administrative)\n- Business Continuity\n**B. Value Drivers (Blue, Brown, Orange, Navy backgrounds)**\n- For Increase Revenue:\n- Launch Optimization\n- Customer Sa"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Value Drivers",
+        "snippet": "Reduce inventory (ending, excess, obsolete)\nImprove service levels (OTD, planning efficiency)\nPhase-in/phase-out (excess and obsolete)\nEnsure right product is in the right warehouse at the right time (Other – freight costs)\nValue Drivers"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "[Embedded Image: image2.png]\n**Structured Description of Image:**\n---\n**Title/Headers:**\n- PRIMARY BENEFIT METRIC\n- CAPABILITY\n- METRIC\n---\n**Left Column (SHAREHOLDER VALUE Categories):**\n- REVENUE\n- COGS (Cost of Goods Sold)\n- SG&A (Selling, General & Administrative)\n- CAPITAL\n---\n**Primary Benefit Metrics (by Category):**\n**REVENUE**\n- LOST SALE REDUCTION\n- FORECAST ACCURACY\n**COGS**\n- PLANNER EFFICIENCY / HEADCOUNT INCREASE AVOIDANCE\n**SG&A**\n- OBSOLETE INVENTORY REDUCTION\n- INVENTORY HOLDING COST REDUCTION\n- EXPEDITED FREIGHT COST REDUCTION\n**CAPITAL**\n- ONE TIME INVENTORY SAVINGS (WC)\n- A"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Image: image3.png",
+        "snippet": "[Embedded Image: image3.png]\nStructured Description of image3.png:\n---\n**Title/Headers:**\n- PRIMARY BENEFIT METRIC (left, orange)\n- CAPABILITY (center, orange)\n- METRIC (right, orange)\n---\n**Table Structure:**\nThe table is divided into four main rows under \"SHAREHOLDER VALUE\" (vertical label on the left), each with subcategories and corresponding capabilities and metrics.\n---\n**Columns:**\n1. **PRIMARY BENEFIT METRIC** (left column, orange background)\n2. **CAPABILITY** (middle column, pink background)\n3. **METRIC** (right column, gray background)\n---\n**Rows and Content:**\n### 1. REVENUE\n- **LOS"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "[Embedded Image: image2.png]\n**Structured Description of Image:**\n---\n**Title/Headers:**\n- PRIMARY BENEFIT METRIC\n- CAPABILITY\n- METRIC\n---\n**Vertical Axis (Leftmost Column):**\n- SHAREHOLDER VALUE (spans all rows)\n- REVENUE\n- COGS\n- SG&A\n- CAPITAL\n---\n**Rows and Content:**\n### REVENUE\n- **Primary Benefit Metric:**\n- LOST SALE REDUCTION\n- FORECAST ACCURACY\n- **Capability:**\n- Demand at Risk / Critical Path Analysis\n- Segmentation\n- Supply Allocation / Prioritization\n- Single Level Safety Stock Recommendation\n- **Metric:**\n- Reduced Weeks of Supply\n- Increased Forecast Accuracy\n- Improved Projec"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "- Reduced Periods of Coverage\n**CAPITAL**\n- Reduce Obsolete Inventory\n- Improved Constraint Utilization\n- Increased Plan Adherence\n- Improved Cumulative Lead Time Accuracy\n---\n**General Structure:**\n- The image is a table with three main columns: PRIMARY BENEFIT METRIC, CAPABILITY, and METRIC.\n- Rows are grouped by SHAREHOLDER VALUE drivers (REVENUE, COGS, SG&A, CAPITAL).\n- Each group lists specific benefit metrics, associated capabilities, and measurable metrics/KPIs.\n- The table is color-coded for clarity, with each section clearly separated.\n---\n**Consultant Notes:**\n- The image provides a "
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Image: image3.png",
+        "snippet": "- **ONE TIME INVENTORY SAVINGS (WC)**\n- **ASSET PRODUCTIVITY / CAPITAL UTILIZATION**\n- Capabilities:\n- Constraint Planning\n- Cumulative Lead times\n- Excess & Obsolete Inventory Definitions\n- Metrics:\n- Critical Constraints\n---\n**General Notes:**\n- The table is color-coded for clarity: orange for headers, pink for capabilities, gray for metrics.\n- The structure links shareholder value drivers (revenue, COGS, SG&A, capital) to specific supply chain capabilities and measurable metrics.\n-"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Quantitative Benefits",
+        "snippet": "Obsolete/excess inventory will be reduced by planning based on system recommended plans, system will look to minimise excess inventory.\nJust-In-Time planning will reduce the inventory holding cost, the materials can be ordered as and when required\nForecast accuracy will be improved more than 20% with advanced statistical forecasting models available\nDemand at Risk will be reduced to a large extent through proper planning in advance and able to cater any last-minute changes and see the impact of different options\nBetter visualisation and planning of critical capacity constraints which allows to"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "- **Metric:**\n- Reduce Obsolete Inventory\n- Improved Constraint Utilization\n- Increased Plan Adherence\n- Improved Cumulative Lead Time Accuracy\n---\n**General Notes:**\n- The table is organized to show how supply chain/ERP capabilities map to shareholder value, primary benefit metrics, and operational metrics.\n- Metrics include both quantitative KPIs (e.g., \"Reduced Weeks of Supply\", \"Inventory Targets Plan v Actual\") and process metrics (e.g"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image6.png",
+        "snippet": "- Scenario Modeling\n- Managing shelf-life and expiry\n- Exception/Alert monitoring\n- For Business Continuity:\n- Scenario modelling, impact analysis, risk mitigating scenarios\n- Eliminate manual lot matching to support jurisdictional control\n**D. Benefit Range (Grey circles, rightmost column)**\n- Improved Customer Service >25%\n- Reduce Excess & Obsolescence 15%–25%\n- Improved resource efficiency 10%–20%\n- Planning Cycle Time Reduction 25%–35%\n- Inventory & Carrying Cost Savings 10%–30%\n- Reduce Premium Freight Cost 15%–25%\n---\n**3. Visual Elements:**\n- Color-coded boxes and arrows connect object"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "3": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Sites",
+        "snippet": "The supply chain maps consist of the following sites.\nSites"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Sites",
+        "snippet": "The supply chain maps consist of the following sites.\nSites"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Scenario Structure",
+        "snippet": "| Baseline | Child of Approved Actions. Used for automated data changes (including closed loop reconciliation). Changes made to this scenario should be closely controlled due to risk of data loss. Examples: Annual Targets, Constraints, Forecast adjustments/exceptions within the S&OP cycle. If Closed Loop is in scope, this scenario is updated automatically via an Automation Chain that’s run on Data Update. Pending updates (in scenario properties) will not show changes introduced in Data Update. Additional details: Permanent: Yes Shared: Yes Modify/View: Modify (limited) Auto Update: Yes Update "
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Scenario Structure",
+        "snippet": "| Baseline | Child of Approved Actions. Used for automated data changes (including closed loop reconciliation). Changes made to this scenario should be closely controlled due to risk of data loss. Examples: Annual Targets, Constraints, Forecast adjustments/exceptions within the S&OP cycle. If Closed Loop is in scope, this scenario is updated automatically via an Automation Chain that’s run on Data Update. Pending updates (in scenario properties) will not show changes introduced in Data Update. Additional details: Permanent: Yes Shared: Yes Modify/View: Modify (limited) Auto Update: Yes Update "
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Scenario Structure",
+        "snippet": "| Baseline | Child of Approved Actions. Used for automated data changes (including closed loop reconciliation). Changes made to this scenario should be closely controlled due to risk of data loss. Examples: Annual Targets, Constraints, Forecast adjustments/exceptions within the S&OP cycle. If Closed Loop is in scope, this scenario is updated automatically via an Automation Chain that’s run on Data Update. Pending updates (in scenario properties) will not show changes introduced in Data Update. Additional details: Permanent: Yes Shared: Yes Modify/View: Modify (limited) Auto Update: Yes Update "
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Supply Chain Scope",
+        "snippet": "The high-level scope of this project is to provide demand, supply and inventory planning capabilities, which support the procurement, manufacture and distribution of [Customer] products.\nIf there is any requirement that is outside of the scope of this RapidStart deployment, they will be discussed as part of change requests."
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Supply Chain Scope",
+        "snippet": "The high-level scope of this project is to provide demand, supply and inventory planning capabilities, which support the procurement, manufacture and distribution of [Customer] products.\nIf there is any requirement that is outside of the scope of this RapidStart deployment, they will be discussed as part of change requests."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Supply Chain Scope",
+        "snippet": "Below is the scope considered in this Blueprint, mainly there are two BUs in Australia and New Zealand, one is Trading (Traded Bulk, Bulk Liquids, Packaged Goods) and the other one is ChlorAlkali."
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Supply Chain Scope",
+        "snippet": "[provide a description the products, sites and materials in scope]."
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Supply Chain Maps",
+        "snippet": "[insert a graphical representation of the supply network]"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Scenario Structure",
+        "snippet": "[Customer] is leveraging the standard scenario structure:\nScenario Structure\n| Scenario | Purpose |\n| --- | --- |\n| Enterprise Data | Contains the most recent extracted data from ERP data source, as well as configuration (control) tables and data required for data loads (e.g. NoCustomer, NoSupplier). Enterprise Data is typically only accessible / visible to system and data administrators. Additional details: Permanent: Yes Shared: Accessible only to system and data administrators Modify/View: View Auto Update: N/A Update Frequency: Daily Commit Frequency: N/A |\n| Admin Manual Inputs | Child of"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Scenario Structure",
+        "snippet": "| Corporate Monitoring | Scenario and its children that are used by “Live Lens” Additional details: Permanent: Yes Shared: Modify/View: Auto Update: No Update Frequency: Daily (via automation) Commit Frequency: Never |\n| S&OP Intermediate | Child of Baseline. Available only to Administrators and S&OP Process Owners. Required for the automated processes that manage the planning cycle. If Demand Planning is implemented (with cross scenario data change to update forecast in Baseline), then the DemandType control setting for Consensus value will differ from parent scenario, to avoid double demand)"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Scenario Structure",
+        "snippet": "| S&OP Candidate | Child of S&OP Intermediate. Working scenario used by the Demand Planner during the Demand Planning cycle. Forecast adjustments are managed in this scenario and also used for generating a Statistical Forecast, if implemented. Once approved, the consensus forecast is committed to Baseline. This scenario is automatically updated when the S&OP Process owner starts new S&OP cycle. Additional details: Permanent: Yes Shared: Yes (with Planners) Modify/View: Modify Auto Update: Yes Update Frequency: When S&OP Intermediate is updated Commit Frequency: When you run Publish the S&OP pl"
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Scenario Structure",
+        "snippet": "[Customer] is leveraging the standard scenario structure:\n| Scenario | Purpose |\n| --- | --- |\n| Enterprise Data | Contains the most recent extracted data from ERP data source, as well as configuration (control) tables and data required for data loads (e.g. NoCustomer, NoSupplier). Enterprise Data is typically only accessible / visible to system and data administrators. Additional details: Permanent: Yes Shared: Accessible only to system and data administrators Modify/View: View Auto Update: N/A Update Frequency: Daily Commit Frequency: N/A |\n| Admin Manual Inputs | Child of Enterprise Data. U"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "2.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image5.png",
+        "snippet": "[Embedded Image: image5.png]\nStructured Description of image5.png:\nTitle/Quote:\n- “Making sure the right product, is in the right place, at the right time”\nTable/Diagram Structure:\n- The image is a three-column matrix with connecting lines, showing relationships between Key Issues, Root Causes, and To-Be Directions in a supply chain context.\nColumn 1: Key Issues (left, color-coded)\n- Green (Demand):\n- Low forecast accuracy at SKU level\n- High demand variability due to customer ordering habits\n- Missing mid & long-term forecasting\n- Purple (Supply):\n- Lack supply agility to demand variability\n-"
+      },
+      {
+        "doc_name": "SOW_BKP.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "The high-level Project plan outlined in the project timeline Section 10. Which is mutually discussed and agreed between both the parties.\nAbout IXOM end customer: IXOM is an amalgamation of several different businesses (business models).\nIXOM have gone to market with an RFP detailing their need to improve and de-risk their existing largely manual and spreadsheet-based planning processes by moving to a modern integrated business planning software that can integrate into IXOM’s core SAP environment. As part of the process, the Kinaxis product (Maestro) has been selected, with funding approved fo"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Add types of detailed that will provide or require further clarity (Information, Decisions, Limitations, Exclusions or Dependencies):\n| Type | Description | Status |\n| --- | --- | --- |\n| Decision | Limited Demand Inputs to Sales & Statistical Forecasts |  |\n| Decision | Generation of statistical forecast within RapidResponse is not in scope. |  |\n|  |  |  |"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Image: image5.png",
+        "snippet": "[Embedded Image: image5.png]\nStructured Description:\nTitle/Quote:\n- “Making sure the right product, is in the right place, at the right time”\nTable/Diagram Structure:\n- The image is a three-column flow diagram with the following headers:\n1. Key issues\n2. Root Cause\n3. To-Be Directions\nColumn 1: Key issues (color-coded by category)\n- Green (Demand):\n- Low forecast accuracy at SKU level\n- High demand variability due to customer ordering habits\n- Missing mid & long-term forecasting\n- Purple (Supply):\n- Lack supply agility to demand variability\n- Limited collaboration with suppliers to identify co"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Add types of detailed assumptions that will provide or require further clarity (Information, Decisions, Limitations, Exclusions or Dependencies):\n| Type | Description |\n| --- | --- |\n| Decision | Target Categories |\n| Decision | Baseline scenario used for all Targets |\n|  |  |"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "|  |  |\n| --- | --- |"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "| Type | Description |\n| --- | --- |\n| Decision |  |\n| Decision |  |"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Responsibilities Roles:\nNote: Mapped InventoryPlanners & MasterSchedulers to SupplyPlanner role"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "3.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Supply Chain Maps",
+        "snippet": "[insert a graphical representation of the supply network]"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Supply Chain Maps",
+        "snippet": "[Customer] network consists of xx distribution sites. There are xx manufacturing sites licensed."
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Supply Chain Maps",
+        "snippet": "[Customer] network consists of xx distribution sites. There are xx manufacturing sites licensed."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Sites",
+        "snippet": "Below is the different type of Sites which will be modelled in Maestro.\nDistribution Sites – includes both the third-party distribution and IXOM sites\nManufacturing Sites – IXOM Manufacturing Plant\nConsignment Stock Sites – to hold the product at Customer Site but still owned by IXOM\nIndent Sites – Dummy Sites to create the Sales Order so that Supplier knows which port to send the product to.\nDuring the implementation phase, we will identify all the individual sites to be created in Maestro."
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Sites",
+        "snippet": "Country:\tISO Alpha-2\nType:\nDistribution \tHas External Forecast or External Sales Orders\nManufacturing\tHas ‘make’ parts and contains Bills of Material\nVirtual\t\tUsed only for financial transactions"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image24.png",
+        "snippet": "**Other Details:**\n- No supply chain maps, site names, or system names are visible.\n- No process flows or architecture diagrams are present.\n- All charts are focused on key supply chain KP"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Sites",
+        "snippet": "The supply chain maps consist of the following sites.\nSites"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: Internal PMO-Timeline",
+        "snippet": "#2 - Benefits (minor input) | 2.2 Qualitative Benefits\n2.3 IXOM Identified Business Problems and Value Drivers | AU Traded Packaged  Leader,\nAU Traded Bulk Leader,\nAU ChlorAlkali Leader,\nNZ Leader | To be determined if all Leads in first session, then follow-ups? Or all separate from the start? If separate per BU, potentially to merge with the below (including SMEs) | Br-Solution Architect | 1 | 1\nBr-Sr Solution Consultant | 1 | 1\nKi- | 0\nTr-Supply Chain SME | 0\n7 | Workshops: Initial SME Working Session per Area | Introduction of each BU 's | #1 - Current-state challenges and opportunities pe"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Supply Chain Maps",
+        "snippet": "Below is the high-level Supply Chain map of for the BU “Chlor-Alkali” and “Trading Package” where you can see how the Warehouse are linked with each other and how it is linked with the Manufacturing Plant, and how the Manufacturing BOM will be connected end to end including the Subcontracting. The linkages between the nodes will show you how the demand and supply is transferred between one another.\nSupply Chain Network\nIn the below, you can notice how the imported Goods for Trading BU “Bulk Liquids” will be stored in the Terminal tanks and taken to other places.\nSupply Chain Network"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Sites",
+        "snippet": "The supply chain maps consist of the following sites.\nSites"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Sites",
+        "snippet": "The supply chain maps consist of the following sites.\n| Value | Description | Country Value | Currency Value | ERP Instant ID | Type |\n| --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image24.png",
+        "snippet": "[Embedded Image: image24.png]\nStructured Description of image24.png:\n**Application Context:**\n- Application: Kinaxis RapidResponse\n- User: Mariraja Sankarakumar\n- Tab: Executive\n- Section: Corporate Metrics\n**Visible Charts and Data:**\n1. **Revenue Value (Top Chart)**\n- Y-axis: Revenue Value (in thousands), ranging from $0 to $200,000\n- X-axis: Timeline from Jun-21 to Aug-22 (monthly intervals)\n- Data Series:\n- Annual Plan (line, dark blue)\n- S&OP Candidate (bar, light blue)\n- Observations: Revenue values fluctuate, peaking around Oct-21 and declining after.\n2. **Margin % (Bottom Left Chart)**"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: Internal PMO-Timeline",
+        "snippet": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: Internal PMO-Timeline\nColumns: Off-site\nOff-site: On-site\nOff-site: PH 10-Mar\n2025-01-28 | 2025-02-28 | 2025-03-28 | 2025-04-28 | 2025-05-28\nOff-site: 2025-03-10\nOff-site: WK4\n1 | Pre-work workshop planning | Understand and analyse all as-is processes provided by IXOM.\nFurther analyse all functional requirements.\nPrepare kick-off decks and workshop artefacts. | Br-Solution Architect | 2 | 2\nBr-Sr Solution Consultant | 2 | 2\nKi- | 0\nTr-Supply Chain SME | 2 | 2\n2 | Project governance | Br-Solution Architect | 0\nBr-Sr"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: Internal PMO-Timeline",
+        "snippet": "Br-Sr Solution Consultant | 3 | 2 | 1\nKi- | 0\nTr-Supply Chain SME | 0\n14 | Workshops: Distribution Planning Area | Distribution locations replenishment, cross location inventory visibility and redistribution, Metrics, User cases finalization | Br-Solution Architect | 2 | 2\nBr-Sr Solution Consultant | 2 | 2\nKi- | 0\nTr-Supply Chain SME | 0\n15 | Workshops: Master Data & Integrations | Data Mapping and validation | 1.6 - Planning Hierarchy Attributes (minor input) | Br-Solution Architect | 2 | 1 | 1\nBr-Sr Solution Consultant | 2 | 1 | 1\nKi- | 0\nTr-Supply Chain SME | 0\n16 | Information Collation | "
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: Internal PMO-Timeline",
+        "snippet": "Br-Sr Solution Consultant | 1 | 1\nTr-Project Manager | 0\nTr-Supply Chain SME | 0\n22 | Costing & Implementation Plan | Tridant/Bristlecone to create implementation plan including tasks, resources, travel and overall project timeline. Costings to be devised from the plan. | Br-Solution Architect | 3 | 3\nBr-Sr Solution Consultant | 3 | 3\nKi- | 0\nTr-Supply Chain SME | 0\n23 | BAU Costing (licensing) | Licensing costs. Cass to add Kinaxis resource to assist | Br-Solution Architect | 0\nBr-Sr Solution Consultant | 0\nKi- | 1 | 1\nTr-Supply Chain SME | 1 | 1\n24 | Training Approach | No longer included | "
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "5.4": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Ending Inventory | As a Planner, I want the visibility of period ending inventory in value and volume |\n|  | Inventory Targets | As a Planner, I want to define and adjust inventory targets, Ending Inventory, Minimum, Maximum and Periods of supply. |\n|  | Inventory Quality Ratio (IQR) | As a Planner, I want to configure the definitions of Active, Excess, Slow, and Obsolete inventory. |\n|  | Slow moving, Excess and Obsolete | As a Planner, I want the visibility of slow moving, excess and obsolete inventories by period. |\n|  | Stock Out"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Supply Planning – Review and Manage Inventory Exceptions",
+        "snippet": "The solution design consists of the following capabilities:\nIdentify parts with period ending inventory values that are above or below targets.\nIdentify parts with periods of supply values that are above or below targets.\nReview Inventory Quality Ratio metrics to assess the quality of your inventory.\nExplore and simulate different options for resolving inventory exceptions.\nAnalyze the impact of the adjustments.\nCollaborate with others to resolve exceptions.\nReview proposed adjustments and capture them in your ERP system."
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Resolve Inventory Exceptions",
+        "snippet": "The solution design with consist of the following capabilities:\nThe ability to view the ending inventories in value and volume\nThe ability to view inventory exceptions\nThe ability to view periods of coverage\nThe ability to view out-of-stocks and recovery date.\nThe ability to view exceptions by minimum and maximum stock levels and recovery dates\nThe ability to define slow moving, excess and obsolete stock levels"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Associated User Stories",
+        "snippet": "The user stories are linked to the Supply Planning – Review and Manage Inventory Exceptions epic (Jira # R20PT-5)\n| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Compare inventory targets to actuals/projections | As a Supply Planner, I want to compare current/projected inventory values and periods of supply values to their targets to help identify exceptions. |\n|  | Identify parts with inventory exceptions | As a Supply Planner, I want to review details about the individual parts with inventory exceptions and then explore different ways of resolving the issues. |\n|  | Transfer Inv"
+      },
+      {
+        "doc_name": "RapidStart User Stories_FitGap.xlsx",
+        "heading_path": "RapidStart User Stories_FitGap.xlsx — Sheet: User Stories",
+        "snippet": "* Identify parts that are currently out-of-stock, or at risk of stockouts, and determine its expected recovery date.\n* Review Inventory Quality Ratio metrics to assess the quality of your inventory.\n* Explore and simulate different options for resolving inventory exceptions.\n* Review changes and capture them in your ERP system.\nIssue Type: Epic, Sprint: 3, Summary: Supply Planning - Manage Constraint Exceptions, Description: The purpose of this process flow is to assist a Supply Planner with identifying and resolving constraint exceptions that are impeding the supply plan. You can also determi"
+      },
+      {
+        "doc_name": "RapidStart User Stories_FitGap.xlsx",
+        "heading_path": "RapidStart User Stories_FitGap.xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 2, Summary: Analyze impact on Inventory KPIs, Custom field (Acceptance Criteria): The Supply Planner can analyze the impact of the simulated adjustments to inventory on key corporate metrics to determine if the changes should be implemented. They can also apply filters (Part, Site) and hierarchies for focus., Description: As a Supply Planner, I want to analyze the impact of the simulated adjustments to inventory on key corporate metrics to determine if the changes should be implemented.\nInventory Key Performance Indicators (KPI€™s) include * On_time Line by Due Date*"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Inventory Management Foundation",
+        "snippet": "Below are the standard capabilities of the Inventory Management foundation. Any capabilities deemed not appropriate (by mutual agreement) for the [Customer] RapidStart deployment will be indicated as such. Any [Customer] specific requirements will be documented and scheduled for later stage phases.\n| Functions Model Inventory policies, safety stock policies, min/max, ABC analysis Inventory exception management Inventory quality ratio Inventory projections and turns Excess and obsolete reporting and analysis Core Algorithms & Logic Alerting and metric logic | KPIs Inventory Exceptions Order Iss"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 2, Summary: Compare inventory targets to actuals/projections, Custom field (Acceptance Criteria): The Supply Planner can compare inventory values and periods of supply values to their targets, by period. They can also apply filters (Part, Site) and hierarchies for focus., Description: As a planner, I want to compare current/projected inventory values and periods of supply values to their targets., Notes: Role: Supply Planner, Associated Resources: Task flow: Review and Manage Inventory Exceptions. Dashboard: Inventory Manager. Workbook: Manage Inventory Targets\nIssue"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "* Identify parts that are currently out-of-stock, or at risk of stockouts, and determine its expected recovery date.\n* Review Inventory Quality Ratio metrics to assess the quality of your inventory.\n* Explore and simulate different options for resolving inventory exceptions.\n* Review changes and capture them in your ERP system.\nIssue Type: Epic, Sprint: 3, Summary: Supply Planning - Manage Constraint Exceptions, Description: The purpose of this process flow is to assist a Supply Planner with identifying and resolving constraint exceptions that are impeding the supply plan. You can also determi"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 2, Summary: Analyze impact on Inventory KPIs, Custom field (Acceptance Criteria): The Supply Planner can analyze the impact of the simulated adjustments to inventory on key corporate metrics to determine if the changes should be implemented. They can also apply filters (Part, Site) and hierarchies for focus., Description: As a Supply Planner, I want to analyze the impact of the simulated adjustments to inventory on key corporate metrics to determine if the changes should be implemented.\nInventory Key Performance Indicators (KPI€™s) include * On_time Line by Due Date*"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Configure S&OP process activities | As the S&OP Process Owner, I want to have the ability to adjust the process template that outlines the activities. |\n|  | Create an S&OP process instance | As the S&OP Process Owner, I want to create a process instance to imitate the start of the demand planning process cycle. |\n|  | Start S&OP cycle or sub-cycle | As an S&OP Process Owner, I want to be able to trigger the start of a new S&OP cycle or sub-cycle so that I can initiate the S&OP process to be followed and executed by S&OP Team members"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Update annual plan targets | As a Finance Planner, I want the ability update the annual plan to align with current corporate objectives. |\n|  | Compare annual plan targets | As a Finance Planner, I want to compare adjustments made to annual plan targets to previous targets so that I can understand the impact of any changes on organizational corporate metrics. |\n|  | Manage annual plan assumptions | As a Finance Planner, I want to review, update and add new assumptions related to annual plan adjustments for future reference. |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Forecast Item Definition | As a Demand Planner, I want to create forecast items at the correct hierarchy level so that I can generate a statistical forecast. |\n|  | Assignment | As a Demand Planner, I want the ability to assign and detach a statistical forecast item form the part customer record. |\n|  | Profiles | As a Demand Planner, I want the ability to assign NPI/EOL demand profiles to the statistical forecast item. |\n|  | Parameters | As a Demand Planner, I want to have the ability to define and adjust the parameters of the stat"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Validate Sales history | As a Demand Planner, I want to validate Sales History value and volume data using hierarchies |\n|  | Cleanse errors | As a Demand Planner, I want to validate and adjust sales history for data errors (‘0’ periods) |\n|  | Adjust Outliers | As a Demand Planner, I want to validate and adjust sales history for outliers |\n|  | Adjust Casuals | As a Demand Planner, I want to validate and adjust sales history for causals (promotions) |\n|  | Cleanse forecast input data | As a Demand Planner, I want to validate and Sal"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Statistical Forecast Accuracy | As a Demand Planner, I want to review the accuracy of the historical statistical forecast in order to improve or correct the statistical forecast. |\n|  | Forecast Item Definition | As a Demand Planner, I want to create forecast items so that I can generate a statistical forecast at the correct level. |\n|  | Forecast Item Parameters | As a Demand Planner, I want to have the ability to select the statistical model to ensure that the statistical forecast generated is as accurate as possible. |\n|  | Foreca"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | New Products, Sources and Customers | As a Global Demand Planner, I want to define demand profiles for new and EOL products and assign to Statistical Forecast Item |\n|  | Finance Demand Review | As a Finance Planner, I want to review Finance Dashboard (containing applicable metrics) so that I can determine the necessary adjustments to demand for this cycle. |\n|  | Finance Demand Input | As a Finance Planner, I want the ability to adjust forecast, add assumptions at different levels of hierarchy and disaggregate automatically to lower"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Demand Ratios | As a Global Demand Planner, I want to be able to adjust the percentage that each demand input uses to calculate the unconstrained demand plan |\n|  | Unconstrained Demand Plan | As a Global/Regional Demand Planner, I want the ability to view the individual forecast inputs and the calculated consensus demand plan. |\n|  | Adjustment/ Override | As a Global/Regional Demand Planner, I want the ability to provide an adjustment override to calculated consensus demand plan. |\n|  | Compare | As a Global/Regional Demand Planner"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Demand & Supply Visibility | As a Regional/Global Demand Planner, I want the ability to view the demand and supply picture to determine any supply planning collaboration to mitigate demand at risk or rebalance demand. |\n|  | Override the consensus demand plan quantity | As a Regional/Global Demand Planner, I want to have the ability to override the consensus forecast quantity to rebalance the demand against the available supply to generate a constrained demand plan. |\n|  | Simulations | As a Regional/Global Demand Planner, I want to "
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story | Summary | Description |\n| --- | --- | --- |\n|  | Responsibility | As a Supply Network Planner, I want to view and update the master planner, production planner and supply network planner responsible for the part. |\n|  | Life Cycle | As a Supply Network Planner, I want the ability to identify the life cycle of a part (e.g. NPI, GA, EOL) |\n|  | Supply Stage | As a Supply Network Planner, I want the ability to identify the supply stage of a part (e.g. FG, WIP, RAW) |\n|  | Bill of Material | As a Supply Network Planner, I want the ability to view, update and simulate changes to BOM for d"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Define safety stock items | As a Supply Network Planner, I want to define new parts as safety stock items so that I can include those items in the calculations for recommended safety stock levels, and subsequent reporting. |\n|  | Safety stock item method (model) | As a Supply Network Planner, I want the ability to select the method (model) for planning safety stock so that I have the flexibility to alternate between models in simulations. |\n|  | Service Level | As a Supply Network Planner, I want the ability to adjust the desired ser"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "|  | Collaborate | As a Supply Network Planner, I want to collaborate with the planners to ensure the feasibility of any safety stock level recommendations I am accepting, especially if it has an impact inside lead-time. |\n|  | Manage assumptions | As a Supply Network Planner, I want to review, update and add assumptions related to changes I made in the safety stock recommendations. |\n|  | Manual Closed-Loop transactions | As a Supply Network Planner, I want to identify any parts for which I have made changes to the safety stock quantity to ensure adjustments are made in the ERP systems. |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Constraint Process | As a Production or Master Planner, I want to be able to review, add, maintain and communicate activities and tasks within the Capacity Planning (Constraints) |\n|  | Assign constraint target values | As a Production or Master Planner, I want to assign target values for constraint usage so that I can display targets in monitoring resources. |\n|  | Create constraints | As a Production or Master Planner, I want to add and update constraints and define their usage by Part |\n|  | Assign parts | As a Production or Maste"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Supply Plan | As a Master & Production Planner, I want the ability to view the impact of supply plan changes and their impact on targets and metrics. |\n|  | Firm ‘New’ Supply Orders | As a Master Planner, I want the ability automatically convert planned orders into ‘Firm’ planned orders for Scheduling. |\n|  | Firm Supply Orders | As a Master & Production Planner, I want the ability view supply orders in the Frozen and Scheduling Zone |\n|  | Frozen Zone Scheduling | As a Production Planner, I want the ability to drill to specific supp"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "|  | Late Revenue Caused by SP orders | As a Planner, I need to see the Late Revenue Caused by Supply Plan Orders so that I can evaluate the appropriate course of action. |\n|  | Constraints Impact | As a Planner, I need to see the Constraints Impacting Supply Plan so that I can evaluate the appropriate course of action. |\n|  | Component Shortages Impacting SP | As a Planner, I need to see the Component Shortages Impacting Supply Plan so that I can evaluate the appropriate course of action. |\n|  | Component Shortages by days to SP Start Date | As a Planner, I need to see the Component Shortages"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "|  | Obsolete Value | As a Planner, I need to see a time phased measurement of Obsolete Value over a horizon so that I can identify the appropriate disposition. |\n|  | SP Exceptions | As a Planner, I need to see the new exceptions as compared to a previous scenario, to include Late and Later revenue Caused by Supply Plan orders, Late Supply Plan orders, Planned orders, Number of constraint overloads / underloads, component shortages implicating Supply Plan, and High / low inventory violations so that I can identify the most recent changes to my Supply Plan that need action. |\n|  | Allocation |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Frozen Zone | As a Production Planner, I need to identify all supply orders exceptions in the ‘frozen’ zone that are at risk (Supply Available Date > Supply Due Date). |\n|  | Scheduling Zone | As a Master Planner, I need to identify all supply orders exceptions in the ‘frozen’ and ‘scheduling’ zone that are at risk (Supply Available Date > Supply Due Date). |\n|  | Demand Risk | As a Supply Network or Master Planner, I need to identify demands at risk (Supply Available Date > Demand Need Date). |\n|  | Volatility | As a Planner, I need"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Publish “Firm” Supply Plan in Scheduling Zone | As a Supply Network Planner, I want the ability to publish the “Firm” supply in the scheduling zone to the ERP system. |\n|  | Publish “Planning” Supply Plan | As a Supply Network Planner, I want the ability to publish the “Planned” supply in the Planning zone to the ERP system. |\n|  | Supply Plan History | As a Supply Network Planner, I want the ability to store the published supply plan into history. |\n|  | Inventory Plan History | As a Supply Network Planner, I want the ability to sto"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Associated User Stories",
+        "snippet": "The user stories are linked to the Update Annual Plan Targets epic\n| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Adjust forecast disaggregation rates | As a Demand Planner, I want the ability to adjust disaggregation ratios at any level in the hierarchy. |\n|  | Adjust forecast disaggregation configuration defaults | As a Demand Planner, I want the ability to modify the forecast disaggregation configuration defaults for different categories. |\n|  | Update pricing data | As a Demand Planner, I want the ability to review and adjust pricing data. |\n|  | Update limits for annual plan"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Associated User Stories",
+        "snippet": "|  | Update closing inventory value targets | As a Demand Planner, I want the ability to review and adjust the closing inventory value targets to make sure the defined targets align with current corporate objectives. |\n|  | Update Inventory Turns target | As a Demand Planner, I want the ability to review and adjust the Inventory Turns Target to make sure the defined targets align with current corporate objectives. |\n|  | Update Inventory Quality Ratio (IQR) target | As a Demand Planner, I want the ability to review and adjust the Inventory Quality Ratio (IQR) Target to make sure the defined ta"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Associated User Stories",
+        "snippet": "The user stories are linked to the Demand Planning – Manage Product Cycle epic (Jira # R20PT-119).\n| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Add a new product to a forecast | As a Demand Planner, I want the ability to create a new item records in RapidResponse. |\n|  | Define customer relationship for a new product | As a Demand Planner, I want the ability to define a customer relationship for that new item. |\n|  | Link a new part to a source | As a Demand Planner, I want the ability to link the new part to the expected source. |\n|  | Link a new part to a source constraint | "
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Associated User Stories",
+        "snippet": "The user stories are linked to the Demand Planning – Demand Input epic (Jira # R20PT-120).\n| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Review previous forecasts and identify forecast accuracy exceptions | As a Demand Planner, I want the ability to review the accuracy of previous forecasts, as well as identify any forecast accuracy exceptions. |\n|  | Adjust forecast disaggregation rates | As a Demand Planner, I want the ability to adjust disaggregation ratios at any level in the hierarchy. |\n|  | Adjust forecast disaggregation configuration defaults | As a Demand Planner, I wan"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Associated User Stories",
+        "snippet": "The user stories are linked to the Supply Planning – Review and Adjust Planning Parameters epic (Jira # R20PT-137)\n| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Review planning calendars | As a planner, I want to review the planning calendar that’s assigned to products so that RapidResponse plans according to the available dates. |\n|  | Review and adjust sourcing properties | As a planner, I want to view and simulate changes to sourcing properties which include order policies, lot sizes, planning time fence, and lead times, and also validate any changes against planning results."
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Associated User Stories",
+        "snippet": "|  | Analyze the impact of planning parameters changes | As a planner, I want to analyze the impact of the simulated adjustments to planning parameter on key corporate metrics to determine if the changes should be implemented. |\n|  | Collaborate to action supply order exceptions – Planning Parameters | As a planner, I want to collaborate with other planners to resolve supply order exceptions. |\n|  | Manually close the loop with ERP - Planning Parameters | As a planner, I want to review a list of the proposed adjustments to planning parameters so I can manually enter them in my system of record"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Associated User Stories",
+        "snippet": "The user stories are linked to the Supply Planning – Manage Firm Supply Exceptions epic:\n| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Identify firm supply exceptions | As a Supply Planner, I need to identify periods with late revenue that's caused by actual and forecast orders that are late. |\n|  | Review prioritized ERP actions | As a Supply Planner, I want to review the firm orders (scheduled receipts) that my ERP system has identified as requiring an action. |\n|  | Review Planning Sheet | As a Supply Planner, I want the ability view and simulate different supply order behavi"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Associated User Stories",
+        "snippet": "|  | Compare and score changes to firm orders | As a Planner, I want to review and compare the impact of changes to firm orders across scenarios, to my Inventory KPI's to determine if the changes should be implemented. |\n|  | Collaborate to action supply order exceptions – Firm orders | As a Supply Planner, I want to collaborate with other planners to resolve supply order exceptions. |\n|  | Manually close the loop with ERP – Firm orders | As a Supply Planner, I want to review a list of the proposed adjustments to firm orders so I can manually enter them in my system of record (ERP). |"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Associated User Stories",
+        "snippet": "The user stories are linked to the Supply Planning – Review and Adjust Demand epic (Jira # R20PT-139)\n| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Review forecast consumption behavior | As a planner, I need to be able to see how the sales orders are consuming the forecast to determine if adjustments to their consumption parameters could resolve consumption exceptions. |\n|  | Review demand order details | As a Supply Planner, I want to review additional details about a demand order and simulate adjustments to resolve the exception. |\n|  | Collaborate to action supply order excep"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Associated User Stories",
+        "snippet": "The user stories are linked to the Supply Planning – Manage Constraint Exceptions epic (Jira # R20PT-8)\n| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Review underloaded constraints | As a Planner, I want the ability to review load and constraint usage based on the current supply plan, and in what periods there are underloaded constraints so that I can understand in what periods there is additional capacity available, and where there may be opportunities to shift load and availability to most efficiently utilize resources. |\n|  | Review overloaded constraints | As a Supply Planne"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Associated User Stories",
+        "snippet": "|  | Simulate alternate part-source constraint usage | As a Supply Planner, I want to simulate using an alternate part-source to resolve an overloaded period. |\n|  | Maintain constraint variables | As a Supply Planner, I want to simulate changing different constraint variables primarily for filtering or informational purposes. (These include: Description, Group, Type, Key Constraint, Unit of Measure, Planner Code, and Planner Site) |\n|  | Compare and score changes to constraints | As a Supply Planner, I want to review and compare the impact of changes to constraints across scenarios to my corp"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Associated User Stories",
+        "snippet": "The user stories are linked to the Supply Planning – Prepare Data for Execution epic (Jira # R20PT-141)\n| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Identify planned orders for firming | As a Supply Planner, I want to review the planned requirements to identify planned orders that are good candidates for firming. |\n|  | Simulate manually firming a planned order | As a Supply Planner, I want to simulate manually firming a planned order to determine the impact on the supply plan. |\n|  | Auto-firm planned orders for MPS parts (Optional) | As a Supply Planner, if the MPS horizon ha"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories\nColumns: Issue Type | Issue key | Sprint | Summary | Custom field (Acceptance Criteria) | Description | Notes | Associated Resources\nIssue Type: Epic, Sprint: 1, Summary: Update Annual Plan Targets, Description: This process provides the Demand Planner with the ability to:\n* Review and adjust forecast disaggregation ratios.\n* Change forecast disaggregation configuration defaults.\n* Review and update pricing data.\n* Review and update annual plan targets and limits. (Targets include: Annual Plan (Value/Volume), Inventory Quality Ratio,"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "This process provides the Demand Planner with the ability to:\n* Review the sales forecast for accuracy and identify exceptions.\n* Review and adjust forecast disaggregation rates at different levels in the hierarchy.\n* Enter a forecast for a new product.\n* Update the sales forecast at different levels in the hierarchy.\n* Review and adjust part-customer pricing.\n* Record any assumptions at different levels in the hierarchy.\nIssue Type: Epic, Sprint: 1, Summary: Demand Planning - Manage Product Lifecycle, Description: This is a sub-process. The purpose of this process flow is to assist a Demand P"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "- Create Forecast Items\n- Adjust Forecast Item parameters\n- Generate and review the statistical forecast\n- Record any assumptions at different levels in the hierarchy.\nIssue Type: Epic, Sprint: 1, Summary: Demand Planning - Create Consensus Demand Plan, Description: This is a sub-process. The purpose of this process flow is to assist a Demand Planner with creating the consensus demand plan. You must create a consensus demand forecast that combines the functional forecasts from sales, or other streams, as well as any up-to-date information that you've gathered during the planning cycle (e.g. ne"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "* Monitor the planned orders that are projected in the planning horizon.\n* Review parts and scheduled receipts to determine if the parts are achievable.\n* Identify demand orders that are at risk of not being satisfied on time due to late supply.\n* Simulate various resolution options to resolve the exceptions:\n** Review and adjust planning parameters.\n** Resolve exceptions related to firm supply.\n** Review and adjust demand.\n** Resolve inventory exceptions.\n** Resolve constraint exceptions.\n* Review the planned orders that your ERP system has identified as requiring an action.\n* Prepare data fo"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "This process provides the Supply Planner with the ability to:\n* Monitor metrics to identify which periods have late orders that are impacting the supply plan.\n* Review orders that require actions that have been recommended by your ERP system.\n* Explore and simulate different resolution options for resolving supply plan exceptions.\n* Measure the impact of the adjustments that you make on key corporate metrics to find the best solutions.\n* Collaborate with others to resolve exceptions.\n* Review changes that were introduced to the supply plan as a result of the recommended resolution options to u"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "* Simulate manually firming a planned order to determine the impact on the supply plan.\n* Run a command to automatically firm planned orders for MPS parts. (Optional)\n* Determine if any outstanding data changes need to be updated in RapidResponse or your ERP system.\nIssue Type: Epic, Sprint: 4, Summary: Manage Planning Cycle - Planning Process Owner, Description: The Manage Planning Cycle process is to be executed by the Planning Process Owner. Managing the planning cycle involves starting the cycle and publishing the plan. This includes updating and generating the scenarios that are used duri"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "* Review Live Lens corporate metrics to monitor user adoption and identify data integrity issues.\n* Delete obsolete data from historical tables.\nNote:\n* You need to perform this process in the RapidResponse Java client because some of the administrative tasks are not yet supported in the Web client.\nIssue Type: Epic, Sprint: 0, Summary: Epic for Data Mapping & Integration Stories, Description: Epic for Data Mapping & Integration Stories\nIssue Type: Epic, Sprint: 4, Summary: Epic for Process Orchestration & Process Owner User Stories\nIssue Type: Epic, Sprint: 4, Summary: Live Lens and Other Rep"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "record in this table has two references to the PartCustomer table; the Component field which\nreferences the actual part and customer combination being aggregated, and the Aggregate field which\nreferences an aggregate part customer value.\nIssue Type: Story, Summary: BillOfMaterial.tab, Description: The BillOfMaterial table identifies parent and child relationships between assembly parts (products assemblies and sub-assemblies) and component parts (assemblies, sub-assemblies, and raw materials) used in the production of the assembly.\nIssue Type: Story, Summary: CalendarDate.tab, Description: The"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "customer or point of sale data from a customer.\nThis table supports Demand Planning and Statistical Forecasting in RapidResponse, and is needed for\nstatistical forecasting, forecast, disaggregation, and forecast accuracy. This table should be integrated\nduring the initial RapidResponse deployment.\nIssue Type: Story, Summary: HistoricalSupplyActual.tab, Description: This table contains supply data related to historical actual orders placed against suppliers on a given date.\nIssue Type: Story, Summary: IndependentDemand.tab, Description: The IndependentDemand table identifies demand not directly"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Summary: PartCustomer.tab, Description: The PartCustomer table supports RapidResponse applications, such as Sales and Operations Planning,\nDemand Planning, Statistical Forecasting, and Demand Sensing , and should be integrated during the\ninitial deployment. This table identifies each unique part and customer combination provided in\nhistorical data and then used in forecast generation.\nNOTE: It also requires a \"No_Customer\" record for all Parts without History Demand for populating non Demand related Target workbooks. Clients can opt for an internal RapidResponse transform to"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Summary: ScheduledReceipt.tab, Description: The ScheduledReceipt table contains supply for a single part that has an assigned due date. Examples of supplies are: purchase orders and manufacturing orders.\nIssue Type: Story, Summary: SourceConstraint.tab, Description: This table supports the Constraint Manager application, and defines constraint factors for part sources. Each record in this table defines the fixed and variable amounts of a constraint needed to produce supply from a given part source.\nIssue Type: Story, Sprint: 1, Summary: Adjust forecast disaggregation rates, "
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 1, Summary: Update pricing data, Custom field (Acceptance Criteria): The Demand Planner has the ability to review and adjust pricing data in order to accurately convert between unit and value targets,, Description: As a Demand Planner, I need to be able to review and update (as appropriate) the Unit Pricing information, in order to calculate Revenue Projections and other revenue related KPI's.NOTE: Generally, the Unit Price is maintained in the host ERP, and extracted into RapidResponse into the following fields:*  Part.AverageSellingPrice  - if an average selling pr"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "* Gross Margin Target\n* Inventory Quality Ratio Target\n* Inventory Turns Target\n* Margin Percent Target\n* On Time to Request Target\n* Period Ending Inventory Value Target\n* Period of Supply Minimum Target\n* Period of Supply Maximum Target\n* Raw Material Inventory Target\n* WIP Inventory Target, Notes: Role: Demand Planner, Associated Resources: Task flow: Update Annual Plan Targets. Workbook: S&OP Annual Plan. workbook, Settings worksheet\nIssue Type: Story, Sprint: 1, Summary: Update the Annual Operating Plan Target, Custom field (Acceptance Criteria): The Demand Planner has the ability to revi"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 1, Summary: Update On Time to Request (service level) target, Custom field (Acceptance Criteria): The Demand Planner can review and adjust the On Time to Request Target to make sure the defined targets align with current corporate objectives., Description: As a Demand Planner, I want the ability to review and adjust the On Time to Request Target to make sure the defined targets align with current corporate objectives., Associated Resources: Task flow: Update Annual Plan Targets. Workbook: S&OP Annual Plan. workbook, Annual Plan worksheet\nIssue Type: Story, Sprint: 1,"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 1, Summary: Update Inventory Quality Ratio (IQR) target, Custom field (Acceptance Criteria): The Demand Planner can review and adjust the closing Inventory Quality Ratio (IQR) Target to make sure the defined targets align with current corporate objectives., Description: As a Demand Planner, I want the ability to review and adjust the Inventory Turns Target to make sure the defined targets align with current corporate objectives., Notes: Role: Demand Planner, Associated Resources: Task flow: Update Annual Plan Targets. Workbook: S&OP Annual Plan. workbook, Annual Plan"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 1, Summary: Update constraint annual plan warnings and limits, Custom field (Acceptance Criteria): The Demand Planner can define and maintain warning and critical limits for the constraint targets that are used in all dashboards., Description: As a Demand Planner, I want the ability to define and maintain warning and critical limits for the constraint targets that are used in all dashboards., Notes: Role: Demand Planner, Associated Resources: Task flow: Update Annual Plan Targets. Workbook: S&OP Constraint Annual Plan. workbook, Settings worksheet\nIssue Type: Story, "
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 1, Summary: Create a new NPI product, Custom field (Acceptance Criteria): The Demand Planner can create a record for a new part in RapidResponse whenever a new part needs to be manually introduced., Description: As a Demand Planner, I want the ability to create a new item records in RapidResponse., Notes: Role: Demand Planner, Associated Resources: Task flow: Manage Product Lifecycle. Workbook: NPI Record Creation. workbook, Part worksheet\nIssue Type: Story, Sprint: 1, Summary: Define customer relationship for a new product, Custom field (Acceptance Criteria): The De"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 1, Summary: Add a bill of material record to a new part, Custom field (Acceptance Criteria): The Demand Planner can add a Bill of Material to a new part., Description: As a Demand Planner, I want the ability to add a Bill of Material to a new part., Notes: Role: Demand Planner, Associated Resources: Task flow: Manage Product Lifecycle. Workbook: Part Properties workbook, Components worksheet\nIssue Type: Story, Sprint: 1, Summary: Review previous forecasts and identify forecast accuracy exceptions, Custom field (Acceptance Criteria): The Demand Planner can review metr"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 1, Summary: Enter a forecast for a new product, Custom field (Acceptance Criteria): The Demand Planner can enter a sales forecast at the sku-site level for a new product in the new consensus demand plan., Description: As a Demand Planner, I want the ability to modify the forecast disaggregation configuration defaults for different categories., Notes: Role: Demand Planner, Associated Resources: Task flow: Input Forecast - Sales ., Workbook: NPI Record Creation.\nIssue Type: Story, Sprint: 1, Summary: Sales/Operations Demand Input, Custom field (Acceptance Criteria): Ab"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 1, Summary: Review forecast value add, Custom field (Acceptance Criteria): The Demand Planner can evaluate each forecast category that is included in the consensus demand planning process to determine if it is more or less accurate than the naÃ¯ve forecast. The naÃ¯ve forecast for a period is the actual value from the previous period for the selected category of actual demand The accuracy is defined as the difference in mean absolute percent error between each forecast stream and the naÃ¯ve forecast., Description: As a Demand Planner, I want to evaluate each forecast"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "The exceptions that are reported represent the number of forecast items with an accuracy percentage that is greater than the established default limit. The accuracy is calculated by comparing the forecast to the selected category of actual demand and providing a summary for the previous 12 months., Description: As a Global/Regional Demand Planner, I want to identify any forecast accuracy exceptions that correspond to the various forecast categories that are included in the consensus demand planning process. I can use this information to make any necessary adjustments to the consensus demand we"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 1, Summary: Adjust Demand Ratios, Custom field (Acceptance Criteria): The Demand Planner can adjust the percentage that each demand input uses to calculate unconstrained demand plan. They can also validate the weight of each demand and apply filters (Part, Site) and hierarchies to control where changes are made., Description: As a Global Demand Planner, I want to be able to adjust the percentage that each demand input uses to calculate the unconstrained demand plan, Notes: Role: Demand Planner, Associated Resources: Taskflow: Create Consensus Demand Plan. Workbook: S"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 1, Summary: View unconstrained demand plan, Custom field (Acceptance Criteria): The Demand Planner can view the individual forecast inputs and the calculated consensus demand plan., Description: As a Global/Regional Demand Planner, I want to view the individual forecast inputs and the calculated consensus demand plan., Notes: Role: Demand Planner, Associated Resources: Task flow: Create a consensus demand plan., Dashboard: Demand Planner., Workbook: S&OP Consensus Demand Planning\nIssue Type: Story, Sprint: 1, Summary: Compare demand plan to targets, Custom field (Acc"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 2, Summary: Monitor planned orders in planning horizon, Custom field (Acceptance Criteria): As a planner, I want to monitor and determine how many planned orders are projected for each period in the planning horizon., Description: As a planner, I want to monitor and determine how many planned orders are projected for each period in the planning horizon., Notes: Role: Supply Planner, Associated Resources: Task flow: Review and Validate Planned Orders, Dashboard: Supply Planner,, Workbook: Planning Sheet.\nIssue Type: Story, Sprint: 2, Summary: Review planned parts for "
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 2, Summary: Review planned orders and actions, Custom field (Acceptance Criteria): As a planner, I want to monitor and determine how many planned orders are projected for each period in the planning horizon., Description: As a planner, I want to review a prioritized list of planned orders that my ERP system has identified as requiring an action., Notes: Role: Supply Planner, Associated Resources: Task flow: Review and Validate Planned Orders, Dashboard: Supply Planner,, Workbook: Planning Sheet.\nIssue Type: Story, Sprint: 2, Summary: Review planning calendars, Custom"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 2, Summary: Review and adjust sourcing properties, Custom field (Acceptance Criteria): The Supply Planner can view and simulate changes to a part and apply filters and hierarchies for focus. They can modify Source Selection Rules / Sourcing - General Modify Supply Order Policies / Planning Policies Ability to change the following PartSource variables: - Lot Size Quantity - Minimum- Lot Size Quantity - Maximum- Lot Size Quantity - Multiple- Lead Time - Fixed- Planning Time Fence - Units- Safety Lead Time, Description: As a planner, I want to view and simulate changes "
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 2, Summary: Review and adjust safety stock policies, Custom field (Acceptance Criteria): The Supply Planner can simulate updating, adding, and removing different safety stock policies (fixed/time-phased) and associate parts to a safety stock policy., Description: As a planner, I want to be able to view individual part safety stock planning properties so that I can have the necessary background information about sourcing lead time, order quantities, and other rules governing how safety stock levels are calculated. I also want to simulate adjustments to safety stock po"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 2, Summary: Review and adjust a planning Bill of Materials (BOM's), Custom field (Acceptance Criteria): The Supply Planner can view Planning BOM with quotas, quantities, effective dates, lead times and cumulative lead time. They can also apply filters (Part, Site) and hierarchies for focus., Description: As a Planner, I want the ability to view and simulate adjusting Planning BOM with quotas, quantities, effective dates, lead times and cumulative lead time. I also want the ability to view the components of a Planning BOM and simulate changes as appropriate., Notes: R"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 2, Summary: Collaborate to action supply order exceptions - Planning Parameters, Custom field (Acceptance Criteria): The Planner can use the responsible column and the collaboration center to start collaborations with others to resolve exceptions., Description: As a planner, I want to be able to collaborate with other planners to resolve supply order exceptions related to planning parameters., Notes: Role: Supply Planner, Associated Resources: Task flows: Review and Adjust Planning Parameters., Collaboration Center\nIssue Type: Story, Sprint: 2, Summary: Manually clos"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 2, Summary: Review prioritized ERP actions, Custom field (Acceptance Criteria): The Supply Planner can manage exceptions by reviewing the firm orders (scheduled receipts) that your ERP system has identified as requiring an action. The orders are shown in a prioritized view and are categorized by the following actions: Cancel, Expedite, and Push-out (de-expedite)., Description: As a Supply Planner, I need to identify periods with late revenue that's caused by actual and forecast orders that are late., Notes: Role: Supply Planner, Associated Resources: Task flow: Manag"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 2, Summary: Create new firm orders, Custom field (Acceptance Criteria): The Supply Planner can simulate creating a new firm order., Description: As a Supply Planner, I need to simulate expediting or de-expediting a firm order by changing the due date to the recommended date., Notes: Role: Supply Planner, Associated Resources: Task flow: Manage Firm Supply Exceptions., Workbook: Planning Sheet\nIssue Type: Story, Sprint: 2, Summary: Split supply, Custom field (Acceptance Criteria): The Supply Planner can review the on-time quantity of a firm order to determine if simul"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 2, Summary: Change firm order supply status, Custom field (Acceptance Criteria): The Supply Planner can simulate changing the status of an firm order to try to resolve an exception., Description: As a Supply Planner, I need to simulate changing the quantity of a firmed order to resolve an exception., Notes: Role: Supply Planner, Associated Resources: Task flow: Manage Firm Supply Exceptions., Workbook: Planning Sheet\nIssue Type: Story, Sprint: 2, Summary: Analyze the impact of firm order changes, Custom field (Acceptance Criteria): The Planner can review a dashboard "
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 2, Summary: Review demand order details, Custom field (Acceptance Criteria): The Supply Planner can review additional details about a demand order and simulate adjustments to resolve the exception., Description: As a Supply Planner, I want to review additional details about a demand order and simulate adjustments to resolve the exception., Notes: Role: Supply Planner, Associated Resources: Taskflow: Review and Adjust Demand. Workbook: Forecast Consumption Analysis., Demand Order Analysis - Partial Orders\nIssue Type: Story, Sprint: 2, Summary: Collaborate to action su"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 2, Summary: Adjust on-hand inventory quantity, Custom field (Acceptance Criteria): The Supply Planner can simulate adjusting the inventory quantity at a given site to resolve an exception., Description: As a Supply Planner, I want to simulate transferring inventory from another site to resolve projected late orders at a site., Notes: Role: Supply Planner, Associated Resources: Task flow: Review and Manage Inventory Exceptions. Workbook: Planning Sheet.\nIssue Type: Story, Sprint: 2, Summary: Adjust inventory type, Custom field (Acceptance Criteria): The Supply Planner"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 2, Summary: Manually close the loop with ERP - Inventory, Custom field (Acceptance Criteria): The Supply Planner can review a list of the proposed adjustments to inventory so I can manually enter them in my system of record (ERP)., Description: As a Supply Planner, I want to review a list of the proposed adjustments to inventory so I can manually enter them in my system of record (ERP)., Notes: Role: Supply Planner, Associated Resources: Task flow: Review and Manage Inventory Exceptions. Workbook: Manual Closed Loop Inventory.\nIssue Type: Story, Sprint: 3, Summary: R"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 3, Summary: Review overloaded constraints, Custom field (Acceptance Criteria): The Supply Planner can identify overloaded constraints in any period and drill down to details to resolve issues., Description: As a Supply Planner, I want to have the ability to review load and constraint usage based on the current supply plan, and in what periods there are overloaded constraints so that I can understand in what periods the supply plan is constrained and at risk of not meeting the demand plan because of overloaded constraints, and be able to focus on resolving those first"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 3, Summary: Manage supply source constraint assignments, Custom field (Acceptance Criteria): The Planner can simulate assigning a part-source to a different constraint. They can also apply filters for focus., Description: As a Supply Planner, I want to simulate assigning a part-source to a different constraint., Notes: Role: Supply Planner, Associated Resources: Task flow: Manage Constraint Exceptions. Workbook: Constraint Properties.\nIssue Type: Story, Sprint: 3, Summary: Simulate alternate part-source constraint usage, Custom field (Acceptance Criteria): The Supply"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 3, Summary: Compare and score changes to constraints, Custom field (Acceptance Criteria): The Planner can use a scorecard to review the impact of changes to constraints across multiple scenarios., Description: As a Planner, I want to review and compare the impact of changes to constraints across scenarios to my corporate metrics to determine if the changes should be implemented., Notes: Role: Supply Planner, Associated Resources: Task flows: Manage Constraint Exceptions., Scorecard: Corporate Metrics.\nIssue Type: Story, Sprint: 3, Summary: Evaluate constraint changes"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 3, Summary: Collaborate to action supply order exceptions - Constraints, Custom field (Acceptance Criteria): The Planner can use the responsible column and the collaboration center to start collaborations with others to resolve exceptions., Description: As a planner, I want to be able to collaborate with other planners to resolve supply order exceptions related to constraints., Notes: Role: Supply Planner, Associated Resources: Task flow: Manage Constraint Exceptions., Collaboration Center\nIssue Type: Story, Sprint: 3, Summary: Manually close the loop with ERP - Cons"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 2, Summary: Prepare data for execution, Custom field (Acceptance Criteria): The supply planner can monitor and determine how many planned orders are projected for each period in the planning horizon., Description: As a planner, I need review any changes that were introduced to the supply plan as a result of the recommended resolution options to effectively capture them in your ERP system to execute the supply plan., Notes: Role: Supply Planner, Associated Resources: Task flow: Review and Validate Planned Orders, Prepare Data for Execution.\nIssue Type: Story, Sprint: "
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 2, Summary: Review data changes, Custom field (Acceptance Criteria): The Supply Planner can review of all data changes (planning parameters, firm supply, inventory, and constraints) that were made as a result of simulated adjustments so I can manually entered them in my ERP system or RapidResponse., Description: As a Supply Planner, I want do a final review of all data changes that were made as a result of simulated adjustments so I can manually entered them in my ERP system or RapidResponse., Notes: Role: Supply Planner, Associated Resources: Task Flow: Prepare Data"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 4, Summary: Commit Demand Plan, Custom field (Acceptance Criteria): The Planning Process Owner can commit the Candidate Demand Plan to the S&OP Candidate scenario to prepare for publishing the plan at the end of the planning cycle., Description: As a Planning Process Owner, I need the ability to commit the Candidate Demand Plan to the S&OP Candidate scenario to prepare for publishing the plan at the end of the planning cycle., Notes: Role: Planning Process Owner\nIssue Type: Story, Sprint: 4, Summary: Write details to history, Custom field (Acceptance Criteria): The P"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 4, Summary: End planning cycle, Custom field (Acceptance Criteria): The Planning Process Owner can commit the approved plan to the S&OP Intermediate scenario, I need to archive the previous version of the plan, and then the update the Current S&OP scenario with the updated plan., Description: As a Planning Process Owner, I need to commit the approved plan to the S&OP Intermediate scenario, I need to archive the previous version of the plan, and then the update the Current S&OP scenario with the updated plan., Notes: Role: Planning Process Owner, Associated Resources:"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 4, Summary: Live Lens - Adoption, Custom field (Acceptance Criteria): Center of Excellence manager is able to understand how well RapidResponse is being utilized, Description: As a Center of Excellence manager, I need to understand how well the Rapid Response is being utilized, Associated Resources: Taskflow: Live Lens Metrics ReviewScorecard: Corporate MetricsDashboard: Adoption Dashboard\nIssue Type: Story, Sprint: 4, Summary: Live Lens - Corporate Monitor, Custom field (Acceptance Criteria): Executive team understands the S&OP targets measurements and how the busin"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 4, Summary: Delete obsolete historical table, Custom field (Acceptance Criteria): The Administrator can delete obsolete records from various historical tables for maintenance purposes using scheduled system tasks that are created at deployment., Description: As an Administrator,I need to delete obsolete records from various historical tables for maintenance purposes. (Tables include: HistoricalDemandActuals, HistoricalDemandSeriesDetail and HistoricalDemandCategory.), Notes: Role: Administrator, Associated Resources: Task flow: Administrator Process.\nIssue Type: Stor"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "- Create new Part\n- Add new PartSource\n- Add New PartCustomer record\n- Add new Customer record, Notes: Role: Demand Planner/Statistical Forecaster, Associated Resources: Taskflow: Statistical Forecasting., Manage NPI/EOL Items.\nWorkbook: NPI Record Creation.\nIssue Type: Story, Sprint: SF, Summary: Create forecast items, Custom field (Acceptance Criteria): Ability to create forecast items\nAbility to apply filters (Part, Site) and hierarchies for focus, Description: As a Demand Planner, I want to create forecast items so that I can generate a statistical forecast at the correct level., Notes: Ro"
+      },
+      {
+        "doc_name": "RapidStart User Stories R2302 (1).xlsx",
+        "heading_path": "RapidStart User Stories R2302 (1).xlsx — Sheet: User Stories",
+        "snippet": "Workbooks: S&OP Forecast Item Management., S&OP Statistical Forecasting., S&OP Forecast Accuracy.\nIssue Type: Story, Sprint: Expiry, Summary: Review and Adjust Expiry Parameters, Custom field (Acceptance Criteria): Able to view and adjust expiry parameters., Description: As a Planner, I want the ability to view and update part expiry parameters such as part type and minimum shelf life, Notes: Role: Supply Planner, Associated Resources: Taskflow: Manage Expiry                                                                                                                                         "
+      },
+      {
+        "doc_name": "RapidStart User Stories_FitGap.xlsx",
+        "heading_path": "RapidStart User Stories_FitGap.xlsx — Sheet: User Stories",
+        "snippet": "RapidStart User Stories_FitGap.xlsx — Sheet: User Stories\nColumns: Issue Type | Issue key | Sprint | Summary | Custom field (Acceptance Criteria) | Description | Notes | Associated Resources\nIssue Type: Epic, Sprint: 1, Summary: Update Annual Plan Targets, Description: This process provides the Demand Planner with the ability to:\n* Review and update pricing data.\n* Review and update annual plan targets and limits. (Targets include: Annual Plan (Value/Volume), Inventory Quality Ratio, Inventory Turns, Margin Percent, On Time Request, Period Ending Inventory, Periods of Supply (Max/Min)\n* Review"
+      },
+      {
+        "doc_name": "RapidStart User Stories_FitGap.xlsx",
+        "heading_path": "RapidStart User Stories_FitGap.xlsx — Sheet: User Stories",
+        "snippet": "* Update the sales forecast at different levels in the hierarchy.\n* Review and adjust part-customer pricing.\n* Record any assumptions at different levels in the hierarchy.\nIssue Type: Epic, Sprint: 1, Summary: Demand Planning - Manage Product Lifecycle, Description: This is a sub-process. The purpose of this process flow is to assist a Demand Planner in managing the lifecycle of products that are reported in forecasts. For example, you may need to introduce a new product to your forecast.\nThis process provides the Demand Planner with the ability to:\n* Create a new item record.\n* Define a custo"
+      },
+      {
+        "doc_name": "RapidStart User Stories_FitGap.xlsx",
+        "heading_path": "RapidStart User Stories_FitGap.xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Epic, Sprint: 4, Summary: Live Lens and Other Reporting, Description: Epic for Live Lens & Other Reporting User Stories\nIssue Type: Story, Summary: Allocation.tab, Description: This table identifies allocations; that is, dependent demand items generated because a work order (scheduled receipt) was created for a make item. It only contains those allocations which were contained in your enterprise data source, and imported into the RapidResponse data model. Typically, this is done at a time close to when the order is being released to the shop floor, or when you have deviated from th"
+      },
+      {
+        "doc_name": "RapidStart User Stories_FitGap.xlsx",
+        "heading_path": "RapidStart User Stories_FitGap.xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Summary: Constraint.tab, Description: The Constraint table lists all available constraints used by RapidResponse.\nIssue Type: Story, Summary: ConstraintAvailable.tab, Description: This table supports the Constraint Manager application, and is used to define the availability (rate) of a constraint over a period of time.\nIssue Type: Story, Summary: Customer.tab, Description: A customer is a consumer of an independent demand item and may be a consumer, a distributor, service center, or a plant identifier for inter-plant orders.\nIssue Type: Story, Summary: CustomerPrice.tab, Des"
+      },
+      {
+        "doc_name": "RapidStart User Stories_FitGap.xlsx",
+        "heading_path": "RapidStart User Stories_FitGap.xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Summary: OnHand.tab, Description: The OnHand table stores the amount of inventory and other details for a part in a particular location within a warehouse.\nIssue Type: Story, Summary: Part.tab, Description: The Part table identifies a unique part and site. A record in this table includes data such as: name, description, price, and cost data.  RapidStart Assumptions: - Up to 3 ReferencePart attrributes   - ReferencePart.ProductHierarchy1   - ReferencePart.ProductHierarchy2   - ReferencePart.ProductHierarchy3  - Up to 3 Part attributes   - ProductFamily.Value   - Part.ProductG"
+      },
+      {
+        "doc_name": "RapidStart User Stories_FitGap.xlsx",
+        "heading_path": "RapidStart User Stories_FitGap.xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Summary: PartSource.tab, Description: The PartSource table defines multiple sources of supply for a part.  The BaseKey, Part, and Source fields form the PartSource table's primary key. In many cases, BaseKey can be blank. When only one part source for a part exists, a blank BaseKey value is sufficient. Similarly, in cases where there is never more than one PartSource record for each supplier of a part, a blank BaseKey value is also valid.  Where there is more than one PartSource record per part, a BaseKey value must be created to ensure each PartSource record is unique.  Rap"
+      },
+      {
+        "doc_name": "RapidStart User Stories_FitGap.xlsx",
+        "heading_path": "RapidStart User Stories_FitGap.xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 1, Summary: Adjust forecast disaggregation configuration defaults, Custom field (Acceptance Criteria): The Demand Planner has the ability to modify the forecast disaggregation configuration defaults for different categories., Description: As a Demand Planner, I want the ability to modify the forecast disaggregation configuration defaults for different categories., Notes: Role: Demand Planner, Associated Resources: Task flow: Update Annual Plan Targets. Workbook: S&OP Forecast Disaggregation. workbook, Configuration worksheet\nIssue Type: Story, Sprint: 1, Summary: Upd"
+      },
+      {
+        "doc_name": "RapidStart User Stories_FitGap.xlsx",
+        "heading_path": "RapidStart User Stories_FitGap.xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 1, Summary: Update limits for annual plan categories, Custom field (Acceptance Criteria): The Demand Planner has ability to update the limits for the following annual plan categories to align with current corporate objectives: Annual Plan Value Target, Annual Plan Volume Target, FG Inventory Category, Gross Margin Target, Inventory Quality Ratio Target, Inventory Turns Target, Margin Percent Target, On Time to Request Target, Period Ending Inventory Value Target, Period of Supply Minimum Target, Period of Supply Maximum Target, Raw Material Inventory Target, and WIP "
+      },
+      {
+        "doc_name": "RapidStart User Stories_FitGap.xlsx",
+        "heading_path": "RapidStart User Stories_FitGap.xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 1, Summary: Convert value target to volume (and visa versa), Custom field (Acceptance Criteria): The Demand Planner can run a command that converts the value target to a volume target (and visa versa)., Notes: Role: Demand Planner, Associated Resources: Task flow: Update Annual Plan Targets. Workbook: S&OP Annual Plan. workbook,  Convert Value to Volume Target. command\nIssue Type: Story, Sprint: 1, Summary: Update Margin Percent Target, Custom field (Acceptance Criteria): The Demand Planner has the ability to review and adjust the Margin Percent Target to make sure t"
+      },
+      {
+        "doc_name": "RapidStart User Stories_FitGap.xlsx",
+        "heading_path": "RapidStart User Stories_FitGap.xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 1, Summary: Update closing inventory value targets, Custom field (Acceptance Criteria): The Demand Planner can review and adjust the closing inventory targets (FG Inventory Target, Raw Material Inventory Target, and WIP Inventory Target to make sure the defined targets align with current corporate objectives., Description: As a Demand Planner, I want the ability to review and adjust the closing inventory targets to make sure the defined targets align with current corporate objectives. These targets include:\n* FG Inventory Target\n* Raw Material Inventory Target\n* WIP "
+      },
+      {
+        "doc_name": "RapidStart User Stories_FitGap.xlsx",
+        "heading_path": "RapidStart User Stories_FitGap.xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 1, Summary: Update Periods of Supply Min/Max targets, Custom field (Acceptance Criteria): The Demand Planner can review and adjust the closing Periods of Supply Min/Max Targets  to make sure the defined targets align with current corporate objectives., Description: As a Demand Planner, I want the ability to review and adjust the Inventory Turns Target to make sure the defined targets align with current corporate objectives., Notes: Role: Demand Planner, Associated Resources: Task flow: Update Annual Plan Targets. Workbook: S&OP Annual Plan. workbook, Annual Plan work"
+      },
+      {
+        "doc_name": "RapidStart User Stories_FitGap.xlsx",
+        "heading_path": "RapidStart User Stories_FitGap.xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 1, Summary: Manage annual plan assumptions, Custom field (Acceptance Criteria): The Demand Planner can review, modify, and add new assumptions related to annual plan adjustments for future reference., Description: As a Demand Planner, I want to review, update and add new assumptions related to annual plan adjustments for future reference., Associated Resources: S&OP Annual Plan. workbook, Assumptions worksheet\nIssue Type: Story, Sprint: 1, Summary: Evaluate impact of the adjustment to annual plan targets, Custom field (Acceptance Criteria): The Demand Planner can eva"
+      },
+      {
+        "doc_name": "RapidStart User Stories_FitGap.xlsx",
+        "heading_path": "RapidStart User Stories_FitGap.xlsx — Sheet: User Stories",
+        "snippet": "Issue Type: Story, Sprint: 1, Summary: Link a new part to a source, Custom field (Acceptance Criteria): The Demand Planner can link a new part to the expected part source., Description: As a Demand Planner, I want the ability to link the new part to the expected source., Notes: Role: Demand Planner, Associated Resources: Task flow: Manage Product Lifecycle. Workbook: NPI Record Creation. workbook, Source worksheet\nIssue Type: Story, Sprint: 1, Summary: Link a new part to a source constraint, Custom field (Acceptance Criteria): The Demand Planner can link a new part to a source constraint., Des"
+      },
+      {
+        "doc_name": "RapidStart User Stories_FitGap.xlsx",
+        "heading_path": "RapidStart User Stories_FitGap.xlsx — Sheet: User Stories",
+        "snippet": "The accuracy is calculated by comparing the sales forecast to the selected category of actual demand and providing a summary for the previous x months. RapidStart Demand Streams:* Sales., Associated Resources: Taskflow: Input Forecast - Sales ., Dashboard: Sales. S&OP Forecast Accuracy Widgets., S&OP Revenue Treemap.,\nIssue Type: Story, Sprint: 1, Summary: Adjust Sales Forecast disaggregation rates, Custom field (Acceptance Criteria): The Demand Planner can adjust forecast disaggregation ratios at any level in the hierarchy., Description: As a Demand Planner, I want the ability to adjust disag"
+      },
+      {
+        "doc_name": "RapidStart User Stories_FitGap.xlsx",
+        "heading_path": "RapidStart User Stories_FitGap.xlsx — Sheet: User Stories",
+        "snippet": "Ability to add assumptions.\nThe Demand Planner can also import a forecast from an Excel file.\nAbility to apply filters (Part, Site) and hierarchies for focus, Description: As a Sales/Operations Demand Planner, I want the ability to add and adjust the Sales forecast, add assumptions at different levels of hierarchy and disaggregate automatically to lower levels.Also, the ability to record assumptions at any level in the hierarchy to capture reasoning behind changes to the Sales Forecast., Associated Resources: Taskflows: Input Forecast - Sales.Workbooks: S&OP Sales Forecast.\nIssue Type: Story, "
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "ChlorAlkali and Traded Packaged business units use all the possible distribution combinations as mapped below.\nDistribution Network – ChlorAlkali & Traded Package\nThe Bulk Liquids business unit uses the distribution network below.\nDistribution Network – Bulk Liquids"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: ARCHIVE_V2-WorkshopSchedule",
+        "snippet": "28.000000000000004 | 224.00000000000003 | 167 | 100.99999999999999 | 110\n277\nWorkshops: Demand Planning Area: hours\nWorkshops: Demand Planning Area: days\n8 hours info capture | 4 | 4 | 4 | 3\n6 hours for draft | 4 | 4 | 4\nplayback/validate to IXOM | 4 | 4 | 4\n294 | feedback edits | 4 | 4 | 4\nWorkshops: Demand Planning Area: hours\nWorkshops: Demand Planning Area: days\npresent back to IXOM | 4 | 4 | 4\n4 | 4 | 4\nWorkshops: Constrain Optimistation"
+      },
+      {
+        "doc_name": "Ixom Comments - Maestro & SAP ERP Data Mapping Template and Files including TD Comments.xlsx",
+        "heading_path": "Ixom Comments - Maestro & SAP ERP Data Mapping Template and Files including TD Comments.xlsx — Sheet: CRPOperation.tab",
+        "snippet": "Ixom Comments - Maestro & SAP ERP Data Mapping Template and Files including TD Comments.xlsx — Sheet: CRPOperation.tab\nColumns: N/A for IXOM\nN/A for IXOM: Target System (Maestro)\nN/A for IXOM: Reference Files: CRPOperation.tab\nN/A for IXOM: Field Position\nN/A for IXOM: 1\nN/A for IXOM: 2\nN/A for IXOM: 3\nN/A for IXOM: 4\nN/A for IXOM: 5\nN/A for IXOM: 6\nN/A for IXOM: 7\nN/A for IXOM: 8\nN/A for IXOM: 9\nN/A for IXOM: 10\nN/A for IXOM: 11\nN/A for IXOM: 12\nN/A for IXOM: 13\nN/A for IXOM: 14\nN/A for IXOM: 15\nN/A for IXOM: 16\nN/A for IXOM: 17\nData Filtering Conditions\nIndicate the filtering conditions to b"
+      },
+      {
+        "doc_name": "SOW_BKP.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Based on the outcomes of the Blueprint and the scale and complexity of the solution uncovered, IXOM has elected to adopt Kinaxis Planning One using the Kinaxis RapidStart approach. This enables the deployment of a standardised, best-practice version of concurrent planning across the business, reducing implementation risk, accelerating time to value, and aligning the solution to proven Kinaxis delivery frameworks.\nThis approach provides a number of key benefits to the Customer, including accelerated deployment timelines through a pre-configured solution, reduced delivery risk by leveraging prov"
+      },
+      {
+        "doc_name": "SOW_BKP.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "The Analysis & Design Phase will be completed upon:\nDelivery of all Deliverables set out in Table 1; and\nTridant providing Bristlecone with an Acceptance Notice for the Analysis & Design Phase.\nFunctional Scope:\nThis SOW will focus on providing a Level 1 Maestro platform to support the following planning capabilities within Maestro.\nProcess Capabilities:\nThe following capabilities will be enabled, based on data availability, and based on a review of the RapidStart Blueprint for Planning One with IXOM.\nLevel 1 Supply Chain Planning Process Capabilities\nLevel 2 Supply Chain Planning Process Capa"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Image: image81.png",
+        "snippet": "[Embedded Image: image81.png]\nStructured Description of image81.png:\n**General Context:**\n- The image is a screenshot from an ERP or supply chain planning system, specifically from a module related to \"Distribution Requirement Planning\" and \"Inventory Transfers.\"\n- The active tab is \"Planning Parameters,\" with a focus on \"Sourcing Properties.\"\n- The system appears to be IXOM's IBP Maestro Solution.\n**Visible Tabs:**\n- Forecast Consumption\n- Planning BOM\n- Planning BOM Option Ratio\n- Part Properties\n- Part Solution Properties\n- Sourcing Properties (active)\n- Reference Part\n- Time Phased Invento"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Price Matrix",
+        "snippet": "In Maestro, the price information is stored at a Part/Site/Customer, and Effective Date level. For products that don’t require order quantity-based pricing, the standard Customer Price table can be used to store and report the values.\nCustomer Price Matrix\nIXOM has a requirement to store the pricing information by Product x Site x Customer x Effective Date x Order Quantity. The system will require customization to store and report the pricing data at this level.\nCustomer Price Matrix by Order Quantity"
+      },
+      {
+        "doc_name": "2. Day2_Ixom Structure V2.xlsx",
+        "heading_path": "2. Day2_Ixom Structure V2.xlsx — Sheet: Reporting Hierarchy",
+        "snippet": "2. Day2_Ixom Structure V2.xlsx — Sheet: Reporting Hierarchy\nColumns: IXOM\nIXOM: AU\nIXOM: Executive Vice President ChlorAlkali\nIXOM: CHLOR ALKAI\nIXOM: WATER/ENERGY\nHYPO | ADBLUE | FOOD & BEVERAGE PROCESS\nDISINFECTION | AGRICULTURE | WATER\nMANUFACTURED CHEMICALS | PULP & PAPER\nIXOM: PCS (Process Cleaning Services)\nFOOD & BEVERAGE PROCESS | METAL & MINING | METAL & MINING\nIXOM: CHLOR ALKAI IND\nCOMMERCIAL OPTIMISATION | BULK GASES\nBULK LIQUIDS\nSULPHUR & SUFURIC\nIXOM: The Commercial BU's, as listed above, is where the demand will be raised.\nIXOM: The IXOM manufacturing sites, where we supply the in"
+      },
+      {
+        "doc_name": "IBP RapidStart_Issue Tracker.xlsx",
+        "heading_path": "IBP RapidStart_Issue Tracker.xlsx — Sheet: Issue Log",
+        "snippet": "IBP RapidStart_Issue Tracker.xlsx — Sheet: Issue Log\nColumns: IXOM IBP RAPIDSTART MAESTRO  — ISSUE TRACKER\nIXOM IBP RAPIDSTART MAESTRO  — ISSUE TRACKER: Project: IBP RAPIDSTART  |   Version: 1.0   |   Last Updated: 05 May 2026\nIXOM IBP RAPIDSTART MAESTRO  — ISSUE TRACKER: Issue ID\nIXOM IBP RAPIDSTART MAESTRO  — ISSUE TRACKER: IBP-001"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "Company Background",
+        "snippet": "IXOM is a market leader in water treatment and chemical distribution in Australia and New Zealand, with a growing presence in America and Asia. IXOM provides leading products services across our key business areas of trading in chemicals, water treatment, manufactured products and bulk liquids and gases.\nSome website links:\nOur Global Sites and Contacts\nOur Industries, Products & Services\nOur Emergency Response Service\nEnvironmental Monitoring Data"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "There are no exceptions as the idea is to standardize the S&OP process across all the BU’s."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "Only the Part/Site which uses the Stocking Strategy as the Made To Stock (MTS) and Purchase To Stock (PTS) will use the safety and Cycle Stock.\nFor CAP plants, Safety Stock and Cycle Stock is not applicable. Only the Traded Packaged BU is using safety stock. But, in future, leveraging the safety stock depends on the business choice."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "ChlorAlkali Caustic Manu Import – follows a slightly different supply planning process based on the supply planned on the Ship, it has a visibility of each ship arrival dates through the form of purchase order which will be created 3 weeks prior to the arrival. And the individual order lines contain information about how much it has to deliver against each delivery location (unload port).\nPurchase Orders will be created 3 weeks prior to the due date of arrival. However, the primary focus remains on utilising the supply planning and order management functionality described above."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "The ChlorAlkali Plants (CAP) in AU will use the Constraint Optimiser for short-term planning - covered in a separate blueprint document (IXOM Supply.AI Coproduct Optimization Solution Blueprint).\nNew Zealand Manufacturing\nFor New Zealand, the S&OP Forecast exists to drive the dependent requirements to the materials along with the safety stock levels. Though the Production Planners look at the Forecast for the production planning, their planning outcome will take into account the BLT Team distribution plan. For the Fill at Will products, the BLT Team will look at the ullage on the IXOM tank and"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "Continuous Production Plants\nFor the continuous flow manufacturing plants, the capacity constraint will be modelled as a customised solution as seen below which includes the worksheet/UI to get the user inputs such as the Number of Shifts per day, No. of hours per Shift, Production Rate (KVA), etc., in a time-phased fashion so that the system can compute the capacity based on the given inputs. The illustration below is with dummy data and the actual inputs required to compute the capacity will be finalised during the implementation."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Image: image81.png",
+        "snippet": "| 3 | R4002  |       | C4001>R4002   | 0                  | 1            | C4001       | KG  | Transfer | 100          | 100,000      | 10            | 0               | 0             |\n| 4 | R4003  |       | C4001>R4003   | 0                  | 1            | C4001       | KG  | Transfer | 100          | 100,000      | 10            | 0               | 0             |\n**Other UI Elements:**\n- Filter options: \"All Items,\" \"All Sites,\" \"Part FG-01\"\n- Edit button (p"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: ARCHIVE_V2-WorkshopSchedule",
+        "snippet": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: ARCHIVE_V2-WorkshopSchedule\nColumns: Workshops: Demand Planning Area | 20th? | On-site commences 3rd March | Free Day | Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis)\nWorkshops: Demand Planning Area: Workshops: Sales & Operational Planning Area\nWorkshops: Demand Planning Area: Workshops: Supply Plan & Order Mgt Area, 20th?: 2025-02-28\nWorkshops: Demand Planning Area: Stream 1: Packaged chlorine, 20th?: WK2, Free Day: WK6\nWorkshops: Demand Planning Area: Stream 2"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: ARCHIVE_V2-WorkshopSchedule",
+        "snippet": "Workshops: Demand Planning Area: Optimiser, On-site commences 3rd March: #3&#4 AU Cloralkali\nWorkshops: Demand Planning Area: Workshops: Distribution Planning Area, 20th?: #1 Kick-off: Core, ELT\nWorkshops: Demand Planning Area: Stream 1: Packaged (warehouse) ANZ, On-site commences 3rd March: #3&#4 NZ, Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): #12 BU Playback - Traded Bulk\nWorkshops: Demand Planning Area: Stream 2: Bulk (liquids) AU, 20th?: #2 Kick-off: All Attendees, On-site commences 3rd March: Distribution Planning Intro\nWorkshops: "
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: ARCHIVE_V2-WorkshopSchedule",
+        "snippet": "Workshops: Demand Planning Area: may or may not need 6 hours, On-site commences 3rd March: #5.1\n3 | 1 | 1 | 0.5\nWorkshops: Demand Planning Area: may or may not need 6 hours\n3 | 1 | 1 | 0.5\nWorkshops: Demand Planning Area: BOM analysis, inventory policy,KPIs\nStocking strategies; SLOBS; Dependent requirements; Safety stock (calcs, formulas); Cycle stock; Taret Inventory levels; ABC classification; reorder points; Lead times;, 20th?: non-commercial\nFree Day: 1\nWorkshops: Demand Planning Area: Aggregate supply planning, unconstrained approval. Data reporting, dashboards, transparency of informatio"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: ARCHIVE_V2-WorkshopSchedule",
+        "snippet": "Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): 4\nWorkshops: Demand Planning Area: 14 hours for consolidation, Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): CONSOLIDATION\nAnticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): 4\nWorkshops: Demand Planning Area: Kinaxis-lead (assumed 20 hours of sessions,, 20th?: manufacturing, Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): 4\nAnticipate "
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.2": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "SOW_BKP.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "The high-level Project plan outlined in the project timeline Section 10. Which is mutually discussed and agreed between both the parties.\nAbout IXOM end customer: IXOM is an amalgamation of several different businesses (business models).\nIXOM have gone to market with an RFP detailing their need to improve and de-risk their existing largely manual and spreadsheet-based planning processes by moving to a modern integrated business planning software that can integrate into IXOM’s core SAP environment. As part of the process, the Kinaxis product (Maestro) has been selected, with funding approved fo"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image5.png",
+        "snippet": "[Embedded Image: image5.png]\nStructured Description of image5.png:\nTitle/Quote:\n- “Making sure the right product, is in the right place, at the right time”\nTable/Diagram Structure:\n- The image is a three-column matrix with connecting lines, showing relationships between Key Issues, Root Causes, and To-Be Directions in a supply chain context.\nColumn 1: Key Issues (left, color-coded)\n- Green (Demand):\n- Low forecast accuracy at SKU level\n- High demand variability due to customer ordering habits\n- Missing mid & long-term forecasting\n- Purple (Supply):\n- Lack supply agility to demand variability\n-"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Arclin Manufacturing - Demand Planning",
+        "snippet": "Arclin Manufacturing - Demand Planning\nBlueprint Workshop Notes\nClient Overview\nClient Name: Arclin Manufacturing Inc.\nIndustry: Specialty Chemicals Manufacturing\nHeadquarters: Georgia, USA\nERP System: SAP S/4HANA\nCurrent Planning Tool: Excel-based planning process\nProject Objective: Implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and\nInventory Optimization.\nCurrent Challenges\nDemand planners spend significant time consolidating forecasts from multiple regions.\nForecast accuracy is approximately 68%.\nNo centralized planning platform exists across North America and Europe."
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Arclin Manufacturing - Demand Planning",
+        "snippet": "Arclin Manufacturing - Demand Planning\nBlueprint Workshop Notes\nClient Overview\nClient Name: Arclin Manufacturing Inc.\nIndustry: Specialty Chemicals Manufacturing\nHeadquarters: Georgia, USA\nERP System: SAP S/4HANA\nCurrent Planning Tool: Excel-based planning process\nProject Objective: Implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and\nInventory Optimization.\nCurrent Challenges\nDemand planners spend significant time consolidating forecasts from multiple regions.\nForecast accuracy is approximately 68%.\nNo centralized planning platform exists across North America and Europe."
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Arclin Manufacturing - Demand Planning",
+        "snippet": "Arclin Manufacturing - Demand Planning\nBlueprint Workshop Notes\nClient Overview\nClient Name: Arclin Manufacturing Inc.\nIndustry: Specialty Chemicals Manufacturing\nHeadquarters: Georgia, USA\nERP System: SAP S/4HANA\nCurrent Planning Tool: Excel-based planning process\nProject Objective: Implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and\nInventory Optimization.\nCurrent Challenges\nDemand planners spend significant time consolidating forecasts from multiple regions.\nForecast accuracy is approximately 68%.\nNo centralized planning platform exists across North America and Europe."
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Supply Chain Map",
+        "snippet": "Copy from the Solution Blueprint and update or note how it reflects the current situation."
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: Internal PMO-Timeline",
+        "snippet": "#2 - Benefits (minor input) | 2.2 Qualitative Benefits\n2.3 IXOM Identified Business Problems and Value Drivers | AU Traded Packaged  Leader,\nAU Traded Bulk Leader,\nAU ChlorAlkali Leader,\nNZ Leader | To be determined if all Leads in first session, then follow-ups? Or all separate from the start? If separate per BU, potentially to merge with the below (including SMEs) | Br-Solution Architect | 1 | 1\nBr-Sr Solution Consultant | 1 | 1\nKi- | 0\nTr-Supply Chain SME | 0\n7 | Workshops: Initial SME Working Session per Area | Introduction of each BU 's | #1 - Current-state challenges and opportunities pe"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W-Demand Planning",
+        "snippet": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W-Demand Planning\nColumns: Demand Planning Workshop Attendees | Details | Deliverable/s | Solution Blueprint population | IXOM Attendees | Notes | Duration\nDetails: Detailed AS IS Process - Explaining current process in detail, Data mapping, Forecasting level, Consensus demand plan, Forecasting accuracy and EOL  mgmt., user cases finalization., Deliverable/s: #1 - Current-state challenges and opportunities per BU (minor input)\n#2 - Benefits (minor input)\n#3 -Future state process diagrams\n#4 - Integration requiremen"
+      },
+      {
+        "doc_name": "SOW_BKP.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Creation of final user acceptance test scripts (NOTE: Sample testing scripts and starting testing scripts can be provided)\nCustomer Integration development, data extraction and data transformation (ETL) activities outside of Maestro or not explicitly defined in scope\nClosed-loop outbound integration and/or real-time integration services\nIntegration to multiple ERP systems\nChanges to any IXOM systems and/or legacy applications\nChange Management such as communication plan across the IXOM organization, roadshow, and regular project messaging\nCreation or change of print forms, or custom reporting "
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Demand & Supply Visibility | As a Regional/Global Demand Planner, I want the ability to view the demand and supply picture to determine any supply planning collaboration to mitigate demand at risk or rebalance demand. |\n|  | Override the consensus demand plan quantity | As a Regional/Global Demand Planner, I want to have the ability to override the consensus forecast quantity to rebalance the demand against the available supply to generate a constrained demand plan. |\n|  | Simulations | As a Regional/Global Demand Planner, I want to "
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Configure S&OP process activities | As the S&OP Process Owner, I want to have the ability to adjust the process template that outlines the activities. |\n|  | Create an S&OP process instance | As the S&OP Process Owner, I want to create a process instance to imitate the start of the demand planning process cycle. |\n|  | Start S&OP cycle or sub-cycle | As an S&OP Process Owner, I want to be able to trigger the start of a new S&OP cycle or sub-cycle so that I can initiate the S&OP process to be followed and executed by S&OP Team members"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Update annual plan targets | As a Finance Planner, I want the ability update the annual plan to align with current corporate objectives. |\n|  | Compare annual plan targets | As a Finance Planner, I want to compare adjustments made to annual plan targets to previous targets so that I can understand the impact of any changes on organizational corporate metrics. |\n|  | Manage annual plan assumptions | As a Finance Planner, I want to review, update and add new assumptions related to annual plan adjustments for future reference. |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Forecast Item Definition | As a Demand Planner, I want to create forecast items at the correct hierarchy level so that I can generate a statistical forecast. |\n|  | Assignment | As a Demand Planner, I want the ability to assign and detach a statistical forecast item form the part customer record. |\n|  | Profiles | As a Demand Planner, I want the ability to assign NPI/EOL demand profiles to the statistical forecast item. |\n|  | Parameters | As a Demand Planner, I want to have the ability to define and adjust the parameters of the stat"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Validate Sales history | As a Demand Planner, I want to validate Sales History value and volume data using hierarchies |\n|  | Cleanse errors | As a Demand Planner, I want to validate and adjust sales history for data errors (‘0’ periods) |\n|  | Adjust Outliers | As a Demand Planner, I want to validate and adjust sales history for outliers |\n|  | Adjust Casuals | As a Demand Planner, I want to validate and adjust sales history for causals (promotions) |\n|  | Cleanse forecast input data | As a Demand Planner, I want to validate and Sal"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Statistical Forecast Accuracy | As a Demand Planner, I want to review the accuracy of the historical statistical forecast in order to improve or correct the statistical forecast. |\n|  | Forecast Item Definition | As a Demand Planner, I want to create forecast items so that I can generate a statistical forecast at the correct level. |\n|  | Forecast Item Parameters | As a Demand Planner, I want to have the ability to select the statistical model to ensure that the statistical forecast generated is as accurate as possible. |\n|  | Foreca"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | New Products, Sources and Customers | As a Global Demand Planner, I want to define demand profiles for new and EOL products and assign to Statistical Forecast Item |\n|  | Finance Demand Review | As a Finance Planner, I want to review Finance Dashboard (containing applicable metrics) so that I can determine the necessary adjustments to demand for this cycle. |\n|  | Finance Demand Input | As a Finance Planner, I want the ability to adjust forecast, add assumptions at different levels of hierarchy and disaggregate automatically to lower"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Demand Ratios | As a Global Demand Planner, I want to be able to adjust the percentage that each demand input uses to calculate the unconstrained demand plan |\n|  | Unconstrained Demand Plan | As a Global/Regional Demand Planner, I want the ability to view the individual forecast inputs and the calculated consensus demand plan. |\n|  | Adjustment/ Override | As a Global/Regional Demand Planner, I want the ability to provide an adjustment override to calculated consensus demand plan. |\n|  | Compare | As a Global/Regional Demand Planner"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story | Summary | Description |\n| --- | --- | --- |\n|  | Responsibility | As a Supply Network Planner, I want to view and update the master planner, production planner and supply network planner responsible for the part. |\n|  | Life Cycle | As a Supply Network Planner, I want the ability to identify the life cycle of a part (e.g. NPI, GA, EOL) |\n|  | Supply Stage | As a Supply Network Planner, I want the ability to identify the supply stage of a part (e.g. FG, WIP, RAW) |\n|  | Bill of Material | As a Supply Network Planner, I want the ability to view, update and simulate changes to BOM for d"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Define safety stock items | As a Supply Network Planner, I want to define new parts as safety stock items so that I can include those items in the calculations for recommended safety stock levels, and subsequent reporting. |\n|  | Safety stock item method (model) | As a Supply Network Planner, I want the ability to select the method (model) for planning safety stock so that I have the flexibility to alternate between models in simulations. |\n|  | Service Level | As a Supply Network Planner, I want the ability to adjust the desired ser"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "|  | Collaborate | As a Supply Network Planner, I want to collaborate with the planners to ensure the feasibility of any safety stock level recommendations I am accepting, especially if it has an impact inside lead-time. |\n|  | Manage assumptions | As a Supply Network Planner, I want to review, update and add assumptions related to changes I made in the safety stock recommendations. |\n|  | Manual Closed-Loop transactions | As a Supply Network Planner, I want to identify any parts for which I have made changes to the safety stock quantity to ensure adjustments are made in the ERP systems. |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Constraint Process | As a Production or Master Planner, I want to be able to review, add, maintain and communicate activities and tasks within the Capacity Planning (Constraints) |\n|  | Assign constraint target values | As a Production or Master Planner, I want to assign target values for constraint usage so that I can display targets in monitoring resources. |\n|  | Create constraints | As a Production or Master Planner, I want to add and update constraints and define their usage by Part |\n|  | Assign parts | As a Production or Maste"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Supply Plan | As a Master & Production Planner, I want the ability to view the impact of supply plan changes and their impact on targets and metrics. |\n|  | Firm ‘New’ Supply Orders | As a Master Planner, I want the ability automatically convert planned orders into ‘Firm’ planned orders for Scheduling. |\n|  | Firm Supply Orders | As a Master & Production Planner, I want the ability view supply orders in the Frozen and Scheduling Zone |\n|  | Frozen Zone Scheduling | As a Production Planner, I want the ability to drill to specific supp"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "|  | Late Revenue Caused by SP orders | As a Planner, I need to see the Late Revenue Caused by Supply Plan Orders so that I can evaluate the appropriate course of action. |\n|  | Constraints Impact | As a Planner, I need to see the Constraints Impacting Supply Plan so that I can evaluate the appropriate course of action. |\n|  | Component Shortages Impacting SP | As a Planner, I need to see the Component Shortages Impacting Supply Plan so that I can evaluate the appropriate course of action. |\n|  | Component Shortages by days to SP Start Date | As a Planner, I need to see the Component Shortages"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "|  | Obsolete Value | As a Planner, I need to see a time phased measurement of Obsolete Value over a horizon so that I can identify the appropriate disposition. |\n|  | SP Exceptions | As a Planner, I need to see the new exceptions as compared to a previous scenario, to include Late and Later revenue Caused by Supply Plan orders, Late Supply Plan orders, Planned orders, Number of constraint overloads / underloads, component shortages implicating Supply Plan, and High / low inventory violations so that I can identify the most recent changes to my Supply Plan that need action. |\n|  | Allocation |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Frozen Zone | As a Production Planner, I need to identify all supply orders exceptions in the ‘frozen’ zone that are at risk (Supply Available Date > Supply Due Date). |\n|  | Scheduling Zone | As a Master Planner, I need to identify all supply orders exceptions in the ‘frozen’ and ‘scheduling’ zone that are at risk (Supply Available Date > Supply Due Date). |\n|  | Demand Risk | As a Supply Network or Master Planner, I need to identify demands at risk (Supply Available Date > Demand Need Date). |\n|  | Volatility | As a Planner, I need"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Ending Inventory | As a Planner, I want the visibility of period ending inventory in value and volume |\n|  | Inventory Targets | As a Planner, I want to define and adjust inventory targets, Ending Inventory, Minimum, Maximum and Periods of supply. |\n|  | Inventory Quality Ratio (IQR) | As a Planner, I want to configure the definitions of Active, Excess, Slow, and Obsolete inventory. |\n|  | Slow moving, Excess and Obsolete | As a Planner, I want the visibility of slow moving, excess and obsolete inventories by period. |\n|  | Stock Out"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Publish “Firm” Supply Plan in Scheduling Zone | As a Supply Network Planner, I want the ability to publish the “Firm” supply in the scheduling zone to the ERP system. |\n|  | Publish “Planning” Supply Plan | As a Supply Network Planner, I want the ability to publish the “Planned” supply in the Planning zone to the ERP system. |\n|  | Supply Plan History | As a Supply Network Planner, I want the ability to store the published supply plan into history. |\n|  | Inventory Plan History | As a Supply Network Planner, I want the ability to sto"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: Internal PMO-Timeline",
+        "snippet": "Br-Sr Solution Consultant | 3 | 2 | 1\nKi- | 0\nTr-Supply Chain SME | 0\n14 | Workshops: Distribution Planning Area | Distribution locations replenishment, cross location inventory visibility and redistribution, Metrics, User cases finalization | Br-Solution Architect | 2 | 2\nBr-Sr Solution Consultant | 2 | 2\nKi- | 0\nTr-Supply Chain SME | 0\n15 | Workshops: Master Data & Integrations | Data Mapping and validation | 1.6 - Planning Hierarchy Attributes (minor input) | Br-Solution Architect | 2 | 1 | 1\nBr-Sr Solution Consultant | 2 | 1 | 1\nKi- | 0\nTr-Supply Chain SME | 0\n16 | Information Collation | "
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: Internal PMO-Timeline",
+        "snippet": "Br-Sr Solution Consultant | 1 | 1\nTr-Project Manager | 0\nTr-Supply Chain SME | 0\n22 | Costing & Implementation Plan | Tridant/Bristlecone to create implementation plan including tasks, resources, travel and overall project timeline. Costings to be devised from the plan. | Br-Solution Architect | 3 | 3\nBr-Sr Solution Consultant | 3 | 3\nKi- | 0\nTr-Supply Chain SME | 0\n23 | BAU Costing (licensing) | Licensing costs. Cass to add Kinaxis resource to assist | Br-Solution Architect | 0\nBr-Sr Solution Consultant | 0\nKi- | 1 | 1\nTr-Supply Chain SME | 1 | 1\n24 | Training Approach | No longer included | "
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W-Demand Planning",
+        "snippet": "Demand Planning Workshop Attendees: 4\nDemand Planning Workshop Attendees: 5\nDemand Planning Workshop Attendees: 6\nDemand Planning Workshop Attendees: 7\nDemand Planning Workshop Attendees: 8\nDemand Planning Workshop Attendees: 9\nDemand Planning Workshop Attendees: 10\nDemand Planning Workshop Attendees: 11\nDemand Planning Workshop Attendees: 12\nDemand Planning Workshop Attendees: 13\nDemand Planning Workshop Attendees: 14\nDemand Planning Workshop Attendees: 15, Deliverable/s: Stream 1: Roughcut capacity planning; long term (12 to 18 months) supply planning/inventory plan, annual budget & updated "
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.3": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to detail the operating model for RapidResponse to meet the business needs as defined by [insert]\nThe objective of this document is to list the user stories and analytics that provide the scope for this release. Each user story shall provide a reasonable level of technical detail that will enable configuration of the solution.\nDuring the development of the solution, this document will be updated with requirement changes and solution design.  This document, at technical golive, shall provide both the requirements and solution.\nThis document does not include test "
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to define the Customer Solution blueprint for [Customer].\nThe blueprint defines the prescribed scope of processes, capabilities and resources that will support a RapidStart deployment project.\nThe aims of the blueprint are twofold:\nSet the baseline for the future-state process and advanced planning capabilities – Business and IT teams will learn a common terminology and understanding of RapidResponse planning paradigms/capabilities based on prescribed data interfaces and foundational planning capabilities, from which to build for more advanced planning requireme"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to define the Customer Solution blueprint for [Customer].\nThe blueprint defines the prescribed scope of processes, capabilities and resources that will support a RapidStart deployment project.\nThe aims of the blueprint are twofold:\nSet the baseline for the future-state process and advanced planning capabilities – Business and IT teams will learn a common terminology and understanding of RapidResponse planning paradigms/capabilities based on prescribed data interfaces and foundational planning capabilities, from which to build for more advanced planning requireme"
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to detail the Technical Architecture of the RapidResponse solution implemented at [Customer]. This will include details of the Infrastructure, Information Systems and Information Services being used by this customer.\nThis document includes technical details that help customer’s support staff (COE) and Kinaxis Support manage the solution after it is deployed. It addresses support topics such as:\nTechnical components of the solution and how they are supposed to work\nUnderstanding the changes to the data model\nA review of integration and automation risks\nThis is a "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to define the Customer Solution blueprint for IXOM.\nThe blueprint sets out the processes and associated functional requirements for configuring the future Maestro solution to support the IXOM S&OP planning processes.\nThe aims of the blueprint are threefold:\nSet the baseline for the future state process for the subsequent deployment project. The business team and key stakeholders are provided with the opportunity to set the direction and establish the future concurrent planning process and resulting new ways of working.\nStarting from a predefined Process Framewor"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to define the Technical Architecture of the Maestro Solution, yet to be implemented at IXOM.\nThis document includes the technical details that outline how the integration works between Maestro and other IXOM systems including SAP, Power BI, Kony, Tanktel, Everlink. It addresses:\nTechnical components of the solution and how they work\nUnderstanding the changes to the data model\nA review of integration and automation tasks\nClosed-Loop & Reconciliation"
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "[Embedded Image: image2.png]\nThe image is a screenshot of the Table of Contents from a document titled \"RapidStart Technical Blueprint Template Rev 1.4.docx\". Below is a structured plain-text description focusing on supply chain/ERP-relevant content:\n---\n**Table of Contents**\n**1. INTRODUCTION**\n- 1.1 Company Background (p.6)\n- 1.2 Purpose (p.6)\n- 1.3 Scope (p.8)\n- 1.4 Definitions & Acronyms (p.8)\n- 1.5 Key Business Decisions (p.8)\n- 1.6 Planning Hierarchy Attributes (p.10)\n**2. BENEFIT REALIZATION**\n- 2.1 Quantitative Benefits (p.11)\n- 2.2 Qualitative Benefits (p.11)\n- 2.3 [Customer] Identifi"
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Closed Loop – Inbound",
+        "snippet": "Describe data that comes to RapidResponse from Integration Platform, web services, RI, etc. other than Flat files defined in Data Sources and mapping (mentioned in above section)\nDescribe how this works and what the data is.\nSection should capture:\nEach Closed-Loop Process defined and its business purpose\nTechnical Configurations\nProcesses, Dashboards, Workbooks, Filter, etc…\nVisual Diagram showing the relationship of all components with a description of each and their interaction\nE.g. VISIO of Data Flow, Components, etc…\nBelow is an example of documentation of this section. In this Example, t"
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Closed Loop – Outbound",
+        "snippet": "Closed loop is the process of feeding Supply Chain data from RapidResponse back to the Source System.\nDescribe data sent by RapidResponse from the Integration Platform, web services, RI, etc. other than Flat Files defined in Data Sources and Mapping (mentioned in above sections).\nDescribe how this works and what the data is.  The Section should capture:\nEach Closed-Loop process defined and its business purpose\nTechnical Configurations\nProcesses, Dashboards, Workbooks, filters, etc\nVisual diagram showing the relationship of all components with a description of each and their interaction\nEg: VIS"
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image39.png",
+        "snippet": "19. PeriodsOfSupplyMinimumTarget\n20. RawMaterialInventoryTarget\n21. SalesForecast\n22. StatisticalForecast\n23. WIPInventoryTarget\n- The \"Description\" column provides readable names for each metric.\n- The \"Type\" column indicates the calculation or aggregation type (e.g., Actual, TargetValue, TargetSum, ConsensusForecast, Forecast, None).\n- \"Consensus Forecast Weight\" is 0.00% for all except \"Sales Forecast\" (100.00%).\n- \"Desired Results\" is either \"High\" or \"Low\" for each metric.\n- \"Limits (%)\" columns (Warning, Critical) provide threshold values for"
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Closed Loop – Inbound",
+        "snippet": "Point to note for Custom FTP Process:\nCustomer is responsible for any troubleshooting or support issues related to the transfer of data to the DTC account. Kinaxis Customer Support can assist Customer with data issues only when the data has been received in DTC account. Archives and log of the transferred data to RR are maintained by Customer."
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image39.png",
+        "snippet": "[Embedded Image: image39.png]\nStructured Description of image39.png:\n**General Overview:**\nThe image is a screenshot of a data mapping/control table from an ERP or supply chain planning system, likely used for defining and mapping key supply chain metrics, targets, and forecast parameters. The table is titled \"Data Sources and Mapping\" and is under the \"Enterprise Data\" section.\n**Tabs/Sections Visible:**\n- CRP Unit Of Measure\n- Days Supply Policy\n- Demand Status\n- Demand Type\n- Distribution Planning Rule\n- Expiry Type\n- Forecast Item Parameters Type\n- Historical Demand Category Rolling Weight"
+      }
+    ],
+    "gen_source": "doc"
+  }
+}

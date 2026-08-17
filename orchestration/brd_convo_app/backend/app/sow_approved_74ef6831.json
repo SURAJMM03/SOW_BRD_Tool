@@ -1,0 +1,20 @@
+{
+  "sections": {
+    "0": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Cover Page Drafting guidance for this section: Cover page — Field/Details table only (Client Name, Project Name, Engagement Type, Contract ID, Effective Date, End Date, Document Version starting at v1.0, Prepared by 'Bristlecone Inc.', Review Status 'Draft'). The page title itself is already fixed in the template — draft only the table values. Hard rules for this draft: - Never m",
+      "approved_at": "2026-07-24T09:31:21.352815"
+    },
+    "3.1": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Background Drafting guidance for this section: Background — the client's current state, pain points, and business drivers for this engagement. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such reference",
+      "approved_at": "2026-07-24T09:31:21.356776"
+    },
+    "4.6": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Integration Scope Drafting guidance for this section: Integration Scope as a table (# | Integration | Source System | Target System | Notes). Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references",
+      "approved_at": "2026-07-24T09:31:21.360484"
+    },
+    "1": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Agreement Details Drafting guidance for this section: Agreement Details — one sentence naming the client and Bristlecone Incorporated under the governing MSA/ISA/Consulting Agreement. Then a separate Field/Details table: Contract/SOW ID, SOW Effective Date, SOW End Date, Governing Agreement, Amendment/Supersedes, Agreement Duration, Delivery Location. Hard rules for this draft: -",
+      "approved_at": "2026-07-24T09:31:21.362857"
+    }
+  }
+}

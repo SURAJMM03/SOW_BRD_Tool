@@ -1,0 +1,378 @@
+{
+  "0": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "1": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "2": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "3": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "3.1": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "3.2": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "3.3": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "4": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 4.1 Geographical Scope\nThis engagement covers Google’s Silicon business operations supporting foundry, OSAT, hub, and warehouse flows within the agreed delivery model. In-scope operating locations include TSMC, KYEC, and SPIL in Taiwan, together with the Google Hub and warehouse locations supporting the Silicon COT supply chain. Delivery will be executed through a hybrid onsite North America and offshore model aligned to the program governance and workstream needs.\n\n### 4.2 Process Scope\nIn scope are the end-to-end Silicon Customer Owned Tooling supply chain processes required to establish supply visibility, planning control, and execution traceability across foundry and OSAT operations. This includes current-state discovery, fit-gap assessment, and target-state design for constrained supply planning, subcontracting-related flows, forecast and commit visibility, purchase-order collaboration, batch or lot traceability, yield-aware planning, inventory visibility, and supporting master data harmonization. The process scope cuts across production planning, materials management, quality-relevant traceability inputs, and cost or controlling touchpoints to support the improved ASIC commit process.\n\n### 4.3 Technical Scope\nTechnical scope includes solution design, configuration, and interface enablement across SAP S/4HANA, Kinaxis, E2Open, and agreed boundary systems supporting the Silicon COT model. Bristlecone will leverage Google’s existing integration framework where applicable, including the existing machine-planning integration pattern, and will adapt existing data templates for Silicon planning requirements. In scope are delta integrations using BTP Integration Suite, inbound E2Open capacity and contract manufacturer data into Kinaxis for TSMC, KYEC, and SPIL, resource master integration, yield and unit-of-measure integration, and the definition of data mappings, transformation logic, and validation rules required for phased deployment. Technical ABAP development and analytics build items are limited to requirements confirmed during the Explore phase.\n\n### 4.4 Services Scope\nServices included are project management, discovery workshops, fit-gap analysis, to-be process design, business process documentation, functional specifications for approved custom development, configuration and build, test planning and execution, unit testing, system integration testing, user acceptance testing support, regression testing, performance testing, data migration support, cutover planning and execution, go-live support, hypercare, organizational change management, train-the-trainer activities, and knowledge transfer to the support team. The engagement will be delivered in phased Agile execution across Explore, Build, and Deploy.\n\n### 4.5 Application Scope\nApplication scope includes Kinaxis, SAP S/4HANA, and E2Open as the core solution landscape for the Silicon COT supply chain implementation. Within Kinaxis, in-scope capabilities are supply planning, constraint planning, inventory planning, analytics and reporting, and data integration. Within SAP S/4HANA, in-scope capabilities are Production Planning and Materials Management, together with process integration required to support traceability and transaction flows. Controlling-related business participation is expected from Google where required for the COT cost model and associated design decisions.\n\n### 4.6 Integration Scope\n| # | Integration | Source System | Target System | Notes |\n|---|---|---|---|---|\n| 1 | Supply collaboration integration | E2Open | SAP S/4HANA | Supports purchase order, forecast, and commit-message exchanges for foundry and OSAT collaboration. |\n| 2 | Planning and execution integration | SAP S/4HANA | Kinaxis | Supports demand signals, WIP snapshots, wafer plan, and planning-relevant execution data. |\n| 3 | Capacity and CM data ingestion | E2Open | Kinaxis | Includes capacity information and contract manufacturer data for TSMC, KYEC, and SPIL. |\n| 4 | Resource master integration | <CONFIRM: source system for resource master data> | Kinaxis | Supports planning master data required for Silicon planning. |\n| 5 | Yield integration | SAP S/4HANA | Kinaxis | Supports yield-aware planning inputs. |\n| 6 | Unit-of-measure integration | SAP S/4HANA | Kinaxis | Supports planning and conversion consistency across the solution landscape. |\n| 7 | Design BOM / engineering change integration | PLM (Agile) | SAP S/4HANA | In scope for validation during discovery before detailed design is finalized. |\n| 8 | Cost, yield, and analytics integration | SAP S/4HANA | BigQuery | Supports analytics and reporting through the Silicon Hub. |\n| 9 | Test boundary integration | MES / Test Hub | SAP S/4HANA | Supports unit-level test boundary data; unit-level detailed test data is not included unless separately agreed. |\n\n### 4.7 Exclusions\n- Standalone process models outside the Silicon business unit.\n- Functionality outside the listed Kinaxis and SAP S/4HANA scope areas unless approved through change control.\n- New integration frameworks where the existing Google integration framework can be retained.\n- Detailed ABAP development and analytics build items not confirmed after Explore-phase analysis.\n- Unit-level detailed test data management beyond the agreed MES / Test Hub boundary integration.\n- Work for plants, partners, or warehouse locations not listed in this section.\n- Ongoing application managed services, production support, or enhancement services beyond the defined hypercare period.\n- Client-owned staffing for controlling activities and client business decisions required for the COT cost model.",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "4.1": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "4.2": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "4.3": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "4.4": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "4.5": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "4.6": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "4.7": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "5": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "6": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "6.1": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "6.2": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "7": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "7.1": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "7.2": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "7.3": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "8": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "9": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "10": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "- The approved global template will be the baseline for all in-scope sites, and local variations will be incorporated within that template rather than delivered as separate process models.\n- Google will provide timely participation from business, process, and technical stakeholders across the in-scope plants, Google Hub, and warehouse operations for workshops, design reviews, playback sessions, testing, and sign-off.\n- Google will provide Controlling support and other client-owned functional inputs required at agreed coordination points.\n- Existing Google integration capabilities will be retained where applicable; only approved delta integration required for the Silicon COT scope will be delivered under this SOW.\n- Integration scope is limited to the interfaces identified in Section 4.6; any new interface, material change in interface behavior, or expansion of boundary-system scope will be managed through the Change Management Process.\n- PLM (Agile) design BOM / engineering change integration, and MES / Test Hub boundary requirements, will be finalized during Explore before related build commitments are confirmed.\n- Resource master, yield, and unit-of-measure integrations are assumed to be sufficient to support the Kinaxis planning model for the agreed scope.\n- Data migration, mock loads, and validation depend on Google providing source data, mappings, business rules, and validation support in line with the agreed project plan.\n- Test execution, including SIT, UAT, readiness checks, and go/no-go decisions, depends on Google providing named reviewers, test participants, and sign-off within the agreed review windows.\n- Hypercare and transition support are limited to the agreed post-go-live period; ongoing production support is out of scope unless separately approved.\n- Any deviation from these assumptions, including delayed stakeholder decisions, scope growth, unresolved localization requirements, or integration expansion, will be addressed through the Change Management Process.",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "11": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "| Phase/Deliverable | Acceptance Criteria | Sign-off Party | Timeline for Review |\n|---|---|---|---|\n| Explore / AS-IS discovery and fit-gap assessment | AS-IS process flows, system interactions, enterprise structure impacts, and fit-gap findings for the in-scope Silicon COT scope are documented and presented in walkthrough sessions; open issues, gaps, and required decisions are logged; Google confirms the output is complete for approved in-scope plants, applications, and process areas. | Google project manager and designated process owners | Within 5 business days of submission |\n| Explore / Global template and TO-BE design sign-off | TO-BE design covers approved subcontracting, traceability, master data, planning, and transaction flows across SAP S/4HANA, Kinaxis, E2Open, and approved boundary systems; localization requirements are identified; design playback is completed; approval to proceed to build is issued or consolidated comments are returned. | Google design authority and designated business/process owners | Within 5 business days of submission |\n| Explore / Integration mapping and data validation design | Interface inventory, source-to-target mappings, data requirements, validation rules, and loading approach for approved in-scope integrations are documented and reviewed; unresolved mapping issues are logged with owners and target dates; no critical mapping gaps remain open for the release entering build. | Google integration lead and designated data owners | Within 5 business days of submission |\n| Build / Configuration and approved development completion | Configured solution and approved development objects are completed for the release scope; unit test scripts are executed by Bristlecone in the development environment; results are recorded with peer review; all Severity 1 defects are closed and remaining defects are dispositioned for release approval. | Bristlecone workstream lead for completion confirmation; Google release lead for acceptance to proceed | Within 3 business days of submission |\n| Build / Unit testing | Unit test evidence shows individual configured functions, interfaces, and approved development objects executed against approved test scripts; expected results are achieved; defects are logged, re-tested, and closed or formally deferred through governance. | Google functional and integration leads | Within 3 business days of submission |\n| Deploy / System Integration Testing (SIT) | End-to-end testing across integrated in-scope systems is executed in the test/quality environment using approved scripts and planned data volumes; results are documented; all Severity 1 and Severity 2 defects are closed, and any remaining lower-severity defects have approved workarounds or a remediation plan accepted for go-live consideration. | Google test manager and integration lead | Within 5 business days of completion of SIT cycle |\n| Deploy / User Acceptance Testing (UAT) | Google core users execute approved business-scenario scripts in the test/quality environment using production-representative data; expected business outcomes are met for the release scope; all critical defects are closed; go/no-go recommendation is documented based on agreed exit criteria. | Google business process owners and release sponsor | Within 5 business days of completion of UAT cycle |\n| Deploy / Data migration load and validation | Approved migration templates are completed for the release scope; data loads are executed in the agreed environment; validation confirms required records, key field mappings, and reconciliation checks meet agreed thresholds; open data issues are resolved or formally approved for cutover. | Google data lead and business data owners | Within 3 business days of submission |\n| Deploy / Cutover readiness | Cutover plan, task owners, dependencies, fallback actions, and deployment checkpoints are documented and reviewed; all predecessor testing and data-validation entry criteria are met; open go-live blockers are closed or accepted through formal governance. | Google project manager and release sponsor | Within 2 business days of cutover readiness review |\n| Deploy / Go-live approval | Release exit criteria for scope, testing, data readiness, security readiness, training readiness, and cutover readiness are met; formal go/no-go decision is recorded by the authorized governance forum. | Google release sponsor and authorized governance board | At scheduled go/no-go meeting |\n| Run / Hypercare completion and transition | Hypercare issues are tracked and resolved to agreed priority targets; no unresolved Severity 1 defects remain open at exit; knowledge transfer to the support team is completed; transition checklist is closed. | Google support lead and project manager | Within 5 business days of hypercare completion |\n| Release 3 and later approved expansion scope | Acceptance criteria will follow the same design, build, SIT, UAT, data, and go-live control points defined in this section and will be finalized in the detailed release plan for each approved scope increment. | <CONFIRM: sign-off party for Release 3 and later phases> | As defined in the approved release plan |",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "12": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 12.1 Bristlecone Obligations\n- Provide qualified project management, functional, technical, integration, data, testing, and change-management resources aligned to the agreed onsite and offshore delivery model.\n- Lead discovery workshops, fit-gap assessment, global-template design, playback sessions, and design sign-off support for the in-scope process, application, data, and integration landscape.\n- Configure the approved in-scope solution, prepare required functional and technical design documents, and deliver approved custom-development specifications for build.\n- Plan and support integration design, data mapping, migration cycles, testing, defect triage, cutover readiness, deployment, and hypercare for the approved scope.\n- Maintain project governance, status reporting, risk and issue tracking, dependency management, and escalation in line with the agreed governance cadence.\n- Prepare and deliver the agreed project deliverables, including project plan, design documents, RICEFW list, integration and migration outputs, test materials, training materials, cutover package, and transition artifacts.\n- Provide train-the-trainer, stakeholder-readiness, and knowledge-transfer support through deployment and transition to the designated support organization.\n- During the agreed post-go-live support period, provide L2 and L3 support for in-scope solution issues routed through Google’s designated support channels and raise product-related tickets with applicable software vendors where required.\n- Perform services using Bristlecone’s implementation methodology and standard delivery practices, with local variations incorporated only through approved design and change control.\n\n### 12.2 Client Obligations\n- Provide timely access to named business, process, technical, integration, data, security, and project stakeholders required for workshops, reviews, testing, cutover, and sign-off.\n- Confirm scope, priorities, decisions, and design approvals within the agreed governance and project timelines.\n- Provide required system access, environment availability, connectivity, and client-owned tool access needed for Bristlecone to perform the services.\n- Provide complete and accurate business rules, process inputs, master data, transaction samples, interface specifications, and source data required for design, integration, migration, and testing.\n- Own and provide Finance and Controlling support and any other client-retained capabilities identified as out of scope for Bristlecone.\n- Perform client-side testing participation, business validation, UAT sign-off, training attendance, deployment readiness activities, and Go/No-Go decision support through authorized representatives.\n- Provide L1 end-user support through Google’s designated business and onsite support teams during hypercare and route escalations to Bristlecone for L2 and L3 handling.\n- Manage and coordinate third-party systems, vendors, and internal dependent teams needed for in-scope integrations, boundary applications, security, and deployment readiness.\n- Approve or reject Change Requests, scope adjustments, and timeline impacts in accordance with the agreed change control process.",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "12.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "12.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 13.1 Engagement Model\nThe engagement will be delivered through a fixed monthly commercial model using an onsite and offshore delivery structure aligned to the approved implementation plan. The fixed monthly model covers the agreed delivery capacity for the applicable phase, subject to the defined scope, assumptions, and change control process in this SOW. Phase 3 scaling support will also be billed on a monthly basis, with the final resource load and composition to be mutually agreed based on approved scaling requirements. Any work outside the agreed monthly capacity, approved scope, or project term shall require prior written approval through change control.\n\n### 13.2 Rate Card & Pyramid Structure\n| Role/Band | Location | Rate USD/day | Rate Type | Effective Date | Notes |\n|---|---|---:|---|---|---|\n| Program Manager | North America | Included in fixed monthly fee | Fixed Monthly | <CONFIRM: effective date> | Onsite for months 1-12; phase allocation per approved plan. |\n| Process Consultant | North America | Included in fixed monthly fee | Fixed Monthly | <CONFIRM: effective date> | Included as part of onsite delivery model. |\n| Integration Architect | North America / Offshore | Included in fixed monthly fee | Fixed Monthly | <CONFIRM: effective date> | Shared across integration scope as approved in plan. |\n| Senior Solution Consultant | Offshore | Included in fixed monthly fee | Fixed Monthly | <CONFIRM: effective date> | Included in base monthly delivery capacity. |\n| SAP PP Consultant | North America / Offshore | Included in fixed monthly fee | Fixed Monthly | <CONFIRM: effective date> | Onshore in earlier phases; offshore from later phase per delivery plan. |\n| SAP MM Consultant | Offshore | Included in fixed monthly fee | Fixed Monthly | <CONFIRM: effective date> | Included in base monthly delivery capacity. |\n| Solution Architect | North America / Offshore | Included in fixed monthly fee | Fixed Monthly | <CONFIRM: effective date> | Partial support in later scaling phases per approved staffing plan. |\n| Integration Senior Consultant | Offshore | Included in fixed monthly fee | Fixed Monthly | <CONFIRM: effective date> | Supports interface build, mapping, and validation. |\n| BTP-IS Consultant | Offshore | Included in fixed monthly fee | Fixed Monthly | <CONFIRM: effective date> | Included only to the extent approved in the in-scope integration plan. |\n| OCM Lead / OCM Consultant | North America or Offshore | Included in fixed monthly fee | Fixed Monthly | <CONFIRM: effective date> | Final onsite/offshore OCM model to follow approved commercial option. |\n| Kinaxis Architect | Offshore | Included in fixed monthly fee | Fixed Monthly | <CONFIRM: effective date> | Reduced allocation in later scaling phase as approved. |\n| Kinaxis Consultant / Trainee Support | Offshore | Included in fixed monthly fee | Fixed Monthly | <CONFIRM: effective date> | Trainee support treated as delivery investment unless otherwise agreed. |\n\n### 13.3 Shift Allowance\n- No separate shift allowance shall apply unless a non-standard support window is requested and approved in writing.\n- Any approved evening, night, weekend, or holiday coverage shall be billed only if expressly agreed before the work is performed.\n- Shift coverage required for cutover, hypercare, or critical testing events shall be planned in advance and reflected in the project plan or an approved change request.\n\n### 13.4 Travel & Expenses\nTravel and related out-of-pocket expenses shall be billed at actual cost and charged separately from the fixed monthly service fee. Reimbursable items may include accommodation, airfare from the consultant’s base location, local conveyance, visa fees, per diem, travel insurance, and other reasonable project-related travel costs. All travel must be pre-approved by Google in writing before booking. Reimbursement shall be supported by applicable receipts or other reasonable evidence of spend and shall comply with the governing agreement and Google’s applicable travel policy where provided.\n\n### 13.5 Invoicing & Payment Terms\nBristlecone shall invoice Google on a monthly basis for the fixed monthly fees applicable to the relevant phase of the engagement, together with any approved travel and expense reimbursements and applicable taxes. Payment terms shall be as set out in the governing agreement. Applicable taxes shall be charged separately. For Phase 3 scaling support, monthly charges shall apply based on the mutually finalized resource composition and approved capacity for that phase. Any contingency, rate escalation, discount structure, or commercial adjustment reflected in the final pricing schedule shall apply only to the extent expressly approved in the final commercial annex or executed SOW.",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "13.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.5": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "14": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 14 Performance Reporting & KPIs\n| Report | Frequency | Recipients | Key Metrics |\n|---|---|---|---|\n| Project status report | Weekly | Google Executive Sponsor, Google Solution Architect / Business System Analyst, Google Integration Lead / Application Engineer, Bristlecone Program Manager, workstream leads | Overall status, milestone progress, planned vs. actual activities, key accomplishments, upcoming activities, risks, issues, decisions required, dependency status |\n| Sprint governance report | Per sprint | Google Solution Architect / Business System Analyst, key business users, Bristlecone Program Manager, Functional Lead, Solution Architect, Test Lead | Sprint scope, sprint completion status, user story progress, open defects, blocked items, carry-forward items, backlog and parking-lot status |\n| Integration and data readiness report | Weekly during build, test, and deployment windows | Google Integration Lead / Application Engineer, Google Solution Architect / Business System Analyst, Bristlecone Solution Architect, Data Migration Lead, Test Lead | Interface build status, data mapping completion, data load status, validation results, reconciliation issues, dependency or blocker status |\n| Test execution report | Weekly during SIT, regression, and UAT | Google key business users, Google Solution Architect / Business System Analyst, Bristlecone Test Lead, Program Manager, Functional Lead | Test case execution, pass/fail counts, defect aging, severity mix, retest status, entry/exit criteria progress, UAT sign-off readiness |\n| Training and change readiness report | Weekly during deployment readiness and training period | Google Executive Sponsor, key business users, Bristlecone OCM and Training Lead, Program Manager | Training plan progress, training completion, audience coverage, readiness issues, adoption risks, cutover readiness dependencies |\n| Cutover and hypercare report | Daily during cutover; weekly during hypercare | Google Executive Sponsor, Google Solution Architect / Business System Analyst, Google Integration Lead / Application Engineer, Bristlecone Program Manager, deployment leads | Cutover task status, go-live readiness, open critical issues, defect trend, stabilization status, transition actions, support handoff progress |\n\nThis implementation engagement will use KPI reporting to track delivery health, milestone readiness, testing progress, integration and data readiness, training completion, and hypercare stabilization. KPI thresholds, dashboard format, and escalation triggers will be finalized in the project plan and governance pack during mobilization.\n\n### 14.1 SLAs & Targets\nNot Applicable. This SOW is for an implementation engagement, not a steady-state managed service or support service.\n\nService-level targets for incident response, resolution, service credits, and operational run support are excluded from this section unless the parties approve a separate support scope or post-hypercare services through change control. Delivery performance for this implementation will instead be governed through milestone achievement, deliverable acceptance criteria, defect management, test completion, cutover readiness, and hypercare exit criteria.",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "14.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "15": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "| # | Risk Description | Likelihood | Impact | Mitigation |\n|---|---|---|---|---|\n| 1 | Deferred scope decisions on Release 3 expansion items, later-phase regions, and selected boundary-system scope may delay planning or require scope realignment. | Medium | High | Freeze release scope, regions, and deferred design decisions during Explore; route additions or changes through formal change control before build starts. |\n| 2 | Integration volume or complexity may exceed the current baseline across SAP S/4HANA, Kinaxis, E2Open, PLM, BigQuery, and MES/Test Hub, increasing effort, schedule, or testing demand. | High | High | Validate all in-scope interfaces during Explore, confirm source and target ownership, baseline integration inventory, and treat any net-new or materially changed interface as change-controlled scope. |\n| 3 | Custom development scope may increase if approved design requires additional RICEFW objects, upload programs, technical mappings, or delta functional specifications beyond the validated baseline. | Medium | High | Finalize the RICEFW list and functional specifications before build, estimate custom objects against approved scope, and raise change requests for additions or major design changes. |\n| 4 | Limited availability of Google business, integration, and solution SMEs may delay design sign-off, data mapping, testing, and deployment readiness. | High | High | Confirm named SMEs and decision owners during mobilization, maintain a sign-off calendar, escalate participation gaps through governance, and track open business decisions weekly. |\n| 5 | Acceptance criteria that are not objective or not tied to specific deliverables may create sign-off disputes and payment delays. | Medium | High | Define measurable acceptance criteria for each deliverable, align review timelines and sign-off owners in advance, and confirm entry/exit criteria for design, testing, and go-live readiness. |\n| 6 | Master data quality or late data readiness may affect planning accuracy, migration cycles, and traceability outcomes across wafer, lot, yield, and unit-of-measure data. | High | High | Complete data assessment early, confirm object ownership, run staged mock loads and validation cycles, and require business sign-off on mappings, conversions, and reconciliations before cutover. |\n| 7 | Cutover execution may be disrupted by incomplete open-item closure, migration timing variance, blackout-window constraints, or failed mock runs. | Medium | High | Use a detailed cutover plan, conduct multiple mock cycles, confirm blackout windows, validate upload programs and migration timings, and enforce readiness checkpoints before production deployment. |\n| 8 | Organizational readiness may lag if stakeholder engagement, training, and go-live support are not completed in line with the phased rollout. | Medium | Medium | Execute the agreed change-management and training plan, complete readiness assessments by release, use core-team train-the-trainer coverage, and track adoption risks in governance reviews. |\n| 9 | Planning outcomes may be affected by upstream data volatility, supplier commit variability, yield changes, or capacity constraints across foundry and OSAT partners. | High | Medium | Validate planning assumptions during design, incorporate exception handling and scenario planning where approved, and review partner-data dependencies and planning thresholds during sprint and release governance. |\n| 10 | Scope ambiguity around logistics, trade compliance, WMS/TMS, GTM, and other future-route capabilities may create delivery misalignment if treated as included without formal approval. | Medium | Medium | Enforce the exclusions list, document coordination-only topics separately from implementation scope, and require explicit written approval and change control for any expansion into these areas. |",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "16": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 16.1 Milestone Deliverables Matrix\nMilestone deliverables shall be governed against the deliverables defined in Section 9 and the applicable commercial terms in Section 13. The Project Plan and Project Charter, Governance Structure and Engagement Plan, and Risk Assessment and Mitigation Plan establish the execution baseline for Explore. Global Business Process Design, localization outputs, RICEFW and functional specifications, configuration and technical design documents, and integration and data migration deliverables govern transition from design into build. Test scripts and results, training materials, and the Cutover and Go-Live Readiness Package govern deployment readiness. Production Go-Live, Hypercare, and Transition deliverables govern closure of the implementation scope. Where payment milestones are tied to deliverable completion, invoicing shall follow the acceptance and sign-off requirements defined in Sections 9, 11, and 13 rather than elapsed time alone.\n\n### 16.2 Deferred Scope Decisions\n- Release 3 scope for additional products, sites, integrations, or capabilities shall be confirmed through governance review and approved through change control before execution.\n- The final regional coverage for Release 3 and later phases shall be confirmed in the detailed project plan before those phases are baselined.\n- Delta interface scope to be delivered through the existing integration framework and BTP-IS shall be validated during Explore and frozen before build.\n- PLM, MES/Test Hub, analytics, and any additional boundary-system scope shall proceed only for approved requirements within the agreed scope and commercial baseline.\n- Any ABAP development, analytics build, reports, custom objects, or data conversions not approved after Explore shall remain out of scope unless added through Section 17.\n\n### 16.3 Integration & Custom Code Safeguards\n- Only the integrations identified in Section 4.6 are in scope for design and delivery under this SOW.\n- Interface design, source-to-target mapping, loading, and validation shall be completed and approved before build or test execution begins for each integration.\n- Existing Google integration capabilities shall be retained where applicable; replacement or material redesign is excluded unless approved through change control.\n- Custom development shall proceed only for items documented in the approved RICEFW inventory and supported by approved functional specifications.\n- Any increase in integration count, new boundary-system connection, or expansion of custom object scope shall require impact assessment for timeline, effort, and commercials before work starts.\n- Unit-level test boundary requirements, engineering interfaces, and analytics feeds shall be limited to the approved design baseline for each release.\n- Backlog and parking-lot items identified during blueprinting, sprints, SIT, or UAT shall not be treated as committed scope until reviewed and approved through governance.\n\n### 16.4 Change Control\nAll scope, schedule, deliverable, integration, custom development, staffing-model, and commercial changes shall be managed through the Change Management Process defined in Section 17. A Change Request is required when a requested change affects the approved global template, release scope, interface inventory, RICEFW baseline, milestone dates, deployment sequence, or the assumptions in Section 10. No work outside the approved baseline will begin until the change is logged, impact-assessed, reviewed, and approved through the Section 17 process. Approved changes shall be reflected in the project plan, affected deliverables, and applicable commercial terms.",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "16.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "17": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "Any change to approved scope, deliverables, integrations, timeline, effort, staffing, commercials, acceptance criteria, or deployment sequencing shall be managed through a formal Change Request process. No out-of-scope work will begin until the related Change Request is reviewed and approved by both parties.\n\n| Step | Activity | Owner | Timeline |\n|---|---|---|---|\n| 1 | CR raised | Either party identifies a proposed change, documents the requested change and business rationale, and submits it to the Program Manager. | Google or Bristlecone requestor | Within 2 business days of identifying the change |\n| 2 | CR logged | The Program Manager records the Change Request in the project change log, assigns a tracking ID, and confirms receipt to the relevant stakeholders. | Bristlecone Program Manager | Within 1 business day of receipt |\n| 3 | Impact assessment | Functional, technical, integration, data, testing, and project management leads assess scope, schedule, effort, dependency, risk, and commercial impact. | Bristlecone Program Manager with impacted workstream leads; Google designated reviewers | Within 5 business days of logging |\n| 4 | CR reviewed and approved | The parties review the impact assessment and approve, reject, or defer the Change Request through the agreed governance forum. | Google authorized approver(s) and Bristlecone authorized approver(s) | Within 3 business days of impact assessment completion |\n| 5 | SOW amendment / addendum | If approved, the agreed change is reflected in the applicable SOW amendment, addendum, release plan, deliverables, and commercial baseline before execution proceeds. | Google and Bristlecone authorized representatives | Within 5 business days of approval |\n| 6 | CR closure | The Program Manager updates the change log with final status, effective date, linked project artifacts, and implementation tracking, then closes the Change Request after the approved updates are incorporated. | Bristlecone Program Manager | Within 2 business days of amendment or baseline update |\n\nApproved changes will be reflected in the project plan, release scope, deliverables, risk register, and commercial baseline, as applicable. Changes affecting localization, integration scope, custom development, data migration, training, readiness, or cutover shall follow the same process. `<LEGAL: confirm if the governing agreement requires a specific approval form, notice method, or signature threshold for binding change orders>`",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "18": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "- Bristlecone shall comply with its information security policies and use commercially reasonable administrative, technical, and physical safeguards for the Google data, systems, and environments used under this SOW.\n\n- Access to Google systems, project repositories, and in-scope applications shall be provisioned on a least-privilege basis, limited to authorized personnel assigned to the engagement, and removed when no longer required.\n\n- Google data transmitted or stored by Bristlecone for delivery of the services shall be protected using encryption in transit and at rest in accordance with Bristlecone policy and applicable platform capabilities.\n\n- Bristlecone-managed devices used for the services shall maintain current operating system patching, endpoint protection, and antivirus controls consistent with Bristlecone security standards.\n\n- Bristlecone personnel shall use Google-approved connectivity, access methods, and environment controls when connecting to Google systems, including any restrictions applicable to onsite, offshore, and remote delivery locations.\n\n- Security roles, authorizations, and environment access required for configuration, testing, data migration, and deployment shall be defined during design and implemented before the applicable test or release cycle.\n\n- Bristlecone shall promptly notify Google of any actual or suspected security incident affecting Google data, Google-managed environments, or delivery assets used for this engagement within `<LEGAL: agreed incident notification window>` of confirmation.\n\n- The parties shall comply with applicable data protection and regulatory requirements relevant to the in-scope solution and delivery model, including trade-compliance-related data handling where required for approved cross-border flows, and `<CONFIRM: list any client-required standards or frameworks, e.g., GDPR, SOC 2, ISO 27001>`.\n\n- Production data used in non-production environments, if any, shall be subject to Google approval and handled in accordance with agreed masking, access, and retention controls.",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "19": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 19.1 Termination for Convenience\nEither party may terminate this SOW for convenience by giving the other party `<LEGAL: required notice period and whether convenience termination is mutual under the governing agreement>` prior written notice.\n\nIf Google terminates for convenience, Google will pay Bristlecone for Services performed and approved deliverables completed up to the effective termination date, plus any authorized non-cancellable travel or third-party costs properly incurred before notice of termination. Bristlecone will stop work in an orderly manner, mitigate further cost, and provide transition support for work in progress, open items, and handover materials reasonably requested by Google.\n\n### 19.2 Termination for Cause\nEither party may terminate this SOW for cause upon written notice if the other party materially breaches this SOW and fails to cure that breach within the applicable cure period under the governing agreement.\n\nTermination for cause may also occur if a party becomes insolvent, enters liquidation or bankruptcy proceedings, ceases to do business in the ordinary course, or engages in fraud, willful misconduct, or unlawful activity materially affecting this SOW. If Bristlecone is terminated for cause, Google will pay only for conforming Services performed and accepted deliverables completed through the termination date, less any amounts subject to offset under the governing agreement.\n\n### 19.3 Effect of Termination\nOn termination or expiry of this SOW, Bristlecone will cease the terminated Services as of the effective date, deliver completed work product and agreed in-progress materials for which payment is due, and support knowledge transfer for the period agreed by the parties or otherwise required under the governing agreement.\n\nEach party will promptly return or securely destroy the other party’s Confidential Information, subject to any retention obligation in the governing agreement or applicable law. Termination does not affect payment obligations accrued before the termination date, rights and remedies arising from prior breach, or any provisions that by their nature survive termination, including confidentiality, intellectual property, limitation of liability, indemnity, audit, and dispute resolution, in each case as governed by the governing agreement.",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "19.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "20": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "| | Bristlecone Inc. | Google |\n|---|---|---|\n| Authorized Signatory | | |\n| Name (Print) | | |\n| Title | | |\n| Date | | |\n| Signature | | |",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "21": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "- The draft includes phased delivery structure through Explore, Release 1, Release 2, Release 3, and Run/Hypercare, but several scope decisions remain deferred to Explore, including final delta integration validation, Release 3 regional scope, and confirmation of whether ABAP, analytics, PLM, and MES/Test Hub work is build scope or design-only scope.\n\n- Key deliverables are defined for the major project phases, but due dates are stated at the phase level rather than as dated calendar commitments.\n\n- The current draft identifies 12 in-scope integrations, including collaboration, planning, master-data, engineering, analytics, and test-boundary interfaces; one integration source system remains to be confirmed for the resource master feed.\n\n- Acceptance criteria are defined at the deliverable level in Sections 9 and 11, while project phasing is defined separately in the implementation plan; invoicing and payment linkage to specific deliverable acceptance remains `<CONFIRM: whether payment milestones will be tied to deliverable sign-off or phase completion>`.",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "22": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 22 Reviewer Recommendations\nThe following recommendations should be completed before client issue or final internal approval:\n- Confirm a milestone deliverables matrix that ties each major phase deliverable to owner, due date, acceptance criteria, and sign-off authority.\n- Freeze any remaining pre-build decisions on integration scope, custom development scope, release sequencing, and localization impacts before build commencement.\n- Ensure all scope growth, timeline changes, and commercial impact are governed through the formal change management process.\n- Validate that acceptance criteria remain objective, phase-specific, and evidence-based for design, build, test, deployment, and transition deliverables.\n- Maintain active risk, dependency, and decision tracking through the agreed governance cadence and escalate unresolved items at stage gates.\n- Overall Recommendation: <CONFIRM: Proceed / Proceed with conditions / Do not proceed — pending a full Mode 1 REVIEW pass on this draft>\n\n### 22.1 Governance & Risk Mitigation\n- Finalize and baseline the integrated project plan, release plan, and governance calendar at mobilization.\n- Confirm the RACI and decision authority model for Google, Bristlecone, and cross-system stakeholders before detailed execution begins.\n- Freeze deferred design items from Explore before approving downstream build, test, or deployment activities.\n- Track integration-count, custom-object, and localization-driven scope expansion through formal change control.\n- Maintain a live risk and dependency register with named owners, mitigation actions, due dates, and escalation thresholds.\n- Review readiness for each release through formal checkpoints covering design approval, data readiness, testing entry and exit, cutover readiness, and business sign-off.\n- Confirm transition and hypercare exit criteria early so production support does not extend without explicit approval.\n\n### 22.2 Acceptance & Quality\n- Link every major deliverable to measurable acceptance criteria, review timeline, and named Google sign-off owner.\n- Require written approval for design documents, localization outputs, RICEFW scope, test completion, cutover readiness, and transition closure.\n- Confirm defect severity thresholds, re-test expectations, and UAT closure rules before formal test execution begins.\n- Validate that test scripts, data migration rehearsals, and mock loads cover the approved in-scope process, integration, and traceability scenarios.\n- Ensure training completion, readiness checks, and cutover criteria are met before go-live approval.\n- Document lessons learned after each major phase or release and carry agreed actions into the next delivery cycle.\n\n### 22.3 Overall Recommendation\n<CONFIRM: Proceed / Proceed with conditions / Do not proceed — pending a full Mode 1 REVIEW pass on this draft>",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "22.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "23": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "- Google shall provide timely access to the approved development, test, and production-adjacent project environments required for Explore, Realize, Deploy, and Hypercare activities across SAP S/4HANA, Kinaxis, E2Open, BTP-IS, and other approved boundary systems.\n\n- Google shall provide or enable required connectivity, user access, security roles, and environment onboarding for Bristlecone personnel supporting design, configuration, integration, testing, data migration, cutover, and hypercare activities.\n\n- Non-production environments shall be available in line with the phased plan and support configuration, unit testing, SIT, UAT, regression testing, performance testing, data loading, and validation cycles.\n\n- Integration endpoints, interface specifications, middleware connectivity, and message-routing dependencies for SAP S/4HANA, Kinaxis, E2Open, BigQuery, PLM, and MES/Test Hub shall be available or made available according to the agreed project plan for in-scope integrations.\n\n- Google shall provide the required master data, transaction data, mapping files, and reference data needed for design validation, integration design, mock loads, reconciliation, and end-to-end testing.\n\n- Business and IT test participants shall be available for planned SIT, UAT, regression, performance-testing, cutover, and hypercare checkpoints, including participation by solution architecture, integration, and key business-user roles at the effort levels aligned during project planning.\n\n- Google shall provide timely access to subject matter experts for supply planning, subcontracting, traceability, master data, procurement, manufacturing, and partner-collaboration processes across TSMC, KYEC, SPIL, and connected Google supply chain teams.\n\n- Required tools and working platforms for delivery governance and execution, including defect tracking, sprint management, document collaboration, test management, and meeting access, shall be provisioned before mobilization or during the Prepare phase.\n\n- Training, cutover, and deployment readiness activities depend on availability of agreed business process decisions, approved design documents, validated data sets, stable test environments, and named business owners for sign-off.\n\n- Any client-specific infrastructure standards, device controls, VPN requirements, background checks, or environment-access prerequisites not already covered elsewhere in this SOW shall be confirmed during mobilization and incorporated into the detailed project plan. `<CONFIRM: any Google-specific technical access, security, or infrastructure prerequisites to be mandated before project start>`",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "24": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "- Bristlecone will assign qualified resources across program management, solution architecture, functional design, integration, data migration, testing, and change management, aligned to the delivery model of onsite support in North America and offshore execution.\n\n- Program and functional leadership resources shall have implementation experience in semiconductor or similarly complex discrete-manufacturing supply chain environments, including subcontracting, traceability, planning, master data, and multi-party supply collaboration across foundry, OSAT, and distribution operations.\n\n- SAP resources shall have hands-on delivery experience in SAP S/4HANA Production Planning and Materials Management, including design workshops, fit-gap assessment, configuration, test support, cutover readiness, and deployment support for the approved scope.\n\n- Kinaxis resources shall have delivery experience in supply planning, constraint planning, inventory planning, model setup, data integration, and planning analytics relevant to the Silicon COT operating model. Resources supporting training workstreams shall hold relevant Kinaxis training capability or equivalent product-based qualifications where required.\n\n- Integration and technical resources shall have practical experience with E2Open, SAP S/4HANA, Kinaxis, BTP-IS-based integration patterns, interface design, data mapping, validation, and coordination with approved boundary systems including PLM, MES/Test Hub, and analytics platforms where applicable to the confirmed scope.\n\n- Data migration and traceability resources shall be experienced in master-data alignment, forecast and purchase-order data, commit and capacity messages, wafer and WIP data, yield inputs, unit-of-measure conversion, and genealogy or lot-traceability structures needed for the Silicon COT solution.\n\n- Testing resources shall be capable of supporting unit testing, system integration testing, regression testing, performance testing, OSAT-related SIT cycles, business-led UAT, defect triage, and go-live readiness validation across phased releases.\n\n- Change-management and training resources shall be able to support stakeholder readiness, train-the-trainer execution, end-user adoption planning, and business-user enablement across the in-scope workstreams and deployment phases.\n\n- All assigned personnel shall have working proficiency in English and be able to conduct workshops, playback sessions, issue resolution, test coordination, and governance discussions with Google stakeholders across onsite and offshore teams.\n\n- Assigned consultants shall hold relevant product, integration, or role-based certifications consistent with their delivery responsibilities, including SAP, Kinaxis, and related specialist credentials where required. `<CONFIRM: any client-mandated minimum certifications or background-screening requirements>`",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  }
+}

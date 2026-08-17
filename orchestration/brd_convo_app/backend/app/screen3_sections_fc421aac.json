@@ -1,0 +1,830 @@
+{
+  "active": [
+    {
+      "id": "1",
+      "title": "Introduction",
+      "level": 1
+    },
+    {
+      "id": "1.1",
+      "title": "Company Background",
+      "level": 2
+    },
+    {
+      "id": "1.2",
+      "title": "Purpose",
+      "level": 2
+    },
+    {
+      "id": "1.3",
+      "title": "Scope",
+      "level": 2
+    },
+    {
+      "id": "1.4",
+      "title": "Definitions & Acronyms",
+      "level": 2
+    },
+    {
+      "id": "1.5",
+      "title": "Planning Hierarchy Attributes",
+      "level": 2
+    },
+    {
+      "id": "2",
+      "title": "Benefit Realisation",
+      "level": 1
+    },
+    {
+      "id": "2.1",
+      "title": "Quantitative Benefits",
+      "level": 2
+    },
+    {
+      "id": "2.2",
+      "title": "Qualitative Benefits",
+      "level": 2
+    },
+    {
+      "id": "3",
+      "title": "Technical Configuration",
+      "level": 1
+    },
+    {
+      "id": "3.1",
+      "title": "Scenario Structure",
+      "level": 2
+    },
+    {
+      "id": "3.2",
+      "title": "Unit of Measure Conversion",
+      "level": 2
+    },
+    {
+      "id": "3.3",
+      "title": "Calendars",
+      "level": 2
+    },
+    {
+      "id": "4",
+      "title": "Supply Chain Scope",
+      "level": 1
+    },
+    {
+      "id": "4.1",
+      "title": "Supply Chain Maps",
+      "level": 2
+    },
+    {
+      "id": "4.2",
+      "title": "Sites",
+      "level": 2
+    },
+    {
+      "id": "5",
+      "title": "IXOM High Level Process Flow (Level 1)",
+      "level": 1
+    },
+    {
+      "id": "6",
+      "title": "Demand Planning",
+      "level": 1
+    },
+    {
+      "id": "6.1",
+      "title": "Demand Planning Process Overview",
+      "level": 2
+    },
+    {
+      "id": "6.1.1",
+      "title": "Maestro Resource utilisation",
+      "level": 3
+    },
+    {
+      "id": "6.1.2",
+      "title": "Demand Planning in Maestro – Setting the scene",
+      "level": 3
+    },
+    {
+      "id": "6.1.2.1",
+      "title": "Demand Planning Scenario Structure",
+      "level": 4
+    },
+    {
+      "id": "6.1.2.2",
+      "title": "Customer Mapping",
+      "level": 4
+    },
+    {
+      "id": "6.1.2.3",
+      "title": "Forecast Item (Product/location/customer)",
+      "level": 4
+    },
+    {
+      "id": "6.1.2.4",
+      "title": "Forecast Disaggregation (Short term planning – Daily/weekly)",
+      "level": 4
+    },
+    {
+      "id": "6.2",
+      "title": "Data Preparation",
+      "level": 2
+    },
+    {
+      "id": "6.2.1",
+      "title": "Process Overview",
+      "level": 3
+    },
+    {
+      "id": "6.2.2",
+      "title": "Forecast Item Management",
+      "level": 3
+    },
+    {
+      "id": "6.2.2.1",
+      "title": "Define Forecast Item",
+      "level": 4
+    },
+    {
+      "id": "6.2.2.2",
+      "title": "Forecast Item Parameters",
+      "level": 4
+    },
+    {
+      "id": "6.2.2.3",
+      "title": "History Labelling",
+      "level": 4
+    },
+    {
+      "id": "6.2.2.4",
+      "title": "Define NPI/EOL Profiles",
+      "level": 4
+    },
+    {
+      "id": "6.2.3",
+      "title": "Data Cleansing",
+      "level": 3
+    },
+    {
+      "id": "6.2.3.1",
+      "title": "Data Errors",
+      "level": 4
+    },
+    {
+      "id": "6.2.3.2",
+      "title": "Causals (Specific Events)",
+      "level": 4
+    },
+    {
+      "id": "6.2.3.3",
+      "title": "Outliers",
+      "level": 4
+    },
+    {
+      "id": "6.3",
+      "title": "Statistical Forecast Generation",
+      "level": 2
+    },
+    {
+      "id": "6.3.1",
+      "title": "Process Overview",
+      "level": 3
+    },
+    {
+      "id": "6.3.2",
+      "title": "Generate Statistical Forecast",
+      "level": 3
+    },
+    {
+      "id": "6.3.3",
+      "title": "Statistical Forecast Review",
+      "level": 3
+    },
+    {
+      "id": "6.4",
+      "title": "Upload External Forecasts and Annual Plan",
+      "level": 2
+    },
+    {
+      "id": "6.4.1",
+      "title": "Process Overview",
+      "level": 3
+    },
+    {
+      "id": "6.4.2",
+      "title": "External Forecast Categories",
+      "level": 3
+    },
+    {
+      "id": "6.4.3",
+      "title": "Annual Plan",
+      "level": 3
+    },
+    {
+      "id": "6.5",
+      "title": "Consensus Demand Planning: Create Consensus Demand Plan (Unconstrained Demand Plan)",
+      "level": 2
+    },
+    {
+      "id": "6.5.1",
+      "title": "Process Overview",
+      "level": 3
+    },
+    {
+      "id": "6.5.2",
+      "title": "Consensus Forecast Review and Adjustment.",
+      "level": 3
+    },
+    {
+      "id": "6.6",
+      "title": "Forecast Disaggregation",
+      "level": 2
+    },
+    {
+      "id": "6.6.1",
+      "title": "Daily Forecast Disaggregation",
+      "level": 3
+    },
+    {
+      "id": "6.7",
+      "title": "Price Matrix",
+      "level": 2
+    },
+    {
+      "id": "6.8",
+      "title": "Bottom-Up Short-term Planning",
+      "level": 2
+    },
+    {
+      "id": "6.9",
+      "title": "Forecast Accuracy",
+      "level": 2
+    },
+    {
+      "id": "6.10",
+      "title": "Forecast Waterfall",
+      "level": 2
+    },
+    {
+      "id": "6.11",
+      "title": "Solution Assumptions",
+      "level": 2
+    },
+    {
+      "id": "6.12",
+      "title": "Functional Requirements",
+      "level": 2
+    },
+    {
+      "id": "7",
+      "title": "Sales & Operations Planning",
+      "level": 1
+    },
+    {
+      "id": "7.1",
+      "title": "S&OP Process Owner",
+      "level": 2
+    },
+    {
+      "id": "7.2",
+      "title": "Demand Review",
+      "level": 2
+    },
+    {
+      "id": "7.2.1",
+      "title": "Process Overview",
+      "level": 3
+    },
+    {
+      "id": "7.3",
+      "title": "Supply Review",
+      "level": 2
+    },
+    {
+      "id": "7.3.1",
+      "title": "Process Overview",
+      "level": 3
+    },
+    {
+      "id": "7.4",
+      "title": "Rebalancing Demand to Supply",
+      "level": 2
+    },
+    {
+      "id": "7.4.1",
+      "title": "Process Overview",
+      "level": 3
+    },
+    {
+      "id": "7.4.2",
+      "title": "Demand Supply Balancing",
+      "level": 3
+    },
+    {
+      "id": "7.5",
+      "title": "Executive S&OP Meeting",
+      "level": 2
+    },
+    {
+      "id": "7.5.1",
+      "title": "Process Overview",
+      "level": 3
+    },
+    {
+      "id": "7.6",
+      "title": "Exceptions by Business Unit & Patch",
+      "level": 2
+    },
+    {
+      "id": "7.7",
+      "title": "Assumptions",
+      "level": 2
+    },
+    {
+      "id": "7.8",
+      "title": "Functional Requirements",
+      "level": 2
+    },
+    {
+      "id": "8",
+      "title": "Replenishment & Inventory Planning",
+      "level": 1
+    },
+    {
+      "id": "8.1",
+      "title": "Maestro Resources Used",
+      "level": 2
+    },
+    {
+      "id": "8.2",
+      "title": "ABC Classification",
+      "level": 2
+    },
+    {
+      "id": "8.2.1",
+      "title": "Process Overview",
+      "level": 3
+    },
+    {
+      "id": "8.2.2",
+      "title": "ABC Classification",
+      "level": 3
+    },
+    {
+      "id": "8.3",
+      "title": "Safety Stock & Cycle Stock Setup and Review",
+      "level": 2
+    },
+    {
+      "id": "8.3.1",
+      "title": "Process Overview",
+      "level": 3
+    },
+    {
+      "id": "8.3.2",
+      "title": "Safety Stock Management",
+      "level": 3
+    },
+    {
+      "id": "8.3.3",
+      "title": "Planning Sheet",
+      "level": 3
+    },
+    {
+      "id": "8.4",
+      "title": "Black Stock & SLOBS Review",
+      "level": 2
+    },
+    {
+      "id": "8.4.1",
+      "title": "Process Overview",
+      "level": 3
+    },
+    {
+      "id": "8.4.2",
+      "title": "Inventory Report",
+      "level": 3
+    },
+    {
+      "id": "8.5",
+      "title": "Inventory Transfer",
+      "level": 2
+    },
+    {
+      "id": "8.5.1",
+      "title": "Process Overview",
+      "level": 3
+    },
+    {
+      "id": "8.5.2",
+      "title": "Inventory Transfer",
+      "level": 3
+    },
+    {
+      "id": "8.6",
+      "title": "Exceptions by Business Unit & Patch",
+      "level": 2
+    },
+    {
+      "id": "8.7",
+      "title": "Assumptions",
+      "level": 2
+    },
+    {
+      "id": "8.8",
+      "title": "Functional Requirements",
+      "level": 2
+    },
+    {
+      "id": "9",
+      "title": "Supply Planning",
+      "level": 1
+    },
+    {
+      "id": "9.1",
+      "title": "Supply Planning – Process Overview",
+      "level": 2
+    },
+    {
+      "id": "9.2",
+      "title": "Supply Planning in Maestro – setting the scene",
+      "level": 2
+    },
+    {
+      "id": "9.2.1",
+      "title": "Supply - Order Types",
+      "level": 3
+    },
+    {
+      "id": "9.2.2",
+      "title": "Core Algorithms (Netting, CTP, FLP)",
+      "level": 3
+    },
+    {
+      "id": "9.2.2.1",
+      "title": "Netting",
+      "level": 4
+    },
+    {
+      "id": "9.2.2.2",
+      "title": "Capable-To-Promise",
+      "level": 4
+    },
+    {
+      "id": "9.2.2.3",
+      "title": "Full Level Pegging (FLP)",
+      "level": 4
+    },
+    {
+      "id": "9.3",
+      "title": "Distribution Requirements Planning",
+      "level": 2
+    },
+    {
+      "id": "9.3.1",
+      "title": "Maestro Resources Used",
+      "level": 3
+    },
+    {
+      "id": "9.3.2",
+      "title": "Manage Planning Parameters",
+      "level": 3
+    },
+    {
+      "id": "9.3.2.1",
+      "title": "Process Overview",
+      "level": 4
+    },
+    {
+      "id": "9.3.2.2",
+      "title": "Transfer Master Data Management",
+      "level": 4
+    },
+    {
+      "id": "9.3.2.3",
+      "title": "BOM Analysis",
+      "level": 4
+    },
+    {
+      "id": "9.3.3",
+      "title": "Calculate Replenishment Requirements",
+      "level": 3
+    },
+    {
+      "id": "9.3.3.1",
+      "title": "Process Overview",
+      "level": 4
+    },
+    {
+      "id": "9.3.3.2",
+      "title": "Distribution Requirements Planning",
+      "level": 4
+    },
+    {
+      "id": "9.3.4",
+      "title": "Constrain and create Distribution Plan (short-term)",
+      "level": 3
+    },
+    {
+      "id": "9.3.4.1",
+      "title": "Process Overview",
+      "level": 4
+    },
+    {
+      "id": "9.3.4.2",
+      "title": "Transfer Order Management",
+      "level": 4
+    },
+    {
+      "id": "9.3.4.3",
+      "title": "Inventory Transfer",
+      "level": 4
+    },
+    {
+      "id": "9.3.4.4",
+      "title": "Warehouse Storage Capacity Report",
+      "level": 4
+    },
+    {
+      "id": "9.3.4.5",
+      "title": "Supply Waterfall",
+      "level": 4
+    },
+    {
+      "id": "9.3.5",
+      "title": "Constrain and create Distribution Plan (Long-term)",
+      "level": 3
+    },
+    {
+      "id": "9.3.5.1",
+      "title": "Process Overview",
+      "level": 4
+    },
+    {
+      "id": "9.3.6",
+      "title": "Exceptions by Business Unit & Patch",
+      "level": 3
+    },
+    {
+      "id": "9.3.7",
+      "title": "Assumptions",
+      "level": 3
+    },
+    {
+      "id": "9.3.8",
+      "title": "Functional Requirements",
+      "level": 3
+    },
+    {
+      "id": "9.4",
+      "title": "Supply Planning & Order Management",
+      "level": 2
+    },
+    {
+      "id": "9.4.1",
+      "title": "Maestro Resources Used",
+      "level": 3
+    },
+    {
+      "id": "9.4.2",
+      "title": "Review / Update Master data",
+      "level": 3
+    },
+    {
+      "id": "9.4.2.1",
+      "title": "Process Overview",
+      "level": 4
+    },
+    {
+      "id": "9.4.2.2",
+      "title": "Purchase Master Data Management",
+      "level": 4
+    },
+    {
+      "id": "9.4.3",
+      "title": "Review of Dependent Requirements & Safety Stock",
+      "level": 3
+    },
+    {
+      "id": "9.4.3.1",
+      "title": "Process Overview",
+      "level": 4
+    },
+    {
+      "id": "9.4.3.2",
+      "title": "Planning Sheet",
+      "level": 4
+    },
+    {
+      "id": "9.4.3.3",
+      "title": "Raw Material (Parent & child)",
+      "level": 4
+    },
+    {
+      "id": "9.4.4",
+      "title": "Update Supply Plan",
+      "level": 3
+    },
+    {
+      "id": "9.4.4.1",
+      "title": "Process Overview",
+      "level": 4
+    },
+    {
+      "id": "9.4.4.2",
+      "title": "Purchase Order Management",
+      "level": 4
+    },
+    {
+      "id": "9.4.5",
+      "title": "Supply Imbalances & Review Inventory",
+      "level": 3
+    },
+    {
+      "id": "9.4.5.1",
+      "title": "Process Overview",
+      "level": 4
+    },
+    {
+      "id": "9.4.5.2",
+      "title": "Supply Order Analysis",
+      "level": 4
+    },
+    {
+      "id": "9.4.5.3",
+      "title": "Constraint Manager",
+      "level": 4
+    },
+    {
+      "id": "9.4.5.4",
+      "title": "Constraint Properties",
+      "level": 4
+    },
+    {
+      "id": "9.4.5.5",
+      "title": "Inventory Projection",
+      "level": 4
+    },
+    {
+      "id": "9.4.6",
+      "title": "Create PO and update Supply Plan",
+      "level": 3
+    },
+    {
+      "id": "9.4.6.1",
+      "title": "Process Overview",
+      "level": 4
+    },
+    {
+      "id": "9.4.6.2",
+      "title": "ADMIN ERP Outbound",
+      "level": 4
+    },
+    {
+      "id": "9.4.6.3",
+      "title": "ADMIN SR Reconciliation",
+      "level": 4
+    },
+    {
+      "id": "9.4.7",
+      "title": "Exceptions by Business Unit & Patch",
+      "level": 3
+    },
+    {
+      "id": "9.4.8",
+      "title": "Assumptions",
+      "level": 3
+    },
+    {
+      "id": "9.4.9",
+      "title": "Functional Requirements",
+      "level": 3
+    },
+    {
+      "id": "9.5",
+      "title": "Production & Material Planning",
+      "level": 2
+    },
+    {
+      "id": "9.5.1",
+      "title": "Maestro Resources Used",
+      "level": 3
+    },
+    {
+      "id": "9.5.2",
+      "title": "Maintain Planning Parameters",
+      "level": 3
+    },
+    {
+      "id": "9.5.2.1",
+      "title": "Process Overview",
+      "level": 4
+    },
+    {
+      "id": "9.5.2.2",
+      "title": "Production Master Data Management",
+      "level": 4
+    },
+    {
+      "id": "9.5.2.3",
+      "title": "Stocking Strategy",
+      "level": 4
+    },
+    {
+      "id": "9.5.3",
+      "title": "Create Initial version of Production Plan",
+      "level": 3
+    },
+    {
+      "id": "9.5.3.1",
+      "title": "Process Overview",
+      "level": 4
+    },
+    {
+      "id": "9.5.3.2",
+      "title": "Production Order Management",
+      "level": 4
+    },
+    {
+      "id": "9.5.4",
+      "title": "Review Capacity & Material Availability",
+      "level": 3
+    },
+    {
+      "id": "9.5.4.1",
+      "title": "Process Overview",
+      "level": 4
+    },
+    {
+      "id": "9.5.4.2",
+      "title": "Planning Sheet",
+      "level": 4
+    },
+    {
+      "id": "9.5.4.3",
+      "title": "Supply Order Analysis",
+      "level": 4
+    },
+    {
+      "id": "9.5.4.4",
+      "title": "Constraint Manager",
+      "level": 4
+    },
+    {
+      "id": "9.5.4.5",
+      "title": "Constraint Properties",
+      "level": 4
+    },
+    {
+      "id": "9.5.5",
+      "title": "Finalise & Release Production Plan",
+      "level": 3
+    },
+    {
+      "id": "9.5.5.1",
+      "title": "Process Overview",
+      "level": 4
+    },
+    {
+      "id": "9.5.5.2",
+      "title": "Warehouse Capacity Report",
+      "level": 4
+    },
+    {
+      "id": "9.5.6",
+      "title": "Rough Cut Capacity Plan (RCCP)",
+      "level": 3
+    },
+    {
+      "id": "9.5.6.1",
+      "title": "Process Overview",
+      "level": 4
+    },
+    {
+      "id": "9.5.7",
+      "title": "Exceptions by Business Unit & Patch",
+      "level": 3
+    },
+    {
+      "id": "9.5.8",
+      "title": "Assumptions",
+      "level": 3
+    },
+    {
+      "id": "9.5.9",
+      "title": "Functional Requirements",
+      "level": 3
+    },
+    {
+      "id": "10",
+      "title": "Reporting",
+      "level": 1
+    },
+    {
+      "id": "11",
+      "title": "Document Review and Signoff",
+      "level": 1
+    }
+  ],
+  "archived": []
+}

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Assistant</title>
+<style>
+  :root{
+    /* Matches the Kinaxis Blueprint tool palette */
+    --bg:#F7F7F7; --panel:#FFFFFF; --panel2:#F0F0F0; --border:#DDDDDD;
+    --text:#1A1A1A; --muted:#888888; --accent:#0070C0; --accent2:#0070C0;
+    --accent-soft:rgba(0,112,192,0.08);
+    --chip:#F0F0F0; --user:#E6F1FB; --bot:#FFFFFF; --radius:10px;
+    --font:'Segoe UI',system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font-family:var(--font);}
+  a{color:inherit;text-decoration:none;}
+  #app{display:grid;grid-template-columns:264px 1fr;height:100vh;}
+
+  /* ── Header (spans both columns via being inside main/side) ── */
+  .side{background:var(--panel);border-right:1px solid var(--border);display:flex;flex-direction:column;min-height:0;}
+  .brand{display:flex;align-items:center;gap:10px;padding:16px 18px;border-bottom:1px solid var(--border);}
+  .brand .logo{width:34px;height:34px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:13px;flex:0 0 auto;}
+  .brand .bt{font-weight:700;font-size:14px;line-height:1.2;}
+  .brand .bs{font-size:11px;color:var(--muted);}
+  .side .grp{font-size:11px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;padding:16px 18px 6px;}
+  .side .nav{flex:1 1 auto;overflow-y:auto;padding:0 10px;}
+  .topic{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:9px;cursor:pointer;color:var(--text);font-size:13.5px;}
+  .topic:hover{background:var(--panel2);}
+  .topic.active{background:var(--accent-soft);color:var(--accent);font-weight:600;}
+  .topic .ic{width:18px;text-align:center;opacity:.9;}
+  .side .foot{border-top:1px solid var(--border);padding:8px 10px;}
+  .newchat-wrap{padding:12px 12px 4px;}
+  .newchat{width:100%;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 10px;border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:9px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;}
+  .newchat:hover{filter:brightness(1.05);}
+  .chatitem{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:9px;cursor:pointer;color:var(--text);font-size:13px;}
+  .chatitem:hover{background:var(--panel2);}
+  .chatitem.active{background:var(--accent-soft);color:var(--accent);font-weight:600;}
+  .chatitem .ttl{flex:1 1 auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .chatitem .del{flex:0 0 auto;opacity:0;color:var(--muted);font-size:14px;border:none;background:transparent;cursor:pointer;padding:0 2px;}
+  .chatitem:hover .del{opacity:.7;}
+  .chatitem .del:hover{opacity:1;color:#A32D2D;}
+  .chatempty{padding:10px 12px;color:var(--muted);font-size:12px;}
+
+  /* ── Main ── */
+  .main{display:flex;flex-direction:column;min-height:0;}
+  .topbar{display:flex;align-items:center;gap:12px;padding:12px 20px;border-bottom:1px solid var(--border);background:var(--panel);}
+  .topbar .focuslbl{font-size:12px;color:var(--muted);}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;}
+  .chip{padding:5px 13px;border:1px solid var(--accent);border-radius:999px;font-size:12.5px;color:var(--accent2);cursor:pointer;background:transparent;}
+  .chip.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .topbar .spacer{flex:1;}
+  .modesel{background:var(--panel2);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:6px 8px;font-size:12px;cursor:pointer;}
+  .srcwrap{position:relative;}
+  .srcpop{display:none;position:absolute;right:0;top:36px;z-index:50;width:280px;background:var(--panel);border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.16);padding:8px;}
+  .srcpop.open{display:block;}
+  .srcactions{display:flex;gap:6px;margin-bottom:6px;}
+  .srcactions button{flex:1;font-size:11px;padding:4px 6px;border:1px solid var(--border);background:var(--panel2);color:var(--text);border-radius:6px;cursor:pointer;}
+  .srclist{max-height:240px;overflow-y:auto;}
+  .srcitem{display:flex;align-items:center;gap:8px;padding:6px 7px;font-size:13px;border-radius:6px;cursor:pointer;color:var(--text);}
+  .srcitem:hover{background:var(--panel2);}
+  .srcempty{padding:10px;text-align:center;color:var(--muted);font-size:12px;}
+
+  .stream{flex:1 1 auto;overflow-y:auto;padding:24px 22px;}
+  .wrap{max-width:820px;margin:0 auto;}
+  .empty{text-align:center;color:var(--muted);margin-top:9vh;}
+  .empty h1{color:var(--text);font-size:26px;margin:0 0 10px;}
+  .empty p{font-size:14px;max-width:520px;margin:0 auto;line-height:1.6;}
+
+  .msg{margin:14px 0;padding:13px 15px;border-radius:12px;font-size:14px;line-height:1.6;}
+  .msg.user{background:var(--user);margin-left:18%;border-bottom-right-radius:4px;}
+  .msg.bot{background:var(--bot);border:1px solid var(--border);margin-right:6%;border-bottom-left-radius:4px;}
+  .msg.bot.error{border-color:#7f1d1d;color:#fca5a5;}
+  .typing{color:var(--muted);font-style:italic;font-size:13px;margin:10px 0;}
+
+  /* markdown */
+  .msg h1,.msg h2,.msg .mdh{font-size:16px;margin:10px 0 4px;color:var(--text);}
+  .msg .mdh3{font-size:14px;color:var(--accent2);font-weight:600;margin:10px 0 3px;}
+  .msg ul,.msg ol{margin:6px 0;padding-left:22px;}
+  .msg li{margin:3px 0;}
+  .msg code{background:var(--panel2);border:1px solid var(--border);padding:1px 5px;border-radius:5px;font-size:12.5px;}
+  .msg pre{background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px;overflow:auto;}
+  .msg table{border-collapse:collapse;width:100%;margin:8px 0;font-size:12.5px;}
+  .msg th,.msg td{border:1px solid var(--border);padding:6px 9px;text-align:left;vertical-align:top;}
+  .msg th{background:var(--panel2);}
+
+  /* per-answer actions (copy / export) */
+  .msg-actions{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;}
+  .msg-actions button{font-size:11px;padding:3px 9px;border:1px solid var(--border);
+    background:var(--panel2);color:var(--muted);border-radius:6px;cursor:pointer;}
+  .msg-actions button:hover{border-color:var(--accent);color:var(--accent);}
+
+  .suggest{padding:0 22px 8px;}
+  .suggest .wrap{display:flex;gap:8px;flex-wrap:wrap;}
+  .sg{padding:7px 13px;background:var(--chip);border:1px solid var(--border);border-radius:999px;font-size:12.5px;color:var(--text);cursor:pointer;}
+  .sg:hover{border-color:var(--accent);}
+
+  .composer{border-top:1px solid var(--border);background:var(--panel);padding:14px 22px;}
+  .composer .wrap{display:flex;gap:10px;}
+  #q{flex:1;resize:none;height:46px;max-height:160px;background:var(--panel);border:1px solid var(--border);border-radius:12px;color:var(--text);font-family:inherit;font-size:14px;padding:12px 14px;}
+  #send{flex:0 0 auto;width:46px;border:none;border-radius:12px;background:var(--accent);color:#fff;font-size:18px;cursor:pointer;}
+  #send:disabled{opacity:.5;cursor:not-allowed;}
+  .hint{max-width:820px;margin:6px auto 0;font-size:11px;color:var(--muted);text-align:center;}
+
+  /* sources footer (T7) */
+  .srcfoot{margin:10px 0 2px;padding-top:8px;border-top:1px dashed var(--border);font-size:12px;color:var(--muted);}
+  .srcfoot .lbl{font-weight:600;color:var(--text);}
+  .srcfoot .sname{display:inline-block;background:var(--panel2);border:1px solid var(--border);border-radius:6px;padding:2px 8px;margin:2px 4px 0 0;color:var(--text);}
+
+  /* inline image results (T5) */
+  .imgrow{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 2px;}
+  .imgcard{width:150px;cursor:pointer;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--panel2);}
+  .imgcard img{width:100%;height:100px;object-fit:cover;display:block;}
+  .imgcard .cap{padding:5px 7px;font-size:11px;line-height:1.3;color:var(--text);}
+  .imgcard .cap .doc{color:var(--muted);font-size:10px;display:block;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .imgtitle{font-size:12px;color:var(--muted);margin:10px 0 0;}
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.78);display:none;align-items:center;justify-content:center;z-index:200;padding:30px;}
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:92%;max-height:84%;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,.5);}
+  .lightbox .lbcap{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#fff;font-size:13px;padding:0 20px;}
+  .lightbox .lbclose{position:absolute;top:18px;right:24px;color:#fff;font-size:30px;cursor:pointer;line-height:1;}
+</style>
+</head>
+<body>
+<div id="app">
+  <!-- Sidebar -->
+  <aside class="side">
+    <div class="brand">
+      <div class="logo">AI</div>
+      <div><div class="bt">AI Assistant</div></div>
+    </div>
+    <div class="newchat-wrap"><button class="newchat" id="newChat">＋ New chat</button></div>
+    <div class="grp">My Chats</div>
+    <nav class="nav" id="chatList"><div class="chatempty">No saved chats yet.</div></nav>
+  </aside>
+
+  <!-- Main -->
+  <section class="main">
+    <div class="topbar">
+      <span class="spacer"></span>
+      <div class="srcwrap">
+        <button class="modesel" id="srcBtn" title="Choose which repositories to search">Sources: all ▾</button>
+        <div class="srcpop" id="srcPop">
+          <div class="srcactions">
+            <button type="button" data-a="all">Select all</button>
+            <button type="button" data-a="none">Clear</button>
+          </div>
+          <div class="srclist" id="srcList"><div class="srcempty">Loading…</div></div>
+        </div>
+      </div>
+      <select class="modesel" id="mode" title="Answer mode">
+        <option value="hybrid">Hybrid</option>
+        <option value="strict">Strict (docs only)</option>
+      </select>
+      <select class="modesel" id="exportChat" title="Export the whole conversation">
+        <option value="">Export chat…</option>
+        <option value="docx">Word (.docx)</option>
+        <option value="pdf">PDF</option>
+        <option value="txt">Text (.txt)</option>
+      </select>
+    </div>
+
+    <div class="stream" id="stream">
+      <div class="wrap">
+        <div class="empty" id="empty">
+          <h1>AI Assistant</h1>
+          <p>Ask anything about building strategy files, tuning parameters, debugging
+             optimization runs, or configuring supply-chain modules. Answers are grounded
+             in your uploaded documents.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="composer">
+      <div class="wrap">
+        <textarea id="q" placeholder="Ask a question…" rows="1"></textarea>
+        <button id="send" title="Send">&#10148;</button>
+      </div>
+      <div class="hint">This is AI and can make mistakes. Please double-check responses.</div>
+    </div>
+  </section>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <span class="lbclose" id="lbClose">&times;</span>
+  <img id="lbImg" alt=""/>
+  <div class="lbcap" id="lbCap"></div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // ── Topics (left sidebar) and their default focus + suggested prompts ──
+  var TOPICS = [
+    {id:"general",  label:"General Optimization", ic:"🛠️", focus:"",            sg:["What can this assistant help with?","How do strategies and parameters relate?"]},
+    {id:"strategy", label:"Strategy Files",        ic:"📄", focus:"strategy file", sg:["How do I build a strategy file?","Order of strategy functions"]},
+    {id:"params",   label:"Parameter Files",       ic:"⚙️", focus:"parameters",    sg:["Explain ConSamePickAndDrop parameters","Common parameter mistakes"]},
+    {id:"constraints",label:"Constraints & Overrides",ic:"🚧",focus:"constraints", sg:["Infeasibility causes","How overrides are applied"]},
+    {id:"errors",   label:"Errors & Debugging",    ic:"🐞", focus:"error",         sg:["Why is my run infeasible?","Debug an optimization failure"]},
+    {id:"perf",     label:"Performance Tuning",    ic:"⚡", focus:"performance",    sg:["Speed up solve time","Parallel solving options"]},
+    {id:"integration",label:"Integration & Data",  ic:"🔗", focus:"integration",   sg:["Required data interfaces","Data refresh frequency"]},
+  ];
+  var FOCUS_CHIPS = ["Strategy","Parameters","Constraints"];
+
+  var activeTopic = TOPICS[0];
+  var activeFocus = null;     // focus chip
+  var busy = false;
+  var repoOptions = [];       // [{repo_id, name}]
+  var selectedRepos = null;   // Set of repo_ids (null until loaded)
+
+  var elTopics=document.getElementById("topics");
+  var elChips=document.getElementById("focusChips");
+  var elSuggest=document.getElementById("suggest");
+  var elStream=document.getElementById("stream").querySelector(".wrap");
+  var elEmpty=document.getElementById("empty");
+  var elQ=document.getElementById("q");
+  var elSend=document.getElementById("send");
+  var elMode=document.getElementById("mode");
+  var elSrcBtn=document.getElementById("srcBtn");
+  var elSrcPop=document.getElementById("srcPop");
+  var elSrcList=document.getElementById("srcList");
+  var elChatList=document.getElementById("chatList");
+  var elNewChat=document.getElementById("newChat");
+  var elLightbox=document.getElementById("lightbox");
+  var elLbImg=document.getElementById("lbImg");
+  var elLbCap=document.getElementById("lbCap");
+
+  // ── Chat-history state (T6) ──
+  function currentUserEmail(){
+    try{
+      var raw=sessionStorage.getItem("auth_user");
+      if(raw){ var u=JSON.parse(raw); if(u && u.email) return String(u.email).toLowerCase(); }
+    }catch(e){}
+    return "";
+  }
+  var userEmail = currentUserEmail();
+  var currentChatId = null;   // null until first save
+  var messages = [];          // [{role, content, sources, images}]
+
+  // ── Markdown renderer (answer-only; tables/headings/lists/bold/code) ──
+  function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+  function inl(s){return s.replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>").replace(/`([^`]+)`/g,"<code>$1</code>");}
+  function isSep(l){var c=l.split("|").map(x=>x.trim()).filter(x=>x.length);return c.length>0&&c.every(x=>/^:?-+:?$/.test(x));}
+  function row(l){var t=l.trim();if(t[0]==="|")t=t.slice(1);if(t.slice(-1)==="|")t=t.slice(0,-1);return t.split("|").map(x=>x.trim());}
+  function md(text){
+    var fence=text.split("```");
+    // handle code fences first
+    var html="",i;
+    for(i=0;i<fence.length;i++){
+      if(i%2===1){ var body=fence[i].replace(/^[a-zA-Z]*\n/,""); html+="<pre><code>"+esc(body)+"</code></pre>"; continue; }
+      html+=block(esc(fence[i]));
+    }
+    return html;
+  }
+  function block(escd){
+    var lines=escd.replace(/\r\n/g,"\n").split("\n"),out=[],i=0;
+    while(i<lines.length){
+      var line=lines[i];
+      if(line.indexOf("|")>-1&&i+1<lines.length&&isSep(lines[i+1])){
+        var h=row(line);i+=2;var rows=[];
+        while(i<lines.length&&lines[i].indexOf("|")>-1&&lines[i].trim()!==""){rows.push(row(lines[i]));i++;}
+        var t="<table><thead><tr>"+h.map(x=>"<th>"+inl(x)+"</th>").join("")+"</tr></thead><tbody>";
+        t+=rows.map(r=>"<tr>"+r.map(c=>"<td>"+inl(c)+"</td>").join("")+"</tr>").join("")+"</tbody></table>";
+        out.push(t);continue;
+      }
+      var hm=line.match(/^(#{1,4})\s+(.*)$/);
+      if(hm){out.push("<div class='mdh"+(hm[1].length>=3?"3":"")+"'>"+inl(hm[2])+"</div>");i++;continue;}
+      if(/^\s*[-*]\s+/.test(line)){var it=[];while(i<lines.length&&/^\s*[-*]\s+/.test(lines[i])){it.push("<li>"+inl(lines[i].replace(/^\s*[-*]\s+/,""))+"</li>");i++;}out.push("<ul>"+it.join("")+"</ul>");continue;}
+      if(/^\s*\d+[.)]\s+/.test(line)){var io=[];while(i<lines.length&&/^\s*\d+[.)]\s+/.test(lines[i])){io.push("<li>"+inl(lines[i].replace(/^\s*\d+[.)]\s+/,""))+"</li>");i++;}out.push("<ol>"+io.join("")+"</ol>");continue;}
+      if(line.trim()===""){out.push("<div style='height:6px'></div>");i++;continue;}
+      out.push("<div>"+inl(line)+"</div>");i++;
+    }
+    return out.join("");
+  }
+
+  // ── Render sidebar/topics/chips/suggestions ──
+  function renderTopics(){
+    if(!elTopics) return;
+    elTopics.innerHTML="";
+    TOPICS.forEach(function(t){
+      var d=document.createElement("div");
+      d.className="topic"+(t.id===activeTopic.id?" active":"");
+      d.innerHTML="<span class='ic'>"+t.ic+"</span> "+t.label;
+      d.onclick=function(){ activeTopic=t; renderTopics(); renderSuggest(); };
+      elTopics.appendChild(d);
+    });
+  }
+  function renderChips(){
+    if(!elChips) return;
+    elChips.innerHTML="";
+    FOCUS_CHIPS.forEach(function(f){
+      var b=document.createElement("button");
+      b.className="chip"+(activeFocus===f?" active":"");
+      b.textContent=f;
+      b.onclick=function(){ activeFocus=(activeFocus===f?null:f); renderChips(); };
+      elChips.appendChild(b);
+    });
+  }
+  function renderSuggest(){
+    if(!elSuggest) return;
+    elSuggest.innerHTML="";
+    (activeTopic.sg||[]).forEach(function(s){
+      var b=document.createElement("div");
+      b.className="sg"; b.textContent=s;
+      b.onclick=function(){ elQ.value=s; elQ.focus(); };
+      elSuggest.appendChild(b);
+    });
+  }
+
+  // ── Sources (repository picker) ──
+  function updateSrcBtn(){
+    if(!selectedRepos){ elSrcBtn.textContent="Sources: all ▾"; return; }
+    var n=selectedRepos.size, m=repoOptions.length;
+    var label = (n===m) ? "all" : (n===0 ? "none" : (n+" of "+m));
+    elSrcBtn.textContent="Sources: "+label+" ▾";
+  }
+  function renderSrc(){
+    elSrcList.innerHTML="";
+    if(!repoOptions.length){ elSrcList.innerHTML='<div class="srcempty">No repositories found</div>'; return; }
+    repoOptions.forEach(function(r){
+      var lab=document.createElement("label"); lab.className="srcitem";
+      var cb=document.createElement("input"); cb.type="checkbox"; cb.value=r.repo_id;
+      cb.checked=selectedRepos.has(r.repo_id);
+      cb.addEventListener("change",function(){
+        if(cb.checked) selectedRepos.add(r.repo_id); else selectedRepos.delete(r.repo_id);
+        updateSrcBtn();
+      });
+      var sp=document.createElement("span"); sp.textContent=r.name;
+      lab.appendChild(cb); lab.appendChild(sp); elSrcList.appendChild(lab);
+    });
+  }
+  function loadScopes(){
+    fetch("/api/chat/scopes").then(r=>r.json()).then(function(d){
+      repoOptions=d.repositories||[];
+      selectedRepos=new Set(repoOptions.map(r=>r.repo_id));  // default: all
+      renderSrc(); updateSrcBtn();
+    }).catch(function(){ elSrcList.innerHTML='<div class="srcempty">Could not load sources</div>'; });
+  }
+  elSrcBtn.addEventListener("click",function(e){ e.stopPropagation(); elSrcPop.classList.toggle("open"); });
+  elSrcPop.addEventListener("click",function(e){ e.stopPropagation(); });
+  document.addEventListener("click",function(){ elSrcPop.classList.remove("open"); });
+  elSrcPop.querySelector(".srcactions").addEventListener("click",function(e){
+    var a=e.target&&e.target.getAttribute("data-a"); if(!a) return;
+    selectedRepos = a==="all" ? new Set(repoOptions.map(r=>r.repo_id)) : new Set();
+    renderSrc(); updateSrcBtn();
+  });
+
+  // ── Messages ──
+  function addMsg(text,who,isError){
+    if(elEmpty){elEmpty.remove();elEmpty=null;}
+    var d=document.createElement("div");
+    d.className="msg "+(who==="user"?"user":"bot")+(isError?" error":"");
+    if(who==="bot"&&!isError){
+      d.innerHTML=md(text);
+      opts=opts||{};
+      if(opts.images && opts.images.length) d.appendChild(buildImages(opts.images));
+      if(opts.sources && opts.sources.length) d.appendChild(buildSources(opts.sources));
+    } else {
+      d.textContent=text;
+    }
+    elStream.appendChild(d);
+    d.scrollIntoView({block:"end"});
+    return d;
+  }
+
+  // T5: inline image thumbnails (click to enlarge)
+  function buildImages(images){
+    var box=document.createElement("div");
+    var title=document.createElement("div"); title.className="imgtitle"; title.textContent="Related images";
+    box.appendChild(title);
+    var row=document.createElement("div"); row.className="imgrow";
+    images.forEach(function(im){
+      var card=document.createElement("div"); card.className="imgcard";
+      var img=document.createElement("img"); img.src=im.url; img.alt=im.caption||""; img.loading="lazy";
+      img.onerror=function(){ card.style.display="none"; };
+      var cap=document.createElement("div"); cap.className="cap";
+      cap.textContent=im.caption||"Figure";
+      if(im.source_doc){ var doc=document.createElement("span"); doc.className="doc"; doc.textContent=im.source_doc; cap.appendChild(doc); }
+      card.appendChild(img); card.appendChild(cap);
+      card.onclick=function(){ openLightbox(im); };
+      row.appendChild(card);
+    });
+    box.appendChild(row);
+    return box;
+  }
+
+  // T7: "Source: <doc>" footer naming where the answer came from
+  function buildSources(sources){
+    var f=document.createElement("div"); f.className="srcfoot";
+    var lbl=document.createElement("span"); lbl.className="lbl";
+    lbl.textContent=(sources.length>1?"Sources: ":"Source: ");
+    f.appendChild(lbl);
+    sources.forEach(function(s){
+      var sp=document.createElement("span"); sp.className="sname"; sp.textContent=s; f.appendChild(sp);
+    });
+    return f;
+  }
+
+  function openLightbox(im){
+    elLbImg.src=im.url;
+    elLbCap.textContent=(im.caption||"")+(im.source_doc?(" — "+im.source_doc):"");
+    elLightbox.classList.add("open");
+  }
+  function closeLightbox(){ elLightbox.classList.remove("open"); elLbImg.src=""; }
+  elLightbox.addEventListener("click",function(e){ if(e.target===elLightbox) closeLightbox(); });
+  document.getElementById("lbClose").addEventListener("click",closeLightbox);
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape") closeLightbox(); });
+  var typingEl=null;
+  function showTyping(){typingEl=document.createElement("div");typingEl.className="typing";typingEl.textContent="Thinking…";elStream.appendChild(typingEl);typingEl.scrollIntoView({block:"end"});}
+  function hideTyping(){if(typingEl){typingEl.remove();typingEl=null;}}
+
+  // ── Send ──
+  function send(){
+    if(busy) return;
+    var q=(elQ.value||"").trim(); if(!q) return;
+    // Bias the query with the active topic/focus so retrieval stays on-subject.
+    var ctx=[]; if(activeFocus) ctx.push(activeFocus);
+    if(activeTopic && activeTopic.focus) ctx.push(activeTopic.focus);
+    var question = ctx.length ? (q+" (context: "+ctx.join(", ")+")") : q;
+
+    // Scope from the Sources picker: all selected → "all", subset → "repos".
+    var payload = { question:question, answer_mode:(elMode.value==="strict"?"strict":"hybrid") };
+    if(selectedRepos && repoOptions.length && selectedRepos.size < repoOptions.length){
+      if(selectedRepos.size === 0){ addMsg("Please select at least one source repository.","bot",true); return; }
+      payload.scope_type="repos"; payload.repo_ids=[...selectedRepos];
+    } else {
+      payload.scope_type="all";
+    }
+
+    addMsg(q,"user");
+    messages.push({role:"user", content:q});
+    elQ.value=""; elQ.style.height="46px";
+    busy=true; elSend.disabled=true; showTyping();
+
+    fetch("/api/chat",{
+      method:"POST", headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(payload)
+    })
+    .then(function(r){ return r.json().then(function(d){ return {ok:r.ok,d:d}; }); })
+    .then(function(res){
+      hideTyping();
+      if(!res.ok){ addMsg((res.d&&(res.d.detail||res.d.message))||"Request failed.","bot",true); return; }
+      addMsg(res.d.answer||"(no answer)","bot");
+    })
+    .catch(function(e){ hideTyping(); addMsg("Network error: "+e.message,"bot",true); })
+    .finally(function(){ busy=false; elSend.disabled=false; elQ.focus(); });
+  }
+
+  function clearChat(){
+    elStream.innerHTML='<div class="empty" id="empty"><h1>Optimization Q&amp;A</h1>'+
+      '<p>Ask anything about building strategy files, tuning parameters, debugging '+
+      'optimization runs, or configuring supply-chain modules. Answers are grounded '+
+      'in your uploaded documents.</p></div>';
+    elEmpty=document.getElementById("empty");
+  }
+
+  // "Clear Chat" wipes the on-screen conversation but keeps the saved history.
+  function clearChat(){ newChat(); }
+
+  // ── Chat history (T6) ──
+  function newChat(){
+    currentChatId=null; messages=[];
+    renderEmpty();
+    renderChatList();   // clears active highlight
+    elQ.focus();
+  }
+
+  function saveChat(){
+    if(!messages.length) return;
+    var body={ user:userEmail, chat_id:currentChatId, messages:messages };
+    fetch("/api/chat/history",{
+      method:"POST", headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(body)
+    })
+    .then(function(r){ return r.ok?r.json():null; })
+    .then(function(d){ if(d&&d.id){ currentChatId=d.id; loadChatList(); } })
+    .catch(function(){});
+  }
+
+  var chatSummaries=[];
+  function loadChatList(){
+    fetch("/api/chat/history?user="+encodeURIComponent(userEmail))
+      .then(function(r){ return r.ok?r.json():{chats:[]}; })
+      .then(function(d){ chatSummaries=(d&&d.chats)||[]; renderChatList(); })
+      .catch(function(){ chatSummaries=[]; renderChatList(); });
+  }
+
+  function renderChatList(){
+    if(!elChatList) return;
+    elChatList.innerHTML="";
+    if(!chatSummaries.length){
+      elChatList.innerHTML='<div class="chatempty">No saved chats yet.</div>';
+      return;
+    }
+    chatSummaries.forEach(function(c){
+      var d=document.createElement("div");
+      d.className="chatitem"+(c.id===currentChatId?" active":"");
+      var t=document.createElement("span"); t.className="ttl"; t.textContent=c.title||"New chat"; t.title=c.title||"";
+      var x=document.createElement("button"); x.className="del"; x.innerHTML="&times;"; x.title="Delete chat";
+      x.onclick=function(ev){ ev.stopPropagation(); deleteChat(c.id); };
+      d.appendChild(t); d.appendChild(x);
+      d.onclick=function(){ openChat(c.id); };
+      elChatList.appendChild(d);
+    });
+  }
+
+  function openChat(id){
+    fetch("/api/chat/history/"+encodeURIComponent(id)+"?user="+encodeURIComponent(userEmail))
+      .then(function(r){ return r.ok?r.json():null; })
+      .then(function(chat){
+        if(!chat) return;
+        currentChatId=chat.id;
+        messages=(chat.messages||[]).slice();
+        // re-render the conversation
+        elStream.innerHTML=""; elEmpty=null;
+        messages.forEach(function(m){
+          if(m.role==="user") addMsg(m.content,"user");
+          else addMsg(m.content,"bot",!!m.error,{sources:m.sources||[], images:m.images||[]});
+        });
+        renderChatList();
+      })
+      .catch(function(){});
+  }
+
+  function deleteChat(id){
+    fetch("/api/chat/history/"+encodeURIComponent(id)+"?user="+encodeURIComponent(userEmail),{method:"DELETE"})
+      .then(function(){
+        if(id===currentChatId) newChat();
+        loadChatList();
+      })
+      .catch(function(){});
+  }
+
+  // ── Wiring ──
+  elSend.addEventListener("click",send);
+  elQ.addEventListener("keydown",function(e){ if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();send();} });
+  elQ.addEventListener("input",function(){ elQ.style.height="46px"; elQ.style.height=Math.min(elQ.scrollHeight,160)+"px"; });
+  document.getElementById("clearChat").addEventListener("click",clearChat);
+
+  renderTopics(); renderChips(); renderSuggest(); loadScopes(); loadChatList();
+})();
+</script>
+</body>
+</html>

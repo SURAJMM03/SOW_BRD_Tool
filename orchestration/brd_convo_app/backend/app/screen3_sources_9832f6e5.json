@@ -1,0 +1,104 @@
+{
+  "1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Scheduler user interface.\nl Shipment Scheduler User Guide: Provides information on how to use the Shipment Scheduler\ncomponent of Transportation Planner.\nl Shipment Scheduler Getting Started: Provides a series of modeling exercises to help you understand\nhow to use some of the strategies and constraints that control the Shipment Scheduling engine.\nl Shipment Scheduler Implementation Guide for MFG ABPP: Provides information about optimization\nand shipment scheduling components and how to implement them for MFG ABPP. It also provides\nimplementation specialists and systems integrators with instru"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Planner Modeling Guide and Transportation Planner Strategies and Parameters Guide, is accessed\nfrom the Help menu in the Transportation Planner user interface.\nl Shipment Scheduler User Help: This Help system consists of the same content as the Shipment\nScheduler User Guide and Shipment Scheduler Implementation Guide and is accessed from the Help\nmenu in the Shipment Scheduler user interface.\nl Shipment Scheduler User Guide: This guide provides information about how to use the Shipment\nScheduler component of Transportation Planner.\nl Shipment Scheduler Getting Started: This guide provides a se"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Chapter 1. Introduction\nWelcome to the Transportation Planner Implementation Guide. This book provides overviews,\nillustrations, procedures, and examples for Transportation Planner. Screens, dialog boxes, and other\nwindows shown are only examples.\nRelated documentation\nFor more information on Transportation Planner, see the following documents:\nl Transportation Planner Release Notes: This guide provides information about any new or updated\nfunctionality in Transportation Planner.\nl Transportation Installation/Administration Guide: This guide provides information about how to install\nTransporta"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Table of Contents",
+        "snippet": "Table of Contents\nChapter 1. Introduction\n1\nRelated Documentation\n1\nChapter 2. Transportation Planner strategies\n3\nThe strategy file\n3\nWork with the strategy file\n3\nOptimizer plan hierarchy\n3\nCritical loads\n4\nArguments and functions\n5\nComments\n6\nStrategy function syntax\n6\nDefault values\n7\nIllustration conventions\n7\nTroubleshooting\n8\nChapter 3. Control functions\n9\nSetFixedPartition\n10\nSetParallelSolve\n11\nSetTimeLimit\n12\nSleep\n13\nChapter 4. Global parameter functions\n14\nAddShipmentReference\n14\nAddTripBuildingPriorityRule\n14\nAddTripSequenceFreightClassRule\n15\nAddTripSequencePriorityRule\n16\nAssign"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Chapter 1. Introduction\nThis guide provides overviews, illustrations, procedures, and examples for Transportation Planner.\nRelated Documentation\nFor more information on Transportation Planner, see the following documents:\nl\nTransportation Planner Release Notes: Provides information on new or updated functionality in\nTransportation Planner.\nl\nTransportation Planner Installation Guide: Provides information on how to install Transportation\nPlanner.\nl\nTransportation Planner User Guide: Provides details on how to use the Transportation Planner web\nuser interface.\nl\nTransportation Planner Strategies"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Page 14",
+        "snippet": "Chapter 1. Introduction\nl Shipment Scheduler Implementation Guide for SCPO: Provides information about optimization and\nshipment scheduling components and how to implement them for SCPO. It also provides\nimplementation specialists and systems integrators with instructions about how to configure the\nShipment Scheduler environment.\nl Transportation Planner Data Dictionary: Provides implementation specialists and systems integrators\nwith the SCPO and Manufacturing ABPP Basic (formerly Operational Data Store (ODS)) information\nrequired to set up integration with external systems.\nl\nTransportation "
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Page 10",
+        "snippet": "Chapter 1. Introduction\nl Shipment Scheduler Implementation Guide for MFG ABPP: Provides information about optimization\nand shipment scheduling components and how to implement them for MFG ABPP. It also provides\nimplementation specialists and systems integrators with instructions about how to configure the\nShipment Scheduler environment.\nl Shipment Scheduler Implementation Guide for SCPO: Provides information about optimization and\nshipment scheduling components and how to implement them for SCPO. It also provides\nimplementation specialists and systems integrators with instructions about how t"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Chapter 5. Configuration Files",
+        "snippet": "Planner User Interface also provides access to this configuration information. See the Transportation\nPlanner User Guide for additional information.\nl Shipment Scheduler Engine – The Shipment Scheduler Engine uses a setup.xml file for\nconfiguration. The Shipment Scheduler user interface also provides access to this configuration\ninformation. For detailed information, see the Transportation Planner Shipment Scheduler User Guide.\ntpConfig.xml\nThe tpConfig.xml file contains all the Transportation Planner configuration information. It includes\nBasic and Advanced Parameters as well as these section"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Chapter 7. Running Transportation Planner",
+        "snippet": "You can launch the operations servers in any of the following ways:\nl Run the appropriate python script from the Transportation Planner Launcher. For more information,\nsee To launch the operations servers from the TP Launcher.\nl Configure the servers to start at system startup. For more information, see Failover for multiple\nTransportation Planner instances.\nl Start the servers from the Transportation Planner User Interface. For more information, see the\nTransportation Planner User Guide.\nl Start the servers from the Infrastructure Services CIS Manager. For more information, see the\nInfrastruc"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Table of Contents",
+        "snippet": "Table of Contents\nChapter 1. Introduction\n1\nRelated documentation\n1\nChapter 2. Transportation Planner\n3\nTransportation Planner overview\n3\nTransportation Planner components\n3\nShipment Scheduling Engine\n4\nShipment Scheduler user interface\n4\nOptimizer Server\n4\nRouting and Rating server\n4\nTransportation Planner user interface\n5\nParameter File Editor\n5\nStrategy File Editor\n5\nDistance Engine Creation tool\n6\nOther requirements\n6\nTransportation Planner terminology\n6\nTransportation Planner process flow\n6\nTransportation Planner deployment configurations\n7\nChapter 3. Implementation Overview\n8\nDetermining"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Configuring the Transportation Planner RRO server",
+        "snippet": "Consolidation Engine. For example, if you use the default installation values for instance creation, you\nwill have:\no Setup-OPT.xml\no Setup-RR.xml\nNote: It is important that you edit the appropriate setup-<instance>.xml file for your\ninstance implementation.\nl The TMOptRequestServer parameter set. You use this Transportation Manager parameter set to set\nup Transportation Planner instance groups for use with the TM Opt Request Server. For information\nabout instance groups, see Transportation Planner Instance Groups. For information about configuring\nsettings in this parameter set, see the Trans"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Chapter 2. Transportation Planner strategies",
+        "snippet": "Optimizer plan hierarchy\nWhen the Optimizer optimizes a set of shipments, it works within a hierarchy of information. The\nhierarchy includes:\nl Plan: A set of trips and loads generated by the Optimizer using shipment, location, carrier rate, and\nhub information. A plan represents a picture of the entire scenario for a period.\nl Web: A set of dependent trips and loads. These trips and loads are dependent on each other due to\nthe association of the shipments that comprise them. Loads on the same trip also form a dependency,\neven though there are no common shipments between them. The web cannot b"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Chapter 5. Configuration Files",
+        "snippet": "Chapter 5. Configuration Files\n19\nComponent setup files\n19\ntpConfig.xml\n19\nBasic product settings\n20\nBasic parameters\n20\nAdvanced parameters\n21\nCIS\n21\nBasic parameters\n21\nDatabase info\n21\nBasic parameters\n21\nAdvanced parameters\n22\nEngines\n22\nBasic parameters\n22\nAdvanced parameters\n22\nShipment Consolidation Engine (SCE)\n23\nBasic parameters\n23\nShipment Scheduler Engine (SSE)\n23\nBasic parameters\n24\nAdvanced parameters\n24\nTM request handler (RH)\n24\nWeb applications\n24\nBasic parameters\n24\nAdvanced parameters\n24\nShipment Consolidation UI\n25\nBasic parameters\n25\nAdvanced parameters\n26\nShipment Schedul"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Chapter 7. Running Transportation Planner",
+        "snippet": "Parameters by division entry detail lines\n39\nDefining strategy files\n39\nSample strategy files section\n39\nStrategy file entry detail lines\n40\nDefining rating engines\n40\nSample rating engine entry lines\n40\nRating engine entry detail lines\n41\nDefining external rating engines\n46\nSample rating engine entry lines\n46\nExternal rating engine entry detail lines\n46\nExternal Rating Server\n47\nRun External Rating Server\n48\nActions\n53\nImport Prefetch Queue File\n54\nDefining verification engines\n55\nSample verification engine entry lines\n56\nVerification engine entry detail lines\n56\nDefining distance engines\n57\n"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Configuring the Transportation Planner RRO server",
+        "snippet": "Chapter 3. Implementation Overview\nl RRO (Routing and Rating and Optimization) Server – This component (an instance of the Shipment\nConsolidation Engine) performs the actual shipment consolidation. It requires the CIS Agent to be\nrunning.\nl Transportation Planner User Interface – This component provides access to the interactive editing\nfeatures. You need this component if you want to use Transportation Planner in an interactive mode.\nLaunch these components using scripts from the Transportation Planner launcher.\nl TM Opt Request Server (TMRS) – This component picks up requests from Transporta"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Chapter 5. Configuration Files",
+        "snippet": "Chapter 5. Configuration Files\nChapter 5. Configuration Files\nMost of the configuration details for Transportation Planner are stored in the configuration file\ntpConfig.xml.\nBy default this file is located in the C:\\by\\tp\\<2025.4.0.0>\\config or\n/opt/by/tp/<2025.4.0.0>/config folder.\nMany of the configuration parameters in the configuration file contain Basic and Advanced sections. The\naverage user can manually set the Basic parameters. Experienced users can modify Advanced\nparameters.\nEach time you make changes to the configuration file, you must execute the configureTP.py script to\nreconfigur"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Chapter 7. Running Transportation Planner",
+        "snippet": "Chapter 7. Running Transportation Planner\nChapter 7. Running Transportation Planner\nYou can run Transportation Planner servers in one of the following ways:\nl Run the Shipment Consolidation Engine in server mode, in which the server handles requests from\nTransportation Manager that are handled by TMRS without user interaction. For additional\ninformation, see Polling for Transportation Manager requests.\nl Run the Transportation Planner interactive user interface, which allows you to open an input plan (this\ncan be a Transportation Manager request or other data source), optimize, manually edit t"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Chapter 2. Transportation Planner strategies",
+        "snippet": "Chapter 2. Transportation Planner strategies\nChapter 2. Transportation Planner strategies\nThe strategy file\nThe Optimizer uses a text file to determine how shipments will be optimized. Each line of the file\nspecifies an available function and each function can have arguments that control the behavior of the\nfunction. For more information, see Arguments and functions. The strategy file name is configurable.\nThe file ending is typically \".strat\".\nDuring the optimization, the sequence of the functions and associated parameters can impact the\nperformance and results of the final load build. In cas"
+      }
+    ],
+    "gen_source": "doc"
+  }
+}

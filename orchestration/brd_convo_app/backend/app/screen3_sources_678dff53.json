@@ -1,0 +1,198 @@
+{
+  "1.2": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin’s current state reflects an established planning foundation supported by ERP-enabled business processes, but with a need to strengthen inventory planning discipline and supply management execution. The business objective for the Phase 1 investment is to improve the effectiveness of supply planning activities by addressing the inventory planning challenges identified in the source context. Specific details regarding Archlin’s sites, product families, planning organization, operating regions, quantitative inventory metrics, and current system landscape beyond SAP S/4HANA are .\nThe soluti"
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Table of Contents\n1  Introduction\n1.1  Company Information\n3  Supply Chain Scope\n3.1  Supply Chain Maps\nSection 1: Introduction\nThis Blueprint Document has been prepared for Archlin to define the supply management solution approach for an enterprise planning implementation in the context of Archlin’s specialty chemicals manufacturing business. Archlin operates with SAP S/4HANA as its ERP system and has an integrated planning environment with some automation already in place. The Phase 1 scope is focused on Supply Management, with particular attention to addressing Archlin’s current pain point "
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Section 3: Supply Chain Scope\nThe high-level scope for Archlin is to provide supply management capabilities as part of Phase 1, supporting its specialty chemicals manufacturing planning environment on SAP S/4HANA. The focus of this phase is aligned to Archlin’s current planning maturity, where integrated planning with some automation is already in place, but poor inventory planning remains a key business pain point. The intended scope is therefore centered on improving the supply-side planning process and establishing a clearer foundation for procurement, manufacturing, and distribution planni"
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "The Blueprint also recognizes that several advanced or extended capabilities are identified but are not necessarily part of the initial implementation. For example, inventory optimization is described as not considered in the initial implementation, and expiry-based replenishment exclusion is noted as not considered in the initial implementation, with reporting feasible if considered in a later release. Demand sensing and AI capabilities, advanced forecasting algorithms using external causal factors, and certain advanced forecast-related capabilities are similarly described as not in the scope"
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "3.1  Supply Chain Maps\nArchlin’s supply chain map for Phase 1 is required to represent the supply management scope and provide a graphical view of the supply network supporting procurement, manufacture, and distribution of Archlin products. The available source material identifies that the high-level scope of this phase is to provide demand, supply, and inventory planning capabilities supporting procurement, manufacture, and distribution; however, for Archlin, the stated Phase 1 scope is supply management, with the key business pain point being poor inventory planning. The supply chain map sho"
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin’s current planning maturity is characterized as integrated planning with some automation, which indicates that the implementation should build on existing planning foundations while improving consistency, transparency, and responsiveness across the supply management process. The Blueprint therefore establishes a structured solution framework for how Archlin will manage supply plans, calculate inventory requirements, support replenishment decisions, review constraints, and generate reporting to measure plan performance. Where planning inputs such as cost, pricing, lead time, source of s"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "3.4": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin’s current state reflects an established planning foundation supported by ERP-enabled business processes, but with a need to strengthen inventory planning discipline and supply management execution. The business objective for the Phase 1 investment is to improve the effectiveness of supply planning activities by addressing the inventory planning challenges identified in the source context. Specific details regarding Archlin’s sites, product families, planning organization, operating regions, quantitative inventory metrics, and current system landscape beyond SAP S/4HANA are .\nThe soluti"
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Section 3: Supply Chain Scope\nThe high-level scope for Archlin is to provide supply management capabilities as part of Phase 1, supporting its specialty chemicals manufacturing planning environment on SAP S/4HANA. The focus of this phase is aligned to Archlin’s current planning maturity, where integrated planning with some automation is already in place, but poor inventory planning remains a key business pain point. The intended scope is therefore centered on improving the supply-side planning process and establishing a clearer foundation for procurement, manufacturing, and distribution planni"
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "3.1  Supply Chain Maps\nArchlin’s supply chain map for Phase 1 is required to represent the supply management scope and provide a graphical view of the supply network supporting procurement, manufacture, and distribution of Archlin products. The available source material identifies that the high-level scope of this phase is to provide demand, supply, and inventory planning capabilities supporting procurement, manufacture, and distribution; however, for Archlin, the stated Phase 1 scope is supply management, with the key business pain point being poor inventory planning. The supply chain map sho"
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Table of Contents\n1  Introduction\n1.1  Company Information\n3  Supply Chain Scope\n3.1  Supply Chain Maps\nSection 1: Introduction\nThis Blueprint Document has been prepared for Archlin to define the supply management solution approach for an enterprise planning implementation in the context of Archlin’s specialty chemicals manufacturing business. Archlin operates with SAP S/4HANA as its ERP system and has an integrated planning environment with some automation already in place. The Phase 1 scope is focused on Supply Management, with particular attention to addressing Archlin’s current pain point "
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "The Blueprint also recognizes that several advanced or extended capabilities are identified but are not necessarily part of the initial implementation. For example, inventory optimization is described as not considered in the initial implementation, and expiry-based replenishment exclusion is noted as not considered in the initial implementation, with reporting feasible if considered in a later release. Demand sensing and AI capabilities, advanced forecasting algorithms using external causal factors, and certain advanced forecast-related capabilities are similarly described as not in the scope"
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin’s supply management implementation will also consider process governance through approvals, alerts, and workflow-related capabilities. The source requirements describe the ability to notify approvers through alerts based on defined frequency, track supply plan approvals, allow approval or rejection with reason codes and comments, and notify submitters when a supply plan is rejected or approved. These capabilities provide a foundation for controlled supply plan review and decision-making within Archlin’s planning process, subject to final configuration decisions and detailed design conf"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "3.5": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin’s current state reflects an established planning foundation supported by ERP-enabled business processes, but with a need to strengthen inventory planning discipline and supply management execution. The business objective for the Phase 1 investment is to improve the effectiveness of supply planning activities by addressing the inventory planning challenges identified in the source context. Specific details regarding Archlin’s sites, product families, planning organization, operating regions, quantitative inventory metrics, and current system landscape beyond SAP S/4HANA are .\nThe soluti"
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "3.1  Supply Chain Maps\nArchlin’s supply chain map for Phase 1 is required to represent the supply management scope and provide a graphical view of the supply network supporting procurement, manufacture, and distribution of Archlin products. The available source material identifies that the high-level scope of this phase is to provide demand, supply, and inventory planning capabilities supporting procurement, manufacture, and distribution; however, for Archlin, the stated Phase 1 scope is supply management, with the key business pain point being poor inventory planning. The supply chain map sho"
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Section 3: Supply Chain Scope\nThe high-level scope for Archlin is to provide supply management capabilities as part of Phase 1, supporting its specialty chemicals manufacturing planning environment on SAP S/4HANA. The focus of this phase is aligned to Archlin’s current planning maturity, where integrated planning with some automation is already in place, but poor inventory planning remains a key business pain point. The intended scope is therefore centered on improving the supply-side planning process and establishing a clearer foundation for procurement, manufacturing, and distribution planni"
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Table of Contents\n1  Introduction\n1.1  Company Information\n3  Supply Chain Scope\n3.1  Supply Chain Maps\nSection 1: Introduction\nThis Blueprint Document has been prepared for Archlin to define the supply management solution approach for an enterprise planning implementation in the context of Archlin’s specialty chemicals manufacturing business. Archlin operates with SAP S/4HANA as its ERP system and has an integrated planning environment with some automation already in place. The Phase 1 scope is focused on Supply Management, with particular attention to addressing Archlin’s current pain point "
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "The Blueprint also recognizes that several advanced or extended capabilities are identified but are not necessarily part of the initial implementation. For example, inventory optimization is described as not considered in the initial implementation, and expiry-based replenishment exclusion is noted as not considered in the initial implementation, with reporting feasible if considered in a later release. Demand sensing and AI capabilities, advanced forecasting algorithms using external causal factors, and certain advanced forecast-related capabilities are similarly described as not in the scope"
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin’s current planning maturity is characterized as integrated planning with some automation, which indicates that the implementation should build on existing planning foundations while improving consistency, transparency, and responsiveness across the supply management process. The Blueprint therefore establishes a structured solution framework for how Archlin will manage supply plans, calculate inventory requirements, support replenishment decisions, review constraints, and generate reporting to measure plan performance. Where planning inputs such as cost, pricing, lead time, source of s"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "4.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Section 3: Supply Chain Scope\nThe high-level scope for Archlin is to provide supply management capabilities as part of Phase 1, supporting its specialty chemicals manufacturing planning environment on SAP S/4HANA. The focus of this phase is aligned to Archlin’s current planning maturity, where integrated planning with some automation is already in place, but poor inventory planning remains a key business pain point. The intended scope is therefore centered on improving the supply-side planning process and establishing a clearer foundation for procurement, manufacturing, and distribution planni"
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "The Blueprint also recognizes that several advanced or extended capabilities are identified but are not necessarily part of the initial implementation. For example, inventory optimization is described as not considered in the initial implementation, and expiry-based replenishment exclusion is noted as not considered in the initial implementation, with reporting feasible if considered in a later release. Demand sensing and AI capabilities, advanced forecasting algorithms using external causal factors, and certain advanced forecast-related capabilities are similarly described as not in the scope"
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin’s supply management implementation will also consider process governance through approvals, alerts, and workflow-related capabilities. The source requirements describe the ability to notify approvers through alerts based on defined frequency, track supply plan approvals, allow approval or rejection with reason codes and comments, and notify submitters when a supply plan is rejected or approved. These capabilities provide a foundation for controlled supply plan review and decision-making within Archlin’s planning process, subject to final configuration decisions and detailed design conf"
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin’s current planning maturity is characterized as integrated planning with some automation, which indicates that the implementation should build on existing planning foundations while improving consistency, transparency, and responsiveness across the supply management process. The Blueprint therefore establishes a structured solution framework for how Archlin will manage supply plans, calculate inventory requirements, support replenishment decisions, review constraints, and generate reporting to measure plan performance. Where planning inputs such as cost, pricing, lead time, source of s"
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin’s current state reflects an established planning foundation supported by ERP-enabled business processes, but with a need to strengthen inventory planning discipline and supply management execution. The business objective for the Phase 1 investment is to improve the effectiveness of supply planning activities by addressing the inventory planning challenges identified in the source context. Specific details regarding Archlin’s sites, product families, planning organization, operating regions, quantitative inventory metrics, and current system landscape beyond SAP S/4HANA are .\nThe soluti"
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Table of Contents\n1  Introduction\n1.1  Company Information\n3  Supply Chain Scope\n3.1  Supply Chain Maps\nSection 1: Introduction\nThis Blueprint Document has been prepared for Archlin to define the supply management solution approach for an enterprise planning implementation in the context of Archlin’s specialty chemicals manufacturing business. Archlin operates with SAP S/4HANA as its ERP system and has an integrated planning environment with some automation already in place. The Phase 1 scope is focused on Supply Management, with particular attention to addressing Archlin’s current pain point "
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "3.3": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Section 3: Supply Chain Scope\nThe high-level scope for Archlin is to provide supply management capabilities as part of Phase 1, supporting its specialty chemicals manufacturing planning environment on SAP S/4HANA. The focus of this phase is aligned to Archlin’s current planning maturity, where integrated planning with some automation is already in place, but poor inventory planning remains a key business pain point. The intended scope is therefore centered on improving the supply-side planning process and establishing a clearer foundation for procurement, manufacturing, and distribution planni"
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "3.1  Supply Chain Maps\nArchlin’s supply chain map for Phase 1 is required to represent the supply management scope and provide a graphical view of the supply network supporting procurement, manufacture, and distribution of Archlin products. The available source material identifies that the high-level scope of this phase is to provide demand, supply, and inventory planning capabilities supporting procurement, manufacture, and distribution; however, for Archlin, the stated Phase 1 scope is supply management, with the key business pain point being poor inventory planning. The supply chain map sho"
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin’s current state reflects an established planning foundation supported by ERP-enabled business processes, but with a need to strengthen inventory planning discipline and supply management execution. The business objective for the Phase 1 investment is to improve the effectiveness of supply planning activities by addressing the inventory planning challenges identified in the source context. Specific details regarding Archlin’s sites, product families, planning organization, operating regions, quantitative inventory metrics, and current system landscape beyond SAP S/4HANA are .\nThe soluti"
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Table of Contents\n1  Introduction\n1.1  Company Information\n3  Supply Chain Scope\n3.1  Supply Chain Maps\nSection 1: Introduction\nThis Blueprint Document has been prepared for Archlin to define the supply management solution approach for an enterprise planning implementation in the context of Archlin’s specialty chemicals manufacturing business. Archlin operates with SAP S/4HANA as its ERP system and has an integrated planning environment with some automation already in place. The Phase 1 scope is focused on Supply Management, with particular attention to addressing Archlin’s current pain point "
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "The Blueprint also recognizes that several advanced or extended capabilities are identified but are not necessarily part of the initial implementation. For example, inventory optimization is described as not considered in the initial implementation, and expiry-based replenishment exclusion is noted as not considered in the initial implementation, with reporting feasible if considered in a later release. Demand sensing and AI capabilities, advanced forecasting algorithms using external causal factors, and certain advanced forecast-related capabilities are similarly described as not in the scope"
+      },
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin’s supply management implementation will also consider process governance through approvals, alerts, and workflow-related capabilities. The source requirements describe the ability to notify approvers through alerts based on defined frequency, track supply plan approvals, allow approval or rejection with reason codes and comments, and notify submitters when a supply plan is rejected or approved. These capabilities provide a foundation for controlled supply plan review and decision-making within Archlin’s planning process, subject to final configuration decisions and detailed design conf"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "2": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "20260629_192755_BD_20260629_191950.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin’s current state reflects an established planning foundation supported by ERP-enabled business processes, but with a need to strengthen inventory planning discipline and supply management execution. The business objective for the Phase 1 investment is to improve the effectiveness of supply planning activities by addressing the inventory planning challenges identified in the source context. Specific details regarding Archlin’s sites, product families, planning organization, operating regions, quantitative inventory metrics, and current system landscape beyond SAP S/4HANA are .\nThe soluti"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "2.2": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  }
+}

@@ -1,0 +1,10 @@
+2026-07-21 11:18:49,964 INFO KinaxisHTTP  SSL: certifi bundle applied
+2026-07-21 11:18:49,973 INFO KinaxisHTTP  Loaded .env from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\infrastructure\unified_mcp\.env
+2026-07-21 11:18:50,906 INFO KinaxisHTTP  Web search backend: openai
+INFO:     Started server process [6168]
+INFO:     Waiting for application startup.
+2026-07-21 11:18:51,026 INFO KinaxisHTTP  Doc index ready — 0 chunks from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\infrastructure\unified_mcp\reference_docs
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('0.0.0.0', 8000): [winerror 10048] only one usage of each socket address (protocol/network address/port) is normally permitted
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.

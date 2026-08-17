@@ -1,0 +1,899 @@
+INFO:     Will watch for changes in these directories: ['C:\\Users\\Suraj.mm1\\Downloads\\docgenplatform-feature-doc-quality-fixes-sohan\\orchestration\\brd_convo_app\\backend']
+INFO:     Uvicorn running on http://127.0.0.1:8010 (Press CTRL+C to quit)
+INFO:     Started reloader process [21048] using WatchFiles
+INFO:     Started server process [20412]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:58162 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65223 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65315 - "GET /choose HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65315 - "GET / HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'app\chunking_pipeline.py'. Reloading...
+ INFO:     127.0.0.1:52119 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57733 - "POST /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57733 - "GET /choose HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53463 - "GET /sow-hub HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60983 - "GET /sow HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60983 - "GET /static/chat_widget.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60983 - "GET /api/sow/history?session_id=27d9db6d-004b-485b-a773-7d7614c7ac49 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60983 - "GET /api/chat/scopes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61466 - "GET /sow-hub HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61466 - "GET /sow-projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61466 - "GET /api/projects?workflow=sow HTTP/1.1" 200 OK
+2026-08-05 19:50:59,416 | INFO | ProjectRoutes | Deleted project 9ed21bab (COT SC) — 1 files removed, folder_removed=True
+INFO:     127.0.0.1:51016 - "DELETE /api/projects/9ed21bab HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51016 - "GET /api/projects?workflow=sow HTTP/1.1" 200 OK
+2026-08-05 19:51:02,590 | INFO | ProjectRoutes | Deleted project 71e031b8 (COT SC) — 1 files removed, folder_removed=True
+INFO:     127.0.0.1:51016 - "DELETE /api/projects/71e031b8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51016 - "GET /api/projects?workflow=sow HTTP/1.1" 200 OK
+2026-08-05 19:51:05,260 | INFO | ProjectRoutes | Deleted project 87898534 (COT SC) — 1 files removed, folder_removed=True
+INFO:     127.0.0.1:51016 - "DELETE /api/projects/87898534 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51016 - "GET /api/projects?workflow=sow HTTP/1.1" 200 OK
+2026-08-05 19:51:18,698 | INFO | ProjectRoutes | Created project 6d9bee08: SC COT
+INFO:     127.0.0.1:50288 - "POST /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50288 - "GET /sow-upload?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50288 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50288 - "GET /api/projects/6d9bee08/repositories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50288 - "GET /api/repositories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50288 - "GET /api/chat/scopes?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-05 19:51:26,734 | INFO | ProjectRoutes | Ingested Google’s Silicon COT Supply Chain Proposal.pptx \u2192 6d9bee08 (source, 10260441 bytes)
+2026-08-05 19:51:26,736 | INFO | ProjectRoutes | Chunking started in background for cb2fa522
+INFO:     127.0.0.1:53258 - "POST /api/upload HTTP/1.1" 200 OK
+2026-08-05 19:51:26,738 | INFO | ChunkingPipeline | Processing Google’s Silicon COT Supply Chain Proposal.pptx (project=6d9bee08, file=cb2fa522)
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:51:33,696 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:51:37,126 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:51:40,896 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:51:47,264 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:51:53,002 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:51:57,118 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:52:01,474 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:52:36,937 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-08-05 19:52:36,938 | WARNING | ChunkingPipeline | Vision describe failed for 'PPTX: Google’s Silicon COT Supply Chain Proposal.pptx, Slide 77 image: Picture 7': Error code: 400 - {'error': {'message': "You uploaded an unsupported image. Please make sure your image has of one the following formats: ['png', 'jpeg', 'gif', 'webp'].", 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_image_format'}}
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:52:38,916 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:52:40,000 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:52:46,382 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:52:52,505 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:52:59,883 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:53:04,889 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:53:08,296 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:53:08,366 | INFO | ChunkingPipeline | PPTX Google’s Silicon COT Supply Chain Proposal.pptx: 165 slides, 11 image(s) described
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:53:22,101 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:53:23,421 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:53:24,601 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:53:38,758 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:53:42,060 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:53:42,063 | WARNING | ChunkingPipeline | Batch LLM keyword extraction failed: Expecting value: line 272 column 35 (char 5846) — falling back to local
+2026-08-05 19:53:42,990 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:53:50,467 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:53:52,605 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:53:55,793 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:54:01,043 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:54:08,515 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:54:08,526 | WARNING | ChunkingPipeline | Batch LLM keyword extraction failed: Unterminated string starting at: line 1 column 4347 (char 4346) — falling back to local
+2026-08-05 19:54:08,552 | INFO | ChunkingPipeline | Generating embeddings for 213 chunks from Google’s Silicon COT Supply Chain Proposal.pptx …
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:54:12,637 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-05 19:54:12,810 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-05 19:54:13,285 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-05 19:54:13,745 | INFO | ChunkingPipeline | Embeddings ready for Google’s Silicon COT Supply Chain Proposal.pptx
+2026-08-05 19:54:13,746 | INFO | ChunkingPipeline | Produced 213 chunks from Google’s Silicon COT Supply Chain Proposal.pptx (keywords via LLM batch (20/call))
+2026-08-05 19:54:13,747 | INFO | ChunkingPipeline | Saved 0 chunks to C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\uploads\6d9bee08\chunks.json
+2026-08-05 19:54:14,095 | INFO | ChunkingPipeline | Saved 213 chunks to C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\uploads\6d9bee08\chunks.json
+INFO:     127.0.0.1:53258 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+2026-08-05 19:54:15,095 | WARNING | app.image_extractor | pptx image extract failed on slide 3 shape Graphic 22: no embedded image
+2026-08-05 19:54:15,095 | WARNING | app.image_extractor | pptx image extract failed on slide 3 shape Graphic 23: no embedded image
+2026-08-05 19:54:15,095 | WARNING | app.image_extractor | pptx image extract failed on slide 3 shape Graphic 24: no embedded image
+2026-08-05 19:54:15,215 | WARNING | app.image_extractor | pptx image extract failed on slide 18 shape Graphic 17: no embedded image
+2026-08-05 19:54:15,225 | WARNING | app.image_extractor | pptx image extract failed on slide 23 shape Graphic 24: no embedded image
+2026-08-05 19:54:15,231 | WARNING | app.image_extractor | pptx image extract failed on slide 27 shape Graphic 21: no embedded image
+2026-08-05 19:54:15,231 | WARNING | app.image_extractor | pptx image extract failed on slide 27 shape Graphic 23: no embedded image
+2026-08-05 19:54:15,231 | WARNING | app.image_extractor | pptx image extract failed on slide 27 shape Graphic 31: no embedded image
+2026-08-05 19:54:15,231 | WARNING | app.image_extractor | pptx image extract failed on slide 27 shape Graphic 33: no embedded image
+2026-08-05 19:54:15,232 | WARNING | app.image_extractor | pptx image extract failed on slide 27 shape Graphic 35: no embedded image
+2026-08-05 19:54:15,232 | WARNING | app.image_extractor | pptx image extract failed on slide 27 shape Graphic 37: no embedded image
+2026-08-05 19:54:15,232 | WARNING | app.image_extractor | pptx image extract failed on slide 29 shape Graphic 80: no embedded image
+2026-08-05 19:54:15,232 | WARNING | app.image_extractor | pptx image extract failed on slide 29 shape Graphic 83: no embedded image
+2026-08-05 19:54:15,233 | WARNING | app.image_extractor | pptx image extract failed on slide 29 shape Graphic 86: no embedded image
+2026-08-05 19:54:15,234 | WARNING | app.image_extractor | pptx image extract failed on slide 29 shape Graphic 89: no embedded image
+2026-08-05 19:54:15,234 | WARNING | app.image_extractor | pptx image extract failed on slide 29 shape Graphic 92: no embedded image
+2026-08-05 19:54:15,248 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 34: no embedded image
+2026-08-05 19:54:15,248 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 35: no embedded image
+2026-08-05 19:54:15,248 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 36: no embedded image
+2026-08-05 19:54:15,248 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 37: no embedded image
+2026-08-05 19:54:15,249 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 38: no embedded image
+2026-08-05 19:54:15,249 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 39: no embedded image
+2026-08-05 19:54:15,250 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 40: no embedded image
+2026-08-05 19:54:15,250 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 77: no embedded image
+2026-08-05 19:54:15,250 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 78: no embedded image
+2026-08-05 19:54:15,251 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 79: no embedded image
+2026-08-05 19:54:15,251 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 80: no embedded image
+2026-08-05 19:54:15,251 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 81: no embedded image
+2026-08-05 19:54:15,251 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 82: no embedded image
+2026-08-05 19:54:15,251 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 83: no embedded image
+2026-08-05 19:54:15,252 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 84: no embedded image
+2026-08-05 19:54:15,252 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 85: no embedded image
+2026-08-05 19:54:15,252 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 86: no embedded image
+2026-08-05 19:54:15,264 | WARNING | app.image_extractor | pptx image extract failed on slide 36 shape Graphic 61: no embedded image
+2026-08-05 19:54:15,265 | WARNING | app.image_extractor | pptx image extract failed on slide 37 shape Graphic 61: no embedded image
+2026-08-05 19:54:15,273 | WARNING | app.image_extractor | pptx image extract failed on slide 41 shape Graphic 30: no embedded image
+2026-08-05 19:54:15,273 | WARNING | app.image_extractor | pptx image extract failed on slide 41 shape Graphic 32: no embedded image
+2026-08-05 19:54:15,303 | WARNING | app.image_extractor | pptx image extract failed on slide 63 shape Graphic 120: no embedded image
+2026-08-05 19:54:15,303 | WARNING | app.image_extractor | pptx image extract failed on slide 63 shape Graphic 121: no embedded image
+2026-08-05 19:54:15,310 | WARNING | app.image_extractor | pptx image extract failed on slide 64 shape Graphic 145: no embedded image
+2026-08-05 19:54:15,319 | WARNING | app.image_extractor | pptx image extract failed on slide 66 shape Graphic 25: no embedded image
+2026-08-05 19:54:15,319 | WARNING | app.image_extractor | pptx image extract failed on slide 66 shape Graphic 26: no embedded image
+2026-08-05 19:54:15,346 | WARNING | app.image_extractor | pptx image extract failed on slide 69 shape Graphic 30: no embedded image
+2026-08-05 19:54:15,346 | WARNING | app.image_extractor | pptx image extract failed on slide 69 shape Graphic 32: no embedded image
+2026-08-05 19:54:15,353 | WARNING | app.image_extractor | pptx image extract failed on slide 71 shape Image 3: no embedded image
+2026-08-05 19:54:15,365 | WARNING | app.image_extractor | pptx image extract failed on slide 74 shape Graphic 5: no embedded image
+2026-08-05 19:54:15,955 | WARNING | app.image_extractor | pptx image extract failed on slide 77 shape Graphic 9: no embedded image
+2026-08-05 19:54:15,955 | WARNING | app.image_extractor | pptx image extract failed on slide 77 shape Graphic 11: no embedded image
+2026-08-05 19:54:16,013 | WARNING | app.image_extractor | pptx image extract failed on slide 100 shape Graphic 61: no embedded image
+2026-08-05 19:54:16,020 | WARNING | app.image_extractor | pptx image extract failed on slide 103 shape Graphic 61: no embedded image
+2026-08-05 19:54:16,048 | INFO | app.image_extractor | Extracted 64 images from pptx Google’s Silicon COT Supply Chain Proposal.pptx
+2026-08-05 19:54:16,048 | INFO | app.image_extractor | Deduped 64 \u2192 62 images from Google’s Silicon COT Supply Chain Proposal.pptx before vision
+2026-08-05 19:54:19,843 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:54:19,845 | INFO | app.image_extractor | Analyzed image 7708e0bbe6ed.png: A-1 Solution for SAP S/4HANA Logo
+2026-08-05 19:54:22,303 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:54:22,304 | INFO | app.image_extractor | Analyzed image 423cd1944fb6.jpg: PLM Integration Ecosystem Overview
+2026-08-05 19:54:24,860 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:54:24,861 | INFO | app.image_extractor | Analyzed image ef4d5494e6f7.jpg: Google BigQuery platform logo
+2026-08-05 19:54:26,767 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:54:26,769 | INFO | app.image_extractor | Analyzed image 15aa16cb3962.png: E2OPEN Logo and Tagline
+2026-08-05 19:54:28,995 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:54:28,997 | INFO | app.image_extractor | Analyzed image 46b718a66550.png: SAP S/4 HANA ERP Platform
+INFO:     127.0.0.1:56032 - "GET /sow-templates?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56032 - "GET /api/sow-templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56032 - "GET /api/sow-templates/resolve/6d9bee08 HTTP/1.1" 200 OK
+2026-08-05 19:54:31,354 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:54:31,355 | INFO | app.image_extractor | Analyzed image 4ebeb75c2956.png: Key Supply Chain Deployment Considerations
+2026-08-05 19:54:32,922 | INFO | SOWTemplateRoutes | Applied SOW template 17c3837e (Bristlecone SOW Master Template) to project 6d9bee08 — 58 sections
+INFO:     127.0.0.1:56032 - "POST /api/sow-templates/17c3837e/apply/6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56032 - "GET /sow-workflow?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56032 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56032 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-05 19:54:33,786 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:54:33,788 | INFO | app.image_extractor | Analyzed image 6802262d29e4.png: Overview of Sales & Distribution Process Elements
+2026-08-05 19:54:35,489 | INFO | SemanticSearch | semantic_search request: query_len=309 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+2026-08-05 19:54:36,249 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-05 19:54:36,250 | INFO | SemanticSearch | semantic_search query embedding ok: query='Cover Page Cover page — Field/Details table only (Client Name, Project Name, Eng…' vector_len=1536
+2026-08-05 19:54:36,267 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=189 returned=6 max_score=0.4426
+2026-08-05 19:54:36,316 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:54:36,317 | INFO | app.image_extractor | Analyzed image 9a44b2b0236a.png: Make to Stock Process Flow Overview
+2026-08-05 19:54:36,318 | WARNING | app.image_index | rank_bm25 not available, using simple TF search
+2026-08-05 19:54:36,364 | INFO | app.image_index | Loaded 3372 images from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-08-05 19:54:36,364 | INFO | app.image_index | Image index loaded: C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-08-05 19:54:37,046 | INFO | azure.identity._credentials.environment | No environment configuration found.
+2026-08-05 19:54:37,060 | INFO | azure.identity._credentials.managed_identity | ManagedIdentityCredential will use IMDS
+2026-08-05 19:54:37,061 | WARNING | app.claude_provider | claude_provider(azure): SSL verification DISABLED (AZURE_SSL_VERIFY=false).
+2026-08-05 19:54:37,061 | INFO | app.claude_provider | claude_provider: using Azure OpenAI deployment gpt-5.4 at https://ai-adoption-coe.services.ai.azure.com (timeout=300.0s, max_retries=0)
+2026-08-05 19:54:37,062 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED'
+Request method: 'GET'
+Request headers:
+    'User-Agent': 'azsdk-python-identity/1.25.3 Python/3.14.6 (Windows-11-10.0.26200-SP0)'
+No body was attached to the request
+2026-08-05 19:54:39,152 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:54:39,153 | INFO | app.image_extractor | Analyzed image 21c7d65fd807.png: Returnable Packaging Process Flow Overview
+2026-08-05 19:54:40,384 | INFO | azure.identity._credentials.chained | DefaultAzureCredential acquired a token from AzureCliCredential
+2026-08-05 19:54:41,594 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:54:41,595 | INFO | app.image_extractor | Analyzed image 22152e51078a.jpg: Global Template and Local Requirements Integration
+2026-08-05 19:54:45,036 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-05 19:54:45,039 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=361 budget=1100 effort=none
+INFO:     127.0.0.1:56032 - "POST /api/sow/sections/0/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56032 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-05 19:54:45,972 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:54:45,973 | INFO | app.image_extractor | Analyzed image 24a4cf718c57.png: S/4HANA Implementation Services Homepage
+2026-08-05 19:54:49,847 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:54:49,848 | INFO | app.image_extractor | Analyzed image 0b724006e470.png: Order to Cash Process Overview
+2026-08-05 19:54:52,752 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:54:52,753 | INFO | app.image_extractor | Analyzed image 51606ac936ea.png: S4NOW branding logo
+2026-08-05 19:54:55,782 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:54:55,783 | INFO | app.image_extractor | Analyzed image 548e57357272.png: SEMICON Production Order Dashboard in SAP Fiori
+2026-08-05 19:55:01,826 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:55:01,828 | INFO | app.image_extractor | Analyzed image 4988ac5fef3d.png: SAP Production Order Workbench Interface Overview
+2026-08-05 19:55:04,078 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:55:04,080 | INFO | app.image_extractor | Analyzed image 98cf156d3111.png: No content displayed
+2026-08-05 19:55:06,562 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:55:06,566 | INFO | app.image_extractor | Analyzed image ac7885a1304f.png: IOR logo
+2026-08-05 19:55:10,417 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:55:10,418 | INFO | app.image_extractor | Analyzed image 62e4bb90d982.png: UCT Corporate Logo
+2026-08-05 19:55:12,676 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:55:12,677 | INFO | app.image_extractor | Analyzed image ebab0fc2c037.png: KLA-Tencor Company Logo
+2026-08-05 19:55:15,850 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:55:15,852 | INFO | app.image_extractor | Analyzed image 0c90cfa6a1ca.png: Supplier-Google-Foundry Relationship Flow
+2026-08-05 19:55:18,407 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:55:18,408 | INFO | app.image_extractor | Analyzed image 59cc4f582f23.jpg: Vishay Company Logo
+2026-08-05 19:55:20,356 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:55:20,358 | INFO | app.image_extractor | Analyzed image 3a59d0f0cac3.jpg: NVIDIA Corporate Logo
+2026-08-05 19:55:22,610 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:55:22,620 | INFO | app.image_extractor | Analyzed image 51db165db7ef.png: Google Corporate Logo
+2026-08-05 19:55:26,809 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:55:26,810 | INFO | app.image_extractor | Analyzed image 98b78411e056.png: Inbound Process Flow in SAP EWM Tesseract
+2026-08-05 19:55:31,118 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:55:31,119 | INFO | app.image_extractor | Analyzed image dd7b7784edaf.png: SAP EWM Transaction Codes Cheat Sheet
+2026-08-05 19:55:34,388 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:55:34,390 | INFO | app.image_extractor | Analyzed image a9d23f0e8dc4.png: SAP EWM Warehouse Task Creation Workflow
+2026-08-05 19:55:36,973 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:55:36,975 | INFO | app.image_extractor | Analyzed image 26bccee1f6f5.png: Blue Yonder to SAP EWM Warehouse Terminology
+2026-08-05 19:55:39,685 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:55:39,687 | INFO | app.image_extractor | Analyzed image cb39588ed511.png: SAP RF Kit Order Picking Process
+2026-08-05 19:55:41,642 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:55:41,643 | INFO | app.image_extractor | Analyzed image d5e0b53c7fbb.png: Bristlecone Company Logo
+2026-08-05 19:55:45,801 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:55:45,802 | INFO | app.image_extractor | Analyzed image b7cf4c151609.png: Team or Stakeholder Group Icon
+2026-08-05 19:55:48,206 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:55:48,207 | INFO | app.image_extractor | Analyzed image 6fe6c2e7b732.png: Global Connectivity Icon
+2026-08-05 19:55:50,574 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:55:50,575 | INFO | app.image_extractor | Analyzed image 10d61ded3675.png: Supply chain distribution icon
+2026-08-05 19:55:53,326 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:55:53,327 | INFO | app.image_extractor | Analyzed image 52332f558b4e.png: Performance or KPI monitoring icon
+2026-08-05 19:55:55,666 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:55:55,667 | INFO | app.image_extractor | Analyzed image 3f43ea8b3568.png: Google Silicon Chip Supply Chain Flow
+2026-08-05 19:55:58,346 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:55:58,347 | INFO | app.image_extractor | Analyzed image b6e27344bcb2.png: IBPNOW Logo
+2026-08-05 19:56:00,760 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:56:00,761 | INFO | app.image_extractor | Analyzed image d866d97c993a.png: Celestica Corporate Logo
+2026-08-05 19:56:02,776 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:56:02,777 | INFO | app.image_extractor | Analyzed image 488b19b06af2.png: Palo Alto Networks Logo
+2026-08-05 19:56:05,315 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:56:05,316 | INFO | app.image_extractor | Analyzed image c03e75a45469.png: SMSC company logo and slogan
+2026-08-05 19:56:07,228 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:56:07,229 | INFO | app.image_extractor | Analyzed image 1311a7b2f095.png: PMC-Sierra Corporate Logo
+2026-08-05 19:56:10,941 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:56:10,942 | INFO | app.image_extractor | Analyzed image 93f59d9aef21.jpg: Strategic Digital Planning Metaphor
+2026-08-05 19:56:15,480 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:56:15,481 | INFO | app.image_extractor | Analyzed image a83d1340946b.jpg: Supply Chain Analytics Dashboard Visualization
+2026-08-05 19:56:20,365 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:56:20,367 | INFO | app.image_extractor | Analyzed image 666541580eb0.jpg: Semiconductor fab wafer inspection process
+2026-08-05 19:56:22,898 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:56:22,899 | INFO | app.image_extractor | Analyzed image 5b0bf327918e.png: SAP S/4 HANA Logo
+2026-08-05 19:56:25,026 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:56:25,031 | INFO | app.image_extractor | Analyzed image 7b6611549a5e.png: Document Verification Icon
+2026-08-05 19:56:27,735 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:56:27,737 | INFO | app.image_extractor | Analyzed image 4d881ed01565.png: Cyclical Supply Chain Process Icon
+2026-08-05 19:56:30,135 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:56:30,136 | INFO | app.image_extractor | Analyzed image 0f248ceed10d.png: Abstract connectivity or wave graphic
+2026-08-05 19:56:33,470 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:56:33,471 | INFO | app.image_extractor | Analyzed image 5ad7933e69cf.png: User-centric process icon
+2026-08-05 19:56:36,784 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:56:36,786 | INFO | app.image_extractor | Analyzed image ab28c1ba0ba6.png: Silicon COT Supply Chain Process Flow
+2026-08-05 19:56:45,260 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:56:45,261 | INFO | app.image_extractor | Analyzed image 0fa42a06023c.png: Core Semiconductor Supply Chain Cycle
+2026-08-05 19:56:50,976 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:56:50,977 | INFO | app.image_extractor | Analyzed image 689305094e2e.png: End-to-End Silicon COT Supply Chain Overview
+2026-08-05 19:56:53,326 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:56:53,327 | INFO | app.image_extractor | Analyzed image 85e85b70d26a.png: Silicon Labs company logo
+2026-08-05 19:56:55,909 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:56:55,913 | INFO | app.image_extractor | Analyzed image 75d1b333b27c.png: Silicon COT Supply Chain Overview
+2026-08-05 19:56:58,755 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:56:58,756 | INFO | app.image_extractor | Analyzed image fcb06d106e23.png: Google Silicon COT Supply Chain Integration Flow
+2026-08-05 19:57:00,922 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:57:00,923 | INFO | app.image_extractor | Analyzed image 6a888bb8ecba.png: Silicon COT Supply Chain Overview Flow
+2026-08-05 19:57:03,061 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:57:03,062 | INFO | app.image_extractor | Analyzed image f8e587f8606f.png: Analog Devices company logo
+2026-08-05 19:57:05,930 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:57:05,931 | INFO | app.image_extractor | Analyzed image d5d0eeb10eed.png: Dialog Semiconductor Company Logo
+2026-08-05 19:57:08,609 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:57:08,610 | INFO | app.image_extractor | Analyzed image 3206bf67a35b.png: Freescale Semiconductor logo
+2026-08-05 19:57:10,843 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:57:10,845 | INFO | app.image_extractor | Analyzed image aa84a6500550.png: ATI Technologies Logo
+2026-08-05 19:57:13,037 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:57:13,039 | INFO | app.image_extractor | Analyzed image 44b6ac36651a.gif: Maxim Integrated company logo
+2026-08-05 19:57:15,551 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:57:15,553 | INFO | app.image_extractor | Analyzed image 6eb6ffbbca9c.jpg: ON Semiconductor company logo
+2026-08-05 19:57:17,809 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:57:17,810 | INFO | app.image_extractor | Analyzed image 9a1ae7bd3955.gif: Novellus Company Logo
+2026-08-05 19:57:20,156 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:57:20,159 | INFO | app.image_extractor | Analyzed image 0ebf866931e1.png: E2OPEN company logo
+2026-08-05 19:57:20,159 | INFO | app.image_extractor | Extracted 62 images from Google’s Silicon COT Supply Chain Proposal.pptx
+2026-08-05 19:57:20,199 | INFO | app.image_extractor | Appended 0 new images to image_chunks.json (total: 3372)
+2026-08-05 19:57:20,201 | INFO | ProjectRoutes | Image extraction complete for cb2fa522: 62 found, 0 new
+2026-08-05 19:57:20,225 | INFO | rerun_vision | APP_DIR      : C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app
+2026-08-05 19:57:20,225 | INFO | rerun_vision | image_chunks : C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-08-05 19:57:20,225 | INFO | rerun_vision | extracted_dir: C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images
+2026-08-05 19:57:20,245 | INFO | ProjectRoutes | Vision retry: 1 image(s) from Google’s Silicon COT Supply Chain Proposal.pptx still need analysis — running now.
+2026-08-05 19:57:27,938 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-05 19:57:27,962 | INFO | ProjectRoutes | Vision retry: updated 1 image(s) from Google’s Silicon COT Supply Chain Proposal.pptx (skipped 0).
+2026-08-05 19:57:27,985 | WARNING | app.image_index | rank_bm25 not available, using simple TF search
+2026-08-05 19:57:28,017 | INFO | app.image_index | Loaded 3372 images from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-08-05 19:57:28,020 | INFO | app.image_index | Image index reloaded: 3372 records
+2026-08-05 19:57:28,020 | INFO | ProjectRoutes | Image index reloaded after upload: 3372 records
+2026-08-05 19:57:28,021 | INFO | ProjectRoutes | Chunking complete for cb2fa522 — 213 chunks (project total: 213)
+2026-08-05 19:57:31,131 | INFO | SOWSectionRoutes | Approved SOW section 0 (family: ['0']) for project 6d9bee08
+INFO:     127.0.0.1:61814 - "POST /api/sow/sections/0/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61814 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61814 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-05 20:00:33,458 | INFO | SemanticSearch | semantic_search request: query_len=317 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+2026-08-05 20:00:34,539 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-05 20:00:34,541 | INFO | SemanticSearch | semantic_search query embedding ok: query='Agreement Details Agreement Details — one sentence naming the client and Bristle…' vector_len=1536
+2026-08-05 20:00:34,542 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=195 returned=6 max_score=0.4340
+2026-08-05 20:00:39,665 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-05 20:00:39,667 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=641 budget=1100 effort=none
+INFO:     127.0.0.1:60661 - "POST /api/sow/sections/1/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60661 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-05 20:00:55,361 | INFO | SOWSectionRoutes | Approved SOW section 1 (family: ['1']) for project 6d9bee08
+INFO:     127.0.0.1:65235 - "POST /api/sow/sections/1/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65235 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65235 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-05 20:01:41,208 | INFO | SemanticSearch | semantic_search request: query_len=216 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+2026-08-05 20:01:42,017 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-05 20:01:42,021 | INFO | SemanticSearch | semantic_search query embedding ok: query='Executive Summary Executive Summary — one paragraph naming the engagement, three…' vector_len=1536
+2026-08-05 20:01:42,022 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=200 returned=6 max_score=0.4676
+2026-08-05 20:01:47,870 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-05 20:01:47,871 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=915 budget=700 effort=none
+INFO:     127.0.0.1:63467 - "POST /api/sow/sections/2/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63467 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-05 20:01:55,816 | INFO | SOWSectionRoutes | Approved SOW section 2 (family: ['2']) for project 6d9bee08
+INFO:     127.0.0.1:58124 - "POST /api/sow/sections/2/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58124 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58124 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-05 20:02:10,695 | INFO | SemanticSearch | semantic_search request: query_len=320 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+2026-08-05 20:02:12,212 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-05 20:02:12,213 | INFO | SemanticSearch | semantic_search query embedding ok: query="Background Background — the client's current state, pain points, and business dr…" vector_len=1536
+2026-08-05 20:02:12,214 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=206 returned=6 max_score=0.5570
+2026-08-05 20:02:22,295 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-05 20:02:22,298 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=2712 budget=2100 effort=none
+INFO:     127.0.0.1:60898 - "POST /api/sow/sections/3/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-05 20:02:56,684 | INFO | SOWSectionRoutes | Approved SOW section 3 (family: ['3.1', '3.2', '3.3']) for project 6d9bee08
+INFO:     127.0.0.1:56900 - "POST /api/sow/sections/3/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56900 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56900 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-05 20:02:59,998 | INFO | SemanticSearch | semantic_search request: query_len=703 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+2026-08-05 20:03:00,847 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-05 20:03:00,849 | INFO | SemanticSearch | semantic_search query embedding ok: query='Geographical Scope Geographical Scope — regions/countries in scope. Process Scop…' vector_len=1536
+2026-08-05 20:03:00,849 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=206 returned=6 max_score=0.4926
+2026-08-05 20:03:20,103 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-05 20:03:20,105 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=6113 budget=3200 effort=none
+INFO:     127.0.0.1:56900 - "POST /api/sow/sections/4/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56900 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-05 20:03:54,113 | INFO | SOWSectionRoutes | Approved SOW section 4 (family: ['4.1', '4.2', '4.3', '4.4', '4.5', '4.6', '4.7']) for project 6d9bee08
+INFO:     127.0.0.1:52663 - "POST /api/sow/sections/4/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52663 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52663 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-05 20:04:03,666 | INFO | SemanticSearch | semantic_search request: query_len=198 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+2026-08-05 20:04:04,848 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-05 20:04:04,850 | INFO | SemanticSearch | semantic_search query embedding ok: query='Proposed Architecture Proposed Architecture — solution architecture, deployment …' vector_len=1536
+2026-08-05 20:04:04,850 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=197 returned=6 max_score=0.4228
+2026-08-05 20:04:12,862 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-05 20:04:12,864 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=1958 budget=700 effort=none
+INFO:     127.0.0.1:65185 - "POST /api/sow/sections/5/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65185 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-05 20:12:32,149 | INFO | SOWSectionRoutes | Approved SOW section 5 (family: ['5']) for project 6d9bee08
+INFO:     127.0.0.1:59098 - "POST /api/sow/sections/5/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59098 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59098 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-05 20:12:51,856 | INFO | SemanticSearch | semantic_search request: query_len=294 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+2026-08-05 20:12:54,484 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-05 20:12:54,485 | INFO | SemanticSearch | semantic_search query embedding ok: query='Implementation Methodology Implementation Methodology — delivery methodology. In…' vector_len=1536
+2026-08-05 20:12:54,486 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=204 returned=6 max_score=0.6706
+2026-08-05 20:13:05,770 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-05 20:13:05,775 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=2889 budget=1800 effort=none
+INFO:     127.0.0.1:56316 - "POST /api/sow/sections/6/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56316 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-05 20:13:46,209 | INFO | SOWSectionRoutes | Approved SOW section 6 (family: ['6.1', '6.2']) for project 6d9bee08
+INFO:     127.0.0.1:58548 - "POST /api/sow/sections/6/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58548 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58548 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63886 - "POST /api/sow/sections/7/generate HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:59728 - "POST /api/sow/sections/7/generate HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:58960 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56192 - "GET /sow-workflow?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56192 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:60634 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60634 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60103 - "POST /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /choose HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /sow-hub HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /sow-projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/projects?workflow=sow HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /sow-upload?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /static/chat_widget.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52413 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/projects/6d9bee08/repositories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59430 - "GET /api/repositories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59430 - "GET /api/chat/scopes?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59430 - "GET /sow-templates?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59430 - "GET /api/sow-templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow-templates/resolve/6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:33:53,431 | INFO | SOWTemplateRoutes | Applied SOW template 17c3837e (Bristlecone SOW Master Template) to project 6d9bee08 — 58 sections
+INFO:     127.0.0.1:60103 - "POST /api/sow-templates/17c3837e/apply/6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /sow-workflow?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:33:57,470 | INFO | SemanticSearch | semantic_search request: query_len=220 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+2026-08-06 11:34:02,067 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-06 11:34:02,074 | INFO | SemanticSearch | semantic_search query embedding ok: query='Governance Model Governance Model — oversight structure, escalation paths. Roles…' vector_len=1536
+2026-08-06 11:34:02,075 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=205 returned=6 max_score=0.4638
+2026-08-06 11:34:04,826 | INFO | azure.identity._internal.decorators | AzureCliCredential.get_token_info succeeded
+2026-08-06 11:34:04,826 | INFO | azure.identity._credentials.default | DefaultAzureCredential acquired a token from AzureCliCredential
+2026-08-06 11:34:18,326 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-06 11:34:18,333 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=3960 budget=2500 effort=none
+INFO:     127.0.0.1:60103 - "POST /api/sow/sections/7/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "POST /api/sow/generation/start HTTP/1.1" 200 OK
+2026-08-06 11:34:21,444 | INFO | SemanticSearch | semantic_search request: query_len=220 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+2026-08-06 11:34:21,445 | INFO | SemanticSearch | semantic_search query embedding ok: query='Governance Model Governance Model — oversight structure, escalation paths. Roles…' vector_len=1536
+2026-08-06 11:34:21,446 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=205 returned=6 max_score=0.4638
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:34:30,672 | INFO | SOWSectionRoutes | Approved SOW section 7 (family: ['7.1', '7.2', '7.3']) for project 6d9bee08
+INFO:     127.0.0.1:60103 - "POST /api/sow/sections/7/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:34:33,515 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-06 11:34:33,517 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=3833 budget=2500 effort=none
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:34:33,989 | INFO | SemanticSearch | semantic_search request: query_len=173 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:34:35,206 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-06 11:34:35,209 | INFO | SemanticSearch | semantic_search query embedding ok: query='Personnel Requirements Personnel Requirements — bullets on language, background,…' vector_len=1536
+2026-08-06 11:34:35,210 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=177 returned=6 max_score=0.4224
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:34:42,750 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-06 11:34:42,752 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=1945 budget=700 effort=none
+2026-08-06 11:34:43,285 | INFO | SemanticSearch | semantic_search request: query_len=247 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+2026-08-06 11:34:43,829 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-06 11:34:43,831 | INFO | SemanticSearch | semantic_search query embedding ok: query='Key Deliverables Key Deliverables — table (# | Deliverable | Description | Respo…' vector_len=1536
+2026-08-06 11:34:43,833 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=204 returned=6 max_score=0.4534
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:34:56,982 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-06 11:34:56,985 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=5416 budget=1100 effort=none
+2026-08-06 11:34:57,437 | INFO | SemanticSearch | semantic_search request: query_len=134 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+2026-08-06 11:34:58,128 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-06 11:34:58,131 | INFO | SemanticSearch | semantic_search query embedding ok: query='Key Assumptions Key Assumptions — bullets, project-specific, no generic boilerpl…' vector_len=1536
+2026-08-06 11:34:58,132 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=199 returned=6 max_score=0.4779
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:35:05,439 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-06 11:35:05,441 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=2135 budget=700 effort=none
+2026-08-06 11:35:05,900 | INFO | SemanticSearch | semantic_search request: query_len=211 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:35:06,545 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-06 11:35:06,548 | INFO | SemanticSearch | semantic_search query embedding ok: query='Acceptance Criteria Acceptance Criteria — table (Phase/Deliverable | Acceptance …' vector_len=1536
+2026-08-06 11:35:06,549 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=199 returned=6 max_score=0.4699
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:35:20,468 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-06 11:35:20,470 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=4765 budget=1100 effort=none
+2026-08-06 11:35:20,907 | INFO | SemanticSearch | semantic_search request: query_len=107 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:35:21,357 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-06 11:35:21,363 | INFO | SemanticSearch | semantic_search query embedding ok: query='Bristlecone Obligations Bristlecone Obligations — bullets. Client Obligations Cl…' vector_len=1536
+2026-08-06 11:35:21,364 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=159 returned=6 max_score=0.3833
+2026-08-06 11:35:21,860 | INFO | SOWSectionRoutes | Approved SOW section 8 (family: ['8']) for project 6d9bee08
+INFO:     127.0.0.1:60103 - "POST /api/sow/sections/8/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:35:23,245 | INFO | SOWSectionRoutes | Approved SOW section 9 (family: ['9']) for project 6d9bee08
+INFO:     127.0.0.1:60103 - "POST /api/sow/sections/9/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:35:24,309 | INFO | SOWSectionRoutes | Approved SOW section 10 (family: ['10']) for project 6d9bee08
+INFO:     127.0.0.1:60103 - "POST /api/sow/sections/10/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:35:25,767 | INFO | SOWSectionRoutes | Approved SOW section 11 (family: ['11']) for project 6d9bee08
+INFO:     127.0.0.1:60103 - "POST /api/sow/sections/11/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:35:31,830 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-06 11:35:31,832 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=3261 budget=1400 effort=none
+2026-08-06 11:35:32,275 | INFO | SemanticSearch | semantic_search request: query_len=399 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+2026-08-06 11:35:32,979 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-06 11:35:32,981 | INFO | SemanticSearch | semantic_search query embedding ok: query='Engagement Model Engagement Model — Fixed Price / Time & Material / Fixed Monthl…' vector_len=1536
+2026-08-06 11:35:32,982 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=200 returned=6 max_score=0.5162
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:35:45,497 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-06 11:35:45,499 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=4257 budget=3200 effort=none
+2026-08-06 11:35:45,922 | INFO | SemanticSearch | semantic_search request: query_len=364 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:35:46,633 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-06 11:35:46,636 | INFO | SemanticSearch | semantic_search query embedding ok: query='Performance Reporting & KPIs Performance Reporting & KPIs — table (Report | Freq…' vector_len=1536
+2026-08-06 11:35:46,637 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=200 returned=6 max_score=0.4516
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:35:55,816 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-06 11:35:55,818 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=3122 budget=1800 effort=none
+2026-08-06 11:35:56,254 | INFO | SemanticSearch | semantic_search request: query_len=290 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:35:56,841 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-06 11:35:56,844 | INFO | SemanticSearch | semantic_search query embedding ok: query='Risks Risks — table (# | Risk Description | Likelihood | Impact | Mitigation). S…' vector_len=1536
+2026-08-06 11:35:56,845 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=205 returned=6 max_score=0.4651
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:36:10,424 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-06 11:36:10,426 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=4497 budget=1100 effort=none
+2026-08-06 11:36:10,814 | INFO | SemanticSearch | semantic_search request: query_len=345 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:36:11,459 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-06 11:36:11,464 | INFO | SemanticSearch | semantic_search query embedding ok: query='Milestone Deliverables Matrix Milestone Deliverables Matrix — reference the Key …' vector_len=1536
+2026-08-06 11:36:11,465 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=206 returned=6 max_score=0.4914
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:36:21,574 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-06 11:36:21,576 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=3388 budget=2800 effort=none
+2026-08-06 11:36:22,036 | INFO | SemanticSearch | semantic_search request: query_len=234 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+2026-08-06 11:36:23,497 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-06 11:36:23,499 | INFO | SemanticSearch | semantic_search query embedding ok: query='Change Management Process Change Management Process — table (Step | Activity | O…' vector_len=1536
+2026-08-06 11:36:23,500 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=197 returned=6 max_score=0.5424
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:36:33,014 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-06 11:36:33,016 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=2897 budget=1100 effort=none
+2026-08-06 11:36:33,466 | INFO | SemanticSearch | semantic_search request: query_len=241 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+INFO:     127.0.0.1:60103 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:36:33,944 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-06 11:36:33,946 | INFO | SemanticSearch | semantic_search query embedding ok: query='Security & Data Protection Security & Data Protection — bullets (patching/AV, en…' vector_len=1536
+2026-08-06 11:36:33,947 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=196 returned=6 max_score=0.3666
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:36:42,304 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-06 11:36:42,306 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=2110 budget=700 effort=none
+2026-08-06 11:36:42,737 | INFO | SemanticSearch | semantic_search request: query_len=196 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:36:48,208 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-06 11:36:48,211 | INFO | SemanticSearch | semantic_search query embedding ok: query='Termination for Convenience Termination for Convenience — notice period. Termina…' vector_len=1536
+2026-08-06 11:36:48,212 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=84 returned=6 max_score=0.2876
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:36:57,576 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-06 11:36:57,578 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=2339 budget=2100 effort=none
+2026-08-06 11:36:57,967 | INFO | SemanticSearch | semantic_search request: query_len=232 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:36:58,770 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-06 11:36:58,773 | INFO | SemanticSearch | semantic_search query embedding ok: query='Acceptance and Sign-Off Acceptance and Sign-Off — table (blank rows) with column…' vector_len=1536
+2026-08-06 11:36:58,774 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=189 returned=6 max_score=0.4140
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:37:03,458 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-06 11:37:03,460 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=151 budget=1100 effort=none
+2026-08-06 11:37:03,887 | INFO | SemanticSearch | semantic_search request: query_len=274 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:37:04,637 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-06 11:37:04,639 | INFO | SemanticSearch | semantic_search query embedding ok: query='Key Observations Key Observations — factual, non-opinion bullets about this draf…' vector_len=1536
+2026-08-06 11:37:04,641 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=204 returned=6 max_score=0.4473
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:37:10,108 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-06 11:37:10,110 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=1236 budget=700 effort=none
+2026-08-06 11:37:10,544 | INFO | SemanticSearch | semantic_search request: query_len=622 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:37:11,480 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-06 11:37:11,483 | INFO | SemanticSearch | semantic_search query embedding ok: query='Reviewer Recommendations Reviewer Recommendations — standard Governance & Risk M…' vector_len=1536
+2026-08-06 11:37:11,484 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=187 returned=6 max_score=0.4117
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:37:21,295 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-06 11:37:21,299 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=2882 budget=2800 effort=none
+2026-08-06 11:37:21,748 | INFO | SemanticSearch | semantic_search request: query_len=36 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+2026-08-06 11:37:22,762 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-06 11:37:22,774 | INFO | SemanticSearch | semantic_search query embedding ok: query='Appendix A - Technical Prerequisites' vector_len=1536
+2026-08-06 11:37:22,775 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=202 returned=6 max_score=0.4551
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:37:32,363 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-06 11:37:32,364 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=2715 budget=700 effort=none
+2026-08-06 11:37:32,809 | INFO | SemanticSearch | semantic_search request: query_len=47 total_chunks=213 with_emb=213 without_emb=0 top_k=6 min_score=0.200
+2026-08-06 11:37:33,399 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-08-06 11:37:33,401 | INFO | SemanticSearch | semantic_search query embedding ok: query='Appendix B - Resource Profiles & Certifications' vector_len=1536
+2026-08-06 11:37:33,402 | INFO | SemanticSearch | semantic_search score summary: scores_over_threshold=205 returned=6 max_score=0.4390
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 11:37:41,932 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-06 11:37:41,934 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=2476 budget=700 effort=none
+INFO:     127.0.0.1:51528 - "GET /api/sow/generation/status?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51528 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 12:48:45,977 | INFO | SOWSectionRoutes | Approved SOW section 12 (family: ['12.1', '12.2']) for project 6d9bee08
+INFO:     127.0.0.1:62895 - "POST /api/sow/sections/12/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 12:48:46,976 | INFO | SOWSectionRoutes | Approved SOW section 13 (family: ['13.1', '13.2', '13.3', '13.4', '13.5']) for project 6d9bee08
+INFO:     127.0.0.1:62895 - "POST /api/sow/sections/13/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 12:48:47,617 | INFO | SOWSectionRoutes | Approved SOW section 14 (family: ['14', '14.1']) for project 6d9bee08
+INFO:     127.0.0.1:62895 - "POST /api/sow/sections/14/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 12:48:47,795 | INFO | SOWSectionRoutes | Approved SOW section 15 (family: ['15']) for project 6d9bee08
+INFO:     127.0.0.1:62895 - "POST /api/sow/sections/15/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 12:48:47,987 | INFO | SOWSectionRoutes | Approved SOW section 16 (family: ['16.1', '16.2', '16.3', '16.4']) for project 6d9bee08
+INFO:     127.0.0.1:62895 - "POST /api/sow/sections/16/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 12:48:48,143 | INFO | SOWSectionRoutes | Approved SOW section 17 (family: ['17']) for project 6d9bee08
+INFO:     127.0.0.1:62895 - "POST /api/sow/sections/17/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 12:48:48,322 | INFO | SOWSectionRoutes | Approved SOW section 18 (family: ['18']) for project 6d9bee08
+INFO:     127.0.0.1:62895 - "POST /api/sow/sections/18/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 12:48:48,486 | INFO | SOWSectionRoutes | Approved SOW section 19 (family: ['19.1', '19.2', '19.3']) for project 6d9bee08
+INFO:     127.0.0.1:62895 - "POST /api/sow/sections/19/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 12:48:48,697 | INFO | SOWSectionRoutes | Approved SOW section 20 (family: ['20']) for project 6d9bee08
+INFO:     127.0.0.1:62895 - "POST /api/sow/sections/20/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 12:48:48,885 | INFO | SOWSectionRoutes | Approved SOW section 21 (family: ['21']) for project 6d9bee08
+INFO:     127.0.0.1:62895 - "POST /api/sow/sections/21/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 12:48:54,299 | INFO | SOWSectionRoutes | Approved SOW section 22 (family: ['22', '22.1', '22.2', '22.3']) for project 6d9bee08
+INFO:     127.0.0.1:49154 - "POST /api/sow/sections/22/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49154 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49154 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 12:48:54,465 | INFO | SOWSectionRoutes | Approved SOW section 23 (family: ['23']) for project 6d9bee08
+INFO:     127.0.0.1:49154 - "POST /api/sow/sections/23/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49154 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49154 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 12:48:54,624 | INFO | SOWSectionRoutes | Approved SOW section 24 (family: ['24']) for project 6d9bee08
+INFO:     127.0.0.1:49154 - "POST /api/sow/sections/24/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49154 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49154 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK
+2026-08-06 12:49:38,469 | INFO | SOWWorkflow | Converted Markdown tables to Bristlecone-styled Word tables: GOOGLE_SOW.docx
+2026-08-06 12:49:38,777 | INFO | Screen3Routes | Embedded image 689305094e2e from 689305094e2e.png
+2026-08-06 12:49:38,783 | INFO | Screen3Routes | Embedded image 689305094e2e from 689305094e2e.png
+2026-08-06 12:49:38,833 | INFO | Screen3Routes | Image placeholders resolved in GOOGLE_SOW.docx
+2026-08-06 12:49:38,937 | INFO | BDConvoWorkflow | Rebuilt Table of Contents (inserted a live TOC field).
+2026-08-06 12:49:38,990 | INFO | SOWSectionRoutes | Exported SOW for project 6d9bee08 \u2192 GOOGLE_SOW.docx (template=17c3837e)
+INFO:     127.0.0.1:49245 - "POST /api/sow/document/export?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49245 - "GET /api/document/download/docx/GOOGLE_SOW.docx HTTP/1.1" 200 OK

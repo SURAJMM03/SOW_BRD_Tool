@@ -1,0 +1,125 @@
+{
+  "1.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "This document is for the use of Kinaxis and COMPANYNAME.  The holder of this document shall keep all information herein confidential and shall protect it from disclosure and dissemination to all third parties.\nFill in company name above and change font to match the rest. “Emphasis” style.\nChange the file name by replacing “Template” with the customer name.  e.g. Companyname Solution Maintenance Manual.docx.\nUpdate the table of contents and all other cross references by typing ctrl-a then F9."
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Scheduler user interface.\nl Shipment Scheduler User Guide: Provides information on how to use the Shipment Scheduler\ncomponent of Transportation Planner.\nl Shipment Scheduler Getting Started: Provides a series of modeling exercises to help you understand\nhow to use some of the strategies and constraints that control the Shipment Scheduling engine.\nl Shipment Scheduler Implementation Guide for MFG ABPP: Provides information about optimization\nand shipment scheduling components and how to implement them for MFG ABPP. It also provides\nimplementation specialists and systems integrators with instru"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Company Background",
+        "snippet": "[Include some generic information about the customer here]"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Company Background",
+        "snippet": "[Include some generic information about the customer here]"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Chapter 1. Introduction\nThis guide provides overviews, illustrations, procedures, and examples for Transportation Planner.\nRelated Documentation\nFor more information on Transportation Planner, see the following documents:\nl\nTransportation Planner Release Notes: Provides information on new or updated functionality in\nTransportation Planner.\nl\nTransportation Planner Installation Guide: Provides information on how to install Transportation\nPlanner.\nl\nTransportation Planner User Guide: Provides details on how to use the Transportation Planner web\nuser interface.\nl\nTransportation Planner Strategies"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Chapter 1. Introduction\nWelcome to the Transportation Planner Implementation Guide. This book provides overviews,\nillustrations, procedures, and examples for Transportation Planner. Screens, dialog boxes, and other\nwindows shown are only examples.\nRelated documentation\nFor more information on Transportation Planner, see the following documents:\nl Transportation Planner Release Notes: This guide provides information about any new or updated\nfunctionality in Transportation Planner.\nl Transportation Installation/Administration Guide: This guide provides information about how to install\nTransporta"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Planner Modeling Guide and Transportation Planner Strategies and Parameters Guide, is accessed\nfrom the Help menu in the Transportation Planner user interface.\nl Shipment Scheduler User Help: This Help system consists of the same content as the Shipment\nScheduler User Guide and Shipment Scheduler Implementation Guide and is accessed from the Help\nmenu in the Shipment Scheduler user interface.\nl Shipment Scheduler User Guide: This guide provides information about how to use the Shipment\nScheduler component of Transportation Planner.\nl Shipment Scheduler Getting Started: This guide provides a se"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "2.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "[Embedded Image: image2.png]\nThe image is a screenshot of the Table of Contents from a document titled \"RapidStart Technical Blueprint Template Rev 1.4.docx\". Below is a structured plain-text description focusing on supply chain/ERP-relevant content:\n---\n**Table of Contents**\n**1. INTRODUCTION**\n- 1.1 Company Background (p.6)\n- 1.2 Purpose (p.6)\n- 1.3 Scope (p.8)\n- 1.4 Definitions & Acronyms (p.8)\n- 1.5 Key Business Decisions (p.8)\n- 1.6 Planning Hierarchy Attributes (p.10)\n**2. BENEFIT REALIZATION**\n- 2.1 Quantitative Benefits (p.11)\n- 2.2 Qualitative Benefits (p.11)\n- 2.3 [Customer] Identifi"
+      },
+      {
+        "doc_name": "20260629_204809_BD_20260629_203943.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "The benefit realization baseline for Archlin should therefore be established during implementation using Archlin-approved source data from SAP S/4HANA and any other confirmed planning inputs in scope. Until that baseline is formally defined, business value statements should remain directional and focused on the documented objective: improving the effectiveness of supply planning activities by addressing Archlin’s inventory planning challenges within the Phase 1 supply management scope.\n2.2  Value Drivers\nArchlin’s Phase 1 investment is driven by the need to improve supply management within its"
+      },
+      {
+        "doc_name": "20260629_204810_BD_20260629_203943.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "The benefit realization baseline for Archlin should therefore be established during implementation using Archlin-approved source data from SAP S/4HANA and any other confirmed planning inputs in scope. Until that baseline is formally defined, business value statements should remain directional and focused on the documented objective: improving the effectiveness of supply planning activities by addressing Archlin’s inventory planning challenges within the Phase 1 supply management scope.\n2.2  Value Drivers\nArchlin’s Phase 1 investment is driven by the need to improve supply management within its"
+      },
+      {
+        "doc_name": "20260629_204809_BD_20260629_203943.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "The primary benefit area for Archlin is improved inventory planning discipline in support of supply management execution. Within the Phase 1 scope, the solution direction is aligned to helping Archlin achieve more effective planning outcomes within its existing enterprise environment. The expected value is centered on improving the quality and consistency of supply-side planning decisions, supporting better alignment of procurement, manufacturing, and distribution-related planning activities for Archlin products. Specific quantitative inventory metrics, baseline performance values, target bene"
+      },
+      {
+        "doc_name": "20260629_204810_BD_20260629_203943.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "The primary benefit area for Archlin is improved inventory planning discipline in support of supply management execution. Within the Phase 1 scope, the solution direction is aligned to helping Archlin achieve more effective planning outcomes within its existing enterprise environment. The expected value is centered on improving the quality and consistency of supply-side planning decisions, supporting better alignment of procurement, manufacturing, and distribution-related planning activities for Archlin products. Specific quantitative inventory metrics, baseline performance values, target bene"
+      },
+      {
+        "doc_name": "20260629_204809_BD_20260629_203943.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "The intended outcome of Archlin’s Phase 1 investment is to improve the effectiveness of supply planning activities by addressing inventory planning challenges within the company’s SAP S/4HANA-enabled planning environment. The Blueprint establishes the current business context for a solution that supports procurement, manufacture, and distribution planning decisions through clearer supply management processes, better use of maintained planning parameters, and improved visibility to planning inputs and outputs. For Archlin, the expected business value is centered on stronger supply management ex"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "6.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Integration Architecture",
+        "snippet": "This section generally describes the data integration layout and architecture, highlighting data flow from customer source system(s), through SFTP to Integration server (Talend) and RapidResponse server. Visual depiction is best, but can also include a text description of the data flow.\nBelow is an example of a high level integration architecture diagram. If possible, show the inbound and outbound paths (from the point of view of the Kinaxis RapidResponse servers"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "Technical Architecture",
+        "snippet": "IXOM will use SAP BTP Integration Suite for integrating and transforming data between systems. And send the transformed data into Kinaxis.\nData Load can happen in both ways:\nERP/Other Source Systems à Integration Tool à Kinaxis Maestro\nKinaxis Maestro à Integration Tool à ERP/Other Reporting Systems\nSo, the detail technical architecture can be defined based on the software and the approach IXOM wanted to go for Integration.\nThe process of moving the data from your data sources to Maestro involves extracting or collecting the data from the data source and transforming it to the format Maestro r"
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image5.png",
+        "snippet": "- FTP Server\n- RapidResponse database\n**Consultant Notes:**\n- The diagram shows a secure, multi-stage data transfer process for integrating enterprise data with the RapidResponse supply chain platform.\n- Key security elements: multiple firewalls, perimeter network, and FTP gateway.\n- Data format: text files.\n- System components: Data Transfer Client, FTP Gateway, FTP Server, RapidResponse database.\n- Useful for understanding data integration, security boundaries, and system architecture in a supply chain/ERP context."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "Image: image3.png",
+        "snippet": "[Embedded Image: image3.png]\nStructured Description of image3.png:\nTitle:\n- Integration Architecture\nSubtitle/Section:\n- Data Exchange between Kinaxis and ERP/Other Source System\nDiagram Components (left to right):\n1. **SAP ECC** (logo and label)\n- Outbound arrow labeled: \"1. SAP data extract\" → SAP BTP Integration Suite\n- Inbound arrow labeled: \"6. Send the data to ERP (or) any other system\" ← SAP BTP Integration Suite\n2. **Kony/Tanktel/Everlink** (green box)\n- Outbound arrow labeled: \"1.1 Data extract from other Source systems\" → SAP BTP Integration Suite\n3. **Power BI** (green box)\n- Inboun"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to define the Technical Architecture of the Maestro Solution, yet to be implemented at IXOM.\nThis document includes the technical details that outline how the integration works between Maestro and other IXOM systems including SAP, Power BI, Kony, Tanktel, Everlink. It addresses:\nTechnical components of the solution and how they work\nUnderstanding the changes to the data model\nA review of integration and automation tasks\nClosed-Loop & Reconciliation"
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image3.png",
+        "snippet": "[Embedded Image: image3.png]\n**Structured Description of Image:**\n**Title:**\nIntegration Technical Architecture for RapidResponse\n**Main Sections & Flow:**\n1. **Customer Side (Left Section, Blue Box):**\n- **Oracle EBS (KXS.ISS.04)**\n- Connected to:\n- **Customer Extract (KXS.TIS.02.03)**\n- Connected to:\n- **DTC (Data Transfer Component)**\n- All above are grouped under the label \"Customer\".\n2. **Transfer Layer (Middle):**\n- **DTC Transfer (KXS.TIS.03.01)**\n- Represented by a line passing through two firewall icons (depicted as flames).\n3. **Kinaxis Side (Right Section, Orange Cloud):**\n- **Kinax"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "Image: image3.png",
+        "snippet": "5. Pull the data from Kinaxis DTC (DTC (FTP) → SAP BTP Integration Suite)\n6. Send the data to ERP (or any other system) (SAP BTP Integration Suite → SAP ECC)\n6.1 Data extracted from Kinaxis, send that to PowerBI for reporting (SAP BTP Integration Suite → Power BI)\nSystems/Sites/Applications Mentioned:\n- SAP ECC\n- SAP BTP Integration Suite\n- Kinaxis (Maestro)"
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image5.png",
+        "snippet": "[Embedded Image: image5.png]\nStructured Description:\n**Title/Headers:**\n- Top left: \"Your company's network\"\n- Top right: \"RapidResponse Data Center\"\n- Subsections: \"Perimeter Network\" and \"Internal\"\n**Diagram Overview:**\nThe image is a process flow/architecture diagram illustrating the data transfer process between an enterprise data source and the RapidResponse Data Center, focusing on secure file transfer.\n**Left Section (Your company's network):**\n- **Enterprise Data Source** (icon of a factory/building)\n- Arrow labeled: \"Text files extracted from Enterprise Data Source\"\n- **RapidResponse "
+      }
+    ],
+    "gen_source": "doc"
+  }
+}

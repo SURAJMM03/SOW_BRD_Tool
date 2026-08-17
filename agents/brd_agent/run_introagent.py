@@ -1,0 +1,105 @@
+import re
+from typing import Dict, List
+
+from agents.brd_agent.agents.intro_agent import create_intro_generation_agent as create_generation_agent
+
+# Match <SECTION id="X.Y"> blocks in LLM output
+SECTION_RE = re.compile(
+    r'<SECTION\s+id="([\d.]+)">(.*?)</SECTION>',
+    re.DOTALL | re.IGNORECASE,
+)
+
+try:
+    from app.section_titles import get_titles as _get_titles
+except ImportError:
+    try:
+        from section_titles import get_titles as _get_titles
+    except ImportError:
+        def _get_titles(): return {}
+
+def _live_titles():
+    return _get_titles()
+
+
+def generate_intro_sections_from_qa(qa_records: list, research_context: str = "") -> dict:
+    """
+    Generate sections 1, 1.1, 1.2, 1.3, 1.4, 1.5.
+    Uses research_context only - no hardcoded content.
+    research_context contains: document chunks, client context,
+    section-specific format instructions, keywords.
+    """
+    gen_agent = create_generation_agent()
+
+    # Extract client company name from research_context to override "Bristlecone" in system prompt
+    import re as _re_name
+    _client_match = _re_name.search(
+        r"Client company:\s*([^\n]+)", research_context or ""
+    )
+    _client_name = _client_match.group(1).strip() if _client_match else ""
+    # Build a name correction preamble so LLM doesn't confuse client with SI
+    _name_correction = (
+        f"IMPORTANT: The CLIENT company is {_client_name!r}. "
+        "Bristlecone is the system integrator (SI), NOT the investing company. "
+        f"All generated content must be about {_client_name!r}'s investment and business. "
+        "Never say 'Bristlecone is investing' or 'Bristlecone's supply chain'.\n\n"
+    ) if _client_name else ""
+
+    # Detect single-section mode: the backend stamps "TARGET_SECTION: {id}" at the
+    # top of research_context for all section-by-section generation calls so this
+    # agent generates ONLY the requested section instead of all sub-sections at once.
+    import re as _re_agent
+    _single_match = _re_agent.search(
+        r"TARGET_SECTION:\s*([\d.]+)",
+        research_context or ""
+    )
+    if _single_match:
+        _target_sid = _single_match.group(1)
+        gen_prompt = (
+            _name_correction +
+            "You are a senior Blueprint Document writer for enterprise solution "
+            "implementations at Bristlecone.\n\n"
+            f"TASK: Generate ONLY section {_target_sid}. Do NOT generate any other sections.\n"
+            f"Write ONLY the body for section {_target_sid} as flowing prose/paragraphs. Do NOT create "
+            f"sub-sections, sub-headings, or numbered sub-parts (e.g. {_target_sid}.1, {_target_sid}.2) and "
+            f"do NOT repeat the section number or title as a heading inside the body — those sub-sections "
+            f"are generated separately on their own.\n\n"
+            "Use the RESEARCH CONTEXT below as your only source of content and instructions.\n"
+            f"Output ONLY <SECTION id=\"{_target_sid}\">...</SECTION> -- nothing else.\n\n"
+            "RESEARCH CONTEXT:\n"
+            f"{research_context or 'No context provided.'}\n\n"
+            f"Generate ONLY section {_target_sid} using <SECTION id=\"{_target_sid}\"> tags."
+        )
+    else:
+        gen_prompt = (
+            _name_correction +
+            "You are a senior Blueprint Document writer for enterprise solution "
+            "implementations at Bristlecone.\n\n"
+            "TASK: Generate sections 1, 1.1, 1.2, 1.3, 1.4, 1.5 for the Blueprint Document.\n\n"
+            "RULES:\n"
+            "1. If the RESEARCH CONTEXT contains a section marked '=== MANDATORY OUTPUT FORMAT ===',\n"
+            "   you MUST follow that format EXACTLY. It overrides everything else.\n"
+            "2. RESEARCH CONTEXT is your ONLY source of instructions and content.\n"
+            "3. Do NOT add content not instructed in the context.\n"
+            "4. Do NOT hallucinate. Use the '## Web Research' section for facts not in documents (e.g. year established, headquarters). Write TBD only if the fact is absent from BOTH documents AND web research.\n"
+            "5. Output ONLY <SECTION id=\"X\">...</SECTION> blocks. Inside a section you MAY include <IMAGE id=\"abc123\"/> tags where images are relevant — use exact IDs from [RELEVANT IMAGES].\n\n"
+            "RESEARCH CONTEXT:\n"
+            f"{research_context or 'No context provided.'}\n\n"
+            "Generate sections 1, 1.1, 1.2, 1.3, 1.4, 1.5 using <SECTION id=\"X\"> tags only."
+        )
+
+    result = gen_agent.invoke(
+        {"messages": [{"role": "user", "content": gen_prompt}]}
+    )
+
+    raw = result["messages"][-1].content
+    return {sid: text.strip() for sid, text in SECTION_RE.findall(raw)}
+
+
+def assemble_document(sections: dict) -> str:
+    lines = ["=" * 60, "Blueprint Document Sections", "=" * 60, ""]
+    for sid in sorted(sections.keys(), key=lambda s: [int(p) if p.isdigit() else p for p in s.split(".")]):
+        title = _live_titles().get(sid, "")
+        lines.append(f"Section {sid}: {title}" if title else f"Section {sid}")
+        lines.append(sections[sid])
+        lines.append("")
+    return "\n".join(lines)

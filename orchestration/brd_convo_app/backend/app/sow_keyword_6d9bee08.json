@@ -1,0 +1,243 @@
+{
+  "0": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "1": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "2": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "3": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "3.1": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "3.2": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "3.3": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "4": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "4.1": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "4.2": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "4.3": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "4.4": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "4.5": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "4.6": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "4.7": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "5": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "6": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "6.1": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "6.2": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "7": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 7.1 Governance Model\nThe engagement will be governed through a tiered model aligned to the phased delivery approach. Executive sponsors from GOOGLE and Bristlecone will provide strategic direction, resolve cross-functional issues, and approve decisions with scope, timeline, or commercial impact. Day-to-day delivery governance will be led by the Program Manager, supported by the GOOGLE solution architect, functional lead, and integration lead to manage plan adherence, dependencies, design decisions, risks, and release readiness.\n\nWorking-level governance will operate through scheduled project status reviews, sprint planning and review ceremonies, design and integration workshops, test-readiness reviews, and release go/no-go checkpoints. Issues that cannot be resolved at the working-team level within the agreed reporting cycle will be escalated to the Program Manager, then to the executive governance forum where required. Any requested change affecting scope, interfaces, milestone dates, or effort will be managed through the Change Management Process in Section 17.\n\n### 7.2 Roles & Responsibilities\n| Role | Party | Location | Responsibilities |\n|---|---|---|---|\n| Executive Sponsor | GOOGLE / Bristlecone | North America | Provide strategic direction, confirm priorities, remove roadblocks, and support executive decisions at key milestones. |\n| Program Manager | Bristlecone | Onsite North America | Manage delivery governance, project plan, milestones, risks, dependencies, escalations, and cross-team coordination. |\n| Business System Analyst - Solution Architect | GOOGLE | North America | Own end-to-end solution alignment across SAP S/4HANA, Kinaxis, and E2Open; validate architecture and support key design decisions. |\n| Business System Analyst - Functional Lead | Bristlecone | Onsite / Offshore | Lead functional design, translate requirements into solution design, support sprint validation, and confirm functional completeness. |\n| Integration Lead | Bristlecone | Offshore with onsite coordination | Define and manage integration and data flows, lead mapping and validation activities, and support data quality resolution. |\n| Key Business Users / Process Leads | GOOGLE | Taiwan and North America | Participate in workshops, validate process design, support testing, provide business inputs and sign-off, and enable adoption during hypercare. |\n| OCM Lead | Bristlecone | Onsite / Offshore | Lead change impact assessment, training coordination, stakeholder communication, and adoption readiness activities. |\n| Core Delivery Team | Bristlecone | Offshore | Execute configuration, development, testing support, defect resolution, documentation, and release preparation. |\n\n### 7.3 Work Schedule\n- Delivery will follow the Prepare, Explore, Realize, and Deploy cadence defined in Section 6, using a blended onsite and offshore model.\n- Onsite North America coverage will focus on governance, workshops, design decisions, stakeholder alignment, UAT support, cutover readiness, and executive reviews.\n- Offshore coverage will support configuration, integration, documentation, testing execution, defect resolution, and release preparation.\n- Standard working hours, holiday calendar alignment, and collaboration windows will be agreed during mobilization and documented in the detailed project plan.\n- Resource participation will vary by phase, with highest business and solution-architecture involvement during Prepare, Explore, key testing events, and release checkpoints.\n- The Program Manager will maintain the detailed working calendar, meeting cadence, and release-level activity plan.\n- Any temporary schedule extension, shift coverage, or non-standard working arrangement requiring commercial impact will be handled through approved governance and, where applicable, Section 13 and Section 17.",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "7.1": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "7.2": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "7.3": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "8": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "9": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "10": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "11": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "12": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "12.1": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "12.2": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "13": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "13.1": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "13.2": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "13.3": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "13.4": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "13.5": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "14": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "14.1": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "15": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "16": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "16.1": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "16.2": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "16.3": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "16.4": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "17": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "18": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "19": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "19.1": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "19.2": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "19.3": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "20": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "21": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "22": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "22.1": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "22.2": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "22.3": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "23": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "24": {
+    "status": "generated",
+    "custom_instructions": ""
+  }
+}

@@ -1,0 +1,254 @@
+{
+  "1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "| Type | Description |\n| --- | --- |\n| Decision | Disaggregating the Monthly Consensus Forecast to Daily level for the first 3 Months. |\n| Assumption | Storing the Price at Product/Site/Customer/Date/OrderQuantity requires customization, because Maestro supports the price matrix at the Product/Site/Customer/Date level only but not by order quantity. |\n| Assumption | IXOM Business may come up with a logic to consider the Lot size during the Forecasting and Forecast disaggregation, Maestro doesn’t support the lot size on the Forecasting by default. Customisation required based on the logic the b"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Supply Planning & Order Management",
+        "snippet": "The purpose of the Supply Planning & Order Management is to determine the total requirements of the products/raw materials and come up with a supply plan to satisfy the requirements which includes managing the Purchase Orders (PO) and Purchase Requisition with the Supplier.\nIXOM Business may use Maestro to run the MRP throughout the BOM Structure to identify the necessary supply plan requirements for the purchased products or raw materials.\nBelow is the Level 2 process flow of the Supply Planning & Order Management with the inputs required, processes, and the output given.\nLevel 2 Supply Plann"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Scope",
+        "snippet": "The high-level scope of this project is to provide demand, supply, inventory and S&OP planning capabilities, which supports the procurement, manufacturing/production and distribution of IXOM products."
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "Also need to faciltiate tiered pricing based on volumes ordered. Standard it is not there. But we can customise this to build in the business rules. New requirement added. | Not noted | - suggested Kinaxis solution (future-state process)\n'- why this solution (reasoning)\n2 | Demand Planning | Ability to upload data from external sources to feed into creation of Demand Plans including customer forecasts, actual tank levels at Ixom / customer sites | Data sources | Demand Planning | Must Have | Yes | 9 | Will stay in SAP ? - Master data that is available in SAP will be transferred to Maestro | Im"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Sites",
+        "snippet": "Below is the different type of Sites which will be modelled in Maestro.\nDistribution Sites – includes both the third-party distribution and IXOM sites\nManufacturing Sites – IXOM Manufacturing Plant\nConsignment Stock Sites – to hold the product at Customer Site but still owned by IXOM\nIndent Sites – Dummy Sites to create the Sales Order so that Supplier knows which port to send the product to.\nDuring the implementation phase, we will identify all the individual sites to be created in Maestro."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to define the Technical Architecture of the Maestro Solution, yet to be implemented at IXOM.\nThis document includes the technical details that outline how the integration works between Maestro and other IXOM systems including SAP, Power BI, Kony, Tanktel, Everlink. It addresses:\nTechnical components of the solution and how they work\nUnderstanding the changes to the data model\nA review of integration and automation tasks\nClosed-Loop & Reconciliation"
+      },
+      {
+        "doc_name": "SOW_BKP.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "All functionalities included in scope uses Level 1 Maestro standard functionality (create a PRODUCTION ready solution based on out-of-box (OOB) resources with limited changes allowed) as described in Appendix C.  Scope is split out by functional area and Bristlecone/Tridant and IXOM responsibilities are defined herein.\nAs part of this Analysis & Design Phase, the following tasks will be performed by Tridant/Bristlecone in conjunction with the IXOM Stakeholders.\nInitiate/Analysis & DESIGN: table 1\n| Task | Description | Phase Deliverables |\n| --- | --- | --- |\n| Align Project Approach | Tridant"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Image: image50.png",
+        "snippet": "[Embedded Image: image50.png]\nStructured Description of image50.png:\nTitle/Context:\n- The image is a process flow diagram for demand planning in a supply chain context, likely part of an Integrated Business Planning (IBP) or ERP blueprint.\nStructure:\n- The diagram is organized into three horizontal sections: Input, Process (Demand Planners), and Output.\n- Each section contains multiple labeled boxes with bullet points or process steps.\nSection 1: Input\n- Four input boxes, each with bullet points:\n1. Stat Forecast Parameters\n- Cleansed Historical Demand Actuals\n2. Forecast input from Customers\n"
+      },
+      {
+        "doc_name": "1.Day1_04May_Workshop Agenda - High Level Business Process #1.docx",
+        "heading_path": "Agenda",
+        "snippet": "Objective\nEstablish a shared understanding of business structure, planning processes, and alignment to Kinaxis Maestro RapidStart capabilities.\nAgenda\n1. Welcome & Context (5 mins)\nIntroductions\nObjectives & scope recap\nRapidStart overview\n2. Business Overview (10 mins)\nBusiness units & functions\nProduct lines\nMarkets & customers\nSupply Chain KPIs and targets.\n3. Site & Operating Structure (10 mins)\nPlants, warehouses, distribution network\nOperating models (MTS / MTO)\nProduct hierarchies\nPlanning ownership across sites\n4. High-Level Planning Process – To be process (50 mins)\nDemand planning\nSu"
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Solution Blueprint References",
+        "snippet": "See the Solution Blueprint document for information on the functional requirements, resources utilized and solution design."
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements\nColumns: After Discovery session, before follow-up\nFunctional Requirements & Design | Kinaxis Input | Differences in requirements/processes/solutions/change management per BU\nAfter Discovery session, before follow-up: Kinaxis Resource for Solution\n1 | Demand Planning | Ability to have an automated forecasting tool which sources and consolidates historical and current sales data and predicts future demand for a selectable period (e.g. last year, current year and next financial year) | Forecast algorithms | Must Have | Yes | 9 | Wi"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "A step further, What if there are multiple suppliers of individual components and we select based on price?  Yes. Can it be automatically set to buy the cheapest one?\nDifferent makes/IDs of the same product made at the same site can also be segmented to feature in different BOMs if needed.\nMultiple suppliers of a raw material, each with separate product codes > these can be fed into a parent raw material that can be inputted into the BOM. How does the backflush work? This would be primarily in ERP/SAP system - Maestro can indicate this.\nWhat is Maestro's ability to deal with very detailed fore"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "2025-03-05 | 4 | Demand Planning | Ability to integrate with the product cost and Customer and ShipTo pricing models to support financial forecasts with the ability to do scenario modelling and predictive pricing based on a variety of methods at plant / customer / period (e.g. statistical & historical). This relates to all types of Planning | Scenario Planning | Demand Planning | Must Have | Yes | 9 | Consensus Demand PLanning | Pricing based on customer/Shipto/grography/ time, instead of using the ASP/ std unit cost use pricing procedure | Pricing may be different based on the ShipTo or the C"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "- Supplier (based on products they supply to us)\nExport all reports of that subset, to then do what we want with. | Closed loop report (Exportable)-Custom Workbook report.\n8 | Demand Planning | Ability to extract the forecast at configurable levels, e.g. Product level and submit / resubmit forecasts for approval, including to one or more approvers | Notifications / Approval | Demand Planning | Should Have | Yes | 3 | S&OP cycle Approval, Scenario comment/ commit | For S&OP hardcoded approvals/ workflow, for midcycle we just need acknowledgement approval\nOverride in case person is unavailable |"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "13 | Demand Planning | Ability to automatically notify (email, in-system notifications, dashboard) the submitter once the forecast has been approved by all approvers | Notifications / Approval | Demand Planning | Should Have | Yes | 3 | Scenario comment | Can be done via Scenario commit/comment, Workbook command\n2025-03-05 | 14 | Demand Planning | Ability to manually update the forecasts in real-time, including modify, cancel, reset (to original values) and apply a change to multiple products all with reason code and comments | Systems integration | Demand Planning | Must Have | Yes | 9 | S&OP"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "17 | Demand Planning | Ability to create graphical representations of Forecasts and see constraints | Reporting | Demand Planning | Must Have | Yes | 9 | Fit\n18 | Demand Planning | Ability to generate Reports, Analytics, and Insights to support Demand Planning (e.g. SLOBs, Pipeline Provision Report, Blocked Products) | Reporting | Demand Planning | Must Have | Yes | 9 | Custom Reports, As per Ixom Layout | Custom Reports, As per Ixom Layout | Custom Reports as per IXOM layout.\n19 | Demand Planning | Ability to generate Reports, Analytics, and Insights to measure Forecast vs. Actuals | Reportin"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "23 | Demand Planning | Ability to allow the users to adjust and refine the statistical forecasts based on various demand levers, like price change, seasonality, economic conditions, new product launch, marketing etc. | Forecast algorithms | Demand Planning | Must Have | Yes | 9 | Maestro supports both uni-variate and multi-variate, time series statistical models. The statistical forecasting engine is highly flexible as there is no rigid forecasting \"pyramid\" and you can generate a statistical forecast at any combination of the product-customer-location levels. Our \"BestFit\" forecasting techniq"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "In addition, Maestro offers a robust Consensus Demand Planning capability that allows planners to incorporate forecast adjustments or make over-rides at any level and intersection of the product/customer/channel hierarchies. In addition, Maestro supports the incorporation of multiple forecast streams (e.g. Marketing, Sales, Customer, Finance, POS, etc.) into the resulting Consensus Demand Plan using forecast weights. The excel-like interface is very intuitive and facilitates easy input of adjustments. While Maestro offers standard categories of adjustments out-of-the-box (e.g. promotion, distr"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "Planners can then navigate through the hierarchies and filters to visualize at the desired level. | S&OP Forecast Item Management | Fit\n25 | Demand Planning | Ability to manage forecasts using multiple demand hierarchies at the same time, and to forecast each SKU item or grouping of SKUs at different levels of the hierarchies (channel or product hierarchies) | Heirarchies | Master Data (Specific to IBP) | Must Have | Yes | 9 | Forecast accuracy and error tracking for all forecasting streams, across all hierarchy levels and different lags is standard capability in Maestro. It is possible to mod"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "27 | Demand Planning | Ability to adjust the statistical model used to generate the forecast at each level | Forecast algorithms | Demand Planning | Must Have | Yes | 9 | Yes, planners can influence and adjust the forecast at all levels of hierarchies. Hierachies in Maestro are dynamic and can be created around any type of product, location, customer attribute or data point. The tool will then aggregate or disaggregate any changes based on what level the adjustment was made at. | S&OP Forecast Item Management | Fit\n28 | Demand Planning | Ability to allow the users to specify the historical per"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "Multi-variate statistical models include MLR, ARIMAX and Elastic Net - these models allow users to include various internal and external causal factors such as industry growth projections and macroeconomic variables as inputs to the forecast.\nMaestro also offers Machine Learning (ML) Forecasting capabilities through our Demand.AI offering. Demand.AI can be used to further improve the forecast by pulling in additional data signals that are typically leverage from outside your supply chain modeling (e.g. new housing starts, weather by region, event information (e.g. disasters), etc.).\nIn additio"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "29 | Demand Planning | Ability to generate statistical forecast based on cleansed history and to view recommendation based on uncleansed history | Forecast algorithms | Demand Planning | Must Have | Yes | 9 | Outliers in Maestro refer to points in the data that are not consistent with the overall pattern. Maestro provides several configuration options for outlier detection and processing. Outliers can be detected based on standard deviation, Iglewicz-Hoaglin method, or winsorizing. Outliers can be adjusted using options such as forecast, ignore, mean, median, smooth keep excess, smooth remove "
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "32 | Demand Planning | Ability for the user to manually override the statistical model the system provided | Forecast algorithms | Demand Planning | Must Have | Yes | 9 | The forecast model parameters can also be manually set (rather then system optimized). | S&OP Forecast Item Management | Fit\n33 | Demand Planning | Ability to set on and off of the automated statistical modelling for a defined period time | Forecast algorithms | Demand Planning | Must Have | Yes | 9 | The forecast configuration interface in the UI allows planners to set forecast time periods, effectivity status, and many more"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "36 | Demand Planning | Ability to adjust the replenishment model based on the events in the key dates | Master Data | Demand Planning | Must Have | Yes | 9 | Maestro can have as many calendars as you want modeled and any calendar can be used throughout the solution. This means you can view vendor calendars, distribution calendars, plant calendars, weekly/ monthly/ quarterly calendars, or any other calendars you need, anywhere. | configurable behaviour via calendars/ custom cmd | ex if chinese new yr falls in 3 months, inc LT from 8Weeks to 10 Wk | ex. Cinese New Year may have to shut things do"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "ChlorAlkali and Traded Packaged business units use all the possible distribution combinations as mapped below.\nDistribution Network – ChlorAlkali & Traded Package\nThe Bulk Liquids business unit uses the distribution network below.\nDistribution Network – Bulk Liquids"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Company Background",
+        "snippet": "IXOM is a market leader in water treatment and chemical distribution in Australia and New Zealand, with a growing presence in America and Asia. IXOM provides leading products services across our key business areas of trading in chemicals, water treatment, manufactured products and bulk liquids and gases.\nWebsite links:\nOur Global Sites and Contacts\nOur Industries, Products & Services\nOur Emergency Response Service\nEnvironmental Monitoring Data"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Supply Chain Scope",
+        "snippet": "Below is the scope considered in this Blueprint, mainly there are two BUs in Australia and New Zealand, one is Trading (Traded Bulk, Bulk Liquids, Packaged Goods) and the other one is ChlorAlkali."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "Company Background",
+        "snippet": "IXOM is a market leader in water treatment and chemical distribution in Australia and New Zealand, with a growing presence in America and Asia. IXOM provides leading products services across our key business areas of trading in chemicals, water treatment, manufactured products and bulk liquids and gases.\nSome website links:\nOur Global Sites and Contacts\nOur Industries, Products & Services\nOur Emergency Response Service\nEnvironmental Monitoring Data"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W-Replenish & Inventory Mgmt",
+        "snippet": "Replenish & Inventory Mgmt Area Workshop Attendees: 11\nReplenish & Inventory Mgmt Area Workshop Attendees: 12\nReplenish & Inventory Mgmt Area Workshop Attendees: 13\nReplenish & Inventory Mgmt Area Workshop Attendees: 14, Details: New Zealand\nReplenish & Inventory Mgmt Area Workshop Attendees: 15, Details: Australia\nDetails: Supply Chain - Planning\nDetails: Depends on which day the workshop falls (can Jayde attend?)"
+      },
+      {
+        "doc_name": "2. Day2_Ixom Structure V2.xlsx",
+        "heading_path": "2. Day2_Ixom Structure V2.xlsx — Sheet: Manufacturing & Toll Sites",
+        "snippet": "2. Day2_Ixom Structure V2.xlsx — Sheet: Manufacturing & Toll Sites\nColumns: AU Manufacturing | NZ Manufacturing | AU TOLL Manufacturing | NZ TOLL Manufacturing\nAU Manufacturing: Plant, NZ Manufacturing: Plant, AU TOLL Manufacturing: Plant, NZ TOLL Manufacturing: Plant\nAU Manufacturing: D106, NZ Manufacturing: Z100, AU TOLL Manufacturing: N210, NZ TOLL Manufacturing: Z205\nAU Manufacturing: N106, NZ Manufacturing: Z103, AU TOLL Manufacturing: N217, NZ TOLL Manufacturing: Z206\nAU Manufacturing: N113, NZ Manufacturing: Z104, AU TOLL Manufacturing: N222, NZ TOLL Manufacturing: Z209\nAU Manufacturing"
+      },
+      {
+        "doc_name": "IXOM - IBP Interface Register.xlsx",
+        "heading_path": "IXOM - IBP Interface Register.xlsx — Sheet: Representative Customers",
+        "snippet": "Customer No: 0000007767, Name: Melbourne Water\nCustomer No: 0000007805, Name: South East Water Ltd\nCustomer No: 0000007813, Name: Vival Chemicals Pty Ltd\nCustomer No: 0000008011, Name: Ixom Operations Pty Ltd\nCustomer No: 0000008089, Name: Dow Performance Materials(Aust)\nCustomer No: 0000008202, Name: Nufarm Australia Limited\nCustomer No: 0000008342, Name: Ecolab Pty Ltd\nCustomer No: 0000008378, Name: Orica Australia - Deer Park\nCustomer No: 0000008391, Name: Milestone Chemicals Pty Ltd\nCustomer No: 0000008438, Name: Knauf Gypsum Pty Ltd\nCustomer No: 0000008531, Name: Lesaffre Australia Pacifi"
+      },
+      {
+        "doc_name": "Customer data. SAP KNVP extract for Sold-to's and Ship-to's.XLSX",
+        "heading_path": "Customer data. SAP KNVP extract for Sold-to's and Ship-to's.XLSX — Sheet: Sheet1",
+        "snippet": "Customer: 748, Sales Organization: AU01, Distribution Channel: 00, Division: 00, Partner Function (SP = Sold-To, SH= Ship-To): SH, Partner counter: 9, Customer (Sold-To ID, Ship-To ID): 31357, Partner Function (SP = Sold-To, SH= Ship-To) Description: Ixom Operations Pty Ltd (NZ) Wellin, Personnel Number: 0, Contact Person: 0\nCustomer: 748, Sales Organization: AU01, Distribution Channel: 00, Division: 00, Partner Function (SP = Sold-To, SH= Ship-To): SH, Partner counter: 18, Customer (Sold-To ID, Ship-To ID): 38749, Partner Function (SP = Sold-To, SH= Ship-To) Description: Ixom Operations Pty L"
+      },
+      {
+        "doc_name": "Customer data. SAP KNVP extract for Sold-to's and Ship-to's.XLSX",
+        "heading_path": "Customer data. SAP KNVP extract for Sold-to's and Ship-to's.XLSX — Sheet: Sheet1",
+        "snippet": "Customer: 7813, Sales Organization: AU03, Distribution Channel: 00, Division: 00, Partner Function (SP = Sold-To, SH= Ship-To): SH, Partner counter: 0, Customer (Sold-To ID, Ship-To ID): 7813, Partner Function (SP = Sold-To, SH= Ship-To) Description: Vival Chemicals Pty Ltd, Personnel Number: 0, Contact Person: 0\nCustomer: 8011, Sales Organization: AU01, Distribution Channel: 00, Division: 00, Partner Function (SP = Sold-To, SH= Ship-To): SP, Partner counter: 0, Customer (Sold-To ID, Ship-To ID): 8011, Partner Function (SP = Sold-To, SH= Ship-To) Description: Ixom Operations Pty Ltd, Personnel"
+      },
+      {
+        "doc_name": "Customer data. SAP KNVP extract for Sold-to's and Ship-to's.XLSX",
+        "heading_path": "Customer data. SAP KNVP extract for Sold-to's and Ship-to's.XLSX — Sheet: Sheet1",
+        "snippet": "Customer: 748, Sales Organization: AU03, Distribution Channel: 00, Division: 00, Partner Function (SP = Sold-To, SH= Ship-To): SH, Partner counter: 15, Customer (Sold-To ID, Ship-To ID): 29346, Partner Function (SP = Sold-To, SH= Ship-To) Description: Ixom Operations Pty Ltd, Personnel Number: 0, Contact Person: 0\nCustomer: 748, Sales Organization: AU03, Distribution Channel: 00, Division: 00, Partner Function (SP = Sold-To, SH= Ship-To): SH, Partner counter: 16, Customer (Sold-To ID, Ship-To ID): 28734, Partner Function (SP = Sold-To, SH= Ship-To) Description: P&O Container Freight Station (U"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "There are no exceptions as the idea is to standardize the S&OP process across all the BU’s."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "Only the Part/Site which uses the Stocking Strategy as the Made To Stock (MTS) and Purchase To Stock (PTS) will use the safety and Cycle Stock.\nFor CAP plants, Safety Stock and Cycle Stock is not applicable. Only the Traded Packaged BU is using safety stock. But, in future, leveraging the safety stock depends on the business choice."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "ChlorAlkali Caustic Manu Import – follows a slightly different supply planning process based on the supply planned on the Ship, it has a visibility of each ship arrival dates through the form of purchase order which will be created 3 weeks prior to the arrival. And the individual order lines contain information about how much it has to deliver against each delivery location (unload port).\nPurchase Orders will be created 3 weeks prior to the due date of arrival. However, the primary focus remains on utilising the supply planning and order management functionality described above."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "The ChlorAlkali Plants (CAP) in AU will use the Constraint Optimiser for short-term planning - covered in a separate blueprint document (IXOM Supply.AI Coproduct Optimization Solution Blueprint).\nNew Zealand Manufacturing\nFor New Zealand, the S&OP Forecast exists to drive the dependent requirements to the materials along with the safety stock levels. Though the Production Planners look at the Forecast for the production planning, their planning outcome will take into account the BLT Team distribution plan. For the Fill at Will products, the BLT Team will look at the ullage on the IXOM tank and"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "Continuous Production Plants\nFor the continuous flow manufacturing plants, the capacity constraint will be modelled as a customised solution as seen below which includes the worksheet/UI to get the user inputs such as the Number of Shifts per day, No. of hours per Shift, Production Rate (KVA), etc., in a time-phased fashion so that the system can compute the capacity based on the given inputs. The illustration below is with dummy data and the actual inputs required to compute the capacity will be finalised during the implementation."
+      },
+      {
+        "doc_name": "IXOM - IBP Interface Register.xlsx",
+        "heading_path": "IXOM - IBP Interface Register.xlsx — Sheet: Representative Customers",
+        "snippet": "IXOM - IBP Interface Register.xlsx — Sheet: Representative Customers\nColumns: Customer No | Name\nCustomer No: 0000012816, Name: AW Fraser Ltd\nCustomer No: 0000013014, Name: Tegel Foods Ltd Christchurch\nCustomer No: 0000013226, Name: Tegel Foods Ltd Auckland\nCustomer No: 0000013673, Name: Hanmer Springs Thermal Pool & Spa\nCustomer No: 0000013874, Name: Westroads Ltd\nCustomer No: 0000015570, Name: Fonterra Tirau Main Compound\nCustomer No: 0000016100, Name: Tatua Co-Op Dairy Co Ltd\nCustomer No: 0000016170, Name: Westland Milk Products Ltd\nCustomer No: 0000025030, Name: Hellers Limited\nCustomer No"
+      },
+      {
+        "doc_name": "IXOM - IBP Interface Register.xlsx",
+        "heading_path": "IXOM - IBP Interface Register.xlsx — Sheet: Representative Customers",
+        "snippet": "Customer No: 0000029679, Name: Chesser Chemicals Pty Ltd\nCustomer No: 0000030459, Name: Cadia Holdings\nCustomer No: 0000031077, Name: Burra Foods Pty Ltd\nCustomer No: 0000034900, Name: Origin Energy Limited\nCustomer No: 0000035201, Name: Ixom Operations Pty Ltd  (Morwell)\nCustomer No: 0000036123, Name: Cleanaway Operations Pty Ltd\nCustomer No: 0000039668, Name: Gippsland Water\nCustomer No: 0000040482, Name: Nyrstar Port Pirie Pty Ltd\nCustomer No: 0000040959, Name: Prony Resources New Caledonia SAS\nCustomer No: 0000041988, Name: Great Ocean Ingredients Pty Ltd\nCustomer No: 0000042021, Name: Veo"
+      },
+      {
+        "doc_name": "IXOM - IBP Interface Register.xlsx",
+        "heading_path": "IXOM - IBP Interface Register.xlsx — Sheet: Representative Customers",
+        "snippet": "Customer No: 0000061804, Name: Hydroflux Utilities Pty Ltd\nCustomer No: 0000062320, Name: Farm Pride Foods Ltd\nCustomer No: 0000062433, Name: Infrabuild Wire Pty Limited\nCustomer No: 0000063343, Name: Geelong Leather Pty Ltd\nCustomer No: 0000063364, Name: Riverina Multiclean Pty Ltd\nCustomer No: 0000063772, Name: Saputo Leongatha\nCustomer No: 0000063793, Name: Saputo Cobram\nCustomer No: 0000063828, Name: Lactalis Bendigo\nCustomer No: 0000063830, Name: Lactalis Clarence Gardens\nCustomer No: 0000064616, Name: Just Biodiesel Pty Ltd\nCustomer No: 0000064632, Name: Booth Transport - Strathmerton\nCu"
+      },
+      {
+        "doc_name": "IXOM - IBP Interface Register.xlsx",
+        "heading_path": "IXOM - IBP Interface Register.xlsx — Sheet: Representative Customers",
+        "snippet": "Customer No: 0000079377, Name: Denrith Pty Ltd c\\- Divall’s BH\nCustomer No: 0000079391, Name: SRH Milk Haulage\nCustomer No: 0000079433, Name: Coopers Brewery Limited\nCustomer No: 0000079558, Name: Buslines Group Pty Limited\nCustomer No: 0000079817, Name: Dib Group Pty Ltd\nCustomer No: 0000080053, Name: Michell Wool Pty Limited\nCustomer No: 0000080066, Name: M. & H.J. Webb Pty Limited"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W-Replenish & Inventory Mgmt",
+        "snippet": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W-Replenish & Inventory Mgmt\nColumns: Replenish & Inventory Mgmt Area Workshop Attendees | Details | Deliverable/s | Solution Blueprint population | IXOM Attendees | Notes | Duration\nDetails: BOM analysis, inventory policy,KPIs, Solution Blueprint population: 7. KPI's & Demand Planning - Process Task Flows (sub sections TBC based on exact future-state processes that will be designed, associated user stories & solution assumptions) (minor input), Notes: Many different business units that operate in different ways. W"
+      },
+      {
+        "doc_name": "Customer data. SAP KNVP extract for Sold-to's and Ship-to's.XLSX",
+        "heading_path": "Customer data. SAP KNVP extract for Sold-to's and Ship-to's.XLSX — Sheet: Sheet1",
+        "snippet": "Customer data. SAP KNVP extract for Sold-to's and Ship-to's.XLSX — Sheet: Sheet1\nColumns: Customer | Sales Organization | Distribution Channel | Division | Partner Function (SP = Sold-To, SH= Ship-To) | Partner counter | Customer (Sold-To ID, Ship-To ID) | Partner Function (SP = Sold-To, SH= Ship-To) Description | Vendor | Personnel Number | Contact Person | Partner description | Default Partner\nCustomer: 133, Sales Organization: AU01, Distribution Channel: 00, Division: 00, Partner Function (SP = Sold-To, SH= Ship-To): SP, Partner counter: 0, Customer (Sold-To ID, Ship-To ID): 133, Partner Fu"
+      },
+      {
+        "doc_name": "Customer data. SAP KNVP extract for Sold-to's and Ship-to's.XLSX",
+        "heading_path": "Customer data. SAP KNVP extract for Sold-to's and Ship-to's.XLSX — Sheet: Sheet1",
+        "snippet": "Customer: 133, Sales Organization: AU01, Distribution Channel: 00, Division: 00, Partner Function (SP = Sold-To, SH= Ship-To): SH, Partner counter: 5, Customer (Sold-To ID, Ship-To ID): 67964, Partner Function (SP = Sold-To, SH= Ship-To) Description: Somersby Plant, Personnel Number: 0, Contact Person: 0\nCustomer: 133, Sales Organization: AU01, Distribution Channel: 00, Division: 00, Partner Function (SP = Sold-To, SH= Ship-To): SH, Partner counter: 16, Customer (Sold-To ID, Ship-To ID): 53358, Partner Function (SP = Sold-To, SH= Ship-To) Description: BASF - Hutt Lagoon, Personnel Number: 0, C"
+      },
+      {
+        "doc_name": "Customer data. SAP KNVP extract for Sold-to's and Ship-to's.XLSX",
+        "heading_path": "Customer data. SAP KNVP extract for Sold-to's and Ship-to's.XLSX — Sheet: Sheet1",
+        "snippet": "Customer: 353, Sales Organization: AU01, Distribution Channel: 00, Division: 00, Partner Function (SP = Sold-To, SH= Ship-To): SH, Partner counter: 0, Customer (Sold-To ID, Ship-To ID): 353, Partner Function (SP = Sold-To, SH= Ship-To) Description: BHP Billiton Olympic Dam Operations, Personnel Number: 0, Contact Person: 0\nCustomer: 353, Sales Organization: AU01, Distribution Channel: 00, Division: 00, Partner Function (SP = Sold-To, SH= Ship-To): SH, Partner counter: 1, Customer (Sold-To ID, Ship-To ID): 9514, Partner Function (SP = Sold-To, SH= Ship-To) Description: WMC (Olympic Dam Opns) Pt"
+      },
+      {
+        "doc_name": "Customer data. SAP KNVP extract for Sold-to's and Ship-to's.XLSX",
+        "heading_path": "Customer data. SAP KNVP extract for Sold-to's and Ship-to's.XLSX — Sheet: Sheet1",
+        "snippet": "Customer: 353, Sales Organization: AU03, Distribution Channel: 00, Division: 00, Partner Function (SP = Sold-To, SH= Ship-To): SH, Partner counter: 2, Customer (Sold-To ID, Ship-To ID): 12212, Partner Function (SP = Sold-To, SH= Ship-To) Description: Own Cartage, Personnel Number: 0, Contact Person: 0\nCustomer: 353, Sales Organization: AU03, Distribution Channel: 00, Division: 00, Partner Function (SP = Sold-To, SH= Ship-To): SH, Partner counter: 3, Customer (Sold-To ID, Ship-To ID): 12577, Partner Function (SP = Sold-To, SH= Ship-To) Description: WMC c/- Own Cartage via LINFOX, Personnel Numb"
+      }
+    ],
+    "gen_source": "doc"
+  }
+}

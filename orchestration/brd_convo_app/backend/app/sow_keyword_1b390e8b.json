@@ -1,0 +1,252 @@
+{
+  "0": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "1": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "2": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "This Statement of Work covers Bristlecone’s implementation services for Google’s Global Template Design for Silicon COT Supply Chain, focused on defining a standardized global template for S/4HANA-enabled supply chain processes while addressing approved localization needs, integration dependencies, and stakeholder governance across onsite and offshore delivery.\n\n- Establish and sign off the global business process design, key design decisions, baseline configuration, and supporting design artifacts for the Silicon COT supply chain template.\n- Execute the design and implementation approach through planning, design workshops, integration and data-mapping activities, sprint-based build cycles, testing, training, and hypercare support.\n- Enable adoption and controlled deployment through governance, organizational change management, risk management, and alignment on dependencies including MES, PLM, and other required integrations.\n\nDeferred scope decisions, assumptions, and draft-specific observations are identified in Section 10 (Key Assumptions) and Section 21 (Key Observations).",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "3": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 3.1 Background\nGoogle is defining a global template for its Silicon COT supply chain to standardize core supply chain processes while accommodating plant- and region-specific requirements. The engagement is centered on establishing an AS-IS baseline across front-end and back-end operations, including foundry and OSAT processes, current SAP enterprise structure, master data, batch and lot traceability, subcontracting settlement, and existing collaboration flows with external partners.\n\nCurrent pain points include variation between global and regional requirements, gaps in master data harmonization, unresolved organizational structure needs for the Silicon business unit, and dependency complexity across MES, PLM, E2Open, and Kinaxis. The business drivers are to create a signed-off global design, define the target operating model for COT processes, clarify system and integration boundaries, and produce an execution-ready blueprint aligned to sprint-based delivery.\n\n### 3.2 Objectives\n- Establish a clear AS-IS baseline for Silicon COT supply chain processes, systems, data, and organizational structures.\n- Define a standardized global template for AOI manufacturing and distribution processes with controlled localization where required.\n- Confirm the TO-BE design for subcontracting, yield recording, traceability, master data, and transactional flows.\n- Map end-to-end data flows and integration requirements across SAP S/4HANA, E2Open, Kinaxis, and other connected systems.\n- Harmonize enterprise structure, supplier and partner representation, and business process ownership across in-scope entities.\n- Validate design assumptions and scope through stakeholder workshops and playback sessions.\n- Develop a sprint-based execution plan with priorities, dependencies, milestones, and governance for delivery.\n\n### 3.3 Indicative To-Be Process Flow\nThe target state is a standardized, globally governed Silicon COT process model in SAP S/4HANA, supported by defined integration boundaries and localized business requirements where needed. Supply collaboration inputs from foundry and OSAT partners are ingested through approved interface flows, reconciled to enterprise structure and master data standards, and processed through controlled procurement, subcontracting, goods movement, yield, traceability, and costing processes. Planning and execution data flows are aligned across SAP S/4HANA, E2Open, Kinaxis, and other in-scope systems to support operational visibility, batch genealogy, and reporting for cost, yield, and traceability.\n\n<IMAGE id=\"689305094e2e\"/>\n\nThe indicative flow is:\n- Demand, forecast, and commit signals flow through planning and collaboration platforms into the execution landscape.\n- Foundry and OSAT transactions are processed through defined procurement and subcontracting processes.\n- Material, batch, and genealogy data are captured across wafer, die bank, assembly, test, and finished goods stages.\n- Cost, yield, and traceability data are consolidated for operational and management reporting.\n- Global process governance controls template adherence, with approved local variations applied only where required.",
+    "draft_sources": [
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx",
+      "Google’s Silicon COT Supply Chain Proposal.pptx"
+    ]
+  },
+  "3.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "3.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "3.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.5": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.6": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.7": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "5": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "6": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "6.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "6.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "8": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "9": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "10": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "11": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "12": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "12.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "12.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.5": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "14": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "14.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "15": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "17": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "18": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "20": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "21": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "23": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "24": {
+    "status": "not-started",
+    "custom_instructions": ""
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "20260623_161753_BD_20260623_135810.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Table of Contents\n1.3  Purpose\n1.3  Purpose\n1.3 Purpose\nThe purpose of this Solution Blueprint is to define the Phase 1 scope, business intent, and implementation direction for Archlin’s investment in integrated Supply Management capabilities for Archlin’s specialty chemicals manufacturing business.\nArchlin currently operates with SAP S/4HANA as the ERP system supporting in-scope planning and transactional data. Archlin’s current planning maturity reflects integrated planning with some automation; however, Archlin continues to experience poor inventory planning, limited supply visibility, raw "
+      },
+      {
+        "doc_name": "20260623_161753_BD_20260623_135810.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "The intended outcome for Archlin is improved supply management effectiveness through better inventory planning discipline, clearer planning visibility, improved planner productivity, and a scalable planning foundation for future supply chain capability enhancements. Archlin’s documented success criteria include Inventory Reduction &gt; 15%, Planning Cycle Reduction &gt; 30%, improved planner productivity, and a single source of planning data."
+      },
+      {
+        "doc_name": "20260623_161753_BD_20260623_135810.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "|  | Blueprint Document for Archlin June 23, 2026 Version 1.0 |\n| --- | --- |"
+      }
+    ],
+    "gen_source": "doc"
+  }
+}

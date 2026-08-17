@@ -1,0 +1,241 @@
+{
+  "1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Define NPI/EOL Profiles",
+        "snippet": "New Product Introduction profiles, and End of Life profiles, are defined and mapped to the Forecast Item. The demand will be calculated automatically based on the defined profile.\nEnd Of Life Product – profile definition\nNPI Product – Profile definition"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Definitions & Acronyms",
+        "snippet": "| Abbreviation | Definition |\n| --- | --- |\n| NPI | New Product Introduction |\n| EOL | End Of Life |\n| ASP | Average Selling Price |\n| SS | Safety Stock |\n| DP | Demand Planning |\n| SP | Supply Planning |\n| IP | Inventory Planning |\n| S&OP | Sales & Operations Planning |\n| E2E | End to End |\n| FI | Forecast Item |\n| CTP | Capable-To-Promise |\n| FLP | Full Level Pegging |\n| WO | Work Order |\n| PO | Purchase Order |\n| PReq | Purchase Requisition |\n| STO | Stock Transfer Order |\n| PLO | Planned Order |\n| SLOBS | Slow-moving and Obsolete inventory |"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "Product life cycle information, for example a stage indicator, can be maintained in Maestro. This indicator can be used in hierarchies and filters, so you can select items with a particular life cycle phase. Based on this indicator you can set planning policies (automatically) which trigger particular planning actions.\nWith Maestro simulation capabilities you can easily create a scenario and see the impact of particular phase in/out decisions. | S&OP Forecast Item Management, NPI record creation\n51 | Demand Planning | Ability to generate new product introduction and product run out forecast re"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Image: image9.png",
+        "snippet": "[Embedded Image: image9.png]\nStructured Description of image9.png:\nTitle/Diagram Type:\n- The image is a process flow diagram illustrating the demand planning and forecasting process in a supply chain/ERP context.\nProcess Steps (in order, with descriptions):\n1. **NPI Record Creation**\n- Description: To create the NPI (New Product Introduction) Master data\n2. **Forecast Item Management**\n- Description: Define Forecast Item and its parameters\n3. **Data Cleansing**\n- Description: To cleanse historical data\n4. **Statistical Forecasting**\n- Description: Generates Statistical Forecast\n5. **External F"
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Image: image31.png",
+        "snippet": "[Embedded Image: image31.png]\nStructured Description:\nTitle/Tab:\n- \"CSB Planning\" (appears as a tab or section header)\nSection List (numbered outline, likely a table of contents or navigation pane):\n1. Introduction\n2. STATEMENT OF REQUIREMENTS\n3. DESIGN QUESTIONS AND ASSUMPTIONS\n4. DESIGN DETAILS\n5. RECOMMENDED TEST PROCEDURES\n6. PERFORMANCE CONSIDERATIONS\n7. USER ROLES AND GROUPS\n8. SCHEDULED TASKS\n9. PRODUCTION SUPPORT CONSIDERATIONS\nNotes Section (text box below the section list):\n- (Notes as of 2012/10/17)\n- Currently, until RapidResponse version 11.2, Scripts must access worksheet data us"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 50 | Ability to use historical data from one or more existing products to create a forecast for the new product | Covered by history labelling and statistical forecasting process |\n| 51 | Ability to generate new product introduction and product run out forecast reporting | Can define NPI/EOL profile points and generate the report as well |\n| 52 | Ability to integrate forecasts from demand tool to downstream planning systems both scheduled and ad hoc, at selected level. | Through closed-loop, Maestro can send out the Forecast data which will be picked up by the Integration tool to send to any"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "The user stories are linked to the Demand Planning – Create a Consensus Demand Plan epic.\n| RFP ID | Functional Requirements | Comments |\n| --- | --- | --- |\n| 1 | Ability to have an automated forecasting tool which sources and consolidates historical and current sales data and predicts future demand for a selectable period (e.g. last year, current year and next financial year) | Statistical Forecasting will cover this requirement, which consolidates historical demand and predicts future demand |\n| 2 | Ability to upload data from external sources to feed into creation of Demand Plans including"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 7 | Ability to share (subsets of) generated forecasts with relevant parties | Able to export the Forecast from Maestro and manually share with others (or) setup Alerts to share the forecasts to the target users |\n| 8 | Ability to extract the forecast at configurable levels, e.g. Product level and submit / resubmit forecasts for approval, including to one or more approvers | Approval mechanism can be established at configurable product levels through Hierarchy |\n| 9 | Ability to automatically notify (email, in-system notifications, dashboard) personnel if they are assigned as approvers | If a"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 15 | Ability to upload bulk changes to the forecast with reason codes and comments | Able to upload bulk changes to Forecast, the reason code and comments will be captured through Assumptions |\n| 16 | Ability to generate an automated electronic audit trail recording username, date and timestamps, and the type of action (create, modify, delete), reason code and comments. | Scenario properties can show the user made changes with all the necessary details |\n| 17 | Ability to create graphical representations of Forecasts and see constraints | Can see the Forecast if it is late and find out the c"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 24 | Ability to allow the users to create forecasts at different levels of the product hierarchy, such as by SKU item, region, category, channel, store and customers | Users can upload the Forecast at Product/Site/Customer level at Monthly buckets |\n| 25 | Ability to manage forecasts using multiple demand hierarchies at the same time, and to forecast each SKU item or grouping of SKUs at different levels of the hierarchies (channel or product hierarchies) | Handled through Forecast Item configuration |\n| 26 | Ability to review & edit multiple forecasts within a single location (e.g. , B2B, B2"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 32 | Ability for the user to manually override the statistical model the system provided | Covered by the Statistical Forecasting process, statistical model can be chosen |\n| 33 | Ability to set on and off of the automated statistical modelling for a defined period time | You can set Start and Stop date for the statistical forecast generation |\n| 34 | Ability for the user to set the future date to start the statistical model | Forecast Start Offset can be provided to set the future date to start the statistical model |\n| 35 | Ability to provide a calendar that outlines key dates - production"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 42 | Ability to provide recommendation on how to adjust the forecast to maximise accuracy and efficiency | Unconstrained Forecast Adjustments can be done easily |\n| 43 | Ability to include external requirements to integrate with weather data, social media, competitor sales data, market trends data in forecast calculations | It can be achieved through advanced forecasting algorithms in Maestro, but not in the scope of the initial release. |\n| 44 | Ability to apply internal and external causal factors through machine learning to enhance or replace statistical forecast calculations | It can be "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 59 | Ability to enter or upload manual forecasting | Manual Forecast can be uploaded through the External Forecast Upload workbook |\n| 60 | Ability to auto-cleanse historical data and receive recommendations of cleansing activity | Data Cleansing Activity, supported by standard workbook \"Data Cleansing\" |\n| 61 | Ability to view graphs and visualisation for all forecasting data and activities | Graphical visualization can be configured |\n| 62 | Ability to support demand sensing/AI capabilities to generate a demand forecast | Maestro has the demand sensing/AI capabilities, but not in the scope"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 69 | Ability of the system to identify key forecast exceptions (low sales, high sales, no sales, change in trend, new line, etc) | Maestro can identify the exceptions based on the defined rules |\n| 70 | Ability to support user notes to maintain/digitise forecasting knowledge | User can add Assumptions to capture Notes based on the selected hierarchy |\n| 71 | Ability to support a demand planner workflow, supporting scheduled activities and prioritised exceptions to manage | Task flows can be provided with necessary details |\n| 72 | Ability to segment a demand planner product portfolio from ot"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| New 02 | We could sell X amount to customers but limited by purchase of supply. Forward-forecast volumes Forward-forecast financial result If these don't reconcile, then we know we can't forecast the production/distribution. | Based on the forecast volumes, the financials will be calculated |\n| New 03 | Sometimes a customer is sold to another customer and we want to map the sold customer to the bought customer and bring across the data. It's not possible in SAP it seems but potentially in integration to be transformed. Or we can do it Maestro (will be determined in technical chat). Statistic"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| RFP ID | Functional Requirements | Comments |\n| --- | --- | --- |\n| 242 | Ability to provide an S&OP workflow in system (ability to customize a standard S&OP workflow) | Task Flows and Process are available in Maestro |\n| 243 | Ability to define user roles in a S&OP workflow | Within each S&OP process instances, can assign the tasks to the users |\n| 244 | Ability to define geographic domains in a S&OP workflow | Maestro S&OP responsibilities, reporting and filtering can be defined by geographic domains |\n| 245 | Ability to generate volume, working capital and financial projections including "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 249 | Ability to project future sales and operational performance to support the S&OP workflow | Performance can be reported based on the defined KPI or measures |\n| 250 | Ability to feed in the following data points at a SKU-Location level (product, customer sold-to, supply location): standard cost, average selling price, customer contract price | Can feed all these data through integration |\n| 251 | Ability to feed in point-to-point transfer costs | Can feed the transfer cost data through integration or while creating the inventory transfer within Maestro |\n| 252 | Ability to scenario plan"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 83 | Ability to automatically notify (email, in-system notifications, dashboard) personnel if they are assigned as approvers | Notification can be sent out through alerts to the approvers based on a defined frequency. |\n| 84 | Ability to automatically track the approval of a Supply Plan including approver names, approver titles, status of approvals, reason code and comments | Tracking approvals on the Supply Plan can be configured |\n| 85 | Ability for approvers to view and approve or reject a Supply Plan with reason codes and comments | Approvers can have the option to either approve or reje"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 91 | Ability to integrate with the product cost and Customer pricing models to support financial forecasts with the ability to do scenario modelling and predictive pricing based on a variety of methods (e.g. statistical & historical). This relates to all types of Planning. | All the Cost & pricing information can be brought into Maestro, and the reports can be built based on that. |\n| 92 | Ability to create graphical representations of Supply Plans and see constraints | Graphical representations of Supply Plan can be reported, with drill link to attached constraint details |\n| 93 | Ability t"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 99 | Ability to apply multiple stock level requirements (safety and cycle stock) | Several safety stock methods are available, Safety Stock can also be calculated based on the current calculation. Cycle Stock can be achieved through Days of Supply calculations |\n| 100 | Ability to load or calculate demand that is not part of the forecast but would drive supply requirements throughout the network e.g. WIP/RAWs for FGs | Demand which doesn't consume forecast can be loaded which would drive the supply requirements throughout the network |\n| 101 | Ability to apply replenishment on and off dates "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 105 | Ability to provide reporting which pulls in expiry dates per batch and displays all SKU's per location within X days shelf life remaining (X needs to be a value specified per receiving location and have the ability to exclude these volumes from future replenishment calculations e.g. If a SKU has a volumes of 100x units expiring next week - at point X these 100 units should be excluded from SOH calculations) | Expiry is not considered in the initial implementation. If considered in the later release, mentioned reporting is feasible |\n| 106 | Ability to provide visibility into the aged i"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 112 | Ability to interactively run/execute planning at daily, weekly or monthly level | Maestro is always ON, whenever you open a report/Dashboard, the results are instant |\n| 113 | Ability to generate system optimized inventory requirements to satisfy user defined service levels at a multiple level | With the Maestro Inventory Planning and Optimization, users can identify strategic safety stock inventory levels based on customer service levels, supply variability, forecast error and bias; Inventory Optimization is not considered in the initial implementation |\n| 114 | Ability to prioritize "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 119 | Ability to manage multiple sources of supply for a SKU using prioritization | Priority can be defined between multiple PartSources of a Part/Site |\n| 120 | Ability to manage multiple lead times for the same source of supply for SKU using prioritization | Multiple Lead Time can be managed for the same source of supply in different time periods or for different Transportation Mode with priorities defined |\n| 121 | Ability to select an alternate source or alternate lead time on same route by exception | Exceptional change of Sources is feasible manually |\n| 122 | Ability to manage source "
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "This document is for the use of Kinaxis and COMPANYNAME.  The holder of this document shall keep all information herein confidential and shall protect it from disclosure and dissemination to all third parties.\nFill in company name above and change font to match the rest. “Emphasis” style.\nChange the file name by replacing “Template” with the customer name.  e.g. Companyname Solution Maintenance Manual.docx.\nUpdate the table of contents and all other cross references by typing ctrl-a then F9."
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Company Background",
+        "snippet": "[Include some generic information about the customer here]"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Company Background",
+        "snippet": "[Include some generic information about the customer here]"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Demand Review",
+        "snippet": "The Demand Review is the first step of the S&OP process. The Unconstrained Demand Plan aligns with the company goals and initiatives."
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Server Environment",
+        "snippet": "Information as of: 13-Feb-2013\n| Server | Purpose | Company ID | Source Data Environment | Licensed Post Go Live? |\n| --- | --- | --- | --- | --- |\n| Production DIS | The real time environment where data is imported and transformed before being sent to the RapidResponse end user environment. |  | SAP Production | Yes |\n| Production PS | The real time environment where end users perform their business functions in RapidResponse. |  | SAP Production | Yes |\n| QA DIS |  |  | SAP Production | Yes |\n| QA PS |  |  | SAP Production | Yes |\n| Dev DIS |  |  | SAP QA | No |\n| Dev PS |  |  | SAP QA | No "
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "[Embedded Image: image2.png]\nThe image is a screenshot of the Table of Contents from a document titled \"RapidStart Technical Blueprint Template Rev 1.4.docx\". Below is a structured plain-text description focusing on supply chain/ERP-relevant content:\n---\n**Table of Contents**\n**1. INTRODUCTION**\n- 1.1 Company Background (p.6)\n- 1.2 Purpose (p.6)\n- 1.3 Scope (p.8)\n- 1.4 Definitions & Acronyms (p.8)\n- 1.5 Key Business Decisions (p.8)\n- 1.6 Planning Hierarchy Attributes (p.10)\n**2. BENEFIT REALIZATION**\n- 2.1 Quantitative Benefits (p.11)\n- 2.2 Qualitative Benefits (p.11)\n- 2.3 [Customer] Identifi"
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Server Environment",
+        "snippet": "This information will get out of date but provides a starting point.  Support will know about On Demand environments but they should be listed so newcomers know what is On Demand."
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "3": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Supply Chain Scope",
+        "snippet": "[provide a description the products, sites and materials in scope]."
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Supply Chain Scope",
+        "snippet": "The high-level scope of this project is to provide demand, supply and inventory planning capabilities, which support the procurement, manufacture and distribution of [Customer] products.\nIf there is any requirement that is outside of the scope of this RapidStart deployment, they will be discussed as part of change requests."
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Supply Chain Scope",
+        "snippet": "The high-level scope of this project is to provide demand, supply and inventory planning capabilities, which support the procurement, manufacture and distribution of [Customer] products.\nIf there is any requirement that is outside of the scope of this RapidStart deployment, they will be discussed as part of change requests."
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Scope",
+        "snippet": "The high-level scope of this project is to provide demand, supply and inventory planning capabilities, to enable the procurement, manufacture and distribution of [insert]"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Supply Chain Scope",
+        "snippet": "Below is the scope considered in this Blueprint, mainly there are two BUs in Australia and New Zealand, one is Trading (Traded Bulk, Bulk Liquids, Packaged Goods) and the other one is ChlorAlkali."
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Scope",
+        "snippet": "The high-level scope of this phase of the project is to provide demand, supply and inventory planning capabilities, which support the procurement, manufacture and distribution of [Customer] products."
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "3.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Supply Chain Maps",
+        "snippet": "[insert a graphical representation of the supply network]"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Scope",
+        "snippet": "The high-level scope of this phase of the project is to provide demand, supply and inventory planning capabilities, which support the procurement, manufacture and distribution of [Customer] products."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "Technical Scope and Limitations",
+        "snippet": "The high-level scope of this project is to provide a set of technical services that deliver structured master, and transactional data (demand and supply data) to support planning capabilities at IXOM."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Scope",
+        "snippet": "The high-level scope of this project is to provide demand, supply, inventory and S&OP planning capabilities, which supports the procurement, manufacturing/production and distribution of IXOM products."
+      },
+      {
+        "doc_name": "2. Day2_IXOM - IBP RapidStart- High Level Process Session 2.pptx",
+        "heading_path": "Workshop Objective and Scope",
+        "snippet": "Workshop Objective and Scope\nReview and confirm all in-scope sites.\nIn-scope functionality:\nConsensus Demand Planning / Statistical forecast.\nSupply Planning\nInventory Management\nS&OP Foundations\nControl Tower\nOut of scope functionality"
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image13.png",
+        "snippet": "- No KPIs, metrics, process flows, or supply chain maps are present.\n- Useful for understanding master data setup and integration points for customer data in a supply chain system."
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image13.png",
+        "snippet": "[Embedded Image: image13.png]\nStructured Description:\n**Window Title:**\nInsert Definition Settings\n**Main Sections and Fields:**\n1. **Header Fields:**\n- Name: Customer\n- Title: Insert Record - Customer\n- Table: Customer\n2. **Checkbox Options:**\n- Always generate a unique value for the key field (Customer ID) [unchecked]\n- Automatically generate all required reference records [unchecked]\n- Allow users to choose the currency for Money fields [unchecked]\n3. **Fields List (left panel):**\n- Customer ID (selected)\n- Site\n- Name\n- Customer Group\n4. **Field Definition (right panel, for selected field "
+      }
+    ],
+    "gen_source": "doc"
+  }
+}

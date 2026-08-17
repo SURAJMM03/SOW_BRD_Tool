@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bristlecone SOW — Skill Learning</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#F7F7F7;--surface:#FFFFFF;--surface2:#F0F0F0;--surface3:#E8E8E8;
+      --border:#DDDDDD;--border-hover:#AAAAAA;
+      --accent:#0070C0;--accent-glow:rgba(0,112,192,0.15);--accent-soft:rgba(0,112,192,0.08);
+      --green:#0F6E56;--green-soft:rgba(15,110,86,0.1);
+      --amber:#854F0B;--amber-soft:rgba(133,79,11,0.1);
+      --red:#A32D2D;--red-soft:rgba(163,45,45,0.1);
+      --text:#1A1A1A;--text-sec:#666666;--text-dim:#999999;
+      --r:6px;--rlg:10px;
+      --font:'Segoe UI',system-ui,sans-serif;--mono:'Consolas','Courier New',monospace;
+    }
+    body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:100vh;display:flex;flex-direction:column}
+
+    .topnav{background:var(--surface);border-bottom:1px solid var(--border);padding:0 28px;height:52px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+    .nav-left{display:flex;align-items:center;gap:12px}
+    .logo-mark{width:32px;height:32px;background:#003366;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff}
+    .nav-title{font-size:14px;font-weight:600}
+    .nav-subtitle{font-size:10px;color:var(--text-dim);letter-spacing:.5px;text-transform:uppercase}
+    .nav-right a{padding:6px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface2);color:var(--text-sec);font-size:11px;font-weight:600;text-decoration:none}
+
+    .main{flex:1;max-width:900px;width:100%;margin:0 auto;padding:28px}
+    .ph{margin-bottom:20px}
+    .ph h1{font-size:20px;font-weight:700;margin-bottom:6px}
+    .ph p{font-size:12.5px;color:var(--text-sec);line-height:1.5}
+
+    .panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--rlg);padding:20px;margin-bottom:16px}
+    .panel h3{font-size:13px;font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:.4px;color:var(--text-sec)}
+
+    .repo-row{display:flex;gap:10px;align-items:center}
+    .repo-select{flex:1;padding:9px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:var(--font);font-size:13px;outline:none}
+    .btn{padding:9px 18px;border-radius:8px;border:none;font-family:var(--font);font-size:12.5px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px}
+    .btn.primary{background:var(--accent);color:#fff}
+    .btn.primary:disabled{background:var(--surface3);color:var(--text-dim);cursor:not-allowed}
+    .btn.green{background:var(--green);color:#fff}
+    .btn.ghost{background:transparent;border:1px solid var(--border);color:var(--text-sec)}
+    .btn svg{width:13px;height:13px}
+    .spin{animation:spin 1s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    .result-section{display:none}
+    .result-section.visible{display:block}
+    .summary-box{white-space:pre-wrap;font-size:12.5px;line-height:1.6;background:var(--surface2);border-radius:8px;padding:14px;margin-bottom:14px}
+    .diff-toggle{font-size:11px;color:var(--accent);cursor:pointer;text-decoration:underline;margin-bottom:8px;display:inline-block}
+    .full-text{display:none;width:100%;min-height:340px;padding:14px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;font-family:var(--mono);font-size:11.5px;line-height:1.5;resize:vertical}
+    .full-text.visible{display:block}
+    .action-row{display:flex;justify-content:flex-end;gap:8px;margin-top:14px}
+
+    .tc{position:fixed;top:60px;right:20px;z-index:200;display:flex;flex-direction:column;gap:6px}
+    .t{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:10px 14px;font-size:12px;display:flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(0,0,0,.15);max-width:340px}
+    .t.error{border-color:var(--red)}.t.success{border-color:var(--green)}
+  </style>
+</head>
+<body>
+<script>
+  (function() { if (!sessionStorage.getItem('auth_user')) window.location.replace('/'); })();
+</script>
+
+<nav class="topnav">
+  <div class="nav-left">
+    <div class="logo-mark">B</div>
+    <div><div class="nav-title">Bristlecone SOW Automation</div><div class="nav-subtitle">Skill Learning</div></div>
+  </div>
+  <div class="nav-right">
+    <a href="/sow-projects">← SOW Projects</a>
+  </div>
+</nav>
+
+<main class="main">
+  <div class="ph">
+    <h1>Teach the SOW skill from real engagements</h1>
+    <p>Upload real, signed SOWs into a repository below (create one on the
+       <a href="/repositories" style="color:var(--accent)">Repositories</a> page, tagged as sample SOWs), then
+       analyze it here. The model proposes specific, minimal edits to <code>SOW_SKILL.md</code> — the file that
+       drives every generated/reviewed SOW — with a version bump and changelog entry. Nothing is written until
+       you review the proposal and click Apply.</p>
+  </div>
+
+  <div class="panel">
+    <h3>1. Choose a sample repository</h3>
+    <div class="repo-row">
+      <select class="repo-select" id="repo-select"><option value="">Loading repositories…</option></select>
+      <button class="btn primary" id="analyze-btn" disabled onclick="runAnalysis()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        <span id="analyze-label">Analyze samples</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="panel result-section" id="result-panel">
+    <h3>2. Review the proposed change</h3>
+    <div class="summary-box" id="summary-box"></div>
+    <span class="diff-toggle" onclick="toggleFullText()">Show / hide full proposed SOW_SKILL.md</span>
+    <textarea class="full-text" id="full-text" spellcheck="false"></textarea>
+    <div class="action-row">
+      <button class="btn ghost" onclick="discardProposal()">Discard</button>
+      <button class="btn green" onclick="applyProposal()">Apply to SOW_SKILL.md</button>
+    </div>
+  </div>
+</main>
+
+<div class="tc" id="tc"></div>
+
+<script>
+function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function toast(m,ty='info'){
+  const c=document.getElementById('tc'),t=document.createElement('div');t.className=`t ${ty}`;
+  t.innerHTML=`<span>${ty==='error'?'⚠':ty==='success'?'✓':'ℹ'}</span><span>${esc(m)}</span>`;
+  c.appendChild(t);setTimeout(()=>t.remove(),4500);
+}
+
+let proposedText = '';
+
+async function loadRepos(){
+  const sel = document.getElementById('repo-select');
+  try {
+    const res = await fetch('/api/repositories');
+    const repos = res.ok ? await res.json() : [];
+    if (!repos.length) {
+      sel.innerHTML = '<option value="">No repositories yet — create one in Repositories</option>';
+      return;
+    }
+    sel.innerHTML = repos.map(r => `<option value="${r.id}">${esc(r.name)} (${r.kind === 'sow_samples' ? 'sample SOWs' : 'general'} — ${r.chunk_count} chunks)</option>`).join('');
+    document.getElementById('analyze-btn').disabled = false;
+  } catch(e) {
+    sel.innerHTML = '<option value="">Could not load repositories</option>';
+  }
+}
+
+async function runAnalysis(){
+  const repoId = document.getElementById('repo-select').value;
+  if (!repoId) { toast('Choose a repository first.', 'error'); return; }
+  const btn = document.getElementById('analyze-btn');
+  const label = document.getElementById('analyze-label');
+  btn.disabled = true;
+  label.textContent = 'Analyzing…';
+  document.getElementById('result-panel').classList.remove('visible');
+
+  try {
+    const res = await fetch('/api/sow/skill/analyze', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ repo_id: repoId }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || 'Analysis failed');
+    document.getElementById('summary-box').textContent = data.summary;
+    proposedText = data.proposed_text;
+    document.getElementById('full-text').value = proposedText;
+    document.getElementById('result-panel').classList.add('visible');
+  } catch(e) {
+    toast(e.message || 'Analysis failed', 'error');
+  } finally {
+    btn.disabled = false;
+    label.textContent = 'Analyze samples';
+  }
+}
+
+function toggleFullText(){
+  document.getElementById('full-text').classList.toggle('visible');
+}
+function discardProposal(){
+  document.getElementById('result-panel').classList.remove('visible');
+  proposedText = '';
+}
+async function applyProposal(){
+  const newText = document.getElementById('full-text').value || proposedText;
+  if (!newText.trim()) { toast('Nothing to apply.', 'error'); return; }
+  try {
+    const res = await fetch('/api/sow/skill/apply', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ new_text: newText }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || 'Apply failed');
+    toast('SOW_SKILL.md updated.', 'success');
+    document.getElementById('result-panel').classList.remove('visible');
+  } catch(e) {
+    toast(e.message || 'Apply failed', 'error');
+  }
+}
+
+loadRepos();
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "1": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Cover Page Drafting guidance for this section: Agreement Details — one sentence naming the client and Bristlecone Incorporated under the governing MSA/ISA/Consulting Agreement. Then a separate Field/Details table: Contract/SOW ID, SOW Effective Date, SOW End Date, Governing Agreement, Amendment/Supersedes, Agreement Duration, Delivery Location. Hard rules for this draft: - Never",
+      "approved_at": "2026-07-24T08:15:55.419916"
+    },
+    "2": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Agreement Details Drafting guidance for this section: Executive Summary — one paragraph naming the engagement, three primary-objective bullets, and a closing sentence pointing to the Key Assumptions and Key Observations sections for deferred decisions. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Ne",
+      "approved_at": "2026-07-24T08:15:55.422927"
+    },
+    "3": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Executive Summary Drafting guidance for this section: Project Overview — Background (client's current state, pain points, business drivers); Objectives (bullets); Indicative To-Be Process Flow (high-level target-state description — include a process-flow diagram if one is available from the source material rather than describing it in prose alone). Hard rules for this draft: - Ne",
+      "approved_at": "2026-07-24T08:15:55.425403"
+    }
+  }
+}

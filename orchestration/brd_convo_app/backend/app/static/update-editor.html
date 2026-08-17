@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Update Existing Document — Template Editor</title>
+<style>
+  :root{--navy:#003366;--blue:#0070C0;--blue-lt:#E6F1FB;--green:#0F6E56;--green-lt:#E1F5EE;--amber:#854F0B;--amber-lt:#FAEEDA;--red:#A32D2D;--gray-50:#F7F7F7;--gray-100:#EEEEEE;--gray-300:#CCCCCC;--gray-400:#AAAAAA;--gray-500:#888888;--gray-700:#444444;--text:#1A1A1A;--border:#DDDDDD;--white:#FFFFFF;--radius:6px;--font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;--mono:"SF Mono",Menlo,Consolas,monospace;}
+  *{box-sizing:border-box;} html,body{margin:0;height:100%;}
+  body{font-family:var(--font);color:var(--text);background:var(--gray-50);display:flex;flex-direction:column;height:100vh;overflow:hidden;}
+  #topbar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 16px;height:56px;flex-shrink:0;}
+  .topbar-left{display:flex;align-items:center;gap:10px;}
+  .topbar-logo{width:34px;height:34px;border-radius:8px;background:#fff;color:var(--navy);font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;}
+  .topbar-title{font-size:15px;font-weight:700;} .topbar-subtitle{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9ec7e8;}
+  .nav-steps{display:flex;align-items:center;margin-left:16px;}
+  .nav-step{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.65);padding:6px 10px;border-radius:6px;white-space:nowrap;cursor:pointer;transition:background .15s;}
+  .nav-step:hover{background:rgba(255,255,255,.10);}
+  .nav-step .sn{width:18px;height:18px;border-radius:50%;border:1px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;font-size:11px;}
+  .nav-step.done .sn{background:#3dd68c;border-color:#3dd68c;color:#003366;} .nav-step.done{color:#cdeede;}
+  .nav-step.active{color:#fff;background:rgba(255,255,255,.08);} .nav-step.active .sn{background:#0070C0;border-color:#0070C0;color:#fff;}
+  .nav-step.disabled{opacity:.45;cursor:not-allowed;} .nav-step.disabled:hover{background:none;}
+  .nav-sc{width:24px;height:1px;background:rgba(255,255,255,.25);margin:0 2px;}
+  .actions{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end;}
+  .btn{font-family:var(--font);font-size:12px;padding:6px 11px;border-radius:var(--radius);border:1px solid transparent;cursor:pointer;display:inline-flex;align-items:center;gap:5px;background:var(--gray-100);color:var(--text);font-weight:500;}
+  .btn-white{background:rgba(255,255,255,.95);color:var(--navy);border:1px solid rgba(255,255,255,.2);} .btn-white:hover{background:#fff;}
+  .btn-ghost{background:#fff;border:1px solid var(--border);color:var(--gray-700);} .btn-ghost:hover{background:var(--gray-50);}
+  .btn-primary{background:var(--blue);color:#fff;} .btn-primary:hover{filter:brightness(1.05);}
+  .btn[disabled]{opacity:.5;cursor:not-allowed;}
+  #layout{flex:1;display:flex;overflow:hidden;}
+  #sidebar{width:300px;background:#fff;border-right:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0;}
+  #sidebar-header{padding:14px 16px 8px;border-bottom:1px solid var(--gray-100);}
+  #sidebar-header .label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--gray-500);margin-bottom:6px;}
+  #progress-text{font-size:12px;color:var(--gray-500);margin-bottom:6px;}
+  #progress-bar-wrap{height:4px;background:var(--gray-100);border-radius:2px;} #progress-bar{height:100%;background:var(--green);border-radius:2px;width:0%;transition:width .4s;}
+  #sel-summary{font-size:11px;color:var(--blue);margin-top:6px;font-weight:600;}
+  #sidebar-search-wrap{padding:8px 12px;}
+  #sidebar-search{width:100%;padding:7px 10px;border:1px solid var(--border);border-radius:var(--radius);font-size:12px;font-family:var(--font);outline:none;} #sidebar-search:focus{border-color:var(--blue);}
+  #section-list{flex:1;overflow-y:auto;padding:6px 0;}
+  .section-item{display:flex;align-items:center;justify-content:space-between;padding:5px 14px;cursor:pointer;border-left:2px solid transparent;font-size:13px;color:var(--gray-700);line-height:1.4;gap:6px;}
+  .section-item:hover{background:var(--gray-50);}
+  .section-item.sub .si-left{padding-left:16px;} .section-item.sub3 .si-left{padding-left:30px;}
+  .section-item.active{background:#fff;border-left-color:var(--green);color:var(--text);font-weight:500;}
+  .section-item .si-left{display:flex;align-items:center;gap:7px;min-width:0;}
+  .sec-checkbox{cursor:pointer;flex-shrink:0;width:14px;height:14px;}
+  .sec-spacer{width:14px;flex-shrink:0;}
+  .section-item .si-id{color:var(--gray-500);font-variant-numeric:tabular-nums;flex-shrink:0;}
+  .section-item .si-title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .section-item .dot{width:7px;height:7px;border-radius:50%;background:var(--gray-300);flex-shrink:0;}
+  .section-item .dot.imported{background:var(--gray-400);} .section-item .dot.pending{background:#BA7517;} .section-item .dot.generated{background:var(--green);}
+  .lock-ic{width:12px;height:12px;color:var(--gray-400);flex-shrink:0;}
+  #btn-add-section{margin:8px 12px;padding:8px;border:1px dashed var(--blue);background:var(--blue-lt);color:var(--blue);border-radius:var(--radius);font-size:12.5px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;font-family:var(--font);}
+  #btn-add-section:hover{background:#d8eafb;}
+  #archive-drawer{border-top:1px solid var(--gray-100);padding:8px 16px 14px;}
+  #archive-toggle{background:none;border:none;cursor:pointer;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--gray-500);display:flex;gap:6px;width:100%;justify-content:space-between;padding:4px 0;border-radius:6px;}
+  #archive-toggle:hover{color:var(--gray-700);background:var(--gray-50);}
+  #main{flex:1;display:flex;flex-direction:column;overflow:hidden;}
+  #section-topbar{background:#fff;border-bottom:1px solid var(--border);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+  #section-topbar .section-label{font-size:14px;display:flex;align-items:center;gap:10px;}
+  .sid{color:var(--gray-500);} .stitle{font-weight:600;}
+  .status-badge{font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;}
+  .status-badge.imported{background:var(--gray-100);color:var(--gray-700);} .status-badge.pending{background:var(--amber-lt);color:var(--amber);} .status-badge.generated{background:var(--green-lt);color:var(--green);}
+  #content{flex:1;overflow-y:auto;padding:18px 22px 60px;}
+  .card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px 18px;margin-bottom:16px;}
+  .card-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--gray-700);margin-bottom:12px;}
+  #client-context-card{border-color:var(--blue);} #client-context-card .card-title{color:var(--blue);}
+  .ctx-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;}
+  .ctx-field label{display:block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--gray-500);margin-bottom:4px;}
+  .ctx-field input,.ctx-field select{width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;font-family:var(--font);outline:none;background:#fff;}
+  .ctx-field input:focus,.ctx-field select:focus{border-color:var(--blue);}
+  #ctx-hint{font-size:11px;color:var(--gray-500);margin-top:10px;}
+  .kw-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .kw-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--gray-500);margin-bottom:6px;}
+  .tag-input-wrap{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:8px;border:1px solid var(--border);border-radius:var(--radius);min-height:42px;}
+  .tag{background:var(--blue-lt);color:#185FA5;font-size:12px;padding:3px 8px;border-radius:14px;display:inline-flex;align-items:center;gap:5px;}
+  .tag .x{cursor:pointer;font-weight:700;opacity:.6;} .tag .x:hover{opacity:1;}
+  .tag-input{border:none;outline:none;flex:1;min-width:130px;font-size:13px;font-family:var(--font);padding:4px;}
+  .kw-hint{font-size:10.5px;color:var(--gray-400);margin-top:5px;}
+  .kw-footer{display:flex;gap:8px;align-items:center;margin-top:14px;flex-wrap:wrap;}
+  textarea.structure{width:100%;min-height:90px;padding:10px;border:1px solid var(--border);border-radius:var(--radius);font-size:12.5px;font-family:var(--mono);outline:none;resize:vertical;}
+  .locked-note{background:var(--gray-50);border:1px solid var(--border);border-radius:10px;padding:18px;display:flex;gap:12px;align-items:flex-start;margin-bottom:16px;}
+  .locked-note .li{color:var(--gray-500);flex-shrink:0;} .locked-note h4{margin:0 0 4px;font-size:14px;} .locked-note p{margin:0;font-size:12.5px;color:var(--gray-700);line-height:1.5;}
+  .imp-preview{margin-top:12px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:12px;font-size:12.5px;color:var(--gray-700);white-space:normal;max-height:300px;overflow:auto;}
+  .imp-preview .md-gap{height:8px;}
+  .ed-tabs{display:flex;border:1px solid var(--border);border-radius:8px;overflow:hidden;flex:0 0 auto;}
+  .ed-tabs button{border:none;background:#fff;color:var(--gray-700);font-size:12px;padding:5px 12px;cursor:pointer;}
+  .ed-tabs button+button{border-left:1px solid var(--border);}
+  .ed-tabs button.active{background:var(--blue);color:#fff;font-weight:600;}
+  .imp-preview .md-img{max-width:100%;height:auto;display:block;margin:10px 0;border:1px solid var(--border);border-radius:6px;}
+  .imp-preview .md-h{font-weight:600;margin:10px 0 3px;font-size:14px;}
+  .imp-preview .md-h3{color:var(--accent);font-size:13px;}
+  .imp-preview .md-table{border-collapse:collapse;width:100%;margin:8px 0;font-size:12px;}
+  .imp-preview .md-table th,.imp-preview .md-table td{border:1px solid var(--border);padding:6px 8px;text-align:left;vertical-align:top;}
+  .imp-preview .md-table th{background:var(--gray-100);font-weight:600;}
+  /* Structured edit mode (tables editable in place) */
+  .edit-blocks .eb-text{width:100%;min-height:56px;padding:10px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;font-family:var(--font);line-height:1.5;outline:none;resize:vertical;margin:6px 0;box-sizing:border-box;}
+  .edit-blocks .eb-text:focus{border-color:var(--blue,#0070C0);}
+  .eb-table-wrap{margin:10px 0;}
+  .eb-table{border-collapse:collapse;width:100%;font-size:12px;background:#fff;}
+  .eb-table th,.eb-table td{border:1px solid var(--border);padding:6px 8px;text-align:left;vertical-align:top;}
+  .eb-table th{background:var(--gray-100);font-weight:600;position:relative;}
+  .eb-table th .eb-cell{padding-right:16px;min-height:14px;outline:none;}
+  .eb-table td.eb-cell{min-width:60px;outline:none;}
+  .eb-table td.eb-cell:focus,.eb-table th .eb-cell:focus{background:#F3F9FF;box-shadow:inset 0 0 0 2px #0070C0;}
+  .eb-rowctl{width:26px;border:none !important;background:transparent !important;padding:2px !important;text-align:center;vertical-align:middle !important;}
+  .eb-rowx,.eb-colx{border:none;background:transparent;color:#c0392b;cursor:pointer;font-size:11px;line-height:1;padding:2px 4px;border-radius:4px;}
+  .eb-rowx:hover,.eb-colx:hover{background:#FDECEA;}
+  .eb-table th .eb-colx{position:absolute;top:3px;right:2px;}
+  .eb-table-bar{display:flex;gap:8px;margin-top:6px;}
+  .eb-table-bar .eb-btn{font-size:11px;padding:4px 10px;text-transform:none;letter-spacing:0;}
+  /* Rename button in sidebar rows */
+  .section-item .ren-btn{background:none;border:none;cursor:pointer;color:var(--gray-400);width:18px;height:18px;padding:0;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-left:auto;margin-right:2px;}
+  .section-item .ren-btn:hover{color:#0070C0;background:var(--gray-100);}
+  .section-item .ren-btn + .lock-ic{margin-left:0;}
+  /* Template-source toggle (import phase) */
+  .tsrc-row{display:flex;align-items:flex-start;gap:12px;background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:12px;}
+  .tsrc-label{font-size:12.5px;color:var(--gray-700);line-height:1.5;}
+  .tsrc-switch{position:relative;display:inline-block;width:40px;height:22px;flex-shrink:0;margin-top:2px;}
+  .tsrc-switch input{opacity:0;width:0;height:0;}
+  .tsrc-slider{position:absolute;cursor:pointer;inset:0;background:#cfd6dd;border-radius:22px;transition:.2s;}
+  .tsrc-slider:before{content:"";position:absolute;height:16px;width:16px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.25);}
+  .tsrc-switch input:checked + .tsrc-slider{background:#0070C0;}
+  .tsrc-switch input:checked + .tsrc-slider:before{transform:translateX(18px);}
+  .imp-preview .md-table.editable td[contenteditable],.imp-preview .md-table.editable th[contenteditable]{outline:none;cursor:text;}
+  .imp-preview .md-table.editable td[contenteditable]:focus,.imp-preview .md-table.editable th[contenteditable]:focus{box-shadow:inset 0 0 0 2px var(--blue);background:#eef4ff;}
+  .imp-preview .md-table .ctl{border:none;width:30px;text-align:center;background:transparent;}
+  .imp-preview .rowdel{border:none;background:transparent;color:var(--red,#c0392b);cursor:pointer;font-size:15px;line-height:1;}
+  .imp-preview .rowadd{border:1px dashed var(--border);background:#fff;color:var(--blue);cursor:pointer;font-size:11px;font-weight:600;padding:4px 10px;border-radius:6px;margin:2px 0 12px;}
+  .imp-preview .md-line[contenteditable]{outline:none;padding:1px 0;}
+  .imp-preview .md-line[contenteditable]:focus{background:#f3f6ff;border-radius:4px;}
+  /* Import phase */
+  .phase-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+  .phase-head h2{margin:0;font-size:20px;} .phase-head p{margin:2px 0 0;font-size:12.5px;color:var(--gray-500);}
+  .import-panel{background:#fff;border:2px dashed var(--blue);border-radius:12px;padding:30px;text-align:center;margin-bottom:18px;}
+  .import-panel.compact{padding:14px 18px;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:14px;border-style:solid;border-color:var(--green);background:var(--green-lt);}
+  .import-panel h3{margin:0 0 6px;font-size:17px;} .import-panel p{margin:0 0 16px;font-size:13px;color:var(--gray-700);}
+  .import-dropicon{color:var(--blue);margin-bottom:8px;}
+  .banner-msg{font-size:13px;color:var(--green);font-weight:600;display:flex;align-items:center;gap:8px;}
+  .muted{color:var(--gray-500);font-size:12px;}
+  .review-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:1100px){.review-grid{grid-template-columns:1fr;}}
+  .rev-col-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+  .rev-col-head .ttl{font-size:13px;font-weight:700;display:flex;align-items:center;gap:7px;}
+  .rev-pill{font-size:11px;font-weight:600;padding:1px 8px;border-radius:20px;}
+  .rev-pill.lock{background:var(--gray-100);color:var(--gray-700);} .rev-pill.miss{background:var(--amber-lt);color:var(--amber);}
+  .rev-row{display:flex;align-items:center;gap:9px;padding:7px 4px;border-bottom:1px solid var(--gray-100);font-size:13px;}
+  .rev-row:last-child{border-bottom:none;}
+  .rev-row .rid{color:var(--gray-500);font-variant-numeric:tabular-nums;min-width:34px;}
+  .rev-row .rtitle{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .link-btn{background:none;border:none;color:var(--blue);font-size:11.5px;font-weight:600;cursor:pointer;padding:0;}
+  .phase-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:6px;}
+  #modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;align-items:center;justify-content:center;z-index:50;}
+  #modal-backdrop.open{display:flex;}
+  .modal{background:#fff;border-radius:12px;padding:22px;width:420px;max-width:92vw;}
+  .modal h3{margin:0 0 14px;font-size:16px;}
+  .modal label{display:block;font-size:11px;font-weight:600;text-transform:uppercase;color:var(--gray-500);margin:10px 0 4px;}
+  .modal input,.modal select{width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;font-family:var(--font);outline:none;}
+  .modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px;}
+  .spinner{width:38px;height:38px;border:3px solid #e4e9f0;border-top-color:#1B3A6B;border-radius:50%;margin:4px auto 0;animation:uespin .8s linear infinite;}
+  @keyframes uespin{to{transform:rotate(360deg);}}
+  .icon{width:14px;height:14px;flex-shrink:0;vertical-align:middle;}
+  .center-msg{padding:60px 20px;text-align:center;color:var(--gray-500);}
+  #bp-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.25);display:none;z-index:60;}
+  #bp-backdrop.open{display:block;}
+  .bpanel{position:fixed;top:0;right:0;height:100vh;width:470px;max-width:94vw;background:#fff;border-left:1px solid var(--border);box-shadow:-4px 0 24px rgba(0,0,0,.12);transform:translateX(100%);transition:transform .25s;z-index:61;display:flex;flex-direction:column;}
+  .bpanel.open{transform:translateX(0);}
+  .bp-head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border);}
+  .bp-head h3{margin:0;font-size:14px;}
+  .bp-close{background:none;border:none;font-size:22px;cursor:pointer;color:var(--gray-500);line-height:1;}
+  .bp-toolbar{display:flex;gap:8px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--gray-100);}
+  .bp-toolbar input{flex:1;padding:7px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;outline:none;}
+  .bp-list{flex:1;overflow-y:auto;padding:12px 16px;}
+  .chunk-card{border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin-bottom:10px;font-size:12.5px;}
+  .chunk-card.pinned{border-color:var(--blue);background:var(--blue-lt);}
+  .chunk-meta{font-size:11px;color:var(--gray-500);margin-bottom:5px;display:flex;justify-content:space-between;gap:8px;}
+  .chunk-text{color:var(--gray-700);line-height:1.45;max-height:84px;overflow:hidden;}
+  .pin-btn{margin-top:8px;font-size:11px;padding:4px 10px;border-radius:5px;border:1px solid var(--blue);background:#fff;color:var(--blue);cursor:pointer;}
+  .pin-btn.on{background:var(--blue);color:#fff;}
+  .img-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .img-card{border:1px solid var(--border);border-radius:8px;overflow:hidden;font-size:11px;cursor:pointer;}
+  .img-card.pinned{border-color:var(--blue);box-shadow:0 0 0 2px var(--blue-lt);}
+  .img-card img{width:100%;height:108px;object-fit:cover;display:block;background:var(--gray-100);}
+  .img-cap{padding:6px 8px;color:var(--gray-700);}
+  .bp-footer{border-top:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .chunk-card{cursor:pointer;}
+  .chunk-card.sel{border-color:var(--blue);background:var(--blue-lt);}
+  .relbar{height:5px;border-radius:3px;background:var(--gray-100);margin:2px 0 7px;overflow:hidden;}
+  .relbar > i{display:block;height:100%;border-radius:3px;}
+  .rel-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;}
+  .kw-chip{display:inline-block;background:var(--blue-lt);color:#185FA5;font-size:10.5px;padding:1px 7px;border-radius:10px;margin:2px 3px 0 0;}
+  .pin-flag{font-size:10px;font-weight:700;color:var(--green);}
+  .img-card.sel{border-color:var(--blue);box-shadow:0 0 0 2px var(--blue-lt);}
+  .lr-wrap{display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:10px;padding:11px 14px;margin-bottom:16px;}
+  .lr-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-500);margin-right:2px;}
+  .repo-chip{display:inline-flex;align-items:center;gap:6px;background:var(--blue-lt);color:#185FA5;border:1px solid #bfe0f5;border-radius:18px;padding:4px 10px;font-size:12px;font-weight:600;}
+  .repo-chip .repo-meta{font-weight:400;color:#5a7fa0;font-size:11px;}
+  .repo-chip .repo-x{cursor:pointer;font-weight:700;opacity:.55;}
+  .repo-chip .repo-x:hover{opacity:1;}
+  .lr-add{margin-left:auto;font-size:12px;}
+  .pinned-bar{font-size:12px;color:var(--navy);background:#f0f9ff;border:1px solid #bfe0f5;border-radius:6px;padding:6px 10px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:10px;}
+  .pin-warn{font-size:12px;color:var(--amber);background:var(--amber-lt);border:1px solid #f0d9a8;border-radius:6px;padding:7px 10px;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+  .pin-warn svg{flex-shrink:0;}
+</style>
+</head>
+<body>
+<div id="topbar">
+  <div class="topbar-left">
+    <div class="topbar-logo">K</div>
+    <div><div class="topbar-title">Update Existing Document</div><div class="topbar-subtitle">Template Editor · Update Workflow</div></div>
+    <div class="nav-steps">
+      <div class="nav-step done" onclick="goProjects()" title="Back to Projects"><span class="sn">&#10003;</span><span>Projects</span></div>
+      <div class="nav-sc"></div>
+      <div class="nav-step" id="step-import" onclick="setPhase('import')"><span class="sn">2</span><span>Import</span></div>
+      <div class="nav-sc"></div>
+      <div class="nav-step" id="step-editor" onclick="setPhase('editor')"><span class="sn">3</span><span>Template Editor</span></div>
+      <div class="nav-sc"></div>
+      <div class="nav-step disabled" id="step-gen" title="Generate the selected missing sections"><span class="sn">4</span><span>Generating</span></div>
+    </div>
+  </div>
+  <div class="actions">
+    <button class="btn btn-white" id="btn-gen-missing" onclick="generateMissing()"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> <span id="gm-label">Generate Selected</span></button>
+    <button class="btn" style="background:#E1F5EE;border:1px solid #0F6E56;color:#0F6E56;font-weight:600;" onclick="exportMerged()"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Export</button>
+    <input type="file" id="docfile" accept=".docx" style="display:none" onchange="onFileChosen(this)"/>
+  </div>
+</div>
+
+<div id="layout">
+  <div id="sidebar">
+    <div id="sidebar-header">
+      <div class="label">Blueprint Document Template</div>
+      <div id="progress-text">— / — sections</div>
+      <div id="progress-bar-wrap"><div id="progress-bar"></div></div>
+      <div id="sel-summary"></div>
+    </div>
+    <div id="sidebar-search-wrap"><input id="sidebar-search" type="text" placeholder="Jump to section... (e.g. 3.2, demand)" oninput="filterSections(this.value)"/></div>
+    <div id="section-list"></div>
+    <button id="btn-add-section" onclick="openAddModal()"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Add section / subsection</button>
+    <div id="archive-drawer"><button id="archive-toggle" title="Show / hide archived sections"><span style="display:flex;gap:6px;align-items:center;"><span id="arch-chev" style="display:inline-block;transition:transform .15s;">▸</span>Archived sections</span><span id="arch-count">(0)</span></button><div id="archive-list" style="display:none;margin-top:6px;max-height:200px;overflow:auto;"></div></div>
+  </div>
+  <div id="main">
+    <div id="section-topbar">
+      <div class="section-label"><span class="sid" id="active-sid"></span><span class="stitle" id="active-stitle">Update workflow</span><span class="status-badge" id="active-status-badge" style="display:none"></span></div>
+      <div style="display:flex;align-items:center;gap:12px;"><span style="font-size:11px;color:var(--gray-500);" id="active-hint"></span><button class="btn btn-ghost" id="btn-del-section" style="display:none;border-color:#c0392b;color:#c0392b;font-size:11px;padding:4px 9px;" onclick="deleteSection(activeId)">Delete section</button></div>
+    </div>
+    <div id="content"></div>
+  </div>
+</div>
+
+<div id="modal-backdrop" onclick="if(event.target===this)closeAddModal()">
+  <div class="modal">
+    <h3>Add a section for this project</h3>
+    <label>Type</label>
+    <select id="add-type"><option value="section">Top-level section</option><option value="subsection">Subsection (nested under a section)</option></select>
+    <div id="parent-wrap" style="display:none;"><label>Parent section</label><select id="add-parent"></select></div>
+    <label>Section number</label><input id="add-id" placeholder="e.g. 7 or 6.5"/>
+    <label>Title</label><input id="add-title" placeholder="e.g. Risks"/>
+    <div class="modal-actions"><button class="btn btn-ghost" onclick="closeAddModal()">Cancel</button><button class="btn btn-primary" onclick="confirmAdd()">Add section</button></div>
+  </div>
+</div>
+
+<div id="export-modal" style="position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:70;">
+  <div class="modal" style="width:380px;max-width:92vw;text-align:center;">
+    <div id="export-spin" class="spinner"></div>
+    <h3 id="export-title" style="margin:14px 0 6px;">Preparing your document…</h3>
+    <p id="export-msg" class="muted" style="margin:0;font-size:12.5px;line-height:1.5;">This will download automatically when it’s ready.</p>
+    <div id="export-actions" style="display:none;margin-top:16px;justify-content:center;"><button class="btn btn-primary" onclick="hideExportProgress()">Close</button></div>
+  </div>
+</div>
+
+<div id="repo-modal" onclick="if(event.target===this)closeRepos()" style="position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;align-items:center;justify-content:center;z-index:55;">
+  <div class="modal" style="width:580px;max-width:94vw;">
+    <h3>Repositories — content sources for this project</h3>
+    <p class="muted" style="margin:-6px 0 14px;">Attach repositories to pull their indexed documents and images into Browse Chunks, keyword auto-generate, and section generation.</p>
+    <div id="repo-list" style="max-height:54vh;overflow:auto;"></div>
+    <div class="modal-actions"><button class="btn btn-ghost" onclick="closeRepos()">Close</button></div>
+  </div>
+</div>
+<div id="bp-backdrop" onclick="closeBrowse()"></div>
+<div id="browse-panel" class="bpanel">
+  <div class="bp-head"><h3 id="bp-title">Browse</h3><button class="bp-close" onclick="closeBrowse()">&times;</button></div>
+  <div class="bp-toolbar"><input id="bp-search" type="text" placeholder="Search..." oninput="bpSearch()"/><button class="btn btn-ghost" style="font-size:11px;padding:6px 10px;" onclick="bpSearch()">Refresh</button><span id="bp-stats" class="muted"></span></div>
+  <div id="bp-list" class="bp-list"></div>
+  <div class="bp-footer"><span id="bp-selcount" class="muted">No items selected</span><span style="margin-left:auto;display:flex;gap:8px;"><button class="btn btn-ghost" onclick="bpClear()">Clear</button><button class="btn btn-ghost" onclick="bpUseAsKeywords()">Use as doc keywords</button><button class="btn btn-primary" onclick="bpPin()">Pin to section</button></span></div>
+</div>
+
+<script>
+const PROJECT_ID=new URLSearchParams(location.search).get("project_id")||"";
+let sections=[], importedIds=new Set(), importPreviews={}, importToken=null, importFilename="";
+let importTemplateSource="template"; // "template" | "document" — see tsrc toggle
+try{ importTemplateSource=localStorage.getItem("bd_tsrc_"+(new URLSearchParams(location.search).get("project_id")||""))||"template"; }catch(e){}
+let selectedIds=new Set();      // missing sections ticked for generation
+let importApplied=false;        // imported sections persisted to approved store
+let archivedSecs=[];            // sections removed from the template (restorable)
+let activeId=null, phase="import";
+let editingId=null;
+let CTX={company:"",industry:"",erp:"",maturity:"",pain:"",scope:""};
+
+function lvl(id){return String(id).split(".").length;}
+function sortKey(id){return String(id).split(".").map(n=>String(n).padStart(3,"0")).join(".");}
+function escapeHtml(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
+function escapeAttr(s){return escapeHtml(s).replace(/\n/g,"&#10;");}
+// Per-section recommended structure templates — ported from the new-document
+// editor so the Update workflow shows the same suggested structure per section.
+const SECTION_DEFAULT_STRUCTURES = {
+  "1": "Introduction paragraph (2-3 sentences) summarising the Blueprint Document purpose and platform.",
+  "1.1": "2-3 prose paragraphs: company overview, products/divisions, geographic presence, supply chain context.",
+  "1.2": "2-3 prose paragraphs: current planning tools, their limitations, why change is needed.",
+  "1.3": "1-2 prose paragraphs: purpose of this document, what it covers, how it will be used.",
+  "1.4": "1 paragraph + bulleted In Scope list. State what is out of scope explicitly.",
+  "1.5": "Two-column Markdown table: | Acronym | Definition |",
+  "2": "1-2 prose paragraphs: high-level business case for the investment.",
+  "2.1": "Bullet list ONLY. One concise sentence per bullet. Minimum 12 bullets. No prose paragraphs.",
+  "2.2": "Three subsections:\n  Solution Overview: (1 paragraph)\n  Key Solution Components: (bullet list)\n  Strategic Assumptions: (bullet list)\n  Source: (cite source document)",
+  "3": "1 concise paragraph: supply/inventory planning, demand visibility, constraints, what-if scenario planning.",
+  "3.1": "Two Production Location blocks (US sites, EU sites) + source citation line.",
+  "3.2": "1 intro sentence + Markdown table (ALL sites):\n  | Value | Description | Country.Value | Currency.Value |",
+  "3.3": "1 intro sentence + Markdown table:\n  | Functions | Core Algorithms & Logic |",
+  "3.4": "1 intro sentence + Markdown table:\n  | Functions | KPIs | Core Algorithms & Logic |",
+  "3.5": "1 intro sentence + Markdown table:\n  | Functions | Core Algorithms & Logic | KPIs |",
+  "3.6": "Markdown table only (no intro):\n  | Functions | Core Algorithms & Logic | KPIs |",
+  "3.7": "1 intro sentence + Markdown table:\n  | Scenario | Purpose |",
+  "4": "2-3 prose paragraphs: demand planning overview, capabilities, S&OP alignment.",
+  "4.1": "3-4 prose paragraphs: demand planning process, statistical forecasting, demand review, consensus planning.",
+  "4.2": "2-3 prose paragraphs: forecast consumption logic, DTF/FTF, unconsumed forecast handling.",
+  "4.2.1": "Brief intro sentence + bullet list of design decisions/assumptions.",
+  "4.2.2": "Table or structured list of user roles, access levels, and responsibilities.",
+  "5": "2-3 prose paragraphs: supply and inventory planning overview.",
+  "5.1": "2-3 prose paragraphs: planning parameter review, BOM setup, co-product yield, governance.",
+  "5.2": "2-3 prose paragraphs: capacity constraint management, resolution options.",
+  "5.3": "2-3 prose paragraphs: supply exception types, collaboration workflow, KPIs.",
+  "5.4": "2-3 prose paragraphs: inventory exception types, IQR measurement, planner actions.",
+  "6": "2-3 prose paragraphs: data integration architecture, data types, integration method.",
+  "6.1": "2-3 prose paragraphs: source systems, file schedule, environment setup, error handling.",
+  "6.2": "Intro sentence + table:\n  | Data Entity | Source System | Extraction Method | Update Frequency |",
+  "6.3": "2-3 prose paragraphs: data file list, naming conventions, error handling, test data.",
+  "6.4": "Intro sentence + Markdown table:\n  | Data Entity | Source System | Update Frequency | Notes |"
+};
+
+
+// Render imported Markdown for the read-only preview: pipe-tables become HTML
+// tables; other lines render as text. Cell content is HTML-escaped.
+function _mdIsTableSep(line){
+  var cells=line.split("|").map(c=>c.trim()).filter(c=>c.length);
+  return cells.length>0 && cells.every(c=>/^:?-+:?$/.test(c));
+}
+function _mdSplitRow(line){
+  var t=line.trim();
+  if(t.charAt(0)==="|") t=t.slice(1);
+  if(t.charAt(t.length-1)==="|") t=t.slice(0,-1);
+  return t.split("|").map(c=>c.trim());
+}
+// Convert <IMAGE id="x"/> (any variant) to a real <img>; escape surrounding text.
+var _MD_IMG_RE=/<\s*image\s+id\s*=\s*["']?([A-Za-z0-9_\-]+)["']?\s*\/?\s*>(?:\s*<\s*\/\s*image\s*>)?/ig;
+function _mdCell(s){
+  var out="", last=0, m; _MD_IMG_RE.lastIndex=0;
+  while((m=_MD_IMG_RE.exec(s))){
+    out+=escapeHtml(s.slice(last,m.index));
+    out+='<img class="md-img" src="/api/images/'+encodeURIComponent(m[1])+'" alt="image"/>';
+    last=_MD_IMG_RE.lastIndex;
+  }
+  out+=escapeHtml(s.slice(last));
+  // simple bold rendering for **x**
+  return out.replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>");
+}
+function renderMarkdown(text){
+  var lines=String(text==null?"":text).replace(/\r\n/g,"\n").split("\n");
+  var out=[], i=0;
+  while(i<lines.length){
+    var line=lines[i];
+    if(line.indexOf("|")>-1 && i+1<lines.length && _mdIsTableSep(lines[i+1])){
+      var header=_mdSplitRow(line); i+=2;
+      var rows=[];
+      while(i<lines.length && lines[i].indexOf("|")>-1 && lines[i].trim()!==""){
+        rows.push(_mdSplitRow(lines[i])); i++;
+      }
+      var t='<table class="md-table"><thead><tr>'+header.map(h=>"<th>"+_mdCell(h)+"</th>").join("")+"</tr></thead><tbody>";
+      t+=rows.map(r=>"<tr>"+r.map(c=>"<td>"+_mdCell(c)+"</td>").join("")+"</tr>").join("");
+      t+="</tbody></table>";
+      out.push(t); continue;
+    }
+    var hm=line.match(/^(#{1,6})\s+(.*)$/);
+    if(hm){ out.push("<div class='md-h"+(hm[1].length>=3?"3":"")+"'>"+_mdCell(hm[2])+"</div>"); i++; continue; }
+    if(line.trim()===""){ out.push('<div class="md-gap"></div>'); i++; continue; }
+    out.push("<div>"+_mdCell(line)+"</div>"); i++;
+  }
+  return out.join("");
+}
+
+async function jget(u, ms){ ms=ms||30000; var ctrl=new AbortController(); var t=setTimeout(function(){ctrl.abort();},ms); try{ const r=await fetch(u,{signal:ctrl.signal}); if(!r.ok) throw new Error(u+" "+r.status); return await r.json(); } catch(e){ if(e&&e.name==="AbortError") throw new Error("request timed out after "+(ms/1000)+"s"); throw e; } finally{ clearTimeout(t); } }
+function goProjects(){location.href="/projects";}
+function isMissing(s){return !importedIds.has(s.id);}
+function statusOf(s){return importedIds.has(s.id)?"imported":(s.status==="approved"||s.status==="generated"?"generated":"pending");}
+
+async function init(){
+  if(!PROJECT_ID){document.getElementById("content").innerHTML='<div class="center-msg">No project selected. Open this page from the Projects dashboard via “Update existing document”.</div>';return;}
+  document.getElementById("progress-text").textContent="Loading…";
+  document.getElementById("content").innerHTML='<div class="center-msg">Loading template…</div>';
+  try{
+    const data=await jget("/api/sections?project_id="+encodeURIComponent(PROJECT_ID)+"&light=1");
+    sections=(data.sections||[]).map(s=>({id:s.id,title:s.title||"",level:lvl(s.id),web:s.web_keywords||[],doc:s.doc_keywords||[],structure:s.structure||"",status:s.status||"not-started",pinnedChunks:(s.pinned_chunk_ids||[]).map(String),pinnedImages:(s.pinned_image_ids||[]).map(String),output:(s.output||""),imported:!!s.imported}))
+      .sort((a,b)=>sortKey(a.id).localeCompare(sortKey(b.id),undefined,{numeric:true}));
+    archivedSecs=(data.archived||[]).map(function(x){return {id:x.id,title:x.title||""};});
+    // Restore import/locked state after a page refresh: rebuild importedIds from
+    // the backend's per-section "imported" flag, minus sections the user removed.
+    var _removed=new Set((data.removed_imports||[]).map(String));
+    importedIds=new Set(sections.filter(function(s){return s.imported && !_removed.has(String(s.id));}).map(function(s){return s.id;}));
+    if(importedIds.size && !importFilename){ importFilename="imported document"; }
+  }catch(e){document.getElementById("content").innerHTML='<div class="center-msg">Could not load the section template — '+escapeHtml(e.message)+'.<br><span class="muted">The server may need a restart, or it is busy indexing. </span><button class="btn btn-primary" style="margin-top:12px;" onclick="init()">Retry</button></div>';document.getElementById("progress-text").textContent="— / — sections";return;}
+  try{const ctx=await jget("/api/project/"+encodeURIComponent(PROJECT_ID)+"/client-context");CTX=Object.assign(CTX,ctx||{});}catch(e){}
+  resetSelection();
+  renderSidebar(); setPhase("import"); renderArchive();
+}
+function resetSelection(){ selectedIds=new Set(); }
+
+// ── Stepper / phase ──
+function setPhase(p){
+  if(p==="editor" && !activeId){ const m=sections.find(isMissing)||sections[0]; if(m) activeId=m.id; }
+  phase=p;
+  var _gm=document.getElementById("gm-label"); if(_gm)_gm.textContent=(p==="import")?"Configure selected →":"Generate selected";
+  document.getElementById("step-import").classList.toggle("active",p==="import");
+  document.getElementById("step-editor").classList.toggle("active",p==="editor");
+  if(p==="import") renderImportPhase();
+  else { const s=sections.find(x=>x.id===activeId); if(s) selectSection(activeId); else renderEditorEmpty(); }
+  renderSidebar(document.getElementById("sidebar-search").value);
+}
+
+// ── Sidebar ──
+function renderSidebar(filter){
+  filter=filter||""; const f=filter.trim().toLowerCase();
+  const list=document.getElementById("section-list"); list.innerHTML="";
+  sections.forEach(s=>{
+    if(f && !(s.id.toLowerCase().includes(f)||s.title.toLowerCase().includes(f))) return;
+    const st=statusOf(s);
+    const row=document.createElement("div");
+    let cls="section-item"; if(s.level===2)cls+=" sub"; if(s.level>=3)cls+=" sub3"; if(s.id===activeId&&phase==="editor")cls+=" active";
+    row.className=cls; row.onclick=()=>openSection(s.id);
+    const sel = st!=="imported"
+      ? '<input type="checkbox" class="sec-checkbox" title="Select for generation" '+(selectedIds.has(s.id)?"checked":"")+' onclick="event.stopPropagation();toggleSelect(\''+s.id+'\',this.checked);"/>'
+      : '<span class="sec-spacer"></span>';
+    const lock=st==="imported"?'<svg class="lock-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>':'<span class="lock-ic"></span>';
+    const ren='<button class="ren-btn" title="Rename section" onclick="event.stopPropagation();renameSection(\''+s.id+'\');"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg></button>';
+    row.innerHTML='<div class="si-left">'+sel+'<span class="dot '+st+'"></span><span class="si-id">'+s.id+'</span><span class="si-title">'+escapeHtml(s.title)+'</span></div>'+ren+lock;
+    list.appendChild(row);
+  });
+  const total=sections.length, imp=sections.filter(s=>importedIds.has(s.id)).length;
+  const done=sections.filter(s=>statusOf(s)!=="pending").length;
+  document.getElementById("progress-text").textContent=done+" / "+total+" sections";
+  document.getElementById("progress-bar").style.width=(total?done/total*100:0)+"%";
+  const selN=[...selectedIds].filter(id=>sections.some(s=>s.id===id&&isMissing(s))).length;
+  document.getElementById("sel-summary").textContent = importedIds.size ? (imp+" imported · "+selN+" selected to generate") : (selN+" section(s) selected to generate");
+}
+function filterSections(v){renderSidebar(v);}
+function toggleSelect(id,checked){ if(checked)selectedIds.add(id); else selectedIds.delete(id); renderSidebar(document.getElementById("sidebar-search").value); if(phase==="import") refreshReviewCounts(); }
+function openSection(id){ activeId=id; setPhase("editor"); }
+
+// ── Import phase ──
+function renderImportPhase(){
+  document.getElementById("active-sid").textContent="";
+  document.getElementById("active-stitle").textContent="Import existing Blueprint";
+  var _db2=document.getElementById("btn-del-section"); if(_db2)_db2.style.display="none";
+  document.getElementById("active-status-badge").style.display="none";
+  document.getElementById("active-hint").textContent="Step 2 of 4";
+  const imported=importedIds.size>0;
+  const head='<div class="phase-head"><div><h2>Import existing Blueprint</h2><p>Upload your approved Word document. Matched sections are locked; choose which missing sections to generate.</p></div></div>';
+  const tsrcToggle='<div class="tsrc-row"><label class="tsrc-switch"><input type="checkbox" id="tsrc-toggle" '+(importTemplateSource==="document"?"checked":"")+' onchange="setTemplateSource(this.checked)"/><span class="tsrc-slider"></span></label><span class="tsrc-label"><b>Keep this document’s structure</b> — sections not in the tool’s template (e.g. extra DP sections, User Roles) are added as new sections instead of being ignored. Off = map onto the tool’s standard template.</span></div>';
+  const dropzone='<div class="import-panel'+(imported?' compact':'')+'" id="import-zone">'+(imported
+      ? '<div class="banner-msg"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Imported &amp; merged '+importedIds.size+' section(s) from '+escapeHtml(importFilename)+' \u2014 preserved in the final document</div><div style="display:flex;gap:8px;align-items:center;"><span id="import-status" class="muted"></span><button id="btn-reimport" class="btn btn-ghost" onclick="document.getElementById(\'docfile\').click()">Re-import</button></div>'
+      : '<div class="import-dropicon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><polyline points="9 15 12 12 15 15"/></svg></div><h3>Import your existing Blueprint document</h3><p>Choose a Word <b>.docx</b> file from your device. Approved sections are detected and locked; only the missing sections are generated.</p><button class="btn btn-primary" onclick="document.getElementById(\'docfile\').click()">Choose .docx from device</button><div id="import-status" class="muted" style="margin-top:14px;"></div>')+'</div>';
+  document.getElementById("content").innerHTML = head + '<div id="linked-repos-bar"></div>' + tsrcToggle + dropzone + (imported ? reviewPanel() : '');
+  loadLinkedRepos();
+}
+function setTemplateSource(useDoc){
+  importTemplateSource = useDoc ? "document" : "template";
+  try{ localStorage.setItem("bd_tsrc_"+PROJECT_ID, importTemplateSource); }catch(e){}
+  // Already imported? Offer to re-apply the same document in the new mode
+  // right away — no re-upload needed.
+  if(importedIds.size){
+    var msg = useDoc
+      ? "Switch this project to the DOCUMENT's structure now? The imported document's sections replace the tool template."
+      : "Switch back to the TOOL's standard template now? The imported document is re-mapped onto it.";
+    if(confirm(msg)) reapplyImport();
+  }
+}
+async function reapplyImport(){
+  _setImportBusy("Re-applying imported document in the new mode…");
+  try{
+    const r=await fetch("/api/document/import-existing/reapply",{method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({project_id:PROJECT_ID,mode:"merge",template_source:importTemplateSource})});
+    const ad=await r.json().catch(function(){return {};});
+    if(r.ok && ad && ad.ok){
+      if(ad.matched_ids) importedIds=new Set(ad.matched_ids);
+      await refreshSections();
+      await _reloadSectionOutputs();
+    } else { alert((ad&&ad.error)||"Could not re-apply the imported document."); }
+  }catch(e){ alert("Could not re-apply: "+e.message); }
+  renderImportPhase(); renderSidebar(document.getElementById("sidebar-search").value);
+}
+function reviewPanel(){
+  const imp=sections.filter(s=>importedIds.has(s.id));
+  const miss=sections.filter(isMissing);
+  const impRows = imp.length? imp.map(s=>'<div class="rev-row"><svg class="lock-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span class="rid">'+s.id+'</span><span class="rtitle">'+escapeHtml(s.title)+'</span><button class="link-btn" onclick="editImported(\''+s.id+'\')">Edit</button><button class="link-btn" style="margin-left:10px;" onclick="unlockSection(\''+s.id+'\')">Remove</button></div>').join("") : '<div class="muted">None.</div>';
+  const missRows = miss.length? miss.map(s=>'<div class="rev-row"><span class="rid">'+s.id+'</span><span class="rtitle">'+escapeHtml(s.title)+'</span></div>').join("") : '<div class="muted">No missing sections — the import covered the whole template.</div>';
+  const selN=miss.filter(s=>selectedIds.has(s.id)).length;
+  return '<div class="card"><div class="card-title">Review imported vs missing sections</div><div class="review-grid">'+
+    '<div><div class="rev-col-head"><div class="ttl"><span class="rev-pill lock">Locked</span> Imported sections</div><span class="muted">'+imp.length+'</span></div>'+impRows+'</div>'+
+    '<div><div class="rev-col-head"><div class="ttl"><span class="rev-pill miss">New</span> Missing sections to generate</div><span class="muted">'+miss.length+'</span></div>'+missRows+(miss.length?'<div class="muted" style="margin-top:10px;">To choose which of these to generate, tick them in the “Blueprint Document Template” list on the left.</div>':'<div class="muted" style="margin-top:10px;">Your imported document already covers all template sections, so nothing needs generating. To regenerate a section, click <b>Unlock</b> on it in the left column — it then becomes a section you can tick and generate.</div>')+'</div>'+
+    '</div></div>';
+}
+function refreshReviewCounts(){
+  const miss=sections.filter(isMissing); const selN=miss.filter(s=>selectedIds.has(s.id)).length;
+  const el=document.getElementById("rev-selcount"); if(el) el.textContent=selN+" of "+miss.length+" selected";
+}
+function selectAllMissing(){
+  const miss=sections.filter(isMissing); const allSel=miss.every(s=>selectedIds.has(s.id));
+  miss.forEach(s=>{ if(allSel) selectedIds.delete(s.id); else selectedIds.add(s.id); });
+  renderImportPhase(); renderSidebar(document.getElementById("sidebar-search").value);
+}
+
+// Re-fetch section content and merge full `output` (+ pins) into the in-memory
+// sections, so the editor shows complete imported text instead of the preview.
+async function _reloadSectionOutputs(){
+  try{
+    const data=await jget("/api/sections?project_id="+encodeURIComponent(PROJECT_ID)+"&light=1");
+    const byId={}; (data.sections||[]).forEach(s=>{byId[s.id]=s;});
+    sections.forEach(sec=>{
+      const s=byId[sec.id]; if(!s) return;
+      if(s.output) sec.output=s.output;
+      if(s.pinned_image_ids) sec.pinnedImages=(s.pinned_image_ids||[]).map(String);
+    });
+  }catch(e){}
+}
+function onFileChosen(input){const f=input.files&&input.files[0];if(!f)return;uploadPreview(f);input.value="";}
+function _setImportBusy(msg){
+  const statusEl=document.getElementById("import-status"); if(statusEl)statusEl.textContent=msg||"";
+  const reBtn=document.getElementById("btn-reimport");
+  if(reBtn){ reBtn.disabled=!!msg; reBtn.textContent=msg?"Importing…":"Re-import"; }
+}
+async function uploadPreview(file){
+  if(!PROJECT_ID){alert("No project selected.");return;}
+  if(phase!=="import") setPhase("import");
+  _setImportBusy("Uploading and analyzing “"+file.name+"”…");
+  try{
+    const fd=new FormData();fd.append("project_id",PROJECT_ID);fd.append("file",file);
+    const r=await fetch("/api/document/import-existing/preview",{method:"POST",body:fd});
+    const data=await r.json();
+    if(!data.ok){alert(data.error||"Could not import this document."); renderImportPhase(); return;}
+    importToken=data.import_token; importFilename=data.filename||file.name;
+    importedIds=new Set(); importPreviews={};
+    (data.matched_sections||[]).forEach(m=>{importedIds.add(m.id);importPreviews[m.id]=m.preview||"";});
+    resetSelection();
+    _setImportBusy("Saving imported sections into the project…");
+    var createdN=0;
+    try{
+      const ar=await fetch("/api/document/import-existing/apply",{method:"POST",headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({project_id:PROJECT_ID,import_token:importToken,mode:"merge",template_source:importTemplateSource})});
+      const ad=await ar.json().catch(function(){return {};});
+      importApplied=!!(ad&&ad.ok);
+      if(ad&&ad.ok){
+        // With "document structure" the backend may have CREATED new sections —
+        // refresh the template list and lock everything it imported into.
+        if(ad.matched_ids&&ad.matched_ids.length) importedIds=new Set(ad.matched_ids);
+        createdN=(ad.created_sections||[]).length;
+        if(createdN || (ad.renamed_sections||[]).length || ad.template_reset) await refreshSections();
+      }
+      // Reload section content from the backend so the editor shows the FULL
+      // imported text (not the 700-char preview) with tables/images rendered.
+      await _reloadSectionOutputs();
+    }catch(e){ importApplied=false; }
+    renderImportPhase(); renderSidebar(document.getElementById("sidebar-search").value);
+    if(createdN){ var st2=document.getElementById("import-status"); if(st2) st2.textContent=createdN+" new section(s) added from the document’s structure."; }
+    if(data.image_warning) alert(data.image_warning);
+    extractContext();
+  }catch(e){alert("Upload failed: "+e.message); renderImportPhase();}
+}
+async function applyImport(){
+  if(!importToken){alert("Import again first.");return;}
+  try{
+    const r=await fetch("/api/document/import-existing/apply",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({project_id:PROJECT_ID,import_token:importToken,mode:"merge"})});
+    const d=await r.json();
+    alert(d.ok?("Imported "+(d.matched_count||importedIds.size)+" section(s) into the project. They are preserved."):(d.error||"Apply failed."));
+  }catch(e){alert("Apply failed: "+e.message);}
+}
+async function extractContext(){
+  if(!PROJECT_ID)return; const statusEl=document.getElementById("import-status"); if(statusEl)statusEl.textContent="Reading client context from the document…";
+  try{
+    const r=await fetch("/api/document/import-existing/extract-context",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({project_id:PROJECT_ID,import_token:importToken||""})});
+    const d=await r.json();
+    if(d.ok&&d.context){CTX=Object.assign({company:"",industry:"",erp:"",maturity:"",pain:"",scope:""},d.context);saveContext();if(phase==="editor"&&activeId)selectSection(activeId);
+      const filled=Object.values(d.context).filter(v=>v&&String(v).trim()).length;
+      if(statusEl)statusEl.textContent=filled?("Client context auto-filled from document ("+filled+" field(s)).") :"No client context details were found in the document.";
+    } else if(statusEl){statusEl.textContent=(d&&d.error)?d.error:"";}
+  }catch(e){if(statusEl)statusEl.textContent="";}
+}
+
+// ── Editor phase ──
+function renderEditorEmpty(){ document.getElementById("active-sid").textContent=""; document.getElementById("active-stitle").textContent="Select a section"; document.getElementById("active-status-badge").style.display="none"; document.getElementById("active-hint").textContent=""; document.getElementById("content").innerHTML='<div class="center-msg">Pick a section from the left to configure it.</div>'; var _db3=document.getElementById("btn-del-section"); if(_db3)_db3.style.display="none"; }
+function selectSection(id){
+  editingId=null;   // always open in the rendered (structured) view; "Edit content" shows raw
+  activeId=id; if(phase!=="editor"){phase="editor"; document.getElementById("step-import").classList.remove("active"); document.getElementById("step-editor").classList.add("active");}
+  renderSidebar(document.getElementById("sidebar-search").value);
+  const s=sections.find(x=>x.id===id); if(!s)return; const st=statusOf(s);
+  document.getElementById("active-sid").textContent="Section "+s.id+" - ";
+  document.getElementById("active-stitle").textContent=s.title;
+  const b=document.getElementById("active-status-badge"); b.style.display="";
+  if(st==="imported"){b.className="status-badge imported";b.textContent="Imported · Locked";}
+  else if(st==="generated"){b.className="status-badge generated";b.textContent="Generated";}
+  else{b.className="status-badge pending";b.textContent="Pending generation";}
+  document.getElementById("active-hint").textContent=st==="imported"?"Read-only — imported content is preserved":"";
+  var _db=document.getElementById("btn-del-section");
+  if(_db){
+    _db.style.display="";
+    if(st==="imported"){ _db.textContent="Remove section"; _db.onclick=function(){ unlockSection(activeId); }; _db.style.borderColor="#0070C0"; _db.style.color="#0070C0"; }
+    else { _db.textContent="Delete section"; _db.onclick=function(){ deleteSection(activeId); }; _db.style.borderColor="#c0392b"; _db.style.color="#c0392b"; }
+  }
+  renderContent(s,st);
+}
+function renderContent(s,st){
+  const c=document.getElementById("content"); let html=clientContextCard();
+  if(st==="imported"){
+    if(editingId===s.id){
+      html+='<div class="card"><div class="card-title">Edit imported content — Section '+s.id+'</div><div id="edit-blocks" class="edit-blocks"></div><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px;"><button class="btn btn-ghost" onclick="cancelEditContent()">Cancel</button><button class="btn btn-primary" onclick="saveEditedContent()">Save changes</button></div></div>';
+    } else {
+      var _prev=s.output||importPreviews[s.id]||"";
+      html+='<div class="locked-note"><svg class="li" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><div style="flex:1;"><h4>Imported section</h4><p>Preserved from the uploaded document. You can edit the content manually or remove this section from the document.</p><div style="display:flex;gap:8px;margin:10px 0;"><button class="btn btn-ghost" onclick="startEditContent()">Edit content</button><button class="btn btn-ghost" onclick="unlockSection(activeId)">Remove section</button></div>'+(_prev?'<div class="imp-preview">'+renderMarkdown(_prev)+'</div>':'')+'</div></div>';
+    }
+    // Section structure also shown for imported sections (used if regenerated).
+    html+=structureCard(s);
+  } else { html+=keywordCard(s)+structureCard(s); }
+  c.innerHTML=html; bindContext(); if(st!=="imported") bindKeywordHandlers(s);
+  if(st==="imported" && editingId===s.id) buildEditBlocks(s.output||importPreviews[s.id]||"");
+}
+function clientContextCard(){
+  function opt(v,l){return '<option value="'+v+'"'+(CTX.maturity===v?' selected':'')+'>'+l+'</option>';}
+  function fld(label,key){return '<div class="ctx-field"><label>'+label+'</label><input type="text" data-ctx="'+key+'" value="'+escapeHtml(CTX[key])+'"/></div>';}
+  return '<div class="card" id="client-context-card"><div class="card-title" style="display:flex;justify-content:space-between;align-items:center;gap:10px;">Client context — injected into every section prompt <button class="btn btn-ghost" style="font-size:11px;padding:4px 9px;text-transform:none;letter-spacing:0;" onclick="extractContext()">Auto-fill from document</button></div><div class="ctx-grid">'+
+    fld("Company name","company")+fld("Industry","industry")+fld("ERP system","erp")+
+    '<div class="ctx-field"><label>Planning maturity</label><select data-ctx="maturity">'+opt("","Select level...")+opt("manual, spreadsheet-driven","Low - manual / spreadsheet-driven")+opt("partially automated with siloed systems","Medium - partially automated, siloed systems")+opt("integrated planning with some automation","High - integrated planning, some automation")+opt("advanced, fully integrated planning","Advanced - fully integrated planning")+'</select></div>'+
+    fld("Key pain points","pain")+fld("Phase 1 scope","scope")+'</div><div id="ctx-hint">These fields are automatically appended to every prompt at generation time.</div></div>';
+}
+let ctxTimer=null;
+function bindContext(){document.querySelectorAll("[data-ctx]").forEach(el=>{const ev=el.tagName==="SELECT"?"change":"input";el.addEventListener(ev,()=>{CTX[el.getAttribute("data-ctx")]=el.value;saveContextDebounced();});});}
+function saveContextDebounced(){clearTimeout(ctxTimer);ctxTimer=setTimeout(saveContext,600);}
+async function saveContext(){try{await fetch("/api/project/"+encodeURIComponent(PROJECT_ID)+"/client-context",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(CTX)});}catch(e){}}
+function keywordCard(s){
+  return '<div class="card"><div class="card-title">Keyword editor</div>'+pinnedSummary(s)+'<div class="kw-grid">'+
+    '<div><div class="kw-label">Web search keywords</div><div class="tag-input-wrap">'+tagsHtml(s.web,"web")+'<input class="tag-input" id="web-input" placeholder="Add keyword, press Enter"/></div><div class="kw-hint">Used by /web_search endpoint in kinaxis_http_server.py</div></div>'+
+    '<div><div class="kw-label" style="display:flex;justify-content:space-between;align-items:center;"><span>Document search keywords</span><button style="background:none;border:none;color:#c0392b;font-size:11px;font-weight:500;cursor:pointer;padding:0;" onclick="clearDoc()">✕ Clear all</button></div><div class="tag-input-wrap">'+tagsHtml(s.doc,"doc")+'<input class="tag-input" id="doc-input" placeholder="Add keyword, press Enter"/></div><div class="kw-hint">Used by /doc_search BM25 endpoint in kinaxis_http_server.py</div></div>'+
+    '</div><div class="kw-footer"><span style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;">'+
+    '<button class="btn btn-ghost" style="border-color:var(--blue);color:var(--blue);" onclick="openChunks()">Browse Chunks</button>'+
+    '<button class="btn btn-ghost" style="border-color:#0098a6;color:#0098a6;" onclick="openImages()">Browse Images</button>'+
+    '<button class="btn btn-ghost" onclick="autoKeywords()">Auto-generate from documents</button>'+
+    '<button class="btn btn-ghost" onclick="saveKeywords()">Save keywords</button></span></div></div>';
+}
+function structureCard(s){
+  var def=SECTION_DEFAULT_STRUCTURES[s.id]||"";
+  var ph=def||"e.g. 1. Overview paragraph\n2. Bulleted key points\n3. Summary table";
+  var suggest=def?'<button class="link-btn" onclick="useSuggestedStructure()">Use suggested structure</button>':'';
+  return '<div class="card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:10px;"><div class="card-title" style="margin-bottom:0;">Section structure <span style="font-weight:400;color:var(--gray-500);font-size:10px;margin-left:6px;">optional — how you want this section formatted</span></div>'+suggest+'</div><textarea class="structure" id="structure-input" oninput="onStructInput(this.value)" placeholder="'+escapeAttr(ph)+'">'+escapeHtml(s.structure)+'</textarea></div>';
+}
+function useSuggestedStructure(){
+  var s=sections.find(x=>x.id===activeId); if(!s) return;
+  var def=SECTION_DEFAULT_STRUCTURES[s.id]||""; if(!def) return;
+  s.structure=def;
+  var ta=document.getElementById("structure-input"); if(ta) ta.value=def;
+  saveKeywords();
+}
+function tagsHtml(arr,kind){return (arr||[]).map((t,i)=>'<span class="tag">'+escapeHtml(t)+'<span class="x" onclick="removeTag(\''+kind+'\','+i+')">×</span></span>').join("");}
+function removeTag(kind,i){const s=sections.find(x=>x.id===activeId);(kind==="web"?s.web:s.doc).splice(i,1);renderContent(s,statusOf(s));saveKeywords();}
+function clearDoc(){const s=sections.find(x=>x.id===activeId);s.doc=[];renderContent(s,statusOf(s));saveKeywords();}
+function onStructInput(v){const s=sections.find(x=>x.id===activeId);if(s)s.structure=v;}
+function bindKeywordHandlers(s){["web","doc"].forEach(kind=>{const inp=document.getElementById(kind+"-input");if(!inp)return;inp.onkeydown=e=>{if(e.key==="Enter"&&inp.value.trim()){(kind==="web"?s.web:s.doc).push(inp.value.trim());inp.value="";renderContent(s,statusOf(s));saveKeywords();}};});}
+async function saveKeywords(){const s=sections.find(x=>x.id===activeId);if(!s)return;try{await fetch("/api/sections/"+encodeURIComponent(s.id)+"/keywords",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({project_id:PROJECT_ID,web_keywords:s.web,doc_keywords:s.doc,structure:s.structure,pinned_chunk_ids:s.pinnedChunks||[],pinned_image_ids:s.pinnedImages||[]})});}catch(e){}}
+async function autoKeywords(){
+  const s=sections.find(x=>x.id===activeId); if(!s) return;
+  const parent = (s.id.indexOf(".")>-1) ? (sections.find(x=>x.id===s.id.split(".").slice(0,-1).join("."))||{}).title||"" : "";
+  try{
+    const r=await fetch("/api/sections/"+encodeURIComponent(s.id)+"/auto-keywords",{method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({title:s.title, parent_title:parent, project_id:PROJECT_ID, company:CTX.company||""})});
+    const d=await r.json();
+    if(d.ok){ if(Array.isArray(d.web_keywords)) s.web=d.web_keywords; if(Array.isArray(d.doc_keywords)) s.doc=d.doc_keywords; renderContent(s,statusOf(s)); saveKeywords(); }
+    else alert(d.error||d.doc_kw_warning||"Could not auto-generate keywords. Make sure documents/repositories are indexed for this project.");
+  }catch(e){ alert("Auto-generate failed: "+e.message); }
+}
+
+// ── Manual add ──
+function openAddModal(){const sel=document.getElementById("add-parent");sel.innerHTML=sections.filter(s=>s.level===1).map(s=>'<option value="'+s.id+'">'+s.id+' '+escapeHtml(s.title)+'</option>').join("");document.getElementById("add-type").onchange=function(){document.getElementById("parent-wrap").style.display=this.value==="subsection"?"block":"none";};document.getElementById("modal-backdrop").classList.add("open");}
+function closeAddModal(){document.getElementById("modal-backdrop").classList.remove("open");}
+async function confirmAdd(){
+  const id=document.getElementById("add-id").value.trim(),title=document.getElementById("add-title").value.trim();
+  if(!id||!title){alert("Enter a section number and title.");return;}
+  if(sections.some(s=>s.id===id)){alert("Section "+id+" already exists.");return;}
+  try{const r=await fetch("/api/sections/add",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({project_id:PROJECT_ID,id:id,title:title})});const d=await r.json();if(!d.ok){alert(d.error||"Could not add section.");return;}}catch(e){alert("Add failed: "+e.message);return;}
+  sections.push({id,title,level:lvl(id),web:[],doc:[],structure:"",status:"not-started"});
+  sections.sort((a,b)=>sortKey(a.id).localeCompare(sortKey(b.id),undefined,{numeric:true}));
+  selectedIds.add(id);
+  closeAddModal(); openSection(id);
+}
+function generateMissing(){
+  const chosen=sections.filter(s=>isMissing(s)&&selectedIds.has(s.id)).map(s=>s.id);
+  if(!chosen.length){
+    // Nothing selected to generate — user just wants the document with the
+    // current/remaining sections (e.g. after removing/editing sections).
+    // Go straight to a clear download flow instead of a confusing yes/no popup.
+    exportMerged("No sections selected to generate — exporting the document with the current sections.");
+    return;
+  }
+  if(phase==="import"){
+    openSection(chosen[0]);
+    return;
+  }
+  const qs=new URLSearchParams();
+  qs.set("project_id",PROJECT_ID); qs.set("run","selected"); qs.set("sections",chosen.join(",")); qs.set("autostart","1");
+  location.href="/update-generating?"+qs.toString();
+}
+// ── Browse Chunks / Images (real, wired to backend) ──
+var PIN_WARN_AT = 12;   // explicit pins beyond this risk an oversized prompt
+function pinnedSummary(s){
+  const c=(s.pinnedChunks||[]).length, i=(s.pinnedImages||[]).length;
+  if(!c && !i) return '';
+  var bar='<div class="pinned-bar"><span>Pinned to this section: '+c+' chunk(s), '+i+' image(s). These are sent to the model verbatim at generation.</span><button class="link-btn" onclick="clearPins()">Clear pins</button></div>';
+  var warn='';
+  if(c >= PIN_WARN_AT){
+    warn='<div class="pin-warn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><span>'+c+' chunks pinned for this section. Large contexts can slow generation or be trimmed (server caps at ~24 chunks). For sharper, less repetitive output, pin fewer, most-relevant chunks.</span></div>';
+  }
+  return warn + bar;
+}
+let bpMode=null, bpSel=new Set(), bpItems=[];
+function openBrowse(){document.getElementById("browse-panel").classList.add("open");document.getElementById("bp-backdrop").classList.add("open");}
+function closeBrowse(){document.getElementById("browse-panel").classList.remove("open");document.getElementById("bp-backdrop").classList.remove("open");}
+function bpSearch(){const q=document.getElementById("bp-search").value;if(bpMode==="chunks")loadChunks(q);else if(bpMode==="images")loadImages(q);}
+function openChunks(){if(!activeId){alert("Select a section first.");return;}bpMode="chunks";bpSel=new Set();document.getElementById("bp-title").textContent="Document Chunks";document.getElementById("bp-search").value="";document.getElementById("bp-search").placeholder="Search chunks...";openBrowse();loadChunks("");}
+function openImages(){if(!activeId){alert("Select a section first.");return;}bpMode="images";bpSel=new Set();document.getElementById("bp-title").textContent="Image Library";document.getElementById("bp-search").value="";document.getElementById("bp-search").placeholder="Search caption, keywords...";openBrowse();loadImages("");}
+function bpFooter(){var n=bpSel.size;document.getElementById("bp-selcount").textContent=n?(n+" "+(bpMode==="images"?"image":"chunk")+(n>1?"s":"")+" selected"):("No "+(bpMode==="images"?"images":"chunks")+" selected");}
+function bpToggle(id){id=String(id);if(bpSel.has(id))bpSel.delete(id);else bpSel.add(id);if(bpMode==="chunks")renderChunkCards();else renderImageCards();bpFooter();}
+function bpClear(){bpSel=new Set();if(bpMode==="chunks")renderChunkCards();else renderImageCards();bpFooter();}
+function relInfo(score,max){var r=max>0?(score/max):0;if(r>=0.66)return{lbl:"High",col:"#0F6E56",w:Math.max(18,r*100)};if(r>=0.33)return{lbl:"Medium",col:"#B8860B",w:Math.max(14,r*100)};return{lbl:"Low",col:"#888888",w:Math.max(10,r*100)};}
+async function loadChunks(q){
+  const list=document.getElementById("bp-list");list.innerHTML='<div class="muted" style="padding:24px;text-align:center;">Loading chunks…</div>';
+  try{
+    const u="/api/project/"+encodeURIComponent(PROJECT_ID)+"/chunks-browser?section_id="+encodeURIComponent(activeId)+(q?("&search="+encodeURIComponent(q)):"");
+    const d=await (await fetch(u)).json();
+    bpItems=d.chunks||[];
+    document.getElementById("bp-stats").textContent=(d.total!=null?d.total:bpItems.length)+" chunks"+(d.semantic_enabled?" · semantic":" · keyword");
+    renderChunkCards(); bpFooter();
+  }catch(e){list.innerHTML='<div class="muted" style="padding:24px;">Error: '+escapeHtml(e.message)+'</div>';}
+}
+function renderChunkCards(){
+  const list=document.getElementById("bp-list");
+  if(!bpItems.length){list.innerHTML='<div class="muted" style="padding:24px;text-align:center;">No chunks found. Upload documents or attach a repository to this project.</div>';return;}
+  const s=sections.find(x=>x.id===activeId)||{}; const pins=new Set((s.pinnedChunks||[]).map(String));
+  const maxS=Math.max.apply(null,bpItems.map(function(c){return Number(c.score)||0;}).concat([0.0001]));
+  list.innerHTML=bpItems.map(function(c){
+    var id=String(c.id); var sel=bpSel.has(id); var pinned=pins.has(id);
+    var ri=relInfo(Number(c.score)||0,maxS);
+    var kws=(c.keywords||[]).slice(0,10).map(function(k){return '<span class="kw-chip">'+escapeHtml(k)+'</span>';}).join("");
+    return '<div class="chunk-card'+(sel?" sel":"")+'" onclick="bpToggle(\''+id+'\')">'+
+      '<span class="rel-label" style="color:'+ri.col+'">'+ri.lbl+'</span>'+(pinned?' <span class="pin-flag">✓ Pinned</span>':'')+
+      '<div class="relbar"><i style="width:'+ri.w+'%;background:'+ri.col+'"></i></div>'+
+      '<div class="chunk-meta"><span>'+escapeHtml(c.doc_name||"")+(c.page?(" · p"+c.page):"")+'</span><span>'+escapeHtml(c.heading||"")+'</span></div>'+
+      (kws?'<div style="margin:2px 0 6px;">'+kws+'</div>':'')+
+      '<div class="chunk-text">'+escapeHtml(c.snippet||c.chunk_text||"")+'</div></div>';
+  }).join("");
+}
+async function loadImages(q){
+  const list=document.getElementById("bp-list");list.innerHTML='<div class="muted" style="padding:24px;text-align:center;">Loading images…</div>';
+  try{
+    const u="/api/project/"+encodeURIComponent(PROJECT_ID)+"/images-browser"+(q?("?search="+encodeURIComponent(q)):"");
+    const d=await (await fetch(u)).json();
+    bpItems=d.images||[];
+    document.getElementById("bp-stats").textContent=(d.total!=null?d.total:bpItems.length)+" images";
+    renderImageCards(); bpFooter();
+  }catch(e){list.innerHTML='<div class="muted" style="padding:24px;">Error: '+escapeHtml(e.message)+'</div>';}
+}
+function renderImageCards(){
+  const list=document.getElementById("bp-list");
+  if(!bpItems.length){list.innerHTML='<div class="muted" style="padding:24px;text-align:center;">No images found in this project.</div>';return;}
+  const s=sections.find(x=>x.id===activeId)||{}; const pins=new Set((s.pinnedImages||[]).map(String));
+  list.innerHTML='<div class="img-grid">'+bpItems.map(function(im){
+    var id=String(im.image_id); var sel=bpSel.has(id); var pinned=pins.has(id);
+    var kws=(im.keywords||[]).slice(0,6).map(function(k){return '<span class="kw-chip">'+escapeHtml(k)+'</span>';}).join("");
+    return '<div class="img-card'+(sel?" sel":"")+'" onclick="bpToggle(\''+id+'\')" title="'+escapeHtml(im.description||"")+'">'+
+      '<img src="/api/images/'+encodeURIComponent(id)+'" loading="lazy"/>'+
+      '<div class="img-cap">'+(pinned?'<span class="pin-flag">✓ </span>':'')+escapeHtml(String(im.caption||id).slice(0,60))+
+      '<div style="margin-top:3px;color:var(--gray-500);">'+escapeHtml(im.source_doc||"")+'</div>'+(kws?'<div style="margin-top:3px;">'+kws+'</div>':'')+'</div></div>';
+  }).join("")+'</div>';
+}
+function bpPin(){
+  if(!bpSel.size){alert("Select one or more items first.");return;}
+  const s=sections.find(x=>x.id===activeId);if(!s)return;
+  if(bpMode==="chunks"){s.pinnedChunks=(s.pinnedChunks||[]).map(String);bpSel.forEach(function(id){if(s.pinnedChunks.indexOf(id)<0)s.pinnedChunks.push(id);});}
+  else{s.pinnedImages=(s.pinnedImages||[]).map(String);bpSel.forEach(function(id){if(s.pinnedImages.indexOf(id)<0)s.pinnedImages.push(id);});}
+  saveKeywords();
+  if(bpMode==="chunks")renderChunkCards();else renderImageCards();
+  if(phase==="editor")selectSection(activeId);
+}
+function bpUseAsKeywords(){
+  if(!bpSel.size){alert("Select one or more items first.");return;}
+  const s=sections.find(x=>x.id===activeId);if(!s)return;
+  var add=[];
+  bpItems.forEach(function(it){var id=String(bpMode==="images"?it.image_id:it.id);if(bpSel.has(id))add=add.concat(it.keywords||[]);});
+  s.doc=s.doc||[];add.forEach(function(k){if(k&&s.doc.indexOf(k)<0)s.doc.push(k);});
+  saveKeywords();
+  if(phase==="editor")selectSection(activeId);
+  alert("Added "+add.length+" keyword(s) to document search keywords.");
+}
+function clearPins(){const s=sections.find(x=>x.id===activeId);if(!s)return;s.pinnedChunks=[];s.pinnedImages=[];saveKeywords();selectSection(activeId);}
+
+// ── Repositories (attach content sources) ──
+function openRepos(){ if(!PROJECT_ID){alert("No project selected.");return;} document.getElementById("repo-modal").style.display="flex"; loadRepos(); }
+function closeRepos(){ document.getElementById("repo-modal").style.display="none"; }
+async function loadRepos(){
+  const box=document.getElementById("repo-list"); box.innerHTML='<div class="muted" style="padding:18px;text-align:center;">Loading repositories…</div>';
+  try{
+    const all=await (await fetch("/api/repositories")).json();
+    const att=await (await fetch("/api/projects/"+encodeURIComponent(PROJECT_ID)+"/repositories")).json();
+    const attached=new Set((att||[]).map(function(r){return r.id;}));
+    if(!all||!all.length){ box.innerHTML='<div class="muted" style="padding:18px;text-align:center;">No repositories exist yet. Create them on the Repositories screen, then attach here.</div>'; return; }
+    box.innerHTML=all.map(function(r){var on=attached.has(r.id);
+      return '<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 4px;border-bottom:1px solid var(--gray-100);">'+
+        '<div style="min-width:0;"><div style="font-weight:600;font-size:13.5px;">'+escapeHtml(r.name||r.id)+(on?' <span style="color:var(--green);font-size:11px;font-weight:600;">· attached</span>':'')+'</div>'+
+        '<div class="muted">'+(r.file_count||0)+' file(s) · '+(r.chunk_count||0)+' chunk(s)'+(r.description?(' — '+escapeHtml(r.description)):'')+'</div></div>'+
+        '<button class="btn '+(on?"btn-ghost":"btn-primary")+'" onclick="toggleRepo(\''+String(r.id)+'\','+(on?"true":"false")+')">'+(on?"Detach":"Attach")+'</button>'+
+      '</div>';
+    }).join("");
+  }catch(e){ box.innerHTML='<div class="muted" style="padding:18px;">Error: '+escapeHtml(e.message)+'</div>'; }
+}
+async function toggleRepo(id, isOn){
+  try{
+    const url="/api/projects/"+encodeURIComponent(PROJECT_ID)+"/repositories/"+encodeURIComponent(id);
+    await fetch(url, { method: isOn ? "DELETE" : "POST" });
+    loadRepos();
+    if(typeof loadLinkedRepos==="function") loadLinkedRepos();
+  }catch(e){ alert("Failed: "+e.message); }
+}
+
+function showExportProgress(title,msg){
+  var m=document.getElementById("export-modal"); if(!m) return;
+  document.getElementById("export-title").textContent=title||"Preparing your document…";
+  document.getElementById("export-msg").textContent=msg||"This will download automatically when it\u2019s ready.";
+  document.getElementById("export-spin").style.display="block";
+  document.getElementById("export-actions").style.display="none";
+  m.style.display="flex";
+}
+function setExportProgress(title,msg){
+  var t=document.getElementById("export-title"); if(t&&title)t.textContent=title;
+  var p=document.getElementById("export-msg"); if(p&&msg!==undefined)p.textContent=msg;
+}
+function exportError(msg){
+  var sp=document.getElementById("export-spin"); if(sp)sp.style.display="none";
+  setExportProgress("Export failed", msg||"Something went wrong.");
+  var a=document.getElementById("export-actions"); if(a)a.style.display="flex";
+}
+function hideExportProgress(){ var m=document.getElementById("export-modal"); if(m)m.style.display="none"; }
+async function exportMerged(note){
+  if(!PROJECT_ID){alert("No project selected.");return;}
+  showExportProgress("Preparing your document\u2026", note || "Merging your sections \u2014 the file will download automatically when it\u2019s ready.");
+  try{
+    const r=await fetch("/api/document/update-export",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({project_id:PROJECT_ID})});
+    const d=await r.json();
+    if(d && d.ok && d.docx_url){
+      setExportProgress("Download starting\u2026","Your document is ready. Check your browser downloads.");
+      var a=document.createElement("a"); a.href=d.docx_url; a.setAttribute("download",""); document.body.appendChild(a); a.click(); a.remove();
+      if(d.warnings && d.warnings.length) setTimeout(function(){ alert("Export warning:\n\n"+d.warnings.join("\n")); }, 300);
+      setTimeout(hideExportProgress, 2200);
+    } else {
+      exportError((d && d.error) ? d.error : "Export failed. Generate at least one section first.");
+    }
+  }catch(e){ exportError(e.message); }
+}
+
+// ── Structured edit mode ──────────────────────────────────────────────────────
+// Splits imported Markdown into text blocks and pipe-table blocks. Text renders
+// as textareas; tables render as editable grids with add/remove row & column.
+// serializeEditBlocks() writes everything back to the same Markdown format the
+// read-only preview (renderMarkdown) understands, so the round-trip is lossless.
+function _ebParse(text){
+  var lines=String(text==null?"":text).replace(/\r\n/g,"\n").split("\n");
+  var blocks=[], buf=[], i=0;
+  function flush(){ if(buf.length){ blocks.push({type:"text",text:buf.join("\n")}); buf=[]; } }
+  while(i<lines.length){
+    var line=lines[i];
+    if(line.indexOf("|")>-1 && i+1<lines.length && _mdIsTableSep(lines[i+1])){
+      flush();
+      var header=_mdSplitRow(line); i+=2;
+      var rows=[];
+      while(i<lines.length && lines[i].indexOf("|")>-1 && lines[i].trim()!==""){ rows.push(_mdSplitRow(lines[i])); i++; }
+      blocks.push({type:"table",header:header,rows:rows});
+      continue;
+    }
+    buf.push(line); i++;
+  }
+  flush();
+  return blocks;
+}
+function _ebAutosize(ta){ ta.style.height="auto"; ta.style.height=Math.max(56,ta.scrollHeight+2)+"px"; }
+function _ebMakeTh(val){
+  var th=document.createElement("th");
+  var d=document.createElement("div"); d.className="eb-cell"; d.contentEditable="true"; d.textContent=val||"";
+  var x=document.createElement("button"); x.type="button"; x.className="eb-colx"; x.title="Delete column"; x.textContent="✕";
+  x.onclick=function(){ _ebDelCol(th); };
+  th.appendChild(d); th.appendChild(x);
+  return th;
+}
+function _ebMakeTd(val){
+  var td=document.createElement("td"); td.className="eb-cell"; td.contentEditable="true"; td.textContent=val||"";
+  return td;
+}
+function _ebMakeRow(vals,cols){
+  var tr=document.createElement("tr");
+  for(var i=0;i<cols;i++) tr.appendChild(_ebMakeTd(vals[i]||""));
+  var ctl=document.createElement("td"); ctl.className="eb-rowctl";
+  var x=document.createElement("button"); x.type="button"; x.className="eb-rowx"; x.title="Delete row"; x.textContent="✕";
+  x.onclick=function(){ if(confirm("Delete this row?")) tr.remove(); };
+  ctl.appendChild(x); tr.appendChild(ctl);
+  return tr;
+}
+function _ebDelCol(th){
+  var tbl=th.closest("table");
+  var idx=Array.prototype.indexOf.call(th.parentNode.children,th);
+  if(tbl.tHead.rows[0].children.length<=2){ alert("A table needs at least one column."); return; }
+  if(!confirm("Delete this column?")) return;
+  Array.prototype.forEach.call(tbl.rows,function(tr){ if(tr.children[idx]) tr.children[idx].remove(); });
+}
+function _ebAddRow(tbl){
+  var cols=tbl.tHead.rows[0].children.length-1;
+  tbl.tBodies[0].appendChild(_ebMakeRow([],cols));
+}
+function _ebAddCol(tbl){
+  var htr=tbl.tHead.rows[0];
+  htr.insertBefore(_ebMakeTh(""),htr.lastElementChild);
+  Array.prototype.forEach.call(tbl.tBodies[0].rows,function(tr){ tr.insertBefore(_ebMakeTd(""),tr.lastElementChild); });
+}
+function _ebTable(header,rows){
+  var wrap=document.createElement("div"); wrap.className="eb-table-wrap";
+  var cols=Math.max(header.length,1);
+  rows.forEach(function(r){ cols=Math.max(cols,r.length); });
+  var tbl=document.createElement("table"); tbl.className="eb-table";
+  var thead=document.createElement("thead"), htr=document.createElement("tr");
+  for(var i=0;i<cols;i++) htr.appendChild(_ebMakeTh(header[i]||""));
+  var corner=document.createElement("th"); corner.className="eb-rowctl"; htr.appendChild(corner);
+  thead.appendChild(htr); tbl.appendChild(thead);
+  var tbody=document.createElement("tbody");
+  rows.forEach(function(r){ tbody.appendChild(_ebMakeRow(r,cols)); });
+  if(!rows.length) tbody.appendChild(_ebMakeRow([],cols));
+  tbl.appendChild(tbody);
+  wrap.appendChild(tbl);
+  var bar=document.createElement("div"); bar.className="eb-table-bar";
+  var bR=document.createElement("button"); bR.type="button"; bR.className="btn btn-ghost eb-btn"; bR.textContent="+ Add row"; bR.onclick=function(){ _ebAddRow(tbl); };
+  var bC=document.createElement("button"); bC.type="button"; bC.className="btn btn-ghost eb-btn"; bC.textContent="+ Add column"; bC.onclick=function(){ _ebAddCol(tbl); };
+  bar.appendChild(bR); bar.appendChild(bC);
+  wrap.appendChild(bar);
+  return wrap;
+}
+function buildEditBlocks(text){
+  var host=document.getElementById("edit-blocks"); if(!host) return;
+  host.innerHTML="";
+  _ebParse(text).forEach(function(b){
+    if(b.type==="text"){
+      var ta=document.createElement("textarea");
+      ta.className="eb-text"; ta.value=b.text;
+      host.appendChild(ta);
+      _ebAutosize(ta); ta.addEventListener("input",function(){ _ebAutosize(ta); });
+    } else {
+      host.appendChild(_ebTable(b.header,b.rows));
+    }
+  });
+  if(!host.childNodes.length){
+    var ta=document.createElement("textarea"); ta.className="eb-text"; host.appendChild(ta); _ebAutosize(ta);
+  }
+}
+function _ebCellText(el){
+  // Keep the pipe-table valid: cells cannot contain newlines or "|".
+  return (el.innerText||"").replace(/\n+/g," ").replace(/\|/g,"/").trim();
+}
+function serializeEditBlocks(){
+  var host=document.getElementById("edit-blocks"); if(!host) return null;
+  var parts=[];
+  Array.prototype.forEach.call(host.children,function(node){
+    if(node.classList.contains("eb-text")){ parts.push(node.value); }
+    else if(node.classList.contains("eb-table-wrap")){
+      var tbl=node.querySelector("table");
+      var hcells=Array.prototype.slice.call(tbl.tHead.rows[0].children,0,-1).map(function(th){
+        var d=th.querySelector(".eb-cell"); return _ebCellText(d||th);
+      });
+      if(!hcells.length) return;
+      var lines=["| "+hcells.join(" | ")+" |","|"+hcells.map(function(){return " --- |";}).join("")];
+      Array.prototype.forEach.call(tbl.tBodies[0].rows,function(tr){
+        var cells=Array.prototype.slice.call(tr.children,0,-1).map(function(td){ return _ebCellText(td); });
+        lines.push("| "+cells.join(" | ")+" |");
+      });
+      parts.push(lines.join("\n"));
+    }
+  });
+  return parts.join("\n");
+}
+
+// ── Edit imported content + delete section ──
+// Edit/Preview toggle inside edit mode: Edit = raw markdown textarea,
+// Preview = rendered structured view (tables/images) of the current text.
+// ── Editable structured preview (click-to-edit table grid) ────────────────
+function _editableTableHtml(header, rows){
+  var h='<table class="md-table editable" data-md="table"><thead><tr>'
+    + header.map(function(c){return '<th contenteditable="true">'+escapeHtml(c)+'</th>';}).join("")
+    + '<th class="ctl"></th></tr></thead><tbody>';
+  h += rows.map(function(r){
+        return '<tr>'+r.map(function(c){return '<td contenteditable="true">'+escapeHtml(c)+'</td>';}).join("")
+             + '<td class="ctl"><button class="rowdel" title="Delete row" onclick="delTableRow(this)">×</button></td></tr>';
+      }).join("");
+  h += '</tbody></table><button type="button" class="rowadd" onclick="addTableRow(this)">+ Add row</button>';
+  return h;
+}
+function renderEditableMarkdown(text){
+  var lines=String(text==null?"":text).replace(/\r\n/g,"\n").split("\n");
+  var out=[], i=0;
+  while(i<lines.length){
+    var line=lines[i];
+    if(line.indexOf("|")>-1 && i+1<lines.length && _mdIsTableSep(lines[i+1])){
+      var header=_mdSplitRow(line); i+=2; var rows=[];
+      while(i<lines.length && lines[i].indexOf("|")>-1 && lines[i].trim()!==""){ rows.push(_mdSplitRow(lines[i])); i++; }
+      out.push(_editableTableHtml(header, rows)); continue;
+    }
+    if(line.trim()===""){ out.push('<div class="md-gap"></div>'); i++; continue; }
+    out.push('<div class="md-line" contenteditable="true">'+escapeHtml(line)+'</div>'); i++;
+  }
+  return out.join("");
+}
+function addTableRow(btn){
+  var tbl=btn.previousElementSibling; while(tbl && tbl.tagName!=="TABLE") tbl=tbl.previousElementSibling;
+  if(!tbl) return;
+  var ncols=tbl.querySelectorAll("thead th").length-1; if(ncols<1) ncols=1;
+  var tb=tbl.querySelector("tbody"); var tr=document.createElement("tr"); var html="";
+  for(var k=0;k<ncols;k++) html+='<td contenteditable="true"></td>';
+  html+='<td class="ctl"><button class="rowdel" title="Delete row" onclick="delTableRow(this)">×</button></td>';
+  tr.innerHTML=html; tb.appendChild(tr);
+}
+function delTableRow(btn){ var tr=btn.closest("tr"); if(tr) tr.remove(); }
+// Append a fresh, empty paragraph to the edit preview and focus it.
+function addEditParagraph(){
+  var pp=document.getElementById("ed-prev-pane"); if(!pp) return;
+  var gap=document.createElement("div"); gap.className="md-gap";
+  var line=document.createElement("div"); line.className="md-line"; line.setAttribute("contenteditable","true");
+  pp.appendChild(gap); pp.appendChild(line); line.focus();
+}
+// Serialize the edited grid + prose back to markdown.
+function serializeEditPreview(){
+  var pp=document.getElementById("ed-prev-pane"); if(!pp) return null;
+  var out=[];
+  Array.prototype.forEach.call(pp.children, function(node){
+    if(node.tagName==="TABLE"){
+      var headers=[]; node.querySelectorAll("thead th").forEach(function(th){ if(!th.classList.contains("ctl")) headers.push(th.textContent.trim()); });
+      if(!headers.length) return;
+      out.push("| "+headers.join(" | ")+" |");
+      out.push("| "+headers.map(function(){return "---";}).join(" | ")+" |");
+      node.querySelectorAll("tbody tr").forEach(function(tr){
+        var cells=[]; tr.querySelectorAll("td").forEach(function(td){ if(!td.classList.contains("ctl")) cells.push(td.textContent.trim()); });
+        out.push("| "+cells.join(" | ")+" |");
+      });
+    } else if(node.classList && node.classList.contains("md-gap")){ out.push("");
+    } else if(node.classList && node.classList.contains("md-line")){ out.push(node.textContent);
+    } else if(node.tagName==="BUTTON"){ /* skip +Add row */ }
+    else { var t=node.textContent; if(t!=null && t!=="") out.push(t); }
+  });
+  return out.join("\n");
+}
+function setEditTab(mode){
+  var ep=document.getElementById("ed-edit-pane"), pp=document.getElementById("ed-prev-pane");
+  var te=document.getElementById("ed-tab-edit"), tp=document.getElementById("ed-tab-prev");
+  var ta=document.getElementById("edit-content-ta");
+  if(!ep||!pp) return;
+  if(mode==="preview"){
+    if(ta) pp.innerHTML=renderEditableMarkdown(ta.value);
+    ep.style.display="none"; pp.style.display="";
+    if(te) te.classList.remove("active"); if(tp) tp.classList.add("active");
+  } else {
+    // Capture any grid edits back into the textarea before showing raw.
+    if(pp.style.display!=="none" && ta){ var s=serializeEditPreview(); if(s!=null) ta.value=s; }
+    ep.style.display=""; pp.style.display="none";
+    if(tp) tp.classList.remove("active"); if(te) te.classList.add("active");
+  }
+}
+function startEditContent(){ editingId=activeId; const s=sections.find(x=>x.id===activeId); if(s) renderContent(s,statusOf(s)); }
+function cancelEditContent(){ editingId=null; const s=sections.find(x=>x.id===activeId); if(s) renderContent(s,statusOf(s)); }
+// Remove an imported section's locked content → becomes a normal generatable
+// section. (Was referenced by "Remove section" buttons but never defined.)
+async function unlockSection(id){
+  id=id||activeId; if(!id) return;
+  const s=sections.find(x=>x.id===id);
+  if(!confirm("Remove the imported content for section "+id+(s?(" — "+s.title):"")+"? It becomes a normal section you can generate fresh.")) return;
+  try{
+    const r=await fetch("/api/sections/"+encodeURIComponent(id)+"/unlock",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({project_id:PROJECT_ID})});
+    const d=await r.json().catch(function(){return {};});
+    if(r.ok && d.ok!==false){
+      importedIds.delete(id);
+      if(s){ s.imported=false; s.output=""; }
+      editingId=null;
+      renderSidebar(document.getElementById("sidebar-search").value);
+      if(phase==="import"){ renderImportPhase(); } else { selectSection(id); }
+    } else { alert((d&&d.error)?d.error:"Remove failed."); }
+  }catch(e){ alert("Remove failed: "+e.message); }
+}
+// "Edit" from the import review list → open that section in the editor in edit mode.
+function editImported(id){
+  if(!id) return;
+  selectSection(id);
+  editingId=id;
+  const s=sections.find(x=>x.id===id);
+  if(s) renderContent(s,statusOf(s));
+}
+// Restore an archived section back into the active list.
+async function restoreSection(id){
+  if(!id) return;
+  try{
+    const r=await fetch("/api/sections/"+encodeURIComponent(id)+"/restore",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({project_id:PROJECT_ID})});
+    const d=await r.json().catch(function(){return {};});
+    if(r.ok && d.ok!==false){ await init(); }
+    else { alert((d&&d.error)?d.error:"Restore failed."); }
+  }catch(e){ alert("Restore failed: "+e.message); }
+}
+async function saveEditedContent(){
+  const s=sections.find(x=>x.id===activeId); if(!s) return;
+  var val=null;
+  if(document.getElementById("edit-blocks")){ val=serializeEditBlocks(); }
+  else { const ta=document.getElementById("edit-content-ta"); if(ta) val=ta.value; }
+  if(val==null) return;
+  try{
+    const r=await fetch("/api/sections/"+encodeURIComponent(s.id)+"/approve",{method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({project_id:PROJECT_ID, content:val, client_context:CTX})});
+    const d=await r.json();
+    if(d && d.ok){ s.output=val; editingId=null; selectSection(s.id); }
+    else { alert((d&&d.error)?d.error:"Save failed."); }
+  }catch(e){ alert("Save failed: "+e.message); }
+}
+async function deleteSection(id){
+  if(!id) return;
+  const s=sections.find(x=>x.id===id);
+  if(!confirm("Delete section "+id+(s?(" — "+s.title):"")+" from the document? Only this section is removed; it will not appear in the final export.")) return;
+  try{
+    const r=await fetch("/api/sections/"+encodeURIComponent(id)+"?project_id="+encodeURIComponent(PROJECT_ID),{method:"DELETE"});
+    const d=await r.json();
+    if(d && d.ok===false){ alert(d.error||"Delete failed."); return; }
+    sections=sections.filter(function(x){return x.id!==id;});
+    importedIds.delete(id); selectedIds.delete(id); if(editingId===id) editingId=null;
+    activeId=null;
+    var _db=document.getElementById("btn-del-section"); if(_db)_db.style.display="none";
+    renderSidebar(document.getElementById("sidebar-search").value);
+    // Re-render the step the user is actually on (Import review vs. editor),
+    // so removing a section from the Import screen doesn't drop you into the
+    // empty editor view.
+    if(phase==="import"){ renderImportPhase(); } else { renderEditorEmpty(); }
+  }catch(e){ alert("Delete failed: "+e.message); }
+}
+
+// ── Linked repositories bar (same as new-document workflow) ──
+async function loadLinkedRepos(){
+  const bar=document.getElementById("linked-repos-bar"); if(!bar) return;
+  try{
+    const att=await (await fetch("/api/projects/"+encodeURIComponent(PROJECT_ID)+"/repositories")).json();
+    var chips=(att||[]).map(function(r){
+      return '<span class="repo-chip">'+escapeHtml(r.name||r.id)+' <span class="repo-meta">'+(r.file_count||0)+' file(s) · '+(r.chunk_count||0)+' chunks</span><span class="repo-x" title="Unlink" onclick="detachRepo(\''+String(r.id)+'\')">×</span></span>';
+    }).join("");
+    bar.innerHTML='<div class="lr-wrap"><span class="lr-label">Linked repositories</span>'+(chips||'<span class="muted">No repositories linked yet.</span>')+'<button class="btn btn-ghost lr-add" onclick="openRepos()">+ Link repository</button></div>';
+  }catch(e){ bar.innerHTML=''; }
+}
+function detachRepo(id){ toggleRepo(id, true); }
+
+function editImported(id){ activeId=id; editingId=id; setPhase("editor"); }
+
+async function unlockSection(id){
+  if(!id) return;
+  const s=sections.find(x=>x.id===id);
+  if(!confirm("Unlock section "+id+(s?(" — "+s.title):"")+"? Its imported content is cleared and it becomes a section you can generate fresh.")) return;
+  try{
+    const r=await fetch("/api/sections/"+encodeURIComponent(id)+"/unlock",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({project_id:PROJECT_ID})});
+    const d=await r.json();
+    if(d && d.ok===false){ alert(d.error||"Unlock failed."); return; }
+    importedIds.delete(id);
+    if(s){ s.status="not-started"; s.output=""; if(s.web)s.web=[]; if(s.doc)s.doc=[]; }
+    selectedIds.delete(id);
+    if(editingId===id) editingId=null;
+    renderSidebar(document.getElementById("sidebar-search").value);
+    if(phase==="import"){ renderImportPhase(); } else { selectSection(id); }
+  }catch(e){ alert("Unlock failed: "+e.message); }
+}
+
+// ── Rename a section/subsection (works for imported ones too) ──
+async function renameSection(id){
+  const s=sections.find(x=>x.id===id); if(!s) return;
+  const t=prompt("Rename section "+id+":", s.title);
+  if(t===null) return;
+  const nt=t.trim();
+  if(!nt || nt===s.title) return;
+  try{
+    const r=await fetch("/api/sections/"+encodeURIComponent(id)+"/edit",{method:"PUT",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({project_id:PROJECT_ID,new_title:nt})});
+    const d=await r.json().catch(function(){return {};});
+    if(r.ok && d.ok!==false){
+      s.title=nt;
+      renderSidebar(document.getElementById("sidebar-search").value);
+      if(phase==="import") renderImportPhase();
+      else if(activeId===id) selectSection(id);
+    } else { alert((d&&d.error)||"Rename failed."); }
+  }catch(e){ alert("Rename failed: "+e.message); }
+}
+
+// ── Archived sections (restore removed sections) ──
+function renderArchive(){
+  var cnt=document.getElementById("arch-count"); if(cnt) cnt.textContent="("+archivedSecs.length+")";
+  var list=document.getElementById("archive-list"); if(!list) return;
+  list.innerHTML = archivedSecs.length
+    ? archivedSecs.map(function(a){ return '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:5px 2px;font-size:12px;color:var(--gray-700);"><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><span style="color:var(--gray-500);font-variant-numeric:tabular-nums;">'+a.id+'</span> '+escapeHtml(a.title)+'</span><button class="link-btn" onclick="restoreSection(\''+a.id+'\')">Restore</button></div>'; }).join("")
+    : '<div class="muted" style="padding:5px 2px;">None.</div>';
+}
+async function restoreSection(id){
+  try{
+    var r=await fetch("/api/sections/"+encodeURIComponent(id)+"/restore",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({project_id:PROJECT_ID})});
+    var d=await r.json();
+    if(d && d.ok===false){ alert(d.error||"Restore failed."); return; }
+    await refreshSections();
+  }catch(e){ alert("Restore failed: "+e.message); }
+}
+async function refreshSections(){
+  try{
+    var data=await jget("/api/sections?project_id="+encodeURIComponent(PROJECT_ID)+"&light=1");
+    sections=(data.sections||[]).map(function(s){return {id:s.id,title:s.title||"",level:lvl(s.id),web:s.web_keywords||[],doc:s.doc_keywords||[],structure:s.structure||"",status:s.status||"not-started",pinnedChunks:(s.pinned_chunk_ids||[]).map(String),pinnedImages:(s.pinned_image_ids||[]).map(String),output:(s.output||"")};})
+      .sort(function(a,b){return sortKey(a.id).localeCompare(sortKey(b.id),undefined,{numeric:true});});
+    archivedSecs=(data.archived||[]).map(function(x){return {id:x.id,title:x.title||""};});
+    renderSidebar(document.getElementById("sidebar-search").value);
+    renderArchive();
+    if(phase==="import") renderImportPhase();
+  }catch(e){}
+}
+(function(){ var t=document.getElementById("archive-toggle"); if(t){ t.addEventListener("click", function(){
+  var l=document.getElementById("archive-list"); if(!l) return;
+  var open = (l.style.display==="none"||!l.style.display);
+  l.style.display = open ? "block" : "none";
+  var ch=document.getElementById("arch-chev"); if(ch) ch.style.transform = open ? "rotate(90deg)" : "none";
+}); } })();
+
+init();
+</script>
+</body>
+</html>

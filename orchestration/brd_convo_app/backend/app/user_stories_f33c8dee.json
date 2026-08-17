@@ -1,0 +1,215 @@
+{
+  "stories": [
+    {
+      "id": "US-001",
+      "title": "Define benefit realization framework for Test supply chain planning",
+      "as_a": "Business Value Lead",
+      "i_want": "a standardized benefit realization framework that links supply chain outcomes to business value categories",
+      "so_that": "Test can govern and communicate investment value consistently across revenue, cost of goods sold, SG&A, and capital",
+      "acceptance_criteria": [
+        "Given the Test BRD benefit areas, When the framework is configured, Then it includes the categories revenue, cost of goods sold, SG&A, and capital.",
+        "Given the identified value levers in the BRD, When the framework is published, Then it contains lost sale reduction, forecast accuracy improvement, planner efficiency, obsolete inventory reduction, inventory holding cost reduction, expedited freight reduction, inventory reduction, and network visibility as measurable benefit areas.",
+        "Given a new benefit record is created, When a user saves it, Then the record must require a mapped business value category, operational capability, metric, owner, baseline, target, and timing, with unknown values allowed as 'TBD'.",
+        "Given the framework is reviewed by stakeholders, When validation is completed, Then all BRD-listed benefit areas are traceable within the framework."
+      ],
+      "section_source": "Section 2: Benefit Realization",
+      "priority": "High"
+    },
+    {
+      "id": "US-002",
+      "title": "Map operational capabilities to measurable benefit metrics",
+      "as_a": "Supply Chain Program Manager",
+      "i_want": "each targeted business outcome to be linked to the enabling operational capability and a measurable metric",
+      "so_that": "Test can show how planning capabilities create quantifiable business value",
+      "acceptance_criteria": [
+        "Given a targeted business outcome exists, When it is entered into the benefit model, Then at least one operational capability and one performance metric must be associated to it.",
+        "Given a capability-to-metric mapping is created, When it is saved, Then the mapping is uniquely identifiable and traceable to a business outcome.",
+        "Given the BRD metric set, When the mapping matrix is generated, Then it includes all listed metrics and benefit areas from the BRD.",
+        "Given stakeholders request traceability, When they open the mapping view, Then they can navigate from benefit category to capability to metric in one workflow."
+      ],
+      "section_source": "Section 2: Benefit Realization",
+      "priority": "High"
+    },
+    {
+      "id": "US-003",
+      "title": "Capture baselines, targets, timing, and ownership for each benefit metric",
+      "as_a": "Benefits Analyst",
+      "i_want": "to maintain baseline values, target values, realization timing, and accountable owners for each metric",
+      "so_that": "Test can track progress and assign accountability for benefit delivery",
+      "acceptance_criteria": [
+        "Given a benefit metric record, When a user edits the record, Then the fields baseline, target, timing, and owner are available.",
+        "Given Test-specific values are not available, When the record is saved, Then the fields can be marked as 'TBD' without blocking record creation.",
+        "Given a metric has an assigned owner, When the record is viewed, Then the owner name and role are displayed.",
+        "Given a metric has baseline and target values entered, When the record is saved, Then the system validates that unit of measure is captured for both values."
+      ],
+      "section_source": "Section 2: Benefit Realization",
+      "priority": "High"
+    },
+    {
+      "id": "US-004",
+      "title": "Track lost sale reduction as a revenue protection benefit",
+      "as_a": "Revenue Planning Manager",
+      "i_want": "lost sale reduction to be tracked as a defined benefit metric",
+      "so_that": "Test can quantify revenue protection from improved supply chain planning",
+      "acceptance_criteria": [
+        "Given the benefit metric catalog, When revenue-related metrics are displayed, Then lost sale reduction is listed as a metric.",
+        "Given lost sale reduction is configured, When it is mapped, Then it is linked to the revenue business value category.",
+        "Given baseline and target values are entered for lost sale reduction, When the metric is reviewed, Then variance to target is calculated or marked TBD if calculation inputs are unavailable.",
+        "Given reporting is generated, When revenue protection metrics are selected, Then lost sale reduction appears with owner, baseline, target, timing, and status."
+      ],
+      "section_source": "Section 2: Benefit Realization",
+      "priority": "High"
+    },
+    {
+      "id": "US-005",
+      "title": "Track forecast accuracy improvement as a measurable planning benefit",
+      "as_a": "Demand Planning Lead",
+      "i_want": "forecast accuracy improvement to be measured and linked to business value",
+      "so_that": "Test can demonstrate how planning improvements support revenue and operational performance",
+      "acceptance_criteria": [
+        "Given the metric library, When planning metrics are configured, Then forecast accuracy improvement is available as a standard metric.",
+        "Given forecast accuracy improvement is associated to a capability, When the mapping is saved, Then the enabling planning capability is recorded.",
+        "Given baseline and target forecast accuracy values are entered, When the record is saved, Then percentage units are supported and validated.",
+        "Given executive reporting is run, When forecast-related benefits are included, Then forecast accuracy improvement is shown with its linked business value category and capability."
+      ],
+      "section_source": "Section 2: Benefit Realization",
+      "priority": "High"
+    },
+    {
+      "id": "US-006",
+      "title": "Track planner efficiency as an SG&A productivity benefit",
+      "as_a": "Supply Chain Operations Manager",
+      "i_want": "planner efficiency improvements to be measured under the benefit framework",
+      "so_that": "Test can quantify productivity gains and SG&A impact from improved planning processes",
+      "acceptance_criteria": [
+        "Given the benefit categories, When SG&A-related metrics are configured, Then planner efficiency is available as a metric.",
+        "Given planner efficiency is recorded, When it is mapped to business value, Then it is linked to SG&A or productivity benefit classification.",
+        "Given baseline and target efficiency measures are unavailable, When the metric is created, Then those fields may be set to 'TBD'.",
+        "Given a benefits dashboard is viewed, When SG&A metrics are filtered, Then planner efficiency is included with owner and realization timing."
+      ],
+      "section_source": "Section 2: Benefit Realization",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-007",
+      "title": "Track obsolete inventory reduction as a cost and capital benefit",
+      "as_a": "Inventory Manager",
+      "i_want": "obsolete inventory reduction to be measured and linked to shareholder value drivers",
+      "so_that": "Test can quantify reductions in write-offs and working capital exposure",
+      "acceptance_criteria": [
+        "Given the metric catalog, When inventory-related metrics are loaded, Then obsolete inventory reduction is present.",
+        "Given obsolete inventory reduction is classified, When the record is saved, Then it can be linked to cost reduction and/or capital improvement.",
+        "Given baseline and target values are entered, When reports are generated, Then the metric displays absolute values, unit of measure, timing, and owner.",
+        "Given benefit traceability is reviewed, When obsolete inventory reduction is selected, Then its capability-to-metric-to-value chain is visible."
+      ],
+      "section_source": "Section 2: Benefit Realization",
+      "priority": "High"
+    },
+    {
+      "id": "US-008",
+      "title": "Track inventory holding cost reduction as a COGS benefit",
+      "as_a": "Finance Business Partner",
+      "i_want": "inventory holding cost reduction to be tracked as a formal benefit metric",
+      "so_that": "Test can measure cost savings attributable to improved supply chain planning",
+      "acceptance_criteria": [
+        "Given the cost-related benefit list, When metrics are configured, Then inventory holding cost reduction is available.",
+        "Given the metric is mapped to business value, When classification is completed, Then it is linked to cost of goods sold and/or cost reduction categories.",
+        "Given baseline and target costs are entered, When the data is saved, Then currency unit and timing period are required unless values are marked TBD.",
+        "Given a cost benefits report is produced, When inventory cost metrics are selected, Then inventory holding cost reduction is included with current status."
+      ],
+      "section_source": "Section 2: Benefit Realization",
+      "priority": "High"
+    },
+    {
+      "id": "US-009",
+      "title": "Track expedited freight reduction as an operational cost benefit",
+      "as_a": "Logistics Manager",
+      "i_want": "expedited freight reduction to be measured within the benefit realization model",
+      "so_that": "Test can demonstrate transportation savings from improved planning decisions",
+      "acceptance_criteria": [
+        "Given the value lever list from the BRD, When transportation-related metrics are loaded, Then expedited freight reduction is included.",
+        "Given expedited freight reduction is mapped, When the record is reviewed, Then its associated operational capability and business value category are visible.",
+        "Given target and baseline values exist, When status is calculated, Then progress toward target is displayed.",
+        "Given target and baseline values do not exist, When the metric is published, Then it is shown with TBD status without breaking reporting."
+      ],
+      "section_source": "Section 2: Benefit Realization",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-010",
+      "title": "Track inventory reduction as a working capital benefit",
+      "as_a": "Working Capital Manager",
+      "i_want": "inventory reduction to be linked to capital performance metrics",
+      "so_that": "Test can quantify working capital improvements from supply chain planning transformation",
+      "acceptance_criteria": [
+        "Given the benefit framework, When capital-related metrics are configured, Then inventory reduction is listed as a standard metric.",
+        "Given inventory reduction is assigned to a benefit category, When it is saved, Then it is linked to the capital business value area.",
+        "Given a dashboard user selects capital metrics, When the dashboard renders, Then inventory reduction appears with baseline, target, owner, and timing or TBD markers.",
+        "Given shareholder value traceability is requested, When inventory reduction is opened, Then the metric shows its contribution path to working capital performance."
+      ],
+      "section_source": "Section 2: Benefit Realization",
+      "priority": "High"
+    },
+    {
+      "id": "US-011",
+      "title": "Track network visibility as an enabling operational capability outcome",
+      "as_a": "Supply Chain Visibility Lead",
+      "i_want": "network visibility to be represented as a benefit area with associated measurable indicators",
+      "so_that": "Test can evidence how improved visibility supports broader value realization",
+      "acceptance_criteria": [
+        "Given the BRD value levers, When enabling capability metrics are configured, Then network visibility is included.",
+        "Given network visibility is added to the framework, When the record is saved, Then at least one supporting metric or indicator can be associated to it.",
+        "Given Test-specific quantitative values are unavailable, When network visibility is published, Then it can be tracked with TBD baseline and target values.",
+        "Given stakeholders review capability benefits, When filtering by enabling capabilities, Then network visibility is displayed with owner and timing."
+      ],
+      "section_source": "Section 2: Benefit Realization",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-012",
+      "title": "Present business case impacts in shareholder value terms",
+      "as_a": "Executive Sponsor",
+      "i_want": "operational changes to be expressed in terms of revenue growth or protection, cost reduction, productivity, and working capital performance",
+      "so_that": "Test can evaluate the business case in shareholder value terms rather than only operational metrics",
+      "acceptance_criteria": [
+        "Given a benefit metric is mapped, When executive business case views are generated, Then each metric is associated to one or more shareholder value dimensions: revenue, cost reduction, productivity, or working capital.",
+        "Given an operational capability is selected, When the business case view is opened, Then the related shareholder value impacts are displayed.",
+        "Given quantified estimates are not yet available, When the business case view is rendered, Then impacted dimensions are displayed with values marked TBD.",
+        "Given executives export the business case summary, When the export completes, Then the document includes capability-to-metric-to-shareholder-value traceability."
+      ],
+      "section_source": "Section 2: Benefit Realization",
+      "priority": "High"
+    },
+    {
+      "id": "US-013",
+      "title": "Support TBD values for incomplete Test-specific benefit data",
+      "as_a": "Program Analyst",
+      "i_want": "missing Test-specific values, calculations, and expected ranges to be explicitly marked as TBD",
+      "so_that": "the benefit framework can be completed incrementally without losing traceability or data quality",
+      "acceptance_criteria": [
+        "Given a user does not have Test-specific baseline, target, or calculation inputs, When the metric is saved, Then the user can select 'TBD' for the missing fields.",
+        "Given a metric contains TBD values, When summary reporting is generated, Then the metric is included and clearly flagged as incomplete.",
+        "Given a field is marked TBD, When validation runs, Then the record is not rejected solely because of that missing value.",
+        "Given stakeholders review incomplete metrics, When filtering by data readiness, Then metrics with TBD values can be identified separately."
+      ],
+      "section_source": "Section 2: Benefit Realization",
+      "priority": "High"
+    },
+    {
+      "id": "US-014",
+      "title": "Provide benefit governance reporting across all value levers",
+      "as_a": "PMO Lead",
+      "i_want": "a consolidated reporting view of all benefit metrics, owners, baselines, targets, timing, and status",
+      "so_that": "Test can govern benefit realization during implementation and post-deployment",
+      "acceptance_criteria": [
+        "Given benefit records exist, When the governance dashboard is opened, Then it shows all configured metrics from the BRD with owner, baseline, target, timing, business category, and status.",
+        "Given users apply filters, When they select a business value category or metric type, Then the dashboard displays matching records only.",
+        "Given some metrics are complete and others are TBD, When the dashboard calculates data readiness, Then complete and incomplete records are separately countable.",
+        "Given governance reporting is exported, When the file is generated, Then all visible fields in the dashboard are included in the export."
+      ],
+      "section_source": "Section 2: Benefit Realization",
+      "priority": "Medium"
+    }
+  ],
+  "project_id": "f33c8dee"
+}

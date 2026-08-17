@@ -1,0 +1,245 @@
+{
+  "stories": [
+    {
+      "id": "US-001",
+      "title": "Integrate SAP S/4HANA core planning data into Kinaxis",
+      "as_a": "Supply Planning Integration Analyst",
+      "i_want": "SAP S/4HANA Product Master, Customer Master, Sales Orders, Inventory Balances, Purchase Orders, and Production Orders loaded into Kinaxis on a scheduled basis",
+      "so_that": "Archlin planners can use SAP S/4HANA data as the foundation for the Phase 1 Supply Management planning process",
+      "acceptance_criteria": [
+        "Given SAP S/4HANA contains in-scope planning data, When the integration job runs, Then Product Master, Customer Master, Sales Orders, Inventory Balances, Purchase Orders, and Production Orders are available in Kinaxis.",
+        "Given the required refresh frequency is every 4 hours, When a scheduled refresh completes, Then the Kinaxis data load timestamp is updated and visible to authorized planning users.",
+        "Given a source record fails validation during integration, When the data load completes, Then the failed record is captured in an integration error log with source object, record identifier, error reason, and timestamp.",
+        "Given a planner views loaded planning data in Kinaxis, When they compare a sampled record against SAP S/4HANA, Then the key field values match for the integrated data elements."
+      ],
+      "section_source": "Section 3: Supply Chain Scope; Section 3.1: Supply Chain Maps",
+      "priority": "High"
+    },
+    {
+      "id": "US-002",
+      "title": "Provide a centralized supply planning view",
+      "as_a": "Supply Planner",
+      "i_want": "a single Kinaxis planning view of supply, demand, inventory, purchase orders, and production orders",
+      "so_that": "I can reduce reliance on siloed Excel-based planning and make supply decisions using connected information",
+      "acceptance_criteria": [
+        "Given integrated SAP S/4HANA data is available in Kinaxis, When I open the centralized supply planning view, Then I can see demand, inventory balances, purchase orders, production orders, and supply positions for in-scope products and locations.",
+        "Given I select a product and location, When the view refreshes, Then the displayed supply and inventory information reflects the most recent successful data load.",
+        "Given I export or review the planning view, When I compare it to the legacy Excel planning inputs, Then the Kinaxis view contains the required in-scope supply management data without requiring manual consolidation.",
+        "Given I am not authorized for supply planning data, When I attempt to access the centralized planning view, Then access is denied."
+      ],
+      "section_source": "Section 1: Introduction; Section 2.1: Business Issues; Section 3.1: Supply Chain Maps",
+      "priority": "High"
+    },
+    {
+      "id": "US-003",
+      "title": "Identify raw material shortage risks",
+      "as_a": "Supply Planner",
+      "i_want": "Kinaxis to identify raw material shortage risks based on demand, inventory, open purchase orders, and production requirements",
+      "so_that": "I can take proactive action before shortages disrupt specialty chemicals manufacturing plans",
+      "acceptance_criteria": [
+        "Given current inventory, demand, purchase order, and production order data is available, When projected supply is less than projected requirement for an in-scope raw material, Then Kinaxis flags a raw material shortage exception.",
+        "Given a shortage exception is generated, When I review the exception, Then I can see material, location, shortage quantity, shortage date, related demand or production requirement, and available supply.",
+        "Given multiple shortage risks exist, When I sort the shortage list, Then I can prioritize by shortage date, shortage quantity, material, and location.",
+        "Given a new SAP S/4HANA data refresh changes supply or demand, When the next Kinaxis refresh completes, Then the shortage exception is recalculated and either updated, created, or cleared."
+      ],
+      "section_source": "Section 2: Benefit Realization; Section 2.1: Business Issues; Section 3: Supply Chain Scope",
+      "priority": "High"
+    },
+    {
+      "id": "US-004",
+      "title": "Generate exception-based alerts for recurring raw material shortages",
+      "as_a": "Supply Planner",
+      "i_want": "exception-based alerts that highlight recurring raw material shortages",
+      "so_that": "I can focus planning effort on high-risk supply constraints and make faster planning decisions",
+      "acceptance_criteria": [
+        "Given a raw material shortage exception occurs for the same material and location across multiple planning cycles, When the recurrence threshold is met, Then Kinaxis marks the exception as recurring.",
+        "Given recurring shortage exceptions exist, When I open the alert worklist, Then recurring shortage alerts are displayed separately or can be filtered from non-recurring exceptions.",
+        "Given I review a recurring shortage alert, When I acknowledge or assign it, Then the alert status, owner, and timestamp are saved.",
+        "Given a recurring shortage is resolved through additional supply or changed demand, When the plan is recalculated, Then the alert is cleared or marked resolved."
+      ],
+      "section_source": "Section 3: Supply Chain Scope; Section 2.2: Value Drivers",
+      "priority": "High"
+    },
+    {
+      "id": "US-005",
+      "title": "Support constrained supply planning",
+      "as_a": "Supply Planner",
+      "i_want": "to evaluate supply plans against available material, open supply, production orders, and known constraints",
+      "so_that": "I can align supply decisions with current demand, inventory, and order information",
+      "acceptance_criteria": [
+        "Given in-scope demand, inventory, purchase order, and production order data is available, When I run or refresh the supply plan, Then Kinaxis calculates projected supply positions by product, material, location, and time period.",
+        "Given projected demand exceeds available constrained supply, When the plan is calculated, Then Kinaxis identifies the constrained period and affected item-location combination.",
+        "Given a constrained supply issue is displayed, When I drill into the issue, Then I can view the contributing demand, inventory, purchase order, and production order records.",
+        "Given source data changes after a 4-hour refresh, When the plan recalculates, Then constrained supply outputs reflect the updated planning data."
+      ],
+      "section_source": "Section 3: Supply Chain Scope; Section 1: Introduction",
+      "priority": "High"
+    },
+    {
+      "id": "US-006",
+      "title": "Provide purchase order and purchase requisition planning support",
+      "as_a": "Supply Planner",
+      "i_want": "visibility to purchase order and purchase requisition planning recommendations",
+      "so_that": "I can support PO and PR planning decisions using Kinaxis-enabled supply management information",
+      "acceptance_criteria": [
+        "Given material requirements exceed available inventory and confirmed supply, When the supply plan is calculated, Then Kinaxis identifies a recommended procurement action for the affected item-location.",
+        "Given a recommended procurement action is displayed, When I review it, Then I can see material, location, required quantity, required date, current available supply, and source requirement driver.",
+        "Given open purchase orders exist for the same material and location, When I review the recommendation, Then Kinaxis shows the relationship between the recommendation and existing open purchase orders.",
+        "Given the recommendation is no longer required after updated supply or demand is loaded, When the planning calculation refreshes, Then the procurement recommendation is updated or removed."
+      ],
+      "section_source": "Section 1: Introduction; Section 3: Supply Chain Scope",
+      "priority": "High"
+    },
+    {
+      "id": "US-007",
+      "title": "Define and maintain safety stock policies",
+      "as_a": "Inventory Planner",
+      "i_want": "to define safety stock policies for in-scope products and locations",
+      "so_that": "Archlin can improve inventory planning discipline and reduce inventory planning uncertainty",
+      "acceptance_criteria": [
+        "Given I am an authorized inventory planner, When I create or update a safety stock policy, Then I can define item, location, effective date, safety stock quantity or method, and policy owner.",
+        "Given a safety stock policy is active, When projected inventory falls below the defined safety stock level, Then Kinaxis generates an inventory exception.",
+        "Given multiple policies exist for an item-location, When the plan is calculated for a period, Then the policy effective for that period is used.",
+        "Given a safety stock policy is changed, When the plan is recalculated, Then inventory exceptions and supply recommendations reflect the updated policy."
+      ],
+      "section_source": "Section 3: Supply Chain Scope; Section 2.2: Value Drivers",
+      "priority": "High"
+    },
+    {
+      "id": "US-008",
+      "title": "Calculate inventory targets across locations",
+      "as_a": "Inventory Planner",
+      "i_want": "Kinaxis to calculate inventory targets for in-scope products and locations",
+      "so_that": "I can compare current and projected inventory against target levels and improve stock optimization",
+      "acceptance_criteria": [
+        "Given in-scope product, location, demand, supply, and inventory data is available, When inventory target calculation is executed, Then Kinaxis calculates inventory targets by item-location and time period.",
+        "Given calculated inventory targets exist, When I open the inventory planning view, Then I can compare current inventory, projected inventory, safety stock, and target inventory.",
+        "Given projected inventory is below target, When I review the inventory view, Then the shortfall quantity and affected period are displayed.",
+        "Given projected inventory is above target, When I review the inventory view, Then the excess quantity and affected period are displayed."
+      ],
+      "section_source": "Section 3: Supply Chain Scope; Section 2: Benefit Realization",
+      "priority": "High"
+    },
+    {
+      "id": "US-009",
+      "title": "Monitor excess inventory",
+      "as_a": "Inventory Planner",
+      "i_want": "to identify inventory positions that exceed defined target or policy levels",
+      "so_that": "Archlin can improve inventory planning discipline and support inventory reduction goals",
+      "acceptance_criteria": [
+        "Given inventory target or safety stock policy data exists, When projected inventory exceeds the configured excess threshold, Then Kinaxis generates an excess inventory exception.",
+        "Given excess inventory exceptions exist, When I open the excess inventory view, Then I can see item, location, projected inventory, target inventory, excess quantity, and time period.",
+        "Given I filter the excess inventory view by product, location, or period, When the filter is applied, Then only matching excess inventory records are displayed.",
+        "Given updated demand or supply reduces projected excess inventory, When the plan recalculates, Then the excess inventory exception is updated or cleared."
+      ],
+      "section_source": "Section 3: Supply Chain Scope; Section 2.2: Value Drivers",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-010",
+      "title": "Track inventory turns for in-scope products and locations",
+      "as_a": "Supply Chain Manager",
+      "i_want": "to view inventory turns for in-scope products and locations",
+      "so_that": "I can monitor inventory planning effectiveness and support inventory reduction measurement",
+      "acceptance_criteria": [
+        "Given required inventory and consumption or demand data is available, When inventory turns are calculated, Then Kinaxis displays inventory turns by item, location, and reporting period.",
+        "Given inventory turns are displayed, When I filter by product, location, or period, Then the metric updates to reflect the selected scope.",
+        "Given source data required for inventory turns is missing, When the metric is calculated, Then Kinaxis displays the metric as unavailable and identifies the missing data dependency.",
+        "Given inventory turns are part of Phase 1 success measurement, When a reporting period closes, Then the inventory turns value is retained for benefit tracking."
+      ],
+      "section_source": "Section 3: Supply Chain Scope; Section 2.3: Key Performance Indicators",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-011",
+      "title": "Enable scenario analysis for supply planning decisions",
+      "as_a": "Supply Planner",
+      "i_want": "to create and compare supply planning scenarios",
+      "so_that": "I can evaluate alternatives for resolving shortages, supply constraints, and inventory issues before committing decisions",
+      "acceptance_criteria": [
+        "Given a baseline supply plan exists, When I create a scenario, Then Kinaxis copies the baseline assumptions and data into a separate editable scenario.",
+        "Given I change a planning assumption in a scenario, When I recalculate the scenario, Then the scenario results update without changing the baseline plan.",
+        "Given at least two scenarios exist, When I compare scenarios, Then Kinaxis displays differences in projected shortages, inventory positions, supply constraints, and procurement recommendations.",
+        "Given I no longer need a scenario, When I archive or delete it, Then the baseline plan and other scenarios remain unchanged."
+      ],
+      "section_source": "Section 3: Supply Chain Scope",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-012",
+      "title": "Provide capacity planning support visibility",
+      "as_a": "Supply Planner",
+      "i_want": "visibility to capacity-related planning constraints where Phase 1 data is available",
+      "so_that": "I can understand whether supply plans may be impacted by capacity limitations",
+      "acceptance_criteria": [
+        "Given capacity constraint, planning calendar, or lead-time data is available for an in-scope resource or location, When the supply plan is calculated, Then Kinaxis identifies capacity-related constraint indicators for affected periods.",
+        "Given capacity data is unavailable for a product, resource, or location, When I open the capacity planning support view, Then Kinaxis displays the capacity information as unavailable rather than using an assumed value.",
+        "Given a capacity-related exception is generated, When I review it, Then I can see the affected product or resource, location, period, requirement quantity, available capacity if provided, and related supply plan impact.",
+        "Given capacity assumptions are updated, When the plan recalculates, Then capacity-related indicators and exceptions reflect the updated assumptions."
+      ],
+      "section_source": "Section 3: Supply Chain Scope",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-013",
+      "title": "Support cross-functional supply visibility for sales, operations, and supply chain teams",
+      "as_a": "Supply Chain Manager",
+      "i_want": "shared supply visibility for sales, operations, and supply chain stakeholders",
+      "so_that": "Archlin teams can coordinate using a consistent view of planning information",
+      "acceptance_criteria": [
+        "Given authorized users from sales, operations, and supply chain access Kinaxis, When they open the shared supply visibility view, Then they see the same current supply, inventory, order, and exception information for in-scope data.",
+        "Given a user filters the shared view by product, customer, order, location, or exception type, When the filter is applied, Then the results update consistently for all authorized users.",
+        "Given a planning exception affects a sales order or production order, When a user drills into the exception, Then the related order information is visible if available from SAP S/4HANA.",
+        "Given a user lacks permission for restricted data, When they open the shared view, Then restricted fields or records are hidden according to access rules."
+      ],
+      "section_source": "Section 3: Supply Chain Scope; Section 3.1: Supply Chain Maps",
+      "priority": "High"
+    },
+    {
+      "id": "US-014",
+      "title": "Measure Phase 1 benefit realization KPIs",
+      "as_a": "Business Process Owner",
+      "i_want": "a KPI tracking capability for Phase 1 supply management benefits",
+      "so_that": "Archlin can measure supply visibility coverage, inventory planning effectiveness, shortage visibility, planning cycle time, manual planning effort, and exception review effectiveness",
+      "acceptance_criteria": [
+        "Given KPI definitions are approved for Phase 1, When the KPI dashboard is opened, Then it displays supply visibility coverage, inventory planning effectiveness, raw material shortage visibility, planning cycle time, manual planning effort, and planning exception review effectiveness.",
+        "Given a KPI baseline value is not available, When the KPI is displayed, Then the baseline is shown as unavailable until source, owner, and measurement method are confirmed.",
+        "Given post-go-live KPI data is available, When the KPI dashboard is refreshed, Then actual values are shown against the approved baseline and target where defined.",
+        "Given a KPI is outside approved Phase 1 scope, When benefit tracking is configured, Then the KPI is excluded from the Phase 1 benefit dashboard."
+      ],
+      "section_source": "Section 2.3: Key Performance Indicators; Section 2.4: Benefit Measurement Approach",
+      "priority": "High"
+    },
+    {
+      "id": "US-015",
+      "title": "Capture benefit ownership and review checkpoints",
+      "as_a": "Business Process Owner",
+      "i_want": "to assign owners and review checkpoints for each Phase 1 benefit area",
+      "so_that": "Archlin can actively track whether the Kinaxis-enabled capability delivers the intended supply management improvements",
+      "acceptance_criteria": [
+        "Given the Phase 1 benefit areas are defined, When I configure benefit ownership, Then each benefit area has an assigned business owner and supporting IT or data owner where applicable.",
+        "Given a benefit review checkpoint is scheduled, When the checkpoint date arrives, Then the assigned owner can review KPI status, supporting evidence, and open actions.",
+        "Given a benefit area has no assigned owner, When the benefit tracking record is saved, Then the system prevents completion or flags the record as incomplete.",
+        "Given a review checkpoint is completed, When the owner records the outcome, Then the checkpoint status, comments, action items, and completion date are retained."
+      ],
+      "section_source": "Section 2.5: Benefit Ownership; Section 2.6: Benefit Realization Dependencies",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-016",
+      "title": "Track planning cycle time and manual planning effort reduction",
+      "as_a": "Supply Chain Manager",
+      "i_want": "to track planning cycle duration and manual Excel-based planning effort before and after go-live",
+      "so_that": "Archlin can verify whether Phase 1 reduces planning delays and dependency on siloed Excel-based processes",
+      "acceptance_criteria": [
+        "Given pre-go-live baseline values are collected, When planning cycle time and manual effort KPIs are configured, Then baseline values, owners, measurement method, and measurement period are recorded.",
+        "Given a planning cycle is completed after go-live, When actual cycle metrics are entered or loaded, Then Kinaxis or the KPI tracking output records cycle start date, completion date, duration, and manual effort measure.",
+        "Given actual post-go-live values exist, When I compare them to baseline values, Then the report shows whether planning cycle time and manual planning effort have improved, worsened, or remained unchanged.",
+        "Given baseline values are not available, When the KPI report is generated, Then the baseline is shown as unavailable and the report identifies the required source and owner to complete measurement."
+      ],
+      "section_source": "Section 2: Benefit Realization; Section 2.4: Benefit Measurement Approach; Section 3: Supply Chain Scope",
+      "priority": "Medium"
+    }
+  ],
+  "project_id": "d1f51967"
+}

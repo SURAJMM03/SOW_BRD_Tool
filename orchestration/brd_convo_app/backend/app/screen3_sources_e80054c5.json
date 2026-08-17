@@ -1,0 +1,452 @@
+{
+  "1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Scheduler user interface.\nl Shipment Scheduler User Guide: Provides information on how to use the Shipment Scheduler\ncomponent of Transportation Planner.\nl Shipment Scheduler Getting Started: Provides a series of modeling exercises to help you understand\nhow to use some of the strategies and constraints that control the Shipment Scheduling engine.\nl Shipment Scheduler Implementation Guide for MFG ABPP: Provides information about optimization\nand shipment scheduling components and how to implement them for MFG ABPP. It also provides\nimplementation specialists and systems integrators with instru"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Define NPI/EOL Profiles",
+        "snippet": "New Product Introduction profiles, and End of Life profiles, are defined and mapped to the Forecast Item. The demand will be calculated automatically based on the defined profile.\nEnd Of Life Product – profile definition\nNPI Product – Profile definition"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Planner Modeling Guide and Transportation Planner Strategies and Parameters Guide, is accessed\nfrom the Help menu in the Transportation Planner user interface.\nl Shipment Scheduler User Help: This Help system consists of the same content as the Shipment\nScheduler User Guide and Shipment Scheduler Implementation Guide and is accessed from the Help\nmenu in the Shipment Scheduler user interface.\nl Shipment Scheduler User Guide: This guide provides information about how to use the Shipment\nScheduler component of Transportation Planner.\nl Shipment Scheduler Getting Started: This guide provides a se"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Definitions & Acronyms",
+        "snippet": "| Abbreviation | Definition |\n| --- | --- |\n| NPI | New Product Introduction |\n| EOL | End Of Life |\n| ASP | Average Selling Price |\n| SS | Safety Stock |\n| DP | Demand Planning |\n| SP | Supply Planning |\n| IP | Inventory Planning |\n| S&OP | Sales & Operations Planning |\n| E2E | End to End |\n| FI | Forecast Item |\n| CTP | Capable-To-Promise |\n| FLP | Full Level Pegging |\n| WO | Work Order |\n| PO | Purchase Order |\n| PReq | Purchase Requisition |\n| STO | Stock Transfer Order |\n| PLO | Planned Order |\n| SLOBS | Slow-moving and Obsolete inventory |"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Chapter 1. Introduction\nWelcome to the Transportation Planner Implementation Guide. This book provides overviews,\nillustrations, procedures, and examples for Transportation Planner. Screens, dialog boxes, and other\nwindows shown are only examples.\nRelated documentation\nFor more information on Transportation Planner, see the following documents:\nl Transportation Planner Release Notes: This guide provides information about any new or updated\nfunctionality in Transportation Planner.\nl Transportation Installation/Administration Guide: This guide provides information about how to install\nTransporta"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Table of Contents",
+        "snippet": "Table of Contents\nChapter 1. Introduction\n1\nRelated Documentation\n1\nChapter 2. Transportation Planner strategies\n3\nThe strategy file\n3\nWork with the strategy file\n3\nOptimizer plan hierarchy\n3\nCritical loads\n4\nArguments and functions\n5\nComments\n6\nStrategy function syntax\n6\nDefault values\n7\nIllustration conventions\n7\nTroubleshooting\n8\nChapter 3. Control functions\n9\nSetFixedPartition\n10\nSetParallelSolve\n11\nSetTimeLimit\n12\nSleep\n13\nChapter 4. Global parameter functions\n14\nAddShipmentReference\n14\nAddTripBuildingPriorityRule\n14\nAddTripSequenceFreightClassRule\n15\nAddTripSequencePriorityRule\n16\nAssign"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Chapter 1. Introduction\nThis guide provides overviews, illustrations, procedures, and examples for Transportation Planner.\nRelated Documentation\nFor more information on Transportation Planner, see the following documents:\nl\nTransportation Planner Release Notes: Provides information on new or updated functionality in\nTransportation Planner.\nl\nTransportation Planner Installation Guide: Provides information on how to install Transportation\nPlanner.\nl\nTransportation Planner User Guide: Provides details on how to use the Transportation Planner web\nuser interface.\nl\nTransportation Planner Strategies"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "This document is for the use of Kinaxis and COMPANYNAME.  The holder of this document shall keep all information herein confidential and shall protect it from disclosure and dissemination to all third parties.\nFill in company name above and change font to match the rest. “Emphasis” style.\nChange the file name by replacing “Template” with the customer name.  e.g. Companyname Solution Maintenance Manual.docx.\nUpdate the table of contents and all other cross references by typing ctrl-a then F9."
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Company Background",
+        "snippet": "[Include some generic information about the customer here]"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Company Background",
+        "snippet": "[Include some generic information about the customer here]"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Chapter 1. Introduction\nThis guide provides overviews, illustrations, procedures, and examples for Transportation Planner.\nRelated Documentation\nFor more information on Transportation Planner, see the following documents:\nl\nTransportation Planner Release Notes: Provides information on new or updated functionality in\nTransportation Planner.\nl\nTransportation Planner Installation Guide: Provides information on how to install Transportation\nPlanner.\nl\nTransportation Planner User Guide: Provides details on how to use the Transportation Planner web\nuser interface.\nl\nTransportation Planner Strategies"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Demand Review",
+        "snippet": "The Demand Review is the first step of the S&OP process. The Unconstrained Demand Plan aligns with the company goals and initiatives."
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "Product life cycle information, for example a stage indicator, can be maintained in Maestro. This indicator can be used in hierarchies and filters, so you can select items with a particular life cycle phase. Based on this indicator you can set planning policies (automatically) which trigger particular planning actions.\nWith Maestro simulation capabilities you can easily create a scenario and see the impact of particular phase in/out decisions. | S&OP Forecast Item Management, NPI record creation\n51 | Demand Planning | Ability to generate new product introduction and product run out forecast re"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Scheduler user interface.\nl Shipment Scheduler User Guide: Provides information on how to use the Shipment Scheduler\ncomponent of Transportation Planner.\nl Shipment Scheduler Getting Started: Provides a series of modeling exercises to help you understand\nhow to use some of the strategies and constraints that control the Shipment Scheduling engine.\nl Shipment Scheduler Implementation Guide for MFG ABPP: Provides information about optimization\nand shipment scheduling components and how to implement them for MFG ABPP. It also provides\nimplementation specialists and systems integrators with instru"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements\nColumns: After Discovery session, before follow-up\nFunctional Requirements & Design | Kinaxis Input | Differences in requirements/processes/solutions/change management per BU\nAfter Discovery session, before follow-up: Kinaxis Resource for Solution\n1 | Demand Planning | Ability to have an automated forecasting tool which sources and consolidates historical and current sales data and predicts future demand for a selectable period (e.g. last year, current year and next financial year) | Forecast algorithms | Must Have | Yes | 9 | Wi"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "A step further, What if there are multiple suppliers of individual components and we select based on price?  Yes. Can it be automatically set to buy the cheapest one?\nDifferent makes/IDs of the same product made at the same site can also be segmented to feature in different BOMs if needed.\nMultiple suppliers of a raw material, each with separate product codes > these can be fed into a parent raw material that can be inputted into the BOM. How does the backflush work? This would be primarily in ERP/SAP system - Maestro can indicate this.\nWhat is Maestro's ability to deal with very detailed fore"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "Also need to faciltiate tiered pricing based on volumes ordered. Standard it is not there. But we can customise this to build in the business rules. New requirement added. | Not noted | - suggested Kinaxis solution (future-state process)\n'- why this solution (reasoning)\n2 | Demand Planning | Ability to upload data from external sources to feed into creation of Demand Plans including customer forecasts, actual tank levels at Ixom / customer sites | Data sources | Demand Planning | Must Have | Yes | 9 | Will stay in SAP ? - Master data that is available in SAP will be transferred to Maestro | Im"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "2025-03-05 | 4 | Demand Planning | Ability to integrate with the product cost and Customer and ShipTo pricing models to support financial forecasts with the ability to do scenario modelling and predictive pricing based on a variety of methods at plant / customer / period (e.g. statistical & historical). This relates to all types of Planning | Scenario Planning | Demand Planning | Must Have | Yes | 9 | Consensus Demand PLanning | Pricing based on customer/Shipto/grography/ time, instead of using the ASP/ std unit cost use pricing procedure | Pricing may be different based on the ShipTo or the C"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "- Supplier (based on products they supply to us)\nExport all reports of that subset, to then do what we want with. | Closed loop report (Exportable)-Custom Workbook report.\n8 | Demand Planning | Ability to extract the forecast at configurable levels, e.g. Product level and submit / resubmit forecasts for approval, including to one or more approvers | Notifications / Approval | Demand Planning | Should Have | Yes | 3 | S&OP cycle Approval, Scenario comment/ commit | For S&OP hardcoded approvals/ workflow, for midcycle we just need acknowledgement approval\nOverride in case person is unavailable |"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "13 | Demand Planning | Ability to automatically notify (email, in-system notifications, dashboard) the submitter once the forecast has been approved by all approvers | Notifications / Approval | Demand Planning | Should Have | Yes | 3 | Scenario comment | Can be done via Scenario commit/comment, Workbook command\n2025-03-05 | 14 | Demand Planning | Ability to manually update the forecasts in real-time, including modify, cancel, reset (to original values) and apply a change to multiple products all with reason code and comments | Systems integration | Demand Planning | Must Have | Yes | 9 | S&OP"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "17 | Demand Planning | Ability to create graphical representations of Forecasts and see constraints | Reporting | Demand Planning | Must Have | Yes | 9 | Fit\n18 | Demand Planning | Ability to generate Reports, Analytics, and Insights to support Demand Planning (e.g. SLOBs, Pipeline Provision Report, Blocked Products) | Reporting | Demand Planning | Must Have | Yes | 9 | Custom Reports, As per Ixom Layout | Custom Reports, As per Ixom Layout | Custom Reports as per IXOM layout.\n19 | Demand Planning | Ability to generate Reports, Analytics, and Insights to measure Forecast vs. Actuals | Reportin"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "23 | Demand Planning | Ability to allow the users to adjust and refine the statistical forecasts based on various demand levers, like price change, seasonality, economic conditions, new product launch, marketing etc. | Forecast algorithms | Demand Planning | Must Have | Yes | 9 | Maestro supports both uni-variate and multi-variate, time series statistical models. The statistical forecasting engine is highly flexible as there is no rigid forecasting \"pyramid\" and you can generate a statistical forecast at any combination of the product-customer-location levels. Our \"BestFit\" forecasting techniq"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "In addition, Maestro offers a robust Consensus Demand Planning capability that allows planners to incorporate forecast adjustments or make over-rides at any level and intersection of the product/customer/channel hierarchies. In addition, Maestro supports the incorporation of multiple forecast streams (e.g. Marketing, Sales, Customer, Finance, POS, etc.) into the resulting Consensus Demand Plan using forecast weights. The excel-like interface is very intuitive and facilitates easy input of adjustments. While Maestro offers standard categories of adjustments out-of-the-box (e.g. promotion, distr"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "Planners can then navigate through the hierarchies and filters to visualize at the desired level. | S&OP Forecast Item Management | Fit\n25 | Demand Planning | Ability to manage forecasts using multiple demand hierarchies at the same time, and to forecast each SKU item or grouping of SKUs at different levels of the hierarchies (channel or product hierarchies) | Heirarchies | Master Data (Specific to IBP) | Must Have | Yes | 9 | Forecast accuracy and error tracking for all forecasting streams, across all hierarchy levels and different lags is standard capability in Maestro. It is possible to mod"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "27 | Demand Planning | Ability to adjust the statistical model used to generate the forecast at each level | Forecast algorithms | Demand Planning | Must Have | Yes | 9 | Yes, planners can influence and adjust the forecast at all levels of hierarchies. Hierachies in Maestro are dynamic and can be created around any type of product, location, customer attribute or data point. The tool will then aggregate or disaggregate any changes based on what level the adjustment was made at. | S&OP Forecast Item Management | Fit\n28 | Demand Planning | Ability to allow the users to specify the historical per"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "Multi-variate statistical models include MLR, ARIMAX and Elastic Net - these models allow users to include various internal and external causal factors such as industry growth projections and macroeconomic variables as inputs to the forecast.\nMaestro also offers Machine Learning (ML) Forecasting capabilities through our Demand.AI offering. Demand.AI can be used to further improve the forecast by pulling in additional data signals that are typically leverage from outside your supply chain modeling (e.g. new housing starts, weather by region, event information (e.g. disasters), etc.).\nIn additio"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "29 | Demand Planning | Ability to generate statistical forecast based on cleansed history and to view recommendation based on uncleansed history | Forecast algorithms | Demand Planning | Must Have | Yes | 9 | Outliers in Maestro refer to points in the data that are not consistent with the overall pattern. Maestro provides several configuration options for outlier detection and processing. Outliers can be detected based on standard deviation, Iglewicz-Hoaglin method, or winsorizing. Outliers can be adjusted using options such as forecast, ignore, mean, median, smooth keep excess, smooth remove "
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "32 | Demand Planning | Ability for the user to manually override the statistical model the system provided | Forecast algorithms | Demand Planning | Must Have | Yes | 9 | The forecast model parameters can also be manually set (rather then system optimized). | S&OP Forecast Item Management | Fit\n33 | Demand Planning | Ability to set on and off of the automated statistical modelling for a defined period time | Forecast algorithms | Demand Planning | Must Have | Yes | 9 | The forecast configuration interface in the UI allows planners to set forecast time periods, effectivity status, and many more"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "36 | Demand Planning | Ability to adjust the replenishment model based on the events in the key dates | Master Data | Demand Planning | Must Have | Yes | 9 | Maestro can have as many calendars as you want modeled and any calendar can be used throughout the solution. This means you can view vendor calendars, distribution calendars, plant calendars, weekly/ monthly/ quarterly calendars, or any other calendars you need, anywhere. | configurable behaviour via calendars/ custom cmd | ex if chinese new yr falls in 3 months, inc LT from 8Weeks to 10 Wk | ex. Cinese New Year may have to shut things do"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "38 | Demand Planning | Ability to generate precise seasonal demand forecast based on the analysis | Forecast algorithms | Demand Planning | Must Have | Yes | 9 | Yes, plans are automatically adjusted for changes in volume due to seasonality, promotions, inventory pre-build, intermittency, etc. The seasonal co-efficient will be generated at the level of the forecast creation. | S&OP Forecast Item Management | Fit\n39 | Demand Planning | Ability to create different scenarios and evaluate the potential impact without making any change to the current forecast | Scenario Planning | Demand Planning |"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Functional Requirements ",
+        "snippet": "40 | Demand Planning | Ability to set a time to push the fully tested scenario live as required | Scenario Planning | Demand Planning | Must Have | Yes | 9 | What-if/Scenario Planning – The ability to develop and evaluate multiple scenarios is a distinguishing feature of Maestro.  Each scenario represents a plan in which planning parameters, supplies and/or demands can be modified.  A fundamental premise is that “any user can model anything at any time” and not experience a degradation in system performance.  It is commonplace today for hundreds of users within an organization to simultaneousl"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.2": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: WorkshopAttendees",
+        "snippet": "Workshop Activity: Workshop: Business Unit Leaders, Details: Connect with Business unit leaders and algin team for the following workshops., Deliverable/s: #1 - Current-state challenges and opportunities per BU\n#2 - Benefits (minor input), Solution Blueprint population: 2.2 Qualitative Benefits\n2.3 IXOM Identified Business Problems and Value Drivers, IXOM Participants Required: AU Traded Packaged  Leader,\nAU Traded Bulk Leader,\nAU ChlorAlkali Leader,\nNZ Leader, IXOM Attendees: Nikki  (bulk and packaged AUS)(+ her BMs Andrew Miller, Paul Bernardt, Khozema Kaka, Andrew Thomson)\nPenny Griffits (C"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: Internal PMO-Timeline",
+        "snippet": "#2 - Benefits (minor input) | 2.2 Qualitative Benefits\n2.3 IXOM Identified Business Problems and Value Drivers | AU Traded Packaged  Leader,\nAU Traded Bulk Leader,\nAU ChlorAlkali Leader,\nNZ Leader | To be determined if all Leads in first session, then follow-ups? Or all separate from the start? If separate per BU, potentially to merge with the below (including SMEs) | Br-Solution Architect | 1 | 1\nBr-Sr Solution Consultant | 1 | 1\nKi- | 0\nTr-Supply Chain SME | 0\n7 | Workshops: Initial SME Working Session per Area | Introduction of each BU 's | #1 - Current-state challenges and opportunities pe"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W-Demand Planning",
+        "snippet": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W-Demand Planning\nColumns: Demand Planning Workshop Attendees | Details | Deliverable/s | Solution Blueprint population | IXOM Attendees | Notes | Duration\nDetails: Detailed AS IS Process - Explaining current process in detail, Data mapping, Forecasting level, Consensus demand plan, Forecasting accuracy and EOL  mgmt., user cases finalization., Deliverable/s: #1 - Current-state challenges and opportunities per BU (minor input)\n#2 - Benefits (minor input)\n#3 -Future state process diagrams\n#4 - Integration requiremen"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "Required field: Dependent Requirements will be auto calculated compared to current-state of running MRP to get these results (no action needed from users)., Required field: Supply Planning & Order Management, Optional field: Replaces current process to import product forecast and calculate base materials needed to create end-products, dilutions required etc - this would become automated in system in future-state., Optional field: Planners, Site schedulers, Optional field: YES, Optional field: YES, Optional field: YES, Optional field: YES\nRequired field: All external Forecast Upload directly ha"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: Simplified Timeline",
+        "snippet": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: Simplified Timeline\nColumns: Off-site | On-site\nPH 10-Mar | PH Easter | PH Easter\nOn-site: 2025-03-28\nOff-site: 2025-02-24, On-site: 2025-03-03\nOff-site: WK2, On-site: WK3\n1 | Project Setup & Sandbox | Understand and analyse all as-is processes provided by IXOM.\nFurther analyse all functional requirements.\nPrepare kick-off decks and workshop artefacts. | Br-Solution Architect | 0\n2 | Kick-off | - Blueprint project kick of meeting between Core team. Steering, input into high-level opportunitites for benefit realisat"
+      },
+      {
+        "doc_name": "SOW_BKP.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Statement Of Work\nby and between\nTridant pty Ltd\nand\nBristlecone Incorporated\nDated as of Wed, Apr 16, 2026\nThe Statement of Work (“Agreement”) is governed by the Master Services Agreement (MSA) effective as of 25 Nov 2024. This Statement of Work is entered into on 04 May 2026.  by and between Bristlecone Incorporated, a California corporation, Federal Tax I.D. No. 77-0485545 (\"Bristlecone\" or “Supplier”), located at 10 Almaden Blvd, Suite # 960, San Jose, CA 95113, and Tridant Pty Ltd (ABN 63 125 310 634) located at Level 8/607 Bourke St, Melbourne VIC 3000 (\"Tridant\" or “Company”) and descri"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM\nColumns: Required field | Required field | Optional field | Optional field | Optional field | Optional field | Optional field | Optional field | Optional field | Optional field | Optional field | Optional field\nOptional field: BU Affected\nRequired field: Potential Change to Operations, Required field: Process Affected, Optional field: Other Notes, Optional field: Associated Actions/Decisions, Optional field: Roles Affected, Optional field: Workstream, Optional field: Traded Bulk, Optional field: Traded Packaged, Optional field:"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "Product Manager to overwrite, then notify user group.\nEach product manager to have their own forecast\nDetailed overwrites for their own product group\nPlus a statistical to constantly compare and refine.\nProduct manager may want to overwrite one of their customers' rolling view with the statistical view., Optional field: Decision Register #02, Optional field: Demand Planers, Supply Planners, Product Managers\nBMs, Optional field: Demand Planning, Optional field: YES, Optional field: YES, Optional field: YES, Optional field: YES, Optional field: 2025-03-05, Optional field: Demand Planning Stream "
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "3rd party transport/\nNZ BLT Fleet, Optional field: Distribution Planning Stream 2, Optional field: YES, Optional field: YES, Optional field: YES, Optional field: YES\nRequired field: Historical data cleansing will be required of IXOM team. Product order data, including ShipTo. Product, Customer, Site., Required field: New process, Optional field: Initially at least 12 months of historical data to cleanse and then monthly actuals (once a month). Likely to be the demand planners have the first go at it and then what they do is they'll sit down and have that discussion with the PM and manage anyth"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "Required field: Sales & Operational Planning processes (and potentially many more that will come through into the system as Task Flows) have individual tasks visibly assigned to individuals and/or groups and the dashboards highlight who may be late in completing tasks. Percieved accountability throughout processes may be higher than current processes., Required field: S&OP Processes, potentially quite a few more., Optional field: Demand Planners, Supply Planners, Finance Team, Product Managers, Commercial Team, Account Managers, Distr. Planners, Site Schedulers/Managers more, Optional field: S"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "Required field: Current process to export POs, stock, pricing and product master data from SAP will be replaced with automated integration., Required field: Current export from SAP into spreadsheets and PowerBI etc as required, also into SAP., Optional field: Managing errors (exception reports etc), Optional field: Planning team, Plus finance, production planners (currently exporting open process orders), Optional field: Demand & Supply Planning, Optional field: YES, Optional field: YES, Optional field: YES, Optional field: YES\nRequired field: Planning excel files will be replaced with Maestro"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "Required field: Constraints Optimiser (Supply.AI) will handle production planning in a more automated way compared to current human efforts. Production planners will need to input and prioritise constraints within the system. Maestro will then provide results for the production planner to review and edit as required. Anticipated to take less time overall however the process will be quite different. All the master data and transactional data need to be setup correctly to ensure optimization to work effeciently.  Both the PartSource and BOM records must accurately reflect jurisdictional controls"
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "Required field: System access, roles and responsibilities will need to be decided and assigned to all users. Ex. System Administrator (manage users, roles and access), System Integration, Author, Viewer. User groups will need to be defined to best manage access., Optional field: IT, potentially planning team (may lose current responsibilities to IT)\nRequired field: IT or other role to be determined by IXOM will need to manage the 3 Maestro environments: Development, Quality (testing), Production (live), Optional field: IT or TBC\nRequired field: Purchase Requisitions will be created in Maestro "
+      },
+      {
+        "doc_name": "IXOM User Story Tracking 1.xlsx",
+        "heading_path": "IXOM User Story Tracking 1.xlsx — Sheet: Operational Flags for OCM",
+        "snippet": "Required field: Returnable Products tracking information will be fed manually into Maestro (via a sheet created in Maestro). Believed that this process is currently manual also TBC how/where it is stored., Required field: Production Planning, Inventory Management, Optional field: Interface change. Data entry required (similar to now), Optional field: Production Planners, maybe Product Managers or Site, Optional field: YES\nRequired field: Reports will be standardized based on the user roles within Maestro., Required field: Reporting, Optional field: Further decisions on reports created for impl"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: WorkshopAttendees",
+        "snippet": "#2 - Benefits (minor input)\n#3 -Future state process diagrams\n#4 - Integration requirements (minor input)\n#7 - Information/data requirements (minor input)\n#10 - Changes to operational model/structure, Solution Blueprint population: Early sessions:\n7. KPI's & Demand Planning - Process Task Flows (sub sections TBC based on exact future-state processes that will be designed, associated user stories & solution assumptions)\nLater sessions:\n1.6 - Planning Hierarchy Attributes (minor input), IXOM Attendees: Planning team (NZ & AUS), BMs of ChlorAlkali & Traded,\nBarry Savage, Gynandra Naiker, Grace Zh"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: WorkshopAttendees",
+        "snippet": "Supply.AI sessions need to be added here. Gurobi (lead by Kinaxis), Duration: 4 hours initial session + follow-ups as required\nWorkshop Activity: Workshops: Supply Plan & Order Mgt Area, Details: Constraints analysis, Make,Buy,Transfer decisions, order firming,ASP,MPS and MRP, Solution Blueprint population: 8.1 Supply Planning - Review & Validate Planned Orders\n8.6 Supply Planning - Manage Constrain Exceptions, Notes: Workshop approach to cover each process needed. This will require multiple sessions., Duration: 4 hours initial session + follow-ups as required\nWorkshop Activity: Workshops: Sal"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: WorkshopAttendees",
+        "snippet": "AU Traded Bulk Leader,\nAU ChlorAlkali Leader,\nNZ Leader, Notes: One session per BU.\nOption to include BMs with the BU Leader for each session, Duration: 2-4 hours per BU\nWorkshop Activity: Workshops: Reporting, Details: Reporting Requirements, IXOM Attendees: Barry Savage, Kailash Attawar,  Tracey Davey,Grace Zhu, Graham Lelliot,  Andrew Holden, , Gabriel Siegel,\nDuration: several 2 hours each area/BU\nWorkshop Activity: Workshops: Change Management, Details: Follow-up with IXOM change managers to assist with any queries they may have to contribute to their change plans., IXOM Attendees: Barry "
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: Simplified Timeline",
+        "snippet": "#3 -Future state process diagrams\n#4 - Integration requirements (minor input)\n#7 - Information/data requirements (minor input)\n#10 - Changes to operational model/structure | Early sessions:\n7. KPI's & Demand Planning - Process Task Flows (sub sections TBC based on exact future-state processes that will be designed, associated user stories & solution assumptions)\nLater sessions:\n1.6 - Planning Hierarchy Attributes (minor input) | Recommend Change Leads towards end when future requirements are more solidified.\nAssumptions on processes to be addressed would be helpful. At minimum, a number of pro"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: Simplified Timeline",
+        "snippet": "Supply.AI sessions need to be added here. Gurobi (lead by Kinaxis) | Br-Solution Architect | 0\n10 | Workshops: Sales & Operational Planning Area | Kinaxis-lead. | Ki- | 0\n11 | Workshops: Constraints Optimiser (Supply.AI) | Distribution locations replenishment, cross location inventory visibility and redistribution, Metrics, User cases finalization | Br-Solution Architect | 0\n12 | Workshops: Master Data & Integrations | Data Mapping and validation | 1.6 - Planning Hierarchy Attributes (minor input) | Br-Solution Architect | 0\n13 | Workshops: Reporting | Reporting Requirements | Br-Solution Arch"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: Internal PMO-Timeline",
+        "snippet": "Br-Sr Solution Consultant | 3 | 2 | 1\nKi- | 0\nTr-Supply Chain SME | 0\n14 | Workshops: Distribution Planning Area | Distribution locations replenishment, cross location inventory visibility and redistribution, Metrics, User cases finalization | Br-Solution Architect | 2 | 2\nBr-Sr Solution Consultant | 2 | 2\nKi- | 0\nTr-Supply Chain SME | 0\n15 | Workshops: Master Data & Integrations | Data Mapping and validation | 1.6 - Planning Hierarchy Attributes (minor input) | Br-Solution Architect | 2 | 1 | 1\nBr-Sr Solution Consultant | 2 | 1 | 1\nKi- | 0\nTr-Supply Chain SME | 0\n16 | Information Collation | "
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: Internal PMO-Timeline",
+        "snippet": "Br-Sr Solution Consultant | 1 | 1\nTr-Project Manager | 0\nTr-Supply Chain SME | 0\n22 | Costing & Implementation Plan | Tridant/Bristlecone to create implementation plan including tasks, resources, travel and overall project timeline. Costings to be devised from the plan. | Br-Solution Architect | 3 | 3\nBr-Sr Solution Consultant | 3 | 3\nKi- | 0\nTr-Supply Chain SME | 0\n23 | BAU Costing (licensing) | Licensing costs. Cass to add Kinaxis resource to assist | Br-Solution Architect | 0\nBr-Sr Solution Consultant | 0\nKi- | 1 | 1\nTr-Supply Chain SME | 1 | 1\n24 | Training Approach | No longer included | "
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W-Demand Planning",
+        "snippet": "Demand Planning Workshop Attendees: 4\nDemand Planning Workshop Attendees: 5\nDemand Planning Workshop Attendees: 6\nDemand Planning Workshop Attendees: 7\nDemand Planning Workshop Attendees: 8\nDemand Planning Workshop Attendees: 9\nDemand Planning Workshop Attendees: 10\nDemand Planning Workshop Attendees: 11\nDemand Planning Workshop Attendees: 12\nDemand Planning Workshop Attendees: 13\nDemand Planning Workshop Attendees: 14\nDemand Planning Workshop Attendees: 15, Deliverable/s: Stream 1: Roughcut capacity planning; long term (12 to 18 months) supply planning/inventory plan, annual budget & updated "
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "4": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Generate Consensus Demand Plan",
+        "snippet": "S&OP Consensus Demand Planning"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W-Demand Planning",
+        "snippet": "Demand Planning Workshop Attendees: 4\nDemand Planning Workshop Attendees: 5\nDemand Planning Workshop Attendees: 6\nDemand Planning Workshop Attendees: 7\nDemand Planning Workshop Attendees: 8\nDemand Planning Workshop Attendees: 9\nDemand Planning Workshop Attendees: 10\nDemand Planning Workshop Attendees: 11\nDemand Planning Workshop Attendees: 12\nDemand Planning Workshop Attendees: 13\nDemand Planning Workshop Attendees: 14\nDemand Planning Workshop Attendees: 15, Deliverable/s: Stream 1: Roughcut capacity planning; long term (12 to 18 months) supply planning/inventory plan, annual budget & updated "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Demand Planning in Maestro – Setting the scene",
+        "snippet": "The objective of the Maestro Demand Planning application is to create an unconstrained consensus demand forecast that combines multiple functional forecast perspectives, weighted and adjusted as part of a highly collaborative process, and all orchestrated and documented within a single planning system.\nIn this section, some of the foundational information for the IXOM Demand Planning solution in Maestro will be described."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Consensus Demand Planning: Create Consensus Demand Plan (Unconstrained Demand Plan)",
+        "snippet": "The next step in the Demand Planning process amalgamates final inputs from Demand Planners and Product Managers to create the Consensus Demand Plan (Unconstrained Demand Plan). Maestro can be configured to automatically disaggregate the consensus demand for the first 3 Months into daily/weekly buckets, if required."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Demand Planning Scenario Structure",
+        "snippet": "It will be possible for the Demand Planner to work across multiple scenarios depending on where in the IXOM process flow, he/she is. An illustration of the scenario Structure for Demand Planning can be seen below. (Scenario structure to be added later)"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "S&OP Demand Planning Ratios. (Workbook)",
+        "snippet": "This is a modified PDR.\nNote:\nThe established global forecast weights are set in Control Tables->Historical Demand Category for Stat, Sales, Marketing & Finance & Adjustment demand input streams as follows (no need to maintain/edit ratios in S&OP Demand Planning Ratios workbook):"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W-Demand Planning",
+        "snippet": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W-Demand Planning\nColumns: Demand Planning Workshop Attendees | Details | Deliverable/s | Solution Blueprint population | IXOM Attendees | Notes | Duration\nDetails: Detailed AS IS Process - Explaining current process in detail, Data mapping, Forecasting level, Consensus demand plan, Forecasting accuracy and EOL  mgmt., user cases finalization., Deliverable/s: #1 - Current-state challenges and opportunities per BU (minor input)\n#2 - Benefits (minor input)\n#3 -Future state process diagrams\n#4 - Integration requiremen"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "4.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Process Overview",
+        "snippet": "The Statistical Forecast Generation step within the IXOM Demand Planning Process is illustrated in the flowchart below and further explained thereafter.\nL3 Processes: Statistical Forecast Generation"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Demand Planning Process Overview",
+        "snippet": "The purpose of the Demand Planning process is to generate, evaluate, and form consensus around the monthly Demand Plan for a definable period (i.e. xx months).\nThe IXOM Demand Planning Process is depicted below. All level 2 processes are outlined with inputs and outputs for each process step.\nIXOM Demand Planning Process Flow\nNote: Demand Planners perform the Forecast Disaggregation step for all Business Units, except Traded Packaged.\nThe sources of the Demand Planning process data are listed below.\n| Input | Source |\n| --- | --- |\n| Historical Labelling | Maestro |\n| SKU master data | ERP |\n|"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Supply Planning – Process Overview",
+        "snippet": "Maestro supports the activities related to the Supply Demand Balancing, Supply Planning, and S&OP processes etc., Information flows from one process to another and some processes exchange information iteratively.\nThe roles with activities in Maestro are indicated in the swim lanes. Other roles may support the processes without having a direct activity in the system.\nThe Supply Planning processes that are carried out in Maestro are shown within the dotted area in the Level 1 process diagram below. The IXOM Supply Planning process in some plants (currently CAP plants) involves the distribution p"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Process Overview",
+        "snippet": "The Demand Planner/s and the Product Manager/s collectively review the demand volumes, (the system-generated Consensus Demand Plan based on assigned weightings) adjust or override the forecast for select products, if needed, and then approve the consensus demand/forecast. The final result is published and shared with the Supply Planners, as the Consensus Demand Plan (unconstrained demand plan).\nLevel 3 Processes: Consensus Demand Planning"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Define Demand Plan Calendar",
+        "snippet": "The solution design with consist of the following capabilities:\nThe ability to define a demand plan process calendar, ownership and cadence\nThe ability to start process instances\nThe ability to track and monitor process instances"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Process Overview",
+        "snippet": "In this process, the Production Planner reviews the effective total demand, determines the source of the demand, reviews the any supply imbalances vs. demand, creates new process orders, updates existing process orders and reviews the inventory projection to make sure there is no shortfall. The Production Planner then creates a production plan to fulfill the demand - all within Maestro.\nLevel 3 Process – Create Initial Version Of Production Plan\nNote : In AU for manufacturing sites that use process orders, the process orders are created by the site leaders or operators. Some site leaders do pl"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Process Overview",
+        "snippet": "The IXOM Demand Planning Process includes a data preparation step, per the process flowchart below.\nLevel 3 Processes: Data Preparation Steps\nData Preparation\nThe Demand Planner defines the Forecast Item at the level they need the history to be aggregated, and the Statistical Forecast generated. Thereafter, the Demand Planner / Product Manager will cleanse the historical data prior to generating the Statistical Forecast. When cleansing historical data, consideration needs to be given to demand for which there are no actuals, updates for any causals, and adjustments to any outliers.\nIf there ar"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Process Overview",
+        "snippet": "In addition to the Statistical Forecast, there are several external Forecasts that can be uploaded into Maestro for consideration when developing the Consensus Demand Plan.\nYou can upload, review and update external forecasts by choosing the Forecast Category, meaning that all the external forecast categories will be available by default in the workbook dropdown, depends on the forecast category selected the data will appear for review and modification. Similarly, the planner must choose the forecast category and then upload the forecast of that category. Please see examples of Forecast Catego"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Process Overview",
+        "snippet": "The Demand Review is a meeting held once a month - typically in week 2 of every month. The purpose of this meeting is to align on the aggregated unconstrained Demand Plan, prioritise the decisions required, ensure decision statements are completed in preparation for the Demand Review and where the aggregate business plan lands compared to the budget, gain clear visibility of volume assumptions/risks & opportunities, and agree on recommendations for the Supply Review. The horizon of the plans considered in this process is 18-24 months.\nL3 Process Flow – Demand Review\nAhead of the Demand Review "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Process Overview",
+        "snippet": "During the Supply Review process, the Production Planner & Supply Planner will review the Unconstrained Demand Plan from the Demand Review and compare it with the previous S&OP committed demand plan to understand the difference. Thereafter, the Production Planner & Supply Planner will review the Inventory position based on the Demand Plan and the existing On-Hand Stock & Firm Supply to identify the products where supply becomes available on a later date than the due date.\nFor production supplies, once the late supplies have been identified, the Production Planner will check the reason—whether "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Process Overview",
+        "snippet": "L3 Process Flow – Supply Review\nThe Supply Review meeting is between the Production Planner, Product Manager, Business Manager & Supply Planner to review the different option scenarios which have different supply plan, and to decide which scenarios to share with the Demand Planner as feedback/response.\nThe Supply Review meeting outputs are:\nBest possible Production Plan & Supply Plan options\nFeedback on Demand Review\nAssumptions & gap closing action plans\nThe resources used to support this process are identified under the following topics:\nProduction & Material Planning\nSupply Plan & Order Man"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Process Overview",
+        "snippet": "In this process step, the Production Planners meet and discuss with the Supply Planners about the raw materials for production and then to Demand Planners for rebalancing the demand based on the production plan they come up with. And the Supply Planners will come up with the best possible Supply Plan and discuss with the Demand Planners. Thereafter, the Production Planners / Supply Planners will share an optimised production / supply plan and capture the assumptions. The Demand Planners will rebalance the demand to supply and capture if there are any new assumptions. The rebalanced demand plan"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Process Overview",
+        "snippet": "The purpose of this meeting is to agree and sign off on the business plan in volume and value for the next 18-24 months, make decisions on items escalated, raise recommendations from the earlier S&OP steps, review the financial projection of gaps identified during the reconciliation and agree on business choices for gap closing.\nL3 Process Flow – Executive S&OP Meeting\nThe Process Overview meeting outputs:\nPublish the approved S&OP plan in value/volume for the next 18-24 months\nClear actions and decisions from the recommendations/statements => feedback to the teams for the next Cycle\nCommunica"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Process Overview",
+        "snippet": "The Product Manager reviews and updates the ABC target percentages as needed. Based on these defined targets, the ABC classification is determined using the forecasted volume for the next 12 months and the calculated Gross Margin. Subsequently, an ABC Matrix will be applied, assigning a suggested ABC Code to each Part/Site. The Product Manager will then review these suggested classifications and make overrides if necessary.\nLevel 3 Process – ABC Classification"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Process Overview",
+        "snippet": "IXOM follows their own way of calculating the safety stock based on the defined service level, Mean Normal Deviation cap limits applied, lead time and the forecast. The Product Manager maintains the Service Level Target, MND Cap limits, and then based on the formula provided in Safety Stock Management, the Safety Stock will be calculated.\nAfter Safety Stock is calculated, there is a concept of cycle stock which accumulates the demand within the delivery calendar and creates a single order to cover the whole demand i.e. cycle stock. At the end, the Product Manager reviews the Safety Stock and o"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Process Overview",
+        "snippet": "In this process step, the Product Manager reviews the Black Stock, adds the comments and captures the action plan to reduce the inventory. Similarly, the Product Manager reviews the SLOBS and formulates a resolution plan to reduce the inventory.\nLevel 3 Process – Black Stock & SLOBS"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Process Overview",
+        "snippet": "The Product Manager reviews and identifies the possible inventory transfer and creates the inventory movement to cover the shortfall with the existing inventory at other sites.\nLevel 3 Process – Inventory Transfer"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Process Overview",
+        "snippet": "This process involves the Supply Planner to review the existing Master data and update any information if changes required.\nL3 Process Flow – Manage Planning Parameters"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Process Overview",
+        "snippet": "The Dispatcher works out a distribution plan by considering the consolidated demand coming from different medium and the logistics available such as Truck availability, driver’s availability, etc. The CAP plant Dispatcher Plans are brought into Maestro as Demand Orders and the system plans against that.\nAt each Part/Site (Delivery Location), Consensus Demand Plan (Forecast) gets consumed by the demand orders, if there is any unconsumed forecast exists, then system considers that in the Total Demand. After that if there are any safety stock requirements present, system makes sure the safety sto"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Process Overview",
+        "snippet": "Based on the system-suggested planned orders, the supply plan is evaluated to determine how effectively it meets the demand orders received from the Dispatcher.  Orders should be firmed when approaching the lead time or firming period, and existing firm orders can be updated in response to any changes in demand orders. Also, if there is any ad-hoc (non-regular) inventory transfer possible to fulfill the shortage at any location, inventory transfer can be created manually.\nL3 Process – Constrain and Create Distribution Plan (Short-term)"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Process Overview",
+        "snippet": "The system takes the monthly forecast and the safety stock requirements, generates the long-term supply plan, from that you will understand the inventory projections throughout the planning horizon and do the rough-cut capacity planning.\nLevel 3 Process – Constrain and Create Distribution Plan (Short-term)\nUsing the Transfer Order Management and the Planning Sheet workbook, the long-term demand and supply plan can be reviewed. At a high level, if any capacity constraints are identified that could become bottlenecks in the supply chain network, corrective actions can be taken to either reduce t"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Process Overview",
+        "snippet": "The Supply Planner reviews the input data received from ERP system and the data manually maintained in Maestro, if there are any changes required on the master data and on the pricing, Supply Planner will update it in the source system and the data flows onto the right scenario in Maestro.\nBelow are the level 3 process steps to Review and Update Master Data with its input and output provided.\nLevel 3 Process Flow – Review / Update Master Data"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Process Overview",
+        "snippet": "Once the master data has been reviewed and updated, based on the firmed/planned supply to satisfy the unconsumed forecast and the customer orders at the Finished Goods, the dependent demand will be exploded to the purchase parts or raw material in the BOM structure.\n.  The Supply Planner reviews the dependent requirements to determine how much demand can be fulfilled based on available stock, how much can be satisfied through the firm supply plan, and how much the system will generate in planned orders. Also, whenever the inventory level goes below the safety stock, the system generates the su"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Process Overview",
+        "snippet": "In this process step, the Supply Planner will review the existing PReq/PO information and compare against the demand plan. When the system calculated planned orders enters the near-term horizon, the planner decides which one to convert it to firmed order by considering the safety stock and cycle stock, and the planner can release any PReq to SAP to get created in SAP system. Within SAP, the Supply Planner works with the Product Manager to convert the Purchase Requisition to Purchase Order.\nBelow is the process flow of updating the supply plan.\nLevel 3 Process Flow – Update Supply Plan"
+      }
+    ],
+    "gen_source": "doc"
+  }
+}

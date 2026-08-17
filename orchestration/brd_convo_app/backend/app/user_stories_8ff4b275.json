@@ -1,0 +1,262 @@
+{
+  "stories": [
+    {
+      "id": "US-001",
+      "title": "Centralize supply and inventory planning data for Archlin",
+      "as_a": "Supply Planner",
+      "i_want": "a centralized planning platform for supply and inventory planning across North America and Europe",
+      "so_that": "I can reduce reliance on fragmented Excel files and use a single source of planning data",
+      "acceptance_criteria": [
+        "Given planning data is available from approved source systems, When the planner accesses the planning platform, Then supply and inventory planning data is available in one centralized location",
+        "Given users previously maintained planning data in Excel, When Phase 1 supply management functionality is live, Then planners can perform supply and inventory planning activities without using Excel as the primary planning system",
+        "Given planning data is refreshed, When a planner reviews supply, inventory, and order inputs, Then the data reflects the latest completed refresh cycle",
+        "Given Archlin requires a single source of planning data, When planning records are viewed by authorized users, Then the same planning data values are visible consistently to all users"
+      ],
+      "section_source": "Section 1 Introduction; Section 1.2 Current State of Business; Section 5 Supply & Inventory Planning",
+      "priority": "High"
+    },
+    {
+      "id": "US-002",
+      "title": "Integrate SAP S/4HANA master and transactional data",
+      "as_a": "Planning Data Integration Owner",
+      "i_want": "Product Master, Customer Master, Sales Orders, Inventory Balances, Purchase Orders, and Production Orders integrated from SAP S/4HANA into the planning platform",
+      "so_that": "supply and inventory planning decisions are based on current enterprise data",
+      "acceptance_criteria": [
+        "Given SAP S/4HANA contains Product Master data, When the integration runs, Then Product Master records required for planning are loaded into the planning platform",
+        "Given SAP S/4HANA contains Customer Master data, When the integration runs, Then Customer Master records required for planning are loaded into the planning platform",
+        "Given SAP S/4HANA contains Sales Orders, Inventory Balances, Purchase Orders, and Production Orders, When the integration runs, Then those transactional records are available for planning use",
+        "Given an integration run completes, When the load results are reviewed, Then successful and failed records are identifiable",
+        "Given data is loaded from SAP S/4HANA, When planners review supply and inventory planning inputs, Then the planning platform reflects the latest successfully integrated SAP S/4HANA data"
+      ],
+      "section_source": "Section 1 Introduction; Section 5 Supply & Inventory Planning",
+      "priority": "High"
+    },
+    {
+      "id": "US-003",
+      "title": "Refresh planning data every four hours",
+      "as_a": "Supply Planner",
+      "i_want": "planning data refreshed every four hours",
+      "so_that": "I can make supply and inventory planning decisions using timely data",
+      "acceptance_criteria": [
+        "Given the data refresh schedule is active, When four hours have elapsed since the previous scheduled refresh, Then the next refresh is triggered",
+        "Given a data refresh completes successfully, When a planner views planning data, Then the platform displays data from the latest completed refresh",
+        "Given a data refresh fails, When the failure occurs, Then the system records the failed refresh event for review",
+        "Given refresh history is needed for operational monitoring, When an authorized user views refresh status, Then the user can see the latest refresh timestamp and completion status"
+      ],
+      "section_source": "Section 5 Supply & Inventory Planning",
+      "priority": "High"
+    },
+    {
+      "id": "US-004",
+      "title": "Generate constrained supply plans",
+      "as_a": "Supply Planner",
+      "i_want": "to generate constrained supply plans using demand, supply, inventory, purchase, and production inputs",
+      "so_that": "I can evaluate feasible supply outcomes before execution decisions are made",
+      "acceptance_criteria": [
+        "Given demand and supply inputs are available in the planning platform, When I run constrained supply planning, Then the system generates a supply plan constrained by available planning inputs",
+        "Given inventory balances, purchase orders, and production orders are available, When the constrained plan is generated, Then those inputs are considered in the resulting supply plan",
+        "Given the constrained supply plan is generated, When I review the plan, Then planned supply quantities and timing are visible",
+        "Given planning inputs change after a data refresh, When I regenerate the constrained supply plan, Then the plan reflects the updated inputs"
+      ],
+      "section_source": "Section 5 Supply & Inventory Planning",
+      "priority": "High"
+    },
+    {
+      "id": "US-005",
+      "title": "Identify raw material shortages",
+      "as_a": "Supply Planner",
+      "i_want": "the planning platform to identify material shortages",
+      "so_that": "I can respond to recurring raw material availability issues earlier",
+      "acceptance_criteria": [
+        "Given supply and demand inputs are available, When the supply plan is calculated, Then the system identifies materials where available supply is insufficient to meet requirements",
+        "Given a material shortage is detected, When I review shortage results, Then the material, shortage quantity, and relevant timing are displayed",
+        "Given no shortage exists for a material, When I review shortage results, Then the material is not displayed as short",
+        "Given updated inventory, purchase order, or production order data is loaded, When shortage identification is rerun, Then shortage results reflect the updated supply position"
+      ],
+      "section_source": "Section 1 Introduction; Section 1.4 Scope; Section 5 Supply & Inventory Planning",
+      "priority": "High"
+    },
+    {
+      "id": "US-006",
+      "title": "Provide exception-based alerts for supply planning",
+      "as_a": "Supply Planner",
+      "i_want": "exception-based alerts for material shortages and supply planning issues",
+      "so_that": "I can focus on the most critical planning exceptions instead of manually searching through planning data",
+      "acceptance_criteria": [
+        "Given a material shortage exception is detected, When the alert process runs, Then an exception alert is created for the affected material",
+        "Given exception alerts exist, When I access the alert view, Then I can see the alert type, affected material, and relevant planning period or date",
+        "Given a shortage condition is resolved after updated planning data is loaded, When the alert process runs again, Then the resolved exception is no longer shown as an active alert",
+        "Given multiple exceptions exist, When I review alerts, Then I can distinguish shortage-related alerts from other supply planning exceptions"
+      ],
+      "section_source": "Section 5 Supply & Inventory Planning",
+      "priority": "High"
+    },
+    {
+      "id": "US-007",
+      "title": "Support capacity planning visibility",
+      "as_a": "Supply Planner",
+      "i_want": "capacity planning support within the supply planning process",
+      "so_that": "I can understand whether supply plans are feasible against available capacity",
+      "acceptance_criteria": [
+        "Given capacity-relevant planning inputs are available, When the supply plan is generated, Then capacity impact is available for planner review",
+        "Given a supply plan creates capacity demand, When I review capacity planning results, Then the system displays capacity requirements by relevant planning dimension",
+        "Given capacity constraints affect supply feasibility, When constrained planning is executed, Then the generated plan reflects those constraints where configured",
+        "Given capacity planning data is unavailable or incomplete, When I review capacity results, Then the system identifies that capacity visibility is limited by missing data"
+      ],
+      "section_source": "Section 5 Supply & Inventory Planning",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-008",
+      "title": "Run supply planning scenario analysis",
+      "as_a": "Supply Planner",
+      "i_want": "to create and compare supply planning scenarios",
+      "so_that": "I can evaluate planning alternatives before committing to supply decisions",
+      "acceptance_criteria": [
+        "Given a baseline supply plan exists, When I create a scenario, Then the system creates a separate planning scenario for analysis",
+        "Given a scenario exists, When I change planning assumptions within the scenario, Then the changes do not overwrite the baseline plan",
+        "Given two or more scenarios exist, When I compare them, Then the system displays differences in supply plan outcomes",
+        "Given a preferred scenario has been identified, When I review it for decision support, Then the scenario results are available for planner evaluation"
+      ],
+      "section_source": "Section 5 Supply & Inventory Planning",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-009",
+      "title": "Define safety stock policies",
+      "as_a": "Inventory Planner",
+      "i_want": "to define safety stock policies for inventory planning",
+      "so_that": "Archlin can improve inventory planning discipline and reduce exposure to shortages",
+      "acceptance_criteria": [
+        "Given an item-location combination is eligible for inventory planning, When I define a safety stock policy, Then the policy is saved for that item-location combination",
+        "Given a safety stock policy exists, When inventory planning calculations are run, Then the policy is used as an input to inventory target calculations",
+        "Given a safety stock policy is updated, When inventory targets are recalculated, Then the updated policy is reflected in the new target",
+        "Given an authorized inventory planner accesses safety stock settings, When the planner reviews policy data, Then defined policies are visible"
+      ],
+      "section_source": "Section 5 Supply & Inventory Planning",
+      "priority": "High"
+    },
+    {
+      "id": "US-010",
+      "title": "Calculate inventory targets",
+      "as_a": "Inventory Planner",
+      "i_want": "the planning platform to calculate inventory targets",
+      "so_that": "I can manage inventory levels against defined targets rather than relying on manual Excel calculations",
+      "acceptance_criteria": [
+        "Given required inventory planning inputs are available, When inventory planning is run, Then inventory targets are calculated",
+        "Given safety stock policies are defined, When inventory targets are calculated, Then the calculation reflects the applicable safety stock policy",
+        "Given calculated inventory targets exist, When I review inventory planning results, Then target inventory values are visible by relevant item and location",
+        "Given planning inputs are refreshed, When inventory targets are recalculated, Then the updated targets reflect the latest available planning data"
+      ],
+      "section_source": "Section 1.2 Current State of Business; Section 5 Supply & Inventory Planning",
+      "priority": "High"
+    },
+    {
+      "id": "US-011",
+      "title": "Monitor excess inventory",
+      "as_a": "Inventory Planner",
+      "i_want": "to monitor excess inventory against inventory targets",
+      "so_that": "Archlin can reduce high inventory and avoid inventory-related inefficiencies",
+      "acceptance_criteria": [
+        "Given current inventory balances and inventory targets are available, When the excess inventory calculation runs, Then the system identifies inventory above target",
+        "Given excess inventory exists for an item-location, When I review excess inventory results, Then the excess quantity is displayed",
+        "Given current inventory is not above target, When I review excess inventory results, Then the item-location is not flagged as excess",
+        "Given inventory balances or targets change after refresh or recalculation, When excess inventory is recalculated, Then excess inventory results reflect the updated values"
+      ],
+      "section_source": "Section 1 Introduction; Section 1.2 Current State of Business; Section 5 Supply & Inventory Planning",
+      "priority": "High"
+    },
+    {
+      "id": "US-012",
+      "title": "Track inventory turns",
+      "as_a": "Inventory Planner",
+      "i_want": "to track inventory turns",
+      "so_that": "I can evaluate inventory efficiency and support inventory reduction objectives",
+      "acceptance_criteria": [
+        "Given required inventory and movement or demand data is available, When inventory turn metrics are calculated, Then inventory turns are displayed for planner review",
+        "Given inventory turn metrics are available, When I review inventory performance, Then I can identify item-location combinations with lower inventory turns",
+        "Given updated planning data is loaded, When inventory turn metrics are recalculated, Then the metric reflects the updated data",
+        "Given inventory turn tracking is part of benefit realization, When metrics are reviewed post go-live, Then inventory turns are available as a measurable planning indicator"
+      ],
+      "section_source": "Section 2 Benefit Realization; Section 5 Supply & Inventory Planning",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-013",
+      "title": "Optimize stock across locations",
+      "as_a": "Inventory Planner",
+      "i_want": "to optimize stock across Archlin locations",
+      "so_that": "inventory can be positioned more effectively across the supply network",
+      "acceptance_criteria": [
+        "Given inventory balances are available across locations, When stock optimization is run, Then the system evaluates inventory positioning by location",
+        "Given inventory targets are available across locations, When optimization results are reviewed, Then the system identifies where stock is above or below target",
+        "Given multiple locations hold inventory for the same product, When stock optimization is performed, Then the results support comparison of inventory positions across those locations",
+        "Given updated inventory balances are loaded, When stock optimization is rerun, Then results reflect the latest available inventory position"
+      ],
+      "section_source": "Section 5 Supply & Inventory Planning",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-014",
+      "title": "Use demand planning outputs in supply planning",
+      "as_a": "Supply Planner",
+      "i_want": "supply planning to consume demand planning outputs",
+      "so_that": "forecast visibility can inform supply and inventory decisions",
+      "acceptance_criteria": [
+        "Given demand planning outputs are available, When supply planning is run, Then the demand outputs are used as supply requirements",
+        "Given updated forecast data is available after a refresh, When the supply plan is regenerated, Then the supply plan reflects the updated forecast inputs",
+        "Given demand planning outputs are unavailable, When supply planning is initiated, Then the system identifies that required demand inputs are missing",
+        "Given planners review supply requirements, When demand planning outputs have been integrated, Then forecast-driven requirements are visible in the planning platform"
+      ],
+      "section_source": "Section 4 Demand Planning; Section 5 Supply & Inventory Planning",
+      "priority": "High"
+    },
+    {
+      "id": "US-015",
+      "title": "Enable collaborative forecast visibility across regions",
+      "as_a": "Demand Planner",
+      "i_want": "visibility to forecast information across North America and Europe",
+      "so_that": "I can reduce manual forecast consolidation effort and support better supply planning visibility",
+      "acceptance_criteria": [
+        "Given forecast data exists for North America and Europe, When I access the planning platform, Then I can view forecast information for both regions",
+        "Given regional forecast data has been updated, When the data refresh completes, Then the updated regional forecast information is available for planning",
+        "Given forecast visibility is required for supply and inventory planning, When supply planners review demand inputs, Then regional forecast information is visible as planning input",
+        "Given the current process requires manual Excel consolidation, When forecast information is available in the platform, Then planners can review regional forecasts without manually consolidating separate Excel files"
+      ],
+      "section_source": "Section 4 Demand Planning; Section 5 Supply & Inventory Planning",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-016",
+      "title": "Allow manual forecast overrides for market changes",
+      "as_a": "Demand Planner",
+      "i_want": "to manually override generated forecasts when market conditions change",
+      "so_that": "supply planning can reflect current business knowledge",
+      "acceptance_criteria": [
+        "Given an automated forecast exists, When I enter a manual override, Then the overridden forecast value is saved for the selected planning intersection",
+        "Given a manual override exists, When supply planning consumes forecast data, Then the overridden value is used where applicable",
+        "Given a forecast value has been manually overridden, When I review the forecast, Then the system distinguishes the override from the original generated forecast",
+        "Given market conditions change again, When I update the manual override, Then the revised override is available for downstream planning"
+      ],
+      "section_source": "Section 4 Demand Planning; Section 5 Supply & Inventory Planning",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-017",
+      "title": "Measure Phase 1 planning success criteria",
+      "as_a": "Supply Chain Leader",
+      "i_want": "to monitor Phase 1 success criteria including forecast accuracy, inventory reduction, planning cycle reduction, planner productivity, and single source of planning data",
+      "so_that": "Archlin can confirm whether the implementation delivers expected business outcomes within six months of go-live",
+      "acceptance_criteria": [
+        "Given baseline and target measures are defined, When post go-live performance is reviewed, Then forecast accuracy can be compared against the target of greater than 85%",
+        "Given baseline inventory levels are defined, When post go-live performance is reviewed, Then inventory reduction can be compared against the target of greater than 15%",
+        "Given baseline planning cycle duration is defined, When post go-live performance is reviewed, Then planning cycle reduction can be compared against the target of greater than 30%",
+        "Given planner productivity measures are defined, When post go-live performance is reviewed, Then planner productivity improvement can be assessed",
+        "Given the planning platform is live, When planning data usage is reviewed, Then the use of a single source of planning data can be validated"
+      ],
+      "section_source": "Section 2 Benefit Realization; Section 5 Supply & Inventory Planning",
+      "priority": "High"
+    }
+  ],
+  "project_id": "8ff4b275"
+}

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bristlecone SOW — Projects</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#F7F7F7;--surface:#FFFFFF;--surface2:#F0F0F0;--surface3:#E8E8E8;
+      --border:#DDDDDD;--border-hover:#AAAAAA;
+      --accent:#0070C0;--accent-glow:rgba(0,112,192,0.15);--accent-soft:rgba(0,112,192,0.08);
+      --green:#0F6E56;--green-soft:rgba(15,110,86,0.1);
+      --amber:#854F0B;--amber-soft:rgba(133,79,11,0.1);
+      --red:#A32D2D;--red-soft:rgba(163,45,45,0.1);
+      --text:#1A1A1A;--text-sec:#888888;--text-dim:#CCCCCC;
+      --r:6px;--rlg:10px;
+      --font:'Segoe UI',system-ui,sans-serif;--mono:'Consolas','Courier New',monospace;
+    }
+    body{background:var(--bg);color:var(--text);font-family:var(--font);height:100vh;display:flex;flex-direction:column;overflow:hidden}
+
+    .topnav{background:var(--surface);border-bottom:1px solid var(--border);padding:0 28px;height:52px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:relative}
+    .topnav::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.3}
+    .nav-left{display:flex;align-items:center;gap:12px}
+    .logo-mark{width:32px;height:32px;background:#003366;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff;box-shadow:0 2px 10px var(--accent-glow)}
+    .nav-title{font-size:14px;font-weight:600}
+    .nav-subtitle{font-size:10px;color:var(--text-dim);letter-spacing:.5px;text-transform:uppercase}
+    .nav-user{display:flex;align-items:center;gap:8px}
+    .uav{width:28px;height:28px;border-radius:7px;background:var(--surface3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:11px}
+    .uname{font-size:12px;font-weight:500}
+
+    .main{flex:1;display:flex;flex-direction:column;padding:32px 40px;overflow-y:auto;max-width:900px;width:100%;margin:0 auto}
+
+    .title-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+    .title-row h1{font-size:28px;font-weight:700;letter-spacing:-.5px}
+    .new-proj-btn{
+      display:flex;align-items:center;gap:7px;padding:10px 20px;border-radius:10px;border:none;
+      background:var(--accent);color:#fff;font-family:var(--font);font-size:13px;font-weight:600;
+      cursor:pointer;transition:all .25s;box-shadow:0 3px 16px var(--accent-glow);
+    }
+    .new-proj-btn:hover{background:#3d8fce;transform:translateY(-1px)}
+    .new-proj-btn svg{width:15px;height:15px}
+
+    .search-wrap{position:relative;margin-bottom:16px}
+    .search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--text-dim);pointer-events:none}
+    .search-input{width:100%;padding:11px 14px 11px 40px;background:var(--surface);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:var(--font);font-size:13px;outline:none}
+    .search-input::placeholder{color:var(--text-dim)}
+    .search-input:focus{border-color:var(--accent)}
+
+    .filter-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+    .filter-label{font-size:12px;font-weight:600;color:var(--text-sec)}
+    .sort-wrap{display:flex;align-items:center;gap:8px}
+    .sort-label{font-size:11px;color:var(--text-dim)}
+    .sort-select{padding:5px 28px 5px 10px;border-radius:7px;background:var(--surface);border:1px solid var(--border);color:var(--text-sec);font-family:var(--font);font-size:11px;outline:none;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%235a6180' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center}
+
+    .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+    .proj-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rlg);padding:20px;cursor:pointer;transition:all .25s;position:relative;overflow:hidden}
+    .proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),#3d8fce);opacity:0;transition:opacity .3s}
+    .proj-card:hover{border-color:var(--border-hover);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.08)}
+    .proj-card:hover::before{opacity:1}
+    .proj-card-name{font-size:14px;font-weight:600;margin-bottom:4px;display:flex;align-items:center;gap:6px}
+    .proj-card-name svg{width:13px;height:13px;color:var(--text-dim);flex-shrink:0}
+    .proj-card-client{font-size:11px;color:var(--text-sec);margin-bottom:12px}
+    .proj-card-footer{display:flex;justify-content:space-between;align-items:center}
+    .proj-card-date{font-size:10px;color:var(--text-dim)}
+    .proj-card-status{font-size:9px;font-weight:600;padding:3px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.4px}
+    .proj-card-status.active{background:var(--green-soft);color:var(--green)}
+    .proj-card-status.draft{background:var(--amber-soft);color:var(--amber)}
+    .proj-card-status.complete{background:var(--accent-soft);color:var(--accent)}
+
+    .proj-delete-btn{position:absolute;top:12px;right:12px;width:28px;height:28px;border-radius:7px;border:none;background:transparent;color:var(--text-dim);cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .2s;z-index:2}
+    .proj-card:hover .proj-delete-btn{opacity:1}
+    .proj-delete-btn:hover{background:var(--red-soft);color:var(--red)}
+    .proj-delete-btn svg{width:14px;height:14px}
+
+    .empty-projects{grid-column:1/-1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;color:var(--text-dim);font-size:13px;gap:12px;border:1px dashed var(--border);border-radius:var(--rlg)}
+    .empty-projects svg{width:40px;height:40px;opacity:.25}
+
+    .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:100}
+    .modal-overlay.show{display:flex}
+    .modal{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;width:100%;max-width:440px;box-shadow:0 16px 64px rgba(0,0,0,.25)}
+    .modal h2{font-size:18px;font-weight:700;margin-bottom:4px}
+    .modal p{font-size:12px;color:var(--text-sec);margin-bottom:20px}
+    .modal-field{margin-bottom:14px}
+    .modal-label{font-size:11px;font-weight:600;color:var(--text-sec);margin-bottom:5px;display:block;text-transform:uppercase;letter-spacing:.5px}
+    .modal-input{width:100%;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:var(--font);font-size:13px;outline:none}
+    .modal-input:focus{border-color:var(--accent)}
+    .modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}
+    .modal-btn{padding:9px 20px;border-radius:8px;border:none;font-family:var(--font);font-size:12px;font-weight:600;cursor:pointer}
+    .modal-btn.cancel{background:var(--surface2);color:var(--text-sec);border:1px solid var(--border)}
+    .modal-btn.create{background:var(--accent);color:#fff}
+    .modal-btn.create:disabled{background:var(--surface3);color:var(--text-dim);cursor:not-allowed}
+    .modal-btn.delete{background:var(--red);color:#fff}
+    .del-warn{font-size:11px;color:var(--text-dim);margin-top:12px;padding:8px 10px;background:var(--red-soft);border-radius:6px;line-height:1.5}
+    .del-proj-name{color:var(--text);font-weight:600}
+
+    .tc{position:fixed;top:60px;right:20px;z-index:200;display:flex;flex-direction:column;gap:6px}
+    .t{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:10px 14px;font-size:12px;display:flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(0,0,0,.15);max-width:340px}
+    .t.success{border-color:var(--green)}.t.error{border-color:var(--red)}
+
+    @media(max-width:600px){.proj-grid{grid-template-columns:1fr}.main{padding:24px 20px}}
+  </style>
+</head>
+<body>
+<script>
+  (function() { if (!sessionStorage.getItem('auth_user')) window.location.replace('/'); })();
+</script>
+
+<nav class="topnav">
+  <div class="nav-left">
+    <div class="logo-mark">B</div>
+    <div><div class="nav-title">Bristlecone SOW Automation</div><div class="nav-subtitle">Projects</div></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <a href="/sow-hub" style="display:flex;align-items:center;gap:5px;padding:6px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface2);color:var(--text-sec);font-size:11px;font-weight:600;text-decoration:none">
+      ← SOW Hub
+    </a>
+    <a href="/repositories" style="display:flex;align-items:center;gap:5px;padding:6px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface2);color:var(--text-sec);font-size:11px;font-weight:600;text-decoration:none">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
+      Repositories
+    </a>
+    <div class="nav-user"><span class="uname" id="nav-uname"></span><div class="uav" id="nav-uav"></div></div>
+  </div>
+</nav>
+<script>
+  (function() {
+    const raw = sessionStorage.getItem('auth_user');
+    const email = raw ? (JSON.parse(raw).email || '') : '';
+    const local = email.split('@')[0];
+    const parts = local.split(/[._]/).filter(Boolean);
+    document.getElementById('nav-uname').textContent = parts.map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(' ') || email || '—';
+    document.getElementById('nav-uav').textContent   = parts.slice(0, 2).map(p => p.charAt(0).toUpperCase()).join('') || '?';
+  })();
+</script>
+
+<main class="main">
+  <div class="title-row">
+    <h1>SOW Projects</h1>
+    <button class="new-proj-btn" id="new-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      New SOW project
+    </button>
+  </div>
+
+  <div class="search-wrap">
+    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input class="search-input" id="search" type="text" placeholder="Search SOW projects…">
+  </div>
+
+  <div class="filter-row">
+    <div class="filter-label">Your SOW projects</div>
+    <div class="sort-wrap">
+      <span class="sort-label">Sort by</span>
+      <select class="sort-select" id="sort-sel">
+        <option value="activity">Activity</option>
+        <option value="name">Name</option>
+        <option value="created">Created</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="proj-grid" id="proj-grid"></div>
+</main>
+
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <h2>New SOW project</h2>
+    <p>Create a new project to draft a Statement of Work, section by section.</p>
+    <div class="modal-field">
+      <label class="modal-label">Project name</label>
+      <input class="modal-input" id="proj-name" type="text" placeholder="e.g. Arclin — Kinaxis Implementation SOW">
+    </div>
+    <div class="modal-field">
+      <label class="modal-label">Client name</label>
+      <input class="modal-input" id="proj-client" type="text" placeholder="e.g. Arclin Inc.">
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn cancel" id="modal-cancel">Cancel</button>
+      <button class="modal-btn create" id="modal-create" disabled>Create project</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="del-modal">
+  <div class="modal">
+    <h2>Delete SOW project</h2>
+    <p>Are you sure you want to delete <span class="del-proj-name" id="del-proj-name"></span>?</p>
+    <div class="del-warn">This will permanently delete the project, uploaded sources, and generated sections. This action cannot be undone.</div>
+    <div class="modal-actions">
+      <button class="modal-btn cancel" id="del-cancel">Cancel</button>
+      <button class="modal-btn delete" id="del-confirm">Delete project</button>
+    </div>
+  </div>
+</div>
+
+<div class="tc" id="tc"></div>
+
+<script>
+let projects = [];
+let sortBy = 'activity';
+let searchQ = '';
+
+async function fetchProjects() {
+  try {
+    const res = await fetch('/api/projects?workflow=sow');
+    if (!res.ok) throw new Error('Failed to load projects');
+    projects = await res.json();
+    projects.forEach(p => { p.updated = parseUTC(p.updated); p.created = parseUTC(p.created); });
+    render();
+  } catch (e) {
+    toast('Could not load SOW projects. Is the server running?', 'error');
+  }
+}
+
+async function apiCreateProject(name, client) {
+  const res = await fetch('/api/projects', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, client, workflow: 'sow' }),
+  });
+  if (!res.ok) throw new Error('Create failed');
+  return res.json();
+}
+async function apiDeleteProject(id) {
+  const res = await fetch(`/api/projects/${id}`, { method: 'DELETE' });
+  if (!res.ok) throw new Error('Delete failed');
+  return res.json();
+}
+
+function render() {
+  let filtered = [...projects];
+  if (searchQ) {
+    const q = searchQ.toLowerCase();
+    filtered = filtered.filter(p => p.name.toLowerCase().includes(q) || (p.client || '').toLowerCase().includes(q));
+  }
+  filtered.sort((a, b) => {
+    if (sortBy === 'activity') return b.updated - a.updated;
+    if (sortBy === 'name') return a.name.localeCompare(b.name);
+    if (sortBy === 'created') return b.created - a.created;
+    return 0;
+  });
+
+  const grid = document.getElementById('proj-grid');
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div class="empty-projects">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      ${searchQ ? 'No projects match your search.' : 'No SOW projects yet. Click "New SOW project" to get started.'}
+    </div>`;
+    return;
+  }
+
+  grid.innerHTML = filtered.map(p => `
+    <div class="proj-card" onclick="openProject('${p.id}')">
+      <button class="proj-delete-btn" onclick="event.stopPropagation();confirmDelete('${p.id}')" title="Delete project">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+      </button>
+      <div class="proj-card-name">
+        ${esc(p.name)}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      </div>
+      <div class="proj-card-client">${esc(p.client || '')}</div>
+      <div class="proj-card-footer">
+        <span class="proj-card-date">Updated ${timeAgo(p.updated)}</span>
+        <span class="proj-card-status ${p.status}">${p.status}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+document.getElementById('search').addEventListener('input', e => { searchQ = e.target.value.trim(); render(); });
+document.getElementById('sort-sel').addEventListener('change', e => { sortBy = e.target.value; render(); });
+
+const modal = document.getElementById('modal');
+const nameInput = document.getElementById('proj-name');
+const clientInput = document.getElementById('proj-client');
+const createBtn = document.getElementById('modal-create');
+
+document.getElementById('new-btn').addEventListener('click', () => {
+  nameInput.value = ''; clientInput.value = ''; createBtn.disabled = true;
+  modal.classList.add('show'); setTimeout(() => nameInput.focus(), 100);
+});
+document.getElementById('modal-cancel').addEventListener('click', () => modal.classList.remove('show'));
+modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('show'); });
+nameInput.addEventListener('input', () => { createBtn.disabled = !nameInput.value.trim(); });
+
+createBtn.addEventListener('click', async () => {
+  const name = nameInput.value.trim();
+  const client = clientInput.value.trim() || 'No description';
+  if (!name) return;
+  createBtn.disabled = true;
+  try {
+    const proj = await apiCreateProject(name, client);
+    modal.classList.remove('show');
+    const newId = proj && (proj.id || proj.project_id);
+    if (newId) { window.location.href = `/sow-upload?project_id=${newId}`; return; }
+    toast(`Project "${name}" created`, 'success');
+    await fetchProjects();
+  } catch (e) {
+    toast('Failed to create project.', 'error');
+    createBtn.disabled = false;
+  }
+});
+
+function openProject(id) {
+  window.location.href = `/sow-upload?project_id=${id}`;
+}
+
+const delModal = document.getElementById('del-modal');
+let pendingDeleteId = null;
+function confirmDelete(id) {
+  const p = projects.find(x => x.id === id);
+  if (!p) return;
+  pendingDeleteId = id;
+  document.getElementById('del-proj-name').textContent = p.name;
+  delModal.classList.add('show');
+}
+document.getElementById('del-cancel').addEventListener('click', () => { delModal.classList.remove('show'); pendingDeleteId = null; });
+delModal.addEventListener('click', e => { if (e.target === delModal) { delModal.classList.remove('show'); pendingDeleteId = null; } });
+document.getElementById('del-confirm').addEventListener('click', async () => {
+  if (pendingDeleteId === null) return;
+  const p = projects.find(x => x.id === pendingDeleteId);
+  const name = p ? p.name : 'Project';
+  try {
+    await apiDeleteProject(pendingDeleteId);
+    pendingDeleteId = null; delModal.classList.remove('show');
+    toast(`"${name}" and all its data deleted`, 'success');
+    await fetchProjects();
+  } catch (e) {
+    toast('Failed to delete project.', 'error');
+    delModal.classList.remove('show'); pendingDeleteId = null;
+  }
+});
+
+function parseUTC(s){ if(typeof s === "string" && !/[zZ]|[+-]\d\d:?\d\d$/.test(s)) s = s + "Z"; return new Date(s); }
+function timeAgo(d) {
+  const diff = Math.floor((Date.now() - d) / 1000);
+  if (diff < 60) return 'just now';
+  if (diff < 3600) return Math.floor(diff / 60) + ' min ago';
+  if (diff < 86400) return Math.floor(diff / 3600) + ' hours ago';
+  const days = Math.floor(diff / 86400);
+  if (days === 1) return '1 day ago';
+  return days + ' days ago';
+}
+function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+function toast(m, ty = 'info') {
+  const c = document.getElementById('tc'), t = document.createElement('div');
+  t.className = `t ${ty}`;
+  t.innerHTML = `<span>${ty === 'error' ? '⚠' : ty === 'success' ? '✓' : 'ℹ'}</span><span>${esc(m)}</span>`;
+  c.appendChild(t);
+  setTimeout(() => { t.style.opacity = '0'; t.style.transition = 'opacity .3s'; setTimeout(() => t.remove(), 300); }, 3500);
+}
+
+fetchProjects();
+window.addEventListener('pageshow', function(e){ if(e.persisted) fetchProjects(); });
+document.addEventListener('visibilitychange', function(){ if(document.visibilityState === 'visible') fetchProjects(); });
+</script>
+</body>
+</html>

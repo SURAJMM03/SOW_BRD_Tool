@@ -1,0 +1,48 @@
+{
+  "1.3": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Scheduler user interface.\nl Shipment Scheduler User Guide: Provides information on how to use the Shipment Scheduler\ncomponent of Transportation Planner.\nl Shipment Scheduler Getting Started: Provides a series of modeling exercises to help you understand\nhow to use some of the strategies and constraints that control the Shipment Scheduling engine.\nl Shipment Scheduler Implementation Guide for MFG ABPP: Provides information about optimization\nand shipment scheduling components and how to implement them for MFG ABPP. It also provides\nimplementation specialists and systems integrators with instru"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Define NPI/EOL Profiles",
+        "snippet": "New Product Introduction profiles, and End of Life profiles, are defined and mapped to the Forecast Item. The demand will be calculated automatically based on the defined profile.\nEnd Of Life Product – profile definition\nNPI Product – Profile definition"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Planner Modeling Guide and Transportation Planner Strategies and Parameters Guide, is accessed\nfrom the Help menu in the Transportation Planner user interface.\nl Shipment Scheduler User Help: This Help system consists of the same content as the Shipment\nScheduler User Guide and Shipment Scheduler Implementation Guide and is accessed from the Help\nmenu in the Shipment Scheduler user interface.\nl Shipment Scheduler User Guide: This guide provides information about how to use the Shipment\nScheduler component of Transportation Planner.\nl Shipment Scheduler Getting Started: This guide provides a se"
+      },
+      {
+        "doc_name": "20260630_122836_BD_20260630_114546.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "For Archlin, Demand Planning is the defined Phase 1 scope. The blueprint therefore focuses on the demand planning processes and related solution design elements needed to support Archlin’s planning transformation. Demand Planning is referenced in the source definitions as DP, and related supply chain planning terminology includes Supply Planning, Inventory Planning, Sales & Operations Planning, Forecast Item, New Product Introduction, End Of Life, Safety Stock, Average Selling Price, Slow-moving and Obsolete inventory, Purchase Order, Purchase Requisition, Stock Transfer Order, Planned Order, "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Definitions & Acronyms",
+        "snippet": "| Abbreviation | Definition |\n| --- | --- |\n| NPI | New Product Introduction |\n| EOL | End Of Life |\n| ASP | Average Selling Price |\n| SS | Safety Stock |\n| DP | Demand Planning |\n| SP | Supply Planning |\n| IP | Inventory Planning |\n| S&OP | Sales & Operations Planning |\n| E2E | End to End |\n| FI | Forecast Item |\n| CTP | Capable-To-Promise |\n| FLP | Full Level Pegging |\n| WO | Work Order |\n| PO | Purchase Order |\n| PReq | Purchase Requisition |\n| STO | Stock Transfer Order |\n| PLO | Planned Order |\n| SLOBS | Slow-moving and Obsolete inventory |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to detail the operating model for RapidResponse to meet the business needs as defined by [insert]\nThe objective of this document is to list the user stories and analytics that provide the scope for this release. Each user story shall provide a reasonable level of technical detail that will enable configuration of the solution.\nDuring the development of the solution, this document will be updated with requirement changes and solution design.  This document, at technical golive, shall provide both the requirements and solution.\nThis document does not include test "
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Chapter 1. Introduction\nWelcome to the Transportation Planner Implementation Guide. This book provides overviews,\nillustrations, procedures, and examples for Transportation Planner. Screens, dialog boxes, and other\nwindows shown are only examples.\nRelated documentation\nFor more information on Transportation Planner, see the following documents:\nl Transportation Planner Release Notes: This guide provides information about any new or updated\nfunctionality in Transportation Planner.\nl Transportation Installation/Administration Guide: This guide provides information about how to install\nTransporta"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Chapter 1. Introduction\nThis guide provides overviews, illustrations, procedures, and examples for Transportation Planner.\nRelated Documentation\nFor more information on Transportation Planner, see the following documents:\nl\nTransportation Planner Release Notes: Provides information on new or updated functionality in\nTransportation Planner.\nl\nTransportation Planner Installation Guide: Provides information on how to install Transportation\nPlanner.\nl\nTransportation Planner User Guide: Provides details on how to use the Transportation Planner web\nuser interface.\nl\nTransportation Planner Strategies"
+      }
+    ],
+    "gen_source": "doc"
+  }
+}

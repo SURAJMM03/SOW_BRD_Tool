@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kinaxis Blueprint Document — Choose a Tool</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#F7F7F7;--surface:#FFFFFF;
+      --border:#DDDDDD;--accent:#0070C0;--accent-soft:rgba(0,112,192,0.08);
+      --navy:#003366;
+      --text:#1A1A1A;--text-sec:#777777;
+      --radius:6px;--radius-lg:10px;
+      --font:'Segoe UI',system-ui,sans-serif;
+    }
+    body{min-height:100vh;background:var(--bg);color:var(--text);font-family:var(--font);font-size:14px;display:flex;flex-direction:column}
+    .topnav{min-height:52px;background:var(--navy);color:#fff;padding:0 16px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;gap:8px}
+    .nav-left{display:flex;align-items:center;gap:14px}
+    .logo{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff}
+    .title{font-size:14px;font-weight:600;color:#fff}
+    .subtitle{font-size:10px;color:rgba(255,255,255,.55);letter-spacing:.05em;text-transform:uppercase;margin-top:1px}
+    .btn{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:var(--radius);padding:8px 14px;font-family:var(--font);font-size:13px;font-weight:500;cursor:pointer}
+    .topnav .btn{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);color:#fff;font-size:12px;padding:6px 10px}
+    .wrap{flex:1;max-width:900px;width:100%;margin:0 auto;padding:60px 20px}
+    .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--text-sec);font-weight:800;margin-bottom:8px;text-align:center}
+    h1{font-size:24px;font-weight:600;color:var(--navy);margin-bottom:8px;text-align:center}
+    .lead{font-size:13.5px;color:var(--text-sec);line-height:1.55;text-align:center;max-width:520px;margin:0 auto}
+    .choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px}
+    @media(max-width:700px){.choice-grid{grid-template-columns:1fr}}
+    .choice-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;cursor:pointer;text-align:left;transition:border-color .15s,box-shadow .15s}
+    .choice-card:hover{border-color:var(--accent);box-shadow:0 4px 18px rgba(0,112,192,.10)}
+    .choice-card .dot{width:40px;height:40px;border-radius:9px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;margin-bottom:14px}
+    .choice-card h3{font-size:17px;font-weight:650;color:var(--text);margin-bottom:8px}
+    .choice-card p{font-size:12.5px;color:var(--text-sec);line-height:1.55}
+  </style>
+</head>
+<body>
+<script>
+  (function(){
+    if(!sessionStorage.getItem("auth_user")) window.location.replace("/");
+  })();
+</script>
+
+<nav class="topnav">
+  <div class="nav-left">
+    <div class="logo">K</div>
+    <div>
+      <div class="title">Blueprint Document Automation</div>
+      <div class="subtitle">Choose a tool</div>
+    </div>
+  </div>
+  <button class="btn" onclick="logout()">Log out</button>
+</nav>
+
+<div class="wrap">
+  <div class="eyebrow">Welcome back</div>
+  <h1>What do you want to work on?</h1>
+  <p class="lead">Pick a tool to get started. You can always come back here for the other one.</p>
+
+  <div class="choice-grid">
+    <button class="choice-card" onclick="window.location.href='/projects'">
+      <div class="dot">B</div>
+      <h3>BRD Tool</h3>
+      <p>Upload source documents, research a company, and generate a full Business
+         Requirements Document section by section.</p>
+    </button>
+    <button class="choice-card" onclick="window.location.href='/sow-hub'">
+      <div class="dot">S</div>
+      <h3>SOW Tool</h3>
+      <p>Draft a Statement of Work section by section — upload sources, choose Bristlecone's
+         format or a client's own template, generate/review/approve each section, then export.</p>
+    </button>
+  </div>
+</div>
+
+<script>
+async function logout(){
+  try{ await fetch("/logout", { method: "POST" }); }catch(e){}
+  sessionStorage.removeItem("auth_user");
+  window.location.href = "/";
+}
+</script>
+</body>
+</html>

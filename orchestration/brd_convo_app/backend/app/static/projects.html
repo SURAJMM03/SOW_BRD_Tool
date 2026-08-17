@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kinaxis Blueprint Document — Projects</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#F7F7F7;--surface:#FFFFFF;--surface2:#F0F0F0;--surface3:#E8E8E8;
+      --border:#DDDDDD;--border-hover:#AAAAAA;
+      --accent:#0070C0;--accent-glow:rgba(0,112,192,0.15);--accent-soft:rgba(0,112,192,0.08);
+      --green:#0F6E56;--green-soft:rgba(15,110,86,0.1);
+      --amber:#854F0B;--amber-soft:rgba(133,79,11,0.1);
+      --red:#A32D2D;--red-soft:rgba(163,45,45,0.1);
+      --cyan:#0070C0;
+      --text:#1A1A1A;--text-sec:#888888;--text-dim:#CCCCCC;
+      --r:6px;--rlg:10px;
+      --font:'Segoe UI',system-ui,sans-serif;--mono:'Consolas','Courier New',monospace;
+    }
+    body{background:var(--bg);color:var(--text);font-family:var(--font);height:100vh;display:flex;flex-direction:column;overflow:hidden}
+
+    /* NAV — same as upload screen */
+    .topnav{background:var(--surface);border-bottom:1px solid var(--border);padding:0 28px;height:52px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:relative}
+    .topnav::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.3}
+    .nav-left{display:flex;align-items:center;gap:12px}
+    .logo-mark{width:32px;height:32px;background:#003366;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff;box-shadow:0 2px 10px var(--accent-glow)}
+    .nav-title{font-size:14px;font-weight:600}
+    .nav-subtitle{font-size:10px;color:var(--text-dim);letter-spacing:.5px;text-transform:uppercase}
+    .nav-steps{display:flex;gap:4px;align-items:center}
+    .nav-step{display:flex;align-items:center;gap:6px;padding:4px 12px;border-radius:7px;font-size:11px;font-weight:500;color:var(--text-dim)}
+    .nav-step .sn{width:20px;height:20px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;background:var(--surface2);border:1px solid var(--border)}
+    .nav-step.done .sn{background:var(--green);border-color:var(--green);color:#0b0d14}
+    .nav-step.done{color:var(--green)}
+    .nav-step.active{background:var(--accent-soft);color:var(--accent)}
+    .nav-step.active .sn{background:var(--accent);border-color:var(--accent);color:#fff}
+    .sc{width:20px;height:1px;background:var(--border)}
+    .nav-user{display:flex;align-items:center;gap:8px}
+    .uav{width:28px;height:28px;border-radius:7px;background:var(--surface3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:11px}
+    .uname{font-size:12px;font-weight:500}
+
+    /* MAIN */
+    .main{flex:1;display:flex;flex-direction:column;padding:32px 40px;overflow-y:auto;max-width:900px;width:100%;margin:0 auto}
+
+    /* TITLE ROW */
+    .title-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+    .title-row h1{font-size:28px;font-weight:700;letter-spacing:-.5px}
+    .new-proj-btn{
+      display:flex;align-items:center;gap:7px;
+      padding:10px 20px;border-radius:10px;border:none;
+      background:var(--accent);color:#fff;
+      font-family:var(--font);font-size:13px;font-weight:600;
+      cursor:pointer;transition:all .25s;
+      box-shadow:0 3px 16px var(--accent-glow);
+    }
+    .new-proj-btn:hover{background:#7a85ff;transform:translateY(-1px);box-shadow:0 5px 24px var(--accent-glow)}
+    .new-proj-btn svg{width:15px;height:15px}
+
+    /* SEARCH */
+    .search-wrap{position:relative;margin-bottom:16px}
+    .search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--text-dim);pointer-events:none}
+    .search-input{
+      width:100%;padding:11px 14px 11px 40px;
+      background:var(--surface);border:1px solid var(--border);border-radius:10px;
+      color:var(--text);font-family:var(--font);font-size:13px;
+      outline:none;transition:border-color .2s;
+    }
+    .search-input::placeholder{color:var(--text-dim)}
+    .search-input:focus{border-color:var(--accent)}
+
+    /* TABS + SORT ROW */
+    .filter-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+    .filter-label{font-size:12px;font-weight:600;color:var(--text-sec)}
+    .sort-wrap{display:flex;align-items:center;gap:8px}
+    .sort-label{font-size:11px;color:var(--text-dim)}
+    .sort-select{
+      padding:5px 28px 5px 10px;border-radius:7px;
+      background:var(--surface);border:1px solid var(--border);
+      color:var(--text-sec);font-family:var(--font);font-size:11px;
+      outline:none;cursor:pointer;
+      appearance:none;
+      background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%235a6180' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat:no-repeat;background-position:right 10px center;
+    }
+    .sort-select:focus{border-color:var(--accent)}
+
+    /* PROJECT GRID */
+    .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+
+    .proj-card{
+      background:var(--surface);border:1px solid var(--border);border-radius:var(--rlg);
+      padding:20px;cursor:pointer;transition:all .25s;position:relative;overflow:hidden;
+    }
+    .proj-card::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:3px;
+      background:linear-gradient(90deg,var(--accent),#a56df7);
+      opacity:0;transition:opacity .3s;
+    }
+    .proj-card:hover{border-color:var(--border-hover);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.3)}
+    .proj-card:hover::before{opacity:1}
+    .proj-card-name{font-size:14px;font-weight:600;margin-bottom:4px;display:flex;align-items:center;gap:6px}
+    .proj-card-name svg{width:13px;height:13px;color:var(--text-dim);flex-shrink:0}
+    .proj-card-client{font-size:11px;color:var(--text-sec);margin-bottom:12px}
+    .proj-card-footer{display:flex;justify-content:space-between;align-items:center}
+    .proj-card-date{font-size:10px;color:var(--text-dim)}
+    .proj-card-status{font-size:9px;font-weight:600;padding:3px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.4px}
+    .proj-card-status.active{background:var(--green-soft);color:var(--green)}
+    .proj-card-status.draft{background:var(--amber-soft);color:var(--amber)}
+    .proj-card-status.complete{background:var(--accent-soft);color:var(--accent)}
+    .proj-card-wf{font-size:9px;font-weight:700;padding:3px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.4px}
+    .proj-card-wf.wf-new{background:var(--accent-soft);color:var(--accent)}
+    .proj-card-wf.wf-update{background:var(--green-soft);color:var(--green)}
+
+    .proj-delete-btn{
+      position:absolute;top:12px;right:12px;
+      width:28px;height:28px;border-radius:7px;border:none;
+      background:transparent;color:var(--text-dim);cursor:pointer;
+      display:flex;align-items:center;justify-content:center;
+      opacity:0;transition:all .2s;z-index:2;
+    }
+    .proj-card:hover .proj-delete-btn{opacity:1}
+    .proj-delete-btn:hover{background:var(--red-soft);color:var(--red)}
+    .proj-delete-btn svg{width:14px;height:14px}
+
+    .proj-card-files{display:flex;gap:4px;margin-top:10px}
+    .proj-file-tag{font-size:9px;font-family:var(--mono);padding:2px 6px;border-radius:3px;background:var(--surface2);color:var(--text-dim)}
+
+    /* EMPTY STATE */
+    .empty-projects{
+      grid-column:1/-1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+      padding:60px 20px;color:var(--text-dim);font-size:13px;gap:12px;
+      border:1px dashed var(--border);border-radius:var(--rlg);
+    }
+    .empty-projects svg{width:40px;height:40px;opacity:.25}
+
+    /* NEW PROJECT MODAL */
+    .modal-overlay{
+      position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);
+      display:none;align-items:center;justify-content:center;z-index:100;
+    }
+    .modal-overlay.show{display:flex}
+    .modal{
+      background:var(--surface);border:1px solid var(--border);border-radius:16px;
+      padding:28px;width:100%;max-width:440px;
+      box-shadow:0 16px 64px rgba(0,0,0,.5);
+      animation:modalIn .25s ease;
+    }
+    @keyframes modalIn{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+    .modal h2{font-size:18px;font-weight:700;margin-bottom:4px}
+    .modal p{font-size:12px;color:var(--text-sec);margin-bottom:20px}
+    .modal-field{margin-bottom:14px}
+    .modal-label{font-size:11px;font-weight:600;color:var(--text-sec);margin-bottom:5px;display:block;text-transform:uppercase;letter-spacing:.5px}
+    .modal-input{
+      width:100%;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;
+      color:var(--text);font-family:var(--font);font-size:13px;outline:none;transition:border-color .2s;
+    }
+    .modal-input::placeholder{color:var(--text-dim)}
+    .modal-input:focus{border-color:var(--accent)}
+    .modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}
+    .modal-btn{
+      padding:9px 20px;border-radius:8px;border:none;
+      font-family:var(--font);font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;
+    }
+    .modal-btn.cancel{background:var(--surface2);color:var(--text-sec);border:1px solid var(--border)}
+    .modal-btn.cancel:hover{background:var(--surface3);color:var(--text)}
+    .modal-btn.create{background:var(--accent);color:#fff;box-shadow:0 2px 12px var(--accent-glow)}
+    .modal-btn.create:hover{background:#7a85ff}
+    .modal-btn.create:disabled{background:var(--surface3);color:var(--text-dim);box-shadow:none;cursor:not-allowed}
+    .modal-btn.delete{background:var(--red);color:#fff;box-shadow:0 2px 12px var(--red-soft)}
+    .modal-btn.delete:hover{background:#d94853}
+    .del-warn{font-size:11px;color:var(--text-dim);margin-top:12px;padding:8px 10px;background:var(--red-soft);border-radius:6px;line-height:1.5}
+    .del-warn svg{width:12px;height:12px;vertical-align:-2px;margin-right:4px;color:var(--red)}
+    .del-proj-name{color:var(--text);font-weight:600}
+
+    /* TOAST */
+    .tc{position:fixed;top:60px;right:20px;z-index:200;display:flex;flex-direction:column;gap:6px}
+    .t{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:10px 14px;font-size:12px;display:flex;align-items:center;gap:8px;animation:ti .3s ease;box-shadow:0 6px 24px rgba(0,0,0,.4);max-width:340px}
+    .t.success{border-color:var(--green)}.t.error{border-color:var(--red)}
+    @keyframes ti{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:translateX(0)}}
+
+    @media(max-width:600px){.proj-grid{grid-template-columns:1fr}.nav-steps{display:none}.main{padding:24px 20px}}
+  </style>
+</head>
+<body>
+<script>
+  // Auth guard — redirect to login if not authenticated
+  (function() {
+    if (!sessionStorage.getItem('auth_user')) {
+      window.location.replace('/');
+    }
+  })();
+</script>
+
+
+<nav class="topnav">
+  <div class="nav-left">
+    <div class="logo-mark">K</div>
+    <div><div class="nav-title">Kinaxis Blueprint Document Automation</div><div class="nav-subtitle">Projects</div></div>
+  </div>
+  <div class="nav-steps">
+    <div class="nav-step done"><span class="sn">&#10003;</span><span>Login</span></div>
+    <div class="sc"></div>
+    <div class="nav-step active"><span class="sn">2</span><span>Projects</span></div>
+    <div class="sc"></div>
+    <div class="nav-step"><span class="sn">3</span><span>Upload</span></div>
+    <div class="sc"></div>
+    <div class="nav-step"><span class="sn">4</span><span>Template Editor</span></div>
+    <div class="sc"></div>
+    <div class="nav-step"><span class="sn">5</span><span>Generating</span></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <a href="/repositories" style="display:flex;align-items:center;gap:5px;padding:6px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface2);color:var(--text-sec);font-size:11px;font-weight:600;text-decoration:none;transition:all .15s" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text-sec)'">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
+      Repositories
+    </a>
+    <div class="nav-user"><span class="uname" id="nav-uname"></span><div class="uav" id="nav-uav"></div></div>
+  </div>
+</nav>
+<script>
+  (function() {
+    const raw = sessionStorage.getItem('auth_user');
+    const email = raw ? (JSON.parse(raw).email || '') : '';
+    const local = email.split('@')[0];
+    const parts = local.split(/[._]/).filter(Boolean);
+    document.getElementById('nav-uname').textContent = parts.map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(' ') || email || '—';
+    document.getElementById('nav-uav').textContent   = parts.slice(0, 2).map(p => p.charAt(0).toUpperCase()).join('') || '?';
+  })();
+</script>
+
+<main class="main">
+  <!-- Title + New Project -->
+  <div class="title-row">
+    <h1>Projects</h1>
+    <button class="new-proj-btn" id="chooser-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      New project
+    </button>
+    <button id="new-btn" style="display:none"></button>
+    <button id="update-btn" style="display:none"></button>
+  </div>
+
+  <!-- Search -->
+  <div class="search-wrap">
+    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input class="search-input" id="search" type="text" placeholder="Search projects…">
+  </div>
+
+  <!-- Tabs + Sort -->
+  <div class="filter-row">
+    <div class="filter-label">Your projects</div>
+    <div class="sort-wrap">
+      <span class="sort-label">Sort by</span>
+      <select class="sort-select" id="sort-sel">
+        <option value="activity">Activity</option>
+        <option value="name">Name</option>
+        <option value="created">Created</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Project Grid -->
+  <div class="proj-grid" id="proj-grid"></div>
+</main>
+
+<!-- New Project Modal -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <h2>New project</h2>
+    <p>Create a new Blueprint Document project to upload documents and generate sections.</p>
+    <div class="modal-field">
+      <label class="modal-label">Project name</label>
+      <input class="modal-input" id="proj-name" type="text" placeholder="e.g. Arclin Kinaxis Blueprint Document">
+    </div>
+    <div class="modal-field">
+      <label class="modal-label">Client / Description</label>
+      <input class="modal-input" id="proj-client" type="text" placeholder="e.g. Arclin Inc. — Pilot implementation">
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn cancel" id="modal-cancel">Cancel</button>
+      <button class="modal-btn create" id="modal-create" disabled>Create project</button>
+    </div>
+  </div>
+</div>
+
+<!-- Start project — mode chooser -->
+<div class="modal-overlay" id="mode-modal">
+  <div class="modal" style="width:600px;max-width:94vw;">
+    <h2>Start a project</h2>
+    <p>How would you like to begin?</p>
+    <div style="display:flex;gap:14px;margin-top:4px;">
+      <button onclick="chooseMode('new')" style="flex:1;text-align:left;background:#fff;border:1.5px solid #DDD;border-radius:10px;padding:16px;cursor:pointer;transition:border-color .15s,box-shadow .15s;" onmouseover="this.style.borderColor='#0070C0';this.style.boxShadow='0 2px 10px rgba(0,112,192,.15)'" onmouseout="this.style.borderColor='#DDD';this.style.boxShadow='none'">
+        <div style="width:38px;height:38px;border-radius:9px;background:#E6F1FB;color:#0070C0;display:flex;align-items:center;justify-content:center;margin-bottom:10px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        <div style="font-size:15px;font-weight:700;color:#003366;">Create new project</div>
+        <div style="font-size:12.5px;color:#666;margin-top:4px;line-height:1.4;">Generate a Blueprint document from scratch.</div>
+      </button>
+      <button onclick="chooseMode('update')" style="flex:1;text-align:left;background:#fff;border:1.5px solid #DDD;border-radius:10px;padding:16px;cursor:pointer;transition:border-color .15s,box-shadow .15s;" onmouseover="this.style.borderColor='#0070C0';this.style.boxShadow='0 2px 10px rgba(0,112,192,.15)'" onmouseout="this.style.borderColor='#DDD';this.style.boxShadow='none'">
+        <div style="width:38px;height:38px;border-radius:9px;background:#E1F5EE;color:#0F6E56;display:flex;align-items:center;justify-content:center;margin-bottom:10px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><polyline points="9 15 12 12 15 15"/></svg></div>
+        <div style="font-size:15px;font-weight:700;color:#003366;">Update existing document</div>
+        <div style="font-size:12.5px;color:#666;margin-top:4px;line-height:1.4;">Import an approved Blueprint and generate only the missing sections.</div>
+      </button>
+    </div>
+    <div class="modal-actions"><button class="modal-btn cancel" onclick="closeModeModal()">Cancel</button></div>
+  </div>
+</div>
+
+<!-- Update Existing Document Modal (Create Update Project) -->
+<div class="modal-overlay" id="update-modal">
+  <div class="modal">
+    <h2>Update existing document</h2>
+    <p>Create an update project, then import an existing Blueprint. Company, industry and other context are filled in automatically from the document you import.</p>
+    <div class="modal-field">
+      <label class="modal-label">Project name</label>
+      <input class="modal-input" id="up-name" type="text" placeholder="e.g. Arclin Kinaxis Blueprint — 2026 Update">
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn cancel" id="update-cancel">Cancel</button>
+      <button class="modal-btn create" id="update-create" disabled>Create &amp; import</button>
+    </div>
+  </div>
+</div>
+
+<div class="tc" id="tc"></div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal-overlay" id="del-modal">
+  <div class="modal">
+    <h2>Delete project</h2>
+    <p>Are you sure you want to delete <span class="del-proj-name" id="del-proj-name"></span>?</p>
+    <div class="del-warn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      This will permanently delete the project and all uploaded documents, indexed data, keyword configurations, and generated Blueprint Document sections associated with it. This action cannot be undone.
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn cancel" id="del-cancel">Cancel</button>
+      <button class="modal-btn delete" id="del-confirm">Delete project</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══ STATE ═══
+let projects = [];
+let sortBy = 'activity';
+let searchQ = '';
+
+// ═══ API CALLS ═══
+async function fetchProjects() {
+  try {
+    const res = await fetch('/api/projects?exclude_workflow=sow');
+    if (!res.ok) throw new Error('Failed to load projects');
+    projects = await res.json();
+    // Parse date strings into Date objects for sorting
+    projects.forEach(p => {
+      p.updated = parseUTC(p.updated);
+      p.created = parseUTC(p.created);
+    });
+    render();
+  } catch (e) {
+    toast('Could not load projects. Is the server running?', 'error');
+  }
+}
+
+async function apiCreateProject(name, client, workflow) {
+  const res = await fetch('/api/projects', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, client, workflow: workflow || 'new' }),
+  });
+  if (!res.ok) throw new Error('Create failed');
+  return res.json();
+}
+
+async function apiDeleteProject(id) {
+  const res = await fetch(`/api/projects/${id}`, { method: 'DELETE' });
+  if (!res.ok) throw new Error('Delete failed');
+  return res.json();
+}
+
+// ═══ RENDER ═══
+function render() {
+  let filtered = [...projects];
+  if (searchQ) {
+    const q = searchQ.toLowerCase();
+    filtered = filtered.filter(p => p.name.toLowerCase().includes(q) || (p.client || '').toLowerCase().includes(q));
+  }
+  filtered.sort((a, b) => {
+    if (sortBy === 'activity') return b.updated - a.updated;
+    if (sortBy === 'name') return a.name.localeCompare(b.name);
+    if (sortBy === 'created') return b.created - a.created;
+    return 0;
+  });
+
+  const grid = document.getElementById('proj-grid');
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div class="empty-projects">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      ${searchQ ? 'No projects match your search.' : 'No projects yet. Click "New project" to get started.'}
+    </div>`;
+    return;
+  }
+
+  grid.innerHTML = filtered.map(p => `
+    <div class="proj-card" onclick="openProject('${p.id}')">
+      <button class="proj-delete-btn" onclick="event.stopPropagation();confirmDelete('${p.id}')" title="Delete project">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+      </button>
+      <div class="proj-card-name">
+        ${esc(p.name)}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      </div>
+      <div class="proj-card-client">${esc(p.client || '')}</div>
+      <div class="proj-card-footer">
+        <span class="proj-card-date">Updated ${timeAgo(p.updated)}</span>
+        <span style="display:flex;gap:6px;align-items:center;">
+          <span class="proj-card-wf wf-${p.workflow === 'update' ? 'update' : 'new'}">${p.workflow === 'update' ? 'Update' : 'New'}</span>
+          <span class="proj-card-status ${p.status}">${p.status}</span>
+        </span>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ═══ SEARCH ═══
+document.getElementById('search').addEventListener('input', e => {
+  searchQ = e.target.value.trim();
+  render();
+});
+
+// ═══ SORT ═══
+document.getElementById('sort-sel').addEventListener('change', e => {
+  sortBy = e.target.value;
+  render();
+});
+
+// ═══ NEW PROJECT MODAL ═══
+const modal = document.getElementById('modal');
+const nameInput = document.getElementById('proj-name');
+const clientInput = document.getElementById('proj-client');
+const createBtn = document.getElementById('modal-create');
+
+document.getElementById('new-btn').addEventListener('click', () => {
+  nameInput.value = '';
+  clientInput.value = '';
+  createBtn.disabled = true;
+  modal.classList.add('show');
+  setTimeout(() => nameInput.focus(), 100);
+});
+
+document.getElementById('modal-cancel').addEventListener('click', () => modal.classList.remove('show'));
+modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('show'); });
+
+nameInput.addEventListener('input', () => { createBtn.disabled = !nameInput.value.trim(); });
+
+createBtn.addEventListener('click', async () => {
+  const name = nameInput.value.trim();
+  const client = clientInput.value.trim() || 'No description';
+  if (!name) return;
+  createBtn.disabled = true;
+  try {
+    const proj = await apiCreateProject(name, client);
+    modal.classList.remove('show');
+    const newId = proj && (proj.id || proj.project_id);
+    if (newId) { window.location.href = `/upload?project_id=${newId}`; return; }
+    toast(`Project "${name}" created`, 'success');
+    await fetchProjects();
+  } catch (e) {
+    toast('Failed to create project.', 'error');
+    createBtn.disabled = false;
+  }
+});
+
+// ═══ UPDATE EXISTING DOCUMENT MODAL ═══
+const upModal = document.getElementById('update-modal');
+const upName = document.getElementById('up-name');
+const upCreate = document.getElementById('update-create');
+
+document.getElementById('update-btn').addEventListener('click', () => {
+  upName.value = '';
+  upCreate.disabled = true;
+  upModal.classList.add('show');
+  setTimeout(() => upName.focus(), 100);
+});
+document.getElementById('update-cancel').addEventListener('click', () => upModal.classList.remove('show'));
+upModal.addEventListener('click', e => { if (e.target === upModal) upModal.classList.remove('show'); });
+upName.addEventListener('input', () => { upCreate.disabled = !upName.value.trim(); });
+
+upCreate.addEventListener('click', async () => {
+  const name = upName.value.trim();
+  if (!name) return;
+  const client = 'Update existing document';
+  upCreate.disabled = true;
+  try {
+    const proj = await apiCreateProject(name, client, 'update');
+    upModal.classList.remove('show');
+    toast(`Update project "${name}" created`, 'success');
+    const id = (proj && (proj.id || proj.project_id)) || null;
+    // Go to the Update Existing Document editor for this project
+    window.location.href = id ? `/update-editor?project_id=${id}` : '/update-editor';
+  } catch (e) {
+    toast('Failed to create update project.', 'error');
+    upCreate.disabled = false;
+  }
+});
+
+// ═══ START PROJECT — MODE CHOOSER ═══
+const modeModal = document.getElementById('mode-modal');
+document.getElementById('chooser-btn').addEventListener('click', () => modeModal.classList.add('show'));
+function closeModeModal(){ modeModal.classList.remove('show'); }
+function chooseMode(m){
+  modeModal.classList.remove('show');
+  if(m === 'update'){ document.getElementById('update-btn').click(); }
+  else { document.getElementById('new-btn').click(); }
+}
+modeModal.addEventListener('click', e => { if(e.target === modeModal) modeModal.classList.remove('show'); });
+
+// ═══ OPEN PROJECT → navigate to upload screen ═══
+function openProject(id) {
+  const p = projects.find(x => x.id === id);
+  if (p && p.workflow === 'update') {
+    // Update Existing Document workflow → import + update editor
+    window.location.href = `/update-editor?project_id=${id}`;
+    return;
+  }
+  // Create New Project workflow → RESUME where the user left off:
+  // if documents are already uploaded, continue at the Template Editor;
+  // otherwise start at Document Upload.
+  if (p && (p.file_count || 0) > 0) {
+    window.location.href = `/editor?project_id=${id}`;
+  } else {
+    window.location.href = `/upload?project_id=${id}`;
+  }
+}
+
+// ═══ DELETE PROJECT ═══
+const delModal = document.getElementById('del-modal');
+let pendingDeleteId = null;
+
+function confirmDelete(id) {
+  const p = projects.find(x => x.id === id);
+  if (!p) return;
+  pendingDeleteId = id;
+  document.getElementById('del-proj-name').textContent = p.name;
+  delModal.classList.add('show');
+}
+
+document.getElementById('del-cancel').addEventListener('click', () => {
+  delModal.classList.remove('show');
+  pendingDeleteId = null;
+});
+delModal.addEventListener('click', e => {
+  if (e.target === delModal) { delModal.classList.remove('show'); pendingDeleteId = null; }
+});
+
+document.getElementById('del-confirm').addEventListener('click', async () => {
+  if (pendingDeleteId === null) return;
+  const p = projects.find(x => x.id === pendingDeleteId);
+  const name = p ? p.name : 'Project';
+  try {
+    await apiDeleteProject(pendingDeleteId);
+    pendingDeleteId = null;
+    delModal.classList.remove('show');
+    toast(`"${name}" and all its data deleted`, 'success');
+    await fetchProjects();
+  } catch (e) {
+    toast('Failed to delete project.', 'error');
+    delModal.classList.remove('show');
+    pendingDeleteId = null;
+  }
+});
+
+// ═══ UTILS ═══
+function parseUTC(s){
+  if(typeof s === "string" && !/[zZ]|[+-]\d\d:?\d\d$/.test(s)) s = s + "Z";
+  return new Date(s);
+}
+function timeAgo(d) {
+  const diff = Math.floor((Date.now() - d) / 1000);
+  if (diff < 60) return 'just now';
+  if (diff < 3600) return Math.floor(diff / 60) + ' min ago';
+  if (diff < 86400) return Math.floor(diff / 3600) + ' hours ago';
+  const days = Math.floor(diff / 86400);
+  if (days === 1) return '1 day ago';
+  return days + ' days ago';
+}
+function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+function toast(m, ty = 'info') {
+  const c = document.getElementById('tc'), t = document.createElement('div');
+  t.className = `t ${ty}`;
+  t.innerHTML = `<span>${ty === 'error' ? '⚠' : ty === 'success' ? '✓' : 'ℹ'}</span><span>${esc(m)}</span>`;
+  c.appendChild(t);
+  setTimeout(() => { t.style.opacity = '0'; t.style.transition = 'opacity .3s'; setTimeout(() => t.remove(), 300); }, 3500);
+}
+
+// ═══ INIT — load projects from server ═══
+fetchProjects();
+
+// Auto-refresh the list when returning to the dashboard WITHOUT a manual reload:
+// - pageshow(persisted) fires when the page is restored from the back/forward cache
+//   (e.g. you click Back after creating/uploading a project).
+// - visibilitychange refreshes when you switch back to this tab.
+window.addEventListener('pageshow', function(e){ if(e.persisted) fetchProjects(); });
+document.addEventListener('visibilitychange', function(){ if(document.visibilityState === 'visible') fetchProjects(); });
+</script>
+  <script src="/static/chat_widget.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "0": {
+      "content": "| Field | Details |\n|---|---|\n| Client Name | Google |\n| Project Name | Global Template Design for Silicon COT Supply Chain |\n| Engagement Type | Implementation |\n| Contract ID | <CONFIRM: contract ID / SOW ID> |\n| Effective Date | <CONFIRM: effective date and end date> |\n| End Date | <CONFIRM: effective date and end date> |\n| Document Version | v1.0 |\n| Prepared by | Bristlecone Inc. |\n| Review Status | Draft |",
+      "approved_at": "2026-08-12T13:23:38.147627"
+    },
+    "1": {
+      "content": "This Statement of Work (SOW) is entered into between Google and Bristlecone Incorporated under the applicable Master Services Agreement / Inbound Services Agreement dated <LEGAL: confirm governing agreement type and date>.\n\n| Field | Details |\n|---|---|\n| Contract / SOW ID | <CONFIRM: contract ID / SOW ID> |\n| SOW Effective Date | <CONFIRM: effective date and end date> |\n| SOW End Date | <CONFIRM: effective date and end date> |\n| Governing Agreement | Master Services Agreement / Inbound Services Agreement |\n| Amendment / Supersedes | New SOW; does not supersede any prior SOW unless expressly stated in a fully executed amendment |\n| Agreement Duration | From the SOW Effective Date through the SOW End Date |\n| Delivery Location | Onsite (North America) and Offshore |",
+      "approved_at": "2026-08-12T13:25:48.490270"
+    }
+  }
+}

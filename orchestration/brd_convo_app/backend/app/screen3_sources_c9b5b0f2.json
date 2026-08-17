@@ -1,0 +1,388 @@
+{
+  "1.4": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: LCS46M-B, Reference Part: LCS46M-B, Site: V318, Buyer Code Site Value: V318, Planner Code Site Value: V318, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: TO, Description: Liquid Caustic Soda M 46% (bulk), Buyer Code Value: 001834, Buyer Code Description: Matthew Donohoe, Planner Code Value: MTO, Planner Code Description: Made-to-Order, Std Unit Cost: 426, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Produ"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: SODHYP13-B, Reference Part: SODHYP13-B, Site: V116, Buyer Code Site Value: V116, Planner Code Site Value: V116, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: L, Description: SODIUM HYPOCHLORITE 13% - BULK, Buyer Code Value: 082691, Planner Code Value: MTS, Std Unit Cost: 0, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product Hierarchy2 Value: 28HYP, Referen"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Export Part.xlsx — Sheet: part\nColumns: Name | Reference Part | Site | Buyer Code Site Value | Planner Code Site Value | Available Rule Value | Incremental Rule Value | Planning Calendars Value | Source Rule Value | Type Value | Unit Of Measure Value | Description | Buyer Code Value | Buyer Code Description | Planner Code Value | Planner Code Description | ABC Code Value | Std Unit Cost | Average Selling Price | Safety Stock Qty | Number Of Days Supply | After Forecast Interval | Before Forecast Interval | Reference Part Product Hierarchy1 Value | Reference Part Product Hierarchy2 Value | Refe"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: ACTIVATOR1500-200L, Reference Part: ACTIVATOR1500-200L, Site: Z104, Buyer Code Site Value: Z104, Planner Code Site Value: Z104, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: DRM, Description: ACTIVATE 1500 SODIUM BISULPHATE 14% SOLN PREMIUM GRADE 200L DRUM, Buyer Code Value: 040755, Buyer Code Description: Kirstie Kelly, Planner Code Value: MTO, Planner Code Description: Made-to-Order, ABC Code Value: C, Std Unit Cost: 148, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After F"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: ALUSUL08-1000NR, Reference Part: ALUSUL08-1000NR, Site: V305, Buyer Code Site Value: V305, Planner Code Site Value: V305, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: TO, Description: Liquid Alum Non Returnable IBC (1310 KG), Buyer Code Value: 041182, Buyer Code Description: Jim Capo, Planner Code Value: ROP, Planner Code Description: PTS ROP, Std Unit Cost: 284, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference P"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: BORACI-1000TG, Reference Part: BORACI-1000TG, Site: V305, Buyer Code Site Value: V305, Planner Code Site Value: V305, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BAG, Description: OPTIBOR  BORIC ACID  TG  (1000kg Bag), Buyer Code Value: 082679, Buyer Code Description: Paul Lightbody, Planner Code Value: IND, Planner Code Description: Indent, ABC Code Value: A, Std Unit Cost: 1949, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Inter"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: BZC-15L, Reference Part: BZC-15L, Site: Z302, Buyer Code Site Value: Z302, Planner Code Site Value: Z302, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: PLY, Description: BACTOZOLV CLEAR - 15L JERRYCAN, Buyer Code Value: 040755, Buyer Code Description: Kirstie Kelly, Planner Code Value: ROP, Planner Code Description: PTS ROP, ABC Code Value: C, Std Unit Cost: 35, Average Selling Price: 0, Safety Stock Qty: 10, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Pa"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: CALCHL30-1350, Reference Part: CALCHL30-1350, Site: Q111, Buyer Code Site Value: Q111, Planner Code Site Value: Q111, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: Calcium chloride solution 1350KG BOX, Buyer Code Value: 082680, Buyer Code Description: Martin Stork, Planner Code Value: MTO, Planner Code Description: Made-to-Order, Std Unit Cost: 1257, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Referen"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: CALCHL30-BAU, Reference Part: CALCHL30-BAU, Site: Q111, Buyer Code Site Value: Q111, Planner Code Site Value: Q111, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: KG, Description: Calcium Chloride Solution, Buyer Code Value: 082680, Buyer Code Description: Martin Stork, Planner Code Value: MTS, Planner Code Description: Made-to-Stock, Std Unit Cost: 1, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product H"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: CL2-920, Reference Part: CL2-920, Site: Z302, Buyer Code Site Value: Z302, Planner Code Site Value: Z302, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: DRM, Description: Chlorine Gas 920 kg net (789 litre water capacity drum), Buyer Code Value: 042118, Buyer Code Description: James Wu, Planner Code Value: PTS, Planner Code Description: PTS Forecast, ABC Code Value: C, Std Unit Cost: 2075, Average Selling Price: 0, Safety Stock Qty: 25, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecas"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: CRYB570-25, Reference Part: CRYB570-25, Site: Z104, Buyer Code Site Value: Z104, Planner Code Site Value: Z104, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BAG, Description: Crystalfloc B570   25 kg, Buyer Code Value: 030016, Buyer Code Description: Brent K WT, Planner Code Value: IND, Planner Code Description: Indent, Std Unit Cost: 143, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 V"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: DSF805-702MR, Reference Part: DSF805-702MR, Site: Q322, Buyer Code Site Value: Q322, Planner Code Site Value: Q322, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: DSF 805 mining reagent 702kg IBC, Buyer Code Value: 019330, Buyer Code Description: Darren Tan, Planner Code Value: RAW, Planner Code Description: Raw Material, Std Unit Cost: 1492, Average Selling Price: 0, Safety Stock Qty: 46, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part "
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: DZOLV-1000L, Reference Part: DZOLV-1000L, Site: Z302, Buyer Code Site Value: Z302, Planner Code Site Value: Z302, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: D-ZOLV 1000L IBC, Buyer Code Value: 040755, Buyer Code Description: Kirstie Kelly, Planner Code Value: PTS, Planner Code Description: PTS Forecast, ABC Code Value: B, Std Unit Cost: 1136, Average Selling Price: 0, Safety Stock Qty: 1, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Pa"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: DZOLVA-1000L, Reference Part: DZOLVA-1000L, Site: V109, Buyer Code Site Value: V109, Planner Code Site Value: V109, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: DZOLV 1000L IBC, Buyer Code Value: 081155, Buyer Code Description: Nicole Cartwright, Planner Code Value: RAW, Planner Code Description: Raw Material, Std Unit Cost: 718, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hier"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: DZOLVA-1000LNR, Reference Part: DZOLVA-1000LNR, Site: V318, Buyer Code Site Value: V318, Planner Code Site Value: V318, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: DZOLV 1000L IBC, Buyer Code Value: 081155, Buyer Code Description: Nicole Cartwright, Planner Code Value: MTO, Planner Code Description: Made-to-Order, Std Unit Cost: 943, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: DZOLVA-15L, Reference Part: DZOLVA-15L, Site: V305, Buyer Code Site Value: V305, Planner Code Site Value: V305, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: PLY, Description: DZOLV 15L POLYBOY, Buyer Code Value: 081155, Buyer Code Description: Nicole Cartwright, Planner Code Value: ROP, Planner Code Description: PTS ROP, Std Unit Cost: 30, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 V"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: HCL24.5-IBCSPNVNR, Reference Part: HCL24.5-IBCSPNVNR, Site: V218, Buyer Code Site Value: V218, Planner Code Site Value: V218, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: HCL 24.5% SchutzPlasticNonVentedNonRetn, Buyer Code Value: 001834, Buyer Code Description: Matthew Donohoe, Planner Code Value: MTO, Planner Code Description: Made-to-Order, Std Unit Cost: 455, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interva"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: LCS30-1000SNR, Reference Part: LCS30-1000SNR, Site: V218, Buyer Code Site Value: V218, Planner Code Site Value: V218, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: LIQUID CAUSTIC SODA 30% 1328kgs (1000L IBC NR), Buyer Code Value: 001834, Buyer Code Description: Matthew Donohoe, Planner Code Value: MTS, Planner Code Description: Made-to-Stock, Std Unit Cost: 641, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: LIQUIPAC-B, Reference Part: LIQUIPAC-B, Site: Z104, Buyer Code Site Value: Z104, Planner Code Site Value: Z104, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: TO, Description: POLYALUMINIUM CHLORIDE-LIQUIPAC BULK N GRADE, Buyer Code Value: 042118, Buyer Code Description: James Wu, Planner Code Value: MTS, Planner Code Description: Made-to-Stock, ABC Code Value: C, Std Unit Cost: 573, Average Selling Price: 0, Safety Stock Qty: 250, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Int"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: MEASAB-915, Reference Part: MEASAB-915, Site: V305, Buyer Code Site Value: V305, Planner Code Site Value: V305, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: Monoethanolamine 915 kg IBC, Buyer Code Value: 013867, Buyer Code Description: Peter O'Donnell, Planner Code Value: PTS, Planner Code Description: PTS Forecast, ABC Code Value: B, Std Unit Cost: 1804, Average Selling Price: 0, Safety Stock Qty: 82, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, "
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: MKP-1200KGCHU, Reference Part: MKP-1200KGCHU, Site: S303, Buyer Code Site Value: S303, Planner Code Site Value: S303, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BAG, Description: Mono Potassium Phosphate Tech 1.2mt Bag, Buyer Code Value: 015262, Buyer Code Description: Haydyn Birch, Planner Code Value: PTC, Planner Code Description: Purchase To Commit, Std Unit Cost: 1, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Re"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: PAASOL-1000L, Reference Part: PAASOL-1000L, Site: Z104, Buyer Code Site Value: Z104, Planner Code Site Value: Z104, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: PROCESS AID A  SOLUTION PREMIUM GRADE - 1000L Schutz, Buyer Code Value: 040755, Buyer Code Description: Kirstie Kelly, Planner Code Value: MTS, Planner Code Description: Made-to-Stock, ABC Code Value: B, Std Unit Cost: 2187, Average Selling Price: 0, Safety Stock Qty: 1, Number Of Days Supply: 0, After Forecast Interval: 0, Be"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: PCTPOTHYD-1500IBC, Reference Part: PCTPOTHYD-1500IBC, Site: V305, Buyer Code Site Value: V305, Planner Code Site Value: V305, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: Potassium Hydroxide 49% (1500kg IBC), Buyer Code Value: 081155, Buyer Code Description: Nicole Cartwright, Planner Code Value: ROP, Planner Code Description: PTS ROP, Std Unit Cost: 1719, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, "
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: POTHYD-1500IBC, Reference Part: POTHYD-1500IBC, Site: V305, Buyer Code Site Value: V305, Planner Code Site Value: V305, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: Potassium Hydroxide 49% (1500kg IBC), Buyer Code Value: 083013, Buyer Code Description: Robert Malcolm, Planner Code Value: SCA, Planner Code Description: Subcon PTS F/cast, Std Unit Cost: 1590, Average Selling Price: 0, Safety Stock Qty: 15, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: REZOLV46-1000L, Reference Part: REZOLV46-1000L, Site: V318, Buyer Code Site Value: V318, Planner Code Site Value: V318, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: REZOLV46 - 1000L IBC, Buyer Code Value: 081155, Buyer Code Description: Nicole Cartwright, Planner Code Value: MTS, Planner Code Description: Made-to-Stock, Std Unit Cost: 629, Average Selling Price: 0, Safety Stock Qty: 29, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part P"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: SIBCERTUBVGI-EA, Reference Part: SIBCERTUBVGI-EA, Site: Z302, Buyer Code Site Value: Z302, Planner Code Site Value: Z302, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: EA, Description: GASSING TUBE VGI 1000 RI- Steel Tube, Buyer Code Value: 004961, Buyer Code Description: Marcus Butterfield, Planner Code Value: IND, Planner Code Description: Indent, ABC Code Value: B, Std Unit Cost: 115, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast "
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: SMBS-31BULK, Reference Part: SMBS-31BULK, Site: Q111, Buyer Code Site Value: Q111, Planner Code Site Value: Q111, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: KG, Description: Sodium Bisulphite Solution - 31 %w/w, Buyer Code Value: 019330, Buyer Code Description: Darren Tan, Planner Code Value: MTO, Planner Code Description: Made-to-Order, ABC Code Value: B, Std Unit Cost: 0, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: SODHYD27-B, Reference Part: SODHYD27-B, Site: Q322, Buyer Code Site Value: Q322, Planner Code Site Value: Q322, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: TO, Description: SODIUM HYDROSULPHIDE 27% Bulk, Buyer Code Value: 019330, Buyer Code Description: Darren Tan, Planner Code Value: MTS, Planner Code Description: Made-to-Stock, ABC Code Value: A, Std Unit Cost: 625, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Refer"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: SODHYD-900Q, Reference Part: SODHYD-900Q, Site: Q322, Buyer Code Site Value: Q322, Planner Code Site Value: Q322, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BAG, Description: Sodium Hydrosulphide Flk, 900kg Bag, Buyer Code Value: 019330, Buyer Code Description: Darren Tan, Planner Code Value: RAW, Planner Code Description: Raw Material, ABC Code Value: C, Std Unit Cost: 1175, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval:"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: SODHYP-1000SNR, Reference Part: SODHYP-1000SNR, Site: V218, Buyer Code Site Value: V218, Planner Code Site Value: V218, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: Sodium Hypochlorite 13% 1000L Non-Returnable, Buyer Code Value: 082691, Buyer Code Description: Jonathan Mah, Planner Code Value: MTS, Planner Code Description: Made-to-Stock, Std Unit Cost: 638, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: SODHYP13-B, Reference Part: SODHYP13-B, Site: V116, Buyer Code Site Value: V116, Planner Code Site Value: V116, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: L, Description: SODIUM HYPOCHLORITE 13% - BULK, Buyer Code Value: 082691, Buyer Code Description: Jonathan Mah, Planner Code Value: MTS, Planner Code Description: Made-to-Stock, Std Unit Cost: 0, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product H"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: SODHYP13-B, Reference Part: SODHYP13-B, Site: V218, Buyer Code Site Value: V218, Planner Code Site Value: V218, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: L, Description: SODIUM HYPOCHLORITE 13% - BULK, Buyer Code Value: 082691, Buyer Code Description: Jonathan Mah, Planner Code Value: MTS, Planner Code Description: Made-to-Stock, Std Unit Cost: 0, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product H"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: SODSUL15-B, Reference Part: SODSUL15-B, Site: S302, Buyer Code Site Value: S302, Planner Code Site Value: S302, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: TO, Description: SODIUM SULPHIDE 15% SOLN, BULK, Buyer Code Value: 030016, Buyer Code Description: Brent K WT, Planner Code Value: SCF, Planner Code Description: Subcon Pur-to-FCST, ABC Code Value: A, Std Unit Cost: 357, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0,"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: SODSULGS-90080, Reference Part: SODSULGS-90080, Site: S302, Buyer Code Site Value: S302, Planner Code Site Value: S302, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BAG, Description: SODIUM SULPHIDE Fe 80 (900KG BAG) CHINA, Buyer Code Value: 019330, Buyer Code Description: Darren Tan, Planner Code Value: RAW, Planner Code Description: Raw Material, Std Unit Cost: 988, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Refere"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: SULACI70-IBCN, Reference Part: SULACI70-IBCN, Site: V110, Buyer Code Site Value: V110, Planner Code Site Value: V110, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: Sulfuric Acid 70% - 1000L NON-RETURNABLE SCHUTZ BOX, Buyer Code Value: 082740, Buyer Code Description: Maria Zyrianova, Planner Code Value: MTO, Planner Code Description: Made-to-Order, Std Unit Cost: 544, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Int"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: SULACICOM98.5-B, Reference Part: SULACICOM98.5-B, Site: V110, Buyer Code Site Value: V110, Planner Code Site Value: V110, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: TO, Description: SULPHURIC ACID 98% CG1840 - BULK, Buyer Code Value: 081233, Buyer Code Description: Stephen Burridge, Planner Code Value: PTF, Planner Code Description: PTF Forecast, Std Unit Cost: 189, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Refere"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: TALCA1250-20, Reference Part: TALCA1250-20, Site: Q344, Buyer Code Site Value: Q344, Planner Code Site Value: Q344, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BAG, Description: TALC A1250 20kg Bag Pallet 560kg, Buyer Code Value: 082679, Buyer Code Description: Paul Lightbody, Planner Code Value: PTS, Planner Code Description: PTS Forecast, ABC Code Value: C, Std Unit Cost: 25, Average Selling Price: 0, Safety Stock Qty: 400, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interv"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: UREASOL40-BULKGC, Reference Part: UREASOL40-BULKGC, Site: N235, Buyer Code Site Value: N235, Planner Code Site Value: N235, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: L, Description: Urea Solution 40% Blended GC, Buyer Code Value: 041182, Buyer Code Description: Jim Capo, Planner Code Value: SCF, Planner Code Description: Subcon Pur-to-FCST, ABC Code Value: B, Std Unit Cost: 1, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interva"
+      },
+      {
+        "doc_name": "Export Part.xlsx",
+        "heading_path": "Export Part.xlsx — Sheet: part",
+        "snippet": "Name: YELKIN-1000SS, Reference Part: YELKIN-1000SS, Site: V305, Buyer Code Site Value: V305, Planner Code Site Value: V305, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: YELKIN SS 1000KG SHUTZ BOX, Buyer Code Value: 081996, Buyer Code Description: Jacqui Helkin, Planner Code Value: PTS, Planner Code Description: PTS Forecast, ABC Code Value: A, Std Unit Cost: 2397, Average Selling Price: 0, Safety Stock Qty: 15, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: "
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "RR export.xlsx — Sheet: part\nColumns: Name | Reference Part | Site | Buyer Code Site Value | Planner Code Site Value | Available Rule Value | Incremental Rule Value | Planning Calendars Value | Source Rule Value | Type Value | Unit Of Measure Value | Description | Buyer Code Value | Buyer Code Description | Planner Code Value | Planner Code Description | ABC Code Value | Std Unit Cost | Average Selling Price | Safety Stock Qty | Number Of Days Supply | After Forecast Interval | Before Forecast Interval | Reference Part Product Hierarchy1 Value | Reference Part Product Hierarchy2 Value | Refere"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: ACTIVATOR1500-200L, Reference Part: ACTIVATOR1500-200L, Site: Z104, Buyer Code Site Value: Z104, Planner Code Site Value: Z104, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: DRM, Description: ACTIVATE 1500 SODIUM BISULPHATE 14% SOLN PREMIUM GRADE 200L DRUM, Buyer Code Value: 040755, Planner Code Value: MTO, ABC Code Value: C, Std Unit Cost: 148, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarc"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: ALUSUL08-1000NR, Reference Part: ALUSUL08-1000NR, Site: V305, Buyer Code Site Value: V305, Planner Code Site Value: V305, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: TO, Description: Liquid Alum Non Returnable IBC (1310 KG), Buyer Code Value: 041182, Planner Code Value: ROP, Std Unit Cost: 284, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product Hierarchy"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: BORACI-1000TG, Reference Part: BORACI-1000TG, Site: V305, Buyer Code Site Value: V305, Planner Code Site Value: V305, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BAG, Description: OPTIBOR  BORIC ACID  TG  (1000kg Bag), Buyer Code Value: 082679, Planner Code Value: IND, ABC Code Value: A, Std Unit Cost: 1949, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Pro"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: BZC-15L, Reference Part: BZC-15L, Site: Z302, Buyer Code Site Value: Z302, Planner Code Site Value: Z302, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: PLY, Description: BACTOZOLV CLEAR - 15L JERRYCAN, Buyer Code Value: 040755, Planner Code Value: ROP, ABC Code Value: C, Std Unit Cost: 35, Average Selling Price: 0, Safety Stock Qty: 10, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 38MIS, Reference Part Product Hierarchy2 Valu"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: CALCHL30-1350, Reference Part: CALCHL30-1350, Site: Q111, Buyer Code Site Value: Q111, Planner Code Site Value: Q111, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: Calcium chloride solution 1350KG BOX, Buyer Code Value: 082680, Planner Code Value: MTO, Std Unit Cost: 1257, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product Hierarchy2 Valu"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: CALCHL30-BAU, Reference Part: CALCHL30-BAU, Site: Q111, Buyer Code Site Value: Q111, Planner Code Site Value: Q111, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: KG, Description: Calcium Chloride Solution, Buyer Code Value: 082680, Planner Code Value: MTS, Std Unit Cost: 1, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product Hierarchy2 Value: 27CHL, Referen"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: CL2-920, Reference Part: CL2-920, Site: Z302, Buyer Code Site Value: Z302, Planner Code Site Value: Z302, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: DRM, Description: Chlorine Gas 920 kg net (789 litre water capacity drum), Buyer Code Value: 042118, Planner Code Value: PTS, ABC Code Value: C, Std Unit Cost: 2075, Average Selling Price: 0, Safety Stock Qty: 25, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference P"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: CRYB570-25, Reference Part: CRYB570-25, Site: Z104, Buyer Code Site Value: Z104, Planner Code Site Value: Z104, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BAG, Description: Crystalfloc B570   25 kg, Buyer Code Value: 030016, Planner Code Value: IND, Std Unit Cost: 143, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 39PLA, Reference Part Product Hierarchy2 Value: 06ACR, Reference"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: DSF805-702MR, Reference Part: DSF805-702MR, Site: Q322, Buyer Code Site Value: Q322, Planner Code Site Value: Q322, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: DSF 805 mining reagent 702kg IBC, Buyer Code Value: 019330, Planner Code Value: RAW, Std Unit Cost: 1492, Average Selling Price: 0, Safety Stock Qty: 46, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 38MIS, Reference Part Product Hierarchy2 Value: 24"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: DZOLV-1000L, Reference Part: DZOLV-1000L, Site: Z302, Buyer Code Site Value: Z302, Planner Code Site Value: Z302, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: D-ZOLV 1000L IBC, Buyer Code Value: 040755, Planner Code Value: PTS, ABC Code Value: B, Std Unit Cost: 1136, Average Selling Price: 0, Safety Stock Qty: 1, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 38MIS, Reference Part Product Hierarchy2 Value: 08"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: DZOLVA-1000L, Reference Part: DZOLVA-1000L, Site: V109, Buyer Code Site Value: V109, Planner Code Site Value: V109, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: DZOLV 1000L IBC, Buyer Code Value: 081155, Planner Code Value: RAW, Std Unit Cost: 718, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product Hierarchy2 Value: 15CAU, Reference Part"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: DZOLVA-1000LNR, Reference Part: DZOLVA-1000LNR, Site: V318, Buyer Code Site Value: V318, Planner Code Site Value: V318, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: DZOLV 1000L IBC, Buyer Code Value: 081155, Planner Code Value: MTO, Std Unit Cost: 943, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product Hierarchy2 Value: 15CAU, Reference "
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: DZOLVA-15L, Reference Part: DZOLVA-15L, Site: V305, Buyer Code Site Value: V305, Planner Code Site Value: V305, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: PLY, Description: DZOLV 15L POLYBOY, Buyer Code Value: 081155, Planner Code Value: ROP, Std Unit Cost: 30, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product Hierarchy2 Value: 15CAU, Reference Part Pr"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: HCL24.5-IBCSPNVNR, Reference Part: HCL24.5-IBCSPNVNR, Site: V218, Buyer Code Site Value: V218, Planner Code Site Value: V218, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: HCL 24.5% SchutzPlasticNonVentedNonRetn, Buyer Code Value: 001834, Planner Code Value: MTO, Std Unit Cost: 455, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product Hiera"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: LCS30-1000SNR, Reference Part: LCS30-1000SNR, Site: V218, Buyer Code Site Value: V218, Planner Code Site Value: V218, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: LIQUID CAUSTIC SODA 30% 1328kgs (1000L IBC NR), Buyer Code Value: 001834, Planner Code Value: MTS, Std Unit Cost: 641, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product Hierar"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: LCS46M-B, Reference Part: LCS46M-B, Site: V318, Buyer Code Site Value: V318, Planner Code Site Value: V318, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: TO, Description: Liquid Caustic Soda M 46% (bulk), Buyer Code Value: 001834, Planner Code Value: MTO, Std Unit Cost: 426, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product Hierarchy2 Value: 15CAU, Refere"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: LIQUIPAC-B, Reference Part: LIQUIPAC-B, Site: Z104, Buyer Code Site Value: Z104, Planner Code Site Value: Z104, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: TO, Description: POLYALUMINIUM CHLORIDE-LIQUIPAC BULK N GRADE, Buyer Code Value: 042118, Planner Code Value: MTS, ABC Code Value: C, Std Unit Cost: 573, Average Selling Price: 0, Safety Stock Qty: 250, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Pr"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: MEASAB-915, Reference Part: MEASAB-915, Site: V305, Buyer Code Site Value: V305, Planner Code Site Value: V305, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: Monoethanolamine 915 kg IBC, Buyer Code Value: 013867, Planner Code Value: PTS, ABC Code Value: B, Std Unit Cost: 1804, Average Selling Price: 0, Safety Stock Qty: 82, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 29ORG, Reference Part Product Hierarchy2"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: MKP-1200KGCHU, Reference Part: MKP-1200KGCHU, Site: S303, Buyer Code Site Value: S303, Planner Code Site Value: S303, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BAG, Description: Mono Potassium Phosphate Tech 1.2mt Bag, Buyer Code Value: 015262, Planner Code Value: PTC, Std Unit Cost: 1, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product Hierarchy2 Valu"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: PAASOL-1000L, Reference Part: PAASOL-1000L, Site: Z104, Buyer Code Site Value: Z104, Planner Code Site Value: Z104, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: PROCESS AID A  SOLUTION PREMIUM GRADE - 1000L Schutz, Buyer Code Value: 040755, Planner Code Value: MTS, ABC Code Value: B, Std Unit Cost: 2187, Average Selling Price: 0, Safety Stock Qty: 1, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Refer"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: PCTPOTHYD-1500IBC, Reference Part: PCTPOTHYD-1500IBC, Site: V305, Buyer Code Site Value: V305, Planner Code Site Value: V305, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: Potassium Hydroxide 49% (1500kg IBC), Buyer Code Value: 081155, Planner Code Value: ROP, Std Unit Cost: 1719, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product Hierarc"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: POTHYD-1500IBC, Reference Part: POTHYD-1500IBC, Site: V305, Buyer Code Site Value: V305, Planner Code Site Value: V305, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: Potassium Hydroxide 49% (1500kg IBC), Buyer Code Value: 083013, Planner Code Value: SCA, Std Unit Cost: 1590, Average Selling Price: 0, Safety Stock Qty: 15, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product Hierarchy2 V"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: REZOLV46-1000L, Reference Part: REZOLV46-1000L, Site: V318, Buyer Code Site Value: V318, Planner Code Site Value: V318, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: REZOLV46 - 1000L IBC, Buyer Code Value: 081155, Planner Code Value: MTS, Std Unit Cost: 629, Average Selling Price: 0, Safety Stock Qty: 29, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product Hierarchy2 Value: 15CAU, Refe"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: SIBCERTUBVGI-EA, Reference Part: SIBCERTUBVGI-EA, Site: Z302, Buyer Code Site Value: Z302, Planner Code Site Value: Z302, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: EA, Description: GASSING TUBE VGI 1000 RI- Steel Tube, Buyer Code Value: 004961, Planner Code Value: IND, ABC Code Value: B, Std Unit Cost: 115, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 69CER, Reference Part Pr"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: SMBS-31BULK, Reference Part: SMBS-31BULK, Site: Q111, Buyer Code Site Value: Q111, Planner Code Site Value: Q111, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: KG, Description: Sodium Bisulphite Solution - 31 %w/w, Buyer Code Value: 019330, Planner Code Value: MTO, ABC Code Value: B, Std Unit Cost: 0, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product Hier"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: SODHYD27-B, Reference Part: SODHYD27-B, Site: Q322, Buyer Code Site Value: Q322, Planner Code Site Value: Q322, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: TO, Description: SODIUM HYDROSULPHIDE 27% Bulk, Buyer Code Value: 019330, Planner Code Value: MTS, ABC Code Value: A, Std Unit Cost: 625, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product Hierarchy2 "
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: SODHYD-900Q, Reference Part: SODHYD-900Q, Site: Q322, Buyer Code Site Value: Q322, Planner Code Site Value: Q322, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BAG, Description: Sodium Hydrosulphide Flk, 900kg Bag, Buyer Code Value: 019330, Planner Code Value: RAW, ABC Code Value: C, Std Unit Cost: 1175, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product H"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: SODHYP-1000SNR, Reference Part: SODHYP-1000SNR, Site: V218, Buyer Code Site Value: V218, Planner Code Site Value: V218, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: Sodium Hypochlorite 13% 1000L Non-Returnable, Buyer Code Value: 082691, Planner Code Value: MTS, Std Unit Cost: 638, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product Hierar"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: SODHYP13-B, Reference Part: SODHYP13-B, Site: V218, Buyer Code Site Value: V218, Planner Code Site Value: V218, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: L, Description: SODIUM HYPOCHLORITE 13% - BULK, Buyer Code Value: 082691, Planner Code Value: MTS, Std Unit Cost: 0, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product Hierarchy2 Value: 28HYP, Referen"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: SODSUL15-B, Reference Part: SODSUL15-B, Site: S302, Buyer Code Site Value: S302, Planner Code Site Value: S302, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: TO, Description: SODIUM SULPHIDE 15% SOLN, BULK, Buyer Code Value: 030016, Planner Code Value: SCF, ABC Code Value: A, Std Unit Cost: 357, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product Hierarchy2"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: SODSULGS-90080, Reference Part: SODSULGS-90080, Site: S302, Buyer Code Site Value: S302, Planner Code Site Value: S302, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BAG, Description: SODIUM SULPHIDE Fe 80 (900KG BAG) CHINA, Buyer Code Value: 019330, Planner Code Value: RAW, Std Unit Cost: 988, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product Hierarchy2 "
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: SULACI70-IBCN, Reference Part: SULACI70-IBCN, Site: V110, Buyer Code Site Value: V110, Planner Code Site Value: V110, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: Sulfuric Acid 70% - 1000L NON-RETURNABLE SCHUTZ BOX, Buyer Code Value: 082740, Planner Code Value: MTO, Std Unit Cost: 544, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product H"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: SULACICOM98.5-B, Reference Part: SULACICOM98.5-B, Site: V110, Buyer Code Site Value: V110, Planner Code Site Value: V110, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: TO, Description: SULPHURIC ACID 98% CG1840 - BULK, Buyer Code Value: 081233, Planner Code Value: PTF, Std Unit Cost: 189, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 28INO, Reference Part Product Hierarchy2 Value:"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: TALCA1250-20, Reference Part: TALCA1250-20, Site: Q344, Buyer Code Site Value: Q344, Planner Code Site Value: Q344, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BAG, Description: TALC A1250 20kg Bag Pallet 560kg, Buyer Code Value: 082679, Planner Code Value: PTS, ABC Code Value: C, Std Unit Cost: 25, Average Selling Price: 0, Safety Stock Qty: 400, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 25SAL, Reference Part Product Hi"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: UREASOL40-BULKGC, Reference Part: UREASOL40-BULKGC, Site: N235, Buyer Code Site Value: N235, Planner Code Site Value: N235, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: L, Description: Urea Solution 40% Blended GC, Buyer Code Value: 041182, Planner Code Value: SCF, ABC Code Value: B, Std Unit Cost: 1, Average Selling Price: 0, Safety Stock Qty: 0, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 31FER, Reference Part Product Hie"
+      },
+      {
+        "doc_name": "RR export.xlsx",
+        "heading_path": "RR export.xlsx — Sheet: part",
+        "snippet": "Name: YELKIN-1000SS, Reference Part: YELKIN-1000SS, Site: V305, Buyer Code Site Value: V305, Planner Code Site Value: V305, Incremental Rule Value: Off, Planning Calendars Value: Workday, Source Rule Value: Ongoing, Type Value: MPS, Unit Of Measure Value: BOX, Description: YELKIN SS 1000KG SHUTZ BOX, Buyer Code Value: 081996, Planner Code Value: PTS, ABC Code Value: A, Std Unit Cost: 2397, Average Selling Price: 0, Safety Stock Qty: 15, Number Of Days Supply: 0, After Forecast Interval: 0, Before Forecast Interval: 0, Reference Part Product Hierarchy1 Value: 29ORG, Reference Part Product Hiera"
+      }
+    ],
+    "gen_source": "doc"
+  }
+}

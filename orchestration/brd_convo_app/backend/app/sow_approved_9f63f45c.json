@@ -1,0 +1,236 @@
+{
+  "sections": {
+    "0": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Cover Page Drafting guidance for this section: Cover page — Field/Details table only (Client Name, Project Name, Engagement Type, Contract ID, Effective Date, End Date, Document Version starting at v1.0, Prepared by 'Bristlecone Inc.', Review Status 'Draft'). The page title itself is already fixed in the template — draft only the table values. Hard rules for this draft: - Never m",
+      "approved_at": "2026-07-24T09:40:00.017424"
+    },
+    "1": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Agreement Details Drafting guidance for this section: Agreement Details — one sentence naming the client and Bristlecone Incorporated under the governing MSA/ISA/Consulting Agreement. Then a separate Field/Details table: Contract/SOW ID, SOW Effective Date, SOW End Date, Governing Agreement, Amendment/Supersedes, Agreement Duration, Delivery Location. Hard rules for this draft: -",
+      "approved_at": "2026-07-24T09:40:06.804544"
+    },
+    "2": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Executive Summary Drafting guidance for this section: Executive Summary — one paragraph naming the engagement, three primary-objective bullets, and a closing sentence pointing to the Key Assumptions and Key Observations sections for deferred decisions. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Ne",
+      "approved_at": "2026-07-24T09:40:10.975283"
+    },
+    "3": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Project Overview Drafting guidance for this section: Project Overview — Background (client's current state, pain points, business drivers); Objectives (bullets); Indicative To-Be Process Flow (high-level target-state description — include a process-flow diagram if one is available from the source material rather than describing it in prose alone). Hard rules for this draft: - Nev",
+      "approved_at": "2026-07-24T09:40:14.308382"
+    },
+    "3.1": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Background Drafting guidance for this section: Background — the client's current state, pain points, and business drivers for this engagement. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such reference",
+      "approved_at": "2026-07-24T09:40:14.341959"
+    },
+    "3.2": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Objectives Drafting guidance for this section: Objectives — bullets. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your own drafting reference only, never for client-facing output",
+      "approved_at": "2026-07-24T09:40:14.376889"
+    },
+    "3.3": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Indicative To-Be Process Flow Drafting guidance for this section: Indicative To-Be Process Flow — high-level target-state description. Include a process-flow diagram here if one is available from the source material. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number",
+      "approved_at": "2026-07-24T09:40:14.417886"
+    },
+    "4": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Scope of Work Drafting guidance for this section: Scope of Work — Geographical/Process/Technical/Services/Application Scope; Integration Scope as a table (# | Integration | Source System | Target System | Notes); Exclusions (bullets — never leave placeholder-only if the source material gives any hint of what's out of scope). Hard rules for this draft: - Never mention \"RFP\", an in",
+      "approved_at": "2026-07-24T09:40:14.449211"
+    },
+    "4.1": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Geographical Scope Drafting guidance for this section: Geographical Scope — regions/countries in scope. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your own drafting reference o",
+      "approved_at": "2026-07-24T09:40:14.498013"
+    },
+    "4.2": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Process Scope Drafting guidance for this section: Process Scope — business processes in scope. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your own drafting reference only, neve",
+      "approved_at": "2026-07-24T09:40:14.531917"
+    },
+    "4.3": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Technical Scope Drafting guidance for this section: Technical Scope — technical components/developments/integrations in scope. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your o",
+      "approved_at": "2026-07-24T09:40:14.565748"
+    },
+    "4.4": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Services Scope Drafting guidance for this section: Services Scope — services included (program management, solution design, delivery, testing, deployment, hypercare, OCM, etc. as applicable). Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document lo",
+      "approved_at": "2026-07-24T09:40:14.596106"
+    },
+    "4.5": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Application Scope Drafting guidance for this section: Application Scope — application functionalities in scope. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your own drafting ref",
+      "approved_at": "2026-07-24T09:40:14.628315"
+    },
+    "4.6": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Integration Scope Drafting guidance for this section: Integration Scope as a table (# | Integration | Source System | Target System | Notes). Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references",
+      "approved_at": "2026-07-24T09:40:14.661677"
+    },
+    "4.7": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Exclusions Drafting guidance for this section: Exclusions (bullets — high-priority section; never leave placeholder-only if the source material gives any hint of what's out of scope). Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator in",
+      "approved_at": "2026-07-24T09:40:14.692272"
+    },
+    "5": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Proposed Architecture Drafting guidance for this section: Proposed Architecture — solution architecture, deployment model, change-governance structure. Include an architecture diagram here if one is available from the source material. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide n",
+      "approved_at": "2026-07-24T09:40:14.725325"
+    },
+    "6": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Solution Implementation Approach & Project Plan Drafting guidance for this section: Solution Implementation Approach & Project Plan — Implementation Methodology (include a relevant implementation/rollout diagram if available); Project Phases/Releases as a table (Phase/Release | Scope/Modules | Regions | Indicative Timeline | Status). Hard rules for this draft: - Never mention \"RF",
+      "approved_at": "2026-07-24T09:40:14.771292"
+    },
+    "6.1": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Implementation Methodology Drafting guidance for this section: Implementation Methodology — delivery methodology. Include a relevant implementation/rollout diagram if the source material has one. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal documen",
+      "approved_at": "2026-07-24T09:40:14.805265"
+    },
+    "6.2": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Project Phases / Releases Drafting guidance for this section: Project Phases/Releases as a table (Phase/Release | Scope/Modules | Regions | Indicative Timeline | Status). Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the d",
+      "approved_at": "2026-07-24T09:40:14.842240"
+    },
+    "7": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Project Management Drafting guidance for this section: Project Management — Governance Model; Roles & Responsibilities as a table (Role | Party | Location | Responsibilities); Work Schedule. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document loc",
+      "approved_at": "2026-07-24T09:40:14.875735"
+    },
+    "7.1": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Governance Model Drafting guidance for this section: Governance Model — oversight structure, escalation paths. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your own drafting refe",
+      "approved_at": "2026-07-24T09:40:14.915034"
+    },
+    "7.2": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Roles & Responsibilities Drafting guidance for this section: Roles & Responsibilities as a table (Role | Party | Location | Responsibilities). Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such reference",
+      "approved_at": "2026-07-24T09:40:14.951176"
+    },
+    "7.3": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Work Schedule Drafting guidance for this section: Work Schedule — bullets. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your own drafting reference only, never for client-facing",
+      "approved_at": "2026-07-24T09:40:14.984758"
+    },
+    "8": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Personnel Requirements Drafting guidance for this section: Personnel Requirements — bullets on language, background, domain familiarity, file-format/standards knowledge, methodology experience, certifications. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or in",
+      "approved_at": "2026-07-24T09:40:15.018630"
+    },
+    "9": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Key Deliverables Drafting guidance for this section: Key Deliverables — table (# | Deliverable | Description | Responsible Party | Due Date | Acceptance Criteria). Only list deliverables explicitly described in the source; mark unconfirmed dates with a placeholder rather than 'TBD'. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristleco",
+      "approved_at": "2026-07-24T09:40:15.051751"
+    },
+    "10": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Key Assumptions Drafting guidance for this section: Key Assumptions — bullets, project-specific, no generic boilerplate. Deviations trigger the Change Management Process. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the d",
+      "approved_at": "2026-07-24T09:40:15.084163"
+    },
+    "11": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Acceptance Criteria Drafting guidance for this section: Acceptance Criteria — table (Phase/Deliverable | Acceptance Criteria | Sign-off Party | Timeline for Review). Criteria must be objective/measurable — never 'client satisfaction' with no test. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never c",
+      "approved_at": "2026-07-24T09:40:15.117087"
+    },
+    "12": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Obligations Drafting guidance for this section: Obligations — Bristlecone Obligations (bullets); Client Obligations (bullets). Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your o",
+      "approved_at": "2026-07-24T09:40:15.148345"
+    },
+    "12.1": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Bristlecone Obligations Drafting guidance for this section: Bristlecone Obligations — bullets. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your own drafting reference only, neve",
+      "approved_at": "2026-07-24T09:40:15.186329"
+    },
+    "12.2": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Client Obligations Drafting guidance for this section: Client Obligations — bullets. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your own drafting reference only, never for clie",
+      "approved_at": "2026-07-24T09:40:15.223197"
+    },
+    "13": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Commercials Drafting guidance for this section: Commercials — Engagement Model; Rate Card & Pyramid Structure as a table (Role/Band | Location | Rate USD/day | Rate Type | Effective Date | Notes); Shift Allowance; Travel & Expenses; Invoicing & Payment Terms. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact nam",
+      "approved_at": "2026-07-24T09:40:15.254530"
+    },
+    "13.1": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Engagement Model Drafting guidance for this section: Engagement Model — Fixed Price / Time & Material / Fixed Monthly / AMS retainer. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for",
+      "approved_at": "2026-07-24T09:40:15.307054"
+    },
+    "13.2": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Rate Card & Pyramid Structure Drafting guidance for this section: Rate Card & Pyramid Structure as a table (Role/Band | Location | Rate USD/day | Rate Type | Effective Date | Notes). Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inl",
+      "approved_at": "2026-07-24T09:40:15.346428"
+    },
+    "13.3": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Shift Allowance Drafting guidance for this section: Shift Allowance — bullets. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your own drafting reference only, never for client-fac",
+      "approved_at": "2026-07-24T09:40:15.378033"
+    },
+    "13.4": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Travel & Expenses Drafting guidance for this section: Travel & Expenses — reimbursement terms. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your own drafting reference only, neve",
+      "approved_at": "2026-07-24T09:40:15.410995"
+    },
+    "13.5": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Invoicing & Payment Terms Drafting guidance for this section: Invoicing & Payment Terms. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your own drafting reference only, never for",
+      "approved_at": "2026-07-24T09:40:15.449645"
+    },
+    "14": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Performance Reporting & KPIs Drafting guidance for this section: Performance Reporting & KPIs — table (Report | Frequency | Recipients | Key Metrics); SLAs & Targets (mark 'Not Applicable' explicitly if this is an implementation-only engagement — do not leave silent). Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal art",
+      "approved_at": "2026-07-24T09:40:15.485496"
+    },
+    "14.1": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: SLAs & Targets Drafting guidance for this section: SLAs & Targets — mark 'Not Applicable' explicitly if this is an implementation-only engagement, do not leave silent. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the draf",
+      "approved_at": "2026-07-24T09:40:15.519802"
+    },
+    "15": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Risks Drafting guidance for this section: Risks — table (# | Risk Description | Likelihood | Impact | Mitigation). Start from standard risks (deferred scope decisions, custom code/integration overrun, key SME unavailability, non-objective acceptance criteria) and add any engagement-specific risk the source material surfaces. Hard rules for this draft: - Never mention \"RFP\", an in",
+      "approved_at": "2026-07-24T09:40:15.557984"
+    },
+    "16": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Governance & Risk Mitigation Drafting guidance for this section: Governance & Risk Mitigation — Milestone Deliverables Matrix; Deferred Scope Decisions (bullets); Integration & Custom Code Safeguards; Change Control. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number",
+      "approved_at": "2026-07-24T09:40:15.610124"
+    },
+    "16.1": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Milestone Deliverables Matrix Drafting guidance for this section: Milestone Deliverables Matrix — reference the Key Deliverables and Commercials sections. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — su",
+      "approved_at": "2026-07-24T09:40:15.647438"
+    },
+    "16.2": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Deferred Scope Decisions Drafting guidance for this section: Deferred Scope Decisions — bullets. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your own drafting reference only, ne",
+      "approved_at": "2026-07-24T09:40:15.684544"
+    },
+    "16.3": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Integration & Custom Code Safeguards Drafting guidance for this section: Integration & Custom Code Safeguards — bullets. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your own dra",
+      "approved_at": "2026-07-24T09:40:15.727876"
+    },
+    "16.4": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Change Control Drafting guidance for this section: Change Control — reference the Change Management Process section. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your own draftin",
+      "approved_at": "2026-07-24T09:40:15.761779"
+    },
+    "17": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Change Management Process Drafting guidance for this section: Change Management Process — table (Step | Activity | Owner | Timeline), using the standard 6-step flow (CR raised → CR logged → impact assessment → CR reviewed/approved → SOW amendment/addendum → CR closure). Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal a",
+      "approved_at": "2026-07-24T09:40:15.801859"
+    },
+    "18": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Security & Data Protection Drafting guidance for this section: Security & Data Protection — bullets (patching/AV, encryption in transit/at rest, least privilege, information-security-policy compliance, incident reporting window, regulatory compliance e.g. GDPR/SOC2/ISO 27001). Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-int",
+      "approved_at": "2026-07-24T09:40:15.840537"
+    },
+    "19": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Termination Drafting guidance for this section: Termination — Termination for Convenience (notice period); Termination for Cause (breach/insolvency/fraud grounds); Effect of Termination. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator",
+      "approved_at": "2026-07-24T09:40:15.871298"
+    },
+    "19.1": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Termination for Convenience Drafting guidance for this section: Termination for Convenience — notice period. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your own drafting refere",
+      "approved_at": "2026-07-24T09:40:15.913252"
+    },
+    "19.2": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Termination for Cause Drafting guidance for this section: Termination for Cause — breach/insolvency/fraud grounds. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your own drafting",
+      "approved_at": "2026-07-24T09:40:15.954243"
+    },
+    "19.3": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Effect of Termination Drafting guidance for this section: Effect of Termination. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your own drafting reference only, never for client-f",
+      "approved_at": "2026-07-24T09:40:15.991020"
+    },
+    "20": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Acceptance and Sign-Off Drafting guidance for this section: Acceptance and Sign-Off — table (blank rows) with columns Bristlecone Inc. | Client, rows Authorized Signatory / Name (Print) / Title / Date / Signature. Leave signature fields blank — never fabricate a name. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal art",
+      "approved_at": "2026-07-24T09:40:16.038348"
+    },
+    "21": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Key Observations Drafting guidance for this section: Key Observations — factual, non-opinion bullets about this draft's own content: deferred scope decisions, whether dated deliverables were specified, the integration count, and whether acceptance criteria/payment are linked at the phase or deliverable level. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing",
+      "approved_at": "2026-07-24T09:40:16.073464"
+    },
+    "22": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Reviewer Recommendations Drafting guidance for this section: Reviewer Recommendations — standard Governance & Risk Mitigation and Acceptance & Quality recommendations. For the Overall Recommendation, always use a '<CONFIRM: ...>' placeholder — a freshly generated draft should never rate its own signability. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing da",
+      "approved_at": "2026-07-24T09:40:16.111232"
+    },
+    "22.1": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Governance & Risk Mitigation Drafting guidance for this section: Governance & Risk Mitigation recommendations — standard reviewer additions. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references",
+      "approved_at": "2026-07-24T09:40:16.153079"
+    },
+    "22.2": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Acceptance & Quality Drafting guidance for this section: Acceptance & Quality recommendations — standard reviewer additions. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your own",
+      "approved_at": "2026-07-24T09:40:16.192575"
+    },
+    "22.3": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Overall Recommendation Drafting guidance for this section: Overall Recommendation — always use a '<CONFIRM: ...>' placeholder; a freshly generated draft should never rate its own signability. Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document lo",
+      "approved_at": "2026-07-24T09:40:16.235348"
+    },
+    "23": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Appendix A - Technical Prerequisites Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your own drafting reference only, never for client-facing output. - Write only in prose/bullets",
+      "approved_at": "2026-07-24T09:40:16.275590"
+    },
+    "24": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Appendix B - Resource Profiles & Certifications Hard rules for this draft: - Never mention \"RFP\", an internal sourcing dashboard, or any Bristlecone-internal artifact name. - Never cite a slide number, page number, or internal document locator inline in the drafted text — such references are for your own drafting reference only, never for client-facing output. - Write only in pro",
+      "approved_at": "2026-07-24T09:40:16.314466"
+    }
+  }
+}

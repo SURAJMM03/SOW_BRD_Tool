@@ -1,0 +1,58 @@
+{
+  "1.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "20260626_124746_BD_20260625_182719.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin’s supply chain map will support a planned data refresh frequency of every 4 hours to improve visibility into inventory positions, purchase order status, production order status, and supply constraints.\nArchlin’s supply management process will use the supply chain map to identify raw material shortages, generate constrained supply plans, support capacity planning, provide exception-based alerts, and enable scenario analysis.\nArchlin’s inventory planning process will use the supply chain map to define safety stock policies, calculate inventory targets, monitor excess inventory, track inv"
+      },
+      {
+        "doc_name": "20260626_124746_BD_20260625_182719.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin’s capacity constraint management design will use SAP S/4HANA as the source for required planning interfaces, including Product Master, Customer Master, Sales Orders, Inventory Balances, Purchase Orders, and Production Orders. Archlin’s planning data refresh frequency for these interfaces will be every 4 hours, supporting more timely visibility than Archlin’s current Excel-based planning approach.\nArchlin’s detailed capacity master data, resource definitions, capacity calendars, bottleneck work centers, production rates, and constraint priority rules are: .\nCurrent State\nArchlin’s curre"
+      },
+      {
+        "doc_name": "20260626_124746_BD_20260625_182719.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin’s benefit realization depends on adoption of the Kinaxis-enabled Supply Management process by Archlin planning users.\nArchlin’s benefit realization depends on reducing reliance on siloed Excel-based planning activities for in-scope Phase 1 supply management processes.\nArchlin’s benefit realization depends on consistent use of the Phase 1 solution to review supply constraints, inventory planning issues, and raw material shortage visibility gaps.\nArchlin’s benefit realization depends on clear alignment between Phase 1 scope, process ownership, KPI tracking, and post-go-live business revi"
+      },
+      {
+        "doc_name": "20260626_124746_BD_20260625_182719.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin’s expected business outcomes from Phase 1 include improved inventory planning discipline, enhanced supply visibility, better identification of raw material shortage gaps, and reduced dependency on Excel/manual cycle activities.\nArchlin’s Blueprint Document provides the agreed functional direction for Archlin’s Phase 1 Supply Management implementation and establishes the basis for subsequent configuration, validation, and adoption activities within Archlin’s planning organization.\n1.1  Company Information\nArchlin is a specialty chemicals manufacturing company undertaking a Phase 1 Kinax"
+      },
+      {
+        "doc_name": "20260626_124746_BD_20260625_182719.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "The proposed solution direction is to support Archlin with a more structured, visible, and repeatable supply management planning process. The investment is intended to reduce reliance on disconnected Excel and manual activities by enabling planners to work with more consistent planning information for requirements, supply, purchase requisitions, and purchase orders. The implementation focus for Phase 1 is to establish the foundation for Archlin’s future-state supply planning process, improve visibility to supply and raw material gaps, and support better inventory planning outcomes within the d"
+      },
+      {
+        "doc_name": "20260626_124746_BD_20260625_182719.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin’s quantitative baseline for inventory reduction, planner productivity improvement, forecast accuracy improvement, or benefit realization has not been provided in Archlin source documents; therefore, Archlin Phase 1 business issue measurement values are .\n2.2  Value Drivers\nArchlin’s Phase 1 Kinaxis-enabled Supply Management investment is intended to create business value for Archlin by addressing poor inventory planning, limited supply visibility, raw material shortage visibility gaps, and planning cycle delays within Archlin’s specialty chemicals manufacturing planning environment.\nAr"
+      },
+      {
+        "doc_name": "20260626_124746_BD_20260625_182719.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin currently operates with partially automated, Excel-based planning processes, and Phase 1 will establish a more centralized planning data flow into Kinaxis RapidResponse to support supply planning, inventory review, and planner productivity improvements.\n3.4.1 Required Interfaces\nThe following SAP S/4HANA data interfaces are in scope for Archlin’s Phase 1 Supply Management deployment:\n| Interface | Purpose for Archlin |\n| --- | --- |\n| Product Master | Provides Archlin’s material and product attributes required for planning, inventory analysis, and supply visibility. |\n| Customer Master"
+      },
+      {
+        "doc_name": "20260626_124746_BD_20260625_182719.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin’s named manufacturing sites, planning sites, distribution sites, warehouses, and regional operating locations are listed as: .\nArchlin’s Phase 1 site inclusion and exclusion criteria are: .\nArchlin’s SAP S/4HANA site, plant, or location mapping to Kinaxis planning locations is: .\nArchlin’s current planning maturity is partially automated with siloed Excel-based systems, and the confirmed Phase 1 scope is Kinaxis-enabled Supply Management focused on addressing poor inventory planning and limited supply visibility.\n3.3  Demand Foundation\nArchlin’s Phase 1 scope focuses on enabling Supply"
+      },
+      {
+        "doc_name": "20260626_124746_BD_20260625_182719.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "| Supply Visibility | Archlin has limited supply visibility. | Archlin’s Phase 1 solution should improve visibility into supply information within the approved scope. |\n| ERP Foundation | Archlin uses SAP S/4HANA. | Archlin’s Kinaxis-enabled Supply Management design must align with SAP S/4HANA data within Phase 1. |\n| Detailed Operational Constraints | Archlin-specific operational constraint details are . | Archlin must confirm detailed constraint rules before finalizing related configuration and planning logic. |"
+      },
+      {
+        "doc_name": "20260626_124746_BD_20260625_182719.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "| Purchase Orders | Provides inbound supply visibility required to evaluate material availability, identify projected shortages, and support constrained supply planning. | Required to improve Archlin’s supply management visibility. |\n| Production Orders | Provides manufacturing supply visibility required to evaluate planned and released production supply against demand, inventory, and material constraints. | Required for Archlin’s constrained supply planning and exception review. |"
+      }
+    ],
+    "gen_source": "doc"
+  }
+}

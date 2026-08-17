@@ -1,0 +1,51 @@
+INFO:     Started server process [1956]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8010 (Press CTRL+C to quit)
+INFO:     127.0.0.1:51245 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51247 - "POST /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57409 - "GET /api/projects HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:49671 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59091 - "POST /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59091 - "GET /choose HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59091 - "GET /sow-hub HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59091 - "GET /sow-projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59091 - "GET /api/projects?workflow=sow HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59091 - "GET /sow-hub HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59091 - "GET /sow HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59091 - "GET /static/chat_widget.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59091 - "GET /api/sow/history?session_id=abd5ac40-efc7-4e2a-ad00-261933599f6d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59091 - "GET /api/chat/scopes HTTP/1.1" 200 OK
+2026-08-10 10:51:17,432 | INFO | SOWRoutes | SOW upload: GOOGLE_SOW (2).docx \u2192 session=abd5ac40-efc7-4e2a-ad00-261933599f6d purpose=review_document (63181 bytes)
+INFO:     127.0.0.1:64012 - "POST /api/sow/upload HTTP/1.1" 200 OK
+2026-08-10 10:51:27,924 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-10 10:51:29,942 | INFO | azure.identity._credentials.environment | No environment configuration found.
+2026-08-10 10:51:29,986 | INFO | azure.identity._credentials.managed_identity | ManagedIdentityCredential will use IMDS
+2026-08-10 10:51:29,990 | WARNING | app.claude_provider | claude_provider(azure): SSL verification DISABLED (AZURE_SSL_VERIFY=false).
+2026-08-10 10:51:29,991 | INFO | app.claude_provider | claude_provider: using Azure OpenAI deployment gpt-5.4 at https://ai-adoption-coe.services.ai.azure.com (timeout=300.0s, max_retries=0)
+2026-08-10 10:51:29,995 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED'
+Request method: 'GET'
+Request headers:
+    'User-Agent': 'azsdk-python-identity/1.25.3 Python/3.14.6 (Windows-11-10.0.26200-SP0)'
+No body was attached to the request
+2026-08-10 10:51:33,162 | INFO | azure.identity._credentials.chained | DefaultAzureCredential acquired a token from AzureCliCredential
+2026-08-10 10:52:35,445 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-10 10:52:35,691 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=33394 budget=12000 effort=none
+INFO:     127.0.0.1:64012 - "POST /api/sow/review HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64012 - "GET /api/sow/history?session_id=abd5ac40-efc7-4e2a-ad00-261933599f6d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58419 - "GET /sow-hub HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58419 - "GET /sow-projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58419 - "GET /api/projects?workflow=sow HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58419 - "GET /sow-upload?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58419 - "GET /api/projects/6d9bee08/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57447 - "GET /api/projects/6d9bee08/repositories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58419 - "GET /api/repositories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57447 - "GET /api/chat/scopes?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57447 - "GET /sow-templates?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57447 - "GET /api/sow-templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58419 - "GET /api/sow-templates/resolve/6d9bee08 HTTP/1.1" 200 OK
+2026-08-10 10:54:33,833 | INFO | SOWTemplateRoutes | Applied SOW template 17c3837e (Bristlecone SOW Master Template) to project 6d9bee08 — 58 sections
+INFO:     127.0.0.1:55423 - "POST /api/sow-templates/17c3837e/apply/6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55423 - "GET /sow-workflow?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55423 - "GET /api/sow/sections?project_id=6d9bee08 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55423 - "GET /api/sow/sections/attachments?project_id=6d9bee08 HTTP/1.1" 200 OK

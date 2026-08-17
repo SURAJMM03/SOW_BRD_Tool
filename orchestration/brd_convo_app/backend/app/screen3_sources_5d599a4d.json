@@ -1,0 +1,169 @@
+{
+  "1.2": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "20260630_193057_BD_20260630_192246.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Table of Contents\n1  Introduction\n1.1  Company Information\n2  Benefit Realization\nSection 1: Introduction\nArchlin is undertaking a Phase 1 supply chain planning initiative focused on Demand Planning for its specialty chemicals manufacturing business. The business context for this phase is driven by poor inventory planning, with the objective of establishing a more structured planning capability that supports Archlin’s demand planning processes and provides a foundation for improved supply chain decision-making. Archlin’s ERP environment is SAP S/4HANA, and the implementation blueprint is inten"
+      },
+      {
+        "doc_name": "20260630_193057_BD_20260630_192246.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "The expected outcome of this introductory blueprint framing is to align Archlin stakeholders on the business need, the in-scope planning focus, and the implementation boundaries for Phase 1. As the design is elaborated, the blueprint should provide Archlin with a controlled basis for documenting decisions, validating requirements, and linking Demand Planning capabilities to inventory planning improvement. Any benefit measures, quantified targets, detailed solution components, or organization-specific operating model elements must be confirmed from Archlin source documents or captured as TBD wh"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Argument",
+        "snippet": "Chapter 9. Filter functions\nArgument\nType\nDescription\nDefault\nLower\nLimit\nUpper\nLimit\nAllow\n‘ANY’\nl 2: Use both Load and Trip\nStart Times.\nFilterState\nFilterState ( <ExclusionSwitch> <FilterStyle> <OriginWithinState> <DestinationWithinState>\n<AnyStopsWithinState> <State>… )\nUse FilterState to include or exclude loads and unroutable shipments with origins, destinations, or any\nstops within the states that you identify. The State field has fifteen fields. You define from one to 20\nstates for the filter. You must place the individual state values within quotes, for example, \"MI\" \"CO\".\nWhen you ed"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Argument",
+        "snippet": "Chapter 9. Filter functions\nArgument\nType\nDescription\nDefault\nLower\nLimit\nUpper\nLimit\nAllow\n‘ANY’\nl 0: Normal. When set to 0, the\nOptimizer selects loads with\norigins within, destinations\nwithin or any stop within the\nstates that you identify.\nl 1: Shipments. When set to 1, the\nOptimizer selects the load if any\nshipment has an origin,\ndestination or any stop within\nthe states that you identify.\nl 2: Shipment Legs. When set to 2,\nthe Optimizer selects the load if\nany shipment leg has an origin,\ndestination or any stop within\nthe states that you identify.\nOriginWithinState\nBoolean\nIf OriginWithi"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "RemoveInvalidDockCommitments",
+        "snippet": "Chapter 13. Optimizer parameters\nl RemoveInvalidDockCommitments: If true, this parameter instructs the system to remove dock\ncommitments which are not compatible with carrier live/nonlive loading or which are not compatible\nwith available equipment types. This parameter applies primarily to rating calls for Transportation\nPlanner.\nl RespectDomicileBusinessHours: Determines whether business hours should be respected at the\ndomicile pickup and drop off. The following are the allowed values:\no 0: Business hours are not respected at the domicile pickup and the domicile drop off.\nEquipment can be p"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Scheduler user interface.\nl Shipment Scheduler User Guide: Provides information on how to use the Shipment Scheduler\ncomponent of Transportation Planner.\nl Shipment Scheduler Getting Started: Provides a series of modeling exercises to help you understand\nhow to use some of the strategies and constraints that control the Shipment Scheduling engine.\nl Shipment Scheduler Implementation Guide for MFG ABPP: Provides information about optimization\nand shipment scheduling components and how to implement them for MFG ABPP. It also provides\nimplementation specialists and systems integrators with instru"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Chapter 1. Introduction\nThis guide provides overviews, illustrations, procedures, and examples for Transportation Planner.\nRelated Documentation\nFor more information on Transportation Planner, see the following documents:\nl\nTransportation Planner Release Notes: Provides information on new or updated functionality in\nTransportation Planner.\nl\nTransportation Planner Installation Guide: Provides information on how to install Transportation\nPlanner.\nl\nTransportation Planner User Guide: Provides details on how to use the Transportation Planner web\nuser interface.\nl\nTransportation Planner Strategies"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Argument",
+        "snippet": "Chapter 3. Control functions\nArgument\nType\nDescription\nDefault\nLower\nLimit\nUpper\nLimit\nAllow\n‘ANY’\nMaxDestinationRadius\nDouble\nThe maximum distance\nallowed between the last\nstops on two loads for\nthem to be in the same\npartition.\n400\n0\nNone\nFalse\nRequirePickupRangeOverlap\nBoolean\nIf true, loads must have\npickup range overlap to be\nthe same partition, default\nis false.\n0\n0\nNone\nFalse\nSetParallelSolve\nSetParallelSolve ( <ParallelSwitch> <NumberofPartitions> <NumberofThreads> <EnableCallback> <Min\nLoads Per Partition> <Min Shipments Per\nPartition><LockOtherSubPlanThroughput><WriteSubPlanToFile><U"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Argument",
+        "snippet": "Chapter 4. Global parameter functions\nArgument\nType\nDescription\nDefault\nLower\nLimit\nUpper\nLimit\nAllow\n‘ANY’\nload on a trip, 2 is second load\non a trip, and so on.\nLoad Sequence End\nLong\nEnd of load sequence number\nrange. 1 is first load on a trip, 2\nis second load on a trip, and so\non.\n1\n1\nNone\nFalse\nMin Priority\nDouble\nMinimum numeric priority\nvalue\n0\n0\nNone\nFalse\nMax Priority\nDouble\nMaximum numeric priority\nvalue\n0\n0\nNone\nFalse\nFree Trips Only\nBoolean\nIf true, the rule is only applied\nto trips in free status\n1\n0\nNone\nFalse\nAddTripSequenceFreightClassRule\nAddTripSequenceFreightClassRule ( <Lo"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Argument",
+        "snippet": "Chapter 4. Global parameter functions\nThe function reads a comma delimited file with the format: LocationID,LocationGroupID. Each location\nmay only belong to a single location group. After defining location groups, location group exclusions can\nbe defined to prevent loads from being created that contain locations from excluded group\ncombinations. Location group exclusions are defined using the LoadLocationGroupExclusions function.\nArgument\nType\nDescription\nDefault\nLower\nLimit\nUpper\nLimit\nAllow\n‘ANY’\nLocation Group File\nString\nThe path to the\nlocation group\ndefinitions file; it\nmust be enclosed"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Argument",
+        "snippet": "Chapter 4. Global parameter functions\nArgument\nType\nDescription\nDefault Lower\nLimit\nUpper\nLimit\nAllow\n‘ANY’\nassigned for a load\nor trip.\nUseDistinctDistanceByHazardousLevel\nBoolean\nIf true, specifies that\ndistinct distance\ncalls should be made\nbased on the\nhazardous level of\ncommodities of\nshipments currently\nloaded.\nFalse\n0\nNone\nFalse\nUseHistoricTrafficBasedTransitTimes\nBoolean\nIf true, specifies that\ntransit time calls\nshould be made to\nidentify historic\ntraffic influenced\ntransit times when\ndeparture time is\nknown in\nscheduling.\nFalse\n0\nNone\nFalse\nUseDistanceTimeLatLonEstimation\nLong\nIf 1, "
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Argument",
+        "snippet": "Chapter 4. Global parameter functions\nWhen <ExclusionSwitch> is set to True, excludes listed rates for loads. Otherwise, this strategy includes\nonly listed rates for loads.\nArgument\nType\nDescription\nDefault\nLower\nLimit\nUpper\nLimit\nAllow\n‘ANY’\nExclusionSwitch\nBoolean\nWhen this strategy is set to True, the\nfilter is to exclude rates for loads rather\nthan include them.\n0\n0\nNone\nFalse\nRateCode\nString\nRateCode, string value. Up to 40\nRateCode may be specified and must\nbe enclosed in quotes.\n0\n0\nNone\nFalse\nSetFilterService\nSetFilterService ( <ExclusionSwitch> <Service> ... )\nIf <ExclusionSwitch> is "
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Argument",
+        "snippet": "functions. For example, once you have set the filter start date, you can also define the\nFilterDeliveryDate (FALSE 4 0 \"08/27/06\" 0 0).\nIn this case, the second argument is interpreted as 08/15/06.\nTransportation Planner Strategies and Parameters\n36\n© Copyright 1995-2025 Blue Yonder Group, Inc. - Confidential"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Argument",
+        "snippet": "Chapter 4. Global parameter functions\nIf <ExclusionSwitch> is set to true, then this strategy excludes the listed tariffs for loads with shipment\nlegs with a journey number between <StartJourneyNumber> and <EndJourneyNumber>. Otherwise, this\nstrategy includes only the listed tariffs for the journey range.\nArgument\nType\nDescription\nDefault\nLower\nLimit\nUpper\nLimit\nAllow\n‘ANY’\nExclusion\nSwitch\nBoolean\nIf true, then the tariffs are excluded rather\nthan including them.\nFalse\n0\nNone\nFalse\nStart\nJourney\nNumber\nInteger\nStart journey number, 1 means first leg, 2\nmeans second leg, and so on. The special"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Argument",
+        "snippet": "Chapter 4. Global parameter functions\nChanges MaxFinalDestRadius for algorithms and/or opt parameters.\nArgument\nType\nDescription\nDefault\nLower\nLimit\nUpper\nLimit\nAllow\n‘ANY’\nMaxDistance\nDouble\nThe new maximum final\ndestination distance allowed.\n100\n0\nNone\nFalse\nHardConstraint\nBoolean\nIf True, will apply new value to\nopt parameters which is a hard\nconstraint, otherwise only use\nnew value in algorithms.\n0\n0\nNone\nFalse\nSetMaxLadenLength\nSetMaxLadenLength (<MaxLadenLength>)\nChanges the global maximum LadenLength for all future algorithms.\nArgument\nType\nDescription\nDefault\nLower\nLimit\nUpper\nLimit\nAl"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Argument",
+        "snippet": "Chapter 4. Global parameter functions\nSet maximum allowed lateness for delivery in minutes.\nArgument\nType\nDescription\nDefault\nLower Limit\nUpper\nLimit\nAllow\n‘ANY’\nMaxAllowedLatenessinMinutes\nLong\nMaximum\nallowed\nlateness in\nminutes.\n0\n0\nNone\nFalse\nSetMaxSlackForLatePickup\nSetMaxSlackForLatePickup (<MaxAllowedLatenessinMinutes>)\nSet maximum allowed lateness for pickup in minutes.\nArgument\nType\nDescription\nDefault\nLower\nLimit\nUpper\nLimit\nAllow\n‘ANY’\nMaxAllowedLatenessinMinutes\nInteger\nMaximum allowed\nlateness in minutes.\n0\n0\nNone\nFalse\nSetMaxStopsInTransit\nSetMaxStopsInTransit (<MaxStopsInTransit"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Argument",
+        "snippet": "Chapter 4. Global parameter functions\nSetMergeParametersForHubLoop defines MergeSolvePlanStack parameters used in HubLoop that are\nnot part of HubLoop arguments.\nArgument\nType\nDescription\nDefault\nLower\nLimit\nUpper\nLimit\nAllow\n‘ANY’\nFavor Locked\nLoads\nBoolean\nWhether or not give priority to locked\nloads when making selection. The default\nis false.\n0\n0\nNone\nFalse\nMax Routes\nPer Load\nLong\nMaximum number of routes to be\nconsidered for each load. This only applies\nif EnforceCarrierConstraints is true. The\ndefault is ANY.\n0\n1\nNone\nTrue\nColumn\nGeneration\nBoolean\nDetermines whether or not to consider\n"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Argument",
+        "snippet": "Chapter 4. Global parameter functions\nSets the load that is not filtered out and not dummy as NoWriteback so that they are written back to\ndatabase and their legs are written as unroutables.\nArgument\nType\nDescription\nDefault\nLower\nLimit\nUpper\nLimit\nAllow\n‘ANY’\nSwitch\nBoolean\nIf true, only set\nload status for\nloads in free\nstatus.\n1\n0\nNone\nFalse\nFreeLoadsOnly\nBoolean\nIf true, only set\nload status for\nloads in free\nstatus\n1\n0\nNone\nFalse\nSetNumServiceHelpers\nSetNumServiceHelpers ( <NumHelpers> <Service>... )\nThis function can be used to set the number of helpers for the listed services.\nThe loadi"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Argument",
+        "snippet": "Chapter 4. Global parameter functions\nSetTryDockSchedulingGoals is based on minimization of failed loads/trips/shipments/weight/cube/skids\nand total cost/repositioning/deliveryGap/vehicleStartGap.\nArgument\nType\nDescription\nDefault\nLower\nLimit\nUpper\nLimit\nAllow\n‘ANY’\nGoal\nString\nGoal option must be surrounded\nby quotes: FailedNumShipments,\nFailedNumTrips,\nFailedNumLoadOrTrips,\nFailedTotalLoads,\nTotalCostAndPenalty,\nNumUsedVehicles,\nTotalVehicleCost,\nTotalRepositioningDistance,\nTotalDeliveryDelay,\nTotalVehicleStartDelay,\nFailedTotalWeight,\nFailedTotalCube, FailedTotalSkids,\nFailedTotalPieces,\nFa"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Argument",
+        "snippet": "Type\nDescription\nDefault\nLower\nLimit\nUpper\nLimit\nAllow\n‘ANY’\nSwitch\nBoolean\nIndicates whether to use item pick locations in\nordering.\nTrue\n0\nNone\nFalse\nNo\nSkipping\nInteger\nThis parameter determines at what point a\nsplit is made when multiple shipment details\nhave similar pick locations. If 1, loading will\nstop at the next pick location if one item at the\ncurrent pick location cannot fit. If 2, no pick\nlocation skipping will be allowed in splits.\n1\n1\n2\nFalse\nSetUseLCVerification\nSetUseLCVerification ( <LCVerificationSwitch> )\nTransportation Planner Strategies and Parameters\n69\n© Copyright 1995-"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Argument",
+        "snippet": "Chapter 6. Constraint functions\nArgument\nType\nDescription\nDefault Lower\nLimit\nUpper\nLimit\nAllow\n‘ANY’\nif less than this percentage\nfull, are penalized.\nNonFreeLoadOnly\nBoolean\nWhen NonFreeLoadsOnly is\nset to True, loads with a\nstatus of Free are never\nconsidered critical.\nFalse\n0\nNone\nNo\nCalculateSlackFromMidnight\nBoolean\nWhen\nCalculateSlackFromMidnight\nis set to True, slack time is\ncalculated from 12:01 am of\nthe earliest schedule date\ninstead of the current time.\nFalse\n0\nNone\nNo\nLatestDepartureSlackHours\nIntegeer\nA shipment is considered\ncritical if the shipment\ndeparts within\n<LatestDepartu"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Argument",
+        "snippet": "Chapter 7. Plan stacks and webs\nArgument\nType\nDescription\nDefault Lower\nLimit\nUpper\nLimit\nAllow\n‘ANY’\nOptResourceEachPlan\nBoolean\nIf set to true, the\nOptimizer uses\nOptResourceConstraints\nfor each plan before it\nperforms the merge, as\nlong as\nEnforceResourceConstrain\nts is enabled and the\nhighest journey number is\ngreater than 1.\nFalse\n0\nNone\nFalse\nRespectVehiclePenalty\nInteger\nl If set to 0, vehicle\npenalty is not\nconsidered.\nl If set to 1, vehicle\nusage is estimated\nand vehicle penalty is\nused for each\ndomicile.\nl If set to 2, vehicle\nschedule is generated\nfor each vehicle ID.\n0\n0\n2\nFalse\nDo"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Argument",
+        "snippet": "Chapter 8. Log functions\nArgument\nType\nDescription\nDefault\nLower\nLimit\nUpper\nLimit\nAllow\n‘ANY’\nEnableWriting\nBoolean\nIf this argument is set to True, the\nOptimizer generates a constraint log\nbased on the settings of this\nargument.\nFalse\n0\nNone\nNo\nOutputFileName\nCounter\nNumber\nUse this argument to specify whether\nthe generated constraint log has a\ncounter appended to the file name.\nFor example, a value of 100 results in\na file, that is, Constraint100.txt.\n100\n0\nNone\nNo\nEnforceUnique\nReportName\nBoolean\nIf this argument is set to True, the\nOptimizer appends the current\nsystem date and time (in th"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Argument",
+        "snippet": "DestinationWithinCountry, and AnyStopsWithinCountry. The FilterStyle can be one of the following:\nl 0: Normal\nl 1: Shipment\nl 2: Shipment Leg\nWhen set FilterStyle to 0 (the default) and if you have set OriginWithinCountry to True, the Optimizer\nincludes loads with origins in the countries that you identify.\nTransportation Planner Strategies and Parameters\n115\n© Copyright 1995-2025 Blue Yonder Group, Inc. - Confidential"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.3": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Planner Modeling Guide and Transportation Planner Strategies and Parameters Guide, is accessed\nfrom the Help menu in the Transportation Planner user interface.\nl Shipment Scheduler User Help: This Help system consists of the same content as the Shipment\nScheduler User Guide and Shipment Scheduler Implementation Guide and is accessed from the Help\nmenu in the Shipment Scheduler user interface.\nl Shipment Scheduler User Guide: This guide provides information about how to use the Shipment\nScheduler component of Transportation Planner.\nl Shipment Scheduler Getting Started: This guide provides a se"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Chapter 1. Introduction\nWelcome to the Transportation Planner Implementation Guide. This book provides overviews,\nillustrations, procedures, and examples for Transportation Planner. Screens, dialog boxes, and other\nwindows shown are only examples.\nRelated documentation\nFor more information on Transportation Planner, see the following documents:\nl Transportation Planner Release Notes: This guide provides information about any new or updated\nfunctionality in Transportation Planner.\nl Transportation Installation/Administration Guide: This guide provides information about how to install\nTransporta"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Table of Contents",
+        "snippet": "Table of Contents\nChapter 1. Introduction\n1\nRelated Documentation\n1\nChapter 2. Transportation Planner strategies\n3\nThe strategy file\n3\nWork with the strategy file\n3\nOptimizer plan hierarchy\n3\nCritical loads\n4\nArguments and functions\n5\nComments\n6\nStrategy function syntax\n6\nDefault values\n7\nIllustration conventions\n7\nTroubleshooting\n8\nChapter 3. Control functions\n9\nSetFixedPartition\n10\nSetParallelSolve\n11\nSetTimeLimit\n12\nSleep\n13\nChapter 4. Global parameter functions\n14\nAddShipmentReference\n14\nAddTripBuildingPriorityRule\n14\nAddTripSequenceFreightClassRule\n15\nAddTripSequencePriorityRule\n16\nAssign"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Chapter 1. Introduction\nThis guide provides overviews, illustrations, procedures, and examples for Transportation Planner.\nRelated Documentation\nFor more information on Transportation Planner, see the following documents:\nl\nTransportation Planner Release Notes: Provides information on new or updated functionality in\nTransportation Planner.\nl\nTransportation Planner Installation Guide: Provides information on how to install Transportation\nPlanner.\nl\nTransportation Planner User Guide: Provides details on how to use the Transportation Planner web\nuser interface.\nl\nTransportation Planner Strategies"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Page 14",
+        "snippet": "Chapter 1. Introduction\nl Shipment Scheduler Implementation Guide for SCPO: Provides information about optimization and\nshipment scheduling components and how to implement them for SCPO. It also provides\nimplementation specialists and systems integrators with instructions about how to configure the\nShipment Scheduler environment.\nl Transportation Planner Data Dictionary: Provides implementation specialists and systems integrators\nwith the SCPO and Manufacturing ABPP Basic (formerly Operational Data Store (ODS)) information\nrequired to set up integration with external systems.\nl\nTransportation "
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Implementation Guide.pdf",
+        "heading_path": "Page 10",
+        "snippet": "Chapter 1. Introduction\nl Shipment Scheduler Implementation Guide for MFG ABPP: Provides information about optimization\nand shipment scheduling components and how to implement them for MFG ABPP. It also provides\nimplementation specialists and systems integrators with instructions about how to configure the\nShipment Scheduler environment.\nl Shipment Scheduler Implementation Guide for SCPO: Provides information about optimization and\nshipment scheduling components and how to implement them for SCPO. It also provides\nimplementation specialists and systems integrators with instructions about how t"
+      },
+      {
+        "doc_name": "Transportation Planner 2025.4.0.0 Strategies and Parameters.pdf",
+        "heading_path": "Chapter 1. Introduction",
+        "snippet": "Scheduler user interface.\nl Shipment Scheduler User Guide: Provides information on how to use the Shipment Scheduler\ncomponent of Transportation Planner.\nl Shipment Scheduler Getting Started: Provides a series of modeling exercises to help you understand\nhow to use some of the strategies and constraints that control the Shipment Scheduling engine.\nl Shipment Scheduler Implementation Guide for MFG ABPP: Provides information about optimization\nand shipment scheduling components and how to implement them for MFG ABPP. It also provides\nimplementation specialists and systems integrators with instru"
+      }
+    ],
+    "gen_source": "doc"
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "active": [
+    {
+      "id": "0",
+      "title": "Cover Page",
+      "level": 1
+    },
+    {
+      "id": "1",
+      "title": "Agreement Details",
+      "level": 1
+    },
+    {
+      "id": "2",
+      "title": "Executive Summary",
+      "level": 1
+    },
+    {
+      "id": "3",
+      "title": "Project Overview",
+      "level": 1
+    },
+    {
+      "id": "3.1",
+      "title": "Background",
+      "level": 2
+    },
+    {
+      "id": "3.2",
+      "title": "Objectives",
+      "level": 2
+    },
+    {
+      "id": "3.3",
+      "title": "Indicative To-Be Process Flow",
+      "level": 2
+    },
+    {
+      "id": "4",
+      "title": "Scope of Work",
+      "level": 1
+    },
+    {
+      "id": "4.1",
+      "title": "Geographical Scope",
+      "level": 2
+    },
+    {
+      "id": "4.2",
+      "title": "Process Scope",
+      "level": 2
+    },
+    {
+      "id": "4.3",
+      "title": "Technical Scope",
+      "level": 2
+    },
+    {
+      "id": "4.4",
+      "title": "Services Scope",
+      "level": 2
+    },
+    {
+      "id": "4.5",
+      "title": "Application Scope",
+      "level": 2
+    },
+    {
+      "id": "4.6",
+      "title": "Integration Scope",
+      "level": 2
+    },
+    {
+      "id": "4.7",
+      "title": "Exclusions",
+      "level": 2
+    },
+    {
+      "id": "5",
+      "title": "Proposed Architecture",
+      "level": 1
+    },
+    {
+      "id": "6",
+      "title": "Solution Implementation Approach & Project Plan",
+      "level": 1
+    },
+    {
+      "id": "6.1",
+      "title": "Implementation Methodology",
+      "level": 2
+    },
+    {
+      "id": "6.2",
+      "title": "Project Phases / Releases",
+      "level": 2
+    },
+    {
+      "id": "7",
+      "title": "Project Management",
+      "level": 1
+    },
+    {
+      "id": "7.1",
+      "title": "Governance Model",
+      "level": 2
+    },
+    {
+      "id": "7.2",
+      "title": "Roles & Responsibilities",
+      "level": 2
+    },
+    {
+      "id": "7.3",
+      "title": "Work Schedule",
+      "level": 2
+    },
+    {
+      "id": "8",
+      "title": "Personnel Requirements",
+      "level": 1
+    },
+    {
+      "id": "9",
+      "title": "Key Deliverables",
+      "level": 1
+    },
+    {
+      "id": "10",
+      "title": "Key Assumptions",
+      "level": 1
+    },
+    {
+      "id": "11",
+      "title": "Acceptance Criteria",
+      "level": 1
+    },
+    {
+      "id": "12",
+      "title": "Obligations",
+      "level": 1
+    },
+    {
+      "id": "12.1",
+      "title": "Bristlecone Obligations",
+      "level": 2
+    },
+    {
+      "id": "12.2",
+      "title": "Client Obligations",
+      "level": 2
+    },
+    {
+      "id": "13",
+      "title": "Commercials",
+      "level": 1
+    },
+    {
+      "id": "13.1",
+      "title": "Engagement Model",
+      "level": 2
+    },
+    {
+      "id": "13.2",
+      "title": "Rate Card & Pyramid Structure",
+      "level": 2
+    },
+    {
+      "id": "13.3",
+      "title": "Shift Allowance",
+      "level": 2
+    },
+    {
+      "id": "13.4",
+      "title": "Travel & Expenses",
+      "level": 2
+    },
+    {
+      "id": "13.5",
+      "title": "Invoicing & Payment Terms",
+      "level": 2
+    },
+    {
+      "id": "14",
+      "title": "Performance Reporting & KPIs",
+      "level": 1
+    },
+    {
+      "id": "14.1",
+      "title": "SLAs & Targets",
+      "level": 2
+    },
+    {
+      "id": "15",
+      "title": "Risks",
+      "level": 1
+    },
+    {
+      "id": "16",
+      "title": "Governance & Risk Mitigation",
+      "level": 1
+    },
+    {
+      "id": "16.1",
+      "title": "Milestone Deliverables Matrix",
+      "level": 2
+    },
+    {
+      "id": "16.2",
+      "title": "Deferred Scope Decisions",
+      "level": 2
+    },
+    {
+      "id": "16.3",
+      "title": "Integration & Custom Code Safeguards",
+      "level": 2
+    },
+    {
+      "id": "16.4",
+      "title": "Change Control",
+      "level": 2
+    },
+    {
+      "id": "17",
+      "title": "Change Management Process",
+      "level": 1
+    },
+    {
+      "id": "18",
+      "title": "Security & Data Protection",
+      "level": 1
+    },
+    {
+      "id": "19",
+      "title": "Termination",
+      "level": 1
+    },
+    {
+      "id": "19.1",
+      "title": "Termination for Convenience",
+      "level": 2
+    },
+    {
+      "id": "19.2",
+      "title": "Termination for Cause",
+      "level": 2
+    },
+    {
+      "id": "19.3",
+      "title": "Effect of Termination",
+      "level": 2
+    },
+    {
+      "id": "20",
+      "title": "Acceptance and Sign-Off",
+      "level": 1
+    },
+    {
+      "id": "21",
+      "title": "Key Observations",
+      "level": 1
+    },
+    {
+      "id": "22",
+      "title": "Reviewer Recommendations",
+      "level": 1
+    },
+    {
+      "id": "22.1",
+      "title": "Governance & Risk Mitigation",
+      "level": 2
+    },
+    {
+      "id": "22.2",
+      "title": "Acceptance & Quality",
+      "level": 2
+    },
+    {
+      "id": "22.3",
+      "title": "Overall Recommendation",
+      "level": 2
+    },
+    {
+      "id": "23",
+      "title": "Appendix A - Technical Prerequisites",
+      "level": 1
+    },
+    {
+      "id": "24",
+      "title": "Appendix B - Resource Profiles & Certifications",
+      "level": 1
+    }
+  ],
+  "archived": [],
+  "template_id": "2a398e5d"
+}

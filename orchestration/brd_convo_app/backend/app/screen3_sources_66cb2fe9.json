@@ -1,0 +1,476 @@
+{
+  "1.4": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "1.5": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "2": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "2.1": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "2.2": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "3": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "3.1": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "3.2": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "3.3": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "3.4": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "3.5": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "3.6": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "3.7": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "4": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "4.1": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "4.2": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "4.2.1": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "4.2.2": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "5": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "5.1": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "5.2": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "5.3": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "5.4": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "6": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "6.1": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "6.2": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "6.3": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "6.4": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "SOW_BKP.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "The Analysis & Design Phase will be completed upon:\nDelivery of all Deliverables set out in Table 1; and\nTridant providing Bristlecone with an Acceptance Notice for the Analysis & Design Phase.\nFunctional Scope:\nThis SOW will focus on providing a Level 1 Maestro platform to support the following planning capabilities within Maestro.\nProcess Capabilities:\nThe following capabilities will be enabled, based on data availability, and based on a review of the RapidStart Blueprint for Planning One with IXOM.\nLevel 1 Supply Chain Planning Process Capabilities\nLevel 2 Supply Chain Planning Process Capa"
+      },
+      {
+        "doc_name": "IBP RapidStart_Issue Tracker.xlsx",
+        "heading_path": "IBP RapidStart_Issue Tracker.xlsx — Sheet: Issue Log",
+        "snippet": "IBP RapidStart_Issue Tracker.xlsx — Sheet: Issue Log\nColumns: IXOM IBP RAPIDSTART MAESTRO  — ISSUE TRACKER\nIXOM IBP RAPIDSTART MAESTRO  — ISSUE TRACKER: Project: IBP RAPIDSTART  |   Version: 1.0   |   Last Updated: 05 May 2026\nIXOM IBP RAPIDSTART MAESTRO  — ISSUE TRACKER: Issue ID\nIXOM IBP RAPIDSTART MAESTRO  — ISSUE TRACKER: IBP-001"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "Technical Architecture",
+        "snippet": "IXOM will use SAP BTP Integration Suite for integrating and transforming data between systems. And send the transformed data into Kinaxis.\nData Load can happen in both ways:\nERP/Other Source Systems à Integration Tool à Kinaxis Maestro\nKinaxis Maestro à Integration Tool à ERP/Other Reporting Systems\nSo, the detail technical architecture can be defined based on the software and the approach IXOM wanted to go for Integration.\nThe process of moving the data from your data sources to Maestro involves extracting or collecting the data from the data source and transforming it to the format Maestro r"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "Servers",
+        "snippet": "IXOM currently uses the SAP ECC as their ERP system and most of the master data resides in it, along with the transactional data. There will be some external sources such as Tank levels, Customer Telemetry, etc., exists.\nKinaxis potentially provides three Maestro environments to IXOM to support the solution development, testing and live operation. The following table details the individual environments, proposed purposes and integration strategies for each of these during normal operation.\n| Maestro Environment & URL (to be added later) | Description | Integration Strategy / points |\n| --- | -"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Planning Hierarchy Attributes",
+        "snippet": "The IXOM specific attributes can be leveraged to create Hierarchies, the attributes will be identified and captured during the project implementation phase."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Supply Chain Scope",
+        "snippet": "Below is the scope considered in this Blueprint, mainly there are two BUs in Australia and New Zealand, one is Trading (Traded Bulk, Bulk Liquids, Packaged Goods) and the other one is ChlorAlkali."
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: ARCHIVE_V2-WorkshopSchedule",
+        "snippet": "28.000000000000004 | 224.00000000000003 | 167 | 100.99999999999999 | 110\n277\nWorkshops: Demand Planning Area: hours\nWorkshops: Demand Planning Area: days\n8 hours info capture | 4 | 4 | 4 | 3\n6 hours for draft | 4 | 4 | 4\nplayback/validate to IXOM | 4 | 4 | 4\n294 | feedback edits | 4 | 4 | 4\nWorkshops: Demand Planning Area: hours\nWorkshops: Demand Planning Area: days\npresent back to IXOM | 4 | 4 | 4\n4 | 4 | 4\nWorkshops: Constrain Optimistation"
+      },
+      {
+        "doc_name": "Ixom Comments - Maestro & SAP ERP Data Mapping Template and Files including TD Comments.xlsx",
+        "heading_path": "Ixom Comments - Maestro & SAP ERP Data Mapping Template and Files including TD Comments.xlsx — Sheet: CRPOperation.tab",
+        "snippet": "Ixom Comments - Maestro & SAP ERP Data Mapping Template and Files including TD Comments.xlsx — Sheet: CRPOperation.tab\nColumns: N/A for IXOM\nN/A for IXOM: Target System (Maestro)\nN/A for IXOM: Reference Files: CRPOperation.tab\nN/A for IXOM: Field Position\nN/A for IXOM: 1\nN/A for IXOM: 2\nN/A for IXOM: 3\nN/A for IXOM: 4\nN/A for IXOM: 5\nN/A for IXOM: 6\nN/A for IXOM: 7\nN/A for IXOM: 8\nN/A for IXOM: 9\nN/A for IXOM: 10\nN/A for IXOM: 11\nN/A for IXOM: 12\nN/A for IXOM: 13\nN/A for IXOM: 14\nN/A for IXOM: 15\nN/A for IXOM: 16\nN/A for IXOM: 17\nData Filtering Conditions\nIndicate the filtering conditions to b"
+      },
+      {
+        "doc_name": "SOW_BKP.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Based on the outcomes of the Blueprint and the scale and complexity of the solution uncovered, IXOM has elected to adopt Kinaxis Planning One using the Kinaxis RapidStart approach. This enables the deployment of a standardised, best-practice version of concurrent planning across the business, reducing implementation risk, accelerating time to value, and aligning the solution to proven Kinaxis delivery frameworks.\nThis approach provides a number of key benefits to the Customer, including accelerated deployment timelines through a pre-configured solution, reduced delivery risk by leveraging prov"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Image: image81.png",
+        "snippet": "[Embedded Image: image81.png]\nStructured Description of image81.png:\n**General Context:**\n- The image is a screenshot from an ERP or supply chain planning system, specifically from a module related to \"Distribution Requirement Planning\" and \"Inventory Transfers.\"\n- The active tab is \"Planning Parameters,\" with a focus on \"Sourcing Properties.\"\n- The system appears to be IXOM's IBP Maestro Solution.\n**Visible Tabs:**\n- Forecast Consumption\n- Planning BOM\n- Planning BOM Option Ratio\n- Part Properties\n- Part Solution Properties\n- Sourcing Properties (active)\n- Reference Part\n- Time Phased Invento"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Image: image81.png",
+        "snippet": "| 3 | R4002  |       | C4001>R4002   | 0                  | 1            | C4001       | KG  | Transfer | 100          | 100,000      | 10            | 0               | 0             |\n| 4 | R4003  |       | C4001>R4003   | 0                  | 1            | C4001       | KG  | Transfer | 100          | 100,000      | 10            | 0               | 0             |\n**Other UI Elements:**\n- Filter options: \"All Items,\" \"All Sites,\" \"Part FG-01\"\n- Edit button (p"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: ARCHIVE_V2-WorkshopSchedule",
+        "snippet": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: ARCHIVE_V2-WorkshopSchedule\nColumns: Workshops: Demand Planning Area | 20th? | On-site commences 3rd March | Free Day | Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis)\nWorkshops: Demand Planning Area: Workshops: Sales & Operational Planning Area\nWorkshops: Demand Planning Area: Workshops: Supply Plan & Order Mgt Area, 20th?: 2025-02-28\nWorkshops: Demand Planning Area: Stream 1: Packaged chlorine, 20th?: WK2, Free Day: WK6\nWorkshops: Demand Planning Area: Stream 2"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: ARCHIVE_V2-WorkshopSchedule",
+        "snippet": "Workshops: Demand Planning Area: Optimiser, On-site commences 3rd March: #3&#4 AU Cloralkali\nWorkshops: Demand Planning Area: Workshops: Distribution Planning Area, 20th?: #1 Kick-off: Core, ELT\nWorkshops: Demand Planning Area: Stream 1: Packaged (warehouse) ANZ, On-site commences 3rd March: #3&#4 NZ, Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): #12 BU Playback - Traded Bulk\nWorkshops: Demand Planning Area: Stream 2: Bulk (liquids) AU, 20th?: #2 Kick-off: All Attendees, On-site commences 3rd March: Distribution Planning Intro\nWorkshops: "
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: ARCHIVE_V2-WorkshopSchedule",
+        "snippet": "Workshops: Demand Planning Area: may or may not need 6 hours, On-site commences 3rd March: #5.1\n3 | 1 | 1 | 0.5\nWorkshops: Demand Planning Area: may or may not need 6 hours\n3 | 1 | 1 | 0.5\nWorkshops: Demand Planning Area: BOM analysis, inventory policy,KPIs\nStocking strategies; SLOBS; Dependent requirements; Safety stock (calcs, formulas); Cycle stock; Taret Inventory levels; ABC classification; reorder points; Lead times;, 20th?: non-commercial\nFree Day: 1\nWorkshops: Demand Planning Area: Aggregate supply planning, unconstrained approval. Data reporting, dashboards, transparency of informatio"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: ARCHIVE_V2-WorkshopSchedule",
+        "snippet": "Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): 4\nWorkshops: Demand Planning Area: 14 hours for consolidation, Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): CONSOLIDATION\nAnticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): 4\nWorkshops: Demand Planning Area: Kinaxis-lead (assumed 20 hours of sessions,, 20th?: manufacturing, Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): 4\nAnticipate "
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "ChlorAlkali and Traded Packaged business units use all the possible distribution combinations as mapped below.\nDistribution Network – ChlorAlkali & Traded Package\nThe Bulk Liquids business unit uses the distribution network below.\nDistribution Network – Bulk Liquids"
+      },
+      {
+        "doc_name": "2. Day2_Ixom Structure V2.xlsx",
+        "heading_path": "2. Day2_Ixom Structure V2.xlsx — Sheet: Manufacturing & Toll Sites",
+        "snippet": "2. Day2_Ixom Structure V2.xlsx — Sheet: Manufacturing & Toll Sites\nColumns: AU Manufacturing | NZ Manufacturing | AU TOLL Manufacturing | NZ TOLL Manufacturing\nAU Manufacturing: Plant, NZ Manufacturing: Plant, AU TOLL Manufacturing: Plant, NZ TOLL Manufacturing: Plant\nAU Manufacturing: D106, NZ Manufacturing: Z100, AU TOLL Manufacturing: N210, NZ TOLL Manufacturing: Z205\nAU Manufacturing: N106, NZ Manufacturing: Z103, AU TOLL Manufacturing: N217, NZ TOLL Manufacturing: Z206\nAU Manufacturing: N113, NZ Manufacturing: Z104, AU TOLL Manufacturing: N222, NZ TOLL Manufacturing: Z209\nAU Manufacturing"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Supply Planning & Order Management",
+        "snippet": "The purpose of the Supply Planning & Order Management is to determine the total requirements of the products/raw materials and come up with a supply plan to satisfy the requirements which includes managing the Purchase Orders (PO) and Purchase Requisition with the Supplier.\nIXOM Business may use Maestro to run the MRP throughout the BOM Structure to identify the necessary supply plan requirements for the purchased products or raw materials.\nBelow is the Level 2 process flow of the Supply Planning & Order Management with the inputs required, processes, and the output given.\nLevel 2 Supply Plann"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "| Type | Description |\n| --- | --- |\n| Decision | Disaggregating the Monthly Consensus Forecast to Daily level for the first 3 Months. |\n| Assumption | Storing the Price at Product/Site/Customer/Date/OrderQuantity requires customization, because Maestro supports the price matrix at the Product/Site/Customer/Date level only but not by order quantity. |\n| Assumption | IXOM Business may come up with a logic to consider the Lot size during the Forecasting and Forecast disaggregation, Maestro doesn’t support the lot size on the Forecasting by default. Customisation required based on the logic the b"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Company Background",
+        "snippet": "IXOM is a market leader in water treatment and chemical distribution in Australia and New Zealand, with a growing presence in America and Asia. IXOM provides leading products services across our key business areas of trading in chemicals, water treatment, manufactured products and bulk liquids and gases.\nWebsite links:\nOur Global Sites and Contacts\nOur Industries, Products & Services\nOur Emergency Response Service\nEnvironmental Monitoring Data"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "Company Background",
+        "snippet": "IXOM is a market leader in water treatment and chemical distribution in Australia and New Zealand, with a growing presence in America and Asia. IXOM provides leading products services across our key business areas of trading in chemicals, water treatment, manufactured products and bulk liquids and gases.\nSome website links:\nOur Global Sites and Contacts\nOur Industries, Products & Services\nOur Emergency Response Service\nEnvironmental Monitoring Data"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Distribution Requirements Planning",
+        "snippet": "The purpose of the Distribution Requirements Planning is to determine the total demand, supply plan and the inventory levels along with the safety stock of any Product at each Destination Site. IXOM Dispatcher will look at the demand coming from various means and work-out the distribution plan outside of Maestro. The distribution plan developed by the CAP plants is uploaded into Maestro as a demand. In Maestro, you can check whether that demand can be fulfilled from the supply allotment perspective or not.\nBelow is the Level 2 process flow of the Distribution Requirements Planning, which inclu"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: ARCHIVE_V2-WorkshopSchedule",
+        "snippet": "Workshops: Demand Planning Area: Optimiser, On-site commences 3rd March: #3&#4 AU Cloralkali\nWorkshops: Demand Planning Area: Workshops: Distribution Planning Area, 20th?: #1 Kick-off: Core, ELT\nWorkshops: Demand Planning Area: Stream 1: Packaged (warehouse) ANZ, On-site commences 3rd March: #3&#4 NZ, Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): #12 BU Playback - Traded Bulk\nWorkshops: Demand Planning Area: Stream 2: Bulk (liquids) AU, 20th?: #2 Kick-off: All Attendees, On-site commences 3rd March: Distribution Planning Intro\nWorkshops: "
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: FINAL-WorkshopSchedule (2)",
+        "snippet": "15 | 1 | 8 | 8 | 0 | Follow-up with IXOM change managers to assist with any queries they may have to contribute to their change plans. | Workshops: Change Management | 8 | 1 | 1\n16 | 3 | 24 | 24 | 0 | Any further follow-ups required for NZ-specific use cases that may deviate from AU ChlorAlkali, Traded Bulk and Traded Packaged BU solutions that have not already been captured. | Workshops: NZ-Specific Inputs | 24 | 2 | 1 | 1\n26 | 208 | 121 | 116 | 102\n223\n-15 | hours\n-1.875 | days | 2 hours per session where possible\n8 hours info capture\n6 hours for draft\nplayback/validate to IXOM\n294 | feedbac"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Supply Chain Scope",
+        "snippet": "Below is the scope considered in this Blueprint, mainly there are two BUs in Australia and New Zealand, one is Trading (Traded Bulk, Bulk Liquids, Packaged Goods) and the other one is ChlorAlkali."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "There are no exceptions as the idea is to standardize the S&OP process across all the BU’s."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "Only the Part/Site which uses the Stocking Strategy as the Made To Stock (MTS) and Purchase To Stock (PTS) will use the safety and Cycle Stock.\nFor CAP plants, Safety Stock and Cycle Stock is not applicable. Only the Traded Packaged BU is using safety stock. But, in future, leveraging the safety stock depends on the business choice."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Distribution Requirements Planning",
+        "snippet": "In the Distribution Requirements Planning workbook, once the net requirements are known and the system comes up with a calculated supply plan on top of the existing On-Hand Stock and Firmed Transfer Orders, a summary of Transfers, based on firm transfer orders and calculated planned orders, is displayed as shown below. It filters the data based on the filters and hierarchy selection.\nIf there is any stock available at other locations, it will be shown, so that the planner can decide if he can plan for any stock movements to fulfill the high priority demand. If stock is available at other locat"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "ChlorAlkali Caustic Manu Import – follows a slightly different supply planning process based on the supply planned on the Ship, it has a visibility of each ship arrival dates through the form of purchase order which will be created 3 weeks prior to the arrival. And the individual order lines contain information about how much it has to deliver against each delivery location (unload port).\nPurchase Orders will be created 3 weeks prior to the due date of arrival. However, the primary focus remains on utilising the supply planning and order management functionality described above."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "The ChlorAlkali Plants (CAP) in AU will use the Constraint Optimiser for short-term planning - covered in a separate blueprint document (IXOM Supply.AI Coproduct Optimization Solution Blueprint).\nNew Zealand Manufacturing\nFor New Zealand, the S&OP Forecast exists to drive the dependent requirements to the materials along with the safety stock levels. Though the Production Planners look at the Forecast for the production planning, their planning outcome will take into account the BLT Team distribution plan. For the Fill at Will products, the BLT Team will look at the ullage on the IXOM tank and"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "Continuous Production Plants\nFor the continuous flow manufacturing plants, the capacity constraint will be modelled as a customised solution as seen below which includes the worksheet/UI to get the user inputs such as the Number of Shifts per day, No. of hours per Shift, Production Rate (KVA), etc., in a time-phased fashion so that the system can compute the capacity based on the given inputs. The illustration below is with dummy data and the actual inputs required to compute the capacity will be finalised during the implementation."
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: FINAL-WorkshopSchedule (2)",
+        "snippet": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: FINAL-WorkshopSchedule (2)\nColumns: PH 10-Mar ANZ | 8.2 Traded-Bulk focus | PH 24-Mar NZ | Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis)\nPH 10-Mar ANZ: On-site, PH 24-Mar NZ: On-site\n8.2 Traded-Bulk focus: 2025-03-28, Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): April\nPH 10-Mar ANZ: WK4 W/C, PH 24-Mar NZ: WK6\nPH 10-Mar ANZ: 2025-03-10, 8.2 Traded-Bulk focus: 2025-03-18, PH 24-Mar NZ: 2025-03-24, Anticipat"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: FINAL-WorkshopSchedule (2)",
+        "snippet": "Amit | Amit late (around 10am)\nCass\nPeter\nDavid\nPH 10-Mar ANZ: CONSOLIDATION, 8.2 Traded-Bulk focus: PLAYBACK W/KINAXIS INPUT\n8.2 Traded-Bulk focus: essential\n2 | 0.5 | 4 | 2 | 2 | Blueprint project kick of meeting With super user team, quick dedmonstration of Kinaxis modules/capabilities | Kick-Off: Workshop Attendee  (All workshop attendees) | 2\n3 | 1 | 8 | 4.5 | 3.5 | 1 | Workshop: Business Unit Leaders & Key SMEs/BMs Steering sessions (2hr per BU plus playback) | 4 | 0.5\n4 | 1 | 8 | 4.5 | 3.5 | 1 | 4 | 0.5\n5 | Detailed AS IS Process - Explaining current process in detail, Data mapping, For"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: FINAL-WorkshopSchedule (2)",
+        "snippet": "8.2 Traded-Bulk focus: 2, PH 24-Mar NZ: WAIT KINAXIS\n8.2 Traded-Bulk focus: 1\nPH 24-Mar NZ: WAIT KINAXIS\n3 | 3 | 1 | 1\n8.2 Traded-Bulk focus: 2\n9 | Defining and adjusting production parameters, managing constraints, user cases finalization (production planners, material planners - purchase of raw materials) | Workshops: Production & Material Plan Area | commercial\nPH 24-Mar NZ: 4, Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): WAIT KINAXIS\nPH 24-Mar NZ: 1\nPH 24-Mar NZ: CONSOLIDATION, Anticipate Constraints Optimiser Commence (or can we com"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: ARCHIVE_V2-WorkshopSchedule",
+        "snippet": "Workshops: Demand Planning Area: may or may not need 6 hours, On-site commences 3rd March: #5.1\n3 | 1 | 1 | 0.5\nWorkshops: Demand Planning Area: may or may not need 6 hours\n3 | 1 | 1 | 0.5\nWorkshops: Demand Planning Area: BOM analysis, inventory policy,KPIs\nStocking strategies; SLOBS; Dependent requirements; Safety stock (calcs, formulas); Cycle stock; Taret Inventory levels; ABC classification; reorder points; Lead times;, 20th?: non-commercial\nFree Day: 1\nWorkshops: Demand Planning Area: Aggregate supply planning, unconstrained approval. Data reporting, dashboards, transparency of informatio"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: ARCHIVE_V2-WorkshopSchedule",
+        "snippet": "Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): 4\nWorkshops: Demand Planning Area: 14 hours for consolidation, Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): CONSOLIDATION\nAnticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): 4\nWorkshops: Demand Planning Area: Kinaxis-lead (assumed 20 hours of sessions,, 20th?: manufacturing, Anticipate Constraints Optimiser Commence (or can we commence alongside 9.1 & 9.2? TBC with Kinaxis): 4\nAnticipate "
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: ARCHIVE_V2-WorkshopSchedule",
+        "snippet": "28.000000000000004 | 224.00000000000003 | 167 | 100.99999999999999 | 110\n277\nWorkshops: Demand Planning Area: hours\nWorkshops: Demand Planning Area: days\n8 hours info capture | 4 | 4 | 4 | 3\n6 hours for draft | 4 | 4 | 4\nplayback/validate to IXOM | 4 | 4 | 4\n294 | feedback edits | 4 | 4 | 4\nWorkshops: Demand Planning Area: hours\nWorkshops: Demand Planning Area: days\npresent back to IXOM | 4 | 4 | 4\n4 | 4 | 4\nWorkshops: Constrain Optimistation"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.2": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "SOW_BKP.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "The high-level Project plan outlined in the project timeline Section 10. Which is mutually discussed and agreed between both the parties.\nAbout IXOM end customer: IXOM is an amalgamation of several different businesses (business models).\nIXOM have gone to market with an RFP detailing their need to improve and de-risk their existing largely manual and spreadsheet-based planning processes by moving to a modern integrated business planning software that can integrate into IXOM’s core SAP environment. As part of the process, the Kinaxis product (Maestro) has been selected, with funding approved fo"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to define the Technical Architecture of the Maestro Solution, yet to be implemented at IXOM.\nThis document includes the technical details that outline how the integration works between Maestro and other IXOM systems including SAP, Power BI, Kony, Tanktel, Everlink. It addresses:\nTechnical components of the solution and how they work\nUnderstanding the changes to the data model\nA review of integration and automation tasks\nClosed-Loop & Reconciliation"
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Supply Chain Map",
+        "snippet": "Copy from the Solution Blueprint and update or note how it reflects the current situation."
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: Internal PMO-Timeline",
+        "snippet": "#2 - Benefits (minor input) | 2.2 Qualitative Benefits\n2.3 IXOM Identified Business Problems and Value Drivers | AU Traded Packaged  Leader,\nAU Traded Bulk Leader,\nAU ChlorAlkali Leader,\nNZ Leader | To be determined if all Leads in first session, then follow-ups? Or all separate from the start? If separate per BU, potentially to merge with the below (including SMEs) | Br-Solution Architect | 1 | 1\nBr-Sr Solution Consultant | 1 | 1\nKi- | 0\nTr-Supply Chain SME | 0\n7 | Workshops: Initial SME Working Session per Area | Introduction of each BU 's | #1 - Current-state challenges and opportunities pe"
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W-Demand Planning",
+        "snippet": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W-Demand Planning\nColumns: Demand Planning Workshop Attendees | Details | Deliverable/s | Solution Blueprint population | IXOM Attendees | Notes | Duration\nDetails: Detailed AS IS Process - Explaining current process in detail, Data mapping, Forecasting level, Consensus demand plan, Forecasting accuracy and EOL  mgmt., user cases finalization., Deliverable/s: #1 - Current-state challenges and opportunities per BU (minor input)\n#2 - Benefits (minor input)\n#3 -Future state process diagrams\n#4 - Integration requiremen"
+      },
+      {
+        "doc_name": "SOW_BKP.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Creation of final user acceptance test scripts (NOTE: Sample testing scripts and starting testing scripts can be provided)\nCustomer Integration development, data extraction and data transformation (ETL) activities outside of Maestro or not explicitly defined in scope\nClosed-loop outbound integration and/or real-time integration services\nIntegration to multiple ERP systems\nChanges to any IXOM systems and/or legacy applications\nChange Management such as communication plan across the IXOM organization, roadshow, and regular project messaging\nCreation or change of print forms, or custom reporting "
+      },
+      {
+        "doc_name": "Ixom Comments - Maestro & SAP ERP Data Mapping Template and Files including TD Comments.xlsx",
+        "heading_path": "Ixom Comments - Maestro & SAP ERP Data Mapping Template and Files including TD Comments.xlsx — Sheet: ConstraintAvailable.tab",
+        "snippet": "Ixom Comments - Maestro & SAP ERP Data Mapping Template and Files including TD Comments.xlsx — Sheet: ConstraintAvailable.tab\nColumns: N/A for IXOM\nN/A for IXOM: Target System (Maestro)\nN/A for IXOM: Reference Files: ConstraintAvailable.tab\nN/A for IXOM: Field Position\nN/A for IXOM: 1\nN/A for IXOM: 2\nN/A for IXOM: 3\nN/A for IXOM: 4\nN/A for IXOM: 5\nData Check:\n- If the Capacity values are present at the Interval or Shift level for the Work Center, then that data needs to be brought in from KAZY and KAPA table along with the interval date range.\nN/A for IXOM: RapidResponse Screenshot\nData Filter"
+      },
+      {
+        "doc_name": "Ixom Comments - Maestro & SAP ERP Data Mapping Template and Files including TD Comments.xlsx",
+        "heading_path": "Ixom Comments - Maestro & SAP ERP Data Mapping Template and Files including TD Comments.xlsx — Sheet: ConstraintGroup",
+        "snippet": "Ixom Comments - Maestro & SAP ERP Data Mapping Template and Files including TD Comments.xlsx — Sheet: ConstraintGroup\nColumns: Not used in SAP\nNot used in SAP: Target System (Maestro)\nNot used in SAP: Reference Files: ConstraintGroup.tab\nNot used in SAP: Field Positon\nNot used in SAP: 1\nNot used in SAP: 2\nData Filtering Conditions\nIndicate the filtering conditions to be used for this data file and ensure that it is aligned with the filters applied for Site and Constraint tables."
+      },
+      {
+        "doc_name": "Ixom Comments - Maestro & SAP ERP Data Mapping Template and Files including TD Comments.xlsx",
+        "heading_path": "Ixom Comments - Maestro & SAP ERP Data Mapping Template and Files including TD Comments.xlsx — Sheet: CRPOperation.tab",
+        "snippet": "Ixom Comments - Maestro & SAP ERP Data Mapping Template and Files including TD Comments.xlsx — Sheet: CRPOperation.tab\nColumns: N/A for IXOM\nN/A for IXOM: Target System (Maestro)\nN/A for IXOM: Reference Files: CRPOperation.tab\nN/A for IXOM: Field Position\nN/A for IXOM: 1\nN/A for IXOM: 2\nN/A for IXOM: 3\nN/A for IXOM: 4\nN/A for IXOM: 5\nN/A for IXOM: 6\nN/A for IXOM: 7\nN/A for IXOM: 8\nN/A for IXOM: 9\nN/A for IXOM: 10\nN/A for IXOM: 11\nN/A for IXOM: 12\nN/A for IXOM: 13\nN/A for IXOM: 14\nN/A for IXOM: 15\nN/A for IXOM: 16\nN/A for IXOM: 17\nData Filtering Conditions\nIndicate the filtering conditions to b"
+      },
+      {
+        "doc_name": "Ixom Comments - Maestro & SAP ERP Data Mapping Template and Files including TD Comments.xlsx",
+        "heading_path": "Ixom Comments - Maestro & SAP ERP Data Mapping Template and Files including TD Comments.xlsx — Sheet: CurrencyConversionForecast",
+        "snippet": "Ixom Comments - Maestro & SAP ERP Data Mapping Template and Files including TD Comments.xlsx — Sheet: CurrencyConversionForecast\nColumns: Will this be used, will AU / NZ used their own currencies. What about values on SO / PO when in USD?\nWill this be used, will AU / NZ used their own currencies. What about values on SO / PO when in USD?: Target System (Maestro)\nWill this be used, will AU / NZ used their own currencies. What about values on SO / PO when in USD?: Reference Files: CurrencyConversionForecast.tab\nWill this be used, will AU / NZ used their own currencies. What about values on SO / "
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: Internal PMO-Timeline",
+        "snippet": "Br-Sr Solution Consultant | 3 | 2 | 1\nKi- | 0\nTr-Supply Chain SME | 0\n14 | Workshops: Distribution Planning Area | Distribution locations replenishment, cross location inventory visibility and redistribution, Metrics, User cases finalization | Br-Solution Architect | 2 | 2\nBr-Sr Solution Consultant | 2 | 2\nKi- | 0\nTr-Supply Chain SME | 0\n15 | Workshops: Master Data & Integrations | Data Mapping and validation | 1.6 - Planning Hierarchy Attributes (minor input) | Br-Solution Architect | 2 | 1 | 1\nBr-Sr Solution Consultant | 2 | 1 | 1\nKi- | 0\nTr-Supply Chain SME | 0\n16 | Information Collation | "
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: Internal PMO-Timeline",
+        "snippet": "Br-Sr Solution Consultant | 1 | 1\nTr-Project Manager | 0\nTr-Supply Chain SME | 0\n22 | Costing & Implementation Plan | Tridant/Bristlecone to create implementation plan including tasks, resources, travel and overall project timeline. Costings to be devised from the plan. | Br-Solution Architect | 3 | 3\nBr-Sr Solution Consultant | 3 | 3\nKi- | 0\nTr-Supply Chain SME | 0\n23 | BAU Costing (licensing) | Licensing costs. Cass to add Kinaxis resource to assist | Br-Solution Architect | 0\nBr-Sr Solution Consultant | 0\nKi- | 1 | 1\nTr-Supply Chain SME | 1 | 1\n24 | Training Approach | No longer included | "
+      },
+      {
+        "doc_name": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx",
+        "heading_path": "IXOM-Blueprinting_Timeline-Workshop-Attendees_MASTER_as-at-270225.xlsx — Sheet: W-Demand Planning",
+        "snippet": "Demand Planning Workshop Attendees: 4\nDemand Planning Workshop Attendees: 5\nDemand Planning Workshop Attendees: 6\nDemand Planning Workshop Attendees: 7\nDemand Planning Workshop Attendees: 8\nDemand Planning Workshop Attendees: 9\nDemand Planning Workshop Attendees: 10\nDemand Planning Workshop Attendees: 11\nDemand Planning Workshop Attendees: 12\nDemand Planning Workshop Attendees: 13\nDemand Planning Workshop Attendees: 14\nDemand Planning Workshop Attendees: 15, Deliverable/s: Stream 1: Roughcut capacity planning; long term (12 to 18 months) supply planning/inventory plan, annual budget & updated "
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.3": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to detail the operating model for RapidResponse to meet the business needs as defined by [insert]\nThe objective of this document is to list the user stories and analytics that provide the scope for this release. Each user story shall provide a reasonable level of technical detail that will enable configuration of the solution.\nDuring the development of the solution, this document will be updated with requirement changes and solution design.  This document, at technical golive, shall provide both the requirements and solution.\nThis document does not include test "
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Purpose of this Document",
+        "snippet": "This document exists to make it easier to support the solution.  It is intended to be a living document that is updated by the customer and Kinaxis as things change.  In order of importance, this is written for the following audiences.\n| Audience | Support Concerns |\n| --- | --- |\n| Kinaxis Support | How the solution is supposed to work What to do when alerts fail. What calls what? If a step fails, how do you recover? How long should processes typically run? How many records are typically modified? Performance issues: key workbooks – what filters should be used? How long do they typically run?"
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Purpose of this Document",
+        "snippet": "Delete this type of text in the final document….What follows are ideas for material to include.  Use your judgment on how best to present the main ideas. You may be able to re-use material from the Solution Blueprint and update it for what was actually done.\nYou may have separate documents (Word, PowerPoint, Excel) which need not be repeated here but you should reference them so people will know to look for them on a particular issue. Section 7 -is a place to list these.\nWith regard to documenting workbooks, the best place is in the workbook itself as Author Notes, Column Author Notes and comm"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image6.png",
+        "snippet": "[Embedded Image: image6.png]\n**Structured Description of image6.png**\n---\n**1. Main Structure:**\nThe image is a multi-column flowchart/infographic, organized into five main vertical sections:\n- Business Objectives\n- Value Drivers\n- Advanced Planning Capabilities\n- Benefit Range\n---\n**2. Section Details:**\n**A. Business Objectives (Yellow background)**\n- Increase Revenue\n- Reduce Cost\n- COGS (Cost of Goods Sold)\n- SG&A (Selling, General & Administrative)\n- Business Continuity\n**B. Value Drivers (Blue, Brown, Orange, Navy backgrounds)**\n- For Increase Revenue:\n- Launch Optimization\n- Customer Sa"
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image39.png",
+        "snippet": "19. PeriodsOfSupplyMinimumTarget\n20. RawMaterialInventoryTarget\n21. SalesForecast\n22. StatisticalForecast\n23. WIPInventoryTarget\n- The \"Description\" column provides readable names for each metric.\n- The \"Type\" column indicates the calculation or aggregation type (e.g., Actual, TargetValue, TargetSum, ConsensusForecast, Forecast, None).\n- \"Consensus Forecast Weight\" is 0.00% for all except \"Sales Forecast\" (100.00%).\n- \"Desired Results\" is either \"High\" or \"Low\" for each metric.\n- \"Limits (%)\" columns (Warning, Critical) provide threshold values for"
+      },
+      {
+        "doc_name": "SOW_BKP.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Tridant will be owning the responsibility of support required from customer IXOM.\n| Ref No. | Activity | Customer | Tridant | Bristlecone |\n| --- | --- | --- | --- | --- |\n| 1.0 | COMMENCE |  |  |  |\n| 1.1 | Provide guidance on data integration requirements and scope | C | C | R |\n| 1.2 | Align and set business expectation for target value to be achieved | R | R | C |\n| 1.3 | Customer project team to complete Introduction to Planning One™ and Planning One Basics training courses via Kinaxis Learning Centre (KLC) | R | I | I |\n| 2.0 | OVERALL: PROJECT MANAGEMENT & GOVERNANCE |  |  |  |\n| 2.1 | "
+      },
+      {
+        "doc_name": "SOW_BKP.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "All functionalities included in scope uses Level 1 Maestro standard functionality (create a PRODUCTION ready solution based on out-of-box (OOB) resources with limited changes allowed) as described in Appendix C.  Scope is split out by functional area and Bristlecone/Tridant and IXOM responsibilities are defined herein.\nAs part of this Analysis & Design Phase, the following tasks will be performed by Tridant/Bristlecone in conjunction with the IXOM Stakeholders.\nInitiate/Analysis & DESIGN: table 1\n| Task | Description | Phase Deliverables |\n| --- | --- | --- |\n| Align Project Approach | Tridant"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Data Validation",
+        "snippet": "The data assessment has provided a basis to determine the general level of data quality and validation required to ensure that the standard RapidResponse analytic can successfully plan in the end-to-end network. It has been identified that there is a level of customized transformation required in order to meet the reporting and response requirements of your company."
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to define the Customer Solution blueprint for [Customer].\nThe blueprint defines the prescribed scope of processes, capabilities and resources that will support a RapidStart deployment project.\nThe aims of the blueprint are twofold:\nSet the baseline for the future-state process and advanced planning capabilities – Business and IT teams will learn a common terminology and understanding of RapidResponse planning paradigms/capabilities based on prescribed data interfaces and foundational planning capabilities, from which to build for more advanced planning requireme"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to define the Customer Solution blueprint for [Customer].\nThe blueprint defines the prescribed scope of processes, capabilities and resources that will support a RapidStart deployment project.\nThe aims of the blueprint are twofold:\nSet the baseline for the future-state process and advanced planning capabilities – Business and IT teams will learn a common terminology and understanding of RapidResponse planning paradigms/capabilities based on prescribed data interfaces and foundational planning capabilities, from which to build for more advanced planning requireme"
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image39.png",
+        "snippet": "[Embedded Image: image39.png]\nStructured Description of image39.png:\n**General Overview:**\nThe image is a screenshot of a data mapping/control table from an ERP or supply chain planning system, likely used for defining and mapping key supply chain metrics, targets, and forecast parameters. The table is titled \"Data Sources and Mapping\" and is under the \"Enterprise Data\" section.\n**Tabs/Sections Visible:**\n- CRP Unit Of Measure\n- Days Supply Policy\n- Demand Status\n- Demand Type\n- Distribution Planning Rule\n- Expiry Type\n- Forecast Item Parameters Type\n- Historical Demand Category Rolling Weight"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image6.png",
+        "snippet": "- Scenario Modeling\n- Managing shelf-life and expiry\n- Exception/Alert monitoring\n- For Business Continuity:\n- Scenario modelling, impact analysis, risk mitigating scenarios\n- Eliminate manual lot matching to support jurisdictional control\n**D. Benefit Range (Grey circles, rightmost column)**\n- Improved Customer Service >25%\n- Reduce Excess & Obsolescence 15%–25%\n- Improved resource efficiency 10%–20%\n- Planning Cycle Time Reduction 25%–35%\n- Inventory & Carrying Cost Savings 10%–30%\n- Reduce Premium Freight Cost 15%–25%\n---\n**3. Visual Elements:**\n- Color-coded boxes and arrows connect object"
+      }
+    ],
+    "gen_source": "doc"
+  }
+}

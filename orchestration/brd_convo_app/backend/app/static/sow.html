@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bristlecone SOW — Review a SOW</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#F7F7F7;--surface:#FFFFFF;--surface2:#F0F0F0;--surface3:#E8E8E8;
+      --border:#DDDDDD;--border-hover:#AAAAAA;
+      --accent:#0070C0;--accent-glow:rgba(0,112,192,0.15);--accent-soft:rgba(0,112,192,0.08);
+      --navy:#003366;--green:#0F6E56;--green-soft:rgba(15,110,86,0.10);
+      --amber:#854F0B;--amber-soft:rgba(133,79,11,0.10);
+      --red:#A32D2D;--red-soft:rgba(163,45,45,0.10);
+      --text:#1A1A1A;--text-sec:#777777;--text-dim:#AAAAAA;
+      --r:6px;--rlg:10px;
+      --font:'Segoe UI',system-ui,sans-serif;--mono:'Consolas','Courier New',monospace;
+    }
+    body{min-height:100vh;background:var(--bg);color:var(--text);font-family:var(--font);font-size:14px;display:flex;flex-direction:column}
+
+    /* NAV — SOW Tool's own shell, independent of the BRD tool's nav */
+    .topnav{background:var(--surface);border-bottom:1px solid var(--border);padding:0 28px;height:52px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:relative}
+    .topnav::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.3}
+    .nav-left{display:flex;align-items:center;gap:12px}
+    .logo-mark{width:32px;height:32px;background:var(--navy);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff;box-shadow:0 2px 10px var(--accent-glow)}
+    .nav-title{font-size:14px;font-weight:600}
+    .nav-subtitle{font-size:10px;color:var(--text-dim);letter-spacing:.5px;text-transform:uppercase}
+    .back-link{display:flex;align-items:center;gap:5px;padding:6px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface2);color:var(--text-sec);font-size:11px;font-weight:600;text-decoration:none}
+    .back-link:hover{background:var(--surface3)}
+
+    .btn{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:var(--r);padding:8px 16px;font-family:var(--font);font-size:13px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:all .2s}
+    .btn svg{width:13px;height:13px;flex-shrink:0}
+    .btn:hover:not(:disabled){border-color:var(--border-hover);background:var(--surface2)}
+    .btn:disabled{opacity:.5;cursor:not-allowed}
+    .btn-primary{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 3px 14px var(--accent-glow)}
+    .btn-primary:hover:not(:disabled){background:#005EA8;color:#fff;transform:translateY(-1px);box-shadow:0 5px 20px var(--accent-glow)}
+    .btn-primary:disabled{background:var(--surface3);border-color:var(--surface3);color:var(--text-dim);box-shadow:none;transform:none}
+    .btn-green{background:var(--green-soft);border-color:var(--green);color:var(--green)}
+    .btn-green:hover:not(:disabled){background:#D5F0E6;transform:translateY(-1px)}
+    .hidden{display:none!important}
+
+    .wrap{flex:1;max-width:880px;width:100%;margin:0 auto;padding:32px 20px 60px}
+
+    /* PAGE HEADING — gradient-text like the Upload screen */
+    .ph{margin-bottom:26px;max-width:640px}
+    .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--text-sec);font-weight:800;margin-bottom:8px}
+    .ph h1{font-size:24px;font-weight:700;letter-spacing:-.4px;margin-bottom:6px;background:linear-gradient(135deg,var(--text),var(--text-sec));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .lead{font-size:13.5px;color:var(--text-sec);line-height:1.55;max-width:640px}
+
+    /* PANELS */
+    .panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--rlg);padding:22px;margin-top:22px}
+    .panel h2{font-size:16px;font-weight:650;color:var(--navy);margin-bottom:14px}
+    .toggle-row{display:flex;gap:8px;margin-bottom:16px}
+    .toggle-btn{flex:1;text-align:center;border:1px solid var(--border);border-radius:var(--r);padding:9px;font-size:12.5px;font-weight:600;color:var(--text-sec);cursor:pointer;background:var(--surface2);transition:all .15s}
+    .toggle-btn.active{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+    .field{margin-bottom:16px}
+    .field label{display:block;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--text-sec);margin-bottom:7px}
+    .field textarea{width:100%;min-height:180px;border:1px solid var(--border);border-radius:var(--r);padding:10px;font:13px var(--mono);resize:vertical;outline:none}
+    .field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+
+    /* DROPZONE — same visual language as the Upload screen's drag targets */
+    .dropzone{background:var(--surface);border:2px dashed var(--border);border-radius:var(--rlg);padding:20px 16px;text-align:center;cursor:pointer;transition:all .25s;position:relative}
+    .dropzone:hover{border-color:var(--accent);background:var(--surface2)}
+    .dropzone.dragover{border-color:var(--accent);background:var(--surface2);box-shadow:0 0 20px var(--accent-glow)}
+    .dropzone.has-file{border-style:solid;border-color:var(--green)}
+    .dz-icon{width:34px;height:34px;border-radius:9px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;margin:0 auto 8px}
+    .dz-icon svg{width:17px;height:17px}
+    .dz-label{font-size:12.5px;font-weight:600;margin-bottom:2px}
+    .dz-sub{font-size:11px;color:var(--text-sec)}
+    .picked-file{display:flex;align-items:center;gap:8px;margin-top:10px;padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--surface2)}
+    .picked-file .pf-icon{width:24px;height:24px;border-radius:6px;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:9px;font-family:var(--mono);font-weight:700;text-transform:uppercase;flex-shrink:0}
+    .picked-file .pf-name{font-size:12px;font-weight:500;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .picked-file .pf-remove{width:20px;height:20px;border:none;background:transparent;color:var(--text-sec);cursor:pointer;border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .picked-file .pf-remove:hover{background:var(--red-soft);color:var(--red)}
+    .hidden-input{display:none}
+
+    .actions-row{display:flex;gap:10px;justify-content:flex-end;margin-top:6px}
+    .status-line{font-size:12px;color:var(--text-sec);margin-top:10px;min-height:16px;display:flex;align-items:center;gap:7px}
+    .status-line.err{color:var(--red)}
+    .status-line.ok{color:var(--green)}
+    .spinner{display:inline-block;width:13px;height:13px;border:2px solid var(--accent-soft);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* META BAR — glanceable stats pulled from the model output (placeholder
+       counts for a draft, confidence/flag counts for a review) */
+    .result-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+    .meta-pill{font-size:11px;font-weight:700;padding:4px 11px;border-radius:20px;display:inline-flex;align-items:center;gap:5px}
+    .meta-pill.meta-ok{background:var(--green-soft);color:var(--green)}
+    .meta-pill.meta-warn{background:var(--amber-soft);color:var(--amber)}
+    .meta-pill.meta-bad{background:var(--red-soft);color:var(--red)}
+
+    .result-actions{display:flex;gap:8px;justify-content:flex-end;margin-bottom:14px;flex-wrap:wrap}
+    .result-body{border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;background:#FEFEFE;max-height:65vh;overflow:auto;line-height:1.6;font-size:13.5px}
+    .result-body h2{font-size:16px;color:var(--navy);margin:18px 0 8px}
+    .result-body h2:first-child{margin-top:0}
+    .result-body h3{font-size:14px;color:var(--text);margin:14px 0 6px}
+    .result-body p{margin:8px 0}
+    .result-body ul,.result-body ol{margin:8px 0 8px 22px}
+    .result-body table.md-table{border-collapse:collapse;width:100%;margin:10px 0;font-size:12.5px}
+    .result-body table.md-table th,.result-body table.md-table td{border:1px solid var(--border);padding:6px 9px;text-align:left;vertical-align:top}
+    .result-body table.md-table th{background:var(--surface2);font-weight:700}
+    .result-empty{padding:48px 20px;text-align:center;color:var(--text-dim);font-size:13px}
+
+    /* INLINE TAGS — highlight the SOW skill's own markers (placeholders,
+       confidence levels, "Not Addressed" / "Cannot Verify" flags) */
+    .tag-flag{display:inline-block;font-size:11px;font-weight:700;padding:1px 7px;border-radius:5px;background:var(--amber-soft);color:var(--amber);white-space:nowrap}
+    .tag-conf{display:inline-block;font-size:11px;font-weight:700;padding:1px 7px;border-radius:5px}
+    .tag-conf-high{background:var(--green-soft);color:var(--green)}
+    .tag-conf-medium{background:var(--amber-soft);color:var(--amber)}
+    .tag-conf-low{background:var(--red-soft);color:var(--red)}
+    .tag-warn{display:inline-block;font-size:11px;font-weight:700;padding:1px 7px;border-radius:5px;background:var(--red-soft);color:var(--red)}
+
+    /* Panel-switch fade, matching the file-row entrance animation elsewhere */
+    .fade-in{animation:panelIn .3s ease}
+    @keyframes panelIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+    /* HISTORY — recent review results for this session */
+    .history-item{display:flex;align-items:center;gap:10px;padding:11px 14px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);cursor:pointer;transition:all .15s;margin-bottom:8px}
+    .history-item:hover{border-color:var(--accent);background:var(--surface2)}
+    .history-badge{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:3px 8px;border-radius:5px;flex-shrink:0}
+    .history-badge.review{background:var(--accent-soft);color:var(--accent)}
+    .history-preview{font-size:12.5px;color:var(--text-sec);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .history-time{font-size:11px;color:var(--text-dim);flex-shrink:0}
+
+    /* TOAST */
+    .tc{position:fixed;top:60px;right:20px;z-index:100;display:flex;flex-direction:column;gap:6px}
+    .t{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:10px 14px;font-size:12px;display:flex;align-items:center;gap:8px;animation:ti .3s ease;box-shadow:0 6px 24px rgba(0,0,0,.12);max-width:340px}
+    .t.error{border-color:var(--red);color:var(--red)}
+    .t.success{border-color:var(--green);color:var(--green)}
+    @keyframes ti{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:translateX(0)}}
+  </style>
+</head>
+<body>
+<script>
+  (function(){
+    if(!sessionStorage.getItem("auth_user")) window.location.replace("/");
+  })();
+</script>
+
+<nav class="topnav">
+  <div class="nav-left">
+    <div class="logo-mark">B</div>
+    <div>
+      <div class="nav-title">Bristlecone SOW Automation</div>
+      <div class="nav-subtitle">Review a SOW</div>
+    </div>
+  </div>
+  <a href="/sow-hub" class="back-link">← SOW Hub</a>
+</nav>
+
+<div class="wrap">
+
+  <div class="ph">
+    <div class="eyebrow">SOW Tool</div>
+    <h1>Review an existing SOW</h1>
+    <p class="lead">Upload or paste an existing/draft SOW document. Get a section-by-section
+       report against Bristlecone's checklist, with citations, confidence tags, and top risks.</p>
+  </div>
+
+  <div id="history-section" class="hidden">
+    <div class="eyebrow" style="margin-top:28px;margin-bottom:10px">Recent (this session)</div>
+    <div id="history-list"></div>
+  </div>
+
+  <!-- ── Review panel ──────────────────────────────────────────── -->
+  <div id="view-review" class="panel">
+    <h2>Provide the SOW document</h2>
+    <p class="lead" style="margin-bottom:16px">Upload the file or paste its text — no transcript needed.</p>
+
+    <div class="toggle-row">
+      <div class="toggle-btn active" id="rev-toggle-upload" onclick="setInputMode('review','upload')">Upload file</div>
+      <div class="toggle-btn" id="rev-toggle-paste" onclick="setInputMode('review','paste')">Paste text</div>
+    </div>
+    <div class="field" id="rev-field-upload">
+      <label>SOW document</label>
+      <div class="dropzone" id="rev-dropzone" tabindex="0" role="button">
+        <div class="dz-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+        <div class="dz-label">Drag &amp; drop or click to browse</div>
+        <div class="dz-sub">PDF · DOCX · TXT</div>
+      </div>
+      <input type="file" id="rev-file" class="hidden-input" accept=".pdf,.docx,.doc,.txt" />
+      <div class="picked-file hidden" id="rev-picked">
+        <span class="pf-icon" id="rev-picked-ext"></span>
+        <span class="pf-name" id="rev-picked-name"></span>
+        <button class="pf-remove" type="button" onclick="clearPicked('rev')" title="Remove">✕</button>
+      </div>
+    </div>
+    <div class="field hidden" id="rev-field-paste">
+      <label>SOW text</label>
+      <textarea id="rev-text" placeholder="Paste the SOW document text here…"></textarea>
+    </div>
+
+    <div class="actions-row">
+      <button class="btn btn-primary" id="rev-submit" onclick="submitReview()">
+        Review SOW
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>
+    <div class="status-line" id="rev-status"></div>
+  </div>
+
+  <!-- ── Result view ───────────────────────────────────────────── -->
+  <div id="view-result" class="panel hidden">
+    <h2 id="result-title">Result</h2>
+    <div class="result-meta" id="result-meta"></div>
+    <div class="result-actions">
+      <button class="btn" onclick="startOver()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+        Start over
+      </button>
+      <button class="btn" id="result-copy-btn" onclick="copyResult()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        Copy
+      </button>
+      <button class="btn" id="result-md-btn" onclick="downloadResult()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download .md
+      </button>
+      <button class="btn btn-green" id="result-docx-btn" onclick="downloadResultDocx()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Word (.docx)
+      </button>
+    </div>
+    <div class="status-line" id="result-status"></div>
+    <div class="result-body" id="result-body"></div>
+  </div>
+
+</div>
+
+<div class="tc" id="tc"></div>
+
+<script>
+// SOW Tool is standalone — it mints its own session id and never depends on
+// a BRD project existing. The id is kept in sessionStorage (not a fresh
+// crypto.randomUUID() on every load) specifically so that review results —
+// persisted server-side keyed by this id — survive a page refresh within
+// the same tab instead of becoming unreachable the moment a new random id
+// is minted.
+const SOW_SESSION_STORAGE_KEY = "sow_tool_session_id";
+let SESSION_ID = sessionStorage.getItem(SOW_SESSION_STORAGE_KEY);
+if(!SESSION_ID){
+  SESSION_ID = crypto.randomUUID();
+  sessionStorage.setItem(SOW_SESSION_STORAGE_KEY, SESSION_ID);
+}
+
+let revMode = "upload";
+let lastResultText = "";
+
+function showPanel(which){
+  ["review","result"].forEach(v => {
+    document.getElementById("view-" + v).classList.add("hidden");
+  });
+  const el = document.getElementById("view-" + which);
+  el.classList.remove("hidden");
+  el.classList.remove("fade-in");
+  void el.offsetWidth; // restart animation
+  el.classList.add("fade-in");
+}
+function startOver(){
+  clearPicked("rev");
+  showPanel("review");
+}
+
+// ── History: past review results for this session, so a page refresh (or
+// coming back later in the same tab) doesn't lose a report ──
+function escAttr(s){ return (s||"").replace(/"/g,"&quot;"); }
+async function loadHistory(){
+  const section = document.getElementById("history-section");
+  const list = document.getElementById("history-list");
+  try{
+    const res = await fetch(`/api/sow/history?session_id=${encodeURIComponent(SESSION_ID)}`);
+    if(!res.ok) throw new Error("Could not load history");
+    // Filter out any stale generate-mode entries from before this page was
+    // trimmed to review-only — this page can no longer produce them.
+    const items = (await res.json()).filter(it => it.mode === "review");
+    if(!items.length){ section.classList.add("hidden"); return; }
+    list.innerHTML = items.map(it => `<div class="history-item" onclick="openHistoryItem('${it.id}')">
+        <span class="history-badge review">Review</span>
+        <span class="history-preview" title="${escAttr(it.preview)}">${escHtml(it.source_label || it.preview)}</span>
+        <span class="history-time">${new Date(it.created_at + "Z").toLocaleString([], {month:"short", day:"numeric", hour:"2-digit", minute:"2-digit"})}</span>
+      </div>`).join("");
+    section.classList.remove("hidden");
+  }catch(e){
+    section.classList.add("hidden");
+  }
+}
+
+async function openHistoryItem(resultId){
+  try{
+    const res = await fetch(`/api/sow/result/${resultId}?session_id=${encodeURIComponent(SESSION_ID)}`);
+    const data = await res.json();
+    if(!res.ok) throw new Error(data.detail || "Could not load this result");
+    showResult(data.output, "SOW Review Report");
+  }catch(e){
+    tw(e.message, "error");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadHistory);
+
+function setInputMode(which, mode){
+  revMode = mode;
+  document.getElementById("rev-toggle-upload").classList.toggle("active", mode==="upload");
+  document.getElementById("rev-toggle-paste").classList.toggle("active", mode==="paste");
+  document.getElementById("rev-field-upload").classList.toggle("hidden", mode!=="upload");
+  document.getElementById("rev-field-paste").classList.toggle("hidden", mode!=="paste");
+}
+
+// ── Dropzones (drag & drop + click-to-browse), matching the Upload screen ──
+function setupDropzone(prefix){
+  const zone = document.getElementById(prefix + "-dropzone");
+  const inp = document.getElementById(prefix + "-file");
+  zone.addEventListener("click", () => inp.click());
+  zone.addEventListener("keydown", e => { if(e.key==="Enter" || e.key===" "){ e.preventDefault(); inp.click(); } });
+  zone.addEventListener("dragover", e => { e.preventDefault(); zone.classList.add("dragover"); });
+  zone.addEventListener("dragleave", () => zone.classList.remove("dragover"));
+  zone.addEventListener("drop", e => {
+    e.preventDefault();
+    zone.classList.remove("dragover");
+    if(e.dataTransfer.files.length){ inp.files = e.dataTransfer.files; showPicked(prefix); }
+  });
+  inp.addEventListener("change", () => showPicked(prefix));
+}
+function showPicked(prefix){
+  const inp = document.getElementById(prefix + "-file");
+  const f = inp.files[0];
+  const zone = document.getElementById(prefix + "-dropzone");
+  const picked = document.getElementById(prefix + "-picked");
+  if(!f){ picked.classList.add("hidden"); zone.classList.remove("has-file"); return; }
+  document.getElementById(prefix + "-picked-name").textContent = f.name;
+  document.getElementById(prefix + "-picked-ext").textContent = (f.name.split(".").pop()||"").slice(0,4);
+  picked.classList.remove("hidden");
+  zone.classList.add("has-file");
+}
+function clearPicked(prefix){
+  const inp = document.getElementById(prefix + "-file");
+  if(inp){ inp.value = ""; }
+  const zone = document.getElementById(prefix + "-dropzone");
+  const picked = document.getElementById(prefix + "-picked");
+  if(zone) zone.classList.remove("has-file");
+  if(picked) picked.classList.add("hidden");
+}
+setupDropzone("rev");
+
+function setStatus(id, text, cls, loading){
+  const el = document.getElementById(id);
+  el.innerHTML = (loading ? '<span class="spinner"></span>' : '') + (text ? `<span>${text}</span>` : "");
+  el.className = "status-line" + (cls ? " " + cls : "");
+}
+
+// ── Busy indicator: elapsed timer + rotating tips, since a single SOW
+// review call is one long blocking model request with no real progress
+// events to report — this just keeps the wait feeling alive. ──
+function startBusy(statusId, tips){
+  const start = Date.now();
+  const id = setInterval(() => {
+    const secs = Math.floor((Date.now() - start) / 1000);
+    const tip = tips[Math.min(Math.floor(secs / 6), tips.length - 1)];
+    setStatus(statusId, `${tip} — ${secs}s`, null, true);
+  }, 1000);
+  return () => clearInterval(id);
+}
+
+function tw(msg, ty){
+  const c = document.getElementById("tc");
+  const t = document.createElement("div");
+  t.className = "t" + (ty ? " " + ty : "");
+  t.textContent = msg;
+  c.appendChild(t);
+  setTimeout(() => { t.style.opacity = "0"; t.style.transition = "opacity .3s"; setTimeout(() => t.remove(), 300); }, 4000);
+}
+
+async function uploadSowFile(file, purpose){
+  const fd = new FormData();
+  fd.append("file", file);
+  fd.append("session_id", SESSION_ID);
+  fd.append("purpose", purpose);
+  const res = await fetch("/api/sow/upload", { method: "POST", body: fd });
+  const data = await res.json();
+  if(!res.ok) throw new Error(data.detail || "Upload failed");
+  return data.file_id;
+}
+
+async function submitReview(){
+  const btn = document.getElementById("rev-submit");
+  btn.disabled = true;
+  let stopBusy = null;
+  try{
+    const body = { session_id: SESSION_ID };
+    if(revMode === "upload"){
+      const f = document.getElementById("rev-file").files[0];
+      if(!f){ throw new Error("Choose an SOW file, or switch to Paste text."); }
+      setStatus("rev-status", "Uploading SOW…", null, true);
+      body.file_id = await uploadSowFile(f, "review_document");
+    } else {
+      const t = document.getElementById("rev-text").value.trim();
+      if(!t){ throw new Error("Paste the SOW text, or switch to Upload file."); }
+      body.text = t;
+    }
+    stopBusy = startBusy("rev-status", [
+      "Reading the SOW document",
+      "Checking against Bristlecone's checklist",
+      "Compiling findings and risks",
+    ]);
+    const res = await fetch("/api/sow/review", {
+      method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify(body)
+    });
+    const data = await res.json();
+    if(!res.ok) throw new Error(data.detail || "Review failed");
+    stopBusy(); stopBusy = null;
+    showResult(data.output, "SOW Review Report");
+    setStatus("rev-status", "");
+    tw("SOW review complete", "success");
+    loadHistory();
+  }catch(e){
+    if(stopBusy) stopBusy();
+    setStatus("rev-status", e.message, "err");
+    tw(e.message, "error");
+  }finally{
+    btn.disabled = false;
+  }
+}
+
+// Glanceable stats pulled straight from the skill's own confidence/flag
+// markers, so the reader doesn't have to scan the whole report just to
+// gauge how risky the reviewed SOW looks.
+function computeMeta(text){
+  const high = (text.match(/\bHigh confidence\b/gi) || []).length;
+  const med  = (text.match(/\bMedium confidence\b/gi) || []).length;
+  const low  = (text.match(/\bLow confidence\b/gi) || []).length;
+  // Kept separate rather than one blended "flagged" count: "Not Addressed" is
+  // a real gap in the SOW text, while "Cannot Verify" is the expected outcome
+  // for most execution-evidence checkpoints (CR logs, sign-off emails, etc.)
+  // when only the SOW document itself was reviewed — collapsing them made an
+  // ordinary review look riskier than it actually was.
+  const notAddressed = (text.match(/\bNot Addressed\b/g) || []).length;
+  const cannotVerify = (text.match(/\bCannot Verify\b/g) || []).length;
+  const parts = [];
+  if(high) parts.push(`<span class="meta-pill meta-ok">${high} high-confidence</span>`);
+  if(med)  parts.push(`<span class="meta-pill meta-warn">${med} medium-confidence</span>`);
+  if(low)  parts.push(`<span class="meta-pill meta-bad">${low} low-confidence</span>`);
+  if(notAddressed) parts.push(`<span class="meta-pill meta-bad">${notAddressed} not addressed</span>`);
+  if(cannotVerify) parts.push(`<span class="meta-pill meta-warn">${cannotVerify} cannot verify (evidence needed)</span>`);
+  return parts.join("");
+}
+
+function showResult(text, title){
+  lastResultText = text || "";
+  const hasContent = !!lastResultText.trim();
+  document.getElementById("result-title").textContent = title;
+  document.getElementById("result-body").innerHTML = hasContent
+    ? formatOutputAsHtml(lastResultText)
+    : `<div class="result-empty">No content was returned. Try again, or double-check the input you provided.</div>`;
+  document.getElementById("result-meta").innerHTML = hasContent ? computeMeta(lastResultText) : "";
+  ["result-copy-btn", "result-md-btn", "result-docx-btn"].forEach(id => {
+    document.getElementById(id).disabled = !hasContent;
+  });
+  showPanel("result");
+}
+
+function copyResult(){
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(lastResultText);
+    tw("Copied to clipboard", "success");
+  }
+}
+
+function downloadResult(){
+  const blob = new Blob([lastResultText], { type: "text/markdown" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "sow-review-report.md";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
+async function downloadResultDocx(){
+  const btn = document.getElementById("result-docx-btn");
+  btn.disabled = true;
+  setStatus("result-status", "Rendering Word document…", null, true);
+  try{
+    const res = await fetch("/api/sow/export", {
+      method: "POST", headers: {"Content-Type":"application/json"},
+      body: JSON.stringify({ text: lastResultText })
+    });
+    const data = await res.json();
+    if(!res.ok) throw new Error(data.detail || "Export failed");
+    setStatus("result-status", "");
+    tw("Word document ready", "success");
+    window.location.href = data.docx_url;
+  }catch(e){
+    setStatus("result-status", e.message, "err");
+    tw(e.message, "error");
+  }finally{
+    btn.disabled = false;
+  }
+}
+
+// ── Minimal markdown-lite → HTML renderer (adapted from screen3.html's
+// formatOutputAsHtml, trimmed of BRD-specific IMAGE tag handling) ──
+function escHtml(s){
+  return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+          .replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+}
+function renderInline(s){
+  s = escHtml(s);
+  // Highlight the SOW skill's own markers: open placeholders, confidence
+  // levels, and "Not Addressed" / "Cannot Verify" flags — done on the
+  // escaped string so the wrapped literal text stays safe.
+  s = s.replace(/&lt;(CONFIRM|TECH TEAM|LEGAL):\s*([^&]*?)&gt;/g, (_m, kind, body) =>
+    `<span class="tag-flag">${kind}: ${body}</span>`);
+  s = s.replace(/\b(High|Medium|Low) confidence\b/gi, (m, lvl) =>
+    `<span class="tag-conf tag-conf-${lvl.toLowerCase()}">${m}</span>`);
+  s = s.replace(/\b(Not Addressed|Cannot Verify)\b/g, m => `<span class="tag-warn">${m}</span>`);
+  s = s.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  s = s.replace(/(?<!\*)\*([^*]+)\*(?!\*)/g, "<em>$1</em>");
+  return s;
+}
+function formatOutputAsHtml(text){
+  if(!text) return "";
+  const lines = text.split("\n");
+  const result = [];
+  let inUl = 0, inOl = false;
+  function closeList(){
+    while(inUl){ result.push("</ul>"); inUl--; }
+    if(inOl){ result.push("</ol>"); inOl = false; }
+  }
+  for(let i=0;i<lines.length;i++){
+    const raw = lines[i];
+    const line = raw.trim();
+    if(!line){ closeList(); continue; }
+
+    if(/^###\s/.test(line)){ closeList(); result.push(`<h3>${renderInline(line.replace(/^###\s+/,""))}</h3>`); continue; }
+    if(/^##\s/.test(line)){ closeList(); result.push(`<h2>${renderInline(line.replace(/^##\s+/,""))}</h2>`); continue; }
+    if(/^#\s/.test(line)){ closeList(); result.push(`<h2>${renderInline(line.replace(/^#\s+/,""))}</h2>`); continue; }
+    if(/^\*\*[^*]+\*\*$/.test(line)){ closeList(); result.push(`<h3>${renderInline(line)}</h3>`); continue; }
+
+    if(/^\d+[.):]\s/.test(line)){
+      if(inUl){ result.push("</ul>"); inUl=0; }
+      if(!inOl){ result.push("<ol>"); inOl=true; }
+      result.push(`<li>${renderInline(line.replace(/^\d+[.):]\s+/,""))}</li>`);
+      continue;
+    }
+
+    const bm = raw.match(/^(\s*)([-*•])\s+(.*)$/);
+    if(bm){
+      if(inOl){ result.push("</ol>"); inOl=false; }
+      const indentWs = bm[1] || "";
+      const tabs = (indentWs.match(/\t/g)||[]).length;
+      const sp = indentWs.replace(/\t/g,"").length;
+      let level = tabs + Math.floor(sp/2);
+      if(level<0) level=0; if(level>5) level=5;
+      while(inUl < level+1){ result.push("<ul>"); inUl++; }
+      while(inUl > level+1){ result.push("</ul>"); inUl--; }
+      result.push(`<li>${renderInline(bm[3])}</li>`);
+      continue;
+    }
+
+    if(line.startsWith("|") && line.endsWith("|")){
+      closeList();
+      const tableLines=[];
+      let j=i;
+      while(j<lines.length){
+        const tl=lines[j].trim();
+        if(tl.startsWith("|") && tl.endsWith("|")){ tableLines.push(tl); j++; }
+        else if(!tl){
+          let k=j+1;
+          while(k<lines.length && !lines[k].trim()) k++;
+          if(k<lines.length && lines[k].trim().startsWith("|") && lines[k].trim().endsWith("|")){ j=k; }
+          else break;
+        } else break;
+      }
+      i = j-1;
+      const isSep = r => /^\|[\s\-:|]+\|$/.test(r);
+      const parseRow = r => r.split("|").slice(1,-1).map(c=>c.trim());
+      const groups=[]; let t=0;
+      while(t<tableLines.length){
+        if(t+1<tableLines.length && isSep(tableLines[t+1])){
+          const header=tableLines[t]; const rows=[]; let k=t+2;
+          while(k<tableLines.length){
+            if(isSep(tableLines[k])) break;
+            if(k+1<tableLines.length && isSep(tableLines[k+1])) break;
+            rows.push(tableLines[k]); k++;
+          }
+          groups.push({header,rows}); t=k;
+        } else t++;
+      }
+      groups.forEach(g=>{
+        let html='<table class="md-table"><thead><tr>';
+        parseRow(g.header).forEach(h=>{ html+=`<th>${renderInline(h)}</th>`; });
+        html+='</tr></thead><tbody>';
+        g.rows.forEach(row=>{
+          html+='<tr>';
+          parseRow(row).forEach(c=>{ html+=`<td>${renderInline(c)}</td>`; });
+          html+='</tr>';
+        });
+        html+='</tbody></table>';
+        result.push(html);
+      });
+      continue;
+    }
+
+    closeList();
+    result.push(`<p>${renderInline(line)}</p>`);
+  }
+  closeList();
+  return result.join("\n");
+}
+</script>
+<script src="/static/chat_widget.js" defer></script>
+</body>
+</html>

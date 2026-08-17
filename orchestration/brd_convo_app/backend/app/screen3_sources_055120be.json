@@ -1,0 +1,1038 @@
+{
+  "1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "RapidResponse Solution Blueprint for [customer]\nDocument ID:  [define]\nDocument Revision:  0.1 (Draft)\nIssue Date:  13-Mar-2018\nRevision History\n| Revision | Author Name | Date | Description |  |\n| --- | --- | --- | --- | --- |\n| 0.1 | P.Smithson | 13-Mar-2018 | Initial definition Release 1 |  |\n|  |  |  |  |  |\n|  |  |  |  |  |\n|  |  |  |  |  |"
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Revision History",
+        "snippet": "Kinaxis readers of this document should check with the customer to see if the customer has updated the document with changes."
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Image: image31.png",
+        "snippet": "[Embedded Image: image31.png]\nStructured Description:\nTitle/Tab:\n- \"CSB Planning\" (appears as a tab or section header)\nSection List (numbered outline, likely a table of contents or navigation pane):\n1. Introduction\n2. STATEMENT OF REQUIREMENTS\n3. DESIGN QUESTIONS AND ASSUMPTIONS\n4. DESIGN DETAILS\n5. RECOMMENDED TEST PROCEDURES\n6. PERFORMANCE CONSIDERATIONS\n7. USER ROLES AND GROUPS\n8. SCHEDULED TASKS\n9. PRODUCTION SUPPORT CONSIDERATIONS\nNotes Section (text box below the section list):\n- (Notes as of 2012/10/17)\n- Currently, until RapidResponse version 11.2, Scripts must access worksheet data us"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to detail the operating model for RapidResponse to meet the business needs as defined by [insert]\nThe objective of this document is to list the user stories and analytics that provide the scope for this release. Each user story shall provide a reasonable level of technical detail that will enable configuration of the solution.\nDuring the development of the solution, this document will be updated with requirement changes and solution design.  This document, at technical golive, shall provide both the requirements and solution.\nThis document does not include test "
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Demand Order Analysis – Partial Orders (Workbook)",
+        "snippet": "This is an unmodified PDR."
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Table of Contents",
+        "snippet": "Table of Contents\t2\nRevision History\t4\n1 - Projects and Team Members\t5\n1.1 Projects\t5\n1.2 Key Members\t5\n1.3 Kinaxis Project Team\t5\n2 - Introduction\t6\n2.1 Purpose of this Document\t6\n2.2 Description of Customer\t7\n2.3 Business Areas Addressed by the Solution\t7\n2.4 Glossary of Terms\t7\n3 - Business Processes\t8\n3.1 Supply Chain Map\t8\n3.1.1 Sites\t8\n3.2 Business Process and RapidResponse Solution\t8\n4 - Integration Platform\t9\n4.1 Integration Architecture\t9\n4.2 Extracted Data\t9\n4.3 Incoming Data\t9\n4.4 Automation Jobs\t10\n4.4.1 Automation Job Name\t10\n4.5 Master Jobs\t10\n4.5.1 Master Job Name\t10\n4.6 Transfo"
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Revision History",
+        "snippet": "| Version | Changes | Author | Date |\n| --- | --- | --- | --- |\n| 1 | Initial Draft |  |  |\n| 2 | Changed font to Calibri and other formatting changes. Be sure to update Revision/date in Footings | Jim Wood | 25-Mar-2014 |\n| 3 | Header 2 fixed to be Calibri 16pt. Show spelling issues. Fixed minor issues. | Jim Wood | 9-Apr-2014 |\n| 4 | Updated Kinaxis logo to the latest | Emilia Michaud | July 22, 2019 |\n| 5 | Updated with new section on Integration Platform documentation (section 4) | Emily Fisk | March 12, 2020 |\n| 6 | Additional updates to the Integration Platform section | Emilia Michaud, "
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Solution Blueprint\nfor [RS Customer].\nRevision History\n| Revision | Author Name | Date | Description |\n| --- | --- | --- | --- |\n| 1.0 | Keith Venter | May 2021 | Initialization of Document |\n| 1.2 | Keith Venter | Jun 2022 | Refinement for RS/Planning One |\n| 1.3 | Keith Venter | Aug 2022 | Deprecated Candidate Supply Plan scenario references |\n| 1.4 | Keith Venter | Oct 2022 | Deprecated User Story: Import Planner Codes |"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Solution Blueprint\nfor [RS Customer].\nRevision History\n| Revision | Author Name | Date | Description |\n| --- | --- | --- | --- |\n| 1.0 | Keith Venter | May 2021 | Initialization of Document |\n| 1.2 | Keith Venter | Jun 2022 | Refinement for RS/Planning One |\n| 1.3 | Keith Venter | Aug 2022 | Deprecated Candidate Supply Plan scenario references |\n| 1.4 | Keith Venter | Oct 2022 | Deprecated User Story: Import Planner Codes |"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Arclin Manufacturing - Demand Planning",
+        "snippet": "Arclin Manufacturing - Demand Planning\nBlueprint Workshop Notes\nClient Overview\nClient Name: Arclin Manufacturing Inc.\nIndustry: Specialty Chemicals Manufacturing\nHeadquarters: Georgia, USA\nERP System: SAP S/4HANA\nCurrent Planning Tool: Excel-based planning process\nProject Objective: Implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and\nInventory Optimization.\nCurrent Challenges\nDemand planners spend significant time consolidating forecasts from multiple regions.\nForecast accuracy is approximately 68%.\nNo centralized planning platform exists across North America and Europe."
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Table of Contents",
+        "snippet": "6.8 Hierarchies\t31\n6.9 Task Flows\t31\n6.10 Dashboards\t32\n6.10.1 Widgets\t32\n6.11 Responsibilities\t32\n6.12 Business Processes\t32\n6.13 Macros\t32\n6.14 Profile Variables\t32\n6.15 System Configuration\t32\n6.15.1 Global Settings\t33\n6.15.2 Auto Delete Settings\t33\n6.15.3 S&OP Attributes\t34\n6.15.4 Processing Rules\t34\n6.15.5 Users/Groups\t34\n6.15.6 Currencies\t37\n7 - Maintenance Considerations\t38\n7.1 Change Management\t38\n7.2 Upgrade Considerations\t38\n7.2.1 Critical Workbooks\t38\n7.2.2 Critical Scheduled Tasks/Scripts/Alerts\t38\n7.3 New Data Sources, Plants, ERP Feeds\t38\n8 - Related Project Documents\t39"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Demand Review",
+        "snippet": "The Demand Review is the first step of the S&OP process. The Unconstrained Demand Plan aligns with the company goals and initiatives."
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Add types of detailed that will provide or require further clarity (Information, Decisions, Limitations, Exclusions or Dependencies):\n| Type | Description | Status |\n| --- | --- | --- |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Add types of detailed that will provide or require further clarity (Information, Decisions, Limitations, Exclusions or Dependencies):\n| Type | Description | Status |\n| --- | --- | --- |\n| Data Requirement | Require responsibility matrix to be defined to enable effective collaboration | Open |\n| Data Requirement | Excess and Obsolete targets/Zones will be provided | Open |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Add types of detailed that will provide or require further clarity (Information, Decisions, Limitations, Exclusions or Dependencies):\n| Type | Description | Status |\n| --- | --- | --- |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Add types of detailed that will provide or require further clarity (Information, Decisions, Limitations, Exclusions or Dependencies):\n| Type | Description | Status |\n| --- | --- | --- |\n|  |  |  |\n|  |  |  |\n|  |  |  |"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Add types of detailed assumptions that will provide or require further clarity (Information, Decisions, Limitations, Exclusions or Dependencies):\n| Type | Description |\n| --- | --- |\n| Decision | Target Categories |\n| Decision | Baseline scenario used for all Targets |\n|  |  |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Add types of detailed that will provide or require further clarity (Information, Decisions, Limitations, Exclusions or Dependencies):\n| Type | Description | Status |\n| --- | --- | --- |\n|  |  |  |\n|  |  |  |\n|  |  |  |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Add types of detailed that will provide or require further clarity (Information, Decisions, Limitations, Exclusions or Dependencies):\n| Type | Description | Status |\n| --- | --- | --- |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Add types of detailed that will provide or require further clarity (Information, Decisions, Limitations, Exclusions or Dependencies):\n| Type | Description | Status |\n| --- | --- | --- |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Add types of detailed that will provide or require further clarity (Information, Decisions, Limitations, Exclusions or Dependencies):\n| Type | Description | Status |\n| --- | --- | --- |\n| Limitation | Only one forecast item can be defined per partcustomer record |  |\n| Information | Forecast items should have a 24 periods of sales history to generate a valid statistical forecast |  |\n|  |  |  |\n|  |  |  |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "|  |  |  |\n| --- | --- | --- |"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "|  |  |\n| --- | --- |"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "| Type | Description |\n| --- | --- |\n| Decision |  |\n| Decision |  |"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Responsibilities Roles:\nNote: Mapped InventoryPlanners & MasterSchedulers to SupplyPlanner role"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.2": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Arclin Manufacturing - Demand Planning",
+        "snippet": "Arclin Manufacturing - Demand Planning\nBlueprint Workshop Notes\nClient Overview\nClient Name: Arclin Manufacturing Inc.\nIndustry: Specialty Chemicals Manufacturing\nHeadquarters: Georgia, USA\nERP System: SAP S/4HANA\nCurrent Planning Tool: Excel-based planning process\nProject Objective: Implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and\nInventory Optimization.\nCurrent Challenges\nDemand planners spend significant time consolidating forecasts from multiple regions.\nForecast accuracy is approximately 68%.\nNo centralized planning platform exists across North America and Europe."
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Arclin Manufacturing - Demand Planning",
+        "snippet": "Arclin Manufacturing - Demand Planning\nBlueprint Workshop Notes\nClient Overview\nClient Name: Arclin Manufacturing Inc.\nIndustry: Specialty Chemicals Manufacturing\nHeadquarters: Georgia, USA\nERP System: SAP S/4HANA\nCurrent Planning Tool: Excel-based planning process\nProject Objective: Implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and\nInventory Optimization.\nCurrent Challenges\nDemand planners spend significant time consolidating forecasts from multiple regions.\nForecast accuracy is approximately 68%.\nNo centralized planning platform exists across North America and Europe."
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Supply Chain Map",
+        "snippet": "Copy from the Solution Blueprint and update or note how it reflects the current situation."
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Demand Planning Requirements",
+        "snippet": "Demand Planning Requirements\nForecast Management\nGenerate statistical baseline forecasts.\nSupport forecast overrides by planners.\nTrack forecast history and changes.\nSupport multiple forecast hierarchies.\nCollaboration\nAllow sales teams to provide forecast input.\nEnable approval workflows.\nProvide forecast comparison reports.\nAnalytics\nMeasure Forecast Accuracy.\nMeasure Forecast Bias.\nTrack MAPE by product family.\nProvide dashboard-based reporting.\nSupply Planning Requirements\nGenerate constrained supply plans.\nIdentify material shortages.\nSupport capacity planning.\nProvide exception-based ale"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Success Criteria",
+        "snippet": "Required Interfaces:\nProduct Master\nCustomer Master\nSales Orders\nInventory Balances\nPurchase Orders\nProduction Orders\nData Refresh Frequency:\nEvery 4 hours\nSuccess Criteria\nForecast Accuracy > 85%\nInventory Reduction > 15%\nPlanning Cycle Reduction > 30%\nImproved Planner Productivity\nSingle Source of Planning Data\nWorkshop Notes\nBusiness users emphasized the need for collaborative forecasting and visibility across regions.\nDemand planners requested automated forecast generation with the ability to manually override\nforecasts when market conditions change.\nSupply planners highlighted recurring i"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Demand Planning Requirements",
+        "snippet": "Demand Planning Requirements\nForecast Management\nGenerate statistical baseline forecasts.\nSupport forecast overrides by planners.\nTrack forecast history and changes.\nSupport multiple forecast hierarchies.\nCollaboration\nAllow sales teams to provide forecast input.\nEnable approval workflows.\nProvide forecast comparison reports.\nAnalytics\nMeasure Forecast Accuracy.\nMeasure Forecast Bias.\nTrack MAPE by product family.\nProvide dashboard-based reporting.\nSupply Planning Requirements\nGenerate constrained supply plans.\nIdentify material shortages.\nSupport capacity planning.\nProvide exception-based ale"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Success Criteria",
+        "snippet": "Required Interfaces:\nProduct Master\nCustomer Master\nSales Orders\nInventory Balances\nPurchase Orders\nProduction Orders\nData Refresh Frequency:\nEvery 4 hours\nSuccess Criteria\nForecast Accuracy > 85%\nInventory Reduction > 15%\nPlanning Cycle Reduction > 30%\nImproved Planner Productivity\nSingle Source of Planning Data\nWorkshop Notes\nBusiness users emphasized the need for collaborative forecasting and visibility across regions.\nDemand planners requested automated forecast generation with the ability to manually override\nforecasts when market conditions change.\nSupply planners highlighted recurring i"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Image: image53.png",
+        "snippet": "[Embedded Image: image53.png]\nStructured Description:\n**1. Application Context & Navigation**\n- The screenshot is from a supply chain/ERP planning tool, likely Kinaxis RapidResponse, based on the interface and terminology.\n- Multiple tabs are open at the top: Master Scheduler, Master Scheduling, Inventory Transfers, Inventory Planner, S&OP Annual Plan, S&OP Widget Details, Supply Order Analysis, MPS Widget Details, Input Data.\n**2. Filters and Selections**\n- Filters at the top:\n- S&OP Candidate\n- All Items\n- All Sites\n- Annual Plan Category: Excess Value Target\n**3. Product Hierarchy (Left Pan"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Administrator Process. (Task flow)",
+        "snippet": "This task flow was created for RapidStart."
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Identify adoption and data integrity issues. (Task flow)",
+        "snippet": "This task flow was created for RapidStart."
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.3": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Arclin Manufacturing - Demand Planning",
+        "snippet": "Arclin Manufacturing - Demand Planning\nBlueprint Workshop Notes\nClient Overview\nClient Name: Arclin Manufacturing Inc.\nIndustry: Specialty Chemicals Manufacturing\nHeadquarters: Georgia, USA\nERP System: SAP S/4HANA\nCurrent Planning Tool: Excel-based planning process\nProject Objective: Implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and\nInventory Optimization.\nCurrent Challenges\nDemand planners spend significant time consolidating forecasts from multiple regions.\nForecast accuracy is approximately 68%.\nNo centralized planning platform exists across North America and Europe."
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Arclin Manufacturing - Demand Planning",
+        "snippet": "Arclin Manufacturing - Demand Planning\nBlueprint Workshop Notes\nClient Overview\nClient Name: Arclin Manufacturing Inc.\nIndustry: Specialty Chemicals Manufacturing\nHeadquarters: Georgia, USA\nERP System: SAP S/4HANA\nCurrent Planning Tool: Excel-based planning process\nProject Objective: Implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and\nInventory Optimization.\nCurrent Challenges\nDemand planners spend significant time consolidating forecasts from multiple regions.\nForecast accuracy is approximately 68%.\nNo centralized planning platform exists across North America and Europe."
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Demand Planning Requirements",
+        "snippet": "Demand Planning Requirements\nForecast Management\nGenerate statistical baseline forecasts.\nSupport forecast overrides by planners.\nTrack forecast history and changes.\nSupport multiple forecast hierarchies.\nCollaboration\nAllow sales teams to provide forecast input.\nEnable approval workflows.\nProvide forecast comparison reports.\nAnalytics\nMeasure Forecast Accuracy.\nMeasure Forecast Bias.\nTrack MAPE by product family.\nProvide dashboard-based reporting.\nSupply Planning Requirements\nGenerate constrained supply plans.\nIdentify material shortages.\nSupport capacity planning.\nProvide exception-based ale"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Demand Planning Requirements",
+        "snippet": "Demand Planning Requirements\nForecast Management\nGenerate statistical baseline forecasts.\nSupport forecast overrides by planners.\nTrack forecast history and changes.\nSupport multiple forecast hierarchies.\nCollaboration\nAllow sales teams to provide forecast input.\nEnable approval workflows.\nProvide forecast comparison reports.\nAnalytics\nMeasure Forecast Accuracy.\nMeasure Forecast Bias.\nTrack MAPE by product family.\nProvide dashboard-based reporting.\nSupply Planning Requirements\nGenerate constrained supply plans.\nIdentify material shortages.\nSupport capacity planning.\nProvide exception-based ale"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Success Criteria",
+        "snippet": "Required Interfaces:\nProduct Master\nCustomer Master\nSales Orders\nInventory Balances\nPurchase Orders\nProduction Orders\nData Refresh Frequency:\nEvery 4 hours\nSuccess Criteria\nForecast Accuracy > 85%\nInventory Reduction > 15%\nPlanning Cycle Reduction > 30%\nImproved Planner Productivity\nSingle Source of Planning Data\nWorkshop Notes\nBusiness users emphasized the need for collaborative forecasting and visibility across regions.\nDemand planners requested automated forecast generation with the ability to manually override\nforecasts when market conditions change.\nSupply planners highlighted recurring i"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Success Criteria",
+        "snippet": "Required Interfaces:\nProduct Master\nCustomer Master\nSales Orders\nInventory Balances\nPurchase Orders\nProduction Orders\nData Refresh Frequency:\nEvery 4 hours\nSuccess Criteria\nForecast Accuracy > 85%\nInventory Reduction > 15%\nPlanning Cycle Reduction > 30%\nImproved Planner Productivity\nSingle Source of Planning Data\nWorkshop Notes\nBusiness users emphasized the need for collaborative forecasting and visibility across regions.\nDemand planners requested automated forecast generation with the ability to manually override\nforecasts when market conditions change.\nSupply planners highlighted recurring i"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.4": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Arclin Manufacturing - Demand Planning",
+        "snippet": "Arclin Manufacturing - Demand Planning\nBlueprint Workshop Notes\nClient Overview\nClient Name: Arclin Manufacturing Inc.\nIndustry: Specialty Chemicals Manufacturing\nHeadquarters: Georgia, USA\nERP System: SAP S/4HANA\nCurrent Planning Tool: Excel-based planning process\nProject Objective: Implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and\nInventory Optimization.\nCurrent Challenges\nDemand planners spend significant time consolidating forecasts from multiple regions.\nForecast accuracy is approximately 68%.\nNo centralized planning platform exists across North America and Europe."
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Arclin Manufacturing - Demand Planning",
+        "snippet": "Arclin Manufacturing - Demand Planning\nBlueprint Workshop Notes\nClient Overview\nClient Name: Arclin Manufacturing Inc.\nIndustry: Specialty Chemicals Manufacturing\nHeadquarters: Georgia, USA\nERP System: SAP S/4HANA\nCurrent Planning Tool: Excel-based planning process\nProject Objective: Implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and\nInventory Optimization.\nCurrent Challenges\nDemand planners spend significant time consolidating forecasts from multiple regions.\nForecast accuracy is approximately 68%.\nNo centralized planning platform exists across North America and Europe."
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Success Criteria",
+        "snippet": "Required Interfaces:\nProduct Master\nCustomer Master\nSales Orders\nInventory Balances\nPurchase Orders\nProduction Orders\nData Refresh Frequency:\nEvery 4 hours\nSuccess Criteria\nForecast Accuracy > 85%\nInventory Reduction > 15%\nPlanning Cycle Reduction > 30%\nImproved Planner Productivity\nSingle Source of Planning Data\nWorkshop Notes\nBusiness users emphasized the need for collaborative forecasting and visibility across regions.\nDemand planners requested automated forecast generation with the ability to manually override\nforecasts when market conditions change.\nSupply planners highlighted recurring i"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Success Criteria",
+        "snippet": "Required Interfaces:\nProduct Master\nCustomer Master\nSales Orders\nInventory Balances\nPurchase Orders\nProduction Orders\nData Refresh Frequency:\nEvery 4 hours\nSuccess Criteria\nForecast Accuracy > 85%\nInventory Reduction > 15%\nPlanning Cycle Reduction > 30%\nImproved Planner Productivity\nSingle Source of Planning Data\nWorkshop Notes\nBusiness users emphasized the need for collaborative forecasting and visibility across regions.\nDemand planners requested automated forecast generation with the ability to manually override\nforecasts when market conditions change.\nSupply planners highlighted recurring i"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Demand Planning Requirements",
+        "snippet": "Demand Planning Requirements\nForecast Management\nGenerate statistical baseline forecasts.\nSupport forecast overrides by planners.\nTrack forecast history and changes.\nSupport multiple forecast hierarchies.\nCollaboration\nAllow sales teams to provide forecast input.\nEnable approval workflows.\nProvide forecast comparison reports.\nAnalytics\nMeasure Forecast Accuracy.\nMeasure Forecast Bias.\nTrack MAPE by product family.\nProvide dashboard-based reporting.\nSupply Planning Requirements\nGenerate constrained supply plans.\nIdentify material shortages.\nSupport capacity planning.\nProvide exception-based ale"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Demand Planning Requirements",
+        "snippet": "Demand Planning Requirements\nForecast Management\nGenerate statistical baseline forecasts.\nSupport forecast overrides by planners.\nTrack forecast history and changes.\nSupport multiple forecast hierarchies.\nCollaboration\nAllow sales teams to provide forecast input.\nEnable approval workflows.\nProvide forecast comparison reports.\nAnalytics\nMeasure Forecast Accuracy.\nMeasure Forecast Bias.\nTrack MAPE by product family.\nProvide dashboard-based reporting.\nSupply Planning Requirements\nGenerate constrained supply plans.\nIdentify material shortages.\nSupport capacity planning.\nProvide exception-based ale"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.5": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Success Criteria",
+        "snippet": "Required Interfaces:\nProduct Master\nCustomer Master\nSales Orders\nInventory Balances\nPurchase Orders\nProduction Orders\nData Refresh Frequency:\nEvery 4 hours\nSuccess Criteria\nForecast Accuracy > 85%\nInventory Reduction > 15%\nPlanning Cycle Reduction > 30%\nImproved Planner Productivity\nSingle Source of Planning Data\nWorkshop Notes\nBusiness users emphasized the need for collaborative forecasting and visibility across regions.\nDemand planners requested automated forecast generation with the ability to manually override\nforecasts when market conditions change.\nSupply planners highlighted recurring i"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Success Criteria",
+        "snippet": "Required Interfaces:\nProduct Master\nCustomer Master\nSales Orders\nInventory Balances\nPurchase Orders\nProduction Orders\nData Refresh Frequency:\nEvery 4 hours\nSuccess Criteria\nForecast Accuracy > 85%\nInventory Reduction > 15%\nPlanning Cycle Reduction > 30%\nImproved Planner Productivity\nSingle Source of Planning Data\nWorkshop Notes\nBusiness users emphasized the need for collaborative forecasting and visibility across regions.\nDemand planners requested automated forecast generation with the ability to manually override\nforecasts when market conditions change.\nSupply planners highlighted recurring i"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Demand Planning Requirements",
+        "snippet": "Demand Planning Requirements\nForecast Management\nGenerate statistical baseline forecasts.\nSupport forecast overrides by planners.\nTrack forecast history and changes.\nSupport multiple forecast hierarchies.\nCollaboration\nAllow sales teams to provide forecast input.\nEnable approval workflows.\nProvide forecast comparison reports.\nAnalytics\nMeasure Forecast Accuracy.\nMeasure Forecast Bias.\nTrack MAPE by product family.\nProvide dashboard-based reporting.\nSupply Planning Requirements\nGenerate constrained supply plans.\nIdentify material shortages.\nSupport capacity planning.\nProvide exception-based ale"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Demand Planning Requirements",
+        "snippet": "Demand Planning Requirements\nForecast Management\nGenerate statistical baseline forecasts.\nSupport forecast overrides by planners.\nTrack forecast history and changes.\nSupport multiple forecast hierarchies.\nCollaboration\nAllow sales teams to provide forecast input.\nEnable approval workflows.\nProvide forecast comparison reports.\nAnalytics\nMeasure Forecast Accuracy.\nMeasure Forecast Bias.\nTrack MAPE by product family.\nProvide dashboard-based reporting.\nSupply Planning Requirements\nGenerate constrained supply plans.\nIdentify material shortages.\nSupport capacity planning.\nProvide exception-based ale"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Arclin Manufacturing - Demand Planning",
+        "snippet": "Arclin Manufacturing - Demand Planning\nBlueprint Workshop Notes\nClient Overview\nClient Name: Arclin Manufacturing Inc.\nIndustry: Specialty Chemicals Manufacturing\nHeadquarters: Georgia, USA\nERP System: SAP S/4HANA\nCurrent Planning Tool: Excel-based planning process\nProject Objective: Implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and\nInventory Optimization.\nCurrent Challenges\nDemand planners spend significant time consolidating forecasts from multiple regions.\nForecast accuracy is approximately 68%.\nNo centralized planning platform exists across North America and Europe."
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Arclin Manufacturing - Demand Planning",
+        "snippet": "Arclin Manufacturing - Demand Planning\nBlueprint Workshop Notes\nClient Overview\nClient Name: Arclin Manufacturing Inc.\nIndustry: Specialty Chemicals Manufacturing\nHeadquarters: Georgia, USA\nERP System: SAP S/4HANA\nCurrent Planning Tool: Excel-based planning process\nProject Objective: Implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and\nInventory Optimization.\nCurrent Challenges\nDemand planners spend significant time consolidating forecasts from multiple regions.\nForecast accuracy is approximately 68%.\nNo centralized planning platform exists across North America and Europe."
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "2": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "[Embedded Image: image2.png]\nThe image is a screenshot of the Table of Contents from a document titled \"RapidStart Technical Blueprint Template Rev 1.4.docx\". Below is a structured plain-text description focusing on supply chain/ERP-relevant content:\n---\n**Table of Contents**\n**1. INTRODUCTION**\n- 1.1 Company Background (p.6)\n- 1.2 Purpose (p.6)\n- 1.3 Scope (p.8)\n- 1.4 Definitions & Acronyms (p.8)\n- 1.5 Key Business Decisions (p.8)\n- 1.6 Planning Hierarchy Attributes (p.10)\n**2. BENEFIT REALIZATION**\n- 2.1 Quantitative Benefits (p.11)\n- 2.2 Qualitative Benefits (p.11)\n- 2.3 [Customer] Identifi"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Value Drivers",
+        "snippet": "Reduce inventory (ending, excess, obsolete)\nImprove service levels (OTD, planning efficiency)\nPhase-in/phase-out (excess and obsolete)\nEnsure right product is in the right warehouse at the right time (Other – freight costs)\nValue Drivers"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image6.png",
+        "snippet": "[Embedded Image: image6.png]\n**Structured Description of image6.png**\n---\n**1. Main Structure:**\nThe image is a multi-column flowchart/infographic, organized into five main vertical sections:\n- Business Objectives\n- Value Drivers\n- Advanced Planning Capabilities\n- Benefit Range\n---\n**2. Section Details:**\n**A. Business Objectives (Yellow background)**\n- Increase Revenue\n- Reduce Cost\n- COGS (Cost of Goods Sold)\n- SG&A (Selling, General & Administrative)\n- Business Continuity\n**B. Value Drivers (Blue, Brown, Orange, Navy backgrounds)**\n- For Increase Revenue:\n- Launch Optimization\n- Customer Sa"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Value Drivers",
+        "snippet": "Reduce inventory (ending, excess, obsolete)\nImprove service levels (OTD, planning efficiency)\nPhase-in/phase-out (excess and obsolete)\nEnsure right product is in the right warehouse at the right time (Other – freight costs)\nValue Drivers"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "- **Metric:**\n- Reduce Obsolete Inventory\n- Improved Constraint Utilization\n- Increased Plan Adherence\n- Improved Cumulative Lead Time Accuracy\n---\n**General Notes:**\n- The table is organized to show how supply chain/ERP capabilities map to shareholder value, primary benefit metrics, and operational metrics.\n- Metrics include both quantitative KPIs (e.g., \"Reduced Weeks of Supply\", \"Inventory Targets Plan v Actual\") and process metrics (e.g"
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image25.png",
+        "snippet": "---\n**Legends:**\n- \"Annual Plan\" (dark blue line or marker)\n- \"S&OP Candidate\" (light blue bar)\n- \"Critical: S&OP Candidate\" (red marker, only in Overloads)\n- \"Warning: S&OP Candidate\" (orange marker, only in Overloads)\n---\n**Consultant Notes:**\n- The dashboard provides key supply chain KPIs: constraint"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Quantitative Benefits",
+        "snippet": "Obsolete/excess inventory will be reduced by planning based on system recommended plans, system will look to minimise excess inventory.\nJust-In-Time planning will reduce the inventory holding cost, the materials can be ordered as and when required\nForecast accuracy will be improved more than 20% with advanced statistical forecasting models available\nDemand at Risk will be reduced to a large extent through proper planning in advance and able to cater any last-minute changes and see the impact of different options\nBetter visualisation and planning of critical capacity constraints which allows to"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Quantitative Benefits",
+        "snippet": "Quantitative Benefits"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Quantitative Benefits",
+        "snippet": "Quantitative Benefits"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Qualitative Benefits",
+        "snippet": "Qualitative Benefits"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "[Embedded Image: image2.png]\n**Structured Description of Image:**\n---\n**Title/Headers:**\n- PRIMARY BENEFIT METRIC\n- CAPABILITY\n- METRIC\n---\n**Vertical Axis (Leftmost Column):**\n- SHAREHOLDER VALUE (spans all rows)\n- REVENUE\n- COGS\n- SG&A\n- CAPITAL\n---\n**Rows and Content:**\n### REVENUE\n- **Primary Benefit Metric:**\n- LOST SALE REDUCTION\n- FORECAST ACCURACY\n- **Capability:**\n- Demand at Risk / Critical Path Analysis\n- Segmentation\n- Supply Allocation / Prioritization\n- Single Level Safety Stock Recommendation\n- **Metric:**\n- Reduced Weeks of Supply\n- Increased Forecast Accuracy\n- Improved Projec"
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image25.png",
+        "snippet": "[Embedded Image: image25.png]\nStructured Description of image25.png:\n**General Layout:**\n- The image is a dashboard from an application titled \"Operations\" with two tabs visible: \"Operations Metrics\" (selected) and \"Corporate Metrics\".\n- The dashboard is divided into four main charts, each with a title and axes.\n---\n**Top Left Chart: Constraint Utilization**\n- Y-axis: Percentage scale from 0% to 200%.\n- X-axis: Time periods from Jun-2021 to May-2022 (monthly).\n- Data:\n- Light blue bars labeled \"S&OP Candidate\" for each month.\n- A dark blue line labeled \"Annual Plan\" runs across the months, hov"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image6.png",
+        "snippet": "- Scenario Modeling\n- Managing shelf-life and expiry\n- Exception/Alert monitoring\n- For Business Continuity:\n- Scenario modelling, impact analysis, risk mitigating scenarios\n- Eliminate manual lot matching to support jurisdictional control\n**D. Benefit Range (Grey circles, rightmost column)**\n- Improved Customer Service >25%\n- Reduce Excess & Obsolescence 15%–25%\n- Improved resource efficiency 10%–20%\n- Planning Cycle Time Reduction 25%–35%\n- Inventory & Carrying Cost Savings 10%–30%\n- Reduce Premium Freight Cost 15%–25%\n---\n**3. Visual Elements:**\n- Color-coded boxes and arrows connect object"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "4.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Demand Planning Requirements",
+        "snippet": "Demand Planning Requirements\nForecast Management\nGenerate statistical baseline forecasts.\nSupport forecast overrides by planners.\nTrack forecast history and changes.\nSupport multiple forecast hierarchies.\nCollaboration\nAllow sales teams to provide forecast input.\nEnable approval workflows.\nProvide forecast comparison reports.\nAnalytics\nMeasure Forecast Accuracy.\nMeasure Forecast Bias.\nTrack MAPE by product family.\nProvide dashboard-based reporting.\nSupply Planning Requirements\nGenerate constrained supply plans.\nIdentify material shortages.\nSupport capacity planning.\nProvide exception-based ale"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Demand Planning Requirements",
+        "snippet": "Demand Planning Requirements\nForecast Management\nGenerate statistical baseline forecasts.\nSupport forecast overrides by planners.\nTrack forecast history and changes.\nSupport multiple forecast hierarchies.\nCollaboration\nAllow sales teams to provide forecast input.\nEnable approval workflows.\nProvide forecast comparison reports.\nAnalytics\nMeasure Forecast Accuracy.\nMeasure Forecast Bias.\nTrack MAPE by product family.\nProvide dashboard-based reporting.\nSupply Planning Requirements\nGenerate constrained supply plans.\nIdentify material shortages.\nSupport capacity planning.\nProvide exception-based ale"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Arclin Manufacturing - Demand Planning",
+        "snippet": "Arclin Manufacturing - Demand Planning\nBlueprint Workshop Notes\nClient Overview\nClient Name: Arclin Manufacturing Inc.\nIndustry: Specialty Chemicals Manufacturing\nHeadquarters: Georgia, USA\nERP System: SAP S/4HANA\nCurrent Planning Tool: Excel-based planning process\nProject Objective: Implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and\nInventory Optimization.\nCurrent Challenges\nDemand planners spend significant time consolidating forecasts from multiple regions.\nForecast accuracy is approximately 68%.\nNo centralized planning platform exists across North America and Europe."
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Arclin Manufacturing - Demand Planning",
+        "snippet": "Arclin Manufacturing - Demand Planning\nBlueprint Workshop Notes\nClient Overview\nClient Name: Arclin Manufacturing Inc.\nIndustry: Specialty Chemicals Manufacturing\nHeadquarters: Georgia, USA\nERP System: SAP S/4HANA\nCurrent Planning Tool: Excel-based planning process\nProject Objective: Implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and\nInventory Optimization.\nCurrent Challenges\nDemand planners spend significant time consolidating forecasts from multiple regions.\nForecast accuracy is approximately 68%.\nNo centralized planning platform exists across North America and Europe."
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Success Criteria",
+        "snippet": "Required Interfaces:\nProduct Master\nCustomer Master\nSales Orders\nInventory Balances\nPurchase Orders\nProduction Orders\nData Refresh Frequency:\nEvery 4 hours\nSuccess Criteria\nForecast Accuracy > 85%\nInventory Reduction > 15%\nPlanning Cycle Reduction > 30%\nImproved Planner Productivity\nSingle Source of Planning Data\nWorkshop Notes\nBusiness users emphasized the need for collaborative forecasting and visibility across regions.\nDemand planners requested automated forecast generation with the ability to manually override\nforecasts when market conditions change.\nSupply planners highlighted recurring i"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Success Criteria",
+        "snippet": "Required Interfaces:\nProduct Master\nCustomer Master\nSales Orders\nInventory Balances\nPurchase Orders\nProduction Orders\nData Refresh Frequency:\nEvery 4 hours\nSuccess Criteria\nForecast Accuracy > 85%\nInventory Reduction > 15%\nPlanning Cycle Reduction > 30%\nImproved Planner Productivity\nSingle Source of Planning Data\nWorkshop Notes\nBusiness users emphasized the need for collaborative forecasting and visibility across regions.\nDemand planners requested automated forecast generation with the ability to manually override\nforecasts when market conditions change.\nSupply planners highlighted recurring i"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "4.2": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Demand Planning Requirements",
+        "snippet": "Demand Planning Requirements\nForecast Management\nGenerate statistical baseline forecasts.\nSupport forecast overrides by planners.\nTrack forecast history and changes.\nSupport multiple forecast hierarchies.\nCollaboration\nAllow sales teams to provide forecast input.\nEnable approval workflows.\nProvide forecast comparison reports.\nAnalytics\nMeasure Forecast Accuracy.\nMeasure Forecast Bias.\nTrack MAPE by product family.\nProvide dashboard-based reporting.\nSupply Planning Requirements\nGenerate constrained supply plans.\nIdentify material shortages.\nSupport capacity planning.\nProvide exception-based ale"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Success Criteria",
+        "snippet": "Required Interfaces:\nProduct Master\nCustomer Master\nSales Orders\nInventory Balances\nPurchase Orders\nProduction Orders\nData Refresh Frequency:\nEvery 4 hours\nSuccess Criteria\nForecast Accuracy > 85%\nInventory Reduction > 15%\nPlanning Cycle Reduction > 30%\nImproved Planner Productivity\nSingle Source of Planning Data\nWorkshop Notes\nBusiness users emphasized the need for collaborative forecasting and visibility across regions.\nDemand planners requested automated forecast generation with the ability to manually override\nforecasts when market conditions change.\nSupply planners highlighted recurring i"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Demand Planning Requirements",
+        "snippet": "Demand Planning Requirements\nForecast Management\nGenerate statistical baseline forecasts.\nSupport forecast overrides by planners.\nTrack forecast history and changes.\nSupport multiple forecast hierarchies.\nCollaboration\nAllow sales teams to provide forecast input.\nEnable approval workflows.\nProvide forecast comparison reports.\nAnalytics\nMeasure Forecast Accuracy.\nMeasure Forecast Bias.\nTrack MAPE by product family.\nProvide dashboard-based reporting.\nSupply Planning Requirements\nGenerate constrained supply plans.\nIdentify material shortages.\nSupport capacity planning.\nProvide exception-based ale"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Success Criteria",
+        "snippet": "Required Interfaces:\nProduct Master\nCustomer Master\nSales Orders\nInventory Balances\nPurchase Orders\nProduction Orders\nData Refresh Frequency:\nEvery 4 hours\nSuccess Criteria\nForecast Accuracy > 85%\nInventory Reduction > 15%\nPlanning Cycle Reduction > 30%\nImproved Planner Productivity\nSingle Source of Planning Data\nWorkshop Notes\nBusiness users emphasized the need for collaborative forecasting and visibility across regions.\nDemand planners requested automated forecast generation with the ability to manually override\nforecasts when market conditions change.\nSupply planners highlighted recurring i"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Arclin Manufacturing - Demand Planning",
+        "snippet": "Arclin Manufacturing - Demand Planning\nBlueprint Workshop Notes\nClient Overview\nClient Name: Arclin Manufacturing Inc.\nIndustry: Specialty Chemicals Manufacturing\nHeadquarters: Georgia, USA\nERP System: SAP S/4HANA\nCurrent Planning Tool: Excel-based planning process\nProject Objective: Implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and\nInventory Optimization.\nCurrent Challenges\nDemand planners spend significant time consolidating forecasts from multiple regions.\nForecast accuracy is approximately 68%.\nNo centralized planning platform exists across North America and Europe."
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Arclin Manufacturing - Demand Planning",
+        "snippet": "Arclin Manufacturing - Demand Planning\nBlueprint Workshop Notes\nClient Overview\nClient Name: Arclin Manufacturing Inc.\nIndustry: Specialty Chemicals Manufacturing\nHeadquarters: Georgia, USA\nERP System: SAP S/4HANA\nCurrent Planning Tool: Excel-based planning process\nProject Objective: Implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and\nInventory Optimization.\nCurrent Challenges\nDemand planners spend significant time consolidating forecasts from multiple regions.\nForecast accuracy is approximately 68%.\nNo centralized planning platform exists across North America and Europe."
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "2.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image5.png",
+        "snippet": "[Embedded Image: image5.png]\nStructured Description of image5.png:\nTitle/Quote:\n- “Making sure the right product, is in the right place, at the right time”\nTable/Diagram Structure:\n- The image is a three-column matrix with connecting lines, showing relationships between Key Issues, Root Causes, and To-Be Directions in a supply chain context.\nColumn 1: Key Issues (left, color-coded)\n- Green (Demand):\n- Low forecast accuracy at SKU level\n- High demand variability due to customer ordering habits\n- Missing mid & long-term forecasting\n- Purple (Supply):\n- Lack supply agility to demand variability\n-"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Image: image5.png",
+        "snippet": "[Embedded Image: image5.png]\nStructured Description:\nTitle/Quote:\n- “Making sure the right product, is in the right place, at the right time”\nTable/Diagram Structure:\n- The image is a three-column flow diagram with the following headers:\n1. Key issues\n2. Root Cause\n3. To-Be Directions\nColumn 1: Key issues (color-coded by category)\n- Green (Demand):\n- Low forecast accuracy at SKU level\n- High demand variability due to customer ordering habits\n- Missing mid & long-term forecasting\n- Purple (Supply):\n- Lack supply agility to demand variability\n- Limited collaboration with suppliers to identify co"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Ending Inventory | As a Planner, I want the visibility of period ending inventory in value and volume |\n|  | Inventory Targets | As a Planner, I want to define and adjust inventory targets, Ending Inventory, Minimum, Maximum and Periods of supply. |\n|  | Inventory Quality Ratio (IQR) | As a Planner, I want to configure the definitions of Active, Excess, Slow, and Obsolete inventory. |\n|  | Slow moving, Excess and Obsolete | As a Planner, I want the visibility of slow moving, excess and obsolete inventories by period. |\n|  | Stock Out"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Value Drivers",
+        "snippet": "Reduce inventory (ending, excess, obsolete)\nImprove service levels (OTD, planning efficiency)\nPhase-in/phase-out (excess and obsolete)\nEnsure right product is in the right warehouse at the right time (Other – freight costs)\nValue Drivers"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Quantitative Benefits",
+        "snippet": "Obsolete/excess inventory will be reduced by planning based on system recommended plans, system will look to minimise excess inventory.\nJust-In-Time planning will reduce the inventory holding cost, the materials can be ordered as and when required\nForecast accuracy will be improved more than 20% with advanced statistical forecasting models available\nDemand at Risk will be reduced to a large extent through proper planning in advance and able to cater any last-minute changes and see the impact of different options\nBetter visualisation and planning of critical capacity constraints which allows to"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Dashboard: Inventory Planner",
+        "snippet": "The Excess and Obsolete tab reports\nExcess Value\nObsolete Value"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Value Drivers",
+        "snippet": "Reduce inventory (ending, excess, obsolete)\nImprove service levels (OTD, planning efficiency)\nPhase-in/phase-out (excess and obsolete)\nEnsure right product is in the right warehouse at the right time (Other – freight costs)\nValue Drivers"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 249 | Ability to project future sales and operational performance to support the S&OP workflow | Performance can be reported based on the defined KPI or measures |\n| 250 | Ability to feed in the following data points at a SKU-Location level (product, customer sold-to, supply location): standard cost, average selling price, customer contract price | Can feed all these data through integration |\n| 251 | Ability to feed in point-to-point transfer costs | Can feed the transfer cost data through integration or while creating the inventory transfer within Maestro |\n| 252 | Ability to scenario plan"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Resolve Inventory Exceptions",
+        "snippet": "The solution design with consist of the following capabilities:\nThe ability to view the ending inventories in value and volume\nThe ability to view inventory exceptions\nThe ability to view periods of coverage\nThe ability to view out-of-stocks and recovery date.\nThe ability to view exceptions by minimum and maximum stock levels and recovery dates\nThe ability to define slow moving, excess and obsolete stock levels"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Supply Imbalances & Review Inventory",
+        "snippet": "This is the fourth Level 3 process on Supply Planning & Order Management, which is mainly for the Supply Planner to analyze the inventory shortfall (or) excess inventory based on the updated supply plan and resolve the bottlenecks and supply issues to the maximum possible and after that review the SLOBS, Black Stock information."
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Configure S&OP process activities | As the S&OP Process Owner, I want to have the ability to adjust the process template that outlines the activities. |\n|  | Create an S&OP process instance | As the S&OP Process Owner, I want to create a process instance to imitate the start of the demand planning process cycle. |\n|  | Start S&OP cycle or sub-cycle | As an S&OP Process Owner, I want to be able to trigger the start of a new S&OP cycle or sub-cycle so that I can initiate the S&OP process to be followed and executed by S&OP Team members"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Update annual plan targets | As a Finance Planner, I want the ability update the annual plan to align with current corporate objectives. |\n|  | Compare annual plan targets | As a Finance Planner, I want to compare adjustments made to annual plan targets to previous targets so that I can understand the impact of any changes on organizational corporate metrics. |\n|  | Manage annual plan assumptions | As a Finance Planner, I want to review, update and add new assumptions related to annual plan adjustments for future reference. |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Forecast Item Definition | As a Demand Planner, I want to create forecast items at the correct hierarchy level so that I can generate a statistical forecast. |\n|  | Assignment | As a Demand Planner, I want the ability to assign and detach a statistical forecast item form the part customer record. |\n|  | Profiles | As a Demand Planner, I want the ability to assign NPI/EOL demand profiles to the statistical forecast item. |\n|  | Parameters | As a Demand Planner, I want to have the ability to define and adjust the parameters of the stat"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Validate Sales history | As a Demand Planner, I want to validate Sales History value and volume data using hierarchies |\n|  | Cleanse errors | As a Demand Planner, I want to validate and adjust sales history for data errors (‘0’ periods) |\n|  | Adjust Outliers | As a Demand Planner, I want to validate and adjust sales history for outliers |\n|  | Adjust Casuals | As a Demand Planner, I want to validate and adjust sales history for causals (promotions) |\n|  | Cleanse forecast input data | As a Demand Planner, I want to validate and Sal"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Statistical Forecast Accuracy | As a Demand Planner, I want to review the accuracy of the historical statistical forecast in order to improve or correct the statistical forecast. |\n|  | Forecast Item Definition | As a Demand Planner, I want to create forecast items so that I can generate a statistical forecast at the correct level. |\n|  | Forecast Item Parameters | As a Demand Planner, I want to have the ability to select the statistical model to ensure that the statistical forecast generated is as accurate as possible. |\n|  | Foreca"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | New Products, Sources and Customers | As a Global Demand Planner, I want to define demand profiles for new and EOL products and assign to Statistical Forecast Item |\n|  | Finance Demand Review | As a Finance Planner, I want to review Finance Dashboard (containing applicable metrics) so that I can determine the necessary adjustments to demand for this cycle. |\n|  | Finance Demand Input | As a Finance Planner, I want the ability to adjust forecast, add assumptions at different levels of hierarchy and disaggregate automatically to lower"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Demand Ratios | As a Global Demand Planner, I want to be able to adjust the percentage that each demand input uses to calculate the unconstrained demand plan |\n|  | Unconstrained Demand Plan | As a Global/Regional Demand Planner, I want the ability to view the individual forecast inputs and the calculated consensus demand plan. |\n|  | Adjustment/ Override | As a Global/Regional Demand Planner, I want the ability to provide an adjustment override to calculated consensus demand plan. |\n|  | Compare | As a Global/Regional Demand Planner"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Demand & Supply Visibility | As a Regional/Global Demand Planner, I want the ability to view the demand and supply picture to determine any supply planning collaboration to mitigate demand at risk or rebalance demand. |\n|  | Override the consensus demand plan quantity | As a Regional/Global Demand Planner, I want to have the ability to override the consensus forecast quantity to rebalance the demand against the available supply to generate a constrained demand plan. |\n|  | Simulations | As a Regional/Global Demand Planner, I want to "
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story | Summary | Description |\n| --- | --- | --- |\n|  | Responsibility | As a Supply Network Planner, I want to view and update the master planner, production planner and supply network planner responsible for the part. |\n|  | Life Cycle | As a Supply Network Planner, I want the ability to identify the life cycle of a part (e.g. NPI, GA, EOL) |\n|  | Supply Stage | As a Supply Network Planner, I want the ability to identify the supply stage of a part (e.g. FG, WIP, RAW) |\n|  | Bill of Material | As a Supply Network Planner, I want the ability to view, update and simulate changes to BOM for d"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Define safety stock items | As a Supply Network Planner, I want to define new parts as safety stock items so that I can include those items in the calculations for recommended safety stock levels, and subsequent reporting. |\n|  | Safety stock item method (model) | As a Supply Network Planner, I want the ability to select the method (model) for planning safety stock so that I have the flexibility to alternate between models in simulations. |\n|  | Service Level | As a Supply Network Planner, I want the ability to adjust the desired ser"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "|  | Collaborate | As a Supply Network Planner, I want to collaborate with the planners to ensure the feasibility of any safety stock level recommendations I am accepting, especially if it has an impact inside lead-time. |\n|  | Manage assumptions | As a Supply Network Planner, I want to review, update and add assumptions related to changes I made in the safety stock recommendations. |\n|  | Manual Closed-Loop transactions | As a Supply Network Planner, I want to identify any parts for which I have made changes to the safety stock quantity to ensure adjustments are made in the ERP systems. |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Constraint Process | As a Production or Master Planner, I want to be able to review, add, maintain and communicate activities and tasks within the Capacity Planning (Constraints) |\n|  | Assign constraint target values | As a Production or Master Planner, I want to assign target values for constraint usage so that I can display targets in monitoring resources. |\n|  | Create constraints | As a Production or Master Planner, I want to add and update constraints and define their usage by Part |\n|  | Assign parts | As a Production or Maste"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Supply Plan | As a Master & Production Planner, I want the ability to view the impact of supply plan changes and their impact on targets and metrics. |\n|  | Firm ‘New’ Supply Orders | As a Master Planner, I want the ability automatically convert planned orders into ‘Firm’ planned orders for Scheduling. |\n|  | Firm Supply Orders | As a Master & Production Planner, I want the ability view supply orders in the Frozen and Scheduling Zone |\n|  | Frozen Zone Scheduling | As a Production Planner, I want the ability to drill to specific supp"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "|  | Late Revenue Caused by SP orders | As a Planner, I need to see the Late Revenue Caused by Supply Plan Orders so that I can evaluate the appropriate course of action. |\n|  | Constraints Impact | As a Planner, I need to see the Constraints Impacting Supply Plan so that I can evaluate the appropriate course of action. |\n|  | Component Shortages Impacting SP | As a Planner, I need to see the Component Shortages Impacting Supply Plan so that I can evaluate the appropriate course of action. |\n|  | Component Shortages by days to SP Start Date | As a Planner, I need to see the Component Shortages"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "|  | Obsolete Value | As a Planner, I need to see a time phased measurement of Obsolete Value over a horizon so that I can identify the appropriate disposition. |\n|  | SP Exceptions | As a Planner, I need to see the new exceptions as compared to a previous scenario, to include Late and Later revenue Caused by Supply Plan orders, Late Supply Plan orders, Planned orders, Number of constraint overloads / underloads, component shortages implicating Supply Plan, and High / low inventory violations so that I can identify the most recent changes to my Supply Plan that need action. |\n|  | Allocation |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Frozen Zone | As a Production Planner, I need to identify all supply orders exceptions in the ‘frozen’ zone that are at risk (Supply Available Date > Supply Due Date). |\n|  | Scheduling Zone | As a Master Planner, I need to identify all supply orders exceptions in the ‘frozen’ and ‘scheduling’ zone that are at risk (Supply Available Date > Supply Due Date). |\n|  | Demand Risk | As a Supply Network or Master Planner, I need to identify demands at risk (Supply Available Date > Demand Need Date). |\n|  | Volatility | As a Planner, I need"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "User Stories",
+        "snippet": "| Story # | Summary | Description |\n| --- | --- | --- |\n|  | Publish “Firm” Supply Plan in Scheduling Zone | As a Supply Network Planner, I want the ability to publish the “Firm” supply in the scheduling zone to the ERP system. |\n|  | Publish “Planning” Supply Plan | As a Supply Network Planner, I want the ability to publish the “Planned” supply in the Planning zone to the ERP system. |\n|  | Supply Plan History | As a Supply Network Planner, I want the ability to store the published supply plan into history. |\n|  | Inventory Plan History | As a Supply Network Planner, I want the ability to sto"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "The user stories are linked to the Demand Planning – Create a Consensus Demand Plan epic.\n| RFP ID | Functional Requirements | Comments |\n| --- | --- | --- |\n| 1 | Ability to have an automated forecasting tool which sources and consolidates historical and current sales data and predicts future demand for a selectable period (e.g. last year, current year and next financial year) | Statistical Forecasting will cover this requirement, which consolidates historical demand and predicts future demand |\n| 2 | Ability to upload data from external sources to feed into creation of Demand Plans including"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 7 | Ability to share (subsets of) generated forecasts with relevant parties | Able to export the Forecast from Maestro and manually share with others (or) setup Alerts to share the forecasts to the target users |\n| 8 | Ability to extract the forecast at configurable levels, e.g. Product level and submit / resubmit forecasts for approval, including to one or more approvers | Approval mechanism can be established at configurable product levels through Hierarchy |\n| 9 | Ability to automatically notify (email, in-system notifications, dashboard) personnel if they are assigned as approvers | If a"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 15 | Ability to upload bulk changes to the forecast with reason codes and comments | Able to upload bulk changes to Forecast, the reason code and comments will be captured through Assumptions |\n| 16 | Ability to generate an automated electronic audit trail recording username, date and timestamps, and the type of action (create, modify, delete), reason code and comments. | Scenario properties can show the user made changes with all the necessary details |\n| 17 | Ability to create graphical representations of Forecasts and see constraints | Can see the Forecast if it is late and find out the c"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 24 | Ability to allow the users to create forecasts at different levels of the product hierarchy, such as by SKU item, region, category, channel, store and customers | Users can upload the Forecast at Product/Site/Customer level at Monthly buckets |\n| 25 | Ability to manage forecasts using multiple demand hierarchies at the same time, and to forecast each SKU item or grouping of SKUs at different levels of the hierarchies (channel or product hierarchies) | Handled through Forecast Item configuration |\n| 26 | Ability to review & edit multiple forecasts within a single location (e.g. , B2B, B2"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 32 | Ability for the user to manually override the statistical model the system provided | Covered by the Statistical Forecasting process, statistical model can be chosen |\n| 33 | Ability to set on and off of the automated statistical modelling for a defined period time | You can set Start and Stop date for the statistical forecast generation |\n| 34 | Ability for the user to set the future date to start the statistical model | Forecast Start Offset can be provided to set the future date to start the statistical model |\n| 35 | Ability to provide a calendar that outlines key dates - production"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 42 | Ability to provide recommendation on how to adjust the forecast to maximise accuracy and efficiency | Unconstrained Forecast Adjustments can be done easily |\n| 43 | Ability to include external requirements to integrate with weather data, social media, competitor sales data, market trends data in forecast calculations | It can be achieved through advanced forecasting algorithms in Maestro, but not in the scope of the initial release. |\n| 44 | Ability to apply internal and external causal factors through machine learning to enhance or replace statistical forecast calculations | It can be "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 50 | Ability to use historical data from one or more existing products to create a forecast for the new product | Covered by history labelling and statistical forecasting process |\n| 51 | Ability to generate new product introduction and product run out forecast reporting | Can define NPI/EOL profile points and generate the report as well |\n| 52 | Ability to integrate forecasts from demand tool to downstream planning systems both scheduled and ad hoc, at selected level. | Through closed-loop, Maestro can send out the Forecast data which will be picked up by the Integration tool to send to any"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 59 | Ability to enter or upload manual forecasting | Manual Forecast can be uploaded through the External Forecast Upload workbook |\n| 60 | Ability to auto-cleanse historical data and receive recommendations of cleansing activity | Data Cleansing Activity, supported by standard workbook \"Data Cleansing\" |\n| 61 | Ability to view graphs and visualisation for all forecasting data and activities | Graphical visualization can be configured |\n| 62 | Ability to support demand sensing/AI capabilities to generate a demand forecast | Maestro has the demand sensing/AI capabilities, but not in the scope"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 69 | Ability of the system to identify key forecast exceptions (low sales, high sales, no sales, change in trend, new line, etc) | Maestro can identify the exceptions based on the defined rules |\n| 70 | Ability to support user notes to maintain/digitise forecasting knowledge | User can add Assumptions to capture Notes based on the selected hierarchy |\n| 71 | Ability to support a demand planner workflow, supporting scheduled activities and prioritised exceptions to manage | Task flows can be provided with necessary details |\n| 72 | Ability to segment a demand planner product portfolio from ot"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| New 02 | We could sell X amount to customers but limited by purchase of supply. Forward-forecast volumes Forward-forecast financial result If these don't reconcile, then we know we can't forecast the production/distribution. | Based on the forecast volumes, the financials will be calculated |\n| New 03 | Sometimes a customer is sold to another customer and we want to map the sold customer to the bought customer and bring across the data. It's not possible in SAP it seems but potentially in integration to be transformed. Or we can do it Maestro (will be determined in technical chat). Statistic"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| RFP ID | Functional Requirements | Comments |\n| --- | --- | --- |\n| 242 | Ability to provide an S&OP workflow in system (ability to customize a standard S&OP workflow) | Task Flows and Process are available in Maestro |\n| 243 | Ability to define user roles in a S&OP workflow | Within each S&OP process instances, can assign the tasks to the users |\n| 244 | Ability to define geographic domains in a S&OP workflow | Maestro S&OP responsibilities, reporting and filtering can be defined by geographic domains |\n| 245 | Ability to generate volume, working capital and financial projections including "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 83 | Ability to automatically notify (email, in-system notifications, dashboard) personnel if they are assigned as approvers | Notification can be sent out through alerts to the approvers based on a defined frequency. |\n| 84 | Ability to automatically track the approval of a Supply Plan including approver names, approver titles, status of approvals, reason code and comments | Tracking approvals on the Supply Plan can be configured |\n| 85 | Ability for approvers to view and approve or reject a Supply Plan with reason codes and comments | Approvers can have the option to either approve or reje"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 91 | Ability to integrate with the product cost and Customer pricing models to support financial forecasts with the ability to do scenario modelling and predictive pricing based on a variety of methods (e.g. statistical & historical). This relates to all types of Planning. | All the Cost & pricing information can be brought into Maestro, and the reports can be built based on that. |\n| 92 | Ability to create graphical representations of Supply Plans and see constraints | Graphical representations of Supply Plan can be reported, with drill link to attached constraint details |\n| 93 | Ability t"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 99 | Ability to apply multiple stock level requirements (safety and cycle stock) | Several safety stock methods are available, Safety Stock can also be calculated based on the current calculation. Cycle Stock can be achieved through Days of Supply calculations |\n| 100 | Ability to load or calculate demand that is not part of the forecast but would drive supply requirements throughout the network e.g. WIP/RAWs for FGs | Demand which doesn't consume forecast can be loaded which would drive the supply requirements throughout the network |\n| 101 | Ability to apply replenishment on and off dates "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 105 | Ability to provide reporting which pulls in expiry dates per batch and displays all SKU's per location within X days shelf life remaining (X needs to be a value specified per receiving location and have the ability to exclude these volumes from future replenishment calculations e.g. If a SKU has a volumes of 100x units expiring next week - at point X these 100 units should be excluded from SOH calculations) | Expiry is not considered in the initial implementation. If considered in the later release, mentioned reporting is feasible |\n| 106 | Ability to provide visibility into the aged i"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 112 | Ability to interactively run/execute planning at daily, weekly or monthly level | Maestro is always ON, whenever you open a report/Dashboard, the results are instant |\n| 113 | Ability to generate system optimized inventory requirements to satisfy user defined service levels at a multiple level | With the Maestro Inventory Planning and Optimization, users can identify strategic safety stock inventory levels based on customer service levels, supply variability, forecast error and bias; Inventory Optimization is not considered in the initial implementation |\n| 114 | Ability to prioritize "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 119 | Ability to manage multiple sources of supply for a SKU using prioritization | Priority can be defined between multiple PartSources of a Part/Site |\n| 120 | Ability to manage multiple lead times for the same source of supply for SKU using prioritization | Multiple Lead Time can be managed for the same source of supply in different time periods or for different Transportation Mode with priorities defined |\n| 121 | Ability to select an alternate source or alternate lead time on same route by exception | Exceptional change of Sources is feasible manually |\n| 122 | Ability to manage source "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 127 | Ability to prioritize products based on their type, etc. | Priority can be defined at multiple places such as demand, supply, PartCustomer etc., |\n| 128 | Ability to suggest and build loads based on specific product parameters including dangerous goods identification | Dangerous Goods are not in the scope |\n| 129 | Ability to set automated approval & release thresholds (based on business rules around: product ranking, cost, value and/or volume) for replenishment | Approval mechanism can be established |\n| 130 | Ability to enable replenishment orders to be approved or rejected by design"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 136 | Ability to share replenishment order volumes with sending and receiving locations | Orders will be at the receiving location and the requirement forecast will be shared with the sending location |\n| 137 | Ability to share replenishment plan volumes with sending and receiving locations over a defined future period | Can share the plan volumes by defined period |\n| 138 | Ability to project workload effort and cost at sending or receiving locations based on the planned volume of orders | Load can be projected over the capacity constraint and cost can be reported based on volume |\n| 139 | "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 143 | Ability to handle exceptions, for example, extend shelf time | Exceptions can be handled manually |\n| 144 | Ability to rough cut capacity plan resources and locations along replenishment lanes and sending and receiving locations | RCCP can be done with the capacity/resource constraints |\n| 145 | Ability to interactively load-level based on rough cut capacity smoothing | Firm up the system generated plan and do the levelling based on the capacity report output or pre-plan can be setup which will pull the late supply to earlier dates where there is an available capacity |\n| 146 | Ability"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 152 | Ability to support Bill of Material (BOM) replenishment for parent to child relationships/dependent requirements | Maestro plan for dependent part replenishment when there is change in the demand plan |\n| 153 | Ability to provide a report that shows all stock risks with a specified horizon (SKU, location, current inventory level, safety stock, demand forecast, lead time, projected stock level total demand, safety stock) prioritized by product class, lost sales risk or priority customer | Inventory Projection Report with all the necessary details can be created |\n| 154 | Ability to indi"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 157 | Ability to support a replenishment planner workflow, supporting scheduled activities and prioritized exceptions to manage | Task flows can be provided with necessary details |\n| 158 | Ability to support a replenishment manager workflow, supporting scheduled activities and highlight group demand planner exception priorities | Task flows can be provided with necessary details |\n| 159 | Ability to support a centralized and regionalized planners working in concert/parallel | Maestro is a concurrent planning tool, it supports the planners working in parallel |\n| 160 | Ability to segment a r"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 165 | Pre-build and run-down stock over a define period in alignment with seasonality | Prebuild can be allowed and control the planned order generation to run-down the stock over a period |\n| 166 | Multi-echelon safety stock optimization to drive optimal stock levels in the network, and show scenario modelling for changes | MEIO is supported in Maestro, it is not considered in the initial implementation |\n| 167 | Support multiple / alternative sources of supply (Purchase/Manufactured) - volume based, lead time based and cost-based scenarios | Multiple sources of Supply including the Make/Tr"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| RFP ID | Functional Requirements | Comments |\n| --- | --- | --- |\n| 390 | While Distribution Planning is out of scope for this project, the system needs: Ability to upload and include the distribution plan to be taken into account as a constraint/factor in optimizing the production plan | Maestro will consider the distribution plan from the Dispatcher as the demand and drive the production plan accordingly |\n| 391 | Should Ixom consider utilizing this software for distribution planning in the future, does the system have the functionality to: | Not evaluated yet |\n| 392 | Ability to have an "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 396 | Ability for the forecast to provide input into Supply Chain budgets (e.g. Warehouse) to assist with cost calculations and financial forecasts | Can be configured |\n| 397 | Ability for the forecast to enable a rough-cut capacity plan to convert into a Warehousing and Logistics plan and capacity model both for internal sites and 3PL Warehousing, Storage and Toll Manufacturers Sites | Warehousing report will be configured, Logistics plan will be out of scope |\n| 398 | Ability to assign storage capacity limits to Warehouses | Handled through Warehouse Capacity Report in which you can enter"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 404 | Ability to view a Stock Transfer Orders in one central location | Can report all the Stock Transfer Order in a single worksheet |\n| 405 | Ability for forecasts to be integrated in real time (predetermined point in time) with an Inventory Management system to support the Distribution Planning Process to ensure scheduled orders are achievable | Forecast can be pushed to main planning scenario and supports/drive the Distribution Planning |\n| 406 | Ability to create, and electronically send or make available in Vendor facing portal delivery documentation, using a selection of standard bran"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| RFP Id | Functional Requirements | Comments |\n| --- | --- | --- |\n| 204 | Ability to auto-generate purchase order plans from finished goods demand and safety stock calculations | Maestro MRP algorithm automatically generates purchase order plans based on the demand coming from the finished goods and the safety stock |\n| 205 | Ability to auto-generate purchase order plans for materials and components from MRP calculations to support production requirements | Maestro MRP algorithm automatically generates purchase order plans for raw materials (purchased products) to support production requirem"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 211 | Ability to suggest new orders that adhere to the defined batch size rule | New Planned Orders will stick to the batch size (Lot size - Minimum, Maximum, Multiple) |\n| 212 | Ability to consolidate dependent requirements for like SKUs (i.e. all 75mL regional variants under one Parent) to suggest like SKUs to pair up and run together in one batch e.g. Life Sciences - multiple size sales units for a specific flavour) | Based on the Bill Of Material information, dependent requirements of the associated SKUs will be calculated |\n| 213 | Ability to source data from multiple sources to show in"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 218 | Ability to generate a report that identifies shortage of required components, packaging material or dependant items needed to fulfill the planned and confirmed orders, so that we could identify potential issues | Supply Order Analysis facilitates identifying the potential issues interms of capacity and material |\n| 219 | Ability to set a MOQ for a group of related products, so that we could optimize their purchasing/production and inventory levels. | MOQ can be setup for a group of related products, but it will be stored at individual PartSource level |\n| 220 | Ability to identify the "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 225 | Ability to enforce the purchase of items only in full pallet or outer box multiples, as specified in the MOQ, EOQ. | Supported through the Lot size (Minimum, Maximum, Multiple) |\n| 226 | Ability to enable the NPD planner to plan at the product level, and manage material constraints | NPD can be supported for planning at the product/site level or at a product/common site level. |\n| 227 | Ability to drill down on FGs to the individual materials in the BOM to ensure accurate planning and inventory management | BOM Analysis can show all the materials in the BOM under a selected FG, drill l"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 232 | Ability to create long term import order suggestions | Maestro can suggest the long-term import order suggestions based on the Forecast |\n| 233 | Ability to create order consolidation recommendations for imported orders from similar locations based on containerisation and product affinity rules | Can achieve the order consolidation through customization, manual inputs required. |\n| 234 | Ability to consider specified customer constraints or requirements in its order generation (e.g. weight requirements, pallet order requirements etc) | Capacity Constraints can be setup, order requireme"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 240 | Ability to demonstrate SKU level MOQ, product family MOQ | All MOQs are set up the Part Source level |\n| 241 | Ability to provide visibility of SKU inventory in quality hold, and when it will be released (time phased supply plan should account for the release of inventory from quality hold to available for use) | Blocked Inventory can be visible with detail information |"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| RFP ID | Functional Requirements | Comments |\n| --- | --- | --- |\n| 169 | Ability to have an automated planning/forecasting tool which consolidates data to develop Production Plans (which includes products to be produced, quantities and due dates) for a defined period from multiple sources, e.g.: Sales Orders, Stock Transfer Orders, Safety Stock levels, Finished Goods, Raw Material availability, Storage Capacity levels, BLT requirements, Resourcing availability, MRP requirements, Lot Size, Planned Maintenance, Transport availability, Telemetry Readings, … | Maestro generates the Production P"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 173 | Ability to automatically determine and display a message to personnel if Sales Orders cannot be supplied from existing stock and manufacturing of new stock is required | Based on the pegging information, system can report if a sales order cannot be supplied from OnHand. Alerts can be sent to users based on the defined frequency. |\n| 174 | Ability to manually update Production Plans in real-time, including modify, cancel, reset (to original values) and apply a change to multiple products | Production Plan can be updated in real-time in Maestro. If the Production Plan is created in ERP, "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 178 | Ability to automatically notify (email, text message or in-system notification) personnel when Customer Telemetry tank levels reach a pre-defined level. E.g., Alarm 1: “re-order alarm” when tanks are 50%. Alarm 2: “emergency alarm” when tanks drop lower than 20%. | Not supported as-is, because Maestro doesn't have the real-time telemetry levels; instead, Maestro receives the demand signal based on the telemetry levels which drives the production plan. Based on the demand quantity, rules can be defined and notifications can be sent out through Alerts. |\n| 179 | Ability to feed receipt g"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 184 | Ability to generate Reports, Analytics, and Insights to measure accuracy of Production Plans vs. Actuals daily/weekly/monthly/FY buckets | Based on the archived Production Plan and the Actuals, waterfall reports the multiple plan vs actuals based on the desired buckets, and the accuracy can be calculated. |\n| 185 | Ability to generate finished goods demand on Contract Manufacturers over the planning horizon based on a demand forecast | Based on the demand forecast, the FG demand at Contract Manufacturers will get derived. |\n| 186 | Ability to generate a production plan by finished good"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 191 | Ability to plan for changes in both SKU and formulation, including effective date change by location | Bill Of Material can be time-phased which allows to change the SKU and formulation time to time. |\n| 192 | Ability to link the old and new SKUs or formulation together, and the user should be able to manually configure the date changes as required, depending on the availability of stock on hand or in transit | Bill Of Material can be time-phased which allows to change the SKU and formulation time to time. |\n| 193 | Ability to view the past due work orders (Process Orders) and auto res"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 198 | Ability to run MRP on finished goods demand to generate requirements on made and purchased materials / components to support internal production plans (including Contract Manufacturers) | Maestro Supports MRP to generate the dependent requirements based on the finished good demand. |\n| 199 | Ability to perform production planning in finished goods qty by set timing buckets (for purchase orders) for Contract Manufacturers | Maestro will maintain different calendars for Contract Manufacturers and the Production Planning team. |\n| 200 | Ability to manage multiple BOMs per SKU | Maestro ca"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "2.2": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Value Drivers",
+        "snippet": "Reduce inventory (ending, excess, obsolete)\nImprove service levels (OTD, planning efficiency)\nPhase-in/phase-out (excess and obsolete)\nEnsure right product is in the right warehouse at the right time (Other – freight costs)\nValue Drivers"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Image: image6.png",
+        "snippet": "- Exception/Alert monitoring\n- **Business Continuity:**\n- Scenario modelling, impact analysis, risk mitigating scenarios\n- Eliminate manual lot matching to support jurisdictional control\n---\n**4. Benefit Range (Right Column, Gray Circles)**\n- Improved Customer Service: **>25%**\n- Reduce Excess & Obsolescence: **15% – 25%**\n- Improved resource efficiency: **10% – 20%**\n- Planning Cycle Time Reduction: **25% – 35%**\n- Inventory & Carrying Cost Savings: **10% – 30%**\n- Reduce Premium Freight Cost: **15% – 25%**\n---\n**Other Notable Features:**\n- The flow visually connects objectives to value drive"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "- **Metric:**\n- Reduce Obsolete Inventory\n- Improved Constraint Utilization\n- Increased Plan Adherence\n- Improved Cumulative Lead Time Accuracy\n---\n**General Notes:**\n- The table is organized to show how supply chain/ERP capabilities map to shareholder value, primary benefit metrics, and operational metrics.\n- Metrics include both quantitative KPIs (e.g., \"Reduced Weeks of Supply\", \"Inventory Targets Plan v Actual\") and process metrics (e.g"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "- Reduced Periods of Coverage\n**CAPITAL**\n- Reduce Obsolete Inventory\n- Improved Constraint Utilization\n- Increased Plan Adherence\n- Improved Cumulative Lead Time Accuracy\n---\n**General Structure:**\n- The image is a table with three main columns: PRIMARY BENEFIT METRIC, CAPABILITY, and METRIC.\n- Rows are grouped by SHAREHOLDER VALUE drivers (REVENUE, COGS, SG&A, CAPITAL).\n- Each group lists specific benefit metrics, associated capabilities, and measurable metrics/KPIs.\n- The table is color-coded for clarity, with each section clearly separated.\n---\n**Consultant Notes:**\n- The image provides a "
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image6.png",
+        "snippet": "- Scenario Modeling\n- Managing shelf-life and expiry\n- Exception/Alert monitoring\n- For Business Continuity:\n- Scenario modelling, impact analysis, risk mitigating scenarios\n- Eliminate manual lot matching to support jurisdictional control\n**D. Benefit Range (Grey circles, rightmost column)**\n- Improved Customer Service >25%\n- Reduce Excess & Obsolescence 15%–25%\n- Improved resource efficiency 10%–20%\n- Planning Cycle Time Reduction 25%–35%\n- Inventory & Carrying Cost Savings 10%–30%\n- Reduce Premium Freight Cost 15%–25%\n---\n**3. Visual Elements:**\n- Color-coded boxes and arrows connect object"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Image: image6.png",
+        "snippet": "[Embedded Image: image6.png]\nStructured Description of image6.png:\n---\n**Title/Structure:**\nThe image is a structured flowchart/table summarizing supply chain/ERP solution benefits, organized into four main columns:\n---\n**1. Business Objectives (Left Column, Yellow Headers)**\n- **Increase Revenue**\n- **Reduce Cost**\n- COGS (Cost of Goods Sold)\n- SG&A (Selling, General & Administrative)\n- **Business Continuity**\n---\n**2. Value Drivers (Second Column, Blue/Brown/Orange/Blue Boxes)**\n- For \"Increase Revenue\":\n- Launch Optimization\n- Customer Satisfaction\n- Improved Availability\n- For \"COGS\":\n- Su"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "[Embedded Image: image2.png]\n**Structured Description of Image:**\n---\n**Title/Headers:**\n- PRIMARY BENEFIT METRIC\n- CAPABILITY\n- METRIC\n---\n**Left Column (SHAREHOLDER VALUE Categories):**\n- REVENUE\n- COGS (Cost of Goods Sold)\n- SG&A (Selling, General & Administrative)\n- CAPITAL\n---\n**Primary Benefit Metrics (by Category):**\n**REVENUE**\n- LOST SALE REDUCTION\n- FORECAST ACCURACY\n**COGS**\n- PLANNER EFFICIENCY / HEADCOUNT INCREASE AVOIDANCE\n**SG&A**\n- OBSOLETE INVENTORY REDUCTION\n- INVENTORY HOLDING COST REDUCTION\n- EXPEDITED FREIGHT COST REDUCTION\n**CAPITAL**\n- ONE TIME INVENTORY SAVINGS (WC)\n- A"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Image: image1.png",
+        "snippet": "- Improved Planning Cycle Time (MRP Latency)\n- OBSOLETE INVENTORY REDUCTION / INVENTORY HOLDING COST REDUCTION / EXPEDITED FREIGHT COST REDUCTION:\n- Inventory Targets Plan v Actual\n- Reduced Total Inventory Holding\n- Reduce Planned Excess & Expiring Inventory\n- # Unplanned Expedited Freight Actions\n- Reduced Periods of Coverage\n- ONE TIME INVENTORY SAVINGS (WC) / ASSET PRODUCTIVITY /"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| RFP ID | Functional Requirements | Comments |\n| --- | --- | --- |\n| 242 | Ability to provide an S&OP workflow in system (ability to customize a standard S&OP workflow) | Task Flows and Process are available in Maestro |\n| 243 | Ability to define user roles in a S&OP workflow | Within each S&OP process instances, can assign the tasks to the users |\n| 244 | Ability to define geographic domains in a S&OP workflow | Maestro S&OP responsibilities, reporting and filtering can be defined by geographic domains |\n| 245 | Ability to generate volume, working capital and financial projections including "
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image46.png",
+        "snippet": "- Orange triangle: Indicates warning or attention needed.\n**Other UI Elements:**\n- Filters at the top for \"All Items\" and \"All Sites\"\n- Tabs for \"Summary\" (selected)\n- Toolbar with standard icons (save, refresh, etc.)\n**Consultant Notes:**\n- The table provides a side-by-side comparison of scenario results vs. baseline for key supply chain KPIs.\n- Metrics tracked: Ending Inventory, Key Constraint Utilization, Margin %, On Time to Request, Revenue, Revenue at Risk.\n- Each"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Image: image1.png",
+        "snippet": "[Embedded Image: image1.png]\nPRIMARY BENEFIT METRIC / CAPABILITY / METRIC TABLE\n**Left Column: SHAREHOLDER VALUE Categories**\n- REVENUE\n- COGS (Cost of Goods Sold)\n- SG&A (Selling, General & Administrative)\n- CAPITAL\n---\n**PRIMARY BENEFIT METRIC (by category):**\n- REVENUE:\n- LOST SALE REDUCTION\n- FORECAST ACCURACY\n- COGS:\n- PLANNER EFFICIENCY / HEADCOUNT INCREASE AVOIDANCE\n- SG&A:\n- OBSOLETE INVENTORY REDUCTION\n- INVENTORY HOLDING COST REDUCTION\n- EXPEDITED FREIGHT COST REDUCTION\n- CAPITAL:\n- ONE TIME INVENTORY SAVINGS (WC)\n- ASSET PRODUCTIVITY / CAPITAL UTILIZATION\n---\n**CAPABILITY (middle co"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "The user stories are linked to the Demand Planning – Create a Consensus Demand Plan epic.\n| RFP ID | Functional Requirements | Comments |\n| --- | --- | --- |\n| 1 | Ability to have an automated forecasting tool which sources and consolidates historical and current sales data and predicts future demand for a selectable period (e.g. last year, current year and next financial year) | Statistical Forecasting will cover this requirement, which consolidates historical demand and predicts future demand |\n| 2 | Ability to upload data from external sources to feed into creation of Demand Plans including"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 7 | Ability to share (subsets of) generated forecasts with relevant parties | Able to export the Forecast from Maestro and manually share with others (or) setup Alerts to share the forecasts to the target users |\n| 8 | Ability to extract the forecast at configurable levels, e.g. Product level and submit / resubmit forecasts for approval, including to one or more approvers | Approval mechanism can be established at configurable product levels through Hierarchy |\n| 9 | Ability to automatically notify (email, in-system notifications, dashboard) personnel if they are assigned as approvers | If a"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 15 | Ability to upload bulk changes to the forecast with reason codes and comments | Able to upload bulk changes to Forecast, the reason code and comments will be captured through Assumptions |\n| 16 | Ability to generate an automated electronic audit trail recording username, date and timestamps, and the type of action (create, modify, delete), reason code and comments. | Scenario properties can show the user made changes with all the necessary details |\n| 17 | Ability to create graphical representations of Forecasts and see constraints | Can see the Forecast if it is late and find out the c"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 24 | Ability to allow the users to create forecasts at different levels of the product hierarchy, such as by SKU item, region, category, channel, store and customers | Users can upload the Forecast at Product/Site/Customer level at Monthly buckets |\n| 25 | Ability to manage forecasts using multiple demand hierarchies at the same time, and to forecast each SKU item or grouping of SKUs at different levels of the hierarchies (channel or product hierarchies) | Handled through Forecast Item configuration |\n| 26 | Ability to review & edit multiple forecasts within a single location (e.g. , B2B, B2"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 32 | Ability for the user to manually override the statistical model the system provided | Covered by the Statistical Forecasting process, statistical model can be chosen |\n| 33 | Ability to set on and off of the automated statistical modelling for a defined period time | You can set Start and Stop date for the statistical forecast generation |\n| 34 | Ability for the user to set the future date to start the statistical model | Forecast Start Offset can be provided to set the future date to start the statistical model |\n| 35 | Ability to provide a calendar that outlines key dates - production"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 42 | Ability to provide recommendation on how to adjust the forecast to maximise accuracy and efficiency | Unconstrained Forecast Adjustments can be done easily |\n| 43 | Ability to include external requirements to integrate with weather data, social media, competitor sales data, market trends data in forecast calculations | It can be achieved through advanced forecasting algorithms in Maestro, but not in the scope of the initial release. |\n| 44 | Ability to apply internal and external causal factors through machine learning to enhance or replace statistical forecast calculations | It can be "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 50 | Ability to use historical data from one or more existing products to create a forecast for the new product | Covered by history labelling and statistical forecasting process |\n| 51 | Ability to generate new product introduction and product run out forecast reporting | Can define NPI/EOL profile points and generate the report as well |\n| 52 | Ability to integrate forecasts from demand tool to downstream planning systems both scheduled and ad hoc, at selected level. | Through closed-loop, Maestro can send out the Forecast data which will be picked up by the Integration tool to send to any"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 59 | Ability to enter or upload manual forecasting | Manual Forecast can be uploaded through the External Forecast Upload workbook |\n| 60 | Ability to auto-cleanse historical data and receive recommendations of cleansing activity | Data Cleansing Activity, supported by standard workbook \"Data Cleansing\" |\n| 61 | Ability to view graphs and visualisation for all forecasting data and activities | Graphical visualization can be configured |\n| 62 | Ability to support demand sensing/AI capabilities to generate a demand forecast | Maestro has the demand sensing/AI capabilities, but not in the scope"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 69 | Ability of the system to identify key forecast exceptions (low sales, high sales, no sales, change in trend, new line, etc) | Maestro can identify the exceptions based on the defined rules |\n| 70 | Ability to support user notes to maintain/digitise forecasting knowledge | User can add Assumptions to capture Notes based on the selected hierarchy |\n| 71 | Ability to support a demand planner workflow, supporting scheduled activities and prioritised exceptions to manage | Task flows can be provided with necessary details |\n| 72 | Ability to segment a demand planner product portfolio from ot"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| New 02 | We could sell X amount to customers but limited by purchase of supply. Forward-forecast volumes Forward-forecast financial result If these don't reconcile, then we know we can't forecast the production/distribution. | Based on the forecast volumes, the financials will be calculated |\n| New 03 | Sometimes a customer is sold to another customer and we want to map the sold customer to the bought customer and bring across the data. It's not possible in SAP it seems but potentially in integration to be transformed. Or we can do it Maestro (will be determined in technical chat). Statistic"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 249 | Ability to project future sales and operational performance to support the S&OP workflow | Performance can be reported based on the defined KPI or measures |\n| 250 | Ability to feed in the following data points at a SKU-Location level (product, customer sold-to, supply location): standard cost, average selling price, customer contract price | Can feed all these data through integration |\n| 251 | Ability to feed in point-to-point transfer costs | Can feed the transfer cost data through integration or while creating the inventory transfer within Maestro |\n| 252 | Ability to scenario plan"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 83 | Ability to automatically notify (email, in-system notifications, dashboard) personnel if they are assigned as approvers | Notification can be sent out through alerts to the approvers based on a defined frequency. |\n| 84 | Ability to automatically track the approval of a Supply Plan including approver names, approver titles, status of approvals, reason code and comments | Tracking approvals on the Supply Plan can be configured |\n| 85 | Ability for approvers to view and approve or reject a Supply Plan with reason codes and comments | Approvers can have the option to either approve or reje"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 91 | Ability to integrate with the product cost and Customer pricing models to support financial forecasts with the ability to do scenario modelling and predictive pricing based on a variety of methods (e.g. statistical & historical). This relates to all types of Planning. | All the Cost & pricing information can be brought into Maestro, and the reports can be built based on that. |\n| 92 | Ability to create graphical representations of Supply Plans and see constraints | Graphical representations of Supply Plan can be reported, with drill link to attached constraint details |\n| 93 | Ability t"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 99 | Ability to apply multiple stock level requirements (safety and cycle stock) | Several safety stock methods are available, Safety Stock can also be calculated based on the current calculation. Cycle Stock can be achieved through Days of Supply calculations |\n| 100 | Ability to load or calculate demand that is not part of the forecast but would drive supply requirements throughout the network e.g. WIP/RAWs for FGs | Demand which doesn't consume forecast can be loaded which would drive the supply requirements throughout the network |\n| 101 | Ability to apply replenishment on and off dates "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 105 | Ability to provide reporting which pulls in expiry dates per batch and displays all SKU's per location within X days shelf life remaining (X needs to be a value specified per receiving location and have the ability to exclude these volumes from future replenishment calculations e.g. If a SKU has a volumes of 100x units expiring next week - at point X these 100 units should be excluded from SOH calculations) | Expiry is not considered in the initial implementation. If considered in the later release, mentioned reporting is feasible |\n| 106 | Ability to provide visibility into the aged i"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 112 | Ability to interactively run/execute planning at daily, weekly or monthly level | Maestro is always ON, whenever you open a report/Dashboard, the results are instant |\n| 113 | Ability to generate system optimized inventory requirements to satisfy user defined service levels at a multiple level | With the Maestro Inventory Planning and Optimization, users can identify strategic safety stock inventory levels based on customer service levels, supply variability, forecast error and bias; Inventory Optimization is not considered in the initial implementation |\n| 114 | Ability to prioritize "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 119 | Ability to manage multiple sources of supply for a SKU using prioritization | Priority can be defined between multiple PartSources of a Part/Site |\n| 120 | Ability to manage multiple lead times for the same source of supply for SKU using prioritization | Multiple Lead Time can be managed for the same source of supply in different time periods or for different Transportation Mode with priorities defined |\n| 121 | Ability to select an alternate source or alternate lead time on same route by exception | Exceptional change of Sources is feasible manually |\n| 122 | Ability to manage source "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 127 | Ability to prioritize products based on their type, etc. | Priority can be defined at multiple places such as demand, supply, PartCustomer etc., |\n| 128 | Ability to suggest and build loads based on specific product parameters including dangerous goods identification | Dangerous Goods are not in the scope |\n| 129 | Ability to set automated approval & release thresholds (based on business rules around: product ranking, cost, value and/or volume) for replenishment | Approval mechanism can be established |\n| 130 | Ability to enable replenishment orders to be approved or rejected by design"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 136 | Ability to share replenishment order volumes with sending and receiving locations | Orders will be at the receiving location and the requirement forecast will be shared with the sending location |\n| 137 | Ability to share replenishment plan volumes with sending and receiving locations over a defined future period | Can share the plan volumes by defined period |\n| 138 | Ability to project workload effort and cost at sending or receiving locations based on the planned volume of orders | Load can be projected over the capacity constraint and cost can be reported based on volume |\n| 139 | "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 143 | Ability to handle exceptions, for example, extend shelf time | Exceptions can be handled manually |\n| 144 | Ability to rough cut capacity plan resources and locations along replenishment lanes and sending and receiving locations | RCCP can be done with the capacity/resource constraints |\n| 145 | Ability to interactively load-level based on rough cut capacity smoothing | Firm up the system generated plan and do the levelling based on the capacity report output or pre-plan can be setup which will pull the late supply to earlier dates where there is an available capacity |\n| 146 | Ability"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 152 | Ability to support Bill of Material (BOM) replenishment for parent to child relationships/dependent requirements | Maestro plan for dependent part replenishment when there is change in the demand plan |\n| 153 | Ability to provide a report that shows all stock risks with a specified horizon (SKU, location, current inventory level, safety stock, demand forecast, lead time, projected stock level total demand, safety stock) prioritized by product class, lost sales risk or priority customer | Inventory Projection Report with all the necessary details can be created |\n| 154 | Ability to indi"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 157 | Ability to support a replenishment planner workflow, supporting scheduled activities and prioritized exceptions to manage | Task flows can be provided with necessary details |\n| 158 | Ability to support a replenishment manager workflow, supporting scheduled activities and highlight group demand planner exception priorities | Task flows can be provided with necessary details |\n| 159 | Ability to support a centralized and regionalized planners working in concert/parallel | Maestro is a concurrent planning tool, it supports the planners working in parallel |\n| 160 | Ability to segment a r"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 165 | Pre-build and run-down stock over a define period in alignment with seasonality | Prebuild can be allowed and control the planned order generation to run-down the stock over a period |\n| 166 | Multi-echelon safety stock optimization to drive optimal stock levels in the network, and show scenario modelling for changes | MEIO is supported in Maestro, it is not considered in the initial implementation |\n| 167 | Support multiple / alternative sources of supply (Purchase/Manufactured) - volume based, lead time based and cost-based scenarios | Multiple sources of Supply including the Make/Tr"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| RFP ID | Functional Requirements | Comments |\n| --- | --- | --- |\n| 390 | While Distribution Planning is out of scope for this project, the system needs: Ability to upload and include the distribution plan to be taken into account as a constraint/factor in optimizing the production plan | Maestro will consider the distribution plan from the Dispatcher as the demand and drive the production plan accordingly |\n| 391 | Should Ixom consider utilizing this software for distribution planning in the future, does the system have the functionality to: | Not evaluated yet |\n| 392 | Ability to have an "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 396 | Ability for the forecast to provide input into Supply Chain budgets (e.g. Warehouse) to assist with cost calculations and financial forecasts | Can be configured |\n| 397 | Ability for the forecast to enable a rough-cut capacity plan to convert into a Warehousing and Logistics plan and capacity model both for internal sites and 3PL Warehousing, Storage and Toll Manufacturers Sites | Warehousing report will be configured, Logistics plan will be out of scope |\n| 398 | Ability to assign storage capacity limits to Warehouses | Handled through Warehouse Capacity Report in which you can enter"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 404 | Ability to view a Stock Transfer Orders in one central location | Can report all the Stock Transfer Order in a single worksheet |\n| 405 | Ability for forecasts to be integrated in real time (predetermined point in time) with an Inventory Management system to support the Distribution Planning Process to ensure scheduled orders are achievable | Forecast can be pushed to main planning scenario and supports/drive the Distribution Planning |\n| 406 | Ability to create, and electronically send or make available in Vendor facing portal delivery documentation, using a selection of standard bran"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| RFP Id | Functional Requirements | Comments |\n| --- | --- | --- |\n| 204 | Ability to auto-generate purchase order plans from finished goods demand and safety stock calculations | Maestro MRP algorithm automatically generates purchase order plans based on the demand coming from the finished goods and the safety stock |\n| 205 | Ability to auto-generate purchase order plans for materials and components from MRP calculations to support production requirements | Maestro MRP algorithm automatically generates purchase order plans for raw materials (purchased products) to support production requirem"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 211 | Ability to suggest new orders that adhere to the defined batch size rule | New Planned Orders will stick to the batch size (Lot size - Minimum, Maximum, Multiple) |\n| 212 | Ability to consolidate dependent requirements for like SKUs (i.e. all 75mL regional variants under one Parent) to suggest like SKUs to pair up and run together in one batch e.g. Life Sciences - multiple size sales units for a specific flavour) | Based on the Bill Of Material information, dependent requirements of the associated SKUs will be calculated |\n| 213 | Ability to source data from multiple sources to show in"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 218 | Ability to generate a report that identifies shortage of required components, packaging material or dependant items needed to fulfill the planned and confirmed orders, so that we could identify potential issues | Supply Order Analysis facilitates identifying the potential issues interms of capacity and material |\n| 219 | Ability to set a MOQ for a group of related products, so that we could optimize their purchasing/production and inventory levels. | MOQ can be setup for a group of related products, but it will be stored at individual PartSource level |\n| 220 | Ability to identify the "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 225 | Ability to enforce the purchase of items only in full pallet or outer box multiples, as specified in the MOQ, EOQ. | Supported through the Lot size (Minimum, Maximum, Multiple) |\n| 226 | Ability to enable the NPD planner to plan at the product level, and manage material constraints | NPD can be supported for planning at the product/site level or at a product/common site level. |\n| 227 | Ability to drill down on FGs to the individual materials in the BOM to ensure accurate planning and inventory management | BOM Analysis can show all the materials in the BOM under a selected FG, drill l"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 232 | Ability to create long term import order suggestions | Maestro can suggest the long-term import order suggestions based on the Forecast |\n| 233 | Ability to create order consolidation recommendations for imported orders from similar locations based on containerisation and product affinity rules | Can achieve the order consolidation through customization, manual inputs required. |\n| 234 | Ability to consider specified customer constraints or requirements in its order generation (e.g. weight requirements, pallet order requirements etc) | Capacity Constraints can be setup, order requireme"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 240 | Ability to demonstrate SKU level MOQ, product family MOQ | All MOQs are set up the Part Source level |\n| 241 | Ability to provide visibility of SKU inventory in quality hold, and when it will be released (time phased supply plan should account for the release of inventory from quality hold to available for use) | Blocked Inventory can be visible with detail information |"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| RFP ID | Functional Requirements | Comments |\n| --- | --- | --- |\n| 169 | Ability to have an automated planning/forecasting tool which consolidates data to develop Production Plans (which includes products to be produced, quantities and due dates) for a defined period from multiple sources, e.g.: Sales Orders, Stock Transfer Orders, Safety Stock levels, Finished Goods, Raw Material availability, Storage Capacity levels, BLT requirements, Resourcing availability, MRP requirements, Lot Size, Planned Maintenance, Transport availability, Telemetry Readings, … | Maestro generates the Production P"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 173 | Ability to automatically determine and display a message to personnel if Sales Orders cannot be supplied from existing stock and manufacturing of new stock is required | Based on the pegging information, system can report if a sales order cannot be supplied from OnHand. Alerts can be sent to users based on the defined frequency. |\n| 174 | Ability to manually update Production Plans in real-time, including modify, cancel, reset (to original values) and apply a change to multiple products | Production Plan can be updated in real-time in Maestro. If the Production Plan is created in ERP, "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 178 | Ability to automatically notify (email, text message or in-system notification) personnel when Customer Telemetry tank levels reach a pre-defined level. E.g., Alarm 1: “re-order alarm” when tanks are 50%. Alarm 2: “emergency alarm” when tanks drop lower than 20%. | Not supported as-is, because Maestro doesn't have the real-time telemetry levels; instead, Maestro receives the demand signal based on the telemetry levels which drives the production plan. Based on the demand quantity, rules can be defined and notifications can be sent out through Alerts. |\n| 179 | Ability to feed receipt g"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 184 | Ability to generate Reports, Analytics, and Insights to measure accuracy of Production Plans vs. Actuals daily/weekly/monthly/FY buckets | Based on the archived Production Plan and the Actuals, waterfall reports the multiple plan vs actuals based on the desired buckets, and the accuracy can be calculated. |\n| 185 | Ability to generate finished goods demand on Contract Manufacturers over the planning horizon based on a demand forecast | Based on the demand forecast, the FG demand at Contract Manufacturers will get derived. |\n| 186 | Ability to generate a production plan by finished good"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 191 | Ability to plan for changes in both SKU and formulation, including effective date change by location | Bill Of Material can be time-phased which allows to change the SKU and formulation time to time. |\n| 192 | Ability to link the old and new SKUs or formulation together, and the user should be able to manually configure the date changes as required, depending on the availability of stock on hand or in transit | Bill Of Material can be time-phased which allows to change the SKU and formulation time to time. |\n| 193 | Ability to view the past due work orders (Process Orders) and auto res"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Functional Requirements",
+        "snippet": "| 198 | Ability to run MRP on finished goods demand to generate requirements on made and purchased materials / components to support internal production plans (including Contract Manufacturers) | Maestro Supports MRP to generate the dependent requirements based on the finished good demand. |\n| 199 | Ability to perform production planning in finished goods qty by set timing buckets (for purchase orders) for Contract Manufacturers | Maestro will maintain different calendars for Contract Manufacturers and the Production Planning team. |\n| 200 | Ability to manage multiple BOMs per SKU | Maestro ca"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image6.png",
+        "snippet": "[Embedded Image: image6.png]\n**Structured Description of image6.png**\n---\n**1. Main Structure:**\nThe image is a multi-column flowchart/infographic, organized into five main vertical sections:\n- Business Objectives\n- Value Drivers\n- Advanced Planning Capabilities\n- Benefit Range\n---\n**2. Section Details:**\n**A. Business Objectives (Yellow background)**\n- Increase Revenue\n- Reduce Cost\n- COGS (Cost of Goods Sold)\n- SG&A (Selling, General & Administrative)\n- Business Continuity\n**B. Value Drivers (Blue, Brown, Orange, Navy backgrounds)**\n- For Increase Revenue:\n- Launch Optimization\n- Customer Sa"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image46.png",
+        "snippet": "[Embedded Image: image46.png]\nStructured Description of Image (image46.png):\n**Title/Module:**\n- Demand Planner\n**Navigation/Selection Pane (Left):**\n- Product categories listed:\n- Cell Phone (selected)\n- Laptop\n- Other\n- System\n- Tablet\n**Main Content (Summary Tab):**\n- Date Range: From: Jun-20 To: May-21\n- Scenario: 06 Constraint PartSource Assignment - Temporarily Increase Existing Load\n**Table Columns:**\n1. Metric\n2. Weight\n3. Annual Plan\n4. Result (for scenario)\n5. Score (for scenario)\n6. Baseline Result\n7. Baseline Score\n**Table Data:**\n| Metric                   | Weight | Annual Plan |"
+      }
+    ],
+    "gen_source": "doc"
+  }
+}

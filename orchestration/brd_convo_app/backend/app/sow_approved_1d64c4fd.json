@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "cover": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Cover Page Drafting guidance for this section: Cover page: Title 'STATEMENT OF WORK', subtitle = confirmed Project Name. Field/Details table: Client Name, Project Name, Engagement Type, Contract ID, Effective Date, End Date, Document Version (start at v1.0), Prepared by (Bristlecone Inc.), Review Status (Draft). Hard rules for this draft: - Never mention \"RFP\", an internal sourci",
+      "approved_at": "2026-07-24T08:12:36.523576"
+    },
+    "1": {
+      "content": "[MOCK CLAUDE RESPONSE] SECTION TO DRAFT: Agreement Details Drafting guidance for this section: Agreement Details — one sentence naming the client and Bristlecone Incorporated under the governing MSA/ISA/Consulting Agreement. Then a separate Field/Details table: Contract/SOW ID, SOW Effective Date, SOW End Date, Governing Agreement, Amendment/Supersedes, Agreement Duration, Delivery Location. Hard rules for this draft: -",
+      "approved_at": "2026-07-24T08:12:36.526674"
+    }
+  }
+}

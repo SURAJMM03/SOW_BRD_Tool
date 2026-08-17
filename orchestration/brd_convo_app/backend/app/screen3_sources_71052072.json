@@ -1,0 +1,1474 @@
+{
+  "1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "1.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "1.2": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "1.3": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "1.4": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "1.5": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "2": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "2.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "2.2": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "3": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "3.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "3.2": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "3.3": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "3.4": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "3.5": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "3.6": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "3.7": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "4": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "4.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "4.2": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "4.2.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "4.2.2": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "5": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "5.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "5.2": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "5.3": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "5.4": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "6": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "6.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "6.2": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "6.3": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "6.4": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 5",
+        "snippet": "Database And Storage\nThere is no external database server.\nStorage is local:\n●​\nSQLite: app/users.db for users\n●​\nJSON files: project state, repository state, templates, section config\n●​\nuploaded files: app/uploads\n●​\ngenerated chunks: chunks.json\n●​\nextracted images: app/extracted_images\n●​\nimage metadata: app/image_chunks.json\n●​\nexports: outputs, output, and app/static/exports\nExample: when a PDF is uploaded, it is saved under a project folder, chunked into text records, and those chunks are\nstored in JSON.\nAPIs\nMajor API groups:\n●​\nAuth: POST /signup, POST /login, GET /approve/{token}\n●​\n"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "I inspected the project read-only. No code was modified.",
+        "snippet": "​\nI inspected the project read-only. No code was modified.\nProject Purpose\nThis is a Blueprint Document / BRD generation system. Its business goal is to help consultants or business analysts\ncreate structured solution blueprint documents faster by combining:\n●​\nuser-provided project documents,\n●​\nreusable repositories of reference documents,\n●​\nweb research,\n●​\nOpenAI-generated section content,\n●​\neditable templates,\n●​\nDOCX/TXT export.\nIn plain terms: a user creates a client project, uploads documents, configures/generates sections, approves the output,\nand exports a polished Blueprint Docume"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 8",
+        "snippet": "Morning:\n●​\nRun the app locally.\n●​\nCreate one test project.\n●​\nUpload one small DOCX or TXT.\n●​\nWatch /api/projects/{id}/files change from uploaded to indexed.\n●​\nRead project_routes.py and chunking_pipeline.py.\nAfternoon:\n●​\nOpen /editor?project_id=<id>.\n●​\nGenerate one section.\n●​\nRead screen3_routes.py around section generation/export.\n●​\nExport a DOCX and inspect how brd_workflow.py formats it.\nEnd of day:\n●​\nTrace one complete request from button click in screen3.html to FastAPI route to OpenAI call to\nJSON/DOCX output.\n●​\nReview .env variables.\n●​\nNote the stale/mismatched parts: React "
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend:",
+        "snippet": "●​\nPydantic\n●​\nSQLite\n●​\nJSON file persistence\n●​\nthreading/background jobs\nFrontend:\n●​\nStatic HTML\n●​\nCSS\n●​\nvanilla JavaScript\n●​\nbrowser fetch() calls\nAI and agent tooling:\n●​\nOpenAI Python SDK\n●​\nLangChain\n●​\nLangGraph\n●​\nMCP\n●​\nOpenAI embeddings\n●​\nOpenAI vision/chat models\nDocument processing:\n●​\npython-docx\n●​\nPyMuPDF\n●​\npython-pptx\n●​\nopenpyxl\n●​\nxlrd\n●​\nlocal text extraction/chunking\nSearch/integrations:\n●​\nSerper API\n●​\nrequests\n●​\nBeautifulSoup\n●​\nmarkdownify\n●​\nSMTP / Office 365 email approval"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Frontend",
+        "snippet": "Frontend\nThe frontend is not a separate React app in the current tree. The README mentions React, but the actual visible\napp is static HTML served from:\napp/static\nKey pages:\n●​\nindex.html: login/signup and legacy chat UI\n●​\nprojects.html: project list/create/delete\n●​\ndocument-upload.html: upload source/prompt docs\n●​\nscreen3.html: Blueprint Document editor/generator\n●​\nrepositories.html: reusable document repositories\n●​\ntemplates.html: template library\n●​\nimage_repo.html: image repository UI\n●​\nhelp.html: user guide page\nBackend\nThe backend is a FastAPI app. It registers routers for:\n●​\npro"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 6",
+        "snippet": "10.​ User may import/apply a DOCX template.\n11.​ User opens the editor.\n12.​ User reviews section structure, keywords, sources, and generated content.\n13.​ Backend uses uploaded chunks, optional web search, OpenAI, and image metadata to generate section\ncontent.\n14.​ User approves generated sections.\n15.​ User exports the final Blueprint Document as DOCX/TXT.\n16.​ Project or repository can be exported/imported as ZIP.\nEnvironment Variables\nKey variables found:\nOPENAI_API_KEY\nOPENAI_MODEL\nOPENAI_MINI_MODEL\nOPENAI_SSL_VERIFY\nVISION_MODEL\nEMBED_MODEL\nSEARCH_BACKEND\nSERPER_API_KEY\nSERPER_API_URL\nM"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Page 7",
+        "snippet": "APP_BASE_URL=http://localhost:8010\nHow To Run Locally\nFrom repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\\orchestration\\brd_convo_app\\backend\npython -m venv venv\nvenv\\Scripts\\activate\npip install -r requirements.txt\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nThen open:\nhttp://localhost:8010\nIf using the separate web tools service, from repo root:\ncd c:\\22-05_BDGAgent\\19-05_BDGAgent\nuvicorn infrastructure.mcp_web_tools.app.main:app --host 0.0.0.0 --port 8000\nBeginner Onboarding Guide\nStart with this mental model:\nProjects hold client work.\nUploads become chunks.\nChunks become sear"
+      },
+      {
+        "doc_name": "Inspection of BRD Project.pdf",
+        "heading_path": "Technologies Used",
+        "snippet": "|\nv\nOptional MCP/Web Tools Services\n|-- web_search\n|-- open_url\n|-- doc_search\n|-- Serper/OpenAI search\nMain Entry Points\nPrimary backend entry point:\napp/main.py\nRun target:\nuvicorn app.main:app --host 0.0.0.0 --port 8010 --reload\nMain browser entry point:\nhttp://localhost:8010/\nThis serves:\nstatic/index.html\nThere is also an MCP web tools FastAPI app here:\ninfrastructure/mcp_web_tools/app/main.py\nImportant Note\nThe repo contains older conversational-agent code in conversation.py, and the login page calls /chat, but I did not\nfind a registered /chat route in app.main. The currently wired prod"
+      }
+    ],
+    "gen_source": "both"
+  }
+}

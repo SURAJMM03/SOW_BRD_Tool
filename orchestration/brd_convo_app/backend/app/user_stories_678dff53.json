@@ -1,0 +1,285 @@
+{
+  "stories": [
+    {
+      "id": "US-001",
+      "title": "Maintain planning parameters for supply management",
+      "as_a": "Supply Planner",
+      "i_want": "to maintain and use planning parameters such as lead time, source of supply, cost, pricing, stock position, and supply plan data",
+      "so_that": "Archlin can generate consistent supply plans based on controlled planning inputs",
+      "acceptance_criteria": [
+        "Given maintained planning parameters exist for an item-location combination, When the supply planning process is executed, Then the system uses the maintained lead time, source of supply, cost, pricing, stock position, and supply plan data in the planning output",
+        "Given a required planning parameter is missing for an item-location combination, When the supply planning process is executed, Then the system identifies the missing parameter as a planning exception",
+        "Given planning parameters are updated, When a new planning run is executed, Then the updated parameter values are reflected in the resulting supply plan"
+      ],
+      "section_source": "Section 1: Introduction",
+      "priority": "High"
+    },
+    {
+      "id": "US-002",
+      "title": "Generate graphical supply plan visibility",
+      "as_a": "Supply Planner",
+      "i_want": "to view supply plans and related constraints in a graphical format",
+      "so_that": "I can understand supply flows, constraints, and planning risks more effectively",
+      "acceptance_criteria": [
+        "Given a supply plan has been generated, When I open the supply plan visualization, Then the system displays planned supply quantities across the planning horizon",
+        "Given constraints exist in the supply plan, When I view the graphical supply plan, Then the system visually identifies constrained periods or constrained supply points",
+        "Given I filter the graphical view by product, location, or time period, When the filter is applied, Then the graph refreshes to show only the selected scope"
+      ],
+      "section_source": "Section 1: Introduction",
+      "priority": "High"
+    },
+    {
+      "id": "US-003",
+      "title": "Create configurable supply planning reports and analytics",
+      "as_a": "Planning Manager",
+      "i_want": "to configure supply planning reports and analytics",
+      "so_that": "Archlin can monitor supply plan performance and planning outcomes",
+      "acceptance_criteria": [
+        "Given supply plan data is available, When I create a report, Then I can select report dimensions such as product, location, time period, source of supply, and supply quantity",
+        "Given a configured report exists, When I run the report, Then the system displays results based on the selected filters and dimensions",
+        "Given I save a report configuration, When I access the reporting area later, Then the saved configuration is available for reuse"
+      ],
+      "section_source": "Section 1: Introduction",
+      "priority": "High"
+    },
+    {
+      "id": "US-004",
+      "title": "Compare archived supply plans against actuals",
+      "as_a": "Planning Manager",
+      "i_want": "to compare archived supply plans with actual supply outcomes",
+      "so_that": "I can measure plan performance and identify planning gaps",
+      "acceptance_criteria": [
+        "Given a supply plan has been approved or finalized, When the plan is archived, Then the system stores the plan version with its effective date and planning horizon",
+        "Given actual supply data is available, When I run a supply plan versus actuals report, Then the system compares archived planned quantities against actual quantities by product, location, and time period",
+        "Given variances exist between planned and actual supply, When the report is displayed, Then the system calculates and displays the variance quantity and variance percentage"
+      ],
+      "section_source": "Section 1: Introduction",
+      "priority": "High"
+    },
+    {
+      "id": "US-005",
+      "title": "Apply unit-of-measure conversions in supply planning",
+      "as_a": "Supply Planner",
+      "i_want": "the system to convert quantities using maintained unit-of-measure conversion factors",
+      "so_that": "supply planning quantities are consistent across procurement, manufacturing, and distribution views",
+      "acceptance_criteria": [
+        "Given a maintained conversion factor exists between two units of measure, When a supply quantity is displayed or calculated in the target unit, Then the system applies the maintained conversion factor",
+        "Given no conversion factor exists for the requested unit conversion, When the system attempts to convert the quantity, Then the system flags the missing conversion as an exception",
+        "Given converted quantities are used in a supply report, When the report is generated, Then the displayed quantities align with the selected reporting unit of measure"
+      ],
+      "section_source": "Section 1: Introduction",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-006",
+      "title": "Calculate safety stock based on future days of demand",
+      "as_a": "Inventory Planner",
+      "i_want": "to calculate safety stock requirements based on future days of demand",
+      "so_that": "Archlin can improve inventory positioning and reduce poor inventory planning outcomes",
+      "acceptance_criteria": [
+        "Given a future days-of-demand parameter is maintained for an item-location, When inventory requirements are calculated, Then the system calculates safety stock using demand over the configured future period",
+        "Given demand changes within the future demand horizon, When inventory requirements are recalculated, Then the safety stock value is updated accordingly",
+        "Given no future days-of-demand parameter is maintained, When the calculation is executed, Then the system flags the missing parameter as an inventory planning exception"
+      ],
+      "section_source": "Section 1: Introduction",
+      "priority": "High"
+    },
+    {
+      "id": "US-007",
+      "title": "Calculate cycle stock and inventory requirements",
+      "as_a": "Inventory Planner",
+      "i_want": "to calculate cycle stock and total inventory requirements",
+      "so_that": "I can support replenishment decisions using consistent inventory logic",
+      "acceptance_criteria": [
+        "Given demand, stock position, and replenishment parameters are available, When inventory requirements are calculated, Then the system calculates cycle stock requirements for the relevant planning periods",
+        "Given safety stock and cycle stock are calculated, When total inventory requirements are displayed, Then the system includes both safety stock and cycle stock components",
+        "Given inventory requirements exceed available stock and planned receipts, When the calculation is completed, Then the system identifies the shortage quantity for replenishment planning"
+      ],
+      "section_source": "Section 1: Introduction",
+      "priority": "High"
+    },
+    {
+      "id": "US-008",
+      "title": "Respect lot size rules during replenishment planning",
+      "as_a": "Supply Planner",
+      "i_want": "replenishment quantities to respect minimum, maximum, and multiple lot size parameters",
+      "so_that": "planned supply orders align with Archlin’s operational and sourcing constraints",
+      "acceptance_criteria": [
+        "Given a minimum lot size is maintained, When a replenishment quantity is calculated below the minimum, Then the system rounds the planned quantity up to the minimum lot size",
+        "Given a maximum lot size is maintained, When a replenishment quantity exceeds the maximum, Then the system limits or splits the replenishment quantity according to the configured maximum rule",
+        "Given a lot multiple is maintained, When a replenishment quantity is calculated, Then the system rounds the quantity to the nearest valid multiple according to the configured rule"
+      ],
+      "section_source": "Section 1: Introduction",
+      "priority": "High"
+    },
+    {
+      "id": "US-009",
+      "title": "Control replenishment using planning calendars",
+      "as_a": "Supply Planner",
+      "i_want": "to manage replenishment on and off dates using planning calendars",
+      "so_that": "replenishment plans respect valid ordering, production, and distribution timing",
+      "acceptance_criteria": [
+        "Given a planning calendar is maintained for a replenishment flow, When replenishment is calculated, Then the system schedules replenishment only on valid calendar dates",
+        "Given a date is marked as unavailable for replenishment, When the system calculates a replenishment for that date, Then the system moves or prevents the replenishment according to the configured calendar rule",
+        "Given calendar validity dates are updated, When the next planning run is executed, Then replenishment recommendations reflect the updated calendar dates"
+      ],
+      "section_source": "Section 1: Introduction",
+      "priority": "High"
+    },
+    {
+      "id": "US-010",
+      "title": "Prioritize multiple sources of supply",
+      "as_a": "Supply Planner",
+      "i_want": "the system to support multiple sources of supply with defined prioritization",
+      "so_that": "Archlin can plan supply using preferred sources while retaining alternate supply options",
+      "acceptance_criteria": [
+        "Given multiple valid sources of supply exist for an item-location, When supply is planned, Then the system selects the source based on the maintained priority sequence",
+        "Given the highest priority source is unavailable or invalid for the planning date, When supply is planned, Then the system selects the next valid source based on priority",
+        "Given source priority values are changed, When a new planning run is executed, Then the system applies the updated priority sequence"
+      ],
+      "section_source": "Section 1: Introduction",
+      "priority": "High"
+    },
+    {
+      "id": "US-011",
+      "title": "Manage effective-dated source of supply and lead time",
+      "as_a": "Master Data Planner",
+      "i_want": "to maintain time-phased sources of supply and lead times using effective dates",
+      "so_that": "supply plans reflect valid sourcing and lead time assumptions over the planning horizon",
+      "acceptance_criteria": [
+        "Given a source of supply has an effective start and end date, When supply is planned for a date within the effective range, Then the system considers that source valid",
+        "Given a planning date falls outside a source’s effective date range, When supply is planned, Then the system excludes that source from automatic selection",
+        "Given lead time changes are maintained with effective dates, When supply is planned across multiple periods, Then the system applies the lead time valid for each planning period"
+      ],
+      "section_source": "Section 1: Introduction",
+      "priority": "High"
+    },
+    {
+      "id": "US-012",
+      "title": "Allow controlled manual source of supply changes",
+      "as_a": "Supply Planner",
+      "i_want": "to manually change the source of supply in exceptional cases",
+      "so_that": "I can respond to supply disruptions or business exceptions while preserving traceability",
+      "acceptance_criteria": [
+        "Given a planned supply recommendation has an automatically assigned source, When I manually change the source, Then the system saves the new source against the planned recommendation",
+        "Given I manually change a source of supply, When the change is saved, Then the system records the user, timestamp, original source, new source, and reason for change",
+        "Given the selected manual source is not valid for the item-location or planning date, When I attempt to save the change, Then the system prevents the change or flags it according to configured validation rules"
+      ],
+      "section_source": "Section 1: Introduction",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-013",
+      "title": "Submit supply plans for approval",
+      "as_a": "Supply Planner",
+      "i_want": "to submit a supply plan for approval",
+      "so_that": "Archlin can govern supply plan decisions through a controlled review process",
+      "acceptance_criteria": [
+        "Given a supply plan is ready for review, When I submit it for approval, Then the system changes the plan status to submitted",
+        "Given a plan is submitted, When the workflow is triggered, Then the system routes the approval request to the configured approver or approver group",
+        "Given a submitted plan exists, When I view the approval status, Then the system displays the current status, assigned approver, submission date, and submitter"
+      ],
+      "section_source": "Section 1: Introduction",
+      "priority": "High"
+    },
+    {
+      "id": "US-014",
+      "title": "Notify approvers using configurable approval alerts",
+      "as_a": "Planning Manager",
+      "i_want": "approvers to receive alerts at a defined frequency when supply plans require approval",
+      "so_that": "supply plan decisions are reviewed in a timely manner",
+      "acceptance_criteria": [
+        "Given an approval alert frequency is configured, When a supply plan is pending approval, Then the system sends alerts to the assigned approver according to that frequency",
+        "Given a pending approval remains unresolved, When the next configured alert interval occurs, Then the system sends a reminder alert",
+        "Given a supply plan has been approved or rejected, When the alert process runs, Then the system no longer sends pending approval reminders for that plan"
+      ],
+      "section_source": "Section 1: Introduction",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-015",
+      "title": "Approve or reject supply plans with reason codes and comments",
+      "as_a": "Approver",
+      "i_want": "to approve or reject submitted supply plans with reason codes and comments",
+      "so_that": "supply plan decisions are traceable and actionable",
+      "acceptance_criteria": [
+        "Given a supply plan is pending my approval, When I approve the plan, Then the system changes the plan status to approved and records my approval timestamp",
+        "Given a supply plan is pending my approval, When I reject the plan, Then the system requires a rejection reason code and comment before saving the rejection",
+        "Given a supply plan is approved or rejected, When the approval history is viewed, Then the system displays the approver, decision, decision date, reason code where applicable, and comments"
+      ],
+      "section_source": "Section 1: Introduction",
+      "priority": "High"
+    },
+    {
+      "id": "US-016",
+      "title": "Notify submitters of approval decisions",
+      "as_a": "Supply Planner",
+      "i_want": "to receive notifications when my submitted supply plan is approved or rejected",
+      "so_that": "I can take timely follow-up action",
+      "acceptance_criteria": [
+        "Given I submitted a supply plan, When the plan is approved, Then the system sends me an approval notification including the plan identifier and approval date",
+        "Given I submitted a supply plan, When the plan is rejected, Then the system sends me a rejection notification including the plan identifier, rejection reason code, and comments",
+        "Given a notification is sent, When I open it, Then it links me to the relevant supply plan or approval record"
+      ],
+      "section_source": "Section 1: Introduction",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-017",
+      "title": "Model supply disruption scenarios by changing sourcing networks",
+      "as_a": "Supply Planner",
+      "i_want": "to model supply disruption scenarios by altering sourcing networks",
+      "so_that": "Archlin can evaluate supply alternatives before changing the baseline plan",
+      "acceptance_criteria": [
+        "Given a baseline supply plan exists, When I create a scenario, Then the system creates a separate scenario version without changing the baseline plan",
+        "Given a scenario version exists, When I alter sourcing network assumptions, Then the system recalculates supply impacts within the scenario",
+        "Given scenario results are calculated, When I compare the scenario to baseline, Then the system displays differences in supply quantities, sourcing assumptions, and affected planning periods"
+      ],
+      "section_source": "Section 1: Introduction",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-018",
+      "title": "Assess cost and financial impacts of scenarios",
+      "as_a": "Planning Manager",
+      "i_want": "to evaluate cost, volume, and finance-based projections for supply scenarios",
+      "so_that": "Archlin can understand financial implications before committing planning decisions",
+      "acceptance_criteria": [
+        "Given cost and pricing inputs are available, When a supply scenario is calculated, Then the system calculates financial projections for the scenario across the planning horizon",
+        "Given baseline and scenario projections exist, When I compare them, Then the system displays cost and volume differences by selected planning dimensions",
+        "Given working capital inputs are available, When working capital calculation is enabled, Then the system calculates working capital impact for the scenario"
+      ],
+      "section_source": "Section 1: Introduction",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-019",
+      "title": "Commit approved scenario into baseline plan and budget",
+      "as_a": "Planning Manager",
+      "i_want": "to commit a selected scenario into the baseline plan and budget",
+      "so_that": "approved scenario decisions can become the operational planning basis",
+      "acceptance_criteria": [
+        "Given a scenario has been reviewed and selected, When I commit the scenario, Then the system updates the baseline supply plan with the selected scenario assumptions and results",
+        "Given a scenario is committed, When the baseline plan is viewed, Then the committed scenario values are reflected in the baseline version",
+        "Given a scenario is committed, When audit history is viewed, Then the system records the committed scenario identifier, user, timestamp, and affected planning periods"
+      ],
+      "section_source": "Section 1: Introduction",
+      "priority": "Medium"
+    },
+    {
+      "id": "US-020",
+      "title": "Represent Archlin supply chain flows in a supply chain map",
+      "as_a": "Supply Chain Planner",
+      "i_want": "to view a graphical supply chain map covering procurement, manufacturing, and distribution flows",
+      "so_that": "Archlin can align supply management processes with its supply network",
+      "acceptance_criteria": [
+        "Given supply network relationships are maintained, When I open the supply chain map, Then the system displays procurement, manufacturing, and distribution nodes and flows",
+        "Given I select a node or flow in the map, When details are displayed, Then the system shows relevant planning attributes such as location, product scope, source relationship, and supply flow direction where available",
+        "Given confirmed scope data is updated during detailed design, When the map is refreshed, Then the updated supply network relationships are reflected in the graphical view"
+      ],
+      "section_source": "Section 3.1: Supply Chain Maps",
+      "priority": "Medium"
+    }
+  ],
+  "project_id": "678dff53"
+}

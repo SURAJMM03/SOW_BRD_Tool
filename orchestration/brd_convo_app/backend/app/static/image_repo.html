@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Kinaxis Blueprint — Image Library</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#F7F7F7;--surface:#FFFFFF;--surface2:#F0F0F0;--surface3:#E8E8E8;
+      --border:#DDDDDD;--border-hover:#AAAAAA;
+      --accent:#0070C0;--accent-glow:rgba(0,112,192,0.15);--accent-soft:rgba(0,112,192,0.08);
+      --green:#0F6E56;--green-soft:rgba(15,110,86,0.1);
+      --amber:#854F0B;--amber-soft:rgba(133,79,11,0.1);
+      --red:#A32D2D;--red-soft:rgba(163,45,45,0.1);
+      --text:#1A1A1A;--text-sec:#888888;--text-dim:#CCCCCC;
+      --r:6px;--rlg:10px;
+      --font:'Segoe UI',system-ui,sans-serif;
+    }
+    body{background:var(--bg);color:var(--text);font-family:var(--font);height:100vh;display:flex;flex-direction:column;overflow:hidden}
+
+    /* NAV */
+    .topnav{background:var(--surface);border-bottom:1px solid var(--border);padding:0 24px;height:52px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:relative}
+    .topnav::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.3}
+    .nav-left{display:flex;align-items:center;gap:12px}
+    .logo-mark{width:32px;height:32px;background:#003366;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff}
+    .nav-title{font-size:14px;font-weight:600}
+    .nav-links{display:flex;gap:4px}
+    .nav-link{padding:5px 12px;border-radius:7px;font-size:12px;font-weight:500;color:var(--text-sec);text-decoration:none;transition:all .15s}
+    .nav-link:hover{background:var(--surface2);color:var(--text)}
+    .nav-link.active{background:var(--accent-soft);color:var(--accent);font-weight:600}
+
+    /* LAYOUT */
+    .layout{flex:1;display:flex;overflow:hidden}
+
+    /* LEFT SIDEBAR — repo list */
+    .sidebar{width:260px;flex-shrink:0;border-right:1px solid var(--border);background:var(--surface);display:flex;flex-direction:column;overflow:hidden}
+    .sidebar-hd{padding:16px 16px 12px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-shrink:0}
+    .sidebar-hd h2{font-size:13px;font-weight:700}
+    .btn-new{display:flex;align-items:center;gap:4px;padding:5px 10px;border-radius:7px;border:none;background:var(--accent);color:#fff;font-family:var(--font);font-size:11px;font-weight:600;cursor:pointer;transition:all .2s}
+    .btn-new:hover{background:#005fa3}
+    .repo-list{flex:1;overflow-y:auto;padding:8px}
+    .repo-item{padding:10px 12px;border-radius:8px;cursor:pointer;transition:all .15s;border:1px solid transparent;margin-bottom:4px}
+    .repo-item:hover{background:var(--surface2);border-color:var(--border)}
+    .repo-item.active{background:var(--accent-soft);border-color:rgba(0,112,192,.25)}
+    .repo-item-name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .repo-item-meta{font-size:11px;color:var(--text-sec);margin-top:2px;display:flex;gap:8px}
+    .repo-item-desc{font-size:10px;color:var(--text-dim);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .sidebar-empty{padding:32px 16px;text-align:center;color:var(--text-dim);font-size:12px;line-height:1.6}
+
+    /* MAIN AREA */
+    .main{flex:1;display:flex;flex-direction:column;overflow:hidden}
+    .main-placeholder{flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:var(--text-dim)}
+    .main-placeholder .ph-icon{font-size:48px;opacity:.3}
+    .main-placeholder p{font-size:13px}
+    .main-placeholder small{font-size:11px}
+
+    /* REPO DETAIL */
+    .repo-detail{flex:1;display:flex;flex-direction:column;overflow:hidden}
+    .detail-hd{padding:16px 24px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-shrink:0;background:var(--surface)}
+    .detail-hd h2{font-size:18px;font-weight:700;flex:1}
+    .detail-hd-desc{font-size:12px;color:var(--text-sec);margin-top:2px}
+    .detail-hd-count{font-size:11px;color:var(--text-sec);background:var(--surface2);padding:3px 10px;border-radius:20px;white-space:nowrap}
+    .btn-icon{padding:6px 10px;border:1px solid var(--border);border-radius:var(--r);background:transparent;font-family:var(--font);font-size:11px;cursor:pointer;color:var(--text-sec);transition:all .15s}
+    .btn-icon:hover{background:var(--surface2);color:var(--text)}
+    .btn-icon.danger:hover{background:var(--red-soft);border-color:var(--red);color:var(--red)}
+
+    /* TWO-COLUMN: upload left, gallery right */
+    .detail-body{flex:1;display:flex;overflow:hidden}
+
+    /* UPLOAD PANEL */
+    .upload-col{width:320px;flex-shrink:0;border-right:1px solid var(--border);overflow-y:auto;padding:16px}
+    .upload-col h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text-sec);margin-bottom:12px}
+
+    /* Drag-drop */
+    .drop-zone{border:2px dashed var(--border);border-radius:var(--rlg);padding:22px 12px;text-align:center;cursor:pointer;transition:all .2s;position:relative;background:var(--bg);margin-bottom:14px}
+    .drop-zone:hover,.drop-zone.drag-over{border-color:var(--accent);background:var(--accent-soft)}
+    .drop-zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+    .drop-icon{font-size:28px;line-height:1;margin-bottom:6px}
+    .drop-label{font-size:11px;color:var(--text-sec)}
+    .drop-label span{color:var(--accent);font-weight:600}
+    .drop-hint{font-size:10px;color:var(--text-dim);margin-top:3px}
+    .preview-wrap{display:none;margin-top:8px;position:relative}
+    .preview-wrap img{width:100%;max-height:120px;object-fit:contain;border-radius:var(--r);border:1px solid var(--border)}
+    .preview-clear{position:absolute;top:4px;right:4px;width:20px;height:20px;border-radius:50%;background:rgba(0,0,0,.5);color:#fff;border:none;cursor:pointer;font-size:11px;display:flex;align-items:center;justify-content:center}
+
+    /* Form fields */
+    .field{display:flex;flex-direction:column;gap:3px;margin-bottom:10px}
+    .field label{font-size:10px;font-weight:600;color:var(--text-sec);text-transform:uppercase;letter-spacing:.4px}
+    .field label .req{color:var(--accent)}
+    .field input,.field textarea,.field select{padding:7px 9px;border:1px solid var(--border);border-radius:var(--r);font-family:var(--font);font-size:12px;color:var(--text);background:var(--bg);transition:border .15s}
+    .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--accent);background:#fff}
+    .field textarea{resize:vertical;min-height:52px}
+    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+
+    /* Tag input */
+    .tag-input-wrap{border:1px solid var(--border);border-radius:var(--r);background:var(--bg);padding:5px 7px;display:flex;flex-wrap:wrap;gap:4px;cursor:text;transition:border .15s;min-height:34px}
+    .tag-input-wrap:focus-within{border-color:var(--accent);background:#fff}
+    .tag{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;background:var(--accent-soft);border:1px solid rgba(0,112,192,.2);border-radius:20px;font-size:10px;color:var(--accent)}
+    .tag button{background:none;border:none;cursor:pointer;color:var(--accent);font-size:10px;padding:0;line-height:1;opacity:.7}
+    .tag button:hover{opacity:1}
+    .tag-input{border:none;outline:none;background:transparent;font-family:var(--font);font-size:11px;color:var(--text);min-width:60px;flex:1}
+
+    .btn-upload{width:100%;padding:9px;border:none;border-radius:var(--r);background:var(--accent);color:#fff;font-family:var(--font);font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;margin-top:4px}
+    .btn-upload:hover:not(:disabled){background:#005fa3}
+    .btn-upload:disabled{opacity:.5;cursor:not-allowed}
+    .upload-status{font-size:11px;text-align:center;padding:5px;border-radius:var(--r);display:none;margin-top:6px}
+    .upload-status.ok{background:var(--green-soft);color:var(--green);display:block}
+    .upload-status.err{background:var(--red-soft);color:var(--red);display:block}
+
+    /* GALLERY */
+    .gallery-col{flex:1;display:flex;flex-direction:column;overflow:hidden}
+    .gallery-toolbar{padding:12px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;flex-shrink:0;background:var(--surface)}
+    .gallery-search{padding:6px 10px;border:1px solid var(--border);border-radius:var(--r);font-family:var(--font);font-size:12px;background:var(--bg);flex:1;transition:border .15s}
+    .gallery-search:focus{outline:none;border-color:var(--accent)}
+    .filter-select{padding:6px 10px;border:1px solid var(--border);border-radius:var(--r);font-family:var(--font);font-size:12px;background:var(--bg);cursor:pointer}
+    .gallery-count{font-size:11px;color:var(--text-sec);white-space:nowrap}
+    .gallery-grid{flex:1;overflow-y:auto;padding:14px 16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;align-content:start}
+    .gallery-empty{grid-column:1/-1;display:flex;flex-direction:column;align-items:center;padding:60px 20px;color:var(--text-dim);gap:8px;text-align:center}
+    .gallery-empty .ei{font-size:40px;opacity:.35}
+
+    /* Image card */
+    .img-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rlg);overflow:hidden;display:flex;flex-direction:column;transition:all .2s}
+    .img-card:hover{border-color:var(--border-hover);box-shadow:0 3px 12px rgba(0,0,0,.07);transform:translateY(-1px)}
+    .card-thumb{width:100%;height:120px;object-fit:contain;background:var(--surface2);padding:6px;display:block}
+    .card-thumb-ph{width:100%;height:120px;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:30px;color:var(--text-dim)}
+    .card-body{padding:8px 10px;flex:1;display:flex;flex-direction:column;gap:4px}
+    .card-caption{font-size:11px;font-weight:600;line-height:1.3;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+    .card-badges{display:flex;gap:4px;flex-wrap:wrap;margin-top:2px}
+    .sec-badge{font-size:9px;padding:1px 6px;border-radius:20px;background:var(--accent-soft);color:var(--accent);font-weight:600;white-space:nowrap}
+    .sec-badge.sub{background:var(--surface3);color:var(--text-sec)}
+    .card-type{font-size:10px;color:var(--text-dim)}
+    .card-kws{display:flex;flex-wrap:wrap;gap:2px;margin-top:2px}
+    .kw-chip{font-size:9px;padding:1px 5px;background:var(--surface3);border-radius:20px;color:var(--text-sec)}
+    .card-footer{padding:6px 10px;border-top:1px solid var(--border);display:flex;gap:5px}
+    .card-btn{flex:1;padding:5px;border:1px solid var(--border);border-radius:var(--r);background:transparent;font-family:var(--font);font-size:10px;cursor:pointer;color:var(--text-sec);transition:all .15s}
+    .card-btn:hover{background:var(--surface2);color:var(--text)}
+    .card-btn.danger:hover{background:var(--red-soft);border-color:var(--red);color:var(--red)}
+
+    /* MODALS */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;align-items:center;justify-content:center;z-index:1000;backdrop-filter:blur(2px)}
+    .modal-backdrop.open{display:flex}
+    .modal{background:var(--surface);border-radius:var(--rlg);box-shadow:0 8px 40px rgba(0,0,0,.18);width:460px;max-height:88vh;display:flex;flex-direction:column;overflow:hidden}
+    .modal-hd{padding:16px 20px 12px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-shrink:0}
+    .modal-hd h3{font-size:14px;font-weight:700}
+    .modal-close{background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-sec);padding:2px 5px;border-radius:4px}
+    .modal-close:hover{background:var(--surface2)}
+    .modal-body{padding:18px 20px;overflow-y:auto;display:flex;flex-direction:column;gap:12px}
+    .modal-ft{padding:12px 20px;border-top:1px solid var(--border);display:flex;gap:8px;justify-content:flex-end;flex-shrink:0}
+    .btn-cancel{padding:7px 14px;border:1px solid var(--border);border-radius:var(--r);background:transparent;font-family:var(--font);font-size:12px;cursor:pointer;color:var(--text-sec)}
+    .btn-cancel:hover{background:var(--surface2)}
+    .btn-save{padding:7px 18px;border:none;border-radius:var(--r);background:var(--accent);color:#fff;font-family:var(--font);font-size:12px;font-weight:600;cursor:pointer}
+    .btn-save:hover{background:#005fa3}
+    .btn-danger{padding:7px 18px;border:none;border-radius:var(--r);background:var(--red);color:#fff;font-family:var(--font);font-size:12px;font-weight:600;cursor:pointer}
+    .btn-danger:hover{background:#8a2020}
+
+    /* Link-to-project modal — wider, has two-column list */
+    .modal.wide{width:600px}
+    .link-list{display:flex;flex-direction:column;gap:6px;max-height:320px;overflow-y:auto}
+    .link-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--border);border-radius:var(--r);transition:all .15s}
+    .link-item:hover{background:var(--surface2)}
+    .link-item-name{font-size:13px;font-weight:600;flex:1}
+    .link-item-client{font-size:11px;color:var(--text-sec)}
+    .link-toggle{padding:5px 12px;border-radius:20px;border:1px solid var(--border);background:transparent;font-family:var(--font);font-size:11px;font-weight:600;cursor:pointer;transition:all .15s;color:var(--text-sec)}
+    .link-toggle.linked{background:var(--green-soft);border-color:var(--green);color:var(--green)}
+    .link-toggle:hover{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+
+    /* Toast */
+    .toast{position:fixed;bottom:22px;right:22px;padding:9px 16px;border-radius:var(--r);font-size:12px;font-weight:500;color:#fff;opacity:0;transform:translateY(6px);transition:all .3s;pointer-events:none;z-index:2000}
+    .toast.ok{background:#0F6E56}
+    .toast.err{background:#A32D2D}
+    .toast.show{opacity:1;transform:translateY(0)}
+  </style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="nav-left">
+    <div class="logo-mark">K</div>
+    <div><div class="nav-title">Kinaxis Blueprint</div></div>
+  </div>
+  <div class="nav-links">
+    <a href="/projects" class="nav-link">Projects</a>
+    <a href="/repositories" class="nav-link">Document Repositories</a>
+    <a href="/image-repo" class="nav-link active">Image Library</a>
+    <a href="/editor" class="nav-link">Editor</a>
+    <a href="/templates" class="nav-link">Templates</a>
+    <a href="/sow"       class="nav-link">SOW</a>
+    <a href="/help"      class="nav-link">Help</a>
+  </div>
+</nav>
+
+<div class="layout">
+
+  <!-- SIDEBAR: repo list -->
+  <div class="sidebar">
+    <div class="sidebar-hd">
+      <h2>Image Repositories</h2>
+      <button class="btn-new" onclick="openNewRepo()">+ New</button>
+    </div>
+    <div class="repo-list" id="repoList">
+      <div class="sidebar-empty">No image repositories yet.<br>Click <strong>+ New</strong> to create one.</div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main" id="mainArea">
+    <div class="main-placeholder">
+      <div class="ph-icon">🖼️</div>
+      <p>Select or create an Image Repository</p>
+      <small>Import process diagrams and Kinaxis screenshots, then link Repositories to projects</small>
+    </div>
+  </div>
+</div>
+
+<!-- New / Edit Repo Modal -->
+<div class="modal-backdrop" id="repoModal">
+  <div class="modal">
+    <div class="modal-hd">
+      <h3 id="repoModalTitle">New Image Repository</h3>
+      <button class="modal-close" onclick="closeRepoModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="repoModalId"/>
+      <div class="field">
+        <label>Name <span class="req">*</span></label>
+        <input type="text" id="repoModalName" placeholder="e.g. Kinaxis Standard Diagrams" maxlength="100"/>
+      </div>
+      <div class="field">
+        <label>Description</label>
+        <textarea id="repoModalDesc" placeholder="What types of images are in this repository?" rows="2"></textarea>
+      </div>
+    </div>
+    <div class="modal-ft">
+      <button class="btn-cancel" onclick="closeRepoModal()">Cancel</button>
+      <button class="btn-save" onclick="saveRepo()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Image Modal -->
+<div class="modal-backdrop" id="editImgModal">
+  <div class="modal">
+    <div class="modal-hd">
+      <h3>Edit Image Metadata</h3>
+      <button class="modal-close" onclick="closeEditImg()">✕</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="editImgId"/>
+      <div class="field">
+        <label>Caption <span class="req">*</span></label>
+        <input type="text" id="editImgCaption" maxlength="200"/>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label>Section</label>
+          <select id="editImgSection" onchange="onEditSecChange()"></select>
+        </div>
+        <div class="field">
+          <label>Sub-section</label>
+          <select id="editImgSubSection"></select>
+        </div>
+      </div>
+      <div class="field">
+        <label>Diagram Type</label>
+        <select id="editImgDtype"></select>
+      </div>
+      <div class="field">
+        <label>Keywords</label>
+        <div class="tag-input-wrap" id="editImgTagWrap" onclick="document.getElementById('editImgTagInput').focus()">
+          <input class="tag-input" id="editImgTagInput" placeholder="Type and press Enter…"/>
+        </div>
+        <input type="hidden" id="editImgKeywords"/>
+      </div>
+      <div class="field">
+        <label>Description</label>
+        <textarea id="editImgDesc" rows="3"></textarea>
+      </div>
+    </div>
+    <div class="modal-ft">
+      <button class="btn-cancel" onclick="closeEditImg()">Cancel</button>
+      <button class="btn-save" onclick="saveEditImg()">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+<!-- Link to Projects Modal -->
+<div class="modal-backdrop" id="linkModal">
+  <div class="modal wide">
+    <div class="modal-hd">
+      <h3 id="linkModalTitle">Link to Projects</h3>
+      <button class="modal-close" onclick="closeLinkModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:12px;color:var(--text-sec)">Toggle projects to link or unlink this image repository. Linked projects will see these images in Browse Images.</p>
+      <div class="link-list" id="linkList"></div>
+    </div>
+    <div class="modal-ft">
+      <button class="btn-cancel" onclick="closeLinkModal()">Done</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ── State ─────────────────────────────────────────────────────────────────
+let _meta        = { sections:{}, sub_sections:{}, diagram_types:[] };
+let _repos       = [];
+let _activeRepo  = null;   // full repo object
+let _images      = [];     // images in active repo
+let _tags        = [];     // upload form tags
+let _editTags    = [];
+let _selFile     = null;
+let _projects    = [];     // all projects (for link modal)
+let _linkedProjs = {};     // repo_id → set of linked project_ids
+
+// ── Boot ──────────────────────────────────────────────────────────────────
+(async () => {
+  await loadMeta();
+  populateDropdowns();
+  await loadRepos();
+  await loadProjects();
+})();
+
+async function loadMeta() {
+  try {
+    const r = await fetch('/api/image-repos/meta');
+    _meta = await r.json();
+  } catch(e) { console.error(e); }
+}
+
+async function loadRepos() {
+  try {
+    const r = await fetch('/api/image-repos');
+    const d = await r.json();
+    _repos = d.repos || [];
+    renderRepoList();
+  } catch(e) { console.error(e); }
+}
+
+async function loadProjects() {
+  try {
+    const r = await fetch('/api/projects');
+    const d = await r.json();
+    _projects = Array.isArray(d) ? d : (d.projects || []);
+  } catch(e) { /* optional */ }
+}
+
+function renderRepoList() {
+  const el = document.getElementById('repoList');
+  if (!_repos.length) {
+    el.innerHTML = '<div class="sidebar-empty">No image repositories yet.<br>Click <strong>+ New</strong> to create one.</div>';
+    return;
+  }
+  el.innerHTML = _repos.map(r =>
+    `<div class="repo-item${_activeRepo && _activeRepo.repo_id===r.repo_id?' active':''}" onclick="selectRepo('${r.repo_id}')">
+      <div class="repo-item-name">${esc(r.name)}</div>
+      <div class="repo-item-meta"><span>${r.image_count||0} images</span></div>
+      ${r.description ? `<div class="repo-item-desc">${esc(r.description)}</div>` : ''}
+    </div>`
+  ).join('');
+}
+
+async function selectRepo(repoId) {
+  _activeRepo = _repos.find(r => r.repo_id === repoId) || null;
+  renderRepoList();
+  if (_activeRepo) {
+    renderRepoDetail();
+    await loadImages();
+  }
+}
+
+// ── Repo detail ───────────────────────────────────────────────────────────
+function renderRepoDetail() {
+  const main = document.getElementById('mainArea');
+  main.innerHTML = `
+  <div class="repo-detail">
+    <div class="detail-hd">
+      <div style="flex:1">
+        <div class="detail-hd" style="padding:0;border:none;gap:8px;display:flex;align-items:center">
+          <h2>${esc(_activeRepo.name)}</h2>
+          <span class="detail-hd-count" id="imgCount">${_activeRepo.image_count||0} images</span>
+        </div>
+        ${_activeRepo.description?`<div class="detail-hd-desc">${esc(_activeRepo.description)}</div>`:''}
+      </div>
+      <button class="btn-icon" onclick="openLinkModal('${_activeRepo.repo_id}')">🔗 Link to Projects</button>
+      <button class="btn-icon" onclick="openEditRepo('${_activeRepo.repo_id}')">Edit</button>
+      <button class="btn-icon danger" onclick="confirmDeleteRepo('${_activeRepo.repo_id}')">Delete</button>
+    </div>
+    <div class="detail-body">
+      <!-- Upload col -->
+      <div class="upload-col">
+        <h3>Import Image</h3>
+        <div class="drop-zone" id="dropZone">
+          <input type="file" id="fileInput" accept="image/png,image/jpeg,image/gif,image/bmp,image/webp"/>
+          <div class="drop-icon">📤</div>
+          <div class="drop-label"><span>Browse</span> or drag & drop</div>
+          <div class="drop-hint">PNG · JPG · GIF · BMP · WebP</div>
+          <div class="preview-wrap" id="previewWrap">
+            <img id="previewImg" src="" alt=""/>
+            <button class="preview-clear" id="clearPreview" title="Clear">✕</button>
+          </div>
+        </div>
+        <div class="field">
+          <label>Caption <span class="req">*</span></label>
+          <input type="text" id="fCaption" placeholder="Short descriptive title" maxlength="200"/>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Section</label>
+            <select id="fSection" onchange="onUpSecChange()"></select>
+          </div>
+          <div class="field">
+            <label>Sub-section</label>
+            <select id="fSubSection"></select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Diagram Type</label>
+          <select id="fDtype"></select>
+        </div>
+        <div class="field">
+          <label>Keywords</label>
+          <div class="tag-input-wrap" id="tagWrap" onclick="document.getElementById('tagInput').focus()">
+            <input class="tag-input" id="tagInput" placeholder="Enter, press comma…"/>
+          </div>
+          <input type="hidden" id="fKeywords"/>
+        </div>
+        <div class="field">
+          <label>Description</label>
+          <textarea id="fDesc" rows="2" placeholder="What does this image show?"></textarea>
+        </div>
+        <div class="upload-status" id="uploadStatus"></div>
+        <button class="btn-upload" id="btnUpload" onclick="submitUpload()">Import Image</button>
+      </div>
+      <!-- Gallery col -->
+      <div class="gallery-col">
+        <div class="gallery-toolbar">
+          <input class="gallery-search" id="gallerySearch" placeholder="Search images…" oninput="filterGallery()"/>
+          <select class="filter-select" id="secFilter" onchange="filterGallery()">
+            <option value="">All Sections</option>
+          </select>
+          <span class="gallery-count" id="galleryCount">0 images</span>
+        </div>
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </div>
+    </div>
+  </div>`;
+
+  // Populate dropdowns for upload form
+  populateDropdownsInForm();
+  bindUploadEvents();
+}
+
+function populateDropdownsInForm() {
+  const secs  = _meta.sections || {};
+  const dtypes= _meta.diagram_types || [];
+
+  const secOpts = '<option value="">— Any —</option>' +
+    Object.entries(secs).map(([k,v]) => `<option value="${k}">${k} — ${v}</option>`).join('');
+  const secFilterOpts = '<option value="">All Sections</option>' +
+    Object.entries(secs).map(([k,v]) => `<option value="${k}">${k} — ${v}</option>`).join('');
+  const dtOpts = dtypes.map(([k,v]) => `<option value="${k}">${v}</option>`).join('');
+
+  document.getElementById('fSection').innerHTML = secOpts;
+  document.getElementById('secFilter').innerHTML = secFilterOpts;
+  document.getElementById('fDtype').innerHTML = dtOpts;
+
+  // Also populate edit modal dropdowns (they exist in DOM already)
+  const editSec = document.getElementById('editImgSection');
+  if (editSec) {
+    editSec.innerHTML = '<option value="">— Any —</option>' +
+      Object.entries(secs).map(([k,v]) => `<option value="${k}">${k} — ${v}</option>`).join('');
+  }
+  const editDtype = document.getElementById('editImgDtype');
+  if (editDtype) editDtype.innerHTML = dtOpts;
+}
+
+function onUpSecChange() { buildSubSec('fSection','fSubSection'); }
+function onEditSecChange() { buildSubSec('editImgSection','editImgSubSection'); }
+function buildSubSec(secId, subId) {
+  const top  = document.getElementById(secId).value;
+  const subs = (_meta.sub_sections||{})[top] || {};
+  document.getElementById(subId).innerHTML =
+    '<option value="">— Any —</option>' +
+    Object.entries(subs).map(([k,v]) => `<option value="${k}">${k} — ${v}</option>`).join('');
+}
+
+// ── Upload events ─────────────────────────────────────────────────────────
+function bindUploadEvents() {
+  document.getElementById('fileInput').addEventListener('change', e => {
+    if (e.target.files[0]) loadPreview(e.target.files[0]);
+  });
+  const dz = document.getElementById('dropZone');
+  dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('drag-over'); });
+  dz.addEventListener('dragleave', () => dz.classList.remove('drag-over'));
+  dz.addEventListener('drop', e => {
+    e.preventDefault(); dz.classList.remove('drag-over');
+    if (e.dataTransfer.files[0]) loadPreview(e.dataTransfer.files[0]);
+  });
+  document.getElementById('clearPreview').addEventListener('click', e => {
+    e.stopPropagation(); clearPreview();
+  });
+  document.getElementById('tagInput').addEventListener('keydown', e => handleTagKey(e,'upload'));
+}
+
+function loadPreview(file) {
+  _selFile = file;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    document.getElementById('previewImg').src = ev.target.result;
+    document.getElementById('previewWrap').style.display = 'block';
+    ['drop-icon','drop-label','drop-hint'].forEach(c =>
+      document.querySelector('.drop-zone .'+c).style.display='none');
+  };
+  reader.readAsDataURL(file);
+  const cap = document.getElementById('fCaption');
+  if (!cap.value) cap.value = file.name.replace(/\.[^.]+$/,'').replace(/[-_]+/g,' ');
+}
+function clearPreview() {
+  _selFile = null;
+  document.getElementById('previewImg').src = '';
+  document.getElementById('previewWrap').style.display = 'none';
+  document.getElementById('fileInput').value = '';
+  ['drop-icon','drop-label','drop-hint'].forEach(c =>
+    document.querySelector('.drop-zone .'+c).style.display='');
+}
+
+// ── Tags ──────────────────────────────────────────────────────────────────
+function handleTagKey(e, mode) {
+  if (e.key==='Enter'||e.key===',') {
+    e.preventDefault();
+    const val = e.target.value.trim().replace(/,$/,'');
+    if (val) addTag(val, mode);
+    e.target.value = '';
+  }
+  if (e.key==='Backspace' && !e.target.value) {
+    const arr = mode==='edit' ? _editTags : _tags;
+    arr.pop();
+    renderTags(mode);
+  }
+}
+function addTag(val,mode) {
+  const arr = mode==='edit' ? _editTags : _tags;
+  if (!arr.includes(val)) { arr.push(val); renderTags(mode); }
+}
+function removeTag(val,mode) {
+  if (mode==='edit') _editTags=_editTags.filter(t=>t!==val);
+  else _tags=_tags.filter(t=>t!==val);
+  renderTags(mode);
+}
+function renderTags(mode) {
+  const arr   = mode==='edit' ? _editTags : _tags;
+  const wrapId= mode==='edit' ? 'editImgTagWrap'  : 'tagWrap';
+  const inpId = mode==='edit' ? 'editImgTagInput' : 'tagInput';
+  const hidId = mode==='edit' ? 'editImgKeywords' : 'fKeywords';
+  const wrap  = document.getElementById(wrapId);
+  if (!wrap) return;
+  wrap.querySelectorAll('.tag').forEach(t=>t.remove());
+  arr.forEach(t => {
+    const el = document.createElement('span');
+    el.className='tag';
+    el.innerHTML=`${esc(t)}<button onclick="removeTag('${t}','${mode}')" title="Remove">✕</button>`;
+    wrap.insertBefore(el, document.getElementById(inpId));
+  });
+  document.getElementById(hidId).value = arr.join(',');
+}
+
+// ── Submit upload ─────────────────────────────────────────────────────────
+async function submitUpload() {
+  const caption = document.getElementById('fCaption').value.trim();
+  if (!caption) return showStatus('✗ Caption is required','err');
+  if (!_selFile)  return showStatus('✗ Please select an image file','err');
+
+  const fd = new FormData();
+  fd.append('file',         _selFile);
+  fd.append('caption',      caption);
+  fd.append('description',  document.getElementById('fDesc').value);
+  fd.append('section_id',   document.getElementById('fSection').value);
+  fd.append('sub_section_id', document.getElementById('fSubSection').value);
+  fd.append('keywords',     document.getElementById('fKeywords').value);
+  fd.append('diagram_type', document.getElementById('fDtype').value);
+
+  const btn = document.getElementById('btnUpload');
+  btn.disabled=true; btn.textContent='Importing…';
+  try {
+    const r = await fetch(`/api/image-repos/${_activeRepo.repo_id}/upload`, {method:'POST',body:fd});
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.detail||'Upload failed');
+    showStatus('✓ Image imported!','ok');
+    toast('Image imported','ok');
+    clearPreview();
+    ['fCaption','fDesc'].forEach(id=>document.getElementById(id).value='');
+    ['fSection','fSubSection'].forEach(id=>document.getElementById(id).value='');
+    _tags=[]; renderTags('upload');
+    await loadImages();
+    // Update count in sidebar
+    const ri = _repos.find(r=>r.repo_id===_activeRepo.repo_id);
+    if (ri) { ri.image_count=_images.length; _activeRepo.image_count=_images.length; }
+    renderRepoList();
+  } catch(e) { showStatus('✗ '+e.message,'err'); }
+  finally { btn.disabled=false; btn.textContent='Import Image'; }
+}
+
+function showStatus(msg,type) {
+  const el=document.getElementById('uploadStatus');
+  el.textContent=msg; el.className='upload-status '+type;
+  setTimeout(()=>el.className='upload-status',4000);
+}
+
+// ── Load + render gallery ─────────────────────────────────────────────────
+async function loadImages() {
+  if (!_activeRepo) return;
+  try {
+    const r = await fetch(`/api/image-repos/${_activeRepo.repo_id}/images`);
+    const d = await r.json();
+    _images = d.images||[];
+    renderGallery(_images);
+  } catch(e) { console.error(e); }
+}
+
+function filterGallery() {
+  const q   = (document.getElementById('gallerySearch').value||'').toLowerCase();
+  const sec = document.getElementById('secFilter').value;
+  const filtered = _images.filter(img => {
+    const sm = !sec || img.brd_section_id===sec;
+    const tm = !q ||
+      (img.caption||'').toLowerCase().includes(q) ||
+      (img.description||'').toLowerCase().includes(q) ||
+      (img.keywords||[]).join(' ').toLowerCase().includes(q) ||
+      (img.section_heading||'').toLowerCase().includes(q);
+    return sm && tm;
+  });
+  renderGallery(filtered, true);
+}
+
+function renderGallery(images, filtered=false) {
+  const grid  = document.getElementById('galleryGrid');
+  const count = document.getElementById('galleryCount');
+  if (!grid) return;
+  count.textContent = filtered
+    ? `${images.length} / ${_images.length} images`
+    : `${images.length} image${images.length!==1?'s':''}`;
+
+  if (!images.length) {
+    grid.innerHTML=`<div class="gallery-empty">
+      <div class="ei">🖼️</div>
+      <p>${filtered?'No images match your filter':'No images yet'}</p>
+      <small>${filtered?'Try different search terms':'Import using the form on the left'}</small>
+    </div>`;
+    return;
+  }
+  grid.innerHTML = images.map(img => {
+    const thumb=`<img class="card-thumb" src="/api/image-repos/${_activeRepo.repo_id}/image/${img.image_id}"
+      alt="${esc(img.caption)}" onerror="this.style.display='none';this.nextSibling.style.display='flex'"/>
+      <div class="card-thumb-ph" style="display:none">🖼️</div>`;
+    const sec = img.brd_section_id ? `<span class="sec-badge">§${img.brd_section_id}</span>` : '';
+    const sub = img.h2 ? `<span class="sec-badge sub">${esc(img.h2)}</span>` : '';
+    const kws = (img.keywords||[]).slice(0,3).map(k=>`<span class="kw-chip">${esc(k)}</span>`).join('');
+    return `<div class="img-card">
+      ${thumb}
+      <div class="card-body">
+        <div class="card-caption">${esc(img.caption)}</div>
+        <div class="card-badges">${sec}${sub}</div>
+        <div class="card-type">${esc((img.diagram_type||'').replace(/_/g,' '))}</div>
+        <div class="card-kws">${kws}</div>
+      </div>
+      <div class="card-footer">
+        <button class="card-btn" onclick="openEditImg('${img.image_id}')">Edit</button>
+        <button class="card-btn danger" onclick="deleteImage('${img.image_id}')">Delete</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── Edit image ────────────────────────────────────────────────────────────
+function openEditImg(imageId) {
+  const img = _images.find(i=>i.image_id===imageId);
+  if (!img) return;
+  document.getElementById('editImgId').value      = imageId;
+  document.getElementById('editImgCaption').value = img.caption||'';
+  document.getElementById('editImgDesc').value    = img.description||'';
+
+  const sec = document.getElementById('editImgSection');
+  if (sec) { sec.value = img.brd_section_id||''; onEditSecChange(); }
+  const sub = document.getElementById('editImgSubSection');
+  if (sub) sub.value = img.section_hint||'';
+  const dt = document.getElementById('editImgDtype');
+  if (dt) dt.value = img.diagram_type||'';
+
+  _editTags = [...(img.keywords||[])];
+  document.getElementById('editImgTagWrap').querySelectorAll('.tag').forEach(t=>t.remove());
+  renderTags('edit');
+
+  // Wire tag input
+  const eti = document.getElementById('editImgTagInput');
+  eti.onkeydown = e => handleTagKey(e,'edit');
+
+  document.getElementById('editImgModal').classList.add('open');
+}
+function closeEditImg() { document.getElementById('editImgModal').classList.remove('open'); }
+
+async function saveEditImg() {
+  const imageId = document.getElementById('editImgId').value;
+  const caption = document.getElementById('editImgCaption').value.trim();
+  if (!caption) return toast('Caption is required','err');
+  const fd = new FormData();
+  fd.append('caption',       caption);
+  fd.append('description',   document.getElementById('editImgDesc').value);
+  fd.append('section_id',    document.getElementById('editImgSection').value);
+  fd.append('sub_section_id',document.getElementById('editImgSubSection').value);
+  fd.append('keywords',      document.getElementById('editImgKeywords').value);
+  fd.append('diagram_type',  document.getElementById('editImgDtype').value);
+  try {
+    const r = await fetch(`/api/image-repos/${_activeRepo.repo_id}/images/${imageId}`,{method:'PUT',body:fd});
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.detail||'Update failed');
+    closeEditImg(); toast('Metadata saved','ok');
+    await loadImages();
+  } catch(e) { toast(e.message,'err'); }
+}
+
+// ── Delete image ──────────────────────────────────────────────────────────
+async function deleteImage(imageId) {
+  if (!confirm('Delete this image? This cannot be undone.')) return;
+  try {
+    const r = await fetch(`/api/image-repos/${_activeRepo.repo_id}/images/${imageId}`,{method:'DELETE'});
+    if (!r.ok) throw new Error('Delete failed');
+    toast('Deleted','ok');
+    await loadImages();
+    const ri = _repos.find(r=>r.repo_id===_activeRepo.repo_id);
+    if (ri) ri.image_count = _images.length;
+    renderRepoList();
+  } catch(e) { toast(e.message,'err'); }
+}
+
+// ── Create / edit repo modal ──────────────────────────────────────────────
+function openNewRepo() {
+  document.getElementById('repoModalTitle').textContent = 'New Image Repository';
+  document.getElementById('repoModalId').value   = '';
+  document.getElementById('repoModalName').value = '';
+  document.getElementById('repoModalDesc').value = '';
+  document.getElementById('repoModal').classList.add('open');
+}
+function openEditRepo(repoId) {
+  const repo = _repos.find(r=>r.repo_id===repoId);
+  if (!repo) return;
+  document.getElementById('repoModalTitle').textContent = 'Edit Repository';
+  document.getElementById('repoModalId').value   = repoId;
+  document.getElementById('repoModalName').value = repo.name;
+  document.getElementById('repoModalDesc').value = repo.description||'';
+  document.getElementById('repoModal').classList.add('open');
+}
+function closeRepoModal() { document.getElementById('repoModal').classList.remove('open'); }
+document.getElementById('repoModal').addEventListener('click', e => {
+  if (e.target===e.currentTarget) closeRepoModal();
+});
+
+async function saveRepo() {
+  const id   = document.getElementById('repoModalId').value;
+  const name = document.getElementById('repoModalName').value.trim();
+  const desc = document.getElementById('repoModalDesc').value.trim();
+  if (!name) return toast('Name is required','err');
+
+  const fd = new FormData(); fd.append('name',name); fd.append('description',desc);
+  try {
+    let r;
+    if (id) {
+      r = await fetch(`/api/image-repos/${id}`, {method:'PUT',body:fd});
+    } else {
+      r = await fetch('/api/image-repos', {method:'POST',body:fd});
+    }
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.detail||'Save failed');
+    closeRepoModal();
+    toast(id ? 'Repository updated' : 'Repository created','ok');
+    await loadRepos();
+    if (!id) await selectRepo(d.repo.repo_id);
+    else if (_activeRepo && _activeRepo.repo_id===id) {
+      _activeRepo = _repos.find(rr=>rr.repo_id===id)||_activeRepo;
+      renderRepoDetail();
+    }
+  } catch(e) { toast(e.message,'err'); }
+}
+
+async function confirmDeleteRepo(repoId) {
+  const repo = _repos.find(r=>r.repo_id===repoId);
+  if (!repo) return;
+  if (!confirm(`Delete "${repo.name}" and all its images? This cannot be undone.`)) return;
+  try {
+    const r = await fetch(`/api/image-repos/${repoId}`,{method:'DELETE'});
+    if (!r.ok) throw new Error('Delete failed');
+    toast('Repository deleted','ok');
+    _activeRepo = null;
+    document.getElementById('mainArea').innerHTML = `<div class="main-placeholder">
+      <div class="ph-icon">🖼️</div><p>Select or create an Image Repository</p></div>`;
+    await loadRepos();
+  } catch(e) { toast(e.message,'err'); }
+}
+
+// ── Link to Projects modal ────────────────────────────────────────────────
+async function openLinkModal(repoId) {
+  const repo = _repos.find(r=>r.repo_id===repoId);
+  document.getElementById('linkModalTitle').textContent = `Link "${repo?.name||repoId}" to Projects`;
+
+  // Load linked projects for this repo
+  let linkedIds = new Set();
+  for (const proj of _projects) {
+    try {
+      const r = await fetch(`/api/projects/${proj.id}/image-repositories`);
+      const d = await r.json();
+      if ((d.image_repositories||[]).some(ir=>ir.repo_id===repoId)) linkedIds.add(proj.id);
+    } catch(e) {}
+  }
+
+  const list = document.getElementById('linkList');
+  if (!_projects.length) {
+    list.innerHTML = '<p style="font-size:12px;color:var(--text-sec);text-align:center;padding:20px">No projects found</p>';
+  } else {
+    list.innerHTML = _projects.map(p => {
+      const linked = linkedIds.has(p.id);
+      return `<div class="link-item">
+        <div style="flex:1">
+          <div class="link-item-name">${esc(p.name||p.id)}</div>
+          <div class="link-item-client">${esc(p.client||'')}</div>
+        </div>
+        <button class="link-toggle${linked?' linked':''}" id="lt_${p.id}"
+          onclick="toggleLink('${repoId}','${p.id}',this)">
+          ${linked ? '✓ Linked' : 'Link'}
+        </button>
+      </div>`;
+    }).join('');
+  }
+  document.getElementById('linkModal').classList.add('open');
+}
+function closeLinkModal() { document.getElementById('linkModal').classList.remove('open'); }
+document.getElementById('linkModal').addEventListener('click', e => {
+  if (e.target===e.currentTarget) closeLinkModal();
+});
+
+async function toggleLink(repoId, projectId, btn) {
+  const linked = btn.classList.contains('linked');
+  try {
+    const method = linked ? 'DELETE' : 'POST';
+    const r = await fetch(`/api/projects/${projectId}/image-repositories/${repoId}`,{method});
+    if (!r.ok) throw new Error('Failed');
+    btn.classList.toggle('linked', !linked);
+    btn.textContent = !linked ? '✓ Linked' : 'Link';
+    toast(!linked ? 'Linked to project' : 'Unlinked from project','ok');
+  } catch(e) { toast(e.message,'err'); }
+}
+
+// ── Utilities ─────────────────────────────────────────────────────────────
+function populateDropdowns() {
+  const secs  = _meta.sections||{};
+  const dtypes= _meta.diagram_types||[];
+  const secOpts = Object.entries(secs).map(([k,v])=>`<option value="${k}">${k} — ${v}</option>`).join('');
+  const dtOpts  = dtypes.map(([k,v])=>`<option value="${k}">${v}</option>`).join('');
+
+  // Edit image modal dropdowns (exist in static DOM)
+  const es = document.getElementById('editImgSection');
+  if (es) es.innerHTML = '<option value="">— Any —</option>' + secOpts;
+  const ed = document.getElementById('editImgDtype');
+  if (ed) ed.innerHTML = dtOpts;
+}
+
+let _toastTimer;
+function toast(msg,type='ok') {
+  const el=document.getElementById('toast');
+  el.textContent=msg; el.className=`toast ${type} show`;
+  clearTimeout(_toastTimer);
+  _toastTimer=setTimeout(()=>el.classList.remove('show'),3000);
+}
+function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+// close modals on Escape
+document.addEventListener('keydown', e => {
+  if (e.key==='Escape') {
+    ['repoModal','editImgModal','linkModal'].forEach(id =>
+      document.getElementById(id).classList.remove('open'));
+  }
+});
+</script>
+</body>
+</html>

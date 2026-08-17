@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kinaxis Blueprint Document — Repositories</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#F7F7F7;--surface:#FFFFFF;--surface2:#F0F0F0;--surface3:#E8E8E8;
+      --border:#DDDDDD;--border-hover:#AAAAAA;
+      --accent:#0070C0;--accent-glow:rgba(0,112,192,0.15);--accent-soft:rgba(0,112,192,0.08);
+      --green:#0F6E56;--green-soft:rgba(15,110,86,0.1);
+      --amber:#854F0B;--amber-soft:rgba(133,79,11,0.1);
+      --red:#A32D2D;--red-soft:rgba(163,45,45,0.1);
+      --text:#1A1A1A;--text-sec:#888888;--text-dim:#CCCCCC;
+      --r:6px;--rlg:10px;
+      --font:'Segoe UI',system-ui,sans-serif;
+    }
+    body{background:var(--bg);color:var(--text);font-family:var(--font);height:100vh;display:flex;flex-direction:column;overflow:hidden}
+
+    /* NAV */
+    .topnav{background:var(--surface);border-bottom:1px solid var(--border);padding:0 28px;height:52px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:relative}
+    .topnav::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.3}
+    .nav-left{display:flex;align-items:center;gap:12px}
+    .logo-mark{width:32px;height:32px;background:#003366;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff;box-shadow:0 2px 10px var(--accent-glow)}
+    .nav-title{font-size:14px;font-weight:600}
+    .nav-subtitle{font-size:10px;color:var(--text-dim);letter-spacing:.5px;text-transform:uppercase}
+    .nav-links{display:flex;gap:4px}
+    .nav-link{padding:5px 12px;border-radius:7px;font-size:12px;font-weight:500;color:var(--text-sec);text-decoration:none;transition:all .15s}
+    .nav-link:hover{background:var(--surface2);color:var(--text)}
+    .nav-link.active{background:var(--accent-soft);color:var(--accent)}
+
+    /* LAYOUT */
+    .layout{flex:1;display:flex;overflow:hidden}
+    .sidebar{width:300px;flex-shrink:0;border-right:1px solid var(--border);background:var(--surface);display:flex;flex-direction:column;overflow:hidden}
+    .main{flex:1;display:flex;flex-direction:column;overflow:hidden}
+
+    /* SIDEBAR */
+    .sidebar-header{padding:20px 20px 12px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+    .sidebar-header h2{font-size:14px;font-weight:700;letter-spacing:-.2px}
+    .btn-new{display:flex;align-items:center;gap:5px;padding:6px 12px;border-radius:8px;border:none;background:var(--accent);color:#fff;font-family:var(--font);font-size:11px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px var(--accent-glow)}
+    .btn-new:hover{background:#005fa3;transform:translateY(-1px)}
+    .repo-list{flex:1;overflow-y:auto;padding:8px}
+    .repo-item{padding:12px 14px;border-radius:9px;cursor:pointer;transition:all .15s;border:1px solid transparent;margin-bottom:4px}
+    .repo-item:hover{background:var(--surface2);border-color:var(--border)}
+    .repo-item.active{background:var(--accent-soft);border-color:rgba(0,112,192,0.25)}
+    .repo-item-name{font-size:13px;font-weight:600;margin-bottom:3px}
+    .repo-item-meta{font-size:11px;color:var(--text-sec);display:flex;gap:10px}
+    .repo-item-desc{font-size:11px;color:var(--text-dim);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .empty-repos{padding:40px 20px;text-align:center;color:var(--text-dim);font-size:12px}
+
+    /* MAIN AREA */
+    .main-placeholder{flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:var(--text-dim)}
+    .main-placeholder svg{width:48px;height:48px;opacity:.3}
+    .main-placeholder p{font-size:13px}
+
+    .repo-detail{flex:1;display:flex;flex-direction:column;overflow:hidden}
+    .detail-header{padding:20px 28px 16px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start;flex-shrink:0}
+    .detail-title{font-size:22px;font-weight:700;letter-spacing:-.4px}
+    .detail-desc{font-size:12px;color:var(--text-sec);margin-top:4px}
+    .detail-actions{display:flex;gap:8px;align-items:center}
+
+    /* TABS */
+    .tabs{display:flex;gap:0;padding:0 28px;border-bottom:1px solid var(--border);flex-shrink:0}
+    .tab{padding:10px 16px;font-size:12px;font-weight:600;color:var(--text-dim);cursor:pointer;border-bottom:2px solid transparent;transition:all .15s}
+    .tab:hover{color:var(--text-sec)}
+    .tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+
+    /* TAB CONTENT */
+    .tab-content{flex:1;overflow-y:auto;padding:20px 28px}
+    .tab-pane{display:none}
+    .tab-pane.active{display:block}
+
+    /* FILES SECTION */
+    .section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+    .section-header h3{font-size:13px;font-weight:700}
+    .upload-zone{border:2px dashed var(--border);border-radius:10px;padding:32px;text-align:center;cursor:pointer;transition:all .2s;margin-bottom:16px}
+    .upload-zone:hover,.upload-zone.drag{border-color:var(--accent);background:var(--accent-soft)}
+    .upload-zone input{display:none}
+    .upload-zone p{font-size:12px;color:var(--text-sec);margin-top:6px}
+    .upload-zone .uz-icon{font-size:28px;margin-bottom:6px}
+
+    .file-list{display:flex;flex-direction:column;gap:6px}
+    .file-row{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 14px;display:flex;align-items:center;gap:12px}
+    .file-ext{width:32px;height:32px;border-radius:6px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;text-transform:uppercase;flex-shrink:0}
+    .file-info{flex:1;min-width:0}
+    .file-name{font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .file-meta{font-size:11px;color:var(--text-sec);margin-top:2px}
+    .file-status{font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px}
+    .status-indexed{background:var(--green-soft);color:var(--green)}
+    .status-chunking{background:var(--amber-soft);color:var(--amber)}
+    .status-uploaded{background:var(--accent-soft);color:var(--accent)}
+    .status-error{background:var(--red-soft);color:var(--red)}
+    .btn-icon{width:28px;height:28px;border-radius:6px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-dim);transition:all .15s;font-size:14px}
+    .btn-icon:hover{background:var(--red-soft);border-color:var(--red);color:var(--red)}
+
+    /* ATTACH SECTION */
+    .project-list{display:flex;flex-direction:column;gap:6px}
+    .project-row{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 14px;display:flex;align-items:center;gap:12px}
+    .project-row .proj-name{flex:1;font-size:12px;font-weight:600}
+    .project-row .proj-client{font-size:11px;color:var(--text-sec)}
+    .btn-attach{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-family:var(--font);font-size:11px;font-weight:600;cursor:pointer;transition:all .15s}
+    .btn-attach-primary{background:var(--accent);color:#fff;box-shadow:0 2px 8px var(--accent-glow)}
+    .btn-attach-primary:hover{background:#005fa3}
+    .btn-attach:hover{background:var(--accent);color:#fff}
+    .btn-attach.detach{border-color:var(--red);color:var(--red)}
+    .btn-attach.detach:hover{background:var(--red);color:#fff}
+    .attached-badge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px;background:var(--green-soft);color:var(--green)}
+
+    /* MODAL */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:100}
+    .modal-backdrop.open{display:flex}
+    .modal{background:var(--surface);border-radius:14px;padding:28px;width:420px;box-shadow:0 8px 40px rgba(0,0,0,.18)}
+    .modal h3{font-size:16px;font-weight:700;margin-bottom:18px}
+    .form-group{margin-bottom:14px}
+    .form-group label{display:block;font-size:11px;font-weight:600;color:var(--text-sec);margin-bottom:6px;text-transform:uppercase;letter-spacing:.4px}
+    .form-input{width:100%;padding:10px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:var(--font);font-size:13px;outline:none;transition:border-color .2s}
+    .form-input:focus{border-color:var(--accent)}
+    .modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:20px}
+    .btn-cancel{padding:9px 18px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text-sec);font-family:var(--font);font-size:12px;font-weight:600;cursor:pointer}
+    .btn-submit{padding:9px 18px;border-radius:8px;border:none;background:var(--accent);color:#fff;font-family:var(--font);font-size:12px;font-weight:600;cursor:pointer;box-shadow:0 2px 8px var(--accent-glow)}
+    .btn-submit:hover{background:#005fa3}
+    .btn-delete{padding:7px 14px;border-radius:8px;border:1px solid var(--red);background:transparent;color:var(--red);font-family:var(--font);font-size:11px;font-weight:600;cursor:pointer;transition:all .15s}
+    .btn-delete:hover{background:var(--red);color:#fff}
+
+    .chunk-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--text-sec);background:var(--surface2);padding:3px 8px;border-radius:5px}
+    .spinner{display:inline-block;width:12px;height:12px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .empty-state{text-align:center;padding:40px;color:var(--text-dim);font-size:12px}
+
+    /* EXPORT / IMPORT */
+    .btn-export{display:flex;align-items:center;gap:5px;padding:6px 12px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text-sec);font-family:var(--font);font-size:11px;font-weight:600;cursor:pointer;transition:all .2s}
+    .btn-export:hover{border-color:var(--green);color:var(--green);background:var(--green-soft)}
+    .btn-import{display:flex;align-items:center;gap:5px;padding:6px 12px;border-radius:8px;border:1px dashed var(--border);background:transparent;color:var(--text-dim);font-family:var(--font);font-size:11px;font-weight:600;cursor:pointer;transition:all .2s}
+    .btn-import:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+
+    /* IMPORT MODAL */
+    .imodal-bd{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:200}
+    .imodal-bd.open{display:flex}
+    .imodal{background:var(--surface);border-radius:14px;padding:24px;width:440px;box-shadow:0 8px 40px rgba(0,0,0,.3);display:flex;flex-direction:column;gap:14px}
+    .imodal h3{font-size:15px;font-weight:700;margin:0}
+    .imodal-drop{border:2px dashed var(--border);border-radius:10px;padding:32px;text-align:center;cursor:pointer;transition:all .2s}
+    .imodal-drop:hover,.imodal-drop.drag{border-color:var(--accent);background:var(--accent-soft)}
+    .imodal-drop p{font-size:12px;color:var(--text-sec);margin-top:6px}
+    .imodal-rename{display:none;flex-direction:column;gap:8px}
+    .imodal-rename.show{display:flex}
+    .imodal-warn{background:var(--amber-soft);border:1px solid rgba(133,79,11,.25);border-radius:8px;padding:10px 12px;font-size:11px;color:var(--amber);line-height:1.5}
+    .imodal-actions{display:flex;gap:8px;justify-content:flex-end}
+    .btn-confirm{padding:8px 18px;border-radius:8px;border:none;background:var(--accent);color:#fff;font-family:var(--font);font-size:12px;font-weight:600;cursor:pointer}
+    .btn-confirm:disabled{background:var(--surface3);color:var(--text-dim);cursor:not-allowed}
+    .import-progress{font-size:12px;color:var(--text-sec);display:none}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="topnav">
+  <div class="nav-left">
+    <div class="logo-mark">K</div>
+    <div>
+      <div class="nav-title">Kinaxis Blueprint</div>
+      <div class="nav-subtitle">Document Generator</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="/projects"     class="nav-link">Projects</a>
+    <a href="/upload"       class="nav-link">Upload</a>
+    <a href="/editor"       class="nav-link">Editor</a>
+    <a href="/repositories" class="nav-link active">Repositories</a>
+    <a href="/templates"    class="nav-link">Templates</a>
+    <a href="/sow"          class="nav-link">SOW</a>
+  </div>
+</nav>
+
+<div class="layout">
+
+  <!-- SIDEBAR: repo list -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Repositories</h2>
+      <div style="display:flex;gap:6px">
+        <button class="btn-import" onclick="openImportModal()" title="Import repository from ZIP">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Import
+        </button>
+        <button class="btn-new" onclick="openNewModal()">
+          <span>+</span> New
+        </button>
+      </div>
+    </div>
+    <div class="repo-list" id="repoList">
+      <div class="empty-repos">No repositories yet.<br>Create one to get started.</div>
+    </div>
+  </aside>
+
+  <!-- MAIN AREA -->
+  <main class="main" id="mainArea">
+    <div class="main-placeholder" id="placeholder">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
+      <p>Select a repository from the list</p>
+    </div>
+
+    <div class="repo-detail" id="repoDetail" style="display:none">
+      <div class="detail-header">
+        <div>
+          <div class="detail-title" id="detailName"></div>
+          <div class="detail-desc" id="detailDesc"></div>
+        </div>
+        <div class="detail-actions">
+          <div class="chunk-badge" id="chunkBadge"></div>
+          <button class="btn-attach btn-attach-primary" onclick="openQuickAttachModal()" title="Link this repository's documents to a project">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.71"/></svg>
+            Attach to Project
+          </button>
+          <button class="btn-export" onclick="exportCurrentRepo()" title="Download as ZIP">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export
+          </button>
+          <button class="btn-delete" id="btnDeleteRepo" onclick="deleteCurrentRepo()">Delete Repository</button>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <div class="tab active" data-tab="files" onclick="switchTab('files')">Documents</div>
+        <div class="tab" data-tab="attach" onclick="switchTab('attach')">Attach to Projects</div>
+      </div>
+
+      <div class="tab-content">
+
+        <!-- DOCUMENTS TAB -->
+        <div class="tab-pane active" id="tab-files">
+          <div class="upload-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
+            <div class="uz-icon">📄</div>
+            <strong style="font-size:13px">Drop documents here or click to upload</strong>
+            <p>PDF, DOC, DOCX, XLSX/XLSM, PPTX, TXT, images — up to 50 MB</p>
+            <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.xlsx,.xlsm,.xls,.pptx,.ppt,.txt,.png,.jpg,.jpeg,.gif,.webp,.bmp" multiple onchange="uploadFiles(this.files)">
+          </div>
+          <div class="file-list" id="fileList">
+            <div class="empty-state">No documents yet — upload source files above.</div>
+          </div>
+        </div>
+
+        <!-- ATTACH TAB -->
+        <div class="tab-pane" id="tab-attach">
+          <div class="section-header">
+            <h3>Attach this repository to projects</h3>
+          </div>
+          <p style="font-size:12px;color:var(--text-sec);margin-bottom:16px">When attached, the project's Blueprint Document generation will include this repository's documents as source context.</p>
+          <div class="project-list" id="projectAttachList">
+            <div class="empty-state">Loading projects…</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- IMPORT MODAL -->
+<div class="imodal-bd" id="importModal">
+  <div class="imodal">
+    <h3>Import Repository</h3>
+    <div class="imodal-drop" id="importDrop" onclick="document.getElementById('importFileInput').click()">
+      <div style="font-size:26px;margin-bottom:6px">📦</div>
+      <strong style="font-size:13px">Drop a repository ZIP here or click to browse</strong>
+      <p>Exported with "Export Repository" from this or another instance</p>
+      <input type="file" id="importFileInput" accept=".zip" style="display:none" onchange="handleImportFile(this.files[0])">
+    </div>
+    <div class="imodal-rename" id="importRename">
+      <div class="imodal-warn" id="importWarn"></div>
+      <label style="font-size:11px;font-weight:600;color:var(--text-sec);text-transform:uppercase;letter-spacing:.4px">New Repository Name</label>
+      <input class="form-input" id="importNewName" placeholder="Enter a different name…" />
+    </div>
+    <div class="import-progress" id="importProgress">Importing… please wait</div>
+    <div class="imodal-actions">
+      <button class="btn-cancel" onclick="closeImportModal()">Cancel</button>
+      <button class="btn-confirm" id="importConfirmBtn" disabled onclick="confirmImport()">Import</button>
+    </div>
+  </div>
+</div>
+
+<!-- NEW REPO MODAL -->
+<div class="modal-backdrop" id="newModal">
+  <div class="modal">
+    <h3>New Repository</h3>
+    <div class="form-group">
+      <label>Repository Name</label>
+      <input class="form-input" id="newRepoName" placeholder="e.g. Kraton Reference Docs 2025" />
+    </div>
+    <div class="form-group">
+      <label>Description <span style="color:var(--text-dim)">(optional)</span></label>
+      <input class="form-input" id="newRepoDesc" placeholder="Brief description of this collection" />
+    </div>
+    <div class="form-group" style="display:flex;align-items:center;gap:8px">
+      <input type="checkbox" id="newRepoSowSamples" style="width:auto;cursor:pointer">
+      <label for="newRepoSowSamples" style="margin:0;cursor:pointer">This is a collection of real, signed sample SOWs (for the SOW skill's <a href="/sow-skill" style="color:var(--accent)">assisted learning</a> workflow)</label>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeNewModal()">Cancel</button>
+      <button class="btn-submit" onclick="createRepo()">Create Repository</button>
+    </div>
+  </div>
+</div>
+
+<!-- QUICK ATTACH MODAL -->
+<div class="modal-backdrop" id="quickAttachModal">
+  <div class="modal">
+    <h3>Attach Repository to Project</h3>
+    <p style="font-size:12px;color:var(--text-sec);margin:-6px 0 14px">
+      Pick a project below — this repository's indexed documents will become available
+      as source context for that project's Blueprint Document generation.
+    </p>
+    <div class="form-group">
+      <label>Project</label>
+      <select class="form-input" id="quickAttachSelect" style="cursor:pointer">
+        <option value="">— select a project —</option>
+      </select>
+    </div>
+    <div id="quickAttachStatus" style="font-size:11px;color:var(--text-sec);min-height:16px;margin-top:4px"></div>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeQuickAttachModal()">Close</button>
+      <button class="btn-submit" id="quickAttachBtn" onclick="doQuickAttach()" disabled>Attach</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const API = '';
+  let repos = [];
+  let projects = [];
+  let currentRepoId = null;
+  let pollTimer = null;
+
+  // ── Init ──────────────────────────────────────────
+  async function init() {
+    await Promise.all([loadRepos(), loadProjects()]);
+  }
+
+  async function loadRepos() {
+    try {
+      const res = await fetch(`${API}/api/repositories`);
+      repos = await res.json();
+      renderSidebar();
+      if (currentRepoId) renderDetail(currentRepoId);
+    } catch(e) { console.error('loadRepos', e); }
+  }
+
+  async function loadProjects() {
+    try {
+      const res = await fetch(`${API}/api/projects`);
+      projects = await res.json();
+    } catch(e) { console.error('loadProjects', e); }
+  }
+
+  // ── Sidebar ───────────────────────────────────────
+  function renderSidebar() {
+    const el = document.getElementById('repoList');
+    if (!repos.length) {
+      el.innerHTML = '<div class="empty-repos">No repositories yet.<br>Create one to get started.</div>';
+      return;
+    }
+    el.innerHTML = repos.map(r => `
+      <div class="repo-item ${r.id === currentRepoId ? 'active' : ''}" onclick="selectRepo('${r.id}')">
+        <div class="repo-item-name">${esc(r.name)}</div>
+        <div class="repo-item-meta">
+          <span>${r.file_count} file${r.file_count !== 1 ? 's' : ''}</span>
+          <span>${r.chunk_count} chunks</span>
+        </div>
+        ${r.description ? `<div class="repo-item-desc">${esc(r.description)}</div>` : ''}
+      </div>`).join('');
+  }
+
+  // ── Repo Detail ───────────────────────────────────
+  function selectRepo(id) {
+    currentRepoId = id;
+    document.getElementById('placeholder').style.display = 'none';
+    document.getElementById('repoDetail').style.display = 'flex';
+    document.getElementById('repoDetail').style.flexDirection = 'column';
+    renderSidebar();
+    renderDetail(id);
+    startPolling(id);
+    // Point the AI Assistant at the selected repository.
+    if (window.brdChat) window.brdChat.selectRepo(id);
+  }
+
+  function renderDetail(id) {
+    const r = repos.find(x => x.id === id);
+    if (!r) return;
+    document.getElementById('detailName').textContent = r.name;
+    document.getElementById('detailDesc').textContent = r.description || '';
+    document.getElementById('chunkBadge').textContent = `${r.chunk_count} chunks · ${r.file_count} files`;
+    loadFiles(id);
+  }
+
+  // ── Files ─────────────────────────────────────────
+  async function loadFiles(repoId) {
+    try {
+      const res = await fetch(`${API}/api/repositories/${repoId}/files`);
+      const files = await res.json();
+      renderFiles(files, repoId);
+    } catch(e) { console.error('loadFiles', e); }
+  }
+
+  function renderFiles(files, repoId) {
+    const el = document.getElementById('fileList');
+    if (!files.length) {
+      el.innerHTML = '<div class="empty-state">No documents yet — upload source files above.</div>';
+      return;
+    }
+    el.innerHTML = files.map(f => {
+      const statusClass = `status-${f.status}`;
+      const statusLabel = f.status === 'chunking'
+        ? '<span class="spinner"></span> Indexing…'
+        : f.status;
+      return `
+        <div class="file-row" id="frow-${f.id}">
+          <div class="file-ext">${esc(f.ext)}</div>
+          <div class="file-info">
+            <div class="file-name">${esc(f.name)}</div>
+            <div class="file-meta">${fmt(f.size)} · ${f.chunk_count} chunks · ${fmtDate(f.uploaded_at)}</div>
+          </div>
+          <span class="file-status ${statusClass}">${statusLabel}</span>
+          <button class="btn-icon" title="Delete" onclick="deleteFile('${repoId}','${f.id}')">×</button>
+        </div>`;
+    }).join('');
+  }
+
+  // ── Upload ────────────────────────────────────────
+  async function uploadFiles(fileList) {
+    if (!currentRepoId || !fileList.length) return;
+    for (const file of fileList) {
+      const fd = new FormData();
+      fd.append('file', file);
+      try {
+        await fetch(`${API}/api/repositories/${currentRepoId}/upload`, { method: 'POST', body: fd });
+      } catch(e) { console.error('upload', e); }
+    }
+    document.getElementById('fileInput').value = '';
+    await loadFiles(currentRepoId);
+    await loadRepos();
+    // Polling may have stopped when previous files finished — restart it now
+    // so the newly-uploaded files' status transitions (uploaded → chunking →
+    // indexed) actually surface in the UI.
+    startPolling(currentRepoId);
+  }
+
+  // Drag-and-drop
+  const dz = document.getElementById('dropZone');
+  dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('drag'); });
+  dz.addEventListener('dragleave', () => dz.classList.remove('drag'));
+  dz.addEventListener('drop', e => {
+    e.preventDefault(); dz.classList.remove('drag');
+    uploadFiles(e.dataTransfer.files);
+  });
+
+  async function deleteFile(repoId, fileId) {
+    if (!confirm('Remove this document from the repository?')) return;
+    const res = await fetch(`${API}/api/repositories/${repoId}/files/${fileId}`, { method: 'DELETE' });
+    if (!res.ok) {
+      let msg = `Delete failed (${res.status})`;
+      try { const j = await res.json(); if (j && j.detail) msg = j.detail; } catch(_) {}
+      alert(msg);
+      return;
+    }
+    await loadFiles(repoId);
+    await loadRepos();
+    renderDetail(repoId);
+  }
+
+  // ── Polling (chunking status) ─────────────────────
+  function startPolling(repoId) {
+    clearInterval(pollTimer);
+    pollTimer = setInterval(async () => {
+      const res = await fetch(`${API}/api/repositories/${repoId}/files`);
+      const files = await res.json();
+      const busy = files.some(f => f.status === 'chunking' || f.status === 'uploaded');
+      renderFiles(files, repoId);
+      if (!busy) {
+        clearInterval(pollTimer);
+        await loadRepos();
+        renderDetail(repoId);
+      }
+    }, 3000);
+  }
+
+  // ── Attach Tab ────────────────────────────────────
+  function switchTab(name) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === name));
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.toggle('active', p.id === `tab-${name}`));
+    if (name === 'attach') renderAttachList();
+  }
+
+  async function renderAttachList() {
+    if (!currentRepoId) return;
+    await loadProjects();
+    // Fetch which projects already have this repo attached
+    const attachedRes = await fetch(`${API}/api/projects`);
+    const allProjects = await attachedRes.json();
+
+    const el = document.getElementById('projectAttachList');
+    if (!allProjects.length) {
+      el.innerHTML = '<div class="empty-state">No projects found. Create a project first.</div>';
+      return;
+    }
+
+    // Check attachment for each project
+    const attachChecks = await Promise.all(
+      allProjects.map(async p => {
+        const r = await fetch(`${API}/api/projects/${p.id}/repositories`);
+        const attached = await r.json();
+        return { ...p, isAttached: attached.some(a => a.id === currentRepoId) };
+      })
+    );
+
+    el.innerHTML = attachChecks.map(p => `
+      <div class="project-row">
+        <div style="flex:1">
+          <div class="proj-name">${esc(p.name)}</div>
+          <div class="proj-client">${esc(p.client)}</div>
+        </div>
+        ${p.isAttached ? '<span class="attached-badge">Attached</span>' : ''}
+        <button class="btn-attach ${p.isAttached ? 'detach' : ''}"
+          onclick="${p.isAttached ? `detachRepo('${p.id}')` : `attachRepo('${p.id}')`}">
+          ${p.isAttached ? 'Detach' : 'Attach'}
+        </button>
+      </div>`).join('');
+  }
+
+  async function attachRepo(projectId) {
+    await fetch(`${API}/api/projects/${projectId}/repositories/${currentRepoId}`, { method: 'POST' });
+    renderAttachList();
+  }
+
+  async function detachRepo(projectId) {
+    await fetch(`${API}/api/projects/${projectId}/repositories/${currentRepoId}`, { method: 'DELETE' });
+    renderAttachList();
+  }
+
+  // ── Quick Attach Modal ──────────────────────────────
+  // One-click link from the repository's header. Lists every project; if a
+  // project is already attached we show that next to its name so the user
+  // doesn't waste a click.
+  async function openQuickAttachModal() {
+    if (!currentRepoId) { alert('Select a repository first.'); return; }
+    const modal = document.getElementById('quickAttachModal');
+    const sel   = document.getElementById('quickAttachSelect');
+    const btn   = document.getElementById('quickAttachBtn');
+    const status= document.getElementById('quickAttachStatus');
+    sel.innerHTML = '<option value="">Loading projects…</option>';
+    btn.disabled = true;
+    status.textContent = '';
+    modal.classList.add('open');
+    try {
+      const all = await Promise.all(projects.map(async p => {
+        const r = await fetch(`${API}/api/projects/${p.id}/repositories`);
+        const attached = await r.json();
+        return { ...p, isAttached: attached.some(a => a.id === currentRepoId) };
+      }));
+      if (!all.length) {
+        sel.innerHTML = '<option value="">No projects found — create one first</option>';
+        return;
+      }
+      sel.innerHTML = '<option value="">— select a project —</option>' +
+        all.map(p => `<option value="${esc(p.id)}"${p.isAttached?' data-attached="1"':''}>${esc(p.name)}${p.client?` — ${esc(p.client)}`:''}${p.isAttached?' ✓ already attached':''}</option>`).join('');
+      sel.onchange = () => {
+        const opt = sel.options[sel.selectedIndex];
+        const already = opt && opt.getAttribute('data-attached') === '1';
+        btn.disabled = !sel.value || already;
+        status.textContent = already ? 'This project already has the repository attached.' : '';
+      };
+    } catch(e) {
+      sel.innerHTML = '<option value="">Failed to load projects</option>';
+      status.textContent = e.message || 'Load failed';
+    }
+  }
+  function closeQuickAttachModal() {
+    document.getElementById('quickAttachModal').classList.remove('open');
+  }
+  async function doQuickAttach() {
+    const sel = document.getElementById('quickAttachSelect');
+    const btn = document.getElementById('quickAttachBtn');
+    const status = document.getElementById('quickAttachStatus');
+    const pid = sel.value;
+    if (!pid || !currentRepoId) return;
+    btn.disabled = true;
+    status.textContent = 'Attaching…';
+    try {
+      const r = await fetch(`${API}/api/projects/${pid}/repositories/${currentRepoId}`, { method: 'POST' });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      status.textContent = '✓ Attached. The project\'s Template Editor will now see this repository\'s documents (click Refresh Keywords there).';
+      // Refresh the Attach-to-Projects tab in the background so its list stays accurate.
+      try { renderAttachList(); } catch(_) {}
+      setTimeout(closeQuickAttachModal, 1400);
+    } catch(e) {
+      status.textContent = 'Attach failed: ' + (e.message || e);
+      btn.disabled = false;
+    }
+  }
+  // Close the modal when clicking the backdrop.
+  document.getElementById('quickAttachModal').addEventListener('click', function(e) {
+    if (e.target === this) closeQuickAttachModal();
+  });
+
+  // ── New Repo Modal ────────────────────────────────
+  function openNewModal() {
+    document.getElementById('newRepoName').value = '';
+    document.getElementById('newRepoDesc').value = '';
+    document.getElementById('newModal').classList.add('open');
+    setTimeout(() => document.getElementById('newRepoName').focus(), 50);
+  }
+  function closeNewModal() {
+    document.getElementById('newModal').classList.remove('open');
+  }
+  async function createRepo() {
+    const name = document.getElementById('newRepoName').value.trim();
+    if (!name) { alert('Please enter a repository name.'); return; }
+    const desc = document.getElementById('newRepoDesc').value.trim();
+    const kind = document.getElementById('newRepoSowSamples').checked ? 'sow_samples' : '';
+    const res = await fetch(`${API}/api/repositories`, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ name, description: desc, kind }),
+    });
+    const repo = await res.json();
+    closeNewModal();
+    await loadRepos();
+    selectRepo(repo.id);
+  }
+
+  // ── Delete Repo ───────────────────────────────────
+  async function deleteCurrentRepo() {
+    if (!currentRepoId) return;
+    const r = repos.find(x => x.id === currentRepoId);
+    if (!confirm(`Delete repository "${r?.name}"?\nThis will permanently remove all documents and chunks.`)) return;
+    await fetch(`${API}/api/repositories/${currentRepoId}`, { method: 'DELETE' });
+    currentRepoId = null;
+    clearInterval(pollTimer);
+    document.getElementById('placeholder').style.display = '';
+    document.getElementById('repoDetail').style.display = 'none';
+    await loadRepos();
+  }
+
+  // ── Keyboard shortcuts ────────────────────────────
+  document.getElementById('newModal').addEventListener('keydown', e => {
+    if (e.key === 'Enter') createRepo();
+    if (e.key === 'Escape') closeNewModal();
+  });
+
+  // ── Utils ─────────────────────────────────────────
+  function esc(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function fmt(bytes) {
+    if (bytes < 1024) return `${bytes} B`;
+    if (bytes < 1024*1024) return `${(bytes/1024).toFixed(1)} KB`;
+    return `${(bytes/1024/1024).toFixed(1)} MB`;
+  }
+  function fmtDate(iso) {
+    if (!iso) return '';
+    return new Date(iso).toLocaleDateString(undefined, { month:'short', day:'numeric', year:'numeric' });
+  }
+
+  // ── Export ────────────────────────────────────────
+  function exportCurrentRepo() {
+    if (!currentRepoId) return;
+    window.location.href = `/api/repositories/${currentRepoId}/export`;
+  }
+
+  // ── Import ────────────────────────────────────────
+  let _importFile = null;
+  let _importConflict = false;
+
+  function openImportModal() {
+    _importFile = null;
+    _importConflict = false;
+    document.getElementById('importFileInput').value = '';
+    document.getElementById('importRename').classList.remove('show');
+    document.getElementById('importProgress').style.display = 'none';
+    document.getElementById('importConfirmBtn').disabled = true;
+    document.getElementById('importNewName').value = '';
+    document.getElementById('importModal').classList.add('open');
+  }
+  function closeImportModal() {
+    document.getElementById('importModal').classList.remove('open');
+  }
+
+  function handleImportFile(file) {
+    if (!file) return;
+    _importFile = file;
+    _importConflict = false;
+    document.getElementById('importRename').classList.remove('show');
+    document.getElementById('importConfirmBtn').disabled = false;
+    document.getElementById('importDrop').querySelector('strong').textContent = file.name;
+  }
+
+  async function confirmImport() {
+    if (!_importFile) return;
+    const btn = document.getElementById('importConfirmBtn');
+    btn.disabled = true;
+    document.getElementById('importProgress').style.display = 'block';
+
+    const fd = new FormData();
+    fd.append('file', _importFile);
+    const newName = document.getElementById('importNewName').value.trim();
+    if (newName) fd.append('new_name', newName);
+
+    try {
+      const res = await fetch('/api/repositories/import', { method: 'POST', body: fd });
+      const data = await res.json();
+
+      if (data.conflict) {
+        _importConflict = true;
+        document.getElementById('importWarn').textContent =
+          `A repository named "${data.existing_name}" already exists. Enter a different name below:`;
+        document.getElementById('importNewName').value = data.suggestion || '';
+        document.getElementById('importRename').classList.add('show');
+        document.getElementById('importProgress').style.display = 'none';
+        btn.disabled = false;
+        btn.textContent = 'Import with New Name';
+      } else if (data.imported) {
+        closeImportModal();
+        await loadRepos();
+        selectRepo(data.repo.id);
+      }
+    } catch(e) {
+      document.getElementById('importProgress').style.display = 'none';
+      btn.disabled = false;
+      alert('Import failed: ' + e.message);
+    }
+  }
+
+  // Drag-and-drop on import modal
+  const iDrop = document.getElementById('importDrop');
+  iDrop.addEventListener('dragover', e => { e.preventDefault(); iDrop.classList.add('drag'); });
+  iDrop.addEventListener('dragleave', () => iDrop.classList.remove('drag'));
+  iDrop.addEventListener('drop', e => {
+    e.preventDefault(); iDrop.classList.remove('drag');
+    const f = e.dataTransfer.files[0];
+    if (f) handleImportFile(f);
+  });
+  document.getElementById('importModal').addEventListener('click', e => {
+    if (e.target === document.getElementById('importModal')) closeImportModal();
+  });
+
+  init();
+</script>
+  <script src="/static/chat_widget.js" defer></script>
+</body>
+</html>

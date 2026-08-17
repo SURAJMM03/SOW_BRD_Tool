@@ -1,0 +1,240 @@
+{
+  "0": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "2": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "This Statement of Work covers Bristlecone’s proposed <CONFIRM: engagement name and scope summary> for Acme Logistics, establishing the services, responsibilities, and commercial framework for the engagement term.\n\n- Deliver the agreed scope, deliverables, and implementation/support activities for Acme Logistics.\n- Define project governance, roles, timelines, and acceptance expectations for both parties.\n- Establish the commercial model, assumptions, and change control required to manage scope, schedule, and cost.\n\nDeferred decisions, dependencies, and conditions that may affect execution are identified in Section 10 (Key Assumptions) and Section 21 (Key Observations).",
+    "draft_sources": []
+  },
+  "3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "3.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "3.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "3.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.5": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.6": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.7": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "5": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "6": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "6.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "6.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "8": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "9": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "10": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "- Scope, timelines, and commercials are based on the requirements, volumes, interfaces, environments, and dependencies confirmed during project initiation; any variance will be handled through the Change Management Process.\n- Acme Logistics will provide timely access to business stakeholders, source documentation, systems, test environments, and required third-party contacts needed to perform the services.\n- Client decisions, approvals, and sign-offs will be provided within the agreed project timeline to avoid schedule impact.\n- Data provided by Acme Logistics for configuration, integration, reporting, testing, and migration activities will be complete, accurate, and available when required.\n- Third-party products, licenses, infrastructure, and client-owned systems required for the services will be available and supported for the project duration.\n- Services will be delivered based on the agreed engagement model, locations, and staffing plan defined in this SOW.\n- Any work requested outside the agreed scope, including new integrations, expanded process coverage, or additional deliverables, will require written approval under the Change Management Process.\n- `<CONFIRM: add any project-specific assumptions on deployment model, regions, or phased rollout if applicable>`",
+    "draft_sources": []
+  },
+  "11": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "12": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "12.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "12.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.5": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "14": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "14.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "15": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "17": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "18": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "- Bristlecone will maintain current operating system patches and endpoint protection on all Bristlecone-managed devices used to perform the Services, in accordance with its information security policies and applicable client access requirements.\n- Client data will be protected by encryption in transit and at rest using industry-standard controls, except where the Client’s systems or approved architecture require an alternative control.\n- Access to Client systems, environments, and data will be granted on a least-privilege basis and limited to personnel assigned to this engagement and authorized to perform the Services.\n- Bristlecone will comply with its applicable information security policies and with Client security policies that are provided to Bristlecone in writing and are applicable to the Services.\n- Bristlecone will notify the Client of any confirmed security incident affecting Client data or the Services within <CONFIRM: incident reporting timeframe>.\n- The parties will comply with applicable data protection and regulatory requirements relevant to the Services, including <LEGAL: applicable regulations and contractual security standards, e.g., GDPR, SOC 2, ISO 27001>.",
+    "draft_sources": []
+  },
+  "19": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "20": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "21": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "23": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "24": {
+    "status": "not-started",
+    "custom_instructions": ""
+  }
+}

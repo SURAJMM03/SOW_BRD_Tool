@@ -1,0 +1,120 @@
+{
+  "1": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "1.3": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  },
+  "1.4": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "20260630_144000_BD_20260630_143620.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "For Archlin, benefit realization should be governed by a defined baseline-and-target approach, even where exact values remain TBD. Baseline measurements should be established for the inventory planning and supply management indicators that Archlin chooses to manage, and the same metrics should be monitored after implementation to confirm realized value. Because the source documents do not provide specific current-state values or target thresholds, all baseline values, improvement targets, reporting cadence, business owners, and validation method are TBD.\nThe identified value drivers for Archli"
+      },
+      {
+        "doc_name": "20260630_144000_BD_20260630_143620.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin plans to implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and Inventory Optimization. For Phase 1, the scope is supply management. The proposed supply and inventory planning capability will provide Archlin with a centralized planning approach to improve supply visibility, inventory target management, and response to raw material shortages.\nThe solution will support generation of constrained supply plans, identification of material shortages, and capacity planning. Exception-based alerts will be used to help supply planners focus on recurring raw material shortage i"
+      },
+      {
+        "doc_name": "20260630_144000_BD_20260630_143620.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Table of Contents\n2  Benefit Realization\n2.1  Business Issues\n5  Supply & Inventory Planning\nSection 2: Benefit Realization\nArchlin’s Phase 1 investment is focused on supply management for its specialty chemicals manufacturing business, with the primary business driver being improvement of poor inventory planning. The expected value of this phase should therefore be evaluated through the extent to which Archlin can improve planning effectiveness, strengthen inventory visibility and control, and reduce avoidable supply chain costs associated with suboptimal inventory decisions. The available so"
+      },
+      {
+        "doc_name": "20260630_144000_BD_20260630_143620.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "The schema file must be in the same folder as the input data.\nThese Transportation Planner details do not identify an Archlin-specific business issue by themselves; their applicability to Archlin’s Phase 1 supply management scope is .\nSection 5: Supply & Inventory Planning\nArchlin operates in the specialty chemicals manufacturing industry and currently uses SAP S/4HANA as its ERP system. The current planning process is Excel-based, with no centralized planning platform across North America and Europe. Inventory levels are higher than target due to poor forecast visibility, and manual Excel pro"
+      },
+      {
+        "doc_name": "20260630_144000_BD_20260630_143620.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin’s supply and inventory planning process will be integrated with demand planning outputs to improve forecast visibility and support supply planning decisions. Business users emphasized the need for collaborative forecasting and visibility across regions. Demand planners requested automated forecast generation with the ability to manually override forecasts when market conditions change.\nSupply planning will use demand and supply inputs to generate constrained supply plans, identify material shortages, support capacity planning, and provide exception-based alerts. Inventory planning will"
+      },
+      {
+        "doc_name": "20260630_144000_BD_20260630_143620.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "2.1  Business Issues\nArchlin operates in specialty chemicals manufacturing on SAP S/$HANA, with Phase 1 focused on supply management. The primary business issue identified for this phase is poor inventory planning.\nThe Archlin source documents available for this section do not provide additional client-specific detail on root causes, affected business processes, inventory categories, planning horizons, organizational impacts, quantitative performance gaps, or financial impacts. These items are therefore marked as  and should be confirmed during blueprint validation.\nPoor inventory planning\nArc"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "4": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Arclin Manufacturing - Demand Planning",
+        "snippet": "Arclin Manufacturing - Demand Planning\nBlueprint Workshop Notes\nClient Overview\nClient Name: Arclin Manufacturing Inc.\nIndustry: Specialty Chemicals Manufacturing\nHeadquarters: Georgia, USA\nERP System: SAP S/4HANA\nCurrent Planning Tool: Excel-based planning process\nProject Objective: Implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and\nInventory Optimization.\nCurrent Challenges\nDemand planners spend significant time consolidating forecasts from multiple regions.\nForecast accuracy is approximately 68%.\nNo centralized planning platform exists across North America and Europe."
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Demand Planning Requirements",
+        "snippet": "Demand Planning Requirements\nForecast Management\nGenerate statistical baseline forecasts.\nSupport forecast overrides by planners.\nTrack forecast history and changes.\nSupport multiple forecast hierarchies.\nCollaboration\nAllow sales teams to provide forecast input.\nEnable approval workflows.\nProvide forecast comparison reports.\nAnalytics\nMeasure Forecast Accuracy.\nMeasure Forecast Bias.\nTrack MAPE by product family.\nProvide dashboard-based reporting.\nSupply Planning Requirements\nGenerate constrained supply plans.\nIdentify material shortages.\nSupport capacity planning.\nProvide exception-based ale"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Success Criteria",
+        "snippet": "Required Interfaces:\nProduct Master\nCustomer Master\nSales Orders\nInventory Balances\nPurchase Orders\nProduction Orders\nData Refresh Frequency:\nEvery 4 hours\nSuccess Criteria\nForecast Accuracy > 85%\nInventory Reduction > 15%\nPlanning Cycle Reduction > 30%\nImproved Planner Productivity\nSingle Source of Planning Data\nWorkshop Notes\nBusiness users emphasized the need for collaborative forecasting and visibility across regions.\nDemand planners requested automated forecast generation with the ability to manually override\nforecasts when market conditions change.\nSupply planners highlighted recurring i"
+      },
+      {
+        "doc_name": "20260630_144000_BD_20260630_143620.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin’s inventory planning capabilities are expected to support safety stock policies, inventory target calculation, excess inventory monitoring, inventory turns tracking, and stock optimization across locations.\n| Requirement Area | Requirement |\n| --- | --- |\n| Inventory Planning | Define safety stock policies. |\n| Inventory Planning | Calculate inventory targets. |\n| Inventory Planning | Monitor excess inventory. |\n| Inventory Planning | Track inventory turns. |\n| Inventory Planning | Optimize stock across locations. |"
+      },
+      {
+        "doc_name": "20260630_144000_BD_20260630_143620.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Defining safety stock policies and inventory target calculations.\nMonitoring excess inventory and tracking inventory turns.\nSupporting stock optimization across locations.\nArchlin expects measurable improvements in forecast accuracy and inventory reduction within six months of go-live. The success criteria identified for the planning implementation include forecast accuracy improvement, inventory reduction, planning cycle reduction, improved planner productivity, and a single source of planning data.\n| Success Criterion | Target / Outcome |\n| --- | --- |\n| Forecast Accuracy | > 85% |\n| Invento"
+      },
+      {
+        "doc_name": "20260630_144000_BD_20260630_143620.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "For supply and inventory planning, these outcomes are expected to support Archlin’s objective to improve inventory planning, reduce excess inventory, increase planning visibility, and enable more responsive management of raw material shortages."
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "4.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Arclin Manufacturing - Demand Planning",
+        "snippet": "Arclin Manufacturing - Demand Planning\nBlueprint Workshop Notes\nClient Overview\nClient Name: Arclin Manufacturing Inc.\nIndustry: Specialty Chemicals Manufacturing\nHeadquarters: Georgia, USA\nERP System: SAP S/4HANA\nCurrent Planning Tool: Excel-based planning process\nProject Objective: Implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and\nInventory Optimization.\nCurrent Challenges\nDemand planners spend significant time consolidating forecasts from multiple regions.\nForecast accuracy is approximately 68%.\nNo centralized planning platform exists across North America and Europe."
+      },
+      {
+        "doc_name": "20260630_144000_BD_20260630_143620.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin’s supply and inventory planning process will be integrated with demand planning outputs to improve forecast visibility and support supply planning decisions. Business users emphasized the need for collaborative forecasting and visibility across regions. Demand planners requested automated forecast generation with the ability to manually override forecasts when market conditions change.\nSupply planning will use demand and supply inputs to generate constrained supply plans, identify material shortages, support capacity planning, and provide exception-based alerts. Inventory planning will"
+      },
+      {
+        "doc_name": "20260630_144000_BD_20260630_143620.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "The schema file must be in the same folder as the input data.\nThese Transportation Planner details do not identify an Archlin-specific business issue by themselves; their applicability to Archlin’s Phase 1 supply management scope is .\nSection 5: Supply & Inventory Planning\nArchlin operates in the specialty chemicals manufacturing industry and currently uses SAP S/4HANA as its ERP system. The current planning process is Excel-based, with no centralized planning platform across North America and Europe. Inventory levels are higher than target due to poor forecast visibility, and manual Excel pro"
+      },
+      {
+        "doc_name": "Arclin Manufacturing - Demand Planning Blueprint Workshop Notes.pdf",
+        "heading_path": "Demand Planning Requirements",
+        "snippet": "Demand Planning Requirements\nForecast Management\nGenerate statistical baseline forecasts.\nSupport forecast overrides by planners.\nTrack forecast history and changes.\nSupport multiple forecast hierarchies.\nCollaboration\nAllow sales teams to provide forecast input.\nEnable approval workflows.\nProvide forecast comparison reports.\nAnalytics\nMeasure Forecast Accuracy.\nMeasure Forecast Bias.\nTrack MAPE by product family.\nProvide dashboard-based reporting.\nSupply Planning Requirements\nGenerate constrained supply plans.\nIdentify material shortages.\nSupport capacity planning.\nProvide exception-based ale"
+      },
+      {
+        "doc_name": "20260630_144000_BD_20260630_143620.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Archlin plans to implement Kinaxis RapidResponse for Demand Planning, Supply Planning, and Inventory Optimization. For Phase 1, the scope is supply management. The proposed supply and inventory planning capability will provide Archlin with a centralized planning approach to improve supply visibility, inventory target management, and response to raw material shortages.\nThe solution will support generation of constrained supply plans, identification of material shortages, and capacity planning. Exception-based alerts will be used to help supply planners focus on recurring raw material shortage i"
+      },
+      {
+        "doc_name": "20260630_144000_BD_20260630_143620.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "2.1  Business Issues\nArchlin operates in specialty chemicals manufacturing on SAP S/$HANA, with Phase 1 focused on supply management. The primary business issue identified for this phase is poor inventory planning.\nThe Archlin source documents available for this section do not provide additional client-specific detail on root causes, affected business processes, inventory categories, planning horizons, organizational impacts, quantitative performance gaps, or financial impacts. These items are therefore marked as  and should be confirmed during blueprint validation.\nPoor inventory planning\nArc"
+      }
+    ],
+    "gen_source": "doc"
+  }
+}

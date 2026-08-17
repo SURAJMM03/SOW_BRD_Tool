@@ -1,0 +1,108 @@
+{
+  "1.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "ChlorAlkali and Traded Packaged business units use all the possible distribution combinations as mapped below.\nDistribution Network – ChlorAlkali & Traded Package\nThe Bulk Liquids business unit uses the distribution network below.\nDistribution Network – Bulk Liquids"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "Scenario Structure",
+        "snippet": "IXOM will be using the below Scenario Structure, changes might come during the implementation phase.\n| Scenario | Purpose |\n| --- | --- |\n| Enterprise Data | Contains the most recent extracted data from ERP and other data sources, as well as configuration (control) tables and data required for data loads (e.g. NoCustomer, NoSupplier). Enterprise Data is typically only accessible / visible to system and data administrators. |\n| Approved Actions | Mainly Used for data transformations including modifications and manipulations of host system data (e.g. MRPDATE). NEVER commit to Enterprise Data. |\n"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Company Background",
+        "snippet": "IXOM is a market leader in water treatment and chemical distribution in Australia and New Zealand, with a growing presence in America and Asia. IXOM provides leading products services across our key business areas of trading in chemicals, water treatment, manufactured products and bulk liquids and gases.\nWebsite links:\nOur Global Sites and Contacts\nOur Industries, Products & Services\nOur Emergency Response Service\nEnvironmental Monitoring Data"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to define the Customer Solution blueprint for IXOM.\nThe blueprint sets out the processes and associated functional requirements for configuring the future Maestro solution to support the IXOM S&OP planning processes.\nThe aims of the blueprint are threefold:\nSet the baseline for the future state process for the subsequent deployment project. The business team and key stakeholders are provided with the opportunity to set the direction and establish the future concurrent planning process and resulting new ways of working.\nStarting from a predefined Process Framewor"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Planning Hierarchy Attributes",
+        "snippet": "The IXOM specific attributes can be leveraged to create Hierarchies, the attributes will be identified and captured during the project implementation phase."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "Document Review and Signoff",
+        "snippet": "An authorised signature(s) below indicates the review and approval of this document content:\n| Organisation | Role | Name | Date | Signature of Approval |\n| --- | --- | --- | --- | --- |\n| Tridant | Solution Lead | Amit Chavan |  |  |\n| Tridant | IBP Project Manager | Cassandra Lilley | 24/6/2025 |  |\n| Kinaxis | Solution Architect |  |  |  |\n| Bristlecone | Solution Lead |  |  |  |\n| IXOM | HO Business Systems Strategy | Ingo Pohl |  |  |\n| IXOM | IBP Project Manager | Kailash Attawar |  |  |\n| IXOM | IBP Business Lead | Barry Savage |  |  |"
+      },
+      {
+        "doc_name": "2. Day2_Ixom Structure V2.xlsx",
+        "heading_path": "2. Day2_Ixom Structure V2.xlsx — Sheet: Reporting Hierarchy",
+        "snippet": "2. Day2_Ixom Structure V2.xlsx — Sheet: Reporting Hierarchy\nColumns: IXOM\nIXOM: AU\nIXOM: Executive Vice President ChlorAlkali\nIXOM: CHLOR ALKAI\nIXOM: WATER/ENERGY\nHYPO | ADBLUE | FOOD & BEVERAGE PROCESS\nDISINFECTION | AGRICULTURE | WATER\nMANUFACTURED CHEMICALS | PULP & PAPER\nIXOM: PCS (Process Cleaning Services)\nFOOD & BEVERAGE PROCESS | METAL & MINING | METAL & MINING\nIXOM: CHLOR ALKAI IND\nCOMMERCIAL OPTIMISATION | BULK GASES\nBULK LIQUIDS\nSULPHUR & SUFURIC\nIXOM: The Commercial BU's, as listed above, is where the demand will be raised.\nIXOM: The IXOM manufacturing sites, where we supply the in"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "IBP Data Interfaces List",
+        "snippet": "Refer IXOM - IBP Interface Register.xlsx (as at 17/6/2025).\n| ID | INTERFACE NAME | SOURCE | TARGET | PROCESSING | MIDDLEWARE | DATA CATEGORY |\n| --- | --- | --- | --- | --- | --- | --- |\n| I1 | Site - Plant data | ECC | Maestro | Batch - Daily/Real time | Integration Suite | Master Data |\n| I2 | Allocation - Production order | ECC | Maestro | Batch - Daily/Real time | Integration Suite | Transactional Data |\n| I3 | Alternate routing - Material Group | ECC | Maestro | Batch - Daily/Real time | Integration Suite | Master Data |\n| I4 | Batch - Batch Stock (MCHA) | ECC | Maestro | Batch - Daily/R"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Supply Chain Scope",
+        "snippet": "Below is the scope considered in this Blueprint, mainly there are two BUs in Australia and New Zealand, one is Trading (Traded Bulk, Bulk Liquids, Packaged Goods) and the other one is ChlorAlkali."
+      },
+      {
+        "doc_name": "IBP RapidStart_Issue Tracker.xlsx",
+        "heading_path": "IBP RapidStart_Issue Tracker.xlsx — Sheet: Issue Log",
+        "snippet": "IBP RapidStart_Issue Tracker.xlsx — Sheet: Issue Log\nColumns: IXOM IBP RAPIDSTART MAESTRO  — ISSUE TRACKER\nIXOM IBP RAPIDSTART MAESTRO  — ISSUE TRACKER: Project: IBP RAPIDSTART  |   Version: 1.0   |   Last Updated: 05 May 2026\nIXOM IBP RAPIDSTART MAESTRO  — ISSUE TRACKER: Issue ID\nIXOM IBP RAPIDSTART MAESTRO  — ISSUE TRACKER: IBP-001"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "Scenario Structure",
+        "snippet": "| Distribution Planning | All the Distribution Requirements Planning activities are executed in this scenario (e.g. Create the Transfer Plan) |\n| Production Planning | All the Production & Material Planning activities are executed in this scenario (e.g. Create the Production Plan) |\n| Supply Planning | All the Supply Planning & Order Management activities are executed in this scenario (e.g. Create the Supply Plan) |\n| History | Parent scenario of the historical scenarios which holds the defined number of daily, weekly & monthly scenarios |\n| Private Scenarios | Scenarios used for collaboration"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "IBP Data Interfaces List",
+        "snippet": "| I14 | Customer | ECC | Maestro | Batch - Daily/Real time | Integration Suite | Master Data |\n| I15 | Customer Price | ECC | Maestro | Batch - Daily/Real time | Integration Suite | Master Data |\n| I16 | Department - Work Center Category | ECC | Maestro | Batch - Daily/Real time | Integration Suite | Master Data |\n| I17 | Historical Demand Actual - Delivery Data (LIKP/LIPS) | ECC | Maestro | Batch - Daily/Real time | Integration Suite | Transactional Data |\n| I18 | Historical Supply Actual (MKE) - Completed & delivered production orders | ECC | Maestro | Batch - Daily/Real time | Integration S"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "IBP Data Interfaces List",
+        "snippet": "| I27 | Part Supplier - Purchase info record | ECC | Maestro | Batch - Daily/Real time | Integration Suite | Master Data |\n| I28 | Part Source Make - Production verison of material | ECC | Maestro | Batch - Daily/Real time | Integration Suite | Master Data |\n| I29 | Part Source Buy - Purchasing info record | ECC | Maestro | Batch - Daily/Real time | Integration Suite | Master Data |\n| I30 | Part Source Transfer - Purchasing source list | ECC | Maestro | Batch - Daily/Real time | Integration Suite | Master Data |\n| I31 | Part UOM conversion - UOM for materials | ECC | Maestro | Batch - Daily/Re"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "IBP Data Interfaces List",
+        "snippet": "| I41 | Everlink Telemetry data | Everlink | Maestro | Batch - Daily/Real time | Integration Suite | Transactional Data |\n| I42 | Power BI interface (All required Outbound files - TBD) | Maestro | Power BI | Batch - Daily/Real time | Integration Suite | Transactional Data |\n| I43 | Source | ECC | Maestro |  |  |  |\n| I44 | Reference Part (with product Attributes) | ECC | Maestro |  |  |  |\n| I45 | Planner Code | ECC | Maestro |  |  |  |\n| I46 | Buyer Code (optional) | ECC | Maestro |  |  |  |\n| I47 | Warehouse | ECC | Maestro |  |  |  |\n| I48 | Warehouse Part | ECC | Maestro |  |  |  |\n| I49 |"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "There are no exceptions as the idea is to standardize the S&OP process across all the BU’s."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "Only the Part/Site which uses the Stocking Strategy as the Made To Stock (MTS) and Purchase To Stock (PTS) will use the safety and Cycle Stock.\nFor CAP plants, Safety Stock and Cycle Stock is not applicable. Only the Traded Packaged BU is using safety stock. But, in future, leveraging the safety stock depends on the business choice."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "ChlorAlkali Caustic Manu Import – follows a slightly different supply planning process based on the supply planned on the Ship, it has a visibility of each ship arrival dates through the form of purchase order which will be created 3 weeks prior to the arrival. And the individual order lines contain information about how much it has to deliver against each delivery location (unload port).\nPurchase Orders will be created 3 weeks prior to the due date of arrival. However, the primary focus remains on utilising the supply planning and order management functionality described above."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "The ChlorAlkali Plants (CAP) in AU will use the Constraint Optimiser for short-term planning - covered in a separate blueprint document (IXOM Supply.AI Coproduct Optimization Solution Blueprint).\nNew Zealand Manufacturing\nFor New Zealand, the S&OP Forecast exists to drive the dependent requirements to the materials along with the safety stock levels. Though the Production Planners look at the Forecast for the production planning, their planning outcome will take into account the BLT Team distribution plan. For the Fill at Will products, the BLT Team will look at the ullage on the IXOM tank and"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Exceptions by Business Unit & Patch",
+        "snippet": "Continuous Production Plants\nFor the continuous flow manufacturing plants, the capacity constraint will be modelled as a customised solution as seen below which includes the worksheet/UI to get the user inputs such as the Number of Shifts per day, No. of hours per Shift, Production Rate (KVA), etc., in a time-phased fashion so that the system can compute the capacity based on the given inputs. The illustration below is with dummy data and the actual inputs required to compute the capacity will be finalised during the implementation."
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.4": {
+    "web": [],
+    "docs": [],
+    "gen_source": "doc"
+  }
+}

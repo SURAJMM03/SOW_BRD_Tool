@@ -1,0 +1,130 @@
+{
+  "2": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "[Embedded Image: image2.png]\nThe image is a screenshot of the Table of Contents from a document titled \"RapidStart Technical Blueprint Template Rev 1.4.docx\". Below is a structured plain-text description focusing on supply chain/ERP-relevant content:\n---\n**Table of Contents**\n**1. INTRODUCTION**\n- 1.1 Company Background (p.6)\n- 1.2 Purpose (p.6)\n- 1.3 Scope (p.8)\n- 1.4 Definitions & Acronyms (p.8)\n- 1.5 Key Business Decisions (p.8)\n- 1.6 Planning Hierarchy Attributes (p.10)\n**2. BENEFIT REALIZATION**\n- 2.1 Quantitative Benefits (p.11)\n- 2.2 Qualitative Benefits (p.11)\n- 2.3 [Customer] Identifi"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "- Reduced Periods of Coverage\n**CAPITAL**\n- Reduce Obsolete Inventory\n- Improved Constraint Utilization\n- Increased Plan Adherence\n- Improved Cumulative Lead Time Accuracy\n---\n**General Structure:**\n- The image is a table with three main columns: PRIMARY BENEFIT METRIC, CAPABILITY, and METRIC.\n- Rows are grouped by SHAREHOLDER VALUE drivers (REVENUE, COGS, SG&A, CAPITAL).\n- Each group lists specific benefit metrics, associated capabilities, and measurable metrics/KPIs.\n- The table is color-coded for clarity, with each section clearly separated.\n---\n**Consultant Notes:**\n- The image provides a "
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "- **Metric:**\n- Reduce Obsolete Inventory\n- Improved Constraint Utilization\n- Increased Plan Adherence\n- Improved Cumulative Lead Time Accuracy\n---\n**General Notes:**\n- The table is organized to show how supply chain/ERP capabilities map to shareholder value, primary benefit metrics, and operational metrics.\n- Metrics include both quantitative KPIs (e.g., \"Reduced Weeks of Supply\", \"Inventory Targets Plan v Actual\") and process metrics (e.g"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Image: image1.png",
+        "snippet": "[Embedded Image: image1.png]\nPRIMARY BENEFIT METRIC / CAPABILITY / METRIC TABLE\n**Left Column: SHAREHOLDER VALUE Categories**\n- REVENUE\n- COGS (Cost of Goods Sold)\n- SG&A (Selling, General & Administrative)\n- CAPITAL\n---\n**PRIMARY BENEFIT METRIC (by category):**\n- REVENUE:\n- LOST SALE REDUCTION\n- FORECAST ACCURACY\n- COGS:\n- PLANNER EFFICIENCY / HEADCOUNT INCREASE AVOIDANCE\n- SG&A:\n- OBSOLETE INVENTORY REDUCTION\n- INVENTORY HOLDING COST REDUCTION\n- EXPEDITED FREIGHT COST REDUCTION\n- CAPITAL:\n- ONE TIME INVENTORY SAVINGS (WC)\n- ASSET PRODUCTIVITY / CAPITAL UTILIZATION\n---\n**CAPABILITY (middle co"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image3.png",
+        "snippet": "[Embedded Image: image3.png]\nStructured Description of image3.png:\nTitle/Headers:\n- PRIMARY BENEFIT METRIC (left, orange)\n- CAPABILITY (center, orange)\n- METRIC (right, orange)\nTable Structure:\nThe image is a structured table with three main columns: PRIMARY BENEFIT METRIC, CAPABILITY, and METRIC. The rows are grouped by SHAREHOLDER VALUE categories: REVENUE, COGS, SG&A, and CAPITAL.\nColumn 1: PRIMARY BENEFIT METRIC (with subcategories)\n- SHAREHOLDER VALUE (vertical, leftmost)\n- REVENUE\n- LOST SALE REDUCTION\n- FORECAST ACCURACY\n- COGS\n- PLANNER EFFICIENCY / HEADCOUNT INCREASE AVOIDANCE\n- SG&A\n"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "[Embedded Image: image2.png]\n**Structured Description of Image:**\n---\n**Title/Headers:**\n- PRIMARY BENEFIT METRIC\n- CAPABILITY\n- METRIC\n---\n**Vertical Axis (Leftmost Column):**\n- SHAREHOLDER VALUE (spans all rows)\n- REVENUE\n- COGS\n- SG&A\n- CAPITAL\n---\n**Rows and Content:**\n### REVENUE\n- **Primary Benefit Metric:**\n- LOST SALE REDUCTION\n- FORECAST ACCURACY\n- **Capability:**\n- Demand at Risk / Critical Path Analysis\n- Segmentation\n- Supply Allocation / Prioritization\n- Single Level Safety Stock Recommendation\n- **Metric:**\n- Reduced Weeks of Supply\n- Increased Forecast Accuracy\n- Improved Projec"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Image: image1.png",
+        "snippet": "- Improved Planning Cycle Time (MRP Latency)\n- OBSOLETE INVENTORY REDUCTION / INVENTORY HOLDING COST REDUCTION / EXPEDITED FREIGHT COST REDUCTION:\n- Inventory Targets Plan v Actual\n- Reduced Total Inventory Holding\n- Reduce Planned Excess & Expiring Inventory\n- # Unplanned Expedited Freight Actions\n- Reduced Periods of Coverage\n- ONE TIME INVENTORY SAVINGS (WC) / ASSET PRODUCTIVITY /"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image3.png",
+        "snippet": "- Scenario Planning\n- Collaboration\n- Prioritized Exception Messages\n- End-to-End Supply Plans\n- Supply Network Dashboards\n- Critical Constraints\n- Standard Processes (grouped with Scenario Planning)\n- Integrated Supply Network (grouped with Prioritized Exception Messages)\n- Supply at Risk (grouped with End-to-End Supply Plans)\nOther Notes:\n- The table uses color coding: orange for headers, dark red for category labels, and light pink for capability cells.\n- The structure links supply chain/ERP capabilities to shareholder value metrics and operational KPIs.\n-"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "3": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Supply Chain Scope",
+        "snippet": "[provide a description the products, sites and materials in scope]."
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Supply Chain Scope",
+        "snippet": "The high-level scope of this project is to provide demand, supply and inventory planning capabilities, which support the procurement, manufacture and distribution of [Customer] products.\nIf there is any requirement that is outside of the scope of this RapidStart deployment, they will be discussed as part of change requests."
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Supply Chain Scope",
+        "snippet": "The high-level scope of this project is to provide demand, supply and inventory planning capabilities, which support the procurement, manufacture and distribution of [Customer] products.\nIf there is any requirement that is outside of the scope of this RapidStart deployment, they will be discussed as part of change requests."
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Scope",
+        "snippet": "The high-level scope of this project is to provide demand, supply and inventory planning capabilities, to enable the procurement, manufacture and distribution of [insert]"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Supply Chain Scope",
+        "snippet": "Below is the scope considered in this Blueprint, mainly there are two BUs in Australia and New Zealand, one is Trading (Traded Bulk, Bulk Liquids, Packaged Goods) and the other one is ChlorAlkali."
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Scope",
+        "snippet": "The high-level scope of this phase of the project is to provide demand, supply and inventory planning capabilities, which support the procurement, manufacture and distribution of [Customer] products."
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "3.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Supply Chain Maps",
+        "snippet": "[insert a graphical representation of the supply network]"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Scope",
+        "snippet": "The high-level scope of this phase of the project is to provide demand, supply and inventory planning capabilities, which support the procurement, manufacture and distribution of [Customer] products."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "Technical Scope and Limitations",
+        "snippet": "The high-level scope of this project is to provide a set of technical services that deliver structured master, and transactional data (demand and supply data) to support planning capabilities at IXOM."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Scope",
+        "snippet": "The high-level scope of this project is to provide demand, supply, inventory and S&OP planning capabilities, which supports the procurement, manufacturing/production and distribution of IXOM products."
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image13.png",
+        "snippet": "- No KPIs, metrics, process flows, or supply chain maps are present.\n- Useful for understanding master data setup and integration points for customer data in a supply chain system."
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image24.png",
+        "snippet": "**Other Details:**\n- No supply chain maps, site names, or system names are visible.\n- No process flows or architecture diagrams are present.\n- All charts are focused on key supply chain KP"
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image13.png",
+        "snippet": "[Embedded Image: image13.png]\nStructured Description:\n**Window Title:**\nInsert Definition Settings\n**Main Sections and Fields:**\n1. **Header Fields:**\n- Name: Customer\n- Title: Insert Record - Customer\n- Table: Customer\n2. **Checkbox Options:**\n- Always generate a unique value for the key field (Customer ID) [unchecked]\n- Automatically generate all required reference records [unchecked]\n- Allow users to choose the currency for Money fields [unchecked]\n3. **Fields List (left panel):**\n- Customer ID (selected)\n- Site\n- Name\n- Customer Group\n4. **Field Definition (right panel, for selected field "
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image24.png",
+        "snippet": "[Embedded Image: image24.png]\nStructured Description of image24.png:\n**Application Context:**\n- Application: Kinaxis RapidResponse\n- User: Mariraja Sankarakumar\n- Tab: Executive\n- Section: Corporate Metrics\n**Visible Charts and Data:**\n1. **Revenue Value (Top Chart)**\n- Y-axis: Revenue Value (in thousands), ranging from $0 to $200,000\n- X-axis: Timeline from Jun-21 to Aug-22 (monthly intervals)\n- Data Series:\n- Annual Plan (line, dark blue)\n- S&OP Candidate (bar, light blue)\n- Observations: Revenue values fluctuate, peaking around Oct-21 and declining after.\n2. **Margin % (Bottom Left Chart)**"
+      }
+    ],
+    "gen_source": "doc"
+  }
+}

@@ -1,0 +1,373 @@
+{
+  "1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "[Embedded Image: image2.png]\nThe image is a screenshot of the Table of Contents from a document titled \"RapidStart Technical Blueprint Template Rev 1.4.docx\". Below is a structured plain-text description focusing on supply chain/ERP-relevant content:\n---\n**Table of Contents**\n**1. INTRODUCTION**\n- 1.1 Company Background (p.6)\n- 1.2 Purpose (p.6)\n- 1.3 Scope (p.8)\n- 1.4 Definitions & Acronyms (p.8)\n- 1.5 Key Business Decisions (p.8)\n- 1.6 Planning Hierarchy Attributes (p.10)\n**2. BENEFIT REALIZATION**\n- 2.1 Quantitative Benefits (p.11)\n- 2.2 Qualitative Benefits (p.11)\n- 2.3 [Customer] Identifi"
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Revision History",
+        "snippet": "Kinaxis readers of this document should check with the customer to see if the customer has updated the document with changes."
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Image: image31.png",
+        "snippet": "[Embedded Image: image31.png]\nStructured Description:\nTitle/Tab:\n- \"CSB Planning\" (appears as a tab or section header)\nSection List (numbered outline, likely a table of contents or navigation pane):\n1. Introduction\n2. STATEMENT OF REQUIREMENTS\n3. DESIGN QUESTIONS AND ASSUMPTIONS\n4. DESIGN DETAILS\n5. RECOMMENDED TEST PROCEDURES\n6. PERFORMANCE CONSIDERATIONS\n7. USER ROLES AND GROUPS\n8. SCHEDULED TASKS\n9. PRODUCTION SUPPORT CONSIDERATIONS\nNotes Section (text box below the section list):\n- (Notes as of 2012/10/17)\n- Currently, until RapidResponse version 11.2, Scripts must access worksheet data us"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to detail the operating model for RapidResponse to meet the business needs as defined by [insert]\nThe objective of this document is to list the user stories and analytics that provide the scope for this release. Each user story shall provide a reasonable level of technical detail that will enable configuration of the solution.\nDuring the development of the solution, this document will be updated with requirement changes and solution design.  This document, at technical golive, shall provide both the requirements and solution.\nThis document does not include test "
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Demand Order Analysis – Partial Orders (Workbook)",
+        "snippet": "This is an unmodified PDR."
+      },
+      {
+        "doc_name": "Future Enhancements.pdf",
+        "heading_path": "Page 1",
+        "snippet": "{ \"section_name\": \"Future Enhancements\", \"objective\": \"Describe future capabilities that can improve the\nBlueprint Automation Platform.\", \"instructions\": [ \"Explain the current limitation.\", \"Describe the proposed\nenhancement.\", \"Explain technical implementation approach.\", \"Describe expected business value.\",\n\"Include risks and mitigation.\" ], \"enhancements\": [ { \"name\": \"Import Existing BRD\", \"description\": \"Upload\nexisting BRD documents and continue editing.\" }, { \"name\": \"Git Version Control via MCP\", \"description\":\n\"Store document versions in Git repositories and track changes.\" }, { \"nam"
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Table of Contents",
+        "snippet": "Table of Contents\t2\nRevision History\t4\n1 - Projects and Team Members\t5\n1.1 Projects\t5\n1.2 Key Members\t5\n1.3 Kinaxis Project Team\t5\n2 - Introduction\t6\n2.1 Purpose of this Document\t6\n2.2 Description of Customer\t7\n2.3 Business Areas Addressed by the Solution\t7\n2.4 Glossary of Terms\t7\n3 - Business Processes\t8\n3.1 Supply Chain Map\t8\n3.1.1 Sites\t8\n3.2 Business Process and RapidResponse Solution\t8\n4 - Integration Platform\t9\n4.1 Integration Architecture\t9\n4.2 Extracted Data\t9\n4.3 Incoming Data\t9\n4.4 Automation Jobs\t10\n4.4.1 Automation Job Name\t10\n4.5 Master Jobs\t10\n4.5.1 Master Job Name\t10\n4.6 Transfo"
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Revision History",
+        "snippet": "| Version | Changes | Author | Date |\n| --- | --- | --- | --- |\n| 1 | Initial Draft |  |  |\n| 2 | Changed font to Calibri and other formatting changes. Be sure to update Revision/date in Footings | Jim Wood | 25-Mar-2014 |\n| 3 | Header 2 fixed to be Calibri 16pt. Show spelling issues. Fixed minor issues. | Jim Wood | 9-Apr-2014 |\n| 4 | Updated Kinaxis logo to the latest | Emilia Michaud | July 22, 2019 |\n| 5 | Updated with new section on Integration Platform documentation (section 4) | Emily Fisk | March 12, 2020 |\n| 6 | Additional updates to the Integration Platform section | Emilia Michaud, "
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Solution Blueprint\nfor [RS Customer].\nRevision History\n| Revision | Author Name | Date | Description |\n| --- | --- | --- | --- |\n| 1.0 | Keith Venter | May 2021 | Initialization of Document |\n| 1.2 | Keith Venter | Jun 2022 | Refinement for RS/Planning One |\n| 1.3 | Keith Venter | Aug 2022 | Deprecated Candidate Supply Plan scenario references |\n| 1.4 | Keith Venter | Oct 2022 | Deprecated User Story: Import Planner Codes |"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "Solution Blueprint\nfor [RS Customer].\nRevision History\n| Revision | Author Name | Date | Description |\n| --- | --- | --- | --- |\n| 1.0 | Keith Venter | May 2021 | Initialization of Document |\n| 1.2 | Keith Venter | Jun 2022 | Refinement for RS/Planning One |\n| 1.3 | Keith Venter | Aug 2022 | Deprecated Candidate Supply Plan scenario references |\n| 1.4 | Keith Venter | Oct 2022 | Deprecated User Story: Import Planner Codes |"
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Table of Contents",
+        "snippet": "6.8 Hierarchies\t31\n6.9 Task Flows\t31\n6.10 Dashboards\t32\n6.10.1 Widgets\t32\n6.11 Responsibilities\t32\n6.12 Business Processes\t32\n6.13 Macros\t32\n6.14 Profile Variables\t32\n6.15 System Configuration\t32\n6.15.1 Global Settings\t33\n6.15.2 Auto Delete Settings\t33\n6.15.3 S&OP Attributes\t34\n6.15.4 Processing Rules\t34\n6.15.5 Users/Groups\t34\n6.15.6 Currencies\t37\n7 - Maintenance Considerations\t38\n7.1 Change Management\t38\n7.2 Upgrade Considerations\t38\n7.2.1 Critical Workbooks\t38\n7.2.2 Critical Scheduled Tasks/Scripts/Alerts\t38\n7.3 New Data Sources, Plants, ERP Feeds\t38\n8 - Related Project Documents\t39"
+      }
+    ],
+    "gen_source": "both"
+  },
+  "1.1": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Demand Review",
+        "snippet": "The Demand Review is the first step of the S&OP process. The Unconstrained Demand Plan aligns with the company goals and initiatives."
+      },
+      {
+        "doc_name": "1.Day1_04May_Workshop Agenda - High Level Business Process #1.docx",
+        "heading_path": "Agenda",
+        "snippet": "Objective\nEstablish a shared understanding of business structure, planning processes, and alignment to Kinaxis Maestro RapidStart capabilities.\nAgenda\n1. Welcome & Context (5 mins)\nIntroductions\nObjectives & scope recap\nRapidStart overview\n2. Business Overview (10 mins)\nBusiness units & functions\nProduct lines\nMarkets & customers\nSupply Chain KPIs and targets.\n3. Site & Operating Structure (10 mins)\nPlants, warehouses, distribution network\nOperating models (MTS / MTO)\nProduct hierarchies\nPlanning ownership across sites\n4. High-Level Planning Process – To be process (50 mins)\nDemand planning\nSu"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Add types of detailed that will provide or require further clarity (Information, Decisions, Limitations, Exclusions or Dependencies):\n| Type | Description | Status |\n| --- | --- | --- |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Add types of detailed that will provide or require further clarity (Information, Decisions, Limitations, Exclusions or Dependencies):\n| Type | Description | Status |\n| --- | --- | --- |\n|  |  |  |\n|  |  |  |\n|  |  |  |"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Add types of detailed assumptions that will provide or require further clarity (Information, Decisions, Limitations, Exclusions or Dependencies):\n| Type | Description |\n| --- | --- |\n| Decision | Target Categories |\n| Decision | Baseline scenario used for all Targets |\n|  |  |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Add types of detailed that will provide or require further clarity (Information, Decisions, Limitations, Exclusions or Dependencies):\n| Type | Description | Status |\n| --- | --- | --- |\n|  |  |  |\n|  |  |  |\n|  |  |  |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Add types of detailed that will provide or require further clarity (Information, Decisions, Limitations, Exclusions or Dependencies):\n| Type | Description | Status |\n| --- | --- | --- |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Add types of detailed that will provide or require further clarity (Information, Decisions, Limitations, Exclusions or Dependencies):\n| Type | Description | Status |\n| --- | --- | --- |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Add types of detailed that will provide or require further clarity (Information, Decisions, Limitations, Exclusions or Dependencies):\n| Type | Description | Status |\n| --- | --- | --- |\n| Limitation | Only one forecast item can be defined per partcustomer record |  |\n| Information | Forecast items should have a 24 periods of sales history to generate a valid statistical forecast |  |\n|  |  |  |\n|  |  |  |"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Add types of detailed assumptions that will provide or require further clarity (Information, Decisions, Limitations, Exclusions or Dependencies):\n| Type | Description |\n| --- | --- |\n| Decision | Target Categories |\n| Decision | Baseline scenario used for all Targets |\n|  |  |"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "|  |  |\n| --- | --- |"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "Responsibilities Roles:\nNote: Mapped InventoryPlanners & MasterSchedulers to SupplyPlanner role"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "|  |  |  |\n| --- | --- | --- |"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Solution Assumptions",
+        "snippet": "| Type | Description |\n| --- | --- |\n| Decision |  |\n| Decision |  |"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.2": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Supply Chain Map",
+        "snippet": "Copy from the Solution Blueprint and update or note how it reflects the current situation."
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image55.png",
+        "snippet": "[Embedded Image: image55.png]\n**Structured Description of Image:**\n---\n**Title:**\nLevel 3 Review and Adjust Planning Parameters\n---\n**Sections:**\n- Inputs\n- Supply Planner\n- Outputs\n---\n**Inputs:**\n- Data integrity exceptions (red trapezoid)\n- Current Planning Parameters (red trapezoid)\n---\n**Process Flow (Swimlane: Supply Planner):**\n1. **Start** (light blue circle)\n2. **Decision:** Are there data integrity issues? (dark blue diamond)\n- **No:** Proceed to \"Simulate Parameter Changes and Impact\"\n- **Yes:** \"Fix data integrity issues\" (blue rectangle), then proceed to \"Simulate Parameter Change"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Image: image66.png",
+        "snippet": "[Embedded Image: image66.png]\nStructured Description of image66.png:\n---\n**Section: Input**\n- **Left Input Box:**\n- Stock OnHand\n- Forecast\n- Demand Orders\n- Supply Orders\n- Projected Forecast\n- Projected Shortfall\n- **Right Input Box:**\n- Inventory Transfer Orders\n- Existing Demand & Supply\n---\n**Section: Process (Role: Product Manager)**\n- **Step 1:** Review Inventory & Shortfall\n- **Step 2:** Create Inventory Transfer\n- **Step 3:** Review Projected Inventory\n(Arrows indicate sequential flow from Step 1 → Step 2 → Step 3)\n---\n**Section: Output**\n- **Left Output Box:** Identified The Possible"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Collect Demand Input",
+        "snippet": "The solution design with consist of the following capabilities:\nThe ability to define four different forecast categories.\nThe ability to compare the forecast against current and annual plans\nThe ability to input the forecast in volume or values"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Business Problems",
+        "snippet": "Cost Control\nReduce inventory globally\nMaintain or improve customer service levels\nEnsure the right product is in the right warehouse at the right time\nPerform simulations in response to global sales queries\nHelp coordinate effective phase in of new products and phase out of old products\nImplementation of global forecasting from our sales tools"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Business Problems",
+        "snippet": "Cost Control\nReduce inventory globally\nMaintain or improve customer service levels\nEnsure the right product is in the right warehouse at the right time\nPerform simulations in response to global sales queries\nHelp coordinate effective phase in of new products and phase out of old products\nImplementation of global forecasting from our sales tools"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image5.png",
+        "snippet": "[Embedded Image: image5.png]\nStructured Description of image5.png:\nTitle/Quote:\n- “Making sure the right product, is in the right place, at the right time”\nTable/Diagram Structure:\n- The image is a three-column matrix with connecting lines, showing relationships between Key Issues, Root Causes, and To-Be Directions in a supply chain context.\nColumn 1: Key Issues (left, color-coded)\n- Green (Demand):\n- Low forecast accuracy at SKU level\n- High demand variability due to customer ordering habits\n- Missing mid & long-term forecasting\n- Purple (Supply):\n- Lack supply agility to demand variability\n-"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Collect Demand Input",
+        "snippet": "Financial Forecast\nSales Forecast"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image55.png",
+        "snippet": "- No KPIs or metrics shown.\n- The diagram is a process flow with decision points and update actions.\n---\n**Summary for Supply Chain Consultant:**\nThis image details a process flow for reviewing and adjusting planning parameters in a supply chain context, focusing on data integrity, simulation of parameter changes, and updating either ERP or RR systems of record. The process ensures that planning parameters are current and accurate, with clear decision points and update actions. Outputs are updated parameters in both RR and ERP systems."
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.3": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to detail the operating model for RapidResponse to meet the business needs as defined by [insert]\nThe objective of this document is to list the user stories and analytics that provide the scope for this release. Each user story shall provide a reasonable level of technical detail that will enable configuration of the solution.\nDuring the development of the solution, this document will be updated with requirement changes and solution design.  This document, at technical golive, shall provide both the requirements and solution.\nThis document does not include test "
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to detail the Technical Architecture of the RapidResponse solution implemented at [Customer]. This will include details of the Infrastructure, Information Systems and Information Services being used by this customer.\nThis document includes technical details that help customer’s support staff (COE) and Kinaxis Support manage the solution after it is deployed. It addresses support topics such as:\nTechnical components of the solution and how they are supposed to work\nUnderstanding the changes to the data model\nA review of integration and automation risks\nThis is a "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to define the Customer Solution blueprint for IXOM.\nThe blueprint sets out the processes and associated functional requirements for configuring the future Maestro solution to support the IXOM S&OP planning processes.\nThe aims of the blueprint are threefold:\nSet the baseline for the future state process for the subsequent deployment project. The business team and key stakeholders are provided with the opportunity to set the direction and establish the future concurrent planning process and resulting new ways of working.\nStarting from a predefined Process Framewor"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to define the Customer Solution blueprint for [Customer].\nThe blueprint defines the prescribed scope of processes, capabilities and resources that will support a RapidStart deployment project.\nThe aims of the blueprint are twofold:\nSet the baseline for the future-state process and advanced planning capabilities – Business and IT teams will learn a common terminology and understanding of RapidResponse planning paradigms/capabilities based on prescribed data interfaces and foundational planning capabilities, from which to build for more advanced planning requireme"
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to define the Technical Architecture of the Maestro Solution, yet to be implemented at IXOM.\nThis document includes the technical details that outline how the integration works between Maestro and other IXOM systems including SAP, Power BI, Kony, Tanktel, Everlink. It addresses:\nTechnical components of the solution and how they work\nUnderstanding the changes to the data model\nA review of integration and automation tasks\nClosed-Loop & Reconciliation"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Purpose",
+        "snippet": "The purpose of this document is to define the Customer Solution blueprint for [Customer].\nThe blueprint defines the prescribed scope of processes, capabilities and resources that will support a RapidStart deployment project.\nThe aims of the blueprint are twofold:\nSet the baseline for the future-state process and advanced planning capabilities – Business and IT teams will learn a common terminology and understanding of RapidResponse planning paradigms/capabilities based on prescribed data interfaces and foundational planning capabilities, from which to build for more advanced planning requireme"
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "[Embedded Image: image2.png]\nThe image is a screenshot of the Table of Contents from a document titled \"RapidStart Technical Blueprint Template Rev 1.4.docx\". Below is a structured plain-text description focusing on supply chain/ERP-relevant content:\n---\n**Table of Contents**\n**1. INTRODUCTION**\n- 1.1 Company Background (p.6)\n- 1.2 Purpose (p.6)\n- 1.3 Scope (p.8)\n- 1.4 Definitions & Acronyms (p.8)\n- 1.5 Key Business Decisions (p.8)\n- 1.6 Planning Hierarchy Attributes (p.10)\n**2. BENEFIT REALIZATION**\n- 2.1 Quantitative Benefits (p.11)\n- 2.2 Qualitative Benefits (p.11)\n- 2.3 [Customer] Identifi"
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Closed Loop – Inbound",
+        "snippet": "Describe data that comes to RapidResponse from Integration Platform, web services, RI, etc. other than Flat files defined in Data Sources and mapping (mentioned in above section)\nDescribe how this works and what the data is.\nSection should capture:\nEach Closed-Loop Process defined and its business purpose\nTechnical Configurations\nProcesses, Dashboards, Workbooks, Filter, etc…\nVisual Diagram showing the relationship of all components with a description of each and their interaction\nE.g. VISIO of Data Flow, Components, etc…\nBelow is an example of documentation of this section. In this Example, t"
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Closed Loop – Outbound",
+        "snippet": "Closed loop is the process of feeding Supply Chain data from RapidResponse back to the Source System.\nDescribe data sent by RapidResponse from the Integration Platform, web services, RI, etc. other than Flat Files defined in Data Sources and Mapping (mentioned in above sections).\nDescribe how this works and what the data is.  The Section should capture:\nEach Closed-Loop process defined and its business purpose\nTechnical Configurations\nProcesses, Dashboards, Workbooks, filters, etc\nVisual diagram showing the relationship of all components with a description of each and their interaction\nEg: VIS"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image6.png",
+        "snippet": "[Embedded Image: image6.png]\n**Structured Description of image6.png**\n---\n**1. Main Structure:**\nThe image is a multi-column flowchart/infographic, organized into five main vertical sections:\n- Business Objectives\n- Value Drivers\n- Advanced Planning Capabilities\n- Benefit Range\n---\n**2. Section Details:**\n**A. Business Objectives (Yellow background)**\n- Increase Revenue\n- Reduce Cost\n- COGS (Cost of Goods Sold)\n- SG&A (Selling, General & Administrative)\n- Business Continuity\n**B. Value Drivers (Blue, Brown, Orange, Navy backgrounds)**\n- For Increase Revenue:\n- Launch Optimization\n- Customer Sa"
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Closed Loop – Inbound",
+        "snippet": "Point to note for Custom FTP Process:\nCustomer is responsible for any troubleshooting or support issues related to the transfer of data to the DTC account. Kinaxis Customer Support can assist Customer with data issues only when the data has been received in DTC account. Archives and log of the transferred data to RR are maintained by Customer."
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image6.png",
+        "snippet": "- Scenario Modeling\n- Managing shelf-life and expiry\n- Exception/Alert monitoring\n- For Business Continuity:\n- Scenario modelling, impact analysis, risk mitigating scenarios\n- Eliminate manual lot matching to support jurisdictional control\n**D. Benefit Range (Grey circles, rightmost column)**\n- Improved Customer Service >25%\n- Reduce Excess & Obsolescence 15%–25%\n- Improved resource efficiency 10%–20%\n- Planning Cycle Time Reduction 25%–35%\n- Inventory & Carrying Cost Savings 10%–30%\n- Reduce Premium Freight Cost 15%–25%\n---\n**3. Visual Elements:**\n- Color-coded boxes and arrows connect object"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.4": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Scope",
+        "snippet": "The high-level scope of this project is to provide demand, supply, inventory and S&OP planning capabilities, which supports the procurement, manufacturing/production and distribution of IXOM products."
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Scope",
+        "snippet": "The high-level scope of this phase of the project is to provide demand, supply and inventory planning capabilities, which support the procurement, manufacture and distribution of [Customer] products."
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Supply Chain Scope",
+        "snippet": "[provide a description the products, sites and materials in scope]."
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Supply Chain Scope",
+        "snippet": "The high-level scope of this project is to provide demand, supply and inventory planning capabilities, which support the procurement, manufacture and distribution of [Customer] products.\nIf there is any requirement that is outside of the scope of this RapidStart deployment, they will be discussed as part of change requests."
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Scope",
+        "snippet": "The high-level scope of this project is to provide demand, supply and inventory planning capabilities, to enable the procurement, manufacture and distribution of [insert]"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Scope",
+        "snippet": "The high-level scope of this phase of the project is to provide demand, supply and inventory planning capabilities, which support the procurement, manufacture and distribution of [Customer] products."
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "[Embedded Image: image2.png]\nThe image is a screenshot of the Table of Contents from a document titled \"RapidStart Technical Blueprint Template Rev 1.4.docx\". Below is a structured plain-text description focusing on supply chain/ERP-relevant content:\n---\n**Table of Contents**\n**1. INTRODUCTION**\n- 1.1 Company Background (p.6)\n- 1.2 Purpose (p.6)\n- 1.3 Scope (p.8)\n- 1.4 Definitions & Acronyms (p.8)\n- 1.5 Key Business Decisions (p.8)\n- 1.6 Planning Hierarchy Attributes (p.10)\n**2. BENEFIT REALIZATION**\n- 2.1 Quantitative Benefits (p.11)\n- 2.2 Qualitative Benefits (p.11)\n- 2.3 [Customer] Identifi"
+      },
+      {
+        "doc_name": "SOW_BKP.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "SCOPE DEFINITION:\nBristlecone and Tridant have aligned high-level requirements planned for the implementation and are listed in the below sections of this SOW.\nThe functional configuration of Maestro follows standard Out of the box solution configurations as part of the RapidStart approach and all assumptions and out of scope are called out in the following sections of this SOW. Assumptions, out of scope and the workbooks listed.\nThis section defines the actual scope of the Services to be delivered to IXOM and those tasks the parties agree will be performed by IXOM resources under this SOW.  A"
+      },
+      {
+        "doc_name": "Exclusions.png",
+        "heading_path": "Exclusions",
+        "snippet": "[Image: Exclusions.png]\nStructured Description of Image: \"Exclusions.png\"\nTitle:\n5. SCOPE EXCLUSIONS\nGeneral Description:\nThis section lists specific items that are explicitly out of scope for the Statement of Work (SOW) related to a supply chain/ERP project. The exclusions are presented as a numbered list, with some references to appendices, systems, and processes.\nVisible Text and Content:\nIntroductory Statement:\n- Clarifies that the listed items are out of scope for the SOW. Any items not specifically identified in the document are also out of scope.\nNumbered List of Exclusions:\n1. IXOM-dri"
+      },
+      {
+        "doc_name": "SOW_BKP.docx",
+        "heading_path": "(No Heading)",
+        "snippet": "PROJECT TIMELINE AND FEES (T&M): HIGH LEVEL PROJECT SCHEDULE:\nThe diagram below provides an illustrative outline of the estimated timeline based on the current scope, assumptions and understanding. The estimated timeline is contingent on timely delivery of information and provision of the Project approach, scope, roles and responsibilities, and artifacts.\nAn exact start date is to be agreed between Tridant/Bristlecone and Customer.  The illustrative plan does not account for Holiday’s vacations, sick-leave or any other projects or events that could affect the timeline.  At the start of the Pro"
+      },
+      {
+        "doc_name": "Exclusions.png",
+        "heading_path": "Exclusions",
+        "snippet": "12. Coordination and communication involving third parties specifically related to the data integration (e.g., suppliers, contract manufacturers).\n13. Any post go-live support services.\n14. Production scheduling optimizer enabled by Supply.AI.\n15. Assumption that Australia and NZ will use similar/standard planning process; any customization is not in scope.\n16. Product expiry management and planning.\n17. Constraint-based capacity planning is not supported; alerts can still be managed.\n18. Sales order based pricing is excluded; pricing will be considered at customer–product level.\n19. Custom re"
+      }
+    ],
+    "gen_source": "doc"
+  },
+  "1.5": {
+    "web": [],
+    "docs": [
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Glossary of Terms",
+        "snippet": "| Acronym/Term | Definition | Comments |\n| --- | --- | --- |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |"
+      },
+      {
+        "doc_name": "Template - Solution Maintenance Manual 1.docx",
+        "heading_path": "Glossary of Terms",
+        "snippet": "Every customer has their own language.  This is the place to add anything that would be of help to a consultant new to the account.  Headings are flexible.  If you copy from the Solution Blueprint, select the table and apply the Kinaxis table template format.  You will have to manually change the header row to style Table Header Text."
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro_Solution-Blueprint_V2.1.docx",
+        "heading_path": "Definitions & Acronyms",
+        "snippet": "| Abbreviation | Definition |\n| --- | --- |\n| NPI | New Product Introduction |\n| EOL | End Of Life |\n| ASP | Average Selling Price |\n| SS | Safety Stock |\n| DP | Demand Planning |\n| SP | Supply Planning |\n| IP | Inventory Planning |\n| S&OP | Sales & Operations Planning |\n| E2E | End to End |\n| FI | Forecast Item |\n| CTP | Capable-To-Promise |\n| FLP | Full Level Pegging |\n| WO | Work Order |\n| PO | Purchase Order |\n| PReq | Purchase Requisition |\n| STO | Stock Transfer Order |\n| PLO | Planned Order |\n| SLOBS | Slow-moving and Obsolete inventory |"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4.docx",
+        "heading_path": "Definitions & Acronyms",
+        "snippet": "| Abbreviation | Definition |\n| --- | --- |\n| ASP | Average Selling Price |\n| CSL | Customer Service Level |\n| DP | Demand Planning |\n| SP | Supply Planning |\n| FP | Financial Planning |\n| S&OP | Sales & Operations Planning |\n| ExM | External Manufacturing |\n| CMO | Contract Manufacturing |\n| E2E | End to End |\n| CMI | Customer Managed Inventory |\n| SCM | Supply Chain Management |\n| VMI | Vendor Managed Inventory |\n| RS | RapidStart |\n| PGI | Post Goods Issue |"
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Image: image2.png",
+        "snippet": "[Embedded Image: image2.png]\nThe image is a screenshot of the Table of Contents from a document titled \"RapidStart Technical Blueprint Template Rev 1.4.docx\". Below is a structured plain-text description focusing on supply chain/ERP-relevant content:\n---\n**Table of Contents**\n**1. INTRODUCTION**\n- 1.1 Company Background (p.6)\n- 1.2 Purpose (p.6)\n- 1.3 Scope (p.8)\n- 1.4 Definitions & Acronyms (p.8)\n- 1.5 Key Business Decisions (p.8)\n- 1.6 Planning Hierarchy Attributes (p.10)\n**2. BENEFIT REALIZATION**\n- 2.1 Quantitative Benefits (p.11)\n- 2.2 Qualitative Benefits (p.11)\n- 2.3 [Customer] Identifi"
+      },
+      {
+        "doc_name": "RapidStart Solution Blueprint Template Rev 1.4_simplified.docx",
+        "heading_path": "Definitions & Acronyms",
+        "snippet": "| Abbreviation | Definition |\n| --- | --- |\n| ASP | Average Selling Price |\n| CSL | Customer Service Level |\n| DP | Demand Planning |\n| SP | Supply Planning |\n| FP | Financial Planning |\n| S&OP | Sales & Operations Planning |\n| ExM | External Manufacturing |\n| CMO | Contract Manufacturing |\n| E2E | End to End |\n| CMI | Customer Managed Inventory |\n| SCM | Supply Chain Management |\n| VMI | Vendor Managed Inventory |\n| RS | RapidStart |\n| PGI | Post Goods Issue |"
+      },
+      {
+        "doc_name": "Template - RapidResponse Solution Blueprint 1.docx",
+        "heading_path": "Definitions & Acronyms",
+        "snippet": "| Abbreviation | Definition |\n| --- | --- |\n| ASP | Average Selling Price |\n| CSL | Customer Service Level |\n| DP | Demand Planning |\n| SP | Supply Planning |\n| FP | Financial Planning |\n| S&OP | Sales & Operations Planning |\n| ExM | External Manufacturing |\n| CMO | Contract Manufacturing |\n| E2E | End to End |\n| CMI | Customer Managed Inventory |\n| SCM | Supply Chain Management |\n| VMI | Vendor Managed Inventory |"
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Terms and Acronyms",
+        "snippet": "| Transform | A Transform is the process of taking data provided in one form (usually that of the Source System) and changing it so if fits the context of the destination System. |\n| RTVS | Return to Vendor Stock – returns on Scheduled receipts not available for future inventory (excluded from SR extract) |\n|  |  |\n|  |  |"
+      },
+      {
+        "doc_name": "RapidStart Technical Blueprint Template Rev 1.4.docx",
+        "heading_path": "Terms and Acronyms",
+        "snippet": "| Term or Acronym | Definition |\n| --- | --- |\n| Data Source | A Data Source is a grouping of mappings that represent information that is coming from a specific information system. |\n| Data Transfer | A Data Transfer is the process of moving data from one point to another. |\n| DTC | Data Transfer Client (DTC) is a small piece of software provided by Kinaxis to support file based delivery using SFTP |\n| Extract | An extract is the process of pulling source data from an Information System. |\n| File | A file is set of records that is defined by one or more keys with a set of data attributes that "
+      },
+      {
+        "doc_name": "IXOM_IBP_Maestro-Technical-Blueprint_JUNE2025 Integration.docx",
+        "heading_path": "Terms and Acronyms",
+        "snippet": "| Term or Acronym | Definition |\n| --- | --- |\n| Data Source | A Data Source is a grouping of mappings that represent information that is coming from a specific information system. |\n| Data Transfer | A Data Transfer is the process of moving data from one point to another. |\n| DTC | Data Transfer Client (DTC) is a small piece of software provided by Kinaxis to support file-based delivery using SFTP |\n| Extract | An extract is the process of pulling source data from an Information System. |\n| File | A file is set of records that is defined by one or more keys with a set of data attributes that "
+      }
+    ],
+    "gen_source": "doc"
+  }
+}

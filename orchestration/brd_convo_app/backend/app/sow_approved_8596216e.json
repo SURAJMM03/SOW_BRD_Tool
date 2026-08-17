@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "0": {
+      "content": "| Field | Details |\n|---|---|\n| Client Name | GOOGLE |\n| Project Name | Google Silicon COT Supply Chain |\n| Engagement Type | Implementation |\n| Contract ID | `<CONFIRM: contract ID>` |\n| Effective Date | `<CONFIRM: effective date>` |\n| End Date | 18 months from Effective Date |\n| Document Version | v1.0 |\n| Prepared by | Bristlecone Inc. |\n| Review Status | Draft |",
+      "approved_at": "2026-07-30T06:01:30.417504"
+    },
+    "1": {
+      "content": "This Statement of Work (SOW) is entered into between GOOGLE and Bristlecone Incorporated under the `<LEGAL: governing Master Services Agreement / Inbound Services Agreement / Consulting Agreement and date>`.\n\n| Field | Details |\n|---|---|\n| Contract / SOW ID | `<CONFIRM: contract ID>` |\n| SOW Effective Date | `<CONFIRM: effective date>` |\n| SOW End Date | 18 months from Effective Date |\n| Governing Agreement | `<LEGAL: governing agreement name and date>` |\n| Amendment / Supersedes | None |\n| Agreement Duration | 18 months |\n| Delivery Location | Onsite (North America) and Offshore |",
+      "approved_at": "2026-07-30T06:02:03.440524"
+    },
+    "2": {
+      "content": "This Statement of Work covers the Google Silicon COT Supply Chain implementation for GOOGLE, using a baseline-template approach to standardize supply chain processes, support localization where required, and deploy an optimized S/4HANA-based solution across onsite and offshore delivery teams.\n\n- Establish a global design and baseline template aligned to industry best practices, stakeholder sign-off, and localization needs across AOI manufacturing and distribution operations.\n- Deliver the implementation through structured phases including blueprinting and design, integration and data activities, sprint-based execution, testing, training, and hypercare.\n- Support adoption and sustained value realization through governance, organizational change management, reporting, and scalable integration planning.\n\nAny deferred decisions, assumptions, or unconfirmed scope items are identified in Section 10 (Key Assumptions) and Section 21 (Key Observations).",
+      "approved_at": "2026-07-30T06:03:06.099967"
+    },
+    "3.1": {
+      "content": "GOOGLE is establishing a Silicon COT supply chain model that requires a standardized global design across AOI manufacturing and distribution plants while accommodating plant-level and regional variations. The current landscape includes front-end foundry and OSAT back-end operations, existing SAP processes, E2Open-based supply collaboration, and planning and integration dependencies spanning Kinaxis, MES, PLM, and other boundary systems. Key pain points include gaps in current material master setup, batch and lot traceability, subcontracting settlement, enterprise structure readiness, OSAT connectivity, and end-to-end data flow definition across purchase orders, forecasts, commit messages, and cost-related transactions. This engagement is driven by the need to create a signed-off global baseline template, harmonize master data and governance, define the target operating model and system architecture, and execute the implementation through a structured sprint-based plan aligned to business priorities, technical mappings, and localization requirements.",
+      "approved_at": "2026-07-30T06:07:21.232773"
+    },
+    "3.2": {
+      "content": "- Establish a clear AS-IS baseline for Silicon COT supply chain processes, organization structure, and system interactions.\n- Define a global To-Be template for AOI manufacturing and distribution operations, with approved localization where required.\n- Standardize core supply chain processes using industry best practices, accelerators, and fit-to-standard workshops.\n- Harmonize master data, enterprise structure, and key transactional design elements required for the COT model.\n- Define end-to-end data flows and integration requirements across SAP S/4HANA, Kinaxis, E2Open, MES, PLM, and related systems.\n- Validate design assumptions, scope, and solution approach through stakeholder playback and sign-off.\n- Develop a detailed sprint-based execution plan with aligned milestones, priorities, dependencies, and ownership.\n- Enable reporting and analytics for cost, yield, and genealogy within the target solution landscape.",
+      "approved_at": "2026-07-30T06:07:21.232773"
+    },
+    "3.3": {
+      "content": "The target-state process flow starts with discovery of current front-end and back-end operations to establish the AS-IS baseline across procurement, subcontracting, traceability, master data, enterprise structure, and external collaboration. Based on that baseline, GOOGLE and Bristlecone will define the To-Be business processes, organizational design, and solution architecture for the Silicon BU, including process configuration, master data standards, transactional scope, and reporting requirements. The approved design will then be mapped to Kinaxis and SAP S/4HANA capabilities, with integration flows defined for E2Open and other connected systems, including required transformation, validation, and data-ingestion points. Execution will proceed through a sprint-based plan with coordinated governance, concurrent testing, and stakeholder sign-off to support deployment of a standardized global template with controlled regional localization.\n\n**Indicative process flow:** AS-IS Process Assessment → To-Be Process Blueprinting → Technical and Integration Mapping → Sprint-Based Execution Planning → Build, Test, Deploy, and Hypercare",
+      "approved_at": "2026-07-30T06:07:21.232773"
+    }
+  }
+}

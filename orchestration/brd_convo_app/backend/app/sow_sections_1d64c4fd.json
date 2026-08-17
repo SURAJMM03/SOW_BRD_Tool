@@ -1,0 +1,131 @@
+{
+  "active": [
+    {
+      "id": "cover",
+      "title": "Cover Page",
+      "level": 1
+    },
+    {
+      "id": "1",
+      "title": "Agreement Details",
+      "level": 1
+    },
+    {
+      "id": "2",
+      "title": "Executive Summary",
+      "level": 1
+    },
+    {
+      "id": "3",
+      "title": "Project Overview",
+      "level": 1
+    },
+    {
+      "id": "4",
+      "title": "Scope of Work",
+      "level": 1
+    },
+    {
+      "id": "5",
+      "title": "Proposed Architecture",
+      "level": 1
+    },
+    {
+      "id": "6",
+      "title": "Solution Implementation Approach & Project Plan",
+      "level": 1
+    },
+    {
+      "id": "7",
+      "title": "Project Management",
+      "level": 1
+    },
+    {
+      "id": "8",
+      "title": "Personnel Requirements",
+      "level": 1
+    },
+    {
+      "id": "9",
+      "title": "Key Deliverables",
+      "level": 1
+    },
+    {
+      "id": "10",
+      "title": "Key Assumptions",
+      "level": 1
+    },
+    {
+      "id": "11",
+      "title": "Acceptance Criteria",
+      "level": 1
+    },
+    {
+      "id": "12",
+      "title": "Obligations",
+      "level": 1
+    },
+    {
+      "id": "13",
+      "title": "Commercials",
+      "level": 1
+    },
+    {
+      "id": "14",
+      "title": "Performance Reporting & KPIs",
+      "level": 1
+    },
+    {
+      "id": "15",
+      "title": "Risks",
+      "level": 1
+    },
+    {
+      "id": "16",
+      "title": "Governance & Risk Mitigation",
+      "level": 1
+    },
+    {
+      "id": "17",
+      "title": "Change Management Process",
+      "level": 1
+    },
+    {
+      "id": "18",
+      "title": "Security & Data Protection",
+      "level": 1
+    },
+    {
+      "id": "19",
+      "title": "Termination",
+      "level": 1
+    },
+    {
+      "id": "20",
+      "title": "Acceptance and Sign-Off",
+      "level": 1
+    },
+    {
+      "id": "21",
+      "title": "Key Observations",
+      "level": 1
+    },
+    {
+      "id": "22",
+      "title": "Reviewer Recommendations",
+      "level": 1
+    },
+    {
+      "id": "appA",
+      "title": "Appendix A — Technical Prerequisites",
+      "level": 1
+    },
+    {
+      "id": "appB",
+      "title": "Appendix B — Resource Profiles & Certifications",
+      "level": 1
+    }
+  ],
+  "archived": [],
+  "template_id": null
+}
