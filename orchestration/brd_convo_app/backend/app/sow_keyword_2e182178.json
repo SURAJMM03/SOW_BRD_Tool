@@ -1,0 +1,243 @@
+{
+  "0": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "1": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "2": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "3": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 3.1 Background\nAlcon is seeking OCM support to strengthen delivery readiness, stakeholder alignment, and adoption across the in-scope program during the Realize phase. Current needs include structured governance, clearer ownership across Alcon and partner teams, stronger documentation and knowledge transfer, and more consistent communication in a multi-vendor environment. The source material also indicates delivery risks tied to provisioning and system readiness, potential adoption delays, and dependencies that require timely coordination.\n\nBusiness drivers for this engagement are to improve user awareness, validate change impacts early, align communications to Alcon’s CCM methodology, and provide practical adoption assets such as newsletters, pulse checks, process videos, and role-based engagement content. The engagement also supports a more scalable operating model through defined governance cadence, centralized knowledge capture, and proactive feedback loops.\n\n### 3.2 Objectives\n- Establish a joint OCM operating model with clear roles, decision ownership, and collaboration mechanisms across Alcon, Bristlecone, and other involved parties.\n- Validate change impacts and translate them into targeted communication, readiness, and adoption actions.\n- Deliver planned awareness and engagement outputs, including launch communications, newsletters, pulse checks, teaser content, process videos, user testimonials, and townhall support.\n- Align all OCM activities and materials to Alcon’s CCM methodology and applicable GxP expectations.\n- Improve onboarding, knowledge transfer, and continuity through documented standards and centralized content management.\n- Strengthen multi-vendor coordination through defined ownership boundaries and single points of contact where required.\n- Support sustained adoption by using periodic feedback and continuous improvement actions to refine the change approach.\n\n### 3.3 Indicative To-Be Process Flow\nIn the target state, Alcon and Bristlecone will operate through a defined OCM delivery cadence that starts with onboarding the OCM team to approved to-be materials and immediate deliverable priorities. Change impacts will be validated early, translated into a heatmap and communication strategy, and used to shape readiness actions for affected stakeholder groups. Alcon will provide business inputs, target audiences, approvals, publishing support, and access to SMEs, while Bristlecone will prepare draft content, engagement materials, surveys, reports, scripts, and visual assets for review and release.\n\nCommunications and readiness activities will then run in a coordinated cycle across launch messages, ambassador engagement, pulse checks, newsletters, teaser content, role-based stories, process videos, testimonials, and townhall support. Feedback from surveys, stakeholder interactions, and governance reviews will be incorporated into subsequent communications and adoption actions to improve readiness through go-live and stabilization.\n\nIndicative flow: OCM onboarding and access -> change impact validation -> communication and training planning -> content development and approval -> stakeholder and ambassador engagement -> campaign and readiness execution -> pulse check and feedback review -> refinement of adoption actions.",
+    "draft_sources": [
+      "Alcon Proposal -  Addendum.pptx",
+      "Alcon Proposal -  Addendum.pptx",
+      "Alcon Proposal -  Addendum.pptx",
+      "Alcon Proposal -  Addendum.pptx",
+      "Alcon Proposal -  Addendum.pptx",
+      "Alcon Proposal -  Addendum.pptx"
+    ]
+  },
+  "3.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "3.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "3.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.5": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.6": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.7": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "5": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "6": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "6.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "6.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "8": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "9": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "10": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "11": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "12": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "12.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "12.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.5": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "14": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "14.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "15": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "17": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "18": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "20": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "21": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "23": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "24": {
+    "status": "not-started",
+    "custom_instructions": ""
+  }
+}

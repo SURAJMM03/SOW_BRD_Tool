@@ -1,0 +1,426 @@
+{
+  "0": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "1": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "This Statement of Work (SOW) is entered into between Metro and Bristlecone Incorporated under the <LEGAL: confirm governing Master Services Agreement / Inbound Services Agreement / Consulting Agreement and agreement date>.\n\n| Field | Details |\n|---|---|\n| Contract / SOW ID | SAP CLOUD ALM |\n| SOW Effective Date | January 2026 |\n| SOW End Date | October 2026 |\n| Governing Agreement | <LEGAL: confirm governing agreement title and date> |\n| Amendment / Supersedes | New SOW |\n| Agreement Duration | 10 months |\n| Delivery Location | Metro sites and remote / offshore delivery as agreed between the parties |",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "2": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "This engagement covers the implementation of SAP Cloud ALM for Metro from January 2026 through October 2026 to enable Technical Monitoring and Change Request Management in alignment with the S/4 RISE migration plan. The scope includes SAP Cloud ALM tenant setup, standard change management configuration, monitoring, alerting and dashboard capabilities, and transition to the METRO team, with go-live targeted for September 2026 and hypercare through October 2026.\n\n- Establish SAP Cloud ALM for Metro’s landscape, including tenant setup, data flow configuration, user management, and monitoring foundations.\n- Configure Technical Monitoring and standard Change Request Management, including dashboards, alerting, transport routes, and release strategies aligned to the S/4 migration program.\n- Enable operational transition to the METRO team through end-to-end testing, train-the-trainer activities, SOP handover, and hypercare support.\n\nDeferred decisions, assumptions, and any open dependencies are captured in Section 10 (Key Assumptions) and Section 21 (Key Observations).",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "3": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 3.1 Background\nMetro is implementing SAP Cloud ALM to support its S/4 RISE migration and replace legacy ALM processes with a standardized cloud-based model. The engagement focuses on Technical Monitoring and Change Request Management, including tenant setup, monitoring and alerting, dashboard enablement, transport governance, and transition to the METRO team.\n\nMetro’s current challenge is to align operational monitoring and change control with the migration timeline while covering a hybrid landscape that includes SAP S/4HANA Cloud, BTP applications, MII, Datasphere, Ariba, and Integration Suite. The business drivers are to reduce migration effort, establish end-to-end visibility across systems and integrations, improve release and transport control, and enable faster issue detection and response through standard SAP Cloud ALM capabilities.\n\n### 3.2 Objectives\n- Establish SAP Cloud ALM tenant and required connectivity for Metro’s in-scope landscape.\n- Implement Technical Monitoring capabilities for system health, jobs, users, integrations, alerts, and dashboards.\n- Configure standard SAP Cloud ALM Change Request Management aligned to Metro’s transport governance model.\n- Support Dev and QA change-cycle setup and end-to-end testing before production deployment.\n- Align Cloud ALM delivery milestones with the S/4 RISE migration plan and September 2026 go-live.\n- Train Metro users and prepare SOPs to enable transition to the METRO team in October 2026.\n\n### 3.3 Indicative To-Be Process Flow\nIn the target state, Metro will use SAP Cloud ALM as the central platform for operational monitoring and standard change management across the in-scope SAP landscape. Technical signals from connected systems and integrations will feed Cloud ALM for health monitoring, job monitoring, user performance monitoring, integration monitoring, and alert management. In parallel, change requests will follow a defined workflow with configured transport routes, release strategies, and dashboard visibility from development through quality and production deployment.\n\n<IMAGE id=\"bc2c9706ab7b\"/>\n\nThe implementation sequence is planned as pre-project and preparation in January 2026, prepare from February to April 2026, explore in May 2026, realize from June to September 2026, deployment in September 2026, and hypercare and transition in October 2026. The end state is a live SAP Cloud ALM setup with monitoring and ChaRM capabilities in operation, trained Metro users, and support transitioned to the METRO team.",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "3.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "3.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "3.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 4.1 Geographical Scope\nServices will be delivered for Metro’s SAP Cloud ALM implementation supporting the S/4 RISE migration program across the Metro landscape identified for this engagement. In scope are the client environments and teams participating in the January 2026 to October 2026 implementation, including non-production and production landscapes required for Technical Monitoring and Change Request Management. Delivery may be performed through Bristlecone onshore and offshore teams in alignment with the agreed project governance, while system coverage is limited to the Metro SAP landscape and connected platforms listed in this Statement of Work.\n\n### 4.2 Process Scope\nIn scope are the processes required to establish SAP Cloud ALM for operations and change enablement aligned to the S/4 RISE migration plan, including:\n- SAP Cloud ALM standard change management\n- Change cycle setup for development, quality, and production transport flow\n- Transport route and release strategy configuration\n- End-to-end change cycle testing for the first wave of changes\n- System health monitoring\n- Application monitoring\n- Job and automation monitoring\n- User performance monitoring for S/4HANA\n- Integration and exception monitoring\n- Notification and alert management\n- Monitoring dashboard setup\n- Support transition and knowledge transfer to the Metro team\n\n### 4.3 Technical Scope\nTechnical scope includes SAP Cloud ALM tenant setup, onboarding, prerequisite configuration, and enablement of data flows from Metro systems into SAP Cloud ALM. Scope covers configuration of monitoring use cases, alerting, dashboards, user management, and ChaRM-related transport governance within SAP Cloud ALM standard capabilities. Technical coverage includes SAP S/4HANA Cloud, SAP BTP applications, MII, SAP Datasphere, SAP Ariba, and integrations through CPI / SAP Integration Suite where required for the agreed monitoring and change scenarios. Production mapping in ChaRM workflow and production inclusion in monitoring use cases are in scope during deploy and hypercare.\n\n<IMAGE id=\"410e29befe04\"/>\n\n### 4.4 Services Scope\nIncluded services are:\n- Project management and coordination with Metro governance and project teams\n- SAP Cloud ALM solution design aligned to the S/4 RISE migration plan\n- Tenant onboarding and landscape readiness assessment\n- Configuration of Technical Monitoring use cases\n- Configuration of standard Change Request Management workflows\n- Setup of transport routes, release strategies, and transport sequence mapping\n- Setup of alerting, notifications, dashboards, and issue resolution support\n- End-to-end testing support for agreed change cycles and monitoring scenarios\n- Train-the-trainer workshop delivery\n- SOP preparation for end users\n- Deploy support, hypercare support, and transition to the Metro team\n- Documentation updates and knowledge transfer\n\n### 4.5 Application Scope\nApplication scope includes SAP Cloud ALM capabilities required for this implementation, specifically:\n- SAP Cloud ALM tenant subaccount\n- Standard Change Management\n- Technical Monitoring\n- Health Monitoring\n- Application Monitoring\n- Job Monitoring\n- User Performance Monitoring\n- Integration Monitoring\n- Exception Monitoring\n- Notification and Alert Management\n- User Management in the SAP Cloud ALM tenant\n- Standard Health Monitoring dashboard\n- Change Management dashboard\n\nCapabilities outside these agreed SAP Cloud ALM standard areas are not included unless added through approved change control.\n\n### 4.6 Integration Scope\n| # | Integration | Source System | Target System | Notes |\n|---|---|---|---|---|\n| 1 | Technical monitoring data flow | SAP S/4HANA Cloud | SAP Cloud ALM | Monitoring and observability data flow configuration |\n| 2 | Technical monitoring data flow | SAP BTP applications | SAP Cloud ALM | Coverage for agreed BTP application monitoring scenarios |\n| 3 | Technical monitoring data flow | MII | SAP Cloud ALM | Included where part of the identified customer landscape |\n| 4 | Integration monitoring | SAP S/4HANA | SAP Integration Suite | Monitoring of agreed integration scenarios |\n| 5 | Integration monitoring data flow | SAP Integration Suite / CPI | SAP Cloud ALM | Alerting and exception visibility for agreed interfaces |\n| 6 | Technical monitoring data flow | SAP Datasphere | SAP Cloud ALM | Included for agreed health and monitoring use cases |\n| 7 | Technical monitoring data flow | SAP Ariba | SAP Cloud ALM | Included for agreed monitoring use cases |\n| 8 | Change transport sequence mapping | Development and Quality systems | Production landscape | DEV → QA → PROD mapping within agreed change workflow |\n\n### 4.7 Exclusions\n- Migration from SAP Solution Manager to SAP Cloud ALM beyond the agreed Technical Monitoring and standard Change Request Management scope\n- Custom development, enhancement, or extension of SAP Cloud ALM beyond standard capabilities\n- Business Process Monitoring, Configuration & Security Analysis, Intelligent Event Processing, Test Management, Defect Management, Quality Gate Management, and other SAP Cloud ALM capabilities not explicitly listed as in scope\n- Support for landscapes, applications, or interfaces not identified in the agreed Metro landscape for this engagement\n- Ongoing managed services or post-hypercare support after October 2026\n- Client-side prerequisite completion, user/role matrix definition, monitoring use-case finalization, and transition stakeholder readiness, except for Bristlecone’s advisory support\n- Changes to scope, additional integrations, or additional monitoring use cases requested after scope baseline without approved change control",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "4.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.5": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.6": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.7": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "5": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "The solution will use SAP Cloud ALM as the central SaaS application lifecycle management platform for Metro’s S/4 RISE migration, covering Technical Monitoring and Change Request Management within a single tenant subaccount. The architecture is designed to connect Metro’s in-scope SAP landscape and integration flows to Cloud ALM for monitoring, alerting, dashboarding, and controlled transport governance.\n\n<IMAGE id=\"a9602c43b0d1\"/>\n\nThe deployment model is SAP-hosted on SAP BTP, with Metro systems and integrations configured to send operational and monitoring data to SAP Cloud ALM for system health, application, job, user performance, and integration monitoring. The target landscape includes SAP S/4HANA Cloud, BTP applications, MII, Datasphere, Ariba, and Integration Suite components that are in scope for onboarding and data-flow configuration.\n\nThe change-governance structure will use SAP Cloud ALM standard Change Request Management with configured workflows, transport routes, release strategies, and transport sequencing across DEV, QA, and PROD. The governance model will support multiple change types, approval-driven status progression, end-to-end testing of the first change cycle, and controlled transition of ongoing operations to the Metro team after deploy and hypercare.\n\nThe Cloud ALM Architect will define and implement the solution architecture in coordination with Bristlecone project management, the S/4 lead, and Metro’s project governance team. Metro will provide a single point of contact for ChaRM inputs, core-team support for cycle testing, and the required landscape, role, and monitoring-use-case inputs needed to complete configuration.",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "6": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 6.1 Implementation Methodology\nThe engagement will be delivered in phased alignment with Metro’s S/4 RISE migration plan, covering SAP Cloud ALM tenant onboarding, Technical Monitoring enablement, Change Request Management configuration, deployment, and transition to the Metro team.\n\n<IMAGE id=\"57aeb9cf761c\"/>\n\nThe implementation methodology is:\n- **Pre-Project / Discover + Prepare:** confirm SAP Cloud ALM subscription, onboard the technical team, identify the target landscape, and finalize connectivity planning for in-scope use cases.\n- **Prepare / Explore & Design:** validate user and role matrix, finalize monitoring use cases and metric values, define the target transport governance model, and complete prerequisite configuration readiness.\n- **Realize — Technical Monitoring:** configure health, job, user performance, integration, exception, alerting, and notification monitoring for agreed systems and dashboards.\n- **Realize — ChaRM:** configure standard change management workflow, transport routes, and release strategies, and execute the first end-to-end Dev and QA change cycle.\n- **Deploy / Hypercare:** integrate production into ChaRM and monitoring use cases, support issue resolution, update operating documents, deliver train-the-trainer and SOP materials, and transition support to the Metro team.\n\nDelivery will be led by the Bristlecone Cloud ALM Architect working with the Metro project team and S/4 workstream stakeholders. The methodology assumes timely availability of landscape details, finalized monitoring use cases, authorization inputs, and transition stakeholders.\n\n### 6.2 Project Phases / Releases\n| Phase/Release | Scope/Modules | Regions | Indicative Timeline | Status |\n|---|---|---|---|---|\n| Pre-Project | Mobilization, S/4 RISE alignment, subscription readiness, team onboarding | <CONFIRM: region(s) in scope> | January 2026 | Planned |\n| Discover + Prepare | Landscape identification, scope confirmation, connectivity plan, onboarding documentation | In-scope Metro landscape | 2 weeks within February 2026 | Planned |\n| Prepare | Prerequisite configuration readiness, user/role matrix validation, monitoring use case finalization | In-scope Metro landscape | February-April 2026 | Planned |\n| Explore & Design | Transport governance design, monitoring design, data flow design to SAP Cloud ALM | In-scope Metro landscape | 2 weeks within May 2026 | Planned |\n| Realize – Technical Monitoring | Health Monitoring, Job & Automation Monitoring, User Performance Monitoring, Integration & Exception Monitoring, alerting and dashboards | Non-production systems initially; in-scope production at deployment | 4 weeks within June-September 2026 | Planned |\n| Realize – ChaRM | Standard Change Management workflow, transport routes, release strategies, Dev and QA end-to-end cycle testing | Dev and QA landscape | 4 weeks within June-September 2026 | Planned |\n| Deploy | Production integration in ChaRM and monitoring use cases, cutover support | Production landscape | September 2026 | Planned |\n| Hypercare / Transition | Issue resolution, document updates, knowledge transfer, support transition to Metro team | Production and support organization | October 2026 | Planned |",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "6.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "6.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 7.1 Governance Model\nProject governance will be led by the Metro Project Governance Team and Bristlecone Project Management, with the Cloud ALM Architect coordinating delivery with the S/4 migration workstream to maintain alignment with the S/4 RISE migration plan.\n\n<IMAGE id=\"70df01b38c53\"/>\n\nEscalations will follow the delivery path from workstream resources to the Cloud ALM Architect and Bristlecone Project Management, then to the Metro Project Governance Team where timeline, dependency, access, testing, transport, and transition decisions require client resolution.\n\nGovernance checkpoints will align to the project phases from January 2026 through October 2026, with focused reviews at Prepare, Explore, Realize, Deploy, and Hypercare, including readiness for monitoring use cases, ChaRM cycle testing, cutover, and transition to the Metro team.\n\n### 7.2 Roles & Responsibilities\n| Role | Party | Location | Responsibilities |\n|---|---|---|---|\n| Metro Project Governance Team | Metro | <CONFIRM: delivery location(s)> | Provide executive oversight, resolve escalations, approve key project decisions, and support phase readiness. |\n| Metro Single POC for ChaRM Input | Metro | Metro | Provide ChaRM inputs, validate transport governance decisions, and coordinate business-side responses. |\n| Metro Core Team for ChaRM Cycle Testing | Metro | Metro | Support end-to-end change cycle testing, validate workflows, and confirm process readiness for deployment. |\n| Bristlecone Project Management | Bristlecone Inc. | Bristlecone delivery location | Manage plan, governance cadence, issue tracking, escalation coordination, and delivery reporting. |\n| Cloud ALM Architect | Bristlecone Inc. | Bristlecone delivery location | Design and implement SAP Cloud ALM, lead solution configuration, and coordinate closely with the S/4 project team. |\n| S/4 Lead | Bristlecone Inc. / Metro | Project team location | Align Cloud ALM deliverables with the S/4 migration plan, system landscape, and release dependencies. |\n| Functional | Bristlecone Inc. / Metro | Project team location | Support process inputs, monitoring use cases, testing activities, and business validation. |\n| Security | Bristlecone Inc. / Metro | Project team location | Support role mapping, authorization inputs, and access-related readiness for Cloud ALM. |\n| ABAP | Bristlecone Inc. / Metro | Project team location | Support technical dependencies, required enablement activities, and issue resolution. |\n| BASIS | Bristlecone Inc. / Metro | Project team location | Support landscape readiness, connectivity, monitoring setup, and system-level prerequisites. |\n\n### 7.3 Work Schedule\n- Project duration: January 2026 through October 2026.\n- Pre-Project activities will be completed in January 2026.\n- Prepare phase will run from February 2026 through April 2026.\n- Explore phase will be completed in May 2026.\n- Realize phase will run from June 2026 through September 2026.\n- Deploy is planned for September 2026, including go-live.\n- Hypercare and transition to the Metro team will run through October 2026.\n- Discover + Prepare is planned for 2 weeks.\n- Explore & Design is planned for 2 weeks.\n- Realize for Technical Monitoring is planned for 4 weeks.\n- Realize for ChaRM is planned for 4 weeks.\n- Deploy + Hypercare is planned for 1 month.\n- Work will be coordinated with Metro dependencies covering onboarding, landscape readiness, testing support, cutover readiness, and transition support.",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "7.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "8": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "- Project personnel shall be proficient in English and able to work directly with Metro business, functional, and technical stakeholders during design, realization, testing, deployment, hypercare, and transition activities.\n- Team members shall have prior SAP Cloud ALM implementation experience, including Technical Monitoring, Change Request Management, tenant setup, monitoring configuration, alerting, dashboards, transport routes, and release strategy configuration.\n- Resources assigned to this engagement shall demonstrate working knowledge of SAP landscapes relevant to the scope, including SAP S/4HANA Cloud, SAP BTP, Datasphere, Ariba, Integration Suite, and connected integration and monitoring scenarios.\n- Technical resources shall be familiar with hybrid SAP operations and monitoring concepts, including system health monitoring, application monitoring, job monitoring, user performance monitoring, integration monitoring, notification management, and standard dashboard reporting.\n- Personnel supporting Change Request Management shall have experience with standard SAP change and deployment processes, including workflow statuses, approvals, transport management, release cycles, and cutover coordination.\n- Assigned resources shall be capable of working with Metro’s defined user and role matrix, authorization-testing personas, transition stakeholders, and train-the-trainer approach for end-user enablement.\n- Project personnel shall be experienced in implementation delivery methods for SAP transformation programs and able to support structured design, configuration, test preparation, deployment, hypercare, knowledge transfer, and handover to the Metro team.\n- Where deliverables require operating procedures, configuration records, monitoring definitions, or transition documentation, resources shall be able to prepare them in the file formats and documentation standards agreed for the project.\n- Relevant personnel shall hold current SAP certifications or equivalent demonstrable experience in SAP Cloud ALM, SAP solution delivery, integration, or application lifecycle management disciplines.\n- <CONFIRM: any Metro-mandated background check, language, or certification requirements beyond standard project qualifications>",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "9": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "<IMAGE id=\"055a5f5a9b18\"/>\n\n| # | Deliverable | Description | Responsible Party | Due Date | Acceptance Criteria |\n|---|---|---|---|---|---|\n| 1 | Cloud ALM value proposition and scope document | Scope confirmation for SAP Cloud ALM implementation covering Technical Monitoring and Change Request Management aligned to the S/4 RISE migration plan. | Bristlecone Inc. | January 2026 | Document submitted to Metro and scope baseline confirmed for the implementation. |\n| 2 | Connectivity plan for use cases | Connectivity plan for identified SAP landscape and integration technologies required for SAP Cloud ALM use cases. | Bristlecone Inc. | January 2026 | Plan covers the in-scope landscape and required connectivity approach for agreed use cases. |\n| 3 | Cloud ALM onboarding documentation | Onboarding documentation for tenant setup and initial project readiness. | Bristlecone Inc. | January 2026 | Documentation delivered and sufficient to support onboarding of the agreed project team and landscape. |\n| 4 | Landscape readiness with prerequisite note implementation and configuration | Readiness completion for the identified landscape, including prerequisite note implementation and required configuration. | Bristlecone Inc. | May 2026 | Prerequisite notes and required configurations are completed for the agreed in-scope systems. |\n| 5 | Data flow between SAP systems to CALM | Configuration of data flow from relevant SAP systems into SAP Cloud ALM for agreed monitoring and operations use cases. | Bristlecone Inc. | May 2026 | Data flow is configured for the agreed in-scope systems and validated for intended use cases. |\n| 6 | Mapping of transport sequence (DEV → QA → PROD) | Definition and configuration of transport sequence for Change Request Management across development, quality, and production. | Bristlecone Inc. | May 2026 | Transport sequence is documented and configured for the agreed ChaRM design. |\n| 7 | Health Monitoring | Setup of health monitoring for agreed non-production and production-relevant monitoring scope. | Bristlecone Inc. | September 2026 | Monitoring is configured for agreed systems and health metrics are visible in SAP Cloud ALM. |\n| 8 | Job & Automation Monitoring | Setup of job and automation monitoring for agreed in-scope processes and systems. | Bristlecone Inc. | September 2026 | Monitoring is configured and agreed jobs or automation objects are trackable in SAP Cloud ALM. |\n| 9 | User Performance Monitoring | Setup of user performance monitoring for S/4HANA within the agreed scope. | Bristlecone Inc. | September 2026 | User performance monitoring is configured and performance data is available for agreed scenarios. |\n| 10 | Integration & Exception Monitoring | Setup of integration and exception monitoring for S/4 and Integration Suite within the agreed scope. | Bristlecone Inc. | September 2026 | Monitoring is configured and exceptions or interface events are visible for agreed integrations. |\n| 11 | Alerting & Notification setup | Configuration of alerts and notifications for agreed monitoring use cases and escalation needs. | Bristlecone Inc. | September 2026 | Alerts and notifications are configured and triggered for agreed events and thresholds. |\n| 12 | Monitoring dashboard | Standard health monitoring dashboard configured for open alerts, system performance, and related agreed indicators. | Bristlecone Inc. | September 2026 | Dashboard is available in SAP Cloud ALM and displays the agreed monitoring views. |\n| 13 | Configured Change Management workflow | Configuration of SAP Cloud ALM standard change management workflow for the agreed process. | Bristlecone Inc. | September 2026 | Workflow is configured in line with the agreed governance model and ready for test execution. |\n| 14 | Transport routes and release strategies configured | Configuration of transport routes and release strategies for Change Request Management. | Bristlecone Inc. | September 2026 | Routes and release strategies are configured and support the agreed transport governance model. |\n| 15 | First wave of change cycle tested end-to-end for Dev and QA | End-to-end test of the initial ChaRM cycle across development and quality environments. | Bristlecone Inc. and Metro | September 2026 | Test cycle is completed for Dev and QA and outcomes are recorded with agreed issue resolution actions. |\n| 16 | Train the trainer workshop | Workshop for Metro team enablement on the implemented SAP Cloud ALM solution. | Bristlecone Inc. | September 2026 | Workshop completed for designated Metro participants. |\n| 17 | SOP for end users | Standard operating procedure for end users covering agreed operational and change management activities. | Bristlecone Inc. | September 2026 | SOP delivered and aligned to the implemented agreed-scope processes. |\n| 18 | Mapping of production system in ChaRM workflow | Addition and mapping of the production system within the configured ChaRM workflow during deploy and hypercare. | Bristlecone Inc. | October 2026 | Production system is mapped in the ChaRM workflow and ready for agreed production use. |\n| 19 | Add production system in monitoring use cases | Extension of monitoring configuration to include the production system for agreed use cases. | Bristlecone Inc. | October 2026 | Production system is included in agreed monitoring use cases and visible in SAP Cloud ALM. |\n| 20 | Issue resolution | Resolution support for issues identified during deploy and hypercare. | Bristlecone Inc. and Metro | October 2026 | Logged issues within project scope are addressed or dispositioned during the hypercare period. |\n| 21 | Document update | Update of project documentation to reflect implemented configuration and transition state. | Bristlecone Inc. | October 2026 | Relevant project documents are updated to reflect the delivered solution baseline. |\n| 22 | Support transition to Metro team | Knowledge transfer and transition support to Metro for post-hypercare ownership. | Bristlecone Inc. and Metro | October 2026 | Transition activities are completed and handover to the Metro team is performed. |",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "10": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "- Metro will provide an active SAP Cloud ALM subscription and tenant/subaccount access before project mobilization. \n- Metro will complete technical team onboarding and provide timely access to the relevant SAP and connected landscape, including SAP S/4HANA Cloud, BTP applications, MII, Datasphere, Ariba, and Integration Suite touchpoints in scope. \n- Metro will confirm the system landscape, integration technologies in use, and the user/role matrix for SAP Cloud ALM before design finalization. \n- Monitoring use cases, metric thresholds, alerting expectations, and the target transport governance model will be finalized by Metro during the Explore phase. \n- Metro project stakeholders, including the governance team, single point of contact for ChaRM input, and core team for ChaRM cycle testing, will be available for workshops, reviews, testing, and sign-offs as scheduled. \n- Prerequisite configurations, connectivity readiness, and data flow setup required to enable SAP systems to SAP Cloud ALM will be completed in line with the agreed project plan. \n- Transport routes, release strategies, authorization test personas, and cutover readiness for transport migration will be available before Deploy activities begin. \n- The project scope is limited to standard SAP Cloud ALM capabilities for Technical Monitoring and Change Request Management; any requirement for capabilities, integrations, dashboards, workflows, or customizations beyond the agreed scope will be handled through the Change Management Process in Section 17. \n- Train-the-trainer planning, transition planning, and Metro team alignment for knowledge transfer and support handover will be completed before Hypercare exit. \n- Successful go-live of the relevant landscapes by September 2026 is a dependency for production monitoring enablement, ChaRM production mapping, and transition completion.",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "11": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "| Phase/Deliverable | Acceptance Criteria | Sign-off Party | Timeline for Review |\n|---|---|---|---|\n| Discover + Prepare | SAP Cloud ALM value proposition and scope document, connectivity plan for use cases, and Cloud ALM onboarding documentation submitted; identified landscape covers SAP S/4HANA Cloud, BTP applications, and MII; integration technologies for in-scope use cases documented. | Metro Project Governance Team | 5 business days |\n| Explore & Design | Landscape readiness completed with prerequisite note implementation and required configuration; data flow from SAP systems to SAP Cloud ALM configured and evidenced; transport sequence mapping for DEV → QA → PROD documented and reviewed. | Metro Single POC for ChaRM Input | 5 business days |\n| Realize – Technical Monitoring | Health Monitoring, Job & Automation Monitoring, User Performance Monitoring, Integration & Exception Monitoring, alerting and notification setup, and monitoring dashboard configured for agreed non-production systems; agreed monitoring use cases and metric values demonstrably active. | Metro Project Governance Team | 5 business days |\n| Realize – ChaRM | Change Management workflow configured; transport routes and release strategies configured; first wave of change cycle executed end-to-end in DEV and QA with documented results. | Metro Core Team for ChaRM Cycle Testing | 5 business days |\n| Deploy | Production system mapped in ChaRM workflow; production system added to approved monitoring use cases; cutover activities for transport migration completed and documented. | Metro Project Governance Team | 3 business days |\n| Deploy + Hypercare | Train-the-trainer workshop completed; SOP for end users delivered; issue resolution log maintained during hypercare; document updates completed; support transition to Metro team completed against the agreed transition plan. | Metro Project Governance Team | 5 business days |\n| Final Transition Closure | Knowledge transfer completed for agreed Metro team members; open defects and action items handed over or closed; hypercare exit approved with no unresolved Severity 1 defects in scope. | <CONFIRM: final Metro sign-off role/name> | 5 business days |",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "12": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 12.1 Bristlecone Obligations\n<IMAGE id=\"70df01b38c53\"/>\n\n- Provide project management for the January 2026 to October 2026 implementation period.\n- Design and implement SAP Cloud ALM for Technical Monitoring and Change Request Management aligned to the S/4 RISE migration plan.\n- Configure the SAP Cloud ALM tenant subaccount, user management, transport routes, and release strategies within the agreed scope.\n- Configure standard monitoring, alerting, and dashboard capabilities, including system health, application, job, user performance, integration, notification, and change management dashboards.\n- Work closely with the Metro project governance team, Metro single point of contact for ChaRM input, Metro core team for ChaRM cycle testing, and the S/4 project team.\n- Provide the required Bristlecone delivery roles, including project management and a Cloud ALM Architect, with support from S/4 lead, functional, security, ABAP, and BASIS teams as needed for in-scope activities.\n- Execute the engagement in line with the agreed project phases and support deployment in September 2026 and hypercare through October 2026.\n- Deliver train-the-trainer support and end-user SOPs for the in-scope solution areas.\n- Support transition and knowledge transfer to the Metro team at the end of the implementation.\n\n### 12.2 Client Obligations\n- Provide a Metro project governance team, a single point of contact for ChaRM input, and a core team for ChaRM cycle testing.\n- Maintain timely alignment between the Metro team, the S/4 project team, and other required stakeholders for design, testing, deployment, and transition activities.\n- Ensure SAP Cloud ALM subscription availability and readiness of prerequisite configurations, target landscape details, and integration technologies used.\n- Provide the user and role matrix for the SAP Cloud ALM tenant and confirm key role persona mapping required for authorization testing.\n- Finalize monitoring use cases, transition stakeholders, and the train-the-trainer workshop plan in time to support the project schedule.\n- Provide access to relevant systems, environments, and information required for configuration, testing, transport migration, and monitoring setup.\n- Support testing, sign-off, cutover readiness, and go-live activities according to the agreed plan.\n- Ensure successful go-live readiness of the applicable landscapes and Metro team alignment for transition during hypercare.\n- Review deliverables and provide decisions, feedback, and approvals within <CONFIRM: agreed review turnaround timeline>.",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "12.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "12.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 13.1 Engagement Model\nThis engagement is delivered as a fixed-price implementation for the period January 2026 through October 2026, covering SAP Cloud ALM setup, Technical Monitoring, Change Request Management, deployment, hypercare, and transition to the Metro team. Work is aligned to the agreed project phases: Pre-Project, Prepare, Explore, Realize, Deploy, and Hypercare. Any work outside the agreed scope, including additional use cases, landscape expansion, custom development, or extended support beyond October 2026, will be handled through the Change Management Process set out in Section 17.\n\n### 13.2 Rate Card & Pyramid Structure\n| Role/Band | Location | Rate USD/day | Rate Type | Effective Date | Notes |\n|---|---|---:|---|---|---|\n| Cloud ALM Architect | <CONFIRM: onsite / offshore location by role> | <LEGAL: agreed fixed-price commercial breakdown or day rates if to be shown> | Fixed Price | January 2026 | Leads solution design and implementation |\n| Project Manager | <CONFIRM: onsite / offshore location by role> | <LEGAL: agreed fixed-price commercial breakdown or day rates if to be shown> | Fixed Price | January 2026 | Project governance and delivery oversight |\n| S/4 Lead | <CONFIRM: onsite / offshore location by role> | <LEGAL: agreed fixed-price commercial breakdown or day rates if to be shown> | Fixed Price | January 2026 | Coordinates alignment with S/4 RISE migration |\n| Functional Consultant | <CONFIRM: onsite / offshore location by role> | <LEGAL: agreed fixed-price commercial breakdown or day rates if to be shown> | Fixed Price | January 2026 | Supports process and change-management configuration |\n| Security Consultant | <CONFIRM: onsite / offshore location by role> | <LEGAL: agreed fixed-price commercial breakdown or day rates if to be shown> | Fixed Price | January 2026 | Supports user-role and authorization design |\n| ABAP / Technical Consultant | <CONFIRM: onsite / offshore location by role> | <LEGAL: agreed fixed-price commercial breakdown or day rates if to be shown> | Fixed Price | January 2026 | Supports technical enablement and integration-related activities |\n| BASIS / Platform Consultant | <CONFIRM: onsite / offshore location by role> | <LEGAL: agreed fixed-price commercial breakdown or day rates if to be shown> | Fixed Price | January 2026 | Supports landscape readiness and platform configuration |\n\n### 13.3 Shift Allowance\n- Standard project effort is planned within normal business working hours agreed between Metro and Bristlecone.\n- No shift allowance applies unless Metro requests coverage outside the agreed working window.\n- Any evening, night, weekend, or holiday support requiring shift coverage will be subject to prior written approval.\n- Approved shift coverage will be charged in accordance with the mutually agreed commercial terms or documented through change control.\n\n### 13.4 Travel & Expenses\nTravel and out-of-pocket expenses are not included in the fixed price unless expressly stated otherwise in the applicable purchase order or commercial annex. Any Metro-requested travel must be pre-approved in writing by Metro. Reimbursable expenses will be charged at actuals, without markup, against supporting documentation and in line with Metro travel policy; where Metro policy is not provided, Bristlecone’s reasonable standard travel policy will apply. Local commuting, visa costs, and other non-reimbursable personal expenses are excluded unless specifically approved in writing in advance.\n\n### 13.5 Invoicing & Payment Terms\nBristlecone will invoice Metro against agreed project milestones and deliverable acceptance in line with the implementation phases. Invoices will reference the applicable contract or purchase order number and include supporting milestone or deliverable status where required by Metro’s accounts payable process. Payment is due within <LEGAL: agreed payment term in days> from receipt of a valid and undisputed invoice. Any disputed invoice amount will be notified promptly by Metro with reasons, and the parties will work in good faith to resolve the dispute; undisputed amounts remain payable as per the agreed payment term. Taxes will be charged as applicable under law.",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "13.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.5": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "14": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 14 Performance Reporting & KPIs\n<IMAGE id=\"a83d1340946b\"/>\n\n| Report | Frequency | Recipients | Key Metrics |\n|---|---|---|---|\n| Project Status Report | Weekly during Prepare, Explore, Realize, Deploy, and Hypercare | Metro Project Governance Team, Metro Single POC for ChaRM Input, Bristlecone Project Management, Cloud ALM Architect, S/4 Lead | Phase status, milestone progress, planned vs actual activities, open dependencies, risks/issues, decisions required |\n| Technical Monitoring Report | Weekly from Realize through Hypercare | Metro Project Governance Team, BASIS, ABAP, Security, Bristlecone Project Management | System health status, monitoring coverage, alert volumes, critical alerts, notification effectiveness, issue resolution status |\n| Change Management Progress Report | Weekly during ChaRM configuration, testing, Deploy, and Hypercare | Metro Single POC for ChaRM Input, Metro Core Team for ChaRM Cycle Testing, S/4 Lead, Bristlecone Project Management | Workflow configuration status, transport route readiness, release strategy status, end-to-end cycle test results, open defects |\n| Dashboard Review | Bi-weekly from Realize through Hypercare | Metro Project Governance Team, Functional, BASIS, Security, Bristlecone Project Management | Open alerts, system performance, job monitoring status, user performance trends, integration monitoring status, change dashboard status |\n| Steering / Governance Review | Monthly | Metro Project Governance Team, Bristlecone Project Management | Overall delivery health, go-live readiness, scope alignment to S/4 RISE migration plan, risks, escalations, transition readiness |\n| Hypercare Transition Report | Weekly in October 2026 | Metro Project Governance Team, Metro transition stakeholders, Bristlecone Project Management | Production incidents, stabilization status, knowledge transfer progress, SOP handover status, support transition status |\n\n### 14.1 SLAs & Targets\nNot Applicable. This is an implementation engagement for SAP Cloud ALM setup, configuration, testing, deployment, and transition through October 2026. Delivery will be tracked through project reporting, milestone progress, testing outcomes, issue resolution, and hypercare stabilization rather than steady-state service levels.",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "14.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "15": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "| # | Risk Description | Likelihood | Impact | Mitigation |\n|---|---|---|---|---|\n| 1 | Deferred scope decisions on monitoring use cases, metric thresholds, transport governance, RCA process, monitoring schedule, and escalation matrix may delay design finalization and build. | Medium | High | Freeze these decisions during Prepare and Explore; track open items in the project governance forum; route unresolved items through formal change control if they affect scope, timeline, or effort. |\n| 2 | Integration and configuration effort may exceed plan if landscape connectivity, data flow setup to SAP Cloud ALM, or monitoring coverage for S/4, BTP, Datasphere, Ariba, and Integration Suite is more complex than currently assumed. | Medium | High | Validate landscape inventory and integration patterns during onboarding; confirm prerequisite configurations early; baseline in-scope systems and use cases before Realize; treat expansion beyond the agreed baseline through the change management process. |\n| 3 | Limited availability of Metro SMEs, the single POC for ChaRM input, or the core testing team may delay decisions, authorization testing, and end-to-end cycle validation. | Medium | High | Confirm named Metro owners and review cadence at project start; secure timely participation for design workshops, testing, and transition activities; escalate unresolved dependency delays through the governance model. |\n| 4 | Acceptance criteria that are not objective may create sign-off disputes for configuration, dashboards, monitoring setup, training, and transition deliverables. | Low | High | Define measurable acceptance criteria per deliverable, including configured workflows, tested change cycles, monitoring dashboards, workshop completion, SOP delivery, and transition support outputs. |\n| 5 | Delay in SAP Cloud ALM subscription readiness, tenant onboarding, or prerequisite note/configuration readiness may shift the January 2026 to September 2026 implementation path and compress hypercare. | Medium | High | Confirm subscription and tenant readiness before kickoff; complete onboarding and prerequisite checks in Pre-Project and Prepare; escalate readiness gaps immediately. |\n| 6 | Misalignment with the S/4 RISE migration timeline may reduce the value of SAP Cloud ALM deployment or require rework to ChaRM and monitoring configurations. | Medium | High | Maintain integrated planning with the S/4 migration team; review dependencies at each phase gate; align Deploy in September 2026 and Hypercare in October 2026 with migration milestones. |\n| 7 | Production go-live of source landscapes or cutover readiness for transport migration may not be achieved in time for Deploy and transition activities. | Medium | Medium | Confirm cutover readiness criteria in advance; validate landscape status before production mapping; use governance reviews to decide go/no-go and replan through change control where needed. |\n| 8 | User and role matrix gaps may delay user management setup in SAP Cloud ALM and authorization testing for ChaRM processes. | Medium | Medium | Finalize role-persona mapping during Explore; complete authorization test preparation before end-to-end cycle testing; obtain Metro approval on access design before deployment. |\n| 9 | Transition to the Metro team may be incomplete if train-the-trainer readiness, SOP finalization, or stakeholder alignment is delayed. | Medium | Medium | Complete training plan, workshop delivery, SOP issuance, and transition planning before Hypercare close; confirm transition stakeholders and knowledge transfer schedule early. |",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "16": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 16.1 Milestone Deliverables Matrix\nMilestone deliverables shall align to the deliverables listed in Section 9 and the commercial terms in Section 13. Each milestone will be considered complete only when the related deliverables, acceptance criteria, and responsible sign-off party are defined and documented. Invoicing shall follow achievement and acceptance of the applicable milestone deliverables rather than elapsed time alone.\n\nThe milestone structure for this engagement is:\n- Pre-Project / Discover + Prepare — Cloud ALM value proposition and scope document, connectivity plan for use cases, Cloud ALM onboarding documentation\n- Prepare / Explore & Design — landscape readiness, prerequisite note implementation and configuration, data flow setup between SAP systems and SAP Cloud ALM, transport sequence mapping\n- Realize — Health Monitoring, Job and Automation Monitoring, User Performance Monitoring, Integration and Exception Monitoring, alerting and notification setup, monitoring dashboard\n- Realize (ChaRM) — configured change management workflow, transport routes and release strategies, first wave of change cycle tested end-to-end for Dev and QA, train-the-trainer workshop, SOP for end users\n- Deploy / Hypercare — production system mapping in ChaRM workflow, production monitoring use cases enabled, issue resolution, document updates, and transition support to the METRO team\n\n### 16.2 Deferred Scope Decisions\n- Final monitoring use cases and metric thresholds must be frozen before Realize activities start.\n- User and role matrix for SAP Cloud ALM must be approved before authorization configuration and testing.\n- Target transport governance model must be finalized before ChaRM workflow and release strategy configuration.\n- Transition plan, stakeholder ownership, and METRO support model must be confirmed before Deploy and Hypercare.\n- Any requested expansion beyond the defined SAP Cloud ALM Technical Monitoring and Change Request Management scope will be handled through change control.\n\n### 16.3 Integration & Custom Code Safeguards\n- Integration scope is limited to the landscapes and interfaces identified for SAP S/4HANA Cloud, BTP applications, MII, and Integration Suite within the agreed scope.\n- Data flow configuration, monitoring setup, and alerting will be based on the systems, use cases, and integration technologies confirmed during onboarding and design.\n- Any additional systems, interfaces, monitoring scenarios, dashboard requirements, or reporting needs identified after scope baseline approval may affect effort, timeline, and commercials.\n- ChaRM configuration will use standard SAP Cloud ALM change management capabilities unless otherwise agreed through approved change control.\n- Custom development, bespoke extensions, and non-standard workflows are excluded unless expressly stated in Section 4 or added through an approved change request.\n- Production cutover support depends on successful go-live readiness of the relevant landscapes and transport migration prerequisites.\n\n### 16.4 Change Control\nAll scope, schedule, deliverable, and commercial changes shall be managed through the Change Management Process set out in Section 17. No out-of-scope work, additional integration enablement, non-standard configuration, or timeline adjustment will proceed without documented impact assessment and formal approval. Deviations from agreed assumptions, milestone dependencies, or client obligations that affect delivery shall also be routed through Section 17 for evaluation and disposition.",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "16.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "17": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "Changes to scope, timeline, deliverables, resourcing, or commercials will be managed through a formal Change Request (CR) process. No work outside the agreed scope will proceed without written approval from both parties. Approved changes will be incorporated through an SOW amendment or addendum before execution.\n\n| Step | Activity | Owner | Timeline |\n|---|---|---|---|\n| 1 | CR raised with description of the requested change, business reason, and impacted area (Technical Monitoring, Change Request Management, integrations, dashboards, transport governance, or transition activities). | Requesting Party | Within 1 business day of identifying the change |\n| 2 | CR logged, assigned a tracking reference, and shared with both parties for visibility. | Bristlecone Project Manager | Within 1 business day of receipt |\n| 3 | Impact assessment covering scope, effort, timeline, dependencies, and commercials, including effect on the September 2026 go-live and October 2026 hypercare/transition plan where relevant. | Bristlecone Project Manager with Metro project team | Within 3 business days of logging |\n| 4 | CR reviewed and approved, rejected, or returned for clarification by authorized representatives of both parties. | Metro and Bristlecone authorized approvers | Within 5 business days of impact assessment submission |\n| 5 | Approved change documented through an SOW amendment or addendum and reflected in the project plan, deliverables, and acceptance criteria as applicable. | Bristlecone and Metro | Within 3 business days of approval |\n| 6 | CR closed after implementation planning is updated and both parties confirm disposition of the request. | Bristlecone Project Manager | Within 2 business days of amendment/addendum completion |\n\nChanges arising from prerequisites, landscape readiness, finalized monitoring use cases, user/role matrix updates, transport governance decisions, or transition planning will follow this process. Emergency changes required to protect production stability or cutover readiness may be prioritized for accelerated review, but still require subsequent documentation and formal approval.",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "18": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "- Bristlecone will follow its information security policies and use supported, actively managed endpoints with current operating-system patches and antivirus/endpoint protection for all project access.\n- Access to the Metro SAP Cloud ALM tenant and connected project systems will be role-based and limited to the minimum privileges required for implementation, testing, monitoring configuration, and transition activities.\n- Project data and system connectivity will use secure transport mechanisms, and any Metro confidential information stored by Bristlecone for delivery purposes will be protected at rest in accordance with Bristlecone security standards.\n- User and role setup in the SAP Cloud ALM tenant will align to the agreed user/role matrix and authorization-testing approach defined for the project.\n- Bristlecone will promptly notify Metro of any confirmed security incident affecting Metro data or project systems within <LEGAL: agreed incident reporting window under the governing agreement>.\n- The parties will comply with applicable data protection and information security obligations relevant to this engagement, including Metro policies made available to Bristlecone and Bristlecone’s applicable control framework standards such as <CONFIRM: required regulatory / certification references, e.g. GDPR, SOC 2, ISO 27001>.",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "19": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 19.1 Termination for Convenience\nEither party may terminate this Statement of Work for convenience by giving the other party <LEGAL: notice period for termination for convenience> prior written notice. If Metro elects to terminate for convenience, Bristlecone will stop work in an orderly manner, deliver completed work products and work-in-progress reasonably capable of delivery as of the termination date, and invoice for Services performed up to that date, including approved non-cancellable commitments and approved transition support requested by Metro. If Bristlecone elects to terminate for convenience, Bristlecone will provide reasonable transition assistance for the remaining in-flight implementation activities through the termination date.\n\n### 19.2 Termination for Cause\nEither party may terminate this Statement of Work immediately upon written notice if the other party materially breaches this Statement of Work and fails to cure that breach within the applicable cure period under the governing agreement. Either party may also terminate immediately if the other party becomes insolvent, enters liquidation or bankruptcy proceedings, ceases to do business in the ordinary course, or commits fraud, wilful misconduct, or a material violation of applicable law in connection with the Services. Bristlecone may suspend or terminate affected Services if Metro fails to provide required access, approvals, environments, subscriptions, or other client dependencies needed to perform the SAP Cloud ALM implementation and does not remedy that failure after written notice.\n\n### 19.3 Effect of Termination\nOn termination or expiry, Bristlecone will cease the terminated Services, provide Metro with completed deliverables and agreed project materials prepared through the termination date, and support an orderly handover of SAP Cloud ALM implementation artifacts then in scope, including transition items relevant to handoff to the METRO team. Metro will pay all undisputed fees and approved expenses for Services performed through the termination date, including approved work-in-progress and non-cancellable commitments incurred for the January 2026 to October 2026 implementation timeline. Each party will return or securely destroy the other party's Confidential Information in accordance with the governing agreement, except for copies required for legal, regulatory, or backup purposes. Termination does not affect accrued payment obligations, confidentiality, intellectual property rights, audit rights, limitation of liability, indemnities, or any provision intended to survive termination.",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "19.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "20": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "| | Bristlecone Inc. | Metro |\n|---|---|---|\n| Authorized Signatory | | |\n| Name (Print) | | |\n| Title | | |\n| Date | | |\n| Signature | | |",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "21": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "- This draft reflects an implementation engagement from January 2026 through October 2026, with production deployment targeted for September 2026 and Hypercare/transition through October 2026.\n- Scope is defined around SAP Cloud ALM for Technical Monitoring and Change Request Management, including tenant setup, monitoring and alerting capabilities, standard change management configuration, and transition to the METRO team.\n- The draft identifies implementation phases and milestone windows, but dated deliverables should be confirmed at the individual deliverable level where commercial or acceptance dependencies apply.\n- Integration scope is described by landscape and platform coverage rather than a fixed integration-count baseline; <CONFIRM: final integration baseline/count for contractual scope control, if required>.\n- Several prerequisite items remain dependency-sensitive, including finalized monitoring use cases, role matrix, transport governance inputs, cutover readiness, and transition readiness with METRO.\n- Acceptance criteria and payment linkage should be finalized at the deliverable level rather than only at the phase level to support objective sign-off and change control.",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "22": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 22 Reviewer Recommendations\nThe recommendations below should be addressed before execution and tracked through governance from January 2026 through October 2026. Priority should be given to freezing prerequisites that directly affect the Prepare, Explore, and Realize phases, especially landscape readiness, monitoring use cases, transport governance, and transition ownership. Acceptance criteria should be tied to named deliverables and milestone dates so sign-off can occur at deliverable level rather than only at phase level. Any scope growth beyond the agreed SAP Cloud ALM implementation for Technical Monitoring and Change Request Management should follow formal change control before work starts.\n\n### 22.1 Governance & Risk Mitigation\n- Confirm a milestone deliverables matrix aligned to Pre-Project, Prepare, Explore, Realize, Deploy, and Hypercare.\n- Freeze deferred decisions before Realize, including finalized monitoring use cases, metric values, transport governance, and transition stakeholders.\n- Track prerequisite readiness in governance meetings, including subscription availability, team onboarding, landscape identification, user-role matrix, and cutover readiness.\n- Assign single-point ownership on both sides for scope, schedule, dependencies, and escalation decisions.\n- Treat any expansion in monitored systems, integrations, dashboards, or change workflow variants as a formal change request.\n- Confirm transition readiness criteria for handover to the METRO team before September 2026 go-live and October 2026 hypercare closure.\n- Maintain a live risk and dependency log covering S/4 RISE alignment, non-production readiness, production mapping, and stakeholder availability.\n\n### 22.2 Acceptance & Quality\n- Define objective acceptance criteria for each deliverable, including onboarding documentation, connectivity plan, monitoring configuration, ChaRM workflow, dashboards, training, SOPs, and transition support.\n- Link sign-off to evidence-based completion, such as configured workflows, tested transport routes, validated alerts, dashboard outputs, and completed end-to-end cycle testing.\n- Confirm named sign-off owners for Metro and Bristlecone for each major deliverable and phase exit.\n- Require completion of Dev and QA change-cycle testing before production deployment.\n- Require production integration in ChaRM and operations use cases to be validated during Deploy and Hypercare.\n- Confirm training acceptance through completion of the train-the-trainer workshop and delivery of end-user SOPs.\n- Use defect, issue, and document-update closure as exit criteria for transition to the METRO team.\n\n### 22.3 Overall Recommendation\n<CONFIRM: Proceed / Proceed with conditions / Do not proceed — pending a full Mode 1 REVIEW pass on this draft>",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "22.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "23": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "The following technical prerequisites shall be met by Metro before and during execution of this engagement:\n\n- An active SAP Cloud ALM subscription and tenant subaccount are available for project use from project start.\n- Required customer landscapes are identified and available for onboarding, including SAP S/4HANA Cloud, BTP applications, MII, Datasphere, Ariba, and Integration Suite components within scope.\n- Connectivity and data flow between the in-scope SAP systems and SAP Cloud ALM are enabled to support monitoring and change-management use cases.\n- Prerequisite configurations and required SAP notes, if applicable, are completed before relevant realization activities begin.\n- Integration technologies in use, including CPI and SAP Integration Suite, are confirmed for monitoring and interface setup.\n- A finalized user and role matrix for SAP Cloud ALM is provided to support tenant user management and authorization testing.\n- Monitoring use cases, metric values, alert thresholds, notification recipients, monitoring schedule, and escalation matrix are confirmed before Technical Monitoring configuration starts.\n- The target transport governance model, transport routes, release strategy, and transport sequence from development to quality to production are confirmed before ChaRM configuration.\n- Customer project team onboarding is completed, and relevant business, functional, and technical stakeholders are available for workshops, reviews, testing, cutover, and transition activities.\n- Key role and persona mapping for authorization testing is completed before end-to-end validation.\n- Successful go-live of the relevant landscapes and cutover readiness for transport migration are in place before production deployment activities.\n- A train-the-trainer plan, transition plan, and named Metro stakeholders for knowledge transfer and support handover are confirmed before deploy and hypercare.\n- Metro will provide timely access to systems, documentation, and environment information required to configure Technical Monitoring and Change Request Management.\n- <TECH TEAM: confirm any client-managed network, firewall, SSO, or connectivity dependencies required for SAP Cloud ALM integration and monitoring data flow>.",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "24": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "- Bristlecone will staff the engagement with consultants experienced in SAP Cloud ALM implementation, Technical Monitoring, Change Request Management, SAP S/4HANA landscapes, SAP BTP, Integration Suite, and transition support.\n\n- Assigned resources will have working knowledge of monitoring and alerting configuration, dashboard setup, transport and release strategy configuration, user and role administration, and train-the-trainer enablement.\n\n- Key delivery roles are expected to hold relevant SAP product knowledge and practical implementation experience aligned to their assigned workstream responsibilities.\n\n- Any role-specific certification requirements, named resource profiles, and minimum experience thresholds will be confirmed before mobilization and may be appended to this SOW or issued during project onboarding.\n\n- Resource profiles and certifications for the proposed team: <CONFIRM: final role-wise profiles, minimum experience levels, and any required SAP certifications>.",
+    "draft_sources": []
+  }
+}

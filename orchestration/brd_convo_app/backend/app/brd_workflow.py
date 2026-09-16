@@ -50,6 +50,96 @@ def filter_sections(
     return sorted(filtered, key=lambda s: _section_sort_key(s.get("id", "")))
 
 
+# ── Word outline / cross-reference plumbing ──────────────────────────────────
+# Section headings in this document are hand-formatted paragraphs (explicit
+# font, size and colour runs) rather than Word's built-in Heading styles. That
+# looks right on the page but leaves the file with no document structure at
+# all: Word's navigation pane is empty, and the Table of Contents could carry
+# no page numbers because there was nothing to reference. These helpers attach
+# the structure — outline levels and bookmarks — without disturbing any of the
+# visual formatting the headings already carry.
+
+def _set_outline_level(paragraph, level: int) -> None:
+    """Mark a hand-formatted paragraph as a heading at `level` (1-based).
+
+    Gives the paragraph an outline level so it appears in Word's navigation
+    pane and can be picked up by a TOC field, while leaving its manual run
+    formatting untouched.
+    """
+    from docx.oxml import OxmlElement
+    from docx.oxml.ns import qn
+    pPr = paragraph._p.get_or_add_pPr()
+    for existing in pPr.findall(qn("w:outlineLvl")):
+        pPr.remove(existing)
+    node = OxmlElement("w:outlineLvl")
+    node.set(qn("w:val"), str(max(0, min(8, level - 1))))
+    pPr.append(node)
+
+
+def _bookmark_paragraph(paragraph, name: str, bookmark_id: int) -> None:
+    """Wrap a paragraph's content in a named bookmark so PAGEREF can find it."""
+    from docx.oxml import OxmlElement
+    from docx.oxml.ns import qn
+    start = OxmlElement("w:bookmarkStart")
+    start.set(qn("w:id"), str(bookmark_id))
+    start.set(qn("w:name"), name)
+    end = OxmlElement("w:bookmarkEnd")
+    end.set(qn("w:id"), str(bookmark_id))
+    paragraph._p.insert(0, start)
+    paragraph._p.append(end)
+
+
+def _toc_bookmark_name(section_id: str) -> str:
+    """Bookmark names must be alphanumeric/underscore and start with a letter."""
+    return "_Sec_" + re.sub(r"[^0-9A-Za-z]", "_", section_id)
+
+
+def _add_pageref_run(paragraph, bookmark_name: str) -> None:
+    """Append a PAGEREF field that resolves to the page holding `bookmark_name`.
+
+    Emitted with a "1" placeholder as the cached result so the entry is never
+    blank if the document is read by something that does not evaluate fields;
+    Word replaces it with the true page number on open (see
+    _enable_update_fields).
+    """
+    from docx.oxml import OxmlElement
+    from docx.oxml.ns import qn
+
+    run = paragraph.add_run()
+    fld_begin = OxmlElement("w:fldChar")
+    fld_begin.set(qn("w:fldCharType"), "begin")
+    instr = OxmlElement("w:instrText")
+    instr.set("{http://www.w3.org/XML/1998/namespace}space", "preserve")
+    instr.text = f" PAGEREF {bookmark_name} \\h "
+    fld_sep = OxmlElement("w:fldChar")
+    fld_sep.set(qn("w:fldCharType"), "separate")
+    placeholder = OxmlElement("w:t")
+    placeholder.text = "1"
+    fld_end = OxmlElement("w:fldChar")
+    fld_end.set(qn("w:fldCharType"), "end")
+    for node in (fld_begin, instr, fld_sep, placeholder, fld_end):
+        run._r.append(node)
+
+
+def _enable_update_fields(doc) -> None:
+    """Ask Word to refresh every field when the document is opened.
+
+    Without this the PAGEREF page numbers in the TOC keep showing their cached
+    placeholder until someone manually selects all and presses F9.
+    """
+    from docx.oxml import OxmlElement
+    from docx.oxml.ns import qn
+    try:
+        settings = doc.settings.element
+        for existing in settings.findall(qn("w:updateFields")):
+            settings.remove(existing)
+        node = OxmlElement("w:updateFields")
+        node.set(qn("w:val"), "true")
+        settings.append(node)
+    except Exception as e:
+        logger.debug("Could not set updateFields: %s", e)
+
+
 def build_table_of_contents(
     sections: List[Dict],
 ) -> List[Dict]:
@@ -603,6 +693,78 @@ def _normalize_image_tags(text):
     return _IMG_TAG_NORM.sub(lambda m: '<IMAGE id="%s"/>' % m.group(1), text)
 
 
+def _apply_table_structure(word_doc, tbl) -> None:
+    """Apply the structural formatting python-docx does not set by default.
+
+    A bare `add_table()` produces a table that looks acceptable on page one
+    and then falls apart: the header row does not repeat when the table
+    breaks across a page, so continuation pages show unlabelled columns; a
+    single row can be split down the middle by a page break; text sits flush
+    against the cell borders; and because no explicit widths are set, Word
+    recomputes the layout from cell content and produces uneven columns that
+    can run past the right margin.
+    """
+    from docx.oxml import OxmlElement
+    from docx.oxml.ns import qn
+
+    n_cols = len(tbl.columns)
+    if not n_cols:
+        return
+    try:
+        sec = word_doc.sections[0]
+        total_w = int(sec.page_width - sec.left_margin - sec.right_margin) // 635
+    except Exception:
+        total_w = 9360   # Letter with 1in margins, in dxa (twentieths of a point)
+    total_w = max(1440, min(total_w, 14400))
+    col_w = max(1, total_w // n_cols)
+
+    tblPr = tbl._tbl.tblPr
+    tblW = tblPr.find(qn("w:tblW"))
+    if tblW is None:
+        tblW = OxmlElement("w:tblW")
+        tblPr.append(tblW)
+    tblW.set(qn("w:w"), str(col_w * n_cols))
+    tblW.set(qn("w:type"), "dxa")
+
+    if tblPr.find(qn("w:tblLayout")) is None:
+        layout = OxmlElement("w:tblLayout")
+        layout.set(qn("w:type"), "fixed")
+        tblPr.append(layout)
+
+    if tblPr.find(qn("w:tblCellMar")) is None:
+        cell_mar = OxmlElement("w:tblCellMar")
+        for side, val in (("top", 60), ("left", 108), ("bottom", 60), ("right", 108)):
+            node = OxmlElement(f"w:{side}")
+            node.set(qn("w:w"), str(val))
+            node.set(qn("w:type"), "dxa")
+            cell_mar.append(node)
+        tblPr.append(cell_mar)
+
+    for gridCol in tbl._tbl.findall(qn("w:tblGrid") + "/" + qn("w:gridCol")):
+        gridCol.set(qn("w:w"), str(col_w))
+
+    for r_idx, row in enumerate(tbl.rows):
+        trPr = row._tr.get_or_add_trPr()
+        if r_idx == 0 and trPr.find(qn("w:tblHeader")) is None:
+            header = OxmlElement("w:tblHeader")
+            header.set(qn("w:val"), "true")
+            trPr.append(header)
+        if trPr.find(qn("w:cantSplit")) is None:
+            trPr.append(OxmlElement("w:cantSplit"))
+        for cell in row.cells:
+            tcPr = cell._tc.get_or_add_tcPr()
+            tcW = tcPr.find(qn("w:tcW"))
+            if tcW is None:
+                tcW = OxmlElement("w:tcW")
+                tcPr.append(tcW)
+            tcW.set(qn("w:w"), str(col_w))
+            tcW.set(qn("w:type"), "dxa")
+            if tcPr.find(qn("w:vAlign")) is None:
+                vAlign = OxmlElement("w:vAlign")
+                vAlign.set(qn("w:val"), "center")
+                tcPr.append(vAlign)
+
+
 def _emit_body_lines(word_doc, content_text, left_indent, BLACK, NAVY, GRAY):
     """
     Emit body content into a word_doc, handling:
@@ -710,11 +872,17 @@ def _emit_body_lines(word_doc, content_text, left_indent, BLACK, NAVY, GRAY):
                     for ci, cell_text in enumerate(row):
                         cell = tbl.cell(ri, ci)
                         cp = cell.paragraphs[0]
-                        cr = cp.add_run(cell_text or "")
-                        cr.font.size = Pt(10)
-                        cr.font.name = "Arial"
+                        # Cell text is markdown like everything else in the
+                        # body. It used to go in via a single raw add_run(),
+                        # so "**Bristlecone**" printed its asterisks into the
+                        # table while the same markup rendered correctly in
+                        # the surrounding paragraphs and bullets.
+                        _add_inline_runs(cp, cell_text or "", base_size=10,
+                                         color=BLACK, font_name="Arial")
                         if ri == 0:
-                            cr.font.bold = True
+                            for cr in cp.runs:
+                                cr.font.bold = True
+                _apply_table_structure(word_doc, tbl)
             continue
 
         # Figure caption → centered, italic.
@@ -1091,13 +1259,19 @@ def save_docx(doc: str, output_dir: Path, state=None,
         p.paragraph_format.left_indent  = Inches((d - 1) * 0.3)
         p.paragraph_format.first_line_indent = Inches(0)
 
-        # Set right-aligned tab stop for page number
+        # Right-aligned tab stop with a dot leader, so each entry runs
+        # "1.2  Title .................. 7" the way a Word TOC does. The tab
+        # stop was previously declared with leader="none" and then never
+        # used — no tab character was ever emitted and no page number
+        # followed it, so entries just trailed off after the title.
         pPr = p._p.get_or_add_pPr()
         tabs = OxmlElement("w:tabs")
         tab_right = OxmlElement("w:tab")
         tab_right.set(qn("w:val"), "right")
-        tab_right.set(qn("w:pos"), str(TAB_POS))
-        tab_right.set(qn("w:leader"), "none")  # dot leader ......
+        # Pull the stop in by the entry's own indent so every page number
+        # still lines up on the same right edge regardless of depth.
+        tab_right.set(qn("w:pos"), str(TAB_POS - int((d - 1) * 0.3 * 1440)))
+        tab_right.set(qn("w:leader"), "dot")
         tabs.append(tab_right)
         pPr.append(tabs)
 
@@ -1118,8 +1292,17 @@ def save_docx(doc: str, output_dir: Path, state=None,
         title_run.font.color.rgb = NAVY if d == 1 else BLACK
         title_run.font.name = "Arial"
 
-        # Page numbers omitted — auto-generated document
-        pass
+        # Tab across to the right margin, then the page number as a PAGEREF
+        # field pointing at the bookmark on the matching body heading.
+        tab_run = p.add_run("\t")
+        tab_run.font.size = Pt(12 if d == 1 else 11 if d == 2 else 10)
+        tab_run.font.name = "Arial"
+        _add_pageref_run(p, _toc_bookmark_name(sid))
+        for r in p.runs[-1:]:
+            r.font.size = Pt(12 if d == 1 else 11 if d == 2 else 10)
+            r.font.bold = (d == 1)
+            r.font.color.rgb = NAVY if d == 1 else BLACK
+            r.font.name = "Arial"
 
     word_doc.add_page_break()
 
@@ -1128,6 +1311,9 @@ def save_docx(doc: str, output_dir: Path, state=None,
     # ================================================================
     _ho_set = set(heading_only_ids or [])
     _nh_set = set(no_heading_ids or [])
+    # Bookmark ids must be unique across the document; the TOC references
+    # these by name via PAGEREF.
+    _bookmark_id = 1000
 
     top_ids = sorted(
         set(sid.split(".")[0] for sid in all_sections.keys()),
@@ -1166,6 +1352,11 @@ def save_docx(doc: str, output_dir: Path, state=None,
             h1_run.font.color.rgb = NAVY
             h1_run.font.name = "Arial"
             h1.paragraph_format.space_after = Pt(8)
+            # Structure for the navigation pane and a target for the TOC's
+            # PAGEREF — the visual formatting above is left exactly as-is.
+            _set_outline_level(h1, 1)
+            _bookmark_id += 1
+            _bookmark_paragraph(h1, _toc_bookmark_name(top_id), _bookmark_id)
 
         # Top-level body content — suppressed for heading-only and no-heading
         if (top_id in all_sections and all_sections.get(top_id)
@@ -1196,6 +1387,9 @@ def save_docx(doc: str, output_dir: Path, state=None,
                 hr.font.name = "Arial"
                 h.paragraph_format.space_before = Pt(10)
                 h.paragraph_format.space_after = Pt(6)
+                _set_outline_level(h, 2)
+                _bookmark_id += 1
+                _bookmark_paragraph(h, _toc_bookmark_name(sid), _bookmark_id)
 
             elif d == 3:
                 h = word_doc.add_paragraph()
@@ -1207,11 +1401,17 @@ def save_docx(doc: str, output_dir: Path, state=None,
                 h.paragraph_format.left_indent = Inches(0.3)
                 h.paragraph_format.space_before = Pt(8)
                 h.paragraph_format.space_after = Pt(4)
+                _set_outline_level(h, 3)
+                _bookmark_id += 1
+                _bookmark_paragraph(h, _toc_bookmark_name(sid), _bookmark_id)
 
             if all_sections.get(sid) and sid not in _ho_set:
                 _emit_body_lines(word_doc, all_sections[sid], left_indent=(d - 1) * 0.2,
                                  BLACK=BLACK, NAVY=NAVY, GRAY=GRAY)
 
+    # Make Word evaluate the TOC's PAGEREF fields on open so the page numbers
+    # are real rather than the cached placeholder.
+    _enable_update_fields(word_doc)
     word_doc.save(str(path))
     return path
 
@@ -1904,8 +2104,20 @@ def save_docx_from_template(
     def _make_inline_table(doc, rows: list):
         from docx.oxml import OxmlElement
         from docx.oxml.ns import qn
-        n_cols = len(rows[0]) if rows else 1
-        col_w = max(1, 8500 // n_cols)
+        from app.sow_markdown import split_bold_segments
+
+        n_cols = max(1, max((len(r) for r in rows), default=1))
+        # Width the table to the printable area of the page it lands on rather
+        # than a fixed 8500 dxa, so it neither overhangs a narrow margin nor
+        # leaves a stripe of white space beside a wide one.
+        try:
+            sec = doc.sections[0]
+            total_w = int(sec.page_width - sec.left_margin - sec.right_margin) // 635
+        except Exception:
+            total_w = 9360   # Letter with 1in margins, in dxa
+        total_w = max(1440, min(total_w, 14400))
+        col_w = max(1, total_w // n_cols)
+        total_w = col_w * n_cols   # keep grid and table width consistent
 
         tbl = OxmlElement("w:tbl")
         tblPr = OxmlElement("w:tblPr")
@@ -1913,8 +2125,21 @@ def save_docx_from_template(
         tblStyle.set(qn("w:val"), "TableGrid")
         tblPr.append(tblStyle)
         tblW = OxmlElement("w:tblW")
-        tblW.set(qn("w:w"), "8500"); tblW.set(qn("w:type"), "dxa")
+        tblW.set(qn("w:w"), str(total_w)); tblW.set(qn("w:type"), "dxa")
         tblPr.append(tblW)
+        # Fixed layout: without it Word recomputes column widths from content
+        # and the explicit grid below is ignored.
+        tblLayout = OxmlElement("w:tblLayout")
+        tblLayout.set(qn("w:type"), "fixed")
+        tblPr.append(tblLayout)
+        # Breathing room inside every cell — text otherwise sits flush against
+        # the cell borders.
+        tblCellMar = OxmlElement("w:tblCellMar")
+        for side, val in (("top", 60), ("left", 108), ("bottom", 60), ("right", 108)):
+            node = OxmlElement(f"w:{side}")
+            node.set(qn("w:w"), str(val)); node.set(qn("w:type"), "dxa")
+            tblCellMar.append(node)
+        tblPr.append(tblCellMar)
         # Center the table on the page.
         jc = OxmlElement("w:jc")
         jc.set(qn("w:val"), "center")
@@ -1932,12 +2157,34 @@ def save_docx_from_template(
         for r_idx, row_data in enumerate(rows):
             tr = OxmlElement("w:tr")
             is_header = (r_idx == 0)
-            for c_idx, cell_text in enumerate(row_data):
+            trPr = OxmlElement("w:trPr")
+            if is_header:
+                # Repeat the header on every page the table spans. Without
+                # this a table breaking across a page boundary continues with
+                # unlabelled columns.
+                tblHeader = OxmlElement("w:tblHeader")
+                tblHeader.set(qn("w:val"), "true")
+                trPr.append(tblHeader)
+            # Keep a row's wrapped lines together instead of splitting one row
+            # across two pages.
+            cantSplit = OxmlElement("w:cantSplit")
+            trPr.append(cantSplit)
+            tr.append(trPr)
+
+            # Pad short rows so a ragged markdown table still yields a
+            # rectangular Word table (Word renders a row with missing cells as
+            # a visibly broken grid).
+            cells = list(row_data) + [""] * (n_cols - len(row_data))
+            for c_idx in range(n_cols):
+                cell_text = cells[c_idx]
                 tc = OxmlElement("w:tc")
                 tcPr = OxmlElement("w:tcPr")
                 tcW = OxmlElement("w:tcW")
                 tcW.set(qn("w:w"), str(col_w)); tcW.set(qn("w:type"), "dxa")
                 tcPr.append(tcW)
+                vAlign = OxmlElement("w:vAlign")
+                vAlign.set(qn("w:val"), "center")
+                tcPr.append(vAlign)
                 if is_header:
                     shd = OxmlElement("w:shd")
                     shd.set(qn("w:val"), "clear"); shd.set(qn("w:color"), "auto")
@@ -1945,16 +2192,25 @@ def save_docx_from_template(
                     tcPr.append(shd)
                 tc.append(tcPr)
                 p = OxmlElement("w:p")
-                r = OxmlElement("w:r")
-                if is_header:
-                    rPr = OxmlElement("w:rPr")
-                    b = OxmlElement("w:b"); rPr.append(b)
-                    clr = OxmlElement("w:color"); clr.set(qn("w:val"), "FFFFFF"); rPr.append(clr)
-                    r.append(rPr)
-                t = OxmlElement("w:t")
-                t.text = cell_text or ""
-                t.set("{http://www.w3.org/XML/1998/namespace}space", "preserve")
-                r.append(t); p.append(r); tc.append(p); tr.append(tc)
+                # Cell text is markdown: emit **bold** as real bold runs rather
+                # than printing the asterisks into the document.
+                for seg_text, seg_bold in (split_bold_segments(cell_text or "")
+                                           or [("", False)]):
+                    r = OxmlElement("w:r")
+                    if is_header or seg_bold:
+                        rPr = OxmlElement("w:rPr")
+                        rPr.append(OxmlElement("w:b"))
+                        if is_header:
+                            clr = OxmlElement("w:color")
+                            clr.set(qn("w:val"), "FFFFFF")
+                            rPr.append(clr)
+                        r.append(rPr)
+                    t = OxmlElement("w:t")
+                    t.text = seg_text
+                    t.set("{http://www.w3.org/XML/1998/namespace}space", "preserve")
+                    r.append(t)
+                    p.append(r)
+                tc.append(p); tr.append(tc)
             tbl.append(tr)
 
         # Word requires a paragraph after a table; without it the docx will

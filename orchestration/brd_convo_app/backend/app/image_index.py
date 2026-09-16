@@ -21,6 +21,8 @@ class ImageIndex:
         self.json_path = json_path
         self.records = []
         self.corpus = []  # Tokenized documents
+        self.token_sets = []          # per-record token set (all fields)
+        self.content_token_sets = []  # per-record tokens describing the picture only
         self.bm25_index = None
         self.raw_records = []
         
@@ -78,6 +80,19 @@ class ImageIndex:
             # Tokenize
             tokens = self._tokenize(combined_text)
             self.corpus.append(tokens)
+            # A set per record for O(1) term-coverage checks at query time.
+            # BM25 alone cannot answer "how much of the query does this record
+            # actually contain" — it happily returns a strong score for one
+            # rare term matching once, which is how logos kept winning.
+            self.token_sets.append(set(tokens))
+            # Vocabulary that describes the *picture*, excluding the source
+            # filename and image id. Those two are identical for every image
+            # out of the same deck, so letting them satisfy coverage means a
+            # query mentioning the client name matches all 118 of that deck's
+            # images equally.
+            self.content_token_sets.append(
+                set(self._tokenize(f"{caption} {keywords} {section_heading} {description}"))
+            )
         
         # Build BM25 if available
         if self.has_bm25:
@@ -91,12 +106,38 @@ class ImageIndex:
     def search(self, query: str, top_k: int = 5,
                diagram_type: Optional[str] = None,
                section_hint: Optional[str] = None,
-               section_id: Optional[str] = None) -> List[Dict]:
+               section_id: Optional[str] = None,
+               source_docs: Optional[set] = None,
+               prefer_diagrams: bool = False,
+               min_term_coverage: float = 0.0,
+               min_score_ratio: float = 0.0) -> List[Dict]:
         """Search images by query with optional filters.
 
         section_id: hard filter on brd_section_id ("1"–"6"). Records tagged to
         a different section are excluded. Untagged records always pass through.
         section_hint: legacy soft boost (kept for backward compatibility).
+        source_docs: hard filter on source_doc — only images from these
+            filenames are considered. Applied BEFORE the top_k cut, which is
+            the whole point: this index is global across every project, so a
+            caller that cuts to top_k first and filters afterwards gets
+            starved. Measured on a real project whose deck contributed 118 of
+            the index's 3490 images, the global top-20 for a section query
+            contained ZERO of that project's images — so the section was
+            offered nothing and the document came out with no images at all.
+        prefer_diagrams: down-weight logos/icons/screenshots so real diagrams
+            (architecture, flowchart, process, timeline) win the window. A deck
+            is full of vendor logos that match generic query vocabulary; left
+            unweighted they crowd out the one flowchart that was wanted. Also
+            drops brand marks outright — see _is_brand_mark.
+        min_term_coverage: reject records matching less than this fraction of
+            the distinct query terms. Previously any record with score > 0
+            survived, and BM25 gives a positive score for a *single* matched
+            token — so a section query of a dozen words routinely returned
+            images that shared one generic word ("platform", "process") with
+            it, which the prompt then offered up for embedding.
+        min_score_ratio: reject records scoring below this fraction of the
+            best match for the same query, so a weak tail is not padded in
+            just to fill top_k.
         """
         if not self.raw_records or not self.corpus:
             return []
@@ -121,6 +162,9 @@ class ImageIndex:
             if diagram_type and record.get("diagram_type") != diagram_type:
                 score = 0
 
+            if source_docs is not None and record.get("source_doc") not in source_docs:
+                score = 0
+
             # Hard section filter — skip only if positively tagged to a different section
             rec_sid = record.get("brd_section_id", "")
             if section_id and rec_sid and rec_sid != section_id:
@@ -130,11 +174,94 @@ class ImageIndex:
             if section_hint and section_hint in record.get("section_hint", ""):
                 score *= 1.2
 
+            if prefer_diagrams and score > 0:
+                # Brand marks are excluded outright here rather than merely
+                # down-weighted. A 0.15 multiplier still lets a logo win when
+                # it is the only thing that matched, which is precisely the
+                # case where it should not be offered at all.
+                if self._is_brand_mark(record):
+                    score = 0
+                else:
+                    score *= self._diagram_weight(record)
+
             if score > 0:
-                scored_records.append({**record, "score": score})
+                coverage = self._term_coverage(i, query_tokens)
+                if coverage < min_term_coverage:
+                    continue
+                scored_records.append({**record, "score": score,
+                                       "term_coverage": coverage})
 
         scored_records.sort(key=lambda x: x["score"], reverse=True)
+
+        # Relative floor. BM25 scores are unnormalised, so there is no
+        # meaningful absolute threshold — but "less than half as good as the
+        # best match for this query" is a reliable signal that the tail is
+        # padding rather than genuine matches. Without this the caller always
+        # received exactly top_k rows no matter how weak, and the prompt then
+        # invited the model to embed them.
+        if scored_records and min_score_ratio > 0:
+            cutoff = scored_records[0]["score"] * min_score_ratio
+            scored_records = [r for r in scored_records if r["score"] >= cutoff]
+
         return scored_records[:top_k]
+
+    def _term_coverage(self, idx: int, query_tokens: List[str]) -> float:
+        """Fraction of distinct query terms this record actually contains.
+
+        Measured against the picture's own vocabulary (caption/keywords/
+        description/heading) — never the filename or image id, which are
+        constant across a whole deck and would let every image from a source
+        claim credit for matching that source's name.
+        """
+        if not query_tokens:
+            return 0.0
+        distinct = set(query_tokens)
+        if idx >= len(self.content_token_sets):
+            return 0.0
+        hits = len(distinct & self.content_token_sets[idx])
+        return hits / len(distinct)
+
+    def _is_brand_mark(self, record: Dict) -> bool:
+        """True for logos/icons/UI chrome — never what a section wants embedded."""
+        caption = record.get("caption", "") or ""
+        if self._LOGO_WORDS.search(caption):
+            return True
+        return (record.get("diagram_type") or "").lower() in ("logo", "icon")
+
+    # Captions the vision tagger gives to brand marks and UI chrome. These are
+    # never what a SOW section wants embedded, but they match generic query
+    # vocabulary ("platform", "integration", "process") very readily.
+    _LOGO_WORDS = re.compile(
+        r"\b(logo|icon|branding|brand mark|wordmark|company logo|"
+        r"corporate logo|product logo|badge|avatar|bullet)\b", re.I)
+
+    _DIAGRAM_TYPES = {
+        "architecture_diagram": 1.6,
+        "flowchart": 1.6,
+        "process_flow": 1.6,
+        "process_diagram": 1.6,
+        "timeline": 1.4,
+        "gantt": 1.4,
+        "chart": 1.2,
+        "table": 1.2,
+        "screenshot": 0.8,
+        "photo": 0.5,
+        "other": 0.6,
+    }
+
+    def _diagram_weight(self, record: Dict) -> float:
+        caption = record.get("caption", "") or ""
+        if self._LOGO_WORDS.search(caption):
+            return 0.15
+        w = self._DIAGRAM_TYPES.get((record.get("diagram_type") or "").lower(), 1.0)
+        # A whole rendered slide (slide_renderer.py) is the complete diagram as
+        # the author drew it, whereas an embedded picture from that same slide
+        # is usually just an icon cropped out of the middle of it. When both
+        # match a query, the assembled diagram is virtually always the one the
+        # reviewer meant.
+        if record.get("render_kind") == "slide":
+            w *= 2.0
+        return w
     
     def _simple_tf_score(self, query_tokens: List[str]) -> List[float]:
         """Simple TF scoring if BM25 unavailable"""
@@ -187,13 +314,21 @@ def reload_image_index() -> int:
 def search_images(query: str, top_k: int = 5,
                  diagram_type: Optional[str] = None,
                  section_hint: Optional[str] = None,
-                 section_id: Optional[str] = None) -> List[Dict]:
+                 section_id: Optional[str] = None,
+                 source_docs: Optional[set] = None,
+                 prefer_diagrams: bool = False,
+                 min_term_coverage: float = 0.0,
+                 min_score_ratio: float = 0.0) -> List[Dict]:
     """Module-level search function"""
 
     if image_index is None:
         return []
 
-    return image_index.search(query, top_k, diagram_type, section_hint, section_id)
+    return image_index.search(query, top_k, diagram_type, section_hint,
+                              section_id, source_docs=source_docs,
+                              prefer_diagrams=prefer_diagrams,
+                              min_term_coverage=min_term_coverage,
+                              min_score_ratio=min_score_ratio)
 
 
 def get_image_by_id(image_id: str) -> Optional[Dict]:
@@ -213,11 +348,18 @@ def get_images_for_section(section_id: str, top_k: int = 3) -> list:
     """
     Get images most relevant to a specific section.
     Intelligently maps sections to image types.
-    
+
+    UNUSED, and not safe to adopt as-is: the SECTION_KEYWORDS map below is
+    keyed to one specific BRD template's numbering, so on any other template
+    (or any SOW) "3" or "6" means a different section and this returns images
+    for the wrong topic. Callers should search on the section's own *title*
+    instead, which is the only description that means the same thing in every
+    template — see _relevant_images_for_section in sow_section_routes.py.
+
     Args:
         section_id: Section identifier (e.g., "3.1", "4", "5")
         top_k: Maximum number of images to return
-    
+
     Returns:
         List of relevant image records for the section
     """

@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "0": {
+      "content": "| Field | Details |\n|---|---|\n| Client Name | Alcon |\n| Project Name | <CONFIRM: confirmed project name> |\n| Engagement Type | OCM Implementation |\n| Contract ID | <CONFIRM: contract ID / SOW ID> |\n| Effective Date | 01-Dec-2025 |\n| End Date | 31-May-2026 |\n| Document Version | v1.0 |\n| Prepared by | Bristlecone Inc. |\n| Review Status | Draft |",
+      "approved_at": "2026-08-20T17:13:02.046062"
+    },
+    "1": {
+      "content": "This Statement of Work (SOW) is entered into between Alcon and Bristlecone Incorporated under the <LEGAL: confirm governing MSA / ISA / Consulting Agreement title and date>.\n\n| Field | Details |\n|---|---|\n| Contract / SOW ID | <CONFIRM: contract ID / SOW ID> |\n| SOW Effective Date | 01-Dec-2025 |\n| SOW End Date | 31-May-2026 |\n| Governing Agreement | <LEGAL: confirm governing MSA / ISA / Consulting Agreement title and date> |\n| Amendment / Supersedes | None |\n| Agreement Duration | 6 months |\n| Delivery Location | Client and Bristlecone delivery locations, as agreed |",
+      "approved_at": "2026-08-20T17:13:57.224713"
+    },
+    "2": {
+      "content": "This SOW covers an OCM Implementation engagement for Alcon to support program delivery, governance, stakeholder communications, change impact validation, user awareness, and adoption activities through the agreed delivery period. The engagement is intended to establish a structured operating model, clear governance cadence, documented ownership, and practical change-management deliverables that support readiness and sustained adoption across the in-scope program.\n\n- Establish an OCM delivery model with defined governance, roles, collaboration mechanisms, and decision ownership across Alcon, Bristlecone, and other involved parties.\n- Deliver core change and communication outputs, including impact-validation summaries, awareness communications, newsletters, videos, pulse-check analysis, and a centralized repository for program content.\n- Improve delivery readiness and adoption outcomes through structured onboarding, knowledge capture, multi-vendor coordination, and continuous feedback mechanisms.\n\nDeferred decisions, assumptions, and open scope points are identified in Section 10 (Key Assumptions) and Section 21 (Key Observations).",
+      "approved_at": "2026-08-20T17:14:30.451361"
+    }
+  }
+}

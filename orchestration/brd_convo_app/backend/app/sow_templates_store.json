@@ -1,10 +1,229 @@
 [
   {
+    "id": "0c27be4e",
+    "name": "Bristlecone SOW Template (2025)",
+    "source_doc": "SOW_TEMPLATE_2.pdf",
+    "created": "2026-09-10T07:22:25.331820",
+    "updated": "2026-09-10T07:22:25.331820",
+    "is_default": true,
+    "sections": [
+      {
+        "id": "0",
+        "title": "SOW Overview",
+        "level": 1,
+        "web_keywords": [],
+        "doc_keywords": [],
+        "prompt": "",
+        "structure": "",
+        "heading_only": false,
+        "no_heading": false,
+        "has_own_content": true
+      },
+      {
+        "id": "1",
+        "title": "Scope of Work",
+        "level": 1,
+        "web_keywords": [],
+        "doc_keywords": [],
+        "prompt": "",
+        "structure": "",
+        "heading_only": false,
+        "no_heading": false,
+        "has_own_content": true
+      },
+      {
+        "id": "1.1",
+        "title": "Project Milestones",
+        "level": 2,
+        "web_keywords": [],
+        "doc_keywords": [],
+        "prompt": "",
+        "structure": "",
+        "heading_only": false,
+        "no_heading": false,
+        "has_own_content": true
+      },
+      {
+        "id": "1.2",
+        "title": "Project Deliverables",
+        "level": 2,
+        "web_keywords": [],
+        "doc_keywords": [],
+        "prompt": "",
+        "structure": "",
+        "heading_only": false,
+        "no_heading": false,
+        "has_own_content": true
+      },
+      {
+        "id": "1.3",
+        "title": "Assumptions",
+        "level": 2,
+        "web_keywords": [],
+        "doc_keywords": [],
+        "prompt": "",
+        "structure": "",
+        "heading_only": false,
+        "no_heading": false,
+        "has_own_content": true
+      },
+      {
+        "id": "1.4",
+        "title": "Exclusions",
+        "level": 2,
+        "web_keywords": [],
+        "doc_keywords": [],
+        "prompt": "",
+        "structure": "",
+        "heading_only": false,
+        "no_heading": false,
+        "has_own_content": true
+      },
+      {
+        "id": "2",
+        "title": "General Terms",
+        "level": 1,
+        "web_keywords": [],
+        "doc_keywords": [],
+        "prompt": "",
+        "structure": "",
+        "heading_only": false,
+        "no_heading": false,
+        "has_own_content": false
+      },
+      {
+        "id": "2.1",
+        "title": "Working Hours/Holidays",
+        "level": 2,
+        "web_keywords": [],
+        "doc_keywords": [],
+        "prompt": "",
+        "structure": "",
+        "heading_only": false,
+        "no_heading": false,
+        "has_own_content": true
+      },
+      {
+        "id": "2.2",
+        "title": "Service Location",
+        "level": 2,
+        "web_keywords": [],
+        "doc_keywords": [],
+        "prompt": "",
+        "structure": "",
+        "heading_only": false,
+        "no_heading": false,
+        "has_own_content": true
+      },
+      {
+        "id": "2.3",
+        "title": "Project Reporting Structure",
+        "level": 2,
+        "web_keywords": [],
+        "doc_keywords": [],
+        "prompt": "",
+        "structure": "",
+        "heading_only": false,
+        "no_heading": false,
+        "has_own_content": true
+      },
+      {
+        "id": "3",
+        "title": "Deliverables acceptance management",
+        "level": 1,
+        "web_keywords": [],
+        "doc_keywords": [],
+        "prompt": "",
+        "structure": "",
+        "heading_only": false,
+        "no_heading": false,
+        "has_own_content": true
+      },
+      {
+        "id": "4",
+        "title": "COMMERCIAL TERMS",
+        "level": 1,
+        "web_keywords": [],
+        "doc_keywords": [],
+        "prompt": "",
+        "structure": "",
+        "heading_only": false,
+        "no_heading": false,
+        "has_own_content": true
+      },
+      {
+        "id": "4.1",
+        "title": "Fixed Fee Engagement",
+        "level": 2,
+        "web_keywords": [],
+        "doc_keywords": [],
+        "prompt": "",
+        "structure": "",
+        "heading_only": false,
+        "no_heading": false,
+        "has_own_content": true
+      },
+      {
+        "id": "4.2",
+        "title": "Time & Materials (T&M) Engagement",
+        "level": 2,
+        "web_keywords": [],
+        "doc_keywords": [],
+        "prompt": "",
+        "structure": "",
+        "heading_only": false,
+        "no_heading": false,
+        "has_own_content": true
+      },
+      {
+        "id": "5",
+        "title": "Change request/Amendments",
+        "level": 1,
+        "web_keywords": [],
+        "doc_keywords": [],
+        "prompt": "",
+        "structure": "",
+        "heading_only": false,
+        "no_heading": false,
+        "has_own_content": true
+      }
+    ],
+    "guidance": {
+      "0": "SOW Overview — the Particulars/Details table exactly as the template lays it out: SOW Number, Project Name, Customer Legal Name & Client Address, Bristlecone Entity Name, Effective Date, Term / Duration, Engagement Type (Fixed Fee or Time & Materials), Primary Client Contact and Primary Bristlecone Contact (each as Name, Title, Email). Use <CONFIRM: ...> for anything the source material does not state; never invent a contract number, date or contact.",
+      "1": "Scope of Work — one opening line that Bristlecone shall provide the described Services under this SOW and the governing MSA, then a Scope Description specific to THIS engagement: name the client's actual systems, sites, processes, integrations and volumes. A sentence that would read identically on any other client's SOW is boilerplate — replace it with the specific fact or a <CONFIRM: ...> placeholder.",
+      "1.1": "Project Milestones — table (Milestone | Description | Target Date | Dependency). Milestones must be discrete and datable; where the engagement is Fixed Fee these are the payment triggers, so each one needs an unambiguous completion definition.",
+      "1.2": "Project Deliverables — table (# | Deliverable | Description | Responsible Party | Due Date). Every deliverable is a named artefact whose content is described, not a generic category like \"documentation\".",
+      "1.3": "Assumptions — bullets, each specific to this engagement and testable, naming the actual systems, teams, environments or dates it depends on. State that if an assumption does not hold, the Change Request process in section 5 applies and cost or timeline may be revised.",
+      "1.4": "Exclusions — bullets, each stating explicitly what Bristlecone will NOT do, in plain negative wording (\"X is not included\", \"no Y will be provided\"). Name the specific thing excluded. Close with the catch-all: anything not expressly stated as in scope is excluded and requires a change request.",
+      "2": "General Terms — the operating terms for the engagement: working hours and holidays, service location, and the reporting structure.",
+      "2.1": "Working Hours/Holidays — the standard working week and hours, the holiday calendar that applies, and how work outside those hours is handled and charged.",
+      "2.2": "Service Location — state which of Onsite, Offshore or Hybrid applies and, for Hybrid, specify the split and the named locations.",
+      "2.3": "Project Reporting Structure — table (Forum | Purpose | Cadence | Participants). Name participant roles on BOTH sides, give each forum an explicit cadence, and identify the escalation path with the role contacted at each step.",
+      "3": "Deliverables acceptance management — how a deliverable is accepted. Table (Deliverable | Measurable Acceptance Criteria | Reviewer | Review Window). Criteria must be objectively checkable, never \"client satisfaction\". The Review Window must be an explicit number of BUSINESS or CALENDAR days. Immediately after the table, state the deemed-acceptance rule as its own sentence: absent a written rejection naming the failed criterion within the review window, the deliverable is deemed accepted automatically on expiry. State the re-submission cycle for a rejection.",
+      "4": "COMMERCIAL TERMS — open by naming which engagement model applies (Fixed Fee or Time & Materials) and complete ONLY that sub-section, marking the other Not Applicable. Whichever applies, this section must state: the credit period as an explicit number of days from invoice date; a delayed-payment consequence (interest rate on overdue amounts and/or suspension right after notice); the invoicing currency; the tax treatment; and how travel and out-of-pocket expenses are treated. Use <CONFIRM: ...> for figures the source material does not give.",
+      "4.1": "Fixed Fee Engagement — the single fixed price and the milestone payment schedule as a table (Milestone | Completion Criteria | % of Total | Amount), percentages totalling 100% and amounts reconciling to the total. Payment is triggered by milestone acceptance under section 3, not by elapsed time. Effort variance within scope does not change the price; only a signed change request does. If this engagement is Time & Materials, mark this sub-section Not Applicable.",
+      "4.2": "Time & Materials (T&M) Engagement — the rate card as a table (Role/Band | Location | Rate | Unit), the estimated effort, and any not-to-exceed ceiling. Fees follow actual effort at the agreed rates, invoiced against client-approved timesheets; deliverable acceptance governs quality and rework, not payment. State the timesheet approval cycle. If this engagement is Fixed Fee, mark this sub-section Not Applicable.",
+      "5": "Change request/Amendments — the formal route for any scope deviation. Give the workflow as a table (Step | Activity | Owner | Turnaround) with a turnaround in business days on every step; name the approving role on both sides and who holds final authority; state that a commercial AND timeline impact assessment is mandatory for every change request, quantified even when the impact is nil; and state plainly that no work on a change begins until the change request is approved and signed by both parties, with unapproved work neither chargeable nor a basis for moving an agreed date."
+    },
+    "guidance_strict": true,
+    "table_section_ids": [
+      "0",
+      "1.1",
+      "1.2",
+      "2.3",
+      "3",
+      "4.1",
+      "4.2",
+      "5"
+    ],
+    "notes": "Structure transcribed from SOW_TEMPLATE_2.pdf (PMO template, 10 pages). The .docx reproduces its headings and the SOW Overview table so the library can extract sections and the export can fill them in; the PDF's letterhead and page furniture are not carried over."
+  },
+  {
     "id": "17c3837e",
-    "name": "Bristlecone SOW Master Template",
+    "name": "Bristlecone SOW Master Template (detailed, 58 sections)",
     "source_doc": "SOW_TEMPLATE.pdf (v3, has_own_content)",
     "created": "2026-07-25T09:23:22.244837",
-    "updated": "2026-07-25T09:23:22.244837",
+    "updated": "2026-09-10T07:22:25.331820",
     "sections": [
       {
         "id": "0",
@@ -703,6 +922,6 @@
         "has_own_content": true
       }
     ],
-    "is_default": true
+    "is_default": false
   }
 ]

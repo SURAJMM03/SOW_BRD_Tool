@@ -239,6 +239,35 @@ def _get_vision_client():
         return None
 
 
+_MAX_VISION_BYTES = 14 * 1024 * 1024   # base64 inflates ~4/3; API ceiling is 20 MB
+
+
+def _downscale_for_api(data: bytes, mime: str) -> tuple:
+    """Shrink an oversized raster until it fits under the API limit.
+
+    Returns (bytes, mime) — the mime moves with the bytes because the fallback
+    re-encodes to JPEG, and the data: URL must not keep claiming the old type.
+    """
+    if len(data) <= _MAX_VISION_BYTES:
+        return data, mime
+    try:
+        from PIL import Image
+        import io as _io
+        with Image.open(_io.BytesIO(data)) as im:
+            im = im.convert("RGB")
+            buf = _io.BytesIO()
+            for max_edge in (2000, 1400, 1000):
+                probe = im.copy()
+                probe.thumbnail((max_edge, max_edge))
+                buf = _io.BytesIO()
+                probe.save(buf, format="JPEG", quality=85, optimize=True)
+                if buf.tell() <= _MAX_VISION_BYTES:
+                    break
+            return buf.getvalue(), "jpeg"
+    except Exception:
+        return data, mime
+
+
 def _vision_describe(image_bytes: bytes, context: str = "") -> str:
     """
     Describe an image using GPT-4o Vision.
@@ -248,28 +277,47 @@ def _vision_describe(image_bytes: bytes, context: str = "") -> str:
     global _VISION_STRIKES, _VISION_DISABLED
     if _VISION_DISABLED:
         return ""
-    # Byte size alone can't tell a small-but-real diagram from a tiny logo —
-    # a simple line-art flowchart can compress to a few KB. Only skip on byte
-    # size if we can't also check pixel dimensions; a decent pixel footprint
-    # overrides a low byte count.
-    if len(image_bytes) < 3000:
+    if not image_bytes:
         return ""
-    if len(image_bytes) < 8000:
-        try:
-            from PIL import Image
-            import io as _io
-            with Image.open(_io.BytesIO(image_bytes)) as im:
-                w, h = im.size
-            if w < 150 and h < 150:
-                return ""
-        except Exception:
-            return ""   # can't probe dimensions — fall back to the old byte-only skip
+
+    # Rasterise before doing anything else. PowerPoint stores vector art as
+    # EMF (which python-pptx reports as ext='wmf'), and the raw metafile bytes
+    # used to be base64'd straight into a data:image/png URL — the API
+    # rejected every one with `invalid_image_format`, which is why decks came
+    # out as "N slides, 0 image(s) described". normalize_for_vision also
+    # returns None for images with nothing drawn on them, so blank art is
+    # skipped instead of being paid for.
+    from app.metafile_render import normalize_for_vision
+    normalized = normalize_for_vision(image_bytes)
+    if normalized is None:
+        return ""
+    vision_bytes, vision_mime = normalized
+
+    # Dimension gate on the *rendered raster*, not the source bytes. Byte size
+    # alone can't tell a small-but-real diagram from a tiny logo — a line-art
+    # flowchart can compress to a few KB, and a vector metafile has no
+    # inherent byte-to-pixel relationship at all.
+    try:
+        from PIL import Image
+        import io as _io
+        with Image.open(_io.BytesIO(vision_bytes)) as im:
+            w, h = im.size
+        if w < 150 and h < 150:
+            return ""
+    except Exception:
+        if len(vision_bytes) < 3000:
+            return ""
+
+    # Keep the request under the API's image ceiling. A 13 MB metafile can
+    # rasterise into something base64 inflates past the limit.
+    vision_bytes, vision_mime = _downscale_for_api(vision_bytes, vision_mime)
+
     client = _get_vision_client()
     if client is None:
         return ""
     try:
         import base64 as _b64
-        b64 = _b64.b64encode(image_bytes).decode()
+        b64 = _b64.b64encode(vision_bytes).decode()
         resp = client.chat.completions.create(
             model=os.getenv("VISION_MODEL", "gpt-4.1"),
             max_tokens=600,
@@ -294,7 +342,10 @@ def _vision_describe(image_bytes: bytes, context: str = "") -> str:
                         "reply with exactly: SKIP"
                     )},
                     {"type": "image_url", "image_url": {
-                        "url": f"data:image/png;base64,{b64}",
+                        # Declare the format the bytes actually are. This was
+                        # hardcoded to png for every image, which the API
+                        # rejects outright for anything else.
+                        "url": f"data:image/{vision_mime};base64,{b64}",
                         "detail": "high"
                     }},
                 ]

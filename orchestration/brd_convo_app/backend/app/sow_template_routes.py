@@ -19,8 +19,12 @@ Endpoints:
   DELETE /api/sow-templates/{template_id}
   PUT    /api/sow-templates/{template_id}/sections/{section_id}
   POST   /api/sow-templates/{template_id}/set-default
-  POST   /api/sow-templates/{template_id}/apply/{project_id}
+  POST   /api/sow-templates/{template_id}/apply/{project_id}   (?engagement_type=)
   GET    /api/sow-templates/resolve/{project_id}   — which template (if any) applies
+
+US-01 — engagement-type-specific templates (see app/sow_engagement_templates.py):
+  GET    /api/sow-templates/engagement-types
+  POST   /api/sow-templates/engagement/{engagement_key}/apply/{project_id}
 """
 from __future__ import annotations
 
@@ -35,6 +39,10 @@ from fastapi import APIRouter, HTTPException, UploadFile, File, Form
 from pydantic import BaseModel
 
 from app.template_routes import _extract_toc
+from app.sow_engagement_templates import (
+    ENGAGEMENT_TEMPLATES, get_engagement_template, is_valid_engagement_type,
+    list_engagement_templates,
+)
 
 logger = logging.getLogger("SOWTemplateRoutes")
 router = APIRouter()
@@ -182,6 +190,25 @@ def get_default_template() -> Optional[Dict]:
     return None
 
 
+def get_template_guidance(template_id: Optional[str]) -> tuple:
+    """(guidance_by_section_id, strict) for a library template.
+
+    A custom template numbers its own sections, and those numbers rarely mean
+    what the built-in numbering means — SOW_TEMPLATE_2 calls Commercial Terms
+    "4", while the built-in "4" is Scope of Work. Falling back to the id-keyed
+    SECTION_GUIDANCE would then draft scope content under a commercial
+    heading. A template may therefore carry its own `guidance` map, and set
+    `guidance_strict` so unlisted sections fall back to their title alone
+    rather than to guidance for a different subject.
+    """
+    if not template_id:
+        return {}, False
+    for t in _load_templates():
+        if t["id"] == template_id:
+            return t.get("guidance") or {}, bool(t.get("guidance_strict"))
+    return {}, False
+
+
 def get_template_file_path(template_id: str) -> Optional[Path]:
     """Return the .docx path for a template, if it has one on disk."""
     p = SOW_TEMPLATE_FILES_DIR / f"{template_id}.docx"
@@ -302,6 +329,14 @@ async def import_sow_template(
     return template
 
 
+@router.get("/api/sow-templates/engagement-types")
+def list_engagement_types():
+    """The built-in engagement templates, for the selection step at the start
+    of drafting. Static, version-controlled data — see
+    app/sow_engagement_templates.py."""
+    return list_engagement_templates()
+
+
 @router.get("/api/sow-templates/{template_id}")
 def get_sow_template(template_id: str):
     return _find_template(_load_templates(), template_id)
@@ -367,22 +402,32 @@ def set_default_sow_template(template_id: str):
 # ─────────────────────────────────────────────────────────────────────────────
 
 @router.post("/api/sow-templates/{template_id}/apply/{project_id}")
-def apply_sow_template(template_id: str, project_id: str):
-    """Seed a SOW project's section structure from a template's TOC."""
+def apply_sow_template(template_id: str, project_id: str,
+                       engagement_type: Optional[str] = None):
+    """Seed a SOW project's section structure from a template's TOC.
+
+    `engagement_type` is optional here: a client's own .docx template brings
+    its own structure, but the engagement model still decides the commercial
+    and acceptance language, so the choice is recorded and applied as prompt
+    framing (see sow_engagement_templates' `premise`)."""
     templates = _load_templates()
     t = _find_template(templates, template_id)
     sections = t.get("sections", [])
     if not sections:
         raise HTTPException(400, "Template has no sections to apply")
+    if engagement_type and not is_valid_engagement_type(engagement_type):
+        raise HTTPException(400, f"Unknown engagement type '{engagement_type}'")
 
     from app.sow_section_routes import seed_project_sections
 
-    seed_project_sections(project_id, sections, template_id=template_id)
-    logger.info("Applied SOW template %s (%s) to project %s — %d sections",
-                template_id, t["name"], project_id, len(sections))
+    seed_project_sections(project_id, sections, template_id=template_id,
+                          engagement_type=engagement_type)
+    logger.info("Applied SOW template %s (%s) to project %s — %d sections, engagement=%s",
+                template_id, t["name"], project_id, len(sections), engagement_type or "none")
     return {
         "ok": True, "template_id": template_id, "template_name": t["name"],
         "project_id": project_id, "sections_set": len(sections),
+        "engagement_type": engagement_type,
     }
 
 
@@ -397,18 +442,57 @@ def apply_fallback_sections(project_id: str):
             "sections_set": len(FALLBACK_SECTIONS)}
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# US-01 — engagement-type-specific templates (T&M / Fixed Cost)
+# ─────────────────────────────────────────────────────────────────────────────
+
+@router.post("/api/sow-templates/engagement/{engagement_key}/apply/{project_id}")
+def apply_engagement_template(engagement_key: str, project_id: str):
+    """Seed a SOW project from one of the two engagement templates. This is
+    the normal path for a Bristlecone-standard SOW; applying a client's own
+    .docx instead goes through apply_sow_template with an engagement_type."""
+    tpl = get_engagement_template(engagement_key)
+    if not tpl:
+        raise HTTPException(
+            404,
+            f"Unknown engagement type '{engagement_key}' — expected one of: "
+            + ", ".join(ENGAGEMENT_TEMPLATES),
+        )
+
+    from app.sow_section_routes import seed_project_sections
+
+    sections = tpl["sections"]
+    seed_project_sections(project_id, sections, template_id=None,
+                          engagement_type=engagement_key)
+    logger.info("Applied %s template v%s to project %s — %d sections",
+                tpl["name"], tpl["version"], project_id, len(sections))
+    return {
+        "ok": True, "project_id": project_id,
+        "engagement_type": engagement_key,
+        "engagement_template_name": tpl["name"],
+        "engagement_template_version": tpl["version"],
+        "template_id": None, "sections_set": len(sections),
+    }
+
+
 @router.get("/api/sow-templates/resolve/{project_id}")
 def resolve_template_for_project(project_id: str):
     """Report which template (if any) is already applied to a project, and
     what would apply by default if none is. Lets the SOW template-selection
     UI show sensible pre-selection."""
-    from app.sow_section_routes import get_project_template_id
+    from app.sow_section_routes import (get_project_template_id,
+                                        get_project_engagement_type)
 
     applied_id = get_project_template_id(project_id)
+    applied_engagement = get_project_engagement_type(project_id)
     default = get_default_template()
+    eng_tpl = get_engagement_template(applied_engagement)
     return {
         "applied_template_id": applied_id,
         "default_template_id": default["id"] if default else None,
         "default_template_name": default["name"] if default else None,
         "has_any_template": bool(_load_templates()),
+        "applied_engagement_type": applied_engagement,
+        "applied_engagement_name": eng_tpl["name"] if eng_tpl else None,
+        "applied_engagement_version": eng_tpl["version"] if eng_tpl else None,
     }

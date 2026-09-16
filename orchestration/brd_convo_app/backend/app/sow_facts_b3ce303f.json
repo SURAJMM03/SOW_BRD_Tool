@@ -1,0 +1,283 @@
+{
+  "fingerprint": "db6bd1ddd83a1983",
+  "facts": {
+    "client_name": "ASCEND",
+    "project_name": "SAP S/4HANA deployment",
+    "key_milestones": [
+      {
+        "name": "Proposal date",
+        "date": "20 May 2026"
+      },
+      {
+        "name": "Public Cloud - Global Template + Compounding BU",
+        "date": "M1\u2013M8"
+      },
+      {
+        "name": "Public Cloud - Chemical BU",
+        "date": "M5\u2013M10"
+      },
+      {
+        "name": "Public Cloud - Nylon BU",
+        "date": "M5\u2013M10"
+      },
+      {
+        "name": "Public Cloud - Compounding Go-Live",
+        "date": "M8"
+      },
+      {
+        "name": "Public Cloud - Chemical Go-Live",
+        "date": "M10"
+      },
+      {
+        "name": "Public Cloud - Nylon Go-Live",
+        "date": "M10"
+      },
+      {
+        "name": "Private Cloud - Global Template",
+        "date": "M1\u2013M4 (derived from Global Template 4 months and Critical Path 1 to Chemical Go-Live M14)"
+      },
+      {
+        "name": "Private Cloud - Chemical BU Go-Live",
+        "date": "M14"
+      },
+      {
+        "name": "Private Cloud - Nylon BU Go-Live",
+        "date": "M17"
+      },
+      {
+        "name": "Private Cloud - Compounding BU Go-Live",
+        "date": "M18"
+      },
+      {
+        "name": "Sponsor Pulse Survey (Public OCM)",
+        "date": "M4"
+      },
+      {
+        "name": "Sponsor Pulse Survey (Public OCM)",
+        "date": "M8"
+      },
+      {
+        "name": "Sponsor Pulse Survey (Private OCM)",
+        "date": "M6"
+      },
+      {
+        "name": "Sponsor Pulse Survey (Private OCM)",
+        "date": "M12"
+      },
+      {
+        "name": "Sponsor Pulse Survey (Private OCM)",
+        "date": "M17"
+      }
+    ],
+    "delivery_locations": [
+      "US onsite",
+      "India offshore",
+      "Chocolate Bayou, TX",
+      "Decatur, AL",
+      "Pensacola, FL",
+      "Foley, Alabama, USA",
+      "San Jos\u00e9 Iturbide, Guanajuato, Mexico",
+      "Chennai, India",
+      "Fosse, France",
+      "Mozzate, Italy",
+      "Suzhou, China",
+      "North America",
+      "Europe",
+      "Asia"
+    ],
+    "engagement_model": "hybrid agile execution: fixed scope anchors for Chemical/Nylon/Compounding BU phases with sprint-based configuration delivery",
+    "team_size": "Ascend internal roles: 1\u20132 FTEs for Program Governance, 6\u20138 FTEs for Business Process Ownership, 3\u20135 FTEs for Technical & Data Ownership; 6\u20138 BPOs active presence across all 3 BU waves is required; ~2,100 employees in deployment scope; 1,181 users referenced for role-based training",
+    "scope_summary": "SAP S/4HANA 2025 implementation for 25 active company codes across Chemical, Nylon, and Compounding business units, with phased rollout by BU and a global template. Scope includes core ERP modules, SAP BTP-based extensibility, integrations, data migration of open transactions/balances/active master data, program/project management, OCM, testing, cutover, hypercare, and knowledge transfer.",
+    "in_scope": [
+      "S/4HANA 2025 Implementation",
+      "25 active company codes",
+      "Finance & Controlling",
+      "Material Management",
+      "Sales & Distribution",
+      "Production Planning",
+      "Quality Management",
+      "Project Systems",
+      "Plant Maintenance",
+      "SAP Business Data Cloud (BDC)",
+      "SAP ABAP",
+      "SAP BASIS & Security",
+      "SAP FIORI",
+      "SAP Business Technology Platform",
+      "MES / TPMS",
+      "Yard Management (YardView)",
+      "Celonis",
+      "Prometheus / TANGO",
+      "Solution Manager / GRC / SLT / SDI",
+      "Customers & Distributors (EDI Orders / ASN / Invoices)",
+      "Microsoft Dynamics CRM",
+      "Ariba",
+      "Logistics & Carriers (Sterling GISH, ocean bookings)",
+      "Banks & Finance (BoA, Wells Fargo, payments, lockbox)",
+      "Tax & Compliance (Vertex, HMRC cloud)",
+      "HR & Expenses (Workday, Concur)",
+      "Documents & Content (ReadSoft, Content Server, eFax)",
+      "Program and Project Management",
+      "Organizational Change Management",
+      "Fit-Gap and To-Be Process Design",
+      "Configuration and Build",
+      "Business Process Design Documentation",
+      "Key Design Decisions and Document",
+      "Open transactions, balances & active master data migration",
+      "3 mock data loads prior to SIT 1, SIT 2 & UAT / production cutover",
+      "Hypercare support",
+      "Knowledge transfer"
+    ],
+    "out_of_scope": [
+      "Microsoft Fabric",
+      "SAP BW/BEx historical data migration and legacy extractor conversion",
+      "Real-time streaming, SLT-based CDC, or event-driven integration architecture",
+      "Planning, forecasting, and write-back capabilities equivalent to SAP Analytics Cloud Planning",
+      "Any new integration with internal/external systems (other than existing landscape)",
+      "Any SAP modules not mentioned in overall scope",
+      "SAP EWM",
+      "SAP TM",
+      "BDC integration with any third-party applications or systems",
+      "Reverse engineering of existing reports, dashboards and logic",
+      "SAP Analytics Cloud Planning scope",
+      "Migration of historical data"
+    ],
+    "commercials": [
+      "~200 RICEFW via RAP + BTP side-by-side + 25 for ABAP including key user extension (Public Cloud evaluation)",
+      "30 reports scoped (Public Cloud evaluation)",
+      "All 150 interfaces assumed",
+      "Private Cloud flexible RICEFW: 510 objects (RAP extensions + Custom Fiori)",
+      "35 reports scoped (Private Cloud evaluation)",
+      "Ascend's 9,213 ECC custom code objects / custom objects as of 2023",
+      "787 transaction codes and 1,466 authorization objects require SU25 remediation",
+      "HANA memory required: 1,156GB",
+      "Relevant simplifications: 385",
+      "FIORI apps: 1183",
+      "AI4S4 enables ~15\u201320% improvement in time to value",
+      "RUN phase productivity improvement ~25\u201335%",
+      "S4NOW Fit-to-Standard workshop accelerator compresses Explore by 1\u20132 weeks",
+      "Data Migration Factory yields 10\u201320% reduction in data prep cycle",
+      "Custom Code Remediation tool yields 70\u201380% reduction in manual efforts",
+      "DMaaS Cleansify AI reduces manual effort by 40\u201350%",
+      "DMaaS Cleansify AI achieves 95%+ data accuracy post-cleansing",
+      "80%\u201390% reduction in manual validation time",
+      "Fit-to-Standard expected to resolve ~40\u201350% of RICEFW at zero development cost",
+      "BTP side-by-side expected to cover ~20\u201325% of objects",
+      "ECC custom objects reduced from ~1,000 to ~400",
+      "RICEFW total reduced from ~2,000 to ~600\u2013700",
+      "50\u201370% of ECC custom objects eliminated or moved to BTP",
+      "65\u201370% of RICEFW resolved via standard or BTP"
+    ],
+    "assumptions": [
+      "Public Cloud is Bristlecone's recommended path",
+      "Overall public-cloud timeline is ~11 months end-to-end",
+      "Overall private-cloud timeline is ~18 months end-to-end",
+      "Open transactions, balances and active master data will be migrated; no historical data load",
+      "Historical data will remain in ECC read-only for compliance, audit and reference",
+      "CVI remediation is a mandatory parallel pre-project workstream and starts before Prepare kick-off",
+      "CVI cannot run during implementation",
+      "3 mock data loads are planned before each BU go-live / production cutover",
+      "~10 external systems and ~15 interfaces per system are assumed",
+      "API-first, event-driven integration architecture via SAP BTP / CPI; OData / Events / IDoc mandatory for Public Cloud",
+      "Compounding goes first in Public Cloud at M8; Chemical and Nylon follow at M10",
+      "Private Cloud sequencing is Global Template \u2192 Chemical \u2192 Nylon \u2192 Compounding",
+      "Global Build completion at M8 is the single gate for Chemical and Nylon in Public Cloud",
+      "Chemical BU go-live at M14 is the single gate for Nylon and Compounding in Private Cloud",
+      "Dedicated Ascend internal ownership is required; under-staffing creates program risk",
+      "Infrastructure Lead is required for Private Cloud only; not needed for Public Cloud",
+      "Upgrade cadence for Private Cloud to be agreed at program start, with minimum annual upgrade cycle",
+      "RICEFW baseline is fixed at Explore Q-Gate in Private Cloud; additions require Change Board approval and formal change request",
+      "ECC read-only access target retirement is within 18 months of final BU go-live once Microsoft Fabric OneLake ingestion covers compliance periods",
+      "Bristlecone will provide full SI delivery capability, but Ascend must staff key internal roles"
+    ],
+    "notable_dates": [
+      {
+        "date": "20 May 2026",
+        "what_it_refers_to": "Proposal date on title slide"
+      },
+      {
+        "date": "pre-2025",
+        "what_it_refers_to": "Bankruptcy-era Monsanto historical data referenced in ECC"
+      },
+      {
+        "date": "2023",
+        "what_it_refers_to": "Custom code objects count (9,213) stated as of 2023"
+      },
+      {
+        "date": "2025",
+        "what_it_refers_to": "S/4HANA 2025 implementation release/version in scope"
+      },
+      {
+        "date": "M1",
+        "what_it_refers_to": "Public OCM activity plan start; user access model documented in OCM materials from M1"
+      },
+      {
+        "date": "M4",
+        "what_it_refers_to": "Public sponsor pulse survey; Global Template quality milestone in Private timeline"
+      },
+      {
+        "date": "M5",
+        "what_it_refers_to": "Public Chemical and Nylon phases begin"
+      },
+      {
+        "date": "M6",
+        "what_it_refers_to": "Private sponsor pulse survey"
+      },
+      {
+        "date": "M8",
+        "what_it_refers_to": "Public Global Build / Compounding go-live / single gate for Chemical and Nylon"
+      },
+      {
+        "date": "M10",
+        "what_it_refers_to": "Public Chemical and Nylon go-live milestones"
+      },
+      {
+        "date": "M11",
+        "what_it_refers_to": "End of indicative Public OCM plan"
+      },
+      {
+        "date": "M12",
+        "what_it_refers_to": "Private sponsor pulse survey"
+      },
+      {
+        "date": "M14",
+        "what_it_refers_to": "Private Chemical BU go-live critical path milestone"
+      },
+      {
+        "date": "M17",
+        "what_it_refers_to": "Private Nylon BU go-live and sponsor pulse survey"
+      },
+      {
+        "date": "M18",
+        "what_it_refers_to": "Private Compounding BU go-live / end of indicative private OCM plan"
+      },
+      {
+        "date": "18 months after final BU go-live",
+        "what_it_refers_to": "Target to retire ECC read-only access (derived from stated target)"
+      },
+      {
+        "date": "Oct 2026",
+        "what_it_refers_to": "Bristlecone's own Public Cloud go-live reference project"
+      },
+      {
+        "date": "2602",
+        "what_it_refers_to": "SAP Public Cloud release referenced as proposed for Ascend"
+      },
+      {
+        "date": "Q1 (Months 1-3)",
+        "what_it_refers_to": "12-month AMS/self-sufficiency roadmap stabilization phase"
+      },
+      {
+        "date": "Q2 (Months 4-6)",
+        "what_it_refers_to": "12-month AMS/self-sufficiency roadmap optimization phase"
+      },
+      {
+        "date": "Q3",
+        "what_it_refers_to": "12-month AMS/self-sufficiency roadmap transformation phase"
+      },
+      {
+        "date": "Q4",
+        "what_it_refers_to": "12-month AMS/self-sufficiency roadmap self-sufficiency phase"
+      }
+    ]
+  }
+}

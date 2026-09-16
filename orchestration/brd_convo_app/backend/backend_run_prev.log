@@ -1,0 +1,1580 @@
+INFO:     Started server process [24940]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8010 (Press CTRL+C to quit)
+INFO:     127.0.0.1:58466 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64562 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64562 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50203 - "POST /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50203 - "GET /choose HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56009 - "GET /sow-hub HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56009 - "GET /sow-projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56009 - "GET /api/projects?workflow=sow HTTP/1.1" 200 OK
+2026-08-27 15:22:07,712 | INFO | ProjectRoutes | Deleted project 9cdd9046 (CALM) — 1 files removed, folder_removed=True
+INFO:     127.0.0.1:56009 - "DELETE /api/projects/9cdd9046 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56009 - "GET /api/projects?workflow=sow HTTP/1.1" 200 OK
+2026-08-27 15:22:17,610 | INFO | ProjectRoutes | Created project ca8d3202: CALM
+INFO:     127.0.0.1:61830 - "POST /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61830 - "GET /sow-upload?project_id=ca8d3202 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61830 - "GET /api/projects/ca8d3202/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58028 - "GET /api/projects/ca8d3202/repositories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61830 - "GET /api/repositories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61830 - "GET /api/chat/scopes?project_id=ca8d3202 HTTP/1.1" 200 OK
+2026-08-27 15:22:26,466 | INFO | ProjectRoutes | Ingested Metro_SAP_CALM_Proposal.pptx \u2192 ca8d3202 (source, 15359875 bytes)
+2026-08-27 15:22:26,496 | INFO | ProjectRoutes | Chunking started in background for 5724415d
+INFO:     127.0.0.1:52621 - "POST /api/upload HTTP/1.1" 200 OK
+2026-08-27 15:22:26,523 | INFO | ChunkingPipeline | Processing Metro_SAP_CALM_Proposal.pptx (project=ca8d3202, file=5724415d)
+INFO:     127.0.0.1:52621 - "GET /api/projects/ca8d3202/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52621 - "GET /api/projects/ca8d3202/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52621 - "GET /api/projects/ca8d3202/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52621 - "GET /api/projects/ca8d3202/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52621 - "GET /api/projects/ca8d3202/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52621 - "GET /api/projects/ca8d3202/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52621 - "GET /api/projects/ca8d3202/files HTTP/1.1" 200 OK
+2026-08-27 15:22:51,061 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:22:51,062 | INFO | openai._base_client | Retrying request to /chat/completions in 0.476567 seconds
+INFO:     127.0.0.1:52621 - "GET /api/projects/ca8d3202/files HTTP/1.1" 200 OK
+2026-08-27 15:22:52,715 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:22:52,717 | WARNING | ChunkingPipeline | Vision describe failed for 'PPTX: Metro_SAP_CALM_Proposal.pptx, Slide 1 image: Picture 2': Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+INFO:     127.0.0.1:52621 - "GET /api/projects/ca8d3202/files HTTP/1.1" 200 OK
+2026-08-27 15:22:55,377 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:22:55,377 | INFO | openai._base_client | Retrying request to /chat/completions in 0.495850 seconds
+2026-08-27 15:22:56,385 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:22:56,387 | WARNING | ChunkingPipeline | Vision describe failed for 'PPTX: Metro_SAP_CALM_Proposal.pptx, Slide 6 image: Graphic 2': Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+INFO:     127.0.0.1:52621 - "GET /api/projects/ca8d3202/files HTTP/1.1" 200 OK
+2026-08-27 15:22:57,556 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:22:57,557 | INFO | openai._base_client | Retrying request to /chat/completions in 0.477991 seconds
+2026-08-27 15:22:58,518 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:22:58,519 | WARNING | ChunkingPipeline | Vision describe failed for 'PPTX: Metro_SAP_CALM_Proposal.pptx, Slide 7 image: Picture 4': Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-27 15:22:59,604 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:22:59,604 | INFO | openai._base_client | Retrying request to /chat/completions in 0.403320 seconds
+INFO:     127.0.0.1:52621 - "GET /api/projects/ca8d3202/files HTTP/1.1" 200 OK
+2026-08-27 15:23:00,565 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:23:00,570 | WARNING | ChunkingPipeline | Vision describe failed for 'PPTX: Metro_SAP_CALM_Proposal.pptx, Slide 7 image: Picture 2': Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-27 15:23:01,025 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:23:01,026 | INFO | openai._base_client | Retrying request to /chat/completions in 0.455823 seconds
+2026-08-27 15:23:01,974 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:23:01,974 | WARNING | ChunkingPipeline | Vision describe failed for 'PPTX: Metro_SAP_CALM_Proposal.pptx, Slide 7 image: Picture 11': Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-27 15:23:01,975 | ERROR | ChunkingPipeline | Vision circuit breaker tripped after 5 failures — disabling vision for the rest of this run
+2026-08-27 15:23:01,985 | INFO | ChunkingPipeline | PPTX Metro_SAP_CALM_Proposal.pptx: 8 slides, 0 image(s) described
+2026-08-27 15:23:02,641 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:23:02,643 | INFO | openai._base_client | Retrying request to /chat/completions in 0.422768 seconds
+INFO:     127.0.0.1:52621 - "GET /api/projects/ca8d3202/files HTTP/1.1" 200 OK
+2026-08-27 15:23:03,469 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:23:03,473 | WARNING | ChunkingPipeline | Batch LLM keyword extraction failed: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — falling back to local
+2026-08-27 15:23:03,477 | INFO | ChunkingPipeline | Generating embeddings for 8 chunks from Metro_SAP_CALM_Proposal.pptx …
+INFO:     127.0.0.1:52621 - "GET /api/projects/ca8d3202/files HTTP/1.1" 200 OK
+2026-08-27 15:23:07,454 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:23:07,455 | INFO | openai._base_client | Retrying request to /embeddings in 0.491491 seconds
+INFO:     127.0.0.1:52621 - "GET /api/projects/ca8d3202/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52621 - "GET /api/projects/ca8d3202/files HTTP/1.1" 200 OK
+2026-08-27 15:23:13,975 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:23:13,976 | INFO | openai._base_client | Retrying request to /embeddings in 0.957097 seconds
+INFO:     127.0.0.1:52621 - "GET /api/projects/ca8d3202/files HTTP/1.1" 200 OK
+2026-08-27 15:23:15,882 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:23:15,883 | WARNING | ChunkingPipeline | Embedding generation skipped for Metro_SAP_CALM_Proposal.pptx: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — chunks saved without embeddings, call /embed-chunks to backfill
+2026-08-27 15:23:15,883 | INFO | ChunkingPipeline | Produced 8 chunks from Metro_SAP_CALM_Proposal.pptx (keywords via LLM batch (20/call))
+2026-08-27 15:23:15,885 | INFO | ChunkingPipeline | Saved 0 chunks to C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\uploads\ca8d3202\chunks.json
+2026-08-27 15:23:15,890 | INFO | ChunkingPipeline | Saved 8 chunks to C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\uploads\ca8d3202\chunks.json
+INFO:     127.0.0.1:52621 - "GET /api/projects/ca8d3202/files HTTP/1.1" 200 OK
+2026-08-27 15:23:39,251 | INFO | app.image_extractor | Extracted 60 images from pptx Metro_SAP_CALM_Proposal.pptx
+2026-08-27 15:23:39,252 | INFO | app.image_extractor | Deduped 60 \u2192 59 images from Metro_SAP_CALM_Proposal.pptx before vision
+2026-08-27 15:23:40,301 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:23:40,302 | INFO | openai._base_client | Retrying request to /chat/completions in 0.426195 seconds
+2026-08-27 15:23:41,289 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:23:41,291 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\c955075ab39d.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-27 15:23:41,736 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:23:41,737 | INFO | openai._base_client | Retrying request to /chat/completions in 0.495703 seconds
+2026-08-27 15:23:42,711 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:23:42,712 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\d8884093f499.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-27 15:23:43,516 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:23:43,517 | INFO | openai._base_client | Retrying request to /chat/completions in 0.475235 seconds
+2026-08-27 15:23:44,384 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:23:44,385 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\6b34b4fc95c9.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-27 15:23:44,797 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:23:44,798 | INFO | openai._base_client | Retrying request to /chat/completions in 0.469108 seconds
+2026-08-27 15:23:45,730 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:23:45,731 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\876a0b21fad4.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-27 15:23:46,215 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:23:46,215 | INFO | openai._base_client | Retrying request to /chat/completions in 0.478021 seconds
+2026-08-27 15:23:47,068 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:23:47,069 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\e6979888b94e.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-27 15:23:47,069 | ERROR | app.image_extractor | Vision circuit breaker tripped after 5 consecutive failures — skipping vision for remaining images in this run.
+2026-08-27 15:23:47,071 | INFO | app.image_extractor | Extracted 59 images from Metro_SAP_CALM_Proposal.pptx
+2026-08-27 15:23:47,227 | INFO | app.image_extractor | Appended 0 new images to image_chunks.json (total: 3717)
+2026-08-27 15:23:47,233 | INFO | ProjectRoutes | Image extraction complete for 5724415d: 59 found, 0 new
+2026-08-27 15:23:47,744 | INFO | SlideRenderer | Slide picker: 6 slide(s) look like diagrams in Metro_SAP_CALM_Proposal.pptx -> [3, 4, 5, 6, 7, 8]
+2026-08-27 15:23:57,308 | INFO | SlideRenderer | Rendered 6 slide(s) from Metro_SAP_CALM_Proposal.pptx
+2026-08-27 15:23:59,967 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:23:59,968 | INFO | openai._base_client | Retrying request to /chat/completions in 0.455384 seconds
+2026-08-27 15:24:00,920 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:24:00,921 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\499576837090.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-27 15:24:01,578 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:24:01,579 | INFO | openai._base_client | Retrying request to /chat/completions in 0.483811 seconds
+2026-08-27 15:24:02,508 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:24:02,509 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\410e29befe04.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-27 15:24:03,198 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:24:03,199 | INFO | openai._base_client | Retrying request to /chat/completions in 0.441180 seconds
+2026-08-27 15:24:04,085 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:24:04,087 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\055a5f5a9b18.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-27 15:24:04,554 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:24:04,555 | INFO | openai._base_client | Retrying request to /chat/completions in 0.399205 seconds
+2026-08-27 15:24:05,335 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:24:05,340 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\57aeb9cf761c.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-27 15:24:05,814 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:24:05,815 | INFO | openai._base_client | Retrying request to /chat/completions in 0.391492 seconds
+2026-08-27 15:24:06,704 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:24:06,705 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\70df01b38c53.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-27 15:24:06,705 | ERROR | app.image_extractor | Vision circuit breaker tripped after 5 consecutive failures — skipping vision for remaining images in this run.
+2026-08-27 15:24:06,972 | INFO | app.image_extractor | Appended 0 new images to image_chunks.json (total: 3717)
+2026-08-27 15:24:08,082 | INFO | app.image_index | Loaded 3717 images from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-08-27 15:24:08,082 | INFO | app.image_index | Image index loaded: C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-08-27 15:24:08,623 | INFO | app.image_index | Loaded 3717 images from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-08-27 15:24:08,666 | INFO | app.image_index | Image index reloaded: 3717 records
+2026-08-27 15:24:08,667 | INFO | SlideRenderer | Whole-slide rendering for Metro_SAP_CALM_Proposal.pptx: 6 rendered, 0 newly indexed
+2026-08-27 15:24:08,667 | INFO | ProjectRoutes | Whole-slide rendering for 5724415d: 6 rendered, 0 indexed
+2026-08-27 15:24:08,672 | INFO | rerun_vision | APP_DIR      : C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app
+2026-08-27 15:24:08,673 | INFO | rerun_vision | image_chunks : C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-08-27 15:24:08,673 | INFO | rerun_vision | extracted_dir: C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images
+2026-08-27 15:24:08,743 | INFO | ProjectRoutes | Vision retry: 5 image(s) from Metro_SAP_CALM_Proposal.pptx still need analysis — running now.
+2026-08-27 15:24:09,464 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:24:09,465 | INFO | openai._base_client | Retrying request to /chat/completions in 0.402582 seconds
+2026-08-27 15:24:10,387 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:24:10,388 | ERROR | rerun_vision | Vision call failed for 6b34b4fc95c9.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-27 15:24:10,796 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:24:10,797 | INFO | openai._base_client | Retrying request to /chat/completions in 0.456356 seconds
+2026-08-27 15:24:11,720 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:24:11,721 | ERROR | rerun_vision | Vision call failed for 876a0b21fad4.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-27 15:24:12,077 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:24:12,079 | INFO | openai._base_client | Retrying request to /chat/completions in 0.416074 seconds
+2026-08-27 15:24:12,892 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:24:12,893 | ERROR | rerun_vision | Vision call failed for e6979888b94e.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-27 15:24:13,262 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:24:13,263 | INFO | openai._base_client | Retrying request to /chat/completions in 0.390926 seconds
+2026-08-27 15:24:14,046 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:24:14,047 | ERROR | rerun_vision | Vision call failed for faa2c1acf984.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-27 15:24:14,582 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:24:14,584 | INFO | openai._base_client | Retrying request to /chat/completions in 0.439365 seconds
+2026-08-27 15:24:15,416 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-27 15:24:15,417 | ERROR | rerun_vision | Vision call failed for 7c31b045ac4e.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-27 15:24:15,417 | ERROR | rerun_vision | Vision circuit breaker tripped after 5 consecutive failures — skipping vision for remaining images in this run.
+2026-08-27 15:24:15,861 | INFO | app.image_index | Loaded 3717 images from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-08-27 15:24:15,898 | INFO | app.image_index | Image index reloaded: 3717 records
+2026-08-27 15:24:15,898 | INFO | ProjectRoutes | Image index reloaded after upload: 3717 records
+2026-08-27 15:24:15,902 | INFO | ProjectRoutes | Chunking complete for 5724415d — 8 chunks (project total: 8)
+INFO:     127.0.0.1:62712 - "GET /sow-templates?project_id=ca8d3202 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62712 - "GET /api/sow-templates/resolve/ca8d3202 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:56780 - "GET /api/sow-templates HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:56780 - "POST /api/sow-templates/apply-fallback/ca8d3202 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:56780 - "GET /sow-workflow?project_id=ca8d3202 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56780 - "GET /api/sow/sections?project_id=ca8d3202 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:50711 - "GET /sow-templates?project_id=ca8d3202 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50711 - "GET /api/sow-templates HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:50711 - "GET /api/sow-templates/resolve/ca8d3202 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:50711 - "GET /sow-upload?project_id=ca8d3202 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50711 - "GET /sow-projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50711 - "GET /sow-hub HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50711 - "GET /sow-hub HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50711 - "GET /sow-hub HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50711 - "GET /sow-hub HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50711 - "GET /sow-hub HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50711 - "GET /sow-hub HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50711 - "GET /sow-hub HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50711 - "GET /sow-hub HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57125 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51845 - "POST /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51845 - "GET /choose HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51845 - "GET /sow-hub HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51845 - "GET /sow-projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51845 - "GET /api/projects?workflow=sow HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51753 - "GET /sow-upload?project_id=ca8d3202 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51753 - "GET /api/projects/ca8d3202/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51753 - "GET /api/projects/ca8d3202/repositories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51753 - "GET /api/repositories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51753 - "GET /api/chat/scopes?project_id=ca8d3202 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51753 - "GET /api/projects?workflow=sow HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51753 - "GET /api/projects?workflow=sow HTTP/1.1" 200 OK
+2026-08-28 11:50:11,579 | INFO | ProjectRoutes | Deleted project ca8d3202 (CALM) — 1 files removed, folder_removed=True
+INFO:     127.0.0.1:51753 - "DELETE /api/projects/ca8d3202 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51753 - "GET /api/projects?workflow=sow HTTP/1.1" 200 OK
+2026-08-28 11:50:23,995 | INFO | ProjectRoutes | Created project 47106ab4: CALM
+INFO:     127.0.0.1:63466 - "POST /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63466 - "GET /sow-upload?project_id=47106ab4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63466 - "GET /api/projects/47106ab4/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61867 - "GET /api/repositories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56377 - "GET /api/projects/47106ab4/repositories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63466 - "GET /api/chat/scopes?project_id=47106ab4 HTTP/1.1" 200 OK
+2026-08-28 11:50:35,134 | INFO | ProjectRoutes | Ingested Metro_SAP_CALM_Proposal.pptx \u2192 47106ab4 (source, 15359875 bytes)
+2026-08-28 11:50:35,148 | INFO | ProjectRoutes | Chunking started in background for a97e58e6
+INFO:     127.0.0.1:51703 - "POST /api/upload HTTP/1.1" 200 OK
+2026-08-28 11:50:35,157 | INFO | ChunkingPipeline | Processing Metro_SAP_CALM_Proposal.pptx (project=47106ab4, file=a97e58e6)
+2026-08-28 11:50:36,347 | INFO | ChunkingPipeline | PPTX Metro_SAP_CALM_Proposal.pptx: 8 slides, 0 image(s) described
+INFO:     127.0.0.1:51703 - "GET /api/projects/47106ab4/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51703 - "GET /api/projects/47106ab4/files HTTP/1.1" 200 OK
+2026-08-28 11:50:43,785 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:50:43,786 | INFO | openai._base_client | Retrying request to /chat/completions in 0.466854 seconds
+INFO:     127.0.0.1:51703 - "GET /api/projects/47106ab4/files HTTP/1.1" 200 OK
+2026-08-28 11:50:45,454 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:50:45,455 | WARNING | ChunkingPipeline | Batch LLM keyword extraction failed: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — falling back to local
+2026-08-28 11:50:45,459 | INFO | ChunkingPipeline | Generating embeddings for 8 chunks from Metro_SAP_CALM_Proposal.pptx …
+INFO:     127.0.0.1:51703 - "GET /api/projects/47106ab4/files HTTP/1.1" 200 OK
+2026-08-28 11:50:49,997 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:50:50,013 | INFO | openai._base_client | Retrying request to /embeddings in 0.497515 seconds
+INFO:     127.0.0.1:51703 - "GET /api/projects/47106ab4/files HTTP/1.1" 200 OK
+2026-08-28 11:50:51,242 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:50:51,247 | INFO | openai._base_client | Retrying request to /embeddings in 0.963235 seconds
+2026-08-28 11:50:52,488 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:50:52,489 | WARNING | ChunkingPipeline | Embedding generation skipped for Metro_SAP_CALM_Proposal.pptx: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — chunks saved without embeddings, call /embed-chunks to backfill
+2026-08-28 11:50:52,490 | INFO | ChunkingPipeline | Produced 8 chunks from Metro_SAP_CALM_Proposal.pptx (keywords via LLM batch (20/call))
+2026-08-28 11:50:52,493 | INFO | ChunkingPipeline | Saved 0 chunks to C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\uploads\47106ab4\chunks.json
+2026-08-28 11:50:52,501 | INFO | ChunkingPipeline | Saved 8 chunks to C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\uploads\47106ab4\chunks.json
+INFO:     127.0.0.1:51703 - "GET /api/projects/47106ab4/files HTTP/1.1" 200 OK
+2026-08-28 11:51:14,168 | INFO | app.image_extractor | Extracted 60 images from pptx Metro_SAP_CALM_Proposal.pptx
+2026-08-28 11:51:14,168 | INFO | app.image_extractor | Deduped 60 \u2192 59 images from Metro_SAP_CALM_Proposal.pptx before vision
+2026-08-28 11:51:17,632 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:51:17,633 | INFO | openai._base_client | Retrying request to /chat/completions in 0.411526 seconds
+2026-08-28 11:51:20,245 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:51:20,245 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\c955075ab39d.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-28 11:51:21,043 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:51:21,044 | INFO | openai._base_client | Retrying request to /chat/completions in 0.426095 seconds
+2026-08-28 11:51:22,147 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:51:22,148 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\d8884093f499.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-28 11:51:22,969 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:51:22,970 | INFO | openai._base_client | Retrying request to /chat/completions in 0.436865 seconds
+2026-08-28 11:51:23,966 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:51:23,967 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\6b34b4fc95c9.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-28 11:51:24,607 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:51:24,608 | INFO | openai._base_client | Retrying request to /chat/completions in 0.451336 seconds
+2026-08-28 11:51:25,836 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:51:25,837 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\876a0b21fad4.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-28 11:51:26,346 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:51:26,350 | INFO | openai._base_client | Retrying request to /chat/completions in 0.468664 seconds
+2026-08-28 11:51:27,264 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:51:27,266 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\e6979888b94e.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-28 11:51:27,266 | ERROR | app.image_extractor | Vision circuit breaker tripped after 5 consecutive failures — skipping vision for remaining images in this run.
+2026-08-28 11:51:27,267 | INFO | app.image_extractor | Extracted 59 images from Metro_SAP_CALM_Proposal.pptx
+2026-08-28 11:51:27,402 | INFO | app.image_extractor | Appended 0 new images to image_chunks.json (total: 3717)
+2026-08-28 11:51:27,408 | INFO | ProjectRoutes | Image extraction complete for a97e58e6: 59 found, 0 new
+2026-08-28 11:51:27,914 | INFO | SlideRenderer | Slide picker: 6 slide(s) look like diagrams in Metro_SAP_CALM_Proposal.pptx -> [3, 4, 5, 6, 7, 8]
+INFO:     127.0.0.1:49940 - "GET /sow-templates?project_id=47106ab4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49940 - "GET /api/sow-templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54784 - "GET /api/sow-templates/resolve/47106ab4 HTTP/1.1" 200 OK
+2026-08-28 11:51:33,251 | INFO | SOWTemplateRoutes | Applied SOW template 17c3837e (Bristlecone SOW Master Template) to project 47106ab4 — 58 sections
+INFO:     127.0.0.1:54784 - "POST /api/sow-templates/17c3837e/apply/47106ab4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54784 - "GET /sow-workflow?project_id=47106ab4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54784 - "GET /api/sow/sections?project_id=47106ab4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54784 - "GET /api/sow/sections/attachments?project_id=47106ab4 HTTP/1.1" 200 OK
+2026-08-28 11:51:40,076 | INFO | SlideRenderer | Rendered 6 slide(s) from Metro_SAP_CALM_Proposal.pptx
+2026-08-28 11:51:41,197 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:51:41,198 | INFO | openai._base_client | Retrying request to /chat/completions in 0.462386 seconds
+2026-08-28 11:51:42,301 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:51:42,315 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\499576837090.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-28 11:51:43,860 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:51:43,861 | INFO | openai._base_client | Retrying request to /chat/completions in 0.497794 seconds
+2026-08-28 11:51:44,985 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:51:45,002 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\410e29befe04.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-28 11:51:45,517 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:51:45,518 | INFO | openai._base_client | Retrying request to /chat/completions in 0.433557 seconds
+2026-08-28 11:51:46,508 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:51:46,509 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\055a5f5a9b18.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-28 11:51:47,135 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:51:47,135 | INFO | openai._base_client | Retrying request to /chat/completions in 0.416665 seconds
+2026-08-28 11:51:48,158 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:51:48,159 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\57aeb9cf761c.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-28 11:51:48,676 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:51:48,677 | INFO | openai._base_client | Retrying request to /chat/completions in 0.425177 seconds
+2026-08-28 11:51:49,693 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-08-28 11:51:49,695 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\70df01b38c53.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-08-28 11:51:49,695 | ERROR | app.image_extractor | Vision circuit breaker tripped after 5 consecutive failures — skipping vision for remaining images in this run.
+2026-08-28 11:51:49,903 | INFO | app.image_extractor | Appended 0 new images to image_chunks.json (total: 3717)
+2026-08-28 11:51:50,419 | INFO | app.image_index | Loaded 3717 images from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-08-28 11:51:50,481 | INFO | app.image_index | Image index reloaded: 3717 records
+2026-08-28 11:51:50,481 | INFO | SlideRenderer | Whole-slide rendering for Metro_SAP_CALM_Proposal.pptx: 6 rendered, 0 newly indexed
+2026-08-28 11:51:50,482 | INFO | ProjectRoutes | Whole-slide rendering for a97e58e6: 6 rendered, 0 indexed
+2026-08-28 11:51:50,533 | INFO | ProjectRoutes | Vision retry: 5 image(s) from Metro_SAP_CALM_Proposal.pptx still need analysis — running now.
+2026-08-28 11:51:51,059 | INFO | app.image_index | Loaded 3717 images from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-08-28 11:51:51,098 | INFO | app.image_index | Image index reloaded: 3717 records
+2026-08-28 11:51:51,098 | INFO | ProjectRoutes | Image index reloaded after upload: 3717 records
+2026-08-28 11:51:51,103 | INFO | ProjectRoutes | Chunking complete for a97e58e6 — 8 chunks (project total: 8)
+2026-08-28 11:52:28,177 | INFO | azure.identity._credentials.environment | No environment configuration found.
+2026-08-28 11:52:28,204 | INFO | azure.identity._credentials.managed_identity | ManagedIdentityCredential will use IMDS
+2026-08-28 11:52:28,207 | WARNING | app.claude_provider | claude_provider(azure): SSL verification DISABLED (AZURE_SSL_VERIFY=false).
+2026-08-28 11:52:28,208 | INFO | app.claude_provider | claude_provider: using Azure OpenAI deployment gpt-5.4 at https://ai-adoption-coe.services.ai.azure.com (timeout=300.0s, max_retries=0)
+2026-08-28 11:52:28,211 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED'
+Request method: 'GET'
+Request headers:
+    'User-Agent': 'azsdk-python-identity/1.25.3 Python/3.14.6 (Windows-11-10.0.26200-SP0)'
+No body was attached to the request
+2026-08-28 11:52:30,112 | INFO | azure.identity._credentials.chained | DefaultAzureCredential acquired a token from AzureCliCredential
+2026-08-28 11:52:43,158 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-28 11:52:43,216 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=4340 budget=2000 effort=none
+2026-08-28 11:52:43,219 | INFO | SOWKeyFacts | Key facts extracted for 47106ab4: 12 field(s) populated (assumptions, client_name, duration, effective_start_date, end_date, go_live_date, in_scope, key_milestones, notable_dates, out_of_scope, project_name, scope_summary)
+2026-08-28 11:52:45,813 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-28 11:52:45,814 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=286 budget=500 effort=none
+2026-08-28 11:52:45,815 | INFO | app.image_injection | Image relevance check for 'Cover Page': 5 candidate(s) -> 0 kept
+2026-08-28 11:52:49,311 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-28 11:52:49,313 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=321 budget=1100 effort=none
+INFO:     127.0.0.1:60060 - "POST /api/sow/sections/0/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60060 - "GET /api/sow/sections?project_id=47106ab4 HTTP/1.1" 200 OK
+2026-08-28 11:52:55,151 | INFO | SOWSectionRoutes | Approved SOW section 0 (family: ['0']) for project 47106ab4
+INFO:     127.0.0.1:52892 - "POST /api/sow/sections/0/approve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52892 - "GET /api/sow/sections?project_id=47106ab4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52892 - "GET /api/sow/sections/attachments?project_id=47106ab4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52892 - "GET /api/sow/sections/0/preview?project_id=47106ab4 HTTP/1.1" 200 OK
+2026-08-28 11:53:15,157 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-28 11:53:15,160 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=641 budget=1100 effort=none
+INFO:     127.0.0.1:58084 - "POST /api/sow/sections/1/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58084 - "GET /api/sow/sections?project_id=47106ab4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57527 - "GET /api/sow/sections/1/preview?project_id=47106ab4 HTTP/1.1" 200 OK
+2026-08-28 13:50:21,052 | INFO | azure.identity._internal.decorators | AzureCliCredential.get_token_info succeeded
+2026-08-28 13:50:21,053 | INFO | azure.identity._credentials.default | DefaultAzureCredential acquired a token from AzureCliCredential
+2026-08-28 13:50:25,228 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-28 13:50:25,233 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=307 budget=500 effort=none
+2026-08-28 13:50:25,233 | INFO | app.image_injection | Image relevance check for 'Project Overview': 5 candidate(s) -> 1 kept
+2026-08-28 13:50:34,520 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-28 13:50:34,521 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=2543 budget=2100 effort=none
+INFO:     127.0.0.1:50772 - "POST /api/sow/sections/3/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50772 - "GET /api/sow/sections?project_id=47106ab4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52207 - "GET /api/sow/sections/3/preview?project_id=47106ab4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52207 - "GET /api/sow/images/bc2c9706ab7b HTTP/1.1" 200 OK
+2026-08-28 13:51:02,496 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-28 13:51:02,497 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=100 budget=500 effort=none
+2026-08-28 13:51:02,498 | INFO | app.image_injection | Image relevance check for 'Scope of Work': 1 candidate(s) -> 1 kept
+2026-08-28 13:51:18,791 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-28 13:51:18,793 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=5496 budget=3200 effort=none
+INFO:     127.0.0.1:52190 - "POST /api/sow/sections/4/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52190 - "GET /api/sow/sections?project_id=47106ab4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60320 - "GET /api/sow/sections/3/preview?project_id=47106ab4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58644 - "GET /api/sow/sections/4/preview?project_id=47106ab4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58644 - "GET /api/sow/images/410e29befe04 HTTP/1.1" 200 OK
+2026-08-28 13:52:23,074 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-28 13:52:23,076 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=306 budget=500 effort=none
+2026-08-28 13:52:23,076 | INFO | app.image_injection | Image relevance check for 'Project Overview': 5 candidate(s) -> 1 kept
+2026-08-28 13:52:33,515 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-08-28 13:52:33,519 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=3020 budget=2100 effort=none
+INFO:     127.0.0.1:52648 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51716 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60693 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60693 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55348 - "POST /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55348 - "GET /choose HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55348 - "GET /sow-hub HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55348 - "GET /sow-projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55348 - "GET /api/projects?workflow=sow HTTP/1.1" 200 OK
+2026-09-07 16:55:31,157 | INFO | ProjectRoutes | Deleted project 47106ab4 (CALM) — 1 files removed, folder_removed=True
+INFO:     127.0.0.1:54348 - "DELETE /api/projects/47106ab4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54348 - "GET /api/projects?workflow=sow HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60672 - "GET /api/projects?workflow=sow HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60739 - "GET /api/projects?workflow=sow HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49671 - "GET /api/projects?workflow=sow HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62590 - "GET /api/projects?workflow=sow HTTP/1.1" 200 OK
+2026-09-07 16:58:52,767 | INFO | ProjectRoutes | Created project 1ec13466: CALM
+INFO:     127.0.0.1:63423 - "POST /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63423 - "GET /sow-upload?project_id=1ec13466 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63423 - "GET /static/chat_widget.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:63423 - "GET /api/projects/1ec13466/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63423 - "GET /api/projects/1ec13466/repositories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63423 - "GET /api/repositories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63423 - "GET /api/chat/scopes?project_id=1ec13466 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51648 - "GET /sow-projects HTTP/1.1" 200 OK
+2026-09-07 18:19:07,018 | INFO | ProjectRoutes | Created project be2e228a: calm
+INFO:     127.0.0.1:57993 - "POST /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57993 - "GET /sow-upload?project_id=be2e228a HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57993 - "GET /api/projects/be2e228a/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57823 - "GET /api/projects/be2e228a/repositories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57823 - "GET /api/chat/scopes?project_id=be2e228a HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57993 - "GET /api/repositories HTTP/1.1" 200 OK
+2026-09-07 18:19:14,016 | INFO | ProjectRoutes | Ingested Metro_SAP_CALM_Proposal.pptx \u2192 be2e228a (source, 15359875 bytes)
+2026-09-07 18:19:14,019 | INFO | ProjectRoutes | Chunking started in background for 080af98b
+INFO:     127.0.0.1:59148 - "POST /api/upload HTTP/1.1" 200 OK
+2026-09-07 18:19:14,027 | INFO | ChunkingPipeline | Processing Metro_SAP_CALM_Proposal.pptx (project=be2e228a, file=080af98b)
+2026-09-07 18:19:15,256 | INFO | ChunkingPipeline | PPTX Metro_SAP_CALM_Proposal.pptx: 8 slides, 0 image(s) described
+INFO:     127.0.0.1:59148 - "GET /api/projects/be2e228a/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59148 - "GET /api/projects/be2e228a/files HTTP/1.1" 200 OK
+2026-09-07 18:19:22,511 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:19:22,514 | INFO | openai._base_client | Retrying request to /chat/completions in 0.474031 seconds
+INFO:     127.0.0.1:59148 - "GET /api/projects/be2e228a/files HTTP/1.1" 200 OK
+2026-09-07 18:19:25,457 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:19:25,478 | WARNING | ChunkingPipeline | Batch LLM keyword extraction failed: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — falling back to local
+2026-09-07 18:19:25,523 | INFO | ChunkingPipeline | Generating embeddings for 8 chunks from Metro_SAP_CALM_Proposal.pptx …
+INFO:     127.0.0.1:59148 - "GET /api/projects/be2e228a/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59148 - "GET /api/projects/be2e228a/files HTTP/1.1" 200 OK
+2026-09-07 18:19:30,959 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:19:30,959 | INFO | openai._base_client | Retrying request to /embeddings in 0.407807 seconds
+INFO:     127.0.0.1:59148 - "GET /api/projects/be2e228a/files HTTP/1.1" 200 OK
+2026-09-07 18:19:32,490 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:19:32,490 | INFO | openai._base_client | Retrying request to /embeddings in 0.928762 seconds
+2026-09-07 18:19:33,671 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:19:33,672 | WARNING | ChunkingPipeline | Embedding generation skipped for Metro_SAP_CALM_Proposal.pptx: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — chunks saved without embeddings, call /embed-chunks to backfill
+2026-09-07 18:19:33,672 | INFO | ChunkingPipeline | Produced 8 chunks from Metro_SAP_CALM_Proposal.pptx (keywords via LLM batch (20/call))
+2026-09-07 18:19:33,693 | INFO | ChunkingPipeline | Saved 0 chunks to C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\uploads\be2e228a\chunks.json
+2026-09-07 18:19:33,696 | INFO | ChunkingPipeline | Saved 8 chunks to C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\uploads\be2e228a\chunks.json
+INFO:     127.0.0.1:59148 - "GET /api/projects/be2e228a/files HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59148 - "GET /sow-templates?project_id=be2e228a HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57606 - "GET /api/sow-templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59148 - "GET /api/sow-templates/resolve/be2e228a HTTP/1.1" 200 OK
+2026-09-07 18:19:42,094 | INFO | SOWTemplateRoutes | Applied SOW template 17c3837e (Bristlecone SOW Master Template) to project be2e228a — 58 sections
+INFO:     127.0.0.1:59148 - "POST /api/sow-templates/17c3837e/apply/be2e228a HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59148 - "GET /sow-workflow?project_id=be2e228a HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59148 - "GET /api/sow/sections?project_id=be2e228a HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59148 - "GET /api/sow/sections/attachments?project_id=be2e228a HTTP/1.1" 200 OK
+2026-09-07 18:19:47,795 | WARNING | azure.identity._internal.decorators | AzureCliCredential.get_token_info failed: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:19:47,798 | WARNING | app.claude_provider | claude_provider(azure): API error: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:19:47,801 | WARNING | SOWKeyFacts | Key-fact extraction LLM call failed for be2e228a: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:19:49,658 | WARNING | azure.identity._internal.decorators | AzureCliCredential.get_token_info failed: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:19:49,659 | WARNING | app.claude_provider | claude_provider(azure): API error: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:19:49,659 | WARNING | app.image_injection | Image relevance verification failed (ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+) — dropping all candidates
+2026-09-07 18:19:51,548 | WARNING | azure.identity._internal.decorators | AzureCliCredential.get_token_info failed: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:19:51,548 | WARNING | app.claude_provider | claude_provider(azure): API error: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:19:51,571 | ERROR | BRDConvoAPI | Unhandled error on POST /api/sow/sections/0/generate
+Traceback (most recent call last):
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 281, in _run_command
+    return subprocess.check_output(args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 473, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "C:\Users\Suraj.mm1\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['C:\\azcli-venv\\Scripts\\az.BAT', 'account', 'get-access-token', '--output', 'json', '--resource', 'https://cognitiveservices.azure.com']' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\main.py", line 156, in require_session_on_api
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\main.py", line 96, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\sow_section_routes.py", line 1012, in generate_sow_section
+    output = completion_from_prompt(
+        prompt,
+    ...<3 lines>...
+        max_output_cap=max_tokens,
+    )
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\claude_provider.py", line 392, in completion_from_prompt
+    return _azure_completion(prompt, max_tokens, max_retries,
+                             reasoning_effort=reasoning_effort,
+                             max_output_cap=max_output_cap,
+                             system_prompt=system_prompt)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\claude_provider.py", line 258, in _azure_completion
+    response = _create(use_effort, cur_prompt, effective_tokens)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\claude_provider.py", line 248, in _create
+    return client.chat.completions.create(**kw)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1281, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<53 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\_base_client.py", line 1019, in request
+    options = self._prepare_options(options)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\lib\azure.py", line 380, in _prepare_options
+    azure_ad_token = self._get_azure_ad_token()
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\lib\azure.py", line 345, in _get_azure_ad_token
+    token = provider()
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_bearer_token_provider.py", line 43, in wrapper
+    policy.on_request(request)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\core\pipeline\policies\_authentication.py", line 167, in on_request
+    self._request_token(*self._scopes)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\core\pipeline\policies\_authentication.py", line 142, in _request_token
+    self._token = self._get_token(*scopes, **kwargs)
+                  ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\core\pipeline\policies\_authentication.py", line 132, in _get_token
+    return cast(SupportsTokenInfo, self._credential).get_token_info(*scopes, options=options)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\default.py", line 368, in get_token_info
+    token_info = cast(SupportsTokenInfo, self._successful_credential).get_token_info(*scopes, options=options)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_internal\decorators.py", line 23, in wrapper
+    token = fn(*args, **kwargs)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 153, in get_token_info
+    return self._get_token_base(*scopes, options=options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 191, in _get_token_base
+    output = _run_command(command_args, self._process_timeout)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 299, in _run_command
+    raise ClientAuthenticationError(message=message) from ex
+azure.core.exceptions.ClientAuthenticationError: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+INFO:     127.0.0.1:59148 - "POST /api/sow/sections/0/generate HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 281, in _run_command
+    return subprocess.check_output(args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 473, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "C:\Users\Suraj.mm1\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['C:\\azcli-venv\\Scripts\\az.BAT', 'account', 'get-access-token', '--output', 'json', '--resource', 'https://cognitiveservices.azure.com']' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 422, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\main.py", line 156, in require_session_on_api
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\main.py", line 96, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\sow_section_routes.py", line 1012, in generate_sow_section
+    output = completion_from_prompt(
+        prompt,
+    ...<3 lines>...
+        max_output_cap=max_tokens,
+    )
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\claude_provider.py", line 392, in completion_from_prompt
+    return _azure_completion(prompt, max_tokens, max_retries,
+                             reasoning_effort=reasoning_effort,
+                             max_output_cap=max_output_cap,
+                             system_prompt=system_prompt)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\claude_provider.py", line 258, in _azure_completion
+    response = _create(use_effort, cur_prompt, effective_tokens)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\claude_provider.py", line 248, in _create
+    return client.chat.completions.create(**kw)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1281, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<53 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\_base_client.py", line 1019, in request
+    options = self._prepare_options(options)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\lib\azure.py", line 380, in _prepare_options
+    azure_ad_token = self._get_azure_ad_token()
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\lib\azure.py", line 345, in _get_azure_ad_token
+    token = provider()
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_bearer_token_provider.py", line 43, in wrapper
+    policy.on_request(request)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\core\pipeline\policies\_authentication.py", line 167, in on_request
+    self._request_token(*self._scopes)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\core\pipeline\policies\_authentication.py", line 142, in _request_token
+    self._token = self._get_token(*scopes, **kwargs)
+                  ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\core\pipeline\policies\_authentication.py", line 132, in _get_token
+    return cast(SupportsTokenInfo, self._credential).get_token_info(*scopes, options=options)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\default.py", line 368, in get_token_info
+    token_info = cast(SupportsTokenInfo, self._successful_credential).get_token_info(*scopes, options=options)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_internal\decorators.py", line 23, in wrapper
+    token = fn(*args, **kwargs)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 153, in get_token_info
+    return self._get_token_base(*scopes, options=options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 191, in _get_token_base
+    output = _run_command(command_args, self._process_timeout)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 299, in _run_command
+    raise ClientAuthenticationError(message=message) from ex
+azure.core.exceptions.ClientAuthenticationError: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:19:54,799 | INFO | app.image_extractor | Extracted 60 images from pptx Metro_SAP_CALM_Proposal.pptx
+2026-09-07 18:19:54,799 | INFO | app.image_extractor | Deduped 60 \u2192 59 images from Metro_SAP_CALM_Proposal.pptx before vision
+2026-09-07 18:19:55,838 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:19:55,839 | INFO | openai._base_client | Retrying request to /chat/completions in 0.486856 seconds
+2026-09-07 18:19:57,465 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:19:57,465 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\c955075ab39d.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-07 18:19:57,860 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:19:57,860 | INFO | openai._base_client | Retrying request to /chat/completions in 0.437568 seconds
+2026-09-07 18:19:58,650 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:19:58,651 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\d8884093f499.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-07 18:19:58,968 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:19:58,968 | INFO | openai._base_client | Retrying request to /chat/completions in 0.474234 seconds
+2026-09-07 18:20:01,329 | WARNING | azure.identity._internal.decorators | AzureCliCredential.get_token_info failed: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:20:01,329 | WARNING | app.claude_provider | claude_provider(azure): API error: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:20:01,329 | WARNING | SOWKeyFacts | Key-fact extraction LLM call failed for be2e228a: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:20:02,251 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:20:02,251 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\6b34b4fc95c9.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-07 18:20:02,633 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:20:02,633 | INFO | openai._base_client | Retrying request to /chat/completions in 0.468966 seconds
+2026-09-07 18:20:03,130 | WARNING | azure.identity._internal.decorators | AzureCliCredential.get_token_info failed: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:20:03,130 | WARNING | app.claude_provider | claude_provider(azure): API error: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:20:03,131 | WARNING | app.image_injection | Image relevance verification failed (ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+) — dropping all candidates
+2026-09-07 18:20:03,981 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:20:03,981 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\876a0b21fad4.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-07 18:20:04,413 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:20:04,413 | INFO | openai._base_client | Retrying request to /chat/completions in 0.461447 seconds
+2026-09-07 18:20:04,857 | WARNING | azure.identity._internal.decorators | AzureCliCredential.get_token_info failed: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:20:04,857 | WARNING | app.claude_provider | claude_provider(azure): API error: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:20:04,858 | ERROR | BRDConvoAPI | Unhandled error on POST /api/sow/sections/0/generate
+Traceback (most recent call last):
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 281, in _run_command
+    return subprocess.check_output(args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 473, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "C:\Users\Suraj.mm1\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['C:\\azcli-venv\\Scripts\\az.BAT', 'account', 'get-access-token', '--output', 'json', '--resource', 'https://cognitiveservices.azure.com']' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\main.py", line 156, in require_session_on_api
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\main.py", line 96, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\sow_section_routes.py", line 1012, in generate_sow_section
+    output = completion_from_prompt(
+        prompt,
+    ...<3 lines>...
+        max_output_cap=max_tokens,
+    )
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\claude_provider.py", line 392, in completion_from_prompt
+    return _azure_completion(prompt, max_tokens, max_retries,
+                             reasoning_effort=reasoning_effort,
+                             max_output_cap=max_output_cap,
+                             system_prompt=system_prompt)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\claude_provider.py", line 258, in _azure_completion
+    response = _create(use_effort, cur_prompt, effective_tokens)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\claude_provider.py", line 248, in _create
+    return client.chat.completions.create(**kw)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1281, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<53 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\_base_client.py", line 1019, in request
+    options = self._prepare_options(options)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\lib\azure.py", line 380, in _prepare_options
+    azure_ad_token = self._get_azure_ad_token()
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\lib\azure.py", line 345, in _get_azure_ad_token
+    token = provider()
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_bearer_token_provider.py", line 43, in wrapper
+    policy.on_request(request)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\core\pipeline\policies\_authentication.py", line 167, in on_request
+    self._request_token(*self._scopes)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\core\pipeline\policies\_authentication.py", line 142, in _request_token
+    self._token = self._get_token(*scopes, **kwargs)
+                  ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\core\pipeline\policies\_authentication.py", line 132, in _get_token
+    return cast(SupportsTokenInfo, self._credential).get_token_info(*scopes, options=options)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\default.py", line 368, in get_token_info
+    token_info = cast(SupportsTokenInfo, self._successful_credential).get_token_info(*scopes, options=options)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_internal\decorators.py", line 23, in wrapper
+    token = fn(*args, **kwargs)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 153, in get_token_info
+    return self._get_token_base(*scopes, options=options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 191, in _get_token_base
+    output = _run_command(command_args, self._process_timeout)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 299, in _run_command
+    raise ClientAuthenticationError(message=message) from ex
+azure.core.exceptions.ClientAuthenticationError: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+INFO:     127.0.0.1:51856 - "POST /api/sow/sections/0/generate HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 281, in _run_command
+    return subprocess.check_output(args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 473, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "C:\Users\Suraj.mm1\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['C:\\azcli-venv\\Scripts\\az.BAT', 'account', 'get-access-token', '--output', 'json', '--resource', 'https://cognitiveservices.azure.com']' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 422, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\main.py", line 156, in require_session_on_api
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\main.py", line 96, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\sow_section_routes.py", line 1012, in generate_sow_section
+    output = completion_from_prompt(
+        prompt,
+    ...<3 lines>...
+        max_output_cap=max_tokens,
+    )
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\claude_provider.py", line 392, in completion_from_prompt
+    return _azure_completion(prompt, max_tokens, max_retries,
+                             reasoning_effort=reasoning_effort,
+                             max_output_cap=max_output_cap,
+                             system_prompt=system_prompt)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\claude_provider.py", line 258, in _azure_completion
+    response = _create(use_effort, cur_prompt, effective_tokens)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\claude_provider.py", line 248, in _create
+    return client.chat.completions.create(**kw)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1281, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<53 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\_base_client.py", line 1019, in request
+    options = self._prepare_options(options)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\lib\azure.py", line 380, in _prepare_options
+    azure_ad_token = self._get_azure_ad_token()
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\lib\azure.py", line 345, in _get_azure_ad_token
+    token = provider()
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_bearer_token_provider.py", line 43, in wrapper
+    policy.on_request(request)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\core\pipeline\policies\_authentication.py", line 167, in on_request
+    self._request_token(*self._scopes)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\core\pipeline\policies\_authentication.py", line 142, in _request_token
+    self._token = self._get_token(*scopes, **kwargs)
+                  ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\core\pipeline\policies\_authentication.py", line 132, in _get_token
+    return cast(SupportsTokenInfo, self._credential).get_token_info(*scopes, options=options)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\default.py", line 368, in get_token_info
+    token_info = cast(SupportsTokenInfo, self._successful_credential).get_token_info(*scopes, options=options)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_internal\decorators.py", line 23, in wrapper
+    token = fn(*args, **kwargs)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 153, in get_token_info
+    return self._get_token_base(*scopes, options=options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 191, in _get_token_base
+    output = _run_command(command_args, self._process_timeout)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 299, in _run_command
+    raise ClientAuthenticationError(message=message) from ex
+azure.core.exceptions.ClientAuthenticationError: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:20:05,236 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:20:05,236 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\e6979888b94e.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-07 18:20:05,236 | ERROR | app.image_extractor | Vision circuit breaker tripped after 5 consecutive failures — skipping vision for remaining images in this run.
+2026-09-07 18:20:05,237 | INFO | app.image_extractor | Extracted 59 images from Metro_SAP_CALM_Proposal.pptx
+2026-09-07 18:20:05,348 | INFO | app.image_extractor | Appended 0 new images to image_chunks.json (total: 3717)
+2026-09-07 18:20:05,352 | INFO | ProjectRoutes | Image extraction complete for 080af98b: 59 found, 0 new
+2026-09-07 18:20:05,839 | INFO | SlideRenderer | Slide picker: 6 slide(s) look like diagrams in Metro_SAP_CALM_Proposal.pptx -> [3, 4, 5, 6, 7, 8]
+2026-09-07 18:20:10,931 | INFO | SlideRenderer | Rendered 6 slide(s) from Metro_SAP_CALM_Proposal.pptx
+2026-09-07 18:20:11,685 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:20:11,685 | INFO | openai._base_client | Retrying request to /chat/completions in 0.476544 seconds
+2026-09-07 18:20:12,772 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:20:12,773 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\499576837090.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-07 18:20:13,170 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:20:13,171 | INFO | openai._base_client | Retrying request to /chat/completions in 0.402333 seconds
+2026-09-07 18:20:13,957 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:20:13,958 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\410e29befe04.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-07 18:20:14,333 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:20:14,334 | INFO | openai._base_client | Retrying request to /chat/completions in 0.435958 seconds
+2026-09-07 18:20:15,097 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:20:15,097 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\055a5f5a9b18.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-07 18:20:15,478 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:20:15,479 | INFO | openai._base_client | Retrying request to /chat/completions in 0.447971 seconds
+2026-09-07 18:20:16,375 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:20:16,376 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\57aeb9cf761c.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-07 18:20:16,775 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:20:16,776 | INFO | openai._base_client | Retrying request to /chat/completions in 0.389015 seconds
+2026-09-07 18:20:17,626 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-07 18:20:17,627 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\70df01b38c53.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-07 18:20:17,627 | ERROR | app.image_extractor | Vision circuit breaker tripped after 5 consecutive failures — skipping vision for remaining images in this run.
+2026-09-07 18:20:17,850 | INFO | app.image_extractor | Appended 0 new images to image_chunks.json (total: 3717)
+2026-09-07 18:20:20,301 | INFO | app.image_index | Loaded 3717 images from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-09-07 18:20:20,339 | INFO | app.image_index | Image index reloaded: 3717 records
+2026-09-07 18:20:20,339 | INFO | SlideRenderer | Whole-slide rendering for Metro_SAP_CALM_Proposal.pptx: 6 rendered, 0 newly indexed
+2026-09-07 18:20:20,340 | INFO | ProjectRoutes | Whole-slide rendering for 080af98b: 6 rendered, 0 indexed
+2026-09-07 18:20:20,400 | INFO | ProjectRoutes | Vision retry: 5 image(s) from Metro_SAP_CALM_Proposal.pptx still need analysis — running now.
+2026-09-07 18:20:20,920 | INFO | app.image_index | Loaded 3717 images from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-09-07 18:20:20,955 | INFO | app.image_index | Image index reloaded: 3717 records
+2026-09-07 18:20:20,955 | INFO | ProjectRoutes | Image index reloaded after upload: 3717 records
+2026-09-07 18:20:20,958 | INFO | ProjectRoutes | Chunking complete for 080af98b — 8 chunks (project total: 8)
+2026-09-07 18:20:25,015 | WARNING | azure.identity._internal.decorators | AzureCliCredential.get_token_info failed: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:20:25,016 | WARNING | app.claude_provider | claude_provider(azure): API error: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:20:25,016 | WARNING | SOWKeyFacts | Key-fact extraction LLM call failed for be2e228a: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:20:26,853 | WARNING | azure.identity._internal.decorators | AzureCliCredential.get_token_info failed: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:20:26,854 | WARNING | app.claude_provider | claude_provider(azure): API error: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:20:26,854 | WARNING | app.image_injection | Image relevance verification failed (ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+) — dropping all candidates
+2026-09-07 18:20:28,640 | WARNING | azure.identity._internal.decorators | AzureCliCredential.get_token_info failed: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:20:28,640 | WARNING | app.claude_provider | claude_provider(azure): API error: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+2026-09-07 18:20:28,641 | ERROR | BRDConvoAPI | Unhandled error on POST /api/sow/sections/0/generate
+Traceback (most recent call last):
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 281, in _run_command
+    return subprocess.check_output(args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 473, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "C:\Users\Suraj.mm1\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['C:\\azcli-venv\\Scripts\\az.BAT', 'account', 'get-access-token', '--output', 'json', '--resource', 'https://cognitiveservices.azure.com']' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\main.py", line 156, in require_session_on_api
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\main.py", line 96, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\sow_section_routes.py", line 1012, in generate_sow_section
+    output = completion_from_prompt(
+        prompt,
+    ...<3 lines>...
+        max_output_cap=max_tokens,
+    )
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\claude_provider.py", line 392, in completion_from_prompt
+    return _azure_completion(prompt, max_tokens, max_retries,
+                             reasoning_effort=reasoning_effort,
+                             max_output_cap=max_output_cap,
+                             system_prompt=system_prompt)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\claude_provider.py", line 258, in _azure_completion
+    response = _create(use_effort, cur_prompt, effective_tokens)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\claude_provider.py", line 248, in _create
+    return client.chat.completions.create(**kw)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1281, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<53 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\_base_client.py", line 1019, in request
+    options = self._prepare_options(options)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\lib\azure.py", line 380, in _prepare_options
+    azure_ad_token = self._get_azure_ad_token()
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\lib\azure.py", line 345, in _get_azure_ad_token
+    token = provider()
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_bearer_token_provider.py", line 43, in wrapper
+    policy.on_request(request)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\core\pipeline\policies\_authentication.py", line 167, in on_request
+    self._request_token(*self._scopes)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\core\pipeline\policies\_authentication.py", line 142, in _request_token
+    self._token = self._get_token(*scopes, **kwargs)
+                  ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\core\pipeline\policies\_authentication.py", line 132, in _get_token
+    return cast(SupportsTokenInfo, self._credential).get_token_info(*scopes, options=options)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\default.py", line 368, in get_token_info
+    token_info = cast(SupportsTokenInfo, self._successful_credential).get_token_info(*scopes, options=options)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_internal\decorators.py", line 23, in wrapper
+    token = fn(*args, **kwargs)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 153, in get_token_info
+    return self._get_token_base(*scopes, options=options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 191, in _get_token_base
+    output = _run_command(command_args, self._process_timeout)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 299, in _run_command
+    raise ClientAuthenticationError(message=message) from ex
+azure.core.exceptions.ClientAuthenticationError: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+
+INFO:     127.0.0.1:61658 - "POST /api/sow/sections/0/generate HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 281, in _run_command
+    return subprocess.check_output(args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 473, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "C:\Users\Suraj.mm1\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['C:\\azcli-venv\\Scripts\\az.BAT', 'account', 'get-access-token', '--output', 'json', '--resource', 'https://cognitiveservices.azure.com']' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 422, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\main.py", line 156, in require_session_on_api
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\main.py", line 96, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\sow_section_routes.py", line 1012, in generate_sow_section
+    output = completion_from_prompt(
+        prompt,
+    ...<3 lines>...
+        max_output_cap=max_tokens,
+    )
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\claude_provider.py", line 392, in completion_from_prompt
+    return _azure_completion(prompt, max_tokens, max_retries,
+                             reasoning_effort=reasoning_effort,
+                             max_output_cap=max_output_cap,
+                             system_prompt=system_prompt)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\claude_provider.py", line 258, in _azure_completion
+    response = _create(use_effort, cur_prompt, effective_tokens)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\claude_provider.py", line 248, in _create
+    return client.chat.completions.create(**kw)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1281, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<53 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\_base_client.py", line 1019, in request
+    options = self._prepare_options(options)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\lib\azure.py", line 380, in _prepare_options
+    azure_ad_token = self._get_azure_ad_token()
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\openai\lib\azure.py", line 345, in _get_azure_ad_token
+    token = provider()
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_bearer_token_provider.py", line 43, in wrapper
+    policy.on_request(request)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\core\pipeline\policies\_authentication.py", line 167, in on_request
+    self._request_token(*self._scopes)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\core\pipeline\policies\_authentication.py", line 142, in _request_token
+    self._token = self._get_token(*scopes, **kwargs)
+                  ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\core\pipeline\policies\_authentication.py", line 132, in _get_token
+    return cast(SupportsTokenInfo, self._credential).get_token_info(*scopes, options=options)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\default.py", line 368, in get_token_info
+    token_info = cast(SupportsTokenInfo, self._successful_credential).get_token_info(*scopes, options=options)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_internal\decorators.py", line 23, in wrapper
+    token = fn(*args, **kwargs)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 153, in get_token_info
+    return self._get_token_base(*scopes, options=options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 191, in _get_token_base
+    output = _run_command(command_args, self._process_timeout)
+  File "C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\venv\Lib\site-packages\azure\identity\_credentials\azure_cli.py", line 299, in _run_command
+    raise ClientAuthenticationError(message=message) from ex
+azure.core.exceptions.ClientAuthenticationError: ERROR: AADSTS50078: Presented multi-factor authentication has expired due to policies configured by your administrator, you must refresh your multi-factor authentication to access '7d312290-28c8-473c-a0ed-8e53749b6d6d'. Trace ID: 02c12ecd-966f-4839-9fdf-fe8861e75f00 Correlation ID: 26984bd7-8fab-40a4-8b07-92cb0c7048cb Timestamp: 2026-09-07 12:49:46Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "0876713d-a522-4b15-a887-3e9dacb1c635" --scope "https://cognitiveservices.azure.com/.default"
+

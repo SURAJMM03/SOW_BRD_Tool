@@ -1,0 +1,134 @@
+{
+  "fingerprint": "5d5e3b8315fb4d3b",
+  "facts": {
+    "client_name": "metro",
+    "project_name": "SAP CLOUD ALM Technical Monitoring Change Request Management",
+    "effective_start_date": "January 2026",
+    "end_date": "October 2026",
+    "duration": "10 months (January 2026 to October 2026, derived from timeline including hypercare transition)",
+    "go_live_date": "September 2026",
+    "key_milestones": [
+      {
+        "name": "Pre-Project",
+        "date": "January 2026"
+      },
+      {
+        "name": "Prepare",
+        "date": "February-April 2026"
+      },
+      {
+        "name": "Explore",
+        "date": "May 2026"
+      },
+      {
+        "name": "Realize",
+        "date": "June-September 2026"
+      },
+      {
+        "name": "Deploy",
+        "date": "September 2026"
+      },
+      {
+        "name": "Hypercare",
+        "date": "October 2026"
+      },
+      {
+        "name": "Discover + Prepare",
+        "date": "2 weeks"
+      },
+      {
+        "name": "Explore & Design",
+        "date": "2 weeks"
+      },
+      {
+        "name": "Realize (Technical Monitoring)",
+        "date": "4 weeks"
+      },
+      {
+        "name": "Realize (ChaRM)",
+        "date": "4 weeks"
+      },
+      {
+        "name": "Deploy + Hypercare",
+        "date": "1 month"
+      }
+    ],
+    "scope_summary": "Implementation of SAP Cloud ALM for Technical Monitoring and Change Request Management aligned with the S/4 RISE migration plan. Scope includes Cloud ALM tenant setup, standard change management, monitoring and alerting use cases, dashboards, and transition to the METRO team.",
+    "in_scope": [
+      "SAP Cloud ALM",
+      "SAP Cloud ALM Tenant Subaccount",
+      "SAP Cloud ALM Standard Change Management",
+      "Technical Monitoring",
+      "Change Request Management (ChaRM)",
+      "SAP Integration Suite",
+      "SAP Landscape management, Data flow configuration to CALM",
+      "System Health Monitoring",
+      "Application Monitoring",
+      "Job Monitoring",
+      "User Performance Monitoring in S/4HANA",
+      "Integration Monitoring (S/4 | Integration Suite)",
+      "Notification and Alert Management",
+      "User Management in SAP Cloud ALM Tenant",
+      "Dashboards",
+      "Standard Health Monitoring dashboard",
+      "Change Management Dashboard",
+      "S/4",
+      "BTP",
+      "Datasphere",
+      "Ariba",
+      "Production Integration in ChaRM & Operations Use cases",
+      "Dev + QA ChaRM Configuration E2E Test Cycle",
+      "Tech Monitoring Config for Non-Prod systems + Alert and Notifications"
+    ],
+    "assumptions": [
+      "SAP Cloud ALM subscription",
+      "Technical Team onboarding",
+      "Identification of customer landscape: SAP S/4HANA Cloud, BTP apps, MII",
+      "Integration technologies used (CPI, Integration Suite)",
+      "User/Role matrix for Cloud ALM",
+      "Finalized monitoring use cases",
+      "Train the Trainer workshop plan & readiness",
+      "Key roles personas mapping for authorization testing",
+      "Current Project Team Support/Alignment",
+      "Successful go live of all the landscapes",
+      "Cutover readiness for transport migration",
+      "Transition Plan & stakeholders",
+      "METRO Team alignment for Transition",
+      "Oprerequistie Configurations - Readiness"
+    ],
+    "notable_dates": [
+      {
+        "date": "Feb 2026",
+        "what_it_refers_to": "Proposal date on title slide"
+      },
+      {
+        "date": "March-April 2026",
+        "what_it_refers_to": "Prepare phase timing in CALM implementation timeline"
+      },
+      {
+        "date": "May 2026",
+        "what_it_refers_to": "Explore phase timing in CALM implementation timeline"
+      },
+      {
+        "date": "June 2026",
+        "what_it_refers_to": "Realize phase start in CALM implementation timeline"
+      },
+      {
+        "date": "September 2026",
+        "what_it_refers_to": "Deploy / production timing and realization end in CALM implementation timeline"
+      },
+      {
+        "date": "October 2026",
+        "what_it_refers_to": "Hypercare Transition Plan & KT"
+      },
+      {
+        "date": "Sept 26-Oct 26",
+        "what_it_refers_to": "Sandbox to Production / Hypercare transition window shown on alignment timeline"
+      },
+      {
+        "date": "Mainstream ends 2027",
+        "what_it_refers_to": "Solution Manager 7.2 mainstream end"
+      }
+    ]
+  }
+}

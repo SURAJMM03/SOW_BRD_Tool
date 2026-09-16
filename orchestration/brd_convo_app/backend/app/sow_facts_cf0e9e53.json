@@ -1,0 +1,173 @@
+{
+  "fingerprint": "50f4fd3bec179e0a",
+  "facts": {
+    "client_name": "Alcon",
+    "project_name": "ALCON SAP ECC 6.0 Ehp6 to SAP S/4HANA 2025 On-Premise Upgrade",
+    "effective_start_date": "June 2026",
+    "end_date": "March 2028 (derived from Feb 2028 go-live + 1-month hypercare)",
+    "duration": "21 months (derived from 20 months of Technical Conversion + 1 month of Hypercare)",
+    "go_live_date": "February 2028",
+    "key_milestones": [
+      {
+        "name": "Month zero pre planning activities",
+        "date": null
+      },
+      {
+        "name": "June 2026 kickoff",
+        "date": "June 2026"
+      },
+      {
+        "name": "ETA - SBX",
+        "date": "Sep-26"
+      },
+      {
+        "name": "ETA - DEV",
+        "date": "Nov-26"
+      },
+      {
+        "name": "ETA - QAS",
+        "date": "Feb-27"
+      },
+      {
+        "name": "Mock Conversion 1",
+        "date": "Apr-27"
+      },
+      {
+        "name": "Mock Conversion 2",
+        "date": "Jun-27"
+      },
+      {
+        "name": "Mock Conversion 3",
+        "date": "Jul-27"
+      },
+      {
+        "name": "Technical Load Verification 1",
+        "date": "Aug-27"
+      },
+      {
+        "name": "Technical Load Verification 2",
+        "date": "Oct-27"
+      },
+      {
+        "name": "Dress Rehearsal",
+        "date": "Nov-27"
+      },
+      {
+        "name": "Production conversion / PRD",
+        "date": "Feb-28"
+      },
+      {
+        "name": "Go-Live",
+        "date": "Feb 2028"
+      },
+      {
+        "name": "Hypercare",
+        "date": "March 2028 (derived as 1 month after Feb 2028 go-live)"
+      }
+    ],
+    "delivery_locations": [
+      "On-site (USA)",
+      "USA",
+      "North America",
+      "EMEA",
+      "APAC",
+      "Fort Worth DCs"
+    ],
+    "engagement_model": "Fixed-price technical conversion",
+    "scope_summary": "Technical conversion of Alcon's SAP ECC 6.0 EHP6 landscape to SAP S/4HANA 2025 On-Premise using a no-change principle, including Oracle/AIX to HANA 2.0 on Red Hat Linux migration, downtime-optimized conversion, testing/qualification, analytics remediation, cutover, hypercare, and transition to AMS. The program covers 53 countries, 90 legal entities, and 18 manufacturing plants with a target of no more than 48 hours production downtime.",
+    "in_scope": [
+      "Conversion from SAP ECC 6.0 Ehp6 to SAP S/4HANA 2025 On-Premise Upgrade",
+      "Oracle 19c on AIX to HANA 2.0 on Red Hat Linux 9.6 platform",
+      "53 Countries, 90 Legal Entities, 18 Manufacturing Plants",
+      "Mandatory SAP Simplification items (133 No) remediation through No-Change Principle",
+      "Finance",
+      "Equipment Finance Agreements",
+      "Technical Services",
+      "MM",
+      "STRM(WM)",
+      "SD/OTI",
+      "PP",
+      "MDG",
+      "BASIS",
+      "Security",
+      "ABAP",
+      "Analytics \u2013 BW, Datasphere, SAC & BODS",
+      "SUM/DMO Downtime Optimized Conversion (DoC) with CustOnTemp",
+      "10 Conversion Cycles (2 std. & 8 mocks)",
+      "Technical Testing (Backup, DR, HA)",
+      "Development objects remediation",
+      "Update of security framework, add-ons & bolt-on",
+      "Sandbox Screening",
+      "Development screening",
+      "Formal quality test cycles",
+      "IQ",
+      "OQ",
+      "PQ",
+      "DILT/User Acceptance Testing",
+      "Change Impact Validation",
+      "Communications Plan",
+      "Support Training Delivery",
+      "User Feedback & Adoption Tracking",
+      "Project management plan & Approach",
+      "RACI matrix with shared accountability",
+      "Training Support",
+      "Governance",
+      "Change & Communication",
+      "SAP BW, Datasphere, and SAC remediation",
+      "Cutover",
+      "Hypercare support",
+      "Transition to Bristlecone AMS team"
+    ],
+    "out_of_scope": [
+      "Elective changes",
+      "Changes beyond mandatory simplifications / no-change principle"
+    ],
+    "commercials": [
+      "Fixed-price technical conversion",
+      "Business downtime target: \u226448 hours / <48 hours during production cutover",
+      "Estimated 30% optimization in business downtime with structured iteration",
+      "Reduces technical downtime footprint by 20\u201335%",
+      "Source DB \u2013 36.35TB; Target DB \u2013 17.70TB (SBX)",
+      "Source DB \u2013 Dev 3.10TB, QAS 37.86TB; Target DB \u2013 Dev 1.51TB, QAS 18.73TB",
+      "Target DB \u2013 3 Mocks: 18.73TB, 19.02TB, 19.17TB",
+      "Target DB \u2013 2 TLV: 19.32TB, 19.61TB",
+      "Target DB \u2013 DR: 19.76TB",
+      "Source DB Size for PRD Conversion \u2013 41.50TB; Target DB \u2013 20.20TB",
+      "Custom Code Remediation (ABAP Development): 22,765 objects",
+      "Integration: 1,114 objects",
+      "Analytics: 1,114 objects",
+      "BW on HANA: 1130 objects",
+      "SAC: 30 objects",
+      "Datasphere: 250 objects",
+      "BODS: 350 objects"
+    ],
+    "assumptions": [
+      "No-Change Principle applies to the conversion",
+      "Mandatory simplification items only; no elective changes",
+      "48hr max production downtime",
+      "As on March 2026 counts assumed for custom code/object inventory",
+      "Month zero will be used for Pre planning activities",
+      "Bristlecone OCM deliverable frequency/intensity depends on the start date of the Bristlecone OCM resource",
+      "Alcon-led source prep with partner support for system builds/refreshes",
+      "BCP/DR plan can be shared under NDA upon request"
+    ],
+    "notable_dates": [
+      {
+        "date": "13th March 2026",
+        "what_it_refers_to": "Proposal/Addendum date on title slide"
+      },
+      {
+        "date": "Q1 2028",
+        "what_it_refers_to": "Go-live timing stated in executive summary"
+      },
+      {
+        "date": "March 2026",
+        "what_it_refers_to": "Assumed object counts date for technical inventory"
+      },
+      {
+        "date": "Q2 2026",
+        "what_it_refers_to": "Pre-onboard timing for resource ramp-up mitigation"
+      }
+    ]
+  }
+}

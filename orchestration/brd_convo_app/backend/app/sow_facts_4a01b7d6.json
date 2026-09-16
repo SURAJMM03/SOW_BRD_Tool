@@ -1,0 +1,113 @@
+{
+  "fingerprint": "5d5e3b8315fb4d3b",
+  "facts": {
+    "client_name": "Metro",
+    "project_name": "SAP CLOUD ALM",
+    "effective_start_date": "January 2026",
+    "end_date": "October 2026",
+    "duration": "10 months (derived from Jan 2026 start to Oct 2026 hypercare/transition end)",
+    "go_live_date": "September 2026",
+    "key_milestones": [
+      {
+        "name": "SAP Cloud ALM Subscription",
+        "date": "January 2026"
+      },
+      {
+        "name": "Technical Team Onboarding",
+        "date": "February-April 2026"
+      },
+      {
+        "name": "Finalized Monitoring Use Cases & Metric Values",
+        "date": "May 2026"
+      },
+      {
+        "name": "Prerequisite Configurations - Readiness",
+        "date": "June 2026"
+      },
+      {
+        "name": "Dev + QA ChaRM Configuration E2E Test Cycle",
+        "date": "May 2026-September 2026"
+      },
+      {
+        "name": "Tech Monitoring Config for Non-Prod systems + Alert and Notifications",
+        "date": "May 2026-September 2026"
+      },
+      {
+        "name": "Production Integration in ChaRM & Operations Use cases",
+        "date": "September 2026"
+      },
+      {
+        "name": "Hypercare Transition Plan & KT",
+        "date": "October 2026"
+      }
+    ],
+    "scope_summary": "Implementation of SAP Cloud ALM for Technical Monitoring and Change Request Management aligned with the S/4 RISE migration plan. Scope includes Cloud ALM tenant setup, ChaRM workflow configuration, monitoring and alerting use cases, dashboards, and transition/hypercare support.",
+    "in_scope": [
+      "SAP Cloud ALM",
+      "SAP Cloud ALM Tenant Subaccount",
+      "SAP Cloud ALM Standard Change Management",
+      "Technical Monitoring",
+      "Change Request Management (ChaRM)",
+      "Change & Deployment Management",
+      "Transport routes + release strategies configured",
+      "Dev & QA change cycle end-to-end testing",
+      "Production system mapping in ChaRM workflow",
+      "SAP Landscape management, Data flow configuration to CALM",
+      "System Health Monitoring",
+      "Application Monitoring",
+      "Job Monitoring",
+      "User Performance Monitoring in S/4HANA",
+      "Integration Monitoring (S/4 | Integration Suite)",
+      "Notification and Alert Management",
+      "User Management in SAP Cloud ALM Tenant",
+      "Standard Health Monitoring dashboard",
+      "Change Management Dashboard",
+      "S/4",
+      "BTP apps",
+      "MII",
+      "Integration Suite",
+      "Datasphere",
+      "Ariba"
+    ],
+    "assumptions": [
+      "SAP Cloud ALM subscription is a prerequisite.",
+      "Technical team onboarding is a prerequisite.",
+      "Identification of customer landscape including SAP S/4HANA Cloud, BTP apps, and MII is required.",
+      "Integration technologies used (CPI, Integration Suite) must be identified.",
+      "User/Role matrix for Cloud ALM is a prerequisite.",
+      "Finalized monitoring use cases are a prerequisite.",
+      "Train the Trainer workshop plan & readiness is a prerequisite.",
+      "Key roles personas mapping for authorization testing is a prerequisite.",
+      "Current Project Team support/alignment is a prerequisite.",
+      "Successful go live of all the landscapes is a prerequisite for deploy/hypercare.",
+      "Cutover readiness for transport migration is a prerequisite.",
+      "Transition plan & stakeholders and METRO team alignment for transition are prerequisites."
+    ],
+    "notable_dates": [
+      {
+        "date": "February 2026",
+        "what_it_refers_to": "Proposal date shown on title slide"
+      },
+      {
+        "date": "2027",
+        "what_it_refers_to": "Solution Manager 7.2 mainstream ends"
+      },
+      {
+        "date": "March-April 2026",
+        "what_it_refers_to": "S4 Migration prepare phase shown in alignment timeline"
+      },
+      {
+        "date": "May 2026",
+        "what_it_refers_to": "S4 Migration explore phase shown in alignment timeline"
+      },
+      {
+        "date": "June 2026",
+        "what_it_refers_to": "S4 Migration realize phase shown in alignment timeline"
+      },
+      {
+        "date": "September 2026-October 2026",
+        "what_it_refers_to": "S4 Migration deploy/hypercare period shown in alignment timeline"
+      }
+    ]
+  }
+}

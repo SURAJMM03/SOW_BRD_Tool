@@ -1,0 +1,216 @@
+{
+  "fingerprint": "5932be472cba1c29",
+  "facts": {
+    "client_name": "Alcon",
+    "project_name": "ALCON SAP ECC 6.0 Ehp6 to SAP S/4HANA 2025 On-Premise Upgrade",
+    "effective_start_date": "June 2026",
+    "end_date": "March 2028 (derived from Feb 2028 go-live + 1 month hypercare)",
+    "duration": "21 months (20 months technical conversion + 1 month hypercare)",
+    "go_live_date": "February 2028",
+    "key_milestones": [
+      {
+        "name": "Project start / kickoff",
+        "date": "June 2026"
+      },
+      {
+        "name": "Month zero pre-planning activities",
+        "date": "Month zero"
+      },
+      {
+        "name": "SBX ready",
+        "date": "Sep-26"
+      },
+      {
+        "name": "DEV ready",
+        "date": "Nov-26"
+      },
+      {
+        "name": "QAS ready",
+        "date": "Feb-27"
+      },
+      {
+        "name": "Mock Conversion 1",
+        "date": "Apr-27"
+      },
+      {
+        "name": "Mock Conversion 2",
+        "date": "Jun-27"
+      },
+      {
+        "name": "Mock Conversion 3",
+        "date": "Jul-27"
+      },
+      {
+        "name": "Technical Load Verification 1",
+        "date": "Aug-27"
+      },
+      {
+        "name": "Technical Load Verification 2",
+        "date": "Oct-27"
+      },
+      {
+        "name": "Dress Rehearsal",
+        "date": "Nov-27"
+      },
+      {
+        "name": "Production conversion / PRD",
+        "date": "Feb-28"
+      },
+      {
+        "name": "Go-Live",
+        "date": "Q1 2028"
+      },
+      {
+        "name": "Go-Live",
+        "date": "Feb 2028"
+      },
+      {
+        "name": "Hypercare",
+        "date": "March 2028 (derived from Feb 2028 go-live + 1 month hypercare)"
+      }
+    ],
+    "delivery_locations": [
+      "On-site (USA)",
+      "North America",
+      "EMEA",
+      "APAC",
+      "Fort Worth DCs",
+      "53 Countries",
+      "18 Manufacturing Plants"
+    ],
+    "engagement_model": "Fixed-price technical conversion",
+    "scope_summary": "Technical conversion of Alcon's SAP ECC 6.0 EHP6 environment to SAP S/4HANA 2025 on-premise using a no-change principle, including platform migration from Oracle 19c on AIX to HANA 2.0 on Red Hat Linux 9.6. Scope includes mandatory simplification remediation, custom code and analytics remediation, multiple mock/load verification cycles, testing/validation, cutover, training support, governance, change communications, and 1 month of hypercare.",
+    "in_scope": [
+      "Conversion from SAP ECC 6.0 Ehp6 to SAP S/4HANA 2025 On-Premise Upgrade",
+      "Oracle 19c on AIX to HANA 2.0 on Red Hat Linux 9.6 platform",
+      "53 Countries, 90 Legal Entities, 18 Manufacturing Plants",
+      "Mandatory SAP Simplification items (133 No) remediation through No-Change Principle",
+      "Finance",
+      "Equipment Finance Agreements",
+      "Technical Services",
+      "MM",
+      "STRM(WM)",
+      "SD/OTI",
+      "PP",
+      "MDG",
+      "BASIS",
+      "Security",
+      "ABAP",
+      "Analytics \u2013 BW, Datasphere, SAC & BODS",
+      "SUM/DMO Downtime Optimized Conversion (DoC) with CustOnTemp",
+      "10 Conversion Cycles (2 std. & 8 mocks)",
+      "Technical Testing (Backup, DR, HA)",
+      "Development objects remediation",
+      "Update of security framework, add-ons & bolt-on",
+      "Sandbox Screening",
+      "Development screening",
+      "Formal quality test cycles",
+      "IQ",
+      "OQ",
+      "PQ",
+      "DILT/User Acceptance Testing",
+      "Change Impact Validation",
+      "Communications Plan",
+      "Support Training Delivery",
+      "User Feedback & Adoption Tracking",
+      "Project management plan & Approach",
+      "RACI matrix with shared accountability",
+      "Training Support",
+      "Governance",
+      "Change & Communication",
+      "SAP BW, Datasphere, and SAC artifact assessment/remediation/validation/hypercare",
+      "Cutover planning and execution",
+      "Hypercare support",
+      "Transition to Bristlecone AMS team"
+    ],
+    "out_of_scope": [
+      "No elective changes",
+      "Only mandatory simplifications are included under the no-change principle"
+    ],
+    "commercials": [
+      "Fixed-price technical conversion"
+    ],
+    "assumptions": [
+      "No-Change Principle applies to the conversion",
+      "Mandatory simplification items only; no elective changes",
+      "Maximum production downtime target is \u226448 hours",
+      "10 conversion cycles are planned, including 8 mocks",
+      "Project timeline includes 20 months of technical conversion and 1 month of hypercare",
+      "Month zero will be used for pre planning activities",
+      "Custom code remediation counts are assumed as of March 2026",
+      "Alcon-led source preparation with partner support for system builds/refreshes at Fort Worth DCs",
+      "Bristlecone AMS team takes over by end of hypercare support",
+      "Frequency and intensity of OCM deliverables depend on the start date of the Bristlecone OCM resource"
+    ],
+    "notable_dates": [
+      {
+        "date": "13th March 2026",
+        "what_it_refers_to": "Proposal / addendum date on title slide"
+      },
+      {
+        "date": "March 2026",
+        "what_it_refers_to": "Assumed custom code remediation object counts as of March 2026"
+      },
+      {
+        "date": "June 2026",
+        "what_it_refers_to": "Start / kickoff"
+      },
+      {
+        "date": "Q2 2026",
+        "what_it_refers_to": "Pre-onboard named team mitigation for resource ramp-up risk"
+      },
+      {
+        "date": "Q3 2026",
+        "what_it_refers_to": "Buffer in sandbox timing for system builds/refreshes risk mitigation"
+      },
+      {
+        "date": "Sep-26",
+        "what_it_refers_to": "ETA for SBX"
+      },
+      {
+        "date": "Nov-26",
+        "what_it_refers_to": "ETA for DEV"
+      },
+      {
+        "date": "Feb-27",
+        "what_it_refers_to": "ETA for QAS"
+      },
+      {
+        "date": "Apr-27",
+        "what_it_refers_to": "ETA for Mock 1"
+      },
+      {
+        "date": "Jun-27",
+        "what_it_refers_to": "ETA for Mock 2"
+      },
+      {
+        "date": "Jul-27",
+        "what_it_refers_to": "ETA for Mock 3"
+      },
+      {
+        "date": "Aug-27",
+        "what_it_refers_to": "ETA for Technical Load Verification 1"
+      },
+      {
+        "date": "Oct-27",
+        "what_it_refers_to": "ETA for Technical Load Verification 2"
+      },
+      {
+        "date": "Nov-27",
+        "what_it_refers_to": "ETA for Dress Rehearsal"
+      },
+      {
+        "date": "Q1 2028",
+        "what_it_refers_to": "Go-live timing stated in executive summary"
+      },
+      {
+        "date": "Feb 2028",
+        "what_it_refers_to": "Go-live / PRD conversion timing"
+      },
+      {
+        "date": "March 2028",
+        "what_it_refers_to": "Derived end of 1-month hypercare after Feb 2028 go-live"
+      }
+    ]
+  }
+}

@@ -42,6 +42,7 @@ from app.sow_routes import router as sow_router
 from app.sow_template_routes import router as sow_template_router
 from app.sow_section_routes import router as sow_section_router
 from app.sow_skill_routes import router as sow_skill_router
+from app.sow_review_routes import router as sow_review_router
 # image_repo_routes is optional — keep startup resilient if the module
 # hasn't been committed to this checkout yet.
 try:
@@ -257,6 +258,8 @@ app.include_router(sow_router)
 app.include_router(sow_template_router)
 app.include_router(sow_section_router)
 app.include_router(sow_skill_router)
+# Legal baseline (US-02) + mandatory pre-signature review gate (US-03)
+app.include_router(sow_review_router)
 
 # ── Register Image Repository API routes ──
 if image_repo_router is not None:
@@ -332,6 +335,11 @@ def sow_templates_page():
 def sow_workflow_page():
     """Section-by-section SOW draft, review, and approval."""
     return FileResponse(BASE_DIR / "static" / "sow-workflow.html", headers={"Cache-Control": "no-store"})
+
+@app.get("/sow-review")
+def sow_review_page():
+    """Mandatory pre-signature review gate (US-03) + legal baseline (US-02)."""
+    return FileResponse(BASE_DIR / "static" / "sow-review.html", headers={"Cache-Control": "no-store"})
 
 @app.get("/sow-skill")
 def sow_skill_page():

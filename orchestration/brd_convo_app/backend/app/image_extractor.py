@@ -364,6 +364,17 @@ class ImageExtractor:
         ext = (ext or "png").lower().lstrip(".")
         if ext not in self.SUPPORTED_FORMATS:
             return None
+        # Single chokepoint for "is there anything actually on this image".
+        # Every extraction path funnels through here, so rejecting blanks once
+        # keeps empty art out of extracted_images/ and out of the search index
+        # — where it used to surface as a candidate for section embedding.
+        try:
+            from app.metafile_render import is_blank_image
+            if is_blank_image(raw_bytes):
+                logger.debug("Skipping blank image from %s", source_doc)
+                return None
+        except Exception:
+            pass
         image_id = hashlib.sha256(raw_bytes).hexdigest()[:12]
         file_path = self.output_dir / f"{image_id}.{ext}"
         if not file_path.exists():
@@ -396,12 +407,21 @@ class ImageExtractor:
                     ext = low.rsplit(".", 1)[-1] if "." in low else ""
                     if ext == "jpeg":
                         ext = "jpg"
-                    if ext not in self.SUPPORTED_FORMATS:
+                    # Metafiles live in ppt/media too and are not a supported
+                    # storage format, but they are renderable — rasterise them
+                    # here rather than dropping the slide art on the floor.
+                    if ext not in self.SUPPORTED_FORMATS and ext not in ("emf", "wmf"):
                         continue
                     try:
                         raw = z.read(name)
                     except Exception:
                         continue
+                    if ext in ("emf", "wmf"):
+                        from app.metafile_render import metafile_to_png
+                        raw = metafile_to_png(raw)
+                        if not raw:
+                            continue
+                        ext = "png"
                     rec = self._save_image_record(raw, ext, src)
                     if rec:
                         out.append(rec)
@@ -445,17 +465,22 @@ class ImageExtractor:
                     yield shape
 
         def _to_png_bytes(blob: bytes, ext: str):
-            """Convert EMF/WMF vector metafiles to PNG via Pillow (Windows only)."""
-            if ext in ("emf", "wmf"):
-                try:
-                    from PIL import Image
-                    import io
-                    img = Image.open(io.BytesIO(blob))
-                    buf = io.BytesIO()
-                    img.save(buf, format="PNG")
-                    return buf.getvalue(), "png"
-                except Exception:
-                    return None, ext
+            """Rasterise EMF/WMF vector metafiles to PNG.
+
+            This used to go through Pillow, which *appears* to work — it opens
+            the metafile and reports the right dimensions — but renders
+            nothing, producing a 100% white bitmap for every metafile in a
+            real deck. Those blank images were then saved and indexed as
+            legitimate records. metafile_render drives GDI+ instead, which
+            actually plays back the EMF records, and returns None when the
+            result has nothing drawn on it.
+            """
+            from app.metafile_render import sniff_format, metafile_to_png
+            # Trust the bytes, not the extension: python-pptx labels EMF parts
+            # as 'wmf', and some decks mislabel raster parts too.
+            if sniff_format(blob) in ("emf", "wmf"):
+                png = metafile_to_png(blob)
+                return (png, "png") if png else (None, ext)
             return blob, ext
 
         for slide_idx, slide in enumerate(prs.slides, start=1):
@@ -467,12 +492,15 @@ class ImageExtractor:
                         # Skip tiny images (icons, bullets) smaller than 5 KB
                         if len(blob) < 5000:
                             continue
-                        # Convert EMF/WMF metafiles to PNG so they can be indexed
-                        if ext in ("emf", "wmf"):
-                            blob, ext = _to_png_bytes(blob, ext)
-                            if blob is None:
-                                logger.debug("Skipping unconvertible %s on slide %d", ext, slide_idx)
-                                continue
+                        # Rasterise metafiles so they can be indexed. Called
+                        # unconditionally — it sniffs the bytes and passes
+                        # ordinary rasters straight through, which is safer
+                        # than trusting shape.image.ext (python-pptx reports
+                        # EMF parts as 'wmf').
+                        blob, ext = _to_png_bytes(blob, ext)
+                        if blob is None:
+                            logger.debug("Skipping unrenderable metafile on slide %d", slide_idx)
+                            continue
                         rec = self._save_image_record(blob, ext, source, page_number=slide_idx)
                         if rec:
                             extracted.append(rec)

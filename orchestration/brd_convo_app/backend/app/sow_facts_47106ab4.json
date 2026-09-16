@@ -1,0 +1,135 @@
+{
+  "fingerprint": "5d5e3b8315fb4d3b",
+  "facts": {
+    "client_name": "METRO",
+    "project_name": "SAP CLOUD ALM",
+    "effective_start_date": "January 2026",
+    "end_date": "October 2026",
+    "duration": "10 months (derived from Jan 2026 pre-project/start through Oct 2026 hypercare/transition)",
+    "go_live_date": "September 2026",
+    "key_milestones": [
+      {
+        "name": "Pre-Project",
+        "date": "January 2026"
+      },
+      {
+        "name": "Discover + Prepare",
+        "date": "February-April 2026"
+      },
+      {
+        "name": "Explore & Design",
+        "date": "May 2026"
+      },
+      {
+        "name": "Realize",
+        "date": "June-September 2026"
+      },
+      {
+        "name": "Deploy",
+        "date": "September 2026"
+      },
+      {
+        "name": "Hypercare",
+        "date": "October 2026"
+      },
+      {
+        "name": "Cloud ALM Subscription",
+        "date": "March-April 2026"
+      },
+      {
+        "name": "Technical Team Onboarding / Finalized Monitoring Use Cases & Metric Values",
+        "date": "May 2026"
+      },
+      {
+        "name": "Prerequisite Configurations - Readiness",
+        "date": "June 2026"
+      },
+      {
+        "name": "Dev + QA ChaRM Configuration E2E Test Cycle",
+        "date": "June-September 2026"
+      },
+      {
+        "name": "Tech Monitoring Config for Non-Prod systems + Alert and Notifications",
+        "date": "June-September 2026"
+      },
+      {
+        "name": "Deploy + Hypercare Production Integration in ChaRM & Operations Use cases",
+        "date": "September-October 2026"
+      },
+      {
+        "name": "Sandbox",
+        "date": "May 2026 - September 2026"
+      },
+      {
+        "name": "Production",
+        "date": "September 2026"
+      },
+      {
+        "name": "Hypercare Transition Plan & KT",
+        "date": "October 2026"
+      }
+    ],
+    "scope_summary": "Implementation of SAP Cloud ALM for Technical Monitoring and Change Request Management (ChaRM), aligned with the S/4 RISE migration plan. Scope includes Cloud ALM tenant setup, standard change management, monitoring and alerting use cases, dashboards, and transition/hypercare support for METRO.",
+    "in_scope": [
+      "SAP Cloud ALM",
+      "Technical Monitoring",
+      "Change Request Management",
+      "SAP Cloud ALM Tenant Subaccount",
+      "SAP Cloud ALM Standard Change Management",
+      "S/4 | Integration Suite",
+      "SAP Landscape management",
+      "Data flow configuration to CALM",
+      "System Health Monitoring",
+      "Application Monitoring",
+      "S/4 | BTP | Datasphere | Ariba",
+      "Job Monitoring",
+      "User Performance Monitoring in S/4HANA",
+      "Integration Monitoring (S/4 | Integration Suite)",
+      "Notification and Alert Management",
+      "User Management in SAP Cloud ALM Tenant",
+      "Dashboards",
+      "Standard Health Monitoring dashboard",
+      "Change Management Dashboard",
+      "Configured Change Management workflow",
+      "Transport routes + release strategies configured",
+      "First wave of change cycle tested end-to-end for Dev & QA",
+      "Mapping of Production system in ChaRM workflow",
+      "Add Production system in Monitoring Use cases",
+      "Support Transition to METRO team",
+      "Train the trainer workshop",
+      "SOP for End users"
+    ],
+    "out_of_scope": [
+      "SAP Cloud ALM++ Capabilities"
+    ],
+    "assumptions": [
+      "SAP Cloud ALM subscription",
+      "Technical Team onboarding",
+      "Identification of customer landscape: SAP S/4HANA Cloud, BTP apps, MII",
+      "Integration technologies used (CPI, Integration Suite)",
+      "User/Role matrix for Cloud ALM",
+      "Finalized monitoring use cases",
+      "Train the Trainer workshop plan & readiness",
+      "Key roles personas mapping for authorization testing",
+      "Current Project Team Support/Alignment",
+      "Successful go live of all the landscapes",
+      "Cutover readiness for transport migration",
+      "Transition Plan & stakeholders",
+      "METRO Team alignment for Transition"
+    ],
+    "notable_dates": [
+      {
+        "date": "February 2026",
+        "what_it_refers_to": "Proposal date shown on title slide"
+      },
+      {
+        "date": "2027",
+        "what_it_refers_to": "Solution Manager 7.2 mainstream ends"
+      },
+      {
+        "date": "Sept 26 \u2013 Oct 26",
+        "what_it_refers_to": "Cloud ALM consultant involvement shown on alignment timeline"
+      }
+    ]
+  }
+}

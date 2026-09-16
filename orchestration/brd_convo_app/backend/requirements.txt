@@ -29,3 +29,4 @@ langgraph>=0.2.0
 mcp>=1.0.0
 # Anthropic Claude SDK — document generation (BRD sections)
 anthropic>=0.18.0
+rank-bm25==0.2.2

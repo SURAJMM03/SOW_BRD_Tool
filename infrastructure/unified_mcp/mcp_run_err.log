@@ -1,0 +1,13 @@
+2026-09-10 14:10:43,437 INFO KinaxisHTTP  SSL: certifi bundle applied
+2026-09-10 14:10:43,451 INFO KinaxisHTTP  Loaded .env from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\infrastructure\unified_mcp\.env
+2026-09-10 14:10:46,113 INFO KinaxisHTTP  Web search backend: openai
+2026-09-10 14:10:46,232 INFO KinaxisHTTP  Doc index ready — 0 chunks from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\infrastructure\unified_mcp\reference_docs
+2026-09-10 14:10:46,233 INFO KinaxisHTTP  Starting Kinaxis Tools API on http://127.0.0.1:8000  backend=openai
+2026-09-10 14:10:46,243 INFO KinaxisHTTP  SSL: certifi bundle applied
+2026-09-10 14:10:46,246 INFO KinaxisHTTP  Loaded .env from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\infrastructure\unified_mcp\.env
+2026-09-10 14:10:46,247 INFO KinaxisHTTP  Web search backend: openai
+INFO:     Started server process [15264]
+INFO:     Waiting for application startup.
+2026-09-10 14:10:46,917 INFO KinaxisHTTP  Doc index ready — 0 chunks from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\infrastructure\unified_mcp\reference_docs
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)

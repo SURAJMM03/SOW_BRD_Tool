@@ -1,0 +1,179 @@
+{
+  "fingerprint": "5d5e3b8315fb4d3b",
+  "facts": {
+    "client_name": "METRO",
+    "project_name": "SAP CLOUD ALM Technical Monitoring Change Request Management",
+    "effective_start_date": "January 2026 (derived from Slide 6 timeline start for CALM Implementation pre-project/subscription/onboarding)",
+    "end_date": "October 2026 (derived from Slide 6 Deploy/Hypercare ending in Oct 26)",
+    "duration": "10 months (derived from Jan 2026 through Oct 2026 timeline on Slide 6)",
+    "go_live_date": "September 2026 (derived from Slide 6 Deploy phase / production integration before Oct 26 hypercare transition)",
+    "key_milestones": [
+      {
+        "name": "SAP Cloud ALM Subscription",
+        "date": "January 2026"
+      },
+      {
+        "name": "Technical Team Onboarding",
+        "date": "February-April 2026"
+      },
+      {
+        "name": "Finalized Monitoring Use Cases & Metric Values",
+        "date": "May 2026"
+      },
+      {
+        "name": "Prerequisite Configurations - Readiness",
+        "date": "June 2026"
+      },
+      {
+        "name": "Dev + QA ChaRM Configuration E2E Test Cycle",
+        "date": "May 2026 - September 2026"
+      },
+      {
+        "name": "Tech Monitoring Config for Non-Prod systems + Alert and Notifications",
+        "date": "May 2026 - September 2026"
+      },
+      {
+        "name": "Deploy + Hypercare",
+        "date": "September 2026 - October 2026"
+      },
+      {
+        "name": "Production Integration in ChaRM & Operations Use cases",
+        "date": "September 2026"
+      },
+      {
+        "name": "Hypercare Transition Plan & KT",
+        "date": "October 2026"
+      }
+    ],
+    "scope_summary": "Implementation of SAP Cloud ALM for METRO covering Technical Monitoring and Change Request Management aligned with the S/4 RISE migration plan. The scope includes Cloud ALM tenant setup, standard change management, monitoring use cases, dashboards, user management, training, production deployment, and hypercare/transition to the METRO team.",
+    "in_scope": [
+      "SAP Cloud ALM",
+      "SAP Cloud ALM Tenant Subaccount",
+      "SAP Cloud ALM Standard Change Management",
+      "Technical Monitoring",
+      "Change Request Management / ChaRM",
+      "Transport routes + release strategies configured",
+      "Dev & QA ChaRM end-to-end test cycle",
+      "Production system mapping in ChaRM workflow",
+      "Technical Monitoring for non-production systems",
+      "Production integration in ChaRM & Operations use cases",
+      "SAP Landscape management, data flow configuration to CALM",
+      "System Health Monitoring",
+      "Application Monitoring",
+      "Job Monitoring",
+      "User Performance Monitoring in S/4HANA",
+      "Integration Monitoring",
+      "Notification and Alert Management",
+      "User Management in SAP Cloud ALM Tenant",
+      "Standard Health Monitoring dashboard",
+      "Change Management Dashboard",
+      "S/4",
+      "Integration Suite",
+      "BTP apps",
+      "MII",
+      "Datasphere",
+      "Ariba",
+      "Train the trainer workshop",
+      "SOP for end users",
+      "Support transition to METRO team",
+      "Document update",
+      "Issue resolution"
+    ],
+    "out_of_scope": [
+      "SAP Cloud ALM++ capabilities",
+      "Project Management",
+      "Process Management",
+      "Deployment Management",
+      "Defect Management",
+      "Document Management",
+      "Quality Gate Management",
+      "Test Management",
+      "Analytics",
+      "Open API\u2019s",
+      "Business Process Monitoring",
+      "Configuration & Security Analysis",
+      "Intelligent Event Processing"
+    ],
+    "assumptions": [
+      "SAP Cloud ALM subscription",
+      "Technical team onboarding",
+      "Identification of customer landscape: SAP S/4HANA Cloud, BTP apps, MII",
+      "Integration technologies used (CPI, Integration Suite)",
+      "User/Role matrix for Cloud ALM",
+      "Finalized monitoring use cases",
+      "Train the Trainer workshop plan & readiness",
+      "Key roles personas mapping for authorization testing",
+      "Current project team support/alignment",
+      "Successful go live of all the landscapes",
+      "Cutover readiness for transport migration",
+      "Transition plan and stakeholders",
+      "METRO team alignment for transition"
+    ],
+    "notable_dates": [
+      {
+        "date": "February 2026",
+        "what_it_refers_to": "Proposal date on title slide"
+      },
+      {
+        "date": "2027",
+        "what_it_refers_to": "Solution Manager 7.2 mainstream ends"
+      },
+      {
+        "date": "March - April 2026",
+        "what_it_refers_to": "Prepare phase in alignment timeline"
+      },
+      {
+        "date": "May 2026",
+        "what_it_refers_to": "Explore phase in alignment timeline"
+      },
+      {
+        "date": "June 2026",
+        "what_it_refers_to": "Realize phase point in alignment timeline"
+      },
+      {
+        "date": "September 2026 - October 2026",
+        "what_it_refers_to": "Deploy/Hypercare phase in alignment timeline"
+      },
+      {
+        "date": "September 2026",
+        "what_it_refers_to": "Sandbox/production milestone shown on alignment timeline"
+      },
+      {
+        "date": "October 2026",
+        "what_it_refers_to": "Hypercare transition plan & KT"
+      },
+      {
+        "date": "2 weeks",
+        "what_it_refers_to": "Discover + Prepare duration"
+      },
+      {
+        "date": "2 weeks",
+        "what_it_refers_to": "Explore & Design duration"
+      },
+      {
+        "date": "4 weeks",
+        "what_it_refers_to": "Realize (Technical Monitoring) duration"
+      },
+      {
+        "date": "4 weeks",
+        "what_it_refers_to": "Realize (ChaRM) duration"
+      },
+      {
+        "date": "1 month",
+        "what_it_refers_to": "Deploy + Hypercare duration shown on Slide 5"
+      },
+      {
+        "date": "2 months",
+        "what_it_refers_to": "Timeline segment shown on Slide 5"
+      },
+      {
+        "date": "1 month",
+        "what_it_refers_to": "Timeline segment shown on Slide 5"
+      },
+      {
+        "date": "1 month",
+        "what_it_refers_to": "Timeline segment shown on Slide 5"
+      }
+    ]
+  }
+}

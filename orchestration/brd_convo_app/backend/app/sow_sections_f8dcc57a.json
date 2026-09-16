@@ -1,0 +1,98 @@
+{
+  "active": [
+    {
+      "id": "0",
+      "title": "SOW Overview",
+      "level": 1,
+      "has_own_content": true
+    },
+    {
+      "id": "1",
+      "title": "Scope of Work",
+      "level": 1,
+      "has_own_content": true
+    },
+    {
+      "id": "1.1",
+      "title": "Project Milestones",
+      "level": 2,
+      "has_own_content": true
+    },
+    {
+      "id": "1.2",
+      "title": "Project Deliverables",
+      "level": 2,
+      "has_own_content": true
+    },
+    {
+      "id": "1.3",
+      "title": "Assumptions",
+      "level": 2,
+      "has_own_content": true
+    },
+    {
+      "id": "1.4",
+      "title": "Exclusions",
+      "level": 2,
+      "has_own_content": true
+    },
+    {
+      "id": "2",
+      "title": "General Terms",
+      "level": 1,
+      "has_own_content": false
+    },
+    {
+      "id": "2.1",
+      "title": "Working Hours/Holidays",
+      "level": 2,
+      "has_own_content": true
+    },
+    {
+      "id": "2.2",
+      "title": "Service Location",
+      "level": 2,
+      "has_own_content": true
+    },
+    {
+      "id": "2.3",
+      "title": "Project Reporting Structure",
+      "level": 2,
+      "has_own_content": true
+    },
+    {
+      "id": "3",
+      "title": "Deliverables acceptance management",
+      "level": 1,
+      "has_own_content": true
+    },
+    {
+      "id": "4",
+      "title": "COMMERCIAL TERMS",
+      "level": 1,
+      "has_own_content": true
+    },
+    {
+      "id": "4.1",
+      "title": "Fixed Fee Engagement",
+      "level": 2,
+      "has_own_content": true
+    },
+    {
+      "id": "4.2",
+      "title": "Time & Materials (T&M) Engagement",
+      "level": 2,
+      "has_own_content": true
+    },
+    {
+      "id": "5",
+      "title": "Change request/Amendments",
+      "level": 1,
+      "has_own_content": true
+    }
+  ],
+  "archived": [],
+  "template_id": "0c27be4e",
+  "engagement_type": "tm",
+  "engagement_template_version": "1.4.0"
+}

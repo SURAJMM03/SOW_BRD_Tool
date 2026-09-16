@@ -49,6 +49,13 @@
     .opt-card p{font-size:11.5px;color:var(--text-sec);line-height:1.5}
     .opt-badge{font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;background:var(--green-soft);color:var(--green);text-transform:uppercase;letter-spacing:.4px}
 
+    .step-hdr{width:100%;max-width:760px;display:flex;align-items:center;gap:8px;margin-bottom:10px}
+    .step-num{width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+    .step-hdr h4{font-size:12px;font-weight:700;color:var(--text-sec);text-transform:uppercase;letter-spacing:.5px}
+    .step-hdr .step-hint{font-size:11px;color:var(--text-dim);font-weight:500;text-transform:none;letter-spacing:0}
+    .eng-meta{font-size:10px;color:var(--text-dim);margin-top:7px;display:flex;align-items:center;gap:5px}
+    .eng-tag{font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;background:var(--surface3);color:var(--text-sec);letter-spacing:.3px}
+
     .lib-section{width:100%;max-width:760px;margin-bottom:20px}
     .lib-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
     .lib-hdr h4{font-size:12px;font-weight:700;color:var(--text-sec);text-transform:uppercase;letter-spacing:.5px}
@@ -121,21 +128,35 @@
 
 <main class="main">
   <div class="ph">
-    <h1>Choose a SOW template</h1>
-    <p>Every section will be drafted against this template's own structure. Use Bristlecone's
-       default format, or upload the client's own template if they have one — the generated SOW
-       will follow its exact headings and formatting.</p>
+    <h1>Set up this SOW</h1>
+    <p>Pick the engagement type first — it decides the commercial and acceptance language for
+       every section. Then choose the structure: Bristlecone's standard format, or the client's
+       own template if they have one.</p>
   </div>
 
+  <div class="step-hdr">
+    <span class="step-num">1</span>
+    <h4>Engagement type</h4>
+    <span class="step-hint">— required; drives billing and acceptance wording</span>
+  </div>
+  <div class="opt-grid" id="eng-grid">
+    <div class="opt-card" style="cursor:default"><p>Loading…</p></div>
+  </div>
+
+  <div class="step-hdr">
+    <span class="step-num">2</span>
+    <h4>Document structure</h4>
+  </div>
   <div class="opt-grid">
     <div class="opt-card" id="opt-default" onclick="selectMode('default')">
-      <h3>Bristlecone default <span class="opt-badge" id="default-badge" style="display:none">Available</span></h3>
+      <h3>Bristlecone standard <span class="opt-badge" id="default-badge" style="display:none">Available</span></h3>
       <p id="default-desc">Loading…</p>
     </div>
     <div class="opt-card" id="opt-custom" onclick="selectMode('custom')">
       <h3>Client's own template</h3>
       <p>Upload the client's .docx template (or pick one already in the library below) — sections
-         are drafted to match its exact structure and headings.</p>
+         are drafted to match its exact structure and headings, with the engagement type above
+         still driving the commercial wording.</p>
     </div>
   </div>
 
@@ -198,16 +219,22 @@ let mode = null; // 'default' | 'custom' | 'fallback'
 let templates = [];
 let selectedTemplateId = null;
 let resolveInfo = null;
+let engagementTypes = [];
+let selectedEngagement = null;
 
 async function init(){
   try {
-    const [tplRes, resolveRes] = await Promise.all([
+    const [tplRes, resolveRes, engRes] = await Promise.all([
       fetch('/api/sow-templates'),
       fetch(`/api/sow-templates/resolve/${PROJECT_ID}`),
+      fetch('/api/sow-templates/engagement-types'),
     ]);
     templates = tplRes.ok ? await tplRes.json() : [];
     resolveInfo = resolveRes.ok ? await resolveRes.json() : {};
+    engagementTypes = engRes.ok ? await engRes.json() : [];
   } catch(e) { toast('Could not load templates.', 'error'); }
+
+  renderEngagementTypes();
 
   const defaultBadge = document.getElementById('default-badge');
   const defaultDesc = document.getElementById('default-desc');
@@ -215,16 +242,43 @@ async function init(){
     defaultBadge.style.display = 'inline-block';
     defaultDesc.textContent = `Uses "${resolveInfo.default_template_name}" — Bristlecone's own branded SOW template.`;
   } else {
-    defaultDesc.textContent = "No branded template has been uploaded yet — uses Bristlecone's standard 22-section structure until one is.";
+    defaultDesc.textContent = "The standard Bristlecone SOW structure for the engagement type you pick above.";
   }
 
   renderLibrary();
 
   // Pre-select based on what's already applied to this project, if anything.
+  if (resolveInfo && resolveInfo.applied_engagement_type) {
+    selectEngagement(resolveInfo.applied_engagement_type);
+  }
   if (resolveInfo && resolveInfo.applied_template_id) {
     const applied = templates.find(t => t.id === resolveInfo.applied_template_id);
     if (applied) { selectMode('custom'); selectTemplate(applied.id); }
   }
+}
+
+function renderEngagementTypes(){
+  const el = document.getElementById('eng-grid');
+  if (!engagementTypes.length) {
+    el.innerHTML = '<div class="opt-card" style="cursor:default"><p>Engagement types unavailable.</p></div>';
+    return;
+  }
+  el.innerHTML = engagementTypes.map(e => `
+    <div class="opt-card ${e.key === selectedEngagement ? 'selected' : ''}"
+         onclick="selectEngagement('${e.key}')">
+      <h3>${esc(e.name)}</h3>
+      <p>${esc(e.description)}</p>
+      <div class="eng-meta">
+        <span class="eng-tag">Billing: ${esc(e.billing_basis)}</span>
+        <span>${e.section_count} sections · template v${esc(e.version)}</span>
+      </div>
+    </div>`).join('');
+}
+
+function selectEngagement(key){
+  selectedEngagement = key;
+  renderEngagementTypes();
+  updateCTA();
 }
 
 function selectMode(m){
@@ -258,6 +312,9 @@ function selectTemplate(id){
 
 function updateCTA(){
   const btn = document.getElementById('cb');
+  // Engagement type gates everything: it decides the commercial and
+  // acceptance wording, so there is no correct draft without it.
+  if (!selectedEngagement) { btn.disabled = true; return; }
   if (mode === 'default') { btn.disabled = false; }
   else if (mode === 'custom') { btn.disabled = !selectedTemplateId; }
   else { btn.disabled = true; }
@@ -265,17 +322,30 @@ function updateCTA(){
 
 async function applyChosenTemplate(){
   const btn = document.getElementById('cb');
+  if (!selectedEngagement) { toast('Pick an engagement type first.', 'error'); return; }
   btn.disabled = true;
   try {
-    if (mode === 'default') {
-      if (resolveInfo && resolveInfo.default_template_id) {
-        await fetch(`/api/sow-templates/${resolveInfo.default_template_id}/apply/${PROJECT_ID}`, { method: 'POST' });
-      } else {
-        await fetch(`/api/sow-templates/apply-fallback/${PROJECT_ID}`, { method: 'POST' });
-      }
-    } else if (mode === 'custom' && selectedTemplateId) {
-      await fetch(`/api/sow-templates/${selectedTemplateId}/apply/${PROJECT_ID}`, { method: 'POST' });
+    // A .docx template — the client's own, or the org's branded default —
+    // owns the structure and the export formatting, so it still wins; the
+    // engagement type rides along as a query param and drives the commercial
+    // wording. Only when no .docx template exists do we seed structure from
+    // the built-in engagement template.
+    const docxTemplateId = (mode === 'custom' && selectedTemplateId)
+      ? selectedTemplateId
+      : (resolveInfo && resolveInfo.default_template_id) || null;
+
+    let res;
+    if (docxTemplateId) {
+      res = await fetch(
+        `/api/sow-templates/${docxTemplateId}/apply/${PROJECT_ID}`
+        + `?engagement_type=${encodeURIComponent(selectedEngagement)}`,
+        { method: 'POST' });
+    } else {
+      res = await fetch(
+        `/api/sow-templates/engagement/${encodeURIComponent(selectedEngagement)}/apply/${PROJECT_ID}`,
+        { method: 'POST' });
     }
+    if (!res.ok) throw new Error(await res.text());
     window.location.href = `/sow-workflow?project_id=${PROJECT_ID}`;
   } catch(e) {
     toast('Could not apply template.', 'error');

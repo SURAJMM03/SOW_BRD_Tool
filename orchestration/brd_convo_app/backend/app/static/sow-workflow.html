@@ -102,6 +102,11 @@
     .preview-modal{background:var(--surface);border-radius:var(--rlg);width:min(760px,100%);max-height:100%;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.3)}
     .preview-modal-hdr{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--border);font-size:13px;font-weight:600}
     .preview-surface{padding:20px 26px;overflow-y:auto;background:#fff;color:#111}
+    /* Inline diagrams/flowcharts resolved from <IMAGE id="..."/> by the preview
+       renderer (sow_section_routes._render_text_with_images). Constrained to the
+       modal width so a full-size slide diagram can't blow out the layout. */
+    .preview-surface .pv-inline-img{display:block;max-width:100%;height:auto;margin:12px auto;
+      border:1px solid var(--border);border-radius:6px;background:#fff}
 
     .editor-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:310;display:flex;align-items:center;justify-content:center;padding:24px}
     .editor-modal{background:var(--surface);border-radius:var(--rlg);width:min(1100px,96vw);height:90vh;display:flex;flex-direction:column;box-shadow:0 24px 70px rgba(0,0,0,.35)}
@@ -138,6 +143,10 @@
     <button class="btn" id="bulk-btn" onclick="toggleBulkGeneration()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
       Draft all remaining
+    </button>
+    <button class="btn" id="review-btn" onclick="openReviewGate()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      <span id="review-btn-label">Review gate</span>
     </button>
     <button class="btn green" id="download-btn" disabled onclick="downloadSow()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -295,9 +304,13 @@ function renderAttachPanel(){
       const thumb = att.kind === 'image'
         ? `<img src="/api/sow/sections/attachments/${att.attachment_id}/file?project_id=${PROJECT_ID}" />`
         : '📄';
+      const imageCount = att.image_ids && att.image_ids.length
+        ? `<span class="att-sub" title="Images/flowcharts auto-extracted from this file">🖼️ ${att.image_ids.length}</span>`
+        : '';
       items.push(`<span class="attach-item">
         ${thumb}
         <span>${esc(att.filename)}</span>
+        ${imageCount}
         ${family.length > 1 ? `<span class="att-sub">(${esc(f.title)})</span>` : ''}
         <span class="att-del" onclick="deleteAttachment('${f.id}','${att.attachment_id}')" title="Remove">×</span>
       </span>`);
@@ -335,7 +348,8 @@ async function uploadAttachment(){
     const res = await fetch(`/api/sow/sections/${targetId}/attachments`, { method: 'POST', body: form });
     const data = await res.json();
     if (!res.ok) throw new Error(data.detail || 'Upload failed');
-    toast('Attached.', 'success');
+    const imgCount = data.attachment && data.attachment.image_ids ? data.attachment.image_ids.length : 0;
+    toast(imgCount ? `Attached — ${imgCount} image(s)/flowchart(s) extracted.` : 'Attached.', 'success');
     fileInput.value = '';
     captionInput.value = '';
     pastedImageFile = null;
@@ -690,6 +704,26 @@ function stopBulkPolling(){
   if (bulkPolling) { clearInterval(bulkPolling); bulkPolling = null; }
   document.getElementById('bulk-btn').innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> Generate all remaining';
 }
+
+function openReviewGate(){
+  window.location.href = `/sow-review?project_id=${PROJECT_ID}`;
+}
+
+// Surface the gate's state on the workflow screen so an author sees how many
+// checkpoints are outstanding without having to open the gate to find out.
+async function refreshReviewBadge(){
+  try {
+    const res = await fetch(`/api/sow/review/${PROJECT_ID}`);
+    if (!res.ok) return;
+    const d = await res.json();
+    const label = document.getElementById('review-btn-label');
+    if (!label) return;
+    if (d.status === 'final')      label.textContent = 'Review gate · FINAL';
+    else if (d.open_count === 0)   label.textContent = 'Review gate · ready';
+    else                           label.textContent = `Review gate · ${d.open_count} open`;
+  } catch(e) { /* the badge is advisory — never block the page on it */ }
+}
+refreshReviewBadge();
 
 async function downloadSow(){
   const btn = document.getElementById('download-btn');

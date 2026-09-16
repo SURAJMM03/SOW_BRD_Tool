@@ -1,7 +1,7 @@
 ---
 name: sow-review-and-draft
-version: 0.3.0
-description: "Use this skill whenever a Statement of Work (SOW) needs to be reviewed or drafted for a Bristlecone client engagement. Trigger this for any request involving a draft SOW, a signed SOW, an SOW template, or design-discussion transcripts that should be turned into an SOW. Covers two modes: (1) REVIEW an existing/draft SOW against Bristlecone Delivery Excellence's actual audit checklist, with mandatory citations and confidence tags, and (2) GENERATE a first-draft SOW from a design-discussion transcript, short interview, or an already-generated BRD document, using Bristlecone's actual 22-section master SOW template. Always use this skill instead of giving a generic contract opinion — Bristlecone has specific section requirements and a specific template that this skill encodes."
+version: 0.4.0
+description: "Use this skill whenever a Statement of Work (SOW) needs to be reviewed or drafted for a Bristlecone client engagement. Trigger this for any request involving a draft SOW, a signed SOW, an SOW template, or design-discussion transcripts that should be turned into an SOW. Covers two modes: (1) REVIEW an existing/draft SOW against Bristlecone Delivery Excellence's actual audit checklist, with mandatory citations and confidence tags, plus a mandatory-section integrity pre-check that flags any standard-template section (termination, sign-off, opening statement and others) that has been removed or materially altered, and (2) GENERATE a first-draft SOW from a design-discussion transcript, short interview, or an already-generated BRD document, using Bristlecone's actual 22-section master SOW template. Always use this skill instead of giving a generic contract opinion — Bristlecone has specific section requirements and a specific template that this skill encodes."
 compatibility: "Works standalone or inside the BRD tool. When the BRD tool has already produced an approved BRD document for a project, GENERATE mode can draft directly from it — pulling forward decisions the BRD already made instead of re-asking for them."
 ---
 
@@ -100,6 +100,13 @@ pass **before presenting it**, specifically checking:
 5. In GENERATE mode: does every placeholder use the exact bracket format
    in Section 4, so a human scanning the doc can find every open item
    with one search for `<`?
+6. Mandatory sections (Section 2.0 registry) — in REVIEW mode, does every
+   `Mandatory: true` row have a verdict, is every violation carrying the
+   verbatim warning sentence and the Delivery Management escalation, and
+   has every *uncertain* alteration call been demoted to an Open Question
+   rather than flagged? In GENERATE mode, is every `Mandatory: true`
+   section actually present in the draft, with `<CONFIRM: …>` rather than
+   omission where content was unavailable?
 
 Only after this pass is the output ready to show the user. If step 1-4
 surface a problem, fix it and redo the pass — don't ship a report you
@@ -129,8 +136,13 @@ This is Bristlecone Delivery Excellence's actual SOW Audit Checklist
 source document uses. It replaces the generic bootstrap checklist this
 skill shipped with before the real one was available (see Changelog).
 
-**Verdict set for every checkpoint below** — use exactly these four, per
-Rule 3:
+**Run Section 2.0 first.** It is a separate pre-check with its own verdict
+set, covering whether the template's mandatory sections are still present
+and intact. It is not one of the 101 checkpoints and is not scored with
+them.
+
+**Verdict set for every checkpoint in 2.1–2.11 below** — use exactly these
+four, per Rule 3 (Section 2.0 has its own four; do not mix the two sets):
 
 - **Pass** — the SOW (or supplied companion evidence) explicitly satisfies
   the checkpoint. Cite the quote.
@@ -163,6 +175,167 @@ applying the checkpoint's *pattern* to a different SOW, find and cite
 **that SOW's own** stated number — never compare it against the precedent
 engagement's figure unless you are literally reviewing that same
 engagement.
+
+### 2.0 Mandatory Section Integrity (pre-check — run before 2.1)
+
+Some sections of Bristlecone's master SOW template exist to protect
+Bristlecone, the client, or both, and are not negotiable away by deletion.
+This pre-check answers one question per mandatory section: **is it still
+there, and does it still do what it was put there to do?** It runs *before*
+Categories 2.1–2.11 and is reported in its own block (Section 3), never
+folded into the Pass / Fail / Not Addressed / Cannot Verify buckets — a
+deleted termination clause is a categorically different event from a
+checkpoint the document happens to be silent on, and burying it in a
+101-row table is exactly how it gets missed.
+
+The 101-checkpoint count in Categories 2.1–2.11 is unchanged; the checks
+below are additional and separately reported.
+
+#### The registry — mandatory flag for every template section
+
+This table is the **single source of truth for both modes**. Mode 1 checks
+against it; Mode 2 (Step 3) must emit every `Mandatory: true` row. Section
+numbers are those of the 22-section master template in Section 4, Step 3.
+
+| Template section | Mandatory | Confirmation status | Why it is / isn't mandatory |
+|---|---|---|---|
+| Cover page | true | Provisional | Identifies the contract instrument — client, contract ID, effective/end dates, version |
+| 1. Agreement Details | true | Provisional | Opening statement binding this SOW to the governing MSA/ISA; without it the SOW has no legal parent |
+| 2. Executive Summary | false | — | Narrative convenience; carries no protection of its own |
+| 3. Project Overview | true | **Confirmed** | The 3.1 Background opening statement fixes the agreed current-state/business-driver premise the whole scope rests on |
+| 4. Scope of Work | true | Provisional | 4.7 Exclusions is the primary scope-creep defence (see 2.2 Check 1) |
+| 5. Proposed Architecture | false | — | Engagement-dependent; may legitimately not apply |
+| 6. Solution Implementation Approach & Project Plan | false | — | Content matters in practice, but its structure varies legitimately by engagement type |
+| 7. Project Management | false | — | Governance detail; the commercial protection sits elsewhere |
+| 8. Personnel Requirements | false | — | Engagement-dependent |
+| 9. Key Deliverables | true | Provisional | Nothing is invoiceable or acceptable without an enumerated deliverables list (2.3 Checks 1, 9) |
+| 10. Key Assumptions | false | — | Strongly recommended, but its absence is a gap rather than a removed protection |
+| 11. Acceptance Criteria | true | Provisional | The mechanism by which work is deemed complete and payable (2.3 Check 2) |
+| 12. Obligations | true | Provisional | Client-side obligations are Bristlecone's only defence against client-caused delay |
+| 13. Commercials | true | Provisional | Rates, cap, invoicing and payment terms — the commercial protection for both parties |
+| 14. Performance Reporting & KPIs | false | — | 14.1 may be explicitly "Not Applicable" per the template's own instruction |
+| 15. Risks | false | — | Recommended; not protective on its own |
+| 16. Governance & Risk Mitigation | false | — | Cross-references protections that actually live in 9, 13 and 17 |
+| 17. Change Management Process | true | Provisional | Without it, scope growth has no priced route (2.2 Checks 9, 11) |
+| 18. Security & Data Protection | true | Provisional | Client-side regulatory protection, usually flowed down from the MSA |
+| 19. Termination | true | **Confirmed** | Exit rights for both parties, including Termination for Cause and Effect of Termination |
+| 20. Acceptance and Sign-Off | true | **Confirmed** | The signature/approval block — an unsigned SOW is unenforceable (2.1 Check 1) |
+| 21. Key Observations | false | — | Self-descriptive commentary on the draft |
+| 22. Reviewer Recommendations | false | — | Advisory |
+| Appendix A — Technical Prerequisites | false | — | Supporting detail |
+| Appendix B — Resource Profiles & Certifications | false | — | Supporting detail |
+
+**Confirmation status is not decoration.** Rows marked **Confirmed** are the
+three named in the originating requirement (opening statement, termination
+clause, signature/approval block). Rows marked *Provisional* are this
+skill's reasoned proposal and **must be ratified by the Delivery Management
+team before this registry is treated as final**. Until they are, still run
+the check on Provisional rows — just label them as provisional in the report
+(Section 3 supplies the wording). Do not add or remove rows from this table
+on your own judgment mid-review; if a review suggests the list is wrong, log
+it per Section 5 instead.
+
+#### Verdict set for this pre-check
+
+Four verdicts, deliberately distinct from the 2.1–2.11 set:
+
+- **Present — intact** — the section exists and still provides its
+  protection. Cite the heading and one representative sentence.
+- **Present — reworded (allowed)** — the text differs from the template but
+  the protection is unchanged. **This is not a violation.** Note it in one
+  line and move on.
+- **Materially Altered** — **VIOLATION.** The section is still nominally
+  present, but a protection it exists to provide is gone, reversed, or
+  neutralised.
+- **Removed** — **VIOLATION.** No section covering this substance exists
+  anywhere in the document, under any heading or number.
+
+Every violation is **High risk**, always, whichever section it hits.
+
+#### Telling an allowed edit apart from a material alteration
+
+This distinction is the whole precision problem of this check. Firing on
+ordinary redlines trains reviewers to ignore the warning, which defeats it.
+
+**Allowed — do NOT flag any of these:**
+
+- Changing a number inside a retained clause: notice period 30 → 60 days,
+  cure period, escalation percentage, cap value, rate figures.
+- Party-specific substitution: names, addresses, entity forms, signatory
+  names and titles, dates, governing-agreement reference.
+- Rewording, tightening, translating into the client's house style, or
+  splitting one paragraph into two.
+- Reordering bullets or subsections within the section.
+- Renumbering, or moving the section elsewhere in the document — **provided
+  the substance still exists somewhere.** Search by substance, never by
+  section number alone.
+- Adding to the section: an extra termination ground, an extra security
+  control, an extra client obligation, further regulatory references.
+- Marking a subsection "Not Applicable" **where the template itself
+  authorises it** (e.g. 14.1 SLAs on an implementation-only engagement).
+- A `<CONFIRM: …>` / `<TECH TEAM: …>` / `<LEGAL: …>` placeholder standing in
+  for unconfirmed content — the section is present and awaiting facts. That
+  is a Mode 2 open item, not a violation.
+
+**Material — DO flag these:**
+
+- The section, or one of its numbered subsections, is absent entirely, or
+  reduced to a heading with no operative text.
+- A named protection inside it is deleted: 19.2 Termination for Cause gone,
+  19.3 Effect of Termination gone, the Bristlecone column struck from the
+  Section 20 sign-off table, 4.7 Exclusions gone, 12.2 Client Obligations
+  gone.
+- A right the template makes mutual is made one-sided, or is reassigned from
+  one party to the other (e.g. termination for convenience available to the
+  client only).
+- An unqualified waiver, disclaimer or "notwithstanding" carve-out is added
+  that negates the section's protection.
+- The section is demoted from binding to advisory — "the parties will
+  discuss termination in good faith" replacing an actual notice mechanism;
+  change control described as optional; sign-off replaced by "deemed
+  accepted" with no criteria.
+- The section is merged into another in a way that drops substance. A merge
+  that preserves every element is "Present — reworded (allowed)."
+
+**Tie-break — when you cannot tell, do not flag.** Per Rule 3, an uncertain
+material-alteration call goes to **Open Questions**, phrased as a question
+("Section 19 no longer states any effect-of-termination consequence for
+work-in-progress — was 19.3 intentionally dropped?"), not into the violation
+block. A false violation costs a delivery partner an escalation to Delivery
+Management over nothing, and teaches them to skip the warning next time.
+
+**Explicitly out of scope for this check: *added* sections.** Non-standard
+sections the parties have inserted — an extra annex, a client-specific
+compliance schedule, a bespoke security addendum — are **not** a violation of
+this control and must not be reported here. Assess their content under
+Categories 2.1–2.11 like any other text.
+
+#### Required warning format
+
+Report every violation using exactly this block. The bolded sentence is
+required verbatim — do not paraphrase it, soften it, or dissolve it into
+surrounding prose:
+
+```
+### MANDATORY SECTION VIOLATION — <Section N. Name>
+Type: Removed | Materially Altered
+Risk: High · Confidence: <High/Medium/Low>
+Registry status: Confirmed | Provisional — pending Delivery Management ratification
+
+**This is a mandatory section from the Bristlecone standard SOW template
+and cannot be removed.**
+
+What changed: <one sentence — which protection is gone, reversed or neutralised>
+Evidence: <verbatim quote of the altering text with its locator; or, for a
+removal, the exact search performed and its result — e.g. "no heading or
+body text matching 'terminat*', 'notice period' or 'effect of termination'
+found anywhere in the document">
+Action required: Consult the **Delivery Management team** before proceeding
+with this removal or alteration.
+```
+
+Rule 1 applies unchanged: a violation with no quote and no stated search is
+not a violation — it is an Open Question.
 
 ### 2.1 Agreement & Commercial Compliance (11 checkpoints)
 
@@ -338,7 +511,8 @@ or citations to save space — precision is the entire value of this report.
 ```
 # SOW Review Report — <Project/Client name>
 Reviewed against: Bristlecone Delivery Excellence SOW Audit Checklist
-(11 categories, 101 checkpoints)
+(11 categories, 101 checkpoints) + the Section 2.0 mandatory-section
+integrity pre-check
 Date: <today's date>
 Companion evidence available for this review (CR log, sign-off emails,
 Risk Register, status reports, access logs, etc.): <list what was
@@ -348,6 +522,36 @@ supplied, or "None — SOW document only">
 <3-4 sentences: overall read, and the single biggest risk first. State
 plainly whether this looks close to signable/compliant or needs
 significant rework — do not hedge this into meaninglessness.>
+
+## Mandatory Section Integrity (Section 2.0 pre-check)
+
+<Report this block before the category findings, always — including when
+nothing is wrong. If the registry has not yet been ratified by Delivery
+Management, open with: "Registry rows marked Provisional below are this
+skill's proposed list and are pending Delivery Management ratification;
+Confirmed rows are settled.">
+
+| Template section | Mandatory | Verdict | Confidence | Citation / search performed |
+|---|---|---|---|---|
+| Cover page | true | Present — intact / Present — reworded (allowed) / **Materially Altered** / **Removed** | H/M/L | "<quote>" (location), or the search run and its result |
+| 1. Agreement Details | true | ... | | |
+| 3. Project Overview | true | ... | | |
+| 4. Scope of Work | true | ... | | |
+| 9. Key Deliverables | true | ... | | |
+| 11. Acceptance Criteria | true | ... | | |
+| 12. Obligations | true | ... | | |
+| 13. Commercials | true | ... | | |
+| 17. Change Management Process | true | ... | | |
+| 18. Security & Data Protection | true | ... | | |
+| 19. Termination | true | ... | | |
+| 20. Acceptance and Sign-Off | true | ... | | |
+
+<Then, for every row whose verdict is Materially Altered or Removed, emit
+the full warning block in the exact format given in Section 2.0. If there
+are none, state: "No mandatory-section violations detected — all 12
+mandatory template sections are present and substantively intact." Do not
+omit this line; an explicit clean result is what tells the reader the check
+actually ran.>
 
 ## Category-by-Category Findings
 
@@ -378,8 +582,15 @@ category was written against."]
 | 11. SOW-Specific Flags | 12 | | | | | |
 | **TOTAL** | **101** | | | | | |
 
-Overall Rating: **Red** if any High-risk checkpoint is an outright Fail
-(not Not Addressed/Cannot Verify), or multiple High-risk items are Not
+(Mandatory-section violations are deliberately absent from this scorecard —
+they are counted and reported only in the Mandatory Section Integrity block
+above. Do not add them into any column here; a violation must not be able to
+average away against 100 passing checkpoints.)
+
+Overall Rating: **Red** if the Section 2.0 pre-check found any mandatory
+section Removed or Materially Altered (this alone forces Red, whatever the
+category tables say) · **Red** if any High-risk checkpoint is an outright
+Fail (not Not Addressed/Cannot Verify), or multiple High-risk items are Not
 Addressed with no mitigating explanation · **Amber** if there are
 Medium/Low-risk Fails or Not-Addressed gaps but no High-risk Fails ·
 **Green** if all High-risk checkpoints Pass (or are correctly N/A/Cannot
@@ -389,9 +600,11 @@ found. State the rating and the one-sentence reason for it.
 ## Top Risks (ranked, highest first)
 1. <risk> — <why it matters commercially/legally> — <citation(s)>
 2. ...
-(Always surface any High-risk Fail here regardless of category, plus any
-missing Exclusions/Change-Management-process finding — these are
-structurally high-risk per 2.2 and 2.3 above.)
+(Rank every Section 2.0 mandatory-section violation above everything else,
+in registry order — a removed protection outranks a failed checkpoint about
+how well a retained one is worded. Then surface any High-risk Fail
+regardless of category, plus any missing Exclusions/Change-Management-process
+finding — these are structurally high-risk per 2.2 and 2.3 above.)
 
 ## Contradictions Found
 <any place two sections conflict — list both quotes side by side. If
@@ -457,6 +670,20 @@ own generic placeholders; this skill's `<CONFIRM: ...>` / `<TECH TEAM: ...>`
 / `<LEGAL: ...>` convention (Step 4) replaces them so a human can find every
 open item with one search for `<`.
 
+**Mandatory sections are not optional output.** Sections tagged
+**[MANDATORY]** below are `Mandatory: true` in the Section 2.0 registry —
+that table is the single source of truth, and any section not tagged here is
+`Mandatory: false` there. Every mandatory section must appear in every
+generated draft, in template order, **even when the transcript, interview or
+BRD says nothing about it**. Silence in the source is never grounds for
+dropping one: emit the section with its heading and subsections intact and
+fill the unknown content with the Step 4 placeholder convention
+(`<CONFIRM: …>` / `<TECH TEAM: …>` / `<LEGAL: …>`). A draft that omits a
+mandatory section will be flagged as a violation the moment it is run
+through Mode 1, so omitting it saves nothing. This is a floor, not a ceiling
+— adding non-standard sections a specific engagement needs is fine and is
+outside this control entirely.
+
 **Table discipline** — only the sections explicitly called out below as a
 table (the cover page field/details table, 4.6, 6.2, 7.2, 9, 11, 13.2, 14,
 15, 17, 20) are tables. Every other section is prose/bullets, even if the
@@ -466,7 +693,7 @@ way to show that data (rows of comparable items: integrations, phases,
 roles, deliverables, rates, risks, sign-off lines), not as a generic
 formatting habit. When in doubt, prefer prose.
 
-**Cover page** — produce this *before* Section 1, as its own page. It is a
+**Cover page** **[MANDATORY]** — produce this *before* Section 1, as its own page. It is a
 distinct page from Section 1 and uses a different field set — do not merge
 the two. Title: **STATEMENT OF WORK**. Subtitle: the confirmed Project
 Name (or `<CONFIRM: project name>` if not yet known) — never carry over
@@ -476,7 +703,7 @@ Name, Project Name, Engagement Type, Contract ID, Effective Date, End
 Date, Document Version (start at v1.0), Prepared by (Bristlecone Inc.),
 Review Status (Draft).
 
-1. **Agreement Details** — one sentence: *"This Statement of Work (SOW) is
+1. **Agreement Details** **[MANDATORY]** — one sentence: *"This Statement of Work (SOW) is
    entered into between [Client Name] and Bristlecone Incorporated under
    the [Master Services Agreement / Inbound Services Agreement] dated
    [Agreement Date]."* Then a **separate** Field/Details table — reusing
@@ -493,12 +720,12 @@ Review Status (Draft).
    template's actual numbering, where Key Assumptions is Section 10 and
    Key Observations is Section 21. Use the correct section numbers, 10 and
    21, in generated output.)*
-3. **Project Overview** — 3.1 Background (client's current state, pain
+3. **Project Overview** **[MANDATORY]** — 3.1 Background (client's current state, pain
    points, business drivers); 3.2 Objectives (bullets); 3.3 Indicative
    To-Be Process Flow (high-level target-state description — if a relevant
    process-flow diagram is available from the source material, include it
    here rather than describing the flow in prose alone).
-4. **Scope of Work** — 4.1 Geographical Scope; 4.2 Process Scope; 4.3
+4. **Scope of Work** **[MANDATORY]** — 4.1 Geographical Scope; 4.2 Process Scope; 4.3
    Technical Scope; 4.4 Services Scope; 4.5 Application Scope; 4.6
    Integration Scope as a table (# | Integration | Source System | Target
    System | Notes); 4.7 Exclusions (bullets — this section is
@@ -519,19 +746,19 @@ Review Status (Draft).
 8. **Personnel Requirements** — bullets on language, background,
    domain familiarity, file-format/standards knowledge, methodology
    experience, certifications (reference Appendix B).
-9. **Key Deliverables** — table (# | Deliverable | Description |
+9. **Key Deliverables** **[MANDATORY]** — table (# | Deliverable | Description |
    Responsible Party | Due Date | Acceptance Criteria). Only list
    deliverables explicitly described in the source; mark unconfirmed dates
    `<CONFIRM: due date>` rather than "TBD" so it's search-findable.
 10. **Key Assumptions** — bullets, project-specific (Rule: no generic
     boilerplate — see Mode 1 2.8-equivalent judgment). Note that deviations
     trigger the Change Management Process (Section 17).
-11. **Acceptance Criteria** — table (Phase/Deliverable | Acceptance
+11. **Acceptance Criteria** **[MANDATORY]** — table (Phase/Deliverable | Acceptance
     Criteria | Sign-off Party | Timeline for Review). Criteria must be
     objective/measurable — never "client satisfaction" with no test.
-12. **Obligations** — 12.1 Bristlecone Obligations (bullets); 12.2 Client
+12. **Obligations** **[MANDATORY]** — 12.1 Bristlecone Obligations (bullets); 12.2 Client
     Obligations (bullets).
-13. **Commercials** — 13.1 Engagement Model; 13.2 Rate Card & Pyramid
+13. **Commercials** **[MANDATORY]** — 13.1 Engagement Model; 13.2 Rate Card & Pyramid
     Structure as a table (Role/Band | Location | Rate USD/day | Rate Type
     | Effective Date | Notes); 13.3 Shift Allowance; 13.4 Travel &
     Expenses; 13.5 Invoicing & Payment Terms.
@@ -548,18 +775,18 @@ Review Status (Draft).
     (reference Sections 9 and 13); 16.2 Deferred Scope Decisions (bullets);
     16.3 Integration & Custom Code Safeguards; 16.4 Change Control
     (reference Section 17).
-17. **Change Management Process** — table (Step | Activity | Owner |
+17. **Change Management Process** **[MANDATORY]** — table (Step | Activity | Owner |
     Timeline), using the template's standard 6-step flow (CR raised → CR
     logged → impact assessment → CR reviewed/approved → SOW
     amendment/addendum → CR closure).
-18. **Security & Data Protection** — bullets (patching/AV, encryption in
+18. **Security & Data Protection** **[MANDATORY]** — bullets (patching/AV, encryption in
     transit/at rest, least privilege, information-security-policy
     compliance, incident reporting window, regulatory compliance e.g.
     GDPR/SOC2/ISO 27001).
-19. **Termination** — 19.1 Termination for Convenience (notice period);
+19. **Termination** **[MANDATORY]** — 19.1 Termination for Convenience (notice period);
     19.2 Termination for Cause (breach/insolvency/fraud grounds); 19.3
     Effect of Termination.
-20. **Acceptance and Sign-Off** — table (blank rows) with columns
+20. **Acceptance and Sign-Off** **[MANDATORY]** — table (blank rows) with columns
     Bristlecone Inc. | [Client Name], rows Authorized Signatory / Name
     (Print) / Title / Date / Signature. Leave signature fields blank —
     never fabricate a name here.
@@ -614,6 +841,9 @@ Every GENERATE-mode output ends with:
 This is a first-pass draft. It has NOT been run through Mode 1 (REVIEW).
 Before this goes to a client or gets a delivery-team sign-off, run it
 through Mode 1 in full. Open placeholders in this draft: <count>.
+All mandatory template sections (Section 2.0 registry) are present:
+<Yes — all 12 / No — list which are missing and why>. Mandatory sections
+carrying only placeholder content: <list, or "none">.
 ```
 
 ---
@@ -630,7 +860,13 @@ the frontmatter) and updated based on real usage:
    tightening a checkpoint's guidance, adding a new one, or removing one
    that doesn't hold up. If Delivery Excellence revises the audit
    checklist or the master template, re-sync Sections 2 and 4 against the
-   new source documents rather than patching around drift.
+   new source documents rather than patching around drift. The Section 2.0
+   mandatory registry is part of that re-sync: log every case where a
+   reviewer says a section was flagged that shouldn't have been (or wasn't
+   flagged and should have been), and take the registry's Provisional rows
+   back to Delivery Management for ratification or removal — the flag is a
+   contractual judgment, so it changes only with their sign-off, never on a
+   reviewer's or this skill's own initiative mid-review.
 3. Bump the `version` field and keep a one-line changelog at the bottom of
    this file so it's clear what changed between runs.
 
@@ -640,6 +876,41 @@ hasn't been tested against Bristlecone's actual documents yet.
 
 ## Changelog
 
+- v0.4.0 — Added a mandatory-section guardrail so the protections the master
+  template exists to carry cannot be quietly deleted from a SOW. New Section
+  2.0 holds the registry — an explicit `Mandatory: true/false` flag for all
+  24 template sections (cover page, 22 numbered sections, 2 appendices) —
+  and runs as a REVIEW pre-check ahead of Categories 2.1–2.11, with its own
+  four-verdict set (Present — intact / Present — reworded (allowed) /
+  Materially Altered / Removed) so a deleted clause is never diluted into
+  the generic Pass / Fail / Not Addressed / Cannot Verify buckets. Every
+  violation is High risk, carries the verbatim warning *"This is a mandatory
+  section from the Bristlecone standard SOW template and cannot be removed"*
+  and an instruction to consult the Delivery Management team, is reported in
+  its own block in Section 3, forces an Overall Rating of Red, and outranks
+  every other Top Risk. To keep the check from crying wolf, 2.0 lists the
+  edits that are explicitly *allowed* (notice-period and other in-clause
+  numbers, party-specific detail, rewording, reordering, renumbering or
+  relocation where the substance survives, additions, template-authorised
+  "Not Applicable" markings, open `<CONFIRM: …>` placeholders) against those
+  that are material (section or subsection gone or emptied, a named
+  protection deleted, a mutual right made one-sided, a negating waiver
+  added, a binding clause demoted to advisory, a lossy merge) — and requires
+  an uncertain call to be demoted to an Open Question per Rule 3 rather than
+  flagged. *Added* non-standard sections are explicitly out of scope for
+  this control. Mode 2 Step 3 now tags each mandatory section
+  **[MANDATORY]** inline and requires all of them in every draft even when
+  the source material is silent, using the Step 4 placeholder convention
+  instead of omission; Step 5's status note reports mandatory-section
+  coverage, and Rule 5 gains a step 6 covering both modes. **Registry status:
+  Project Overview (3), Termination (19) and Acceptance & Sign-Off (20) are
+  Confirmed; the other nine `true` rows are marked Provisional and need
+  Delivery Management ratification before the list is treated as final.**
+  Note the section-numbering translation this required: the originating
+  requirement was written against v0.1.0's generic 13-section checklist
+  ("termination 2.11", "signatures 2.13"), which v0.2.0 replaced — the
+  mandatory sections live in the real 22-section master template in Section
+  4, so Termination is 19 and Sign-Off is 20, not 2.11 and 2.13.
 - v0.3.0 — Many client engagements have no RFP/pre-sales dashboard of their
   own, so generated SOWs must never carry Bristlecone-internal sourcing
   references (RFP framing, slide/page locators back to an internal deck)

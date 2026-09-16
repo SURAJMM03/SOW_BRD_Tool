@@ -1,0 +1,20 @@
+{
+  "sections": {
+    "0": {
+      "content": "| Field | Details |\n|---|---|\n| Client Name | METRO |\n| Project Name | SAP CLOUD ALM |\n| Engagement Type | Implementation |\n| Contract ID | <CONFIRM: contract / SOW ID> |\n| Effective Date | January 2026 |\n| End Date | October 2026 |\n| Document Version | v1.0 |\n| Prepared by | Bristlecone Inc. |\n| Review Status | Draft |",
+      "approved_at": "2026-08-24T06:09:52.162625"
+    },
+    "3.1": {
+      "content": "METRO is moving its ALM capabilities to SAP Cloud ALM in parallel with the S/4 RISE migration. The current landscape requires a modern SaaS-based approach for technical monitoring and change request management, replacing legacy ways of working tied to SAP Solution Manager 7.2, whose mainstream support ends in 2027. The engagement is driven by the need to reduce migration effort, standardize change workflows, improve operational visibility across S/4, Integration Suite, BTP, Datasphere, Ariba, and MII, and establish browser-based, current-state ALM capabilities without infrastructure overhead.\n\nThe scope focuses on onboarding the SAP Cloud ALM tenant, configuring standard change management and monitoring use cases, enabling dashboards and alerting, and transitioning production support to the METRO team. Key pain points addressed include fragmented monitoring, limited end-to-end traceability across change cycles, and the need to align transport governance and operational readiness with the September 2026 go-live.",
+      "approved_at": "2026-08-24T06:10:46.581892"
+    },
+    "3.2": {
+      "content": "- Implement SAP Cloud ALM for Technical Monitoring and Change Request Management aligned to the S/4 RISE migration.\n- Onboard and configure the SAP Cloud ALM tenant and required landscape connectivity.\n- Enable standard change management workflows, transport routes, and release strategies.\n- Establish monitoring for system health, applications, jobs, user performance, and integrations.\n- Configure dashboards, notifications, and alert management for operational visibility.\n- Test the first wave of ChaRM cycle execution across development and quality environments.\n- Prepare METRO teams for production transition through train-the-trainer activities and support handover.",
+      "approved_at": "2026-08-24T06:10:46.581892"
+    },
+    "3.3": {
+      "content": "The target state is a single SAP Cloud ALM-led process for change and operations management across the in-scope SAP landscape. METRO will onboard systems and integrations into SAP Cloud ALM, configure data flow from connected platforms, define role-based access, and activate standard monitoring and change workflows. Changes will follow a governed path from planning through transport sequencing and release execution, while operational monitoring will provide alerts, dashboards, and issue visibility across production systems. Following deployment, the solution will transition to METRO through knowledge transfer, SOP handover, and hypercare support.\n\n<IMAGE id=\"055a5f5a9b18\"/>\n\nThe planned flow is: subscription and onboarding, landscape and connectivity readiness, design of monitoring and transport governance, realization of technical monitoring and ChaRM configuration, deployment aligned with production readiness, and transition to steady-state use by the METRO team.",
+      "approved_at": "2026-08-24T06:10:46.581892"
+    }
+  }
+}

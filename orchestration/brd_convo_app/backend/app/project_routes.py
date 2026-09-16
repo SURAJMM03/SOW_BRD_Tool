@@ -82,7 +82,7 @@ VALID_SOURCE_EXTS = {
     ".png", ".jpg", ".jpeg", ".gif", ".webp", ".bmp",
 }
 VALID_PROMPT_EXTS = {".json", ".yaml", ".yml"}
-MAX_FILE_SIZE = 50 * 1024 * 1024
+MAX_FILE_SIZE = 200 * 1024 * 1024
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # RESPONSE MODELS
@@ -299,6 +299,35 @@ def _run_chunking_background(file_id: str, project_id: str, file_path: Path):
                 "Image extraction complete for %s: %d found, %d new",
                 file_id, img_result["images_found"], img_result["images_added"],
             )
+
+            # ── Whole-slide rendering for decks ──────────────────────────
+            # The step above only captures EMBEDDED images. A PowerPoint
+            # flowchart is normally drawn with native shapes (boxes,
+            # connectors, decision diamonds) and has no embedded image at
+            # all, so the real process-flow and architecture diagrams are
+            # invisible to it. Render those slides whole. Best-effort: any
+            # failure (no Office, no pywin32, timeout) just means the deck
+            # keeps whatever embedded images were found. See slide_renderer.
+            if file_path.suffix.lower() in (".pptx", ".ppt"):
+                try:
+                    from app.slide_renderer import render_and_index_deck
+                    # source_doc defaults to the on-disk filename, which is the
+                    # original upload name — the same value the embedded-image
+                    # pass uses, so both kinds stay scoped to this project.
+                    slide_result = render_and_index_deck(
+                        str(file_path),
+                        output_dir=str(_app_dir / "extracted_images"),
+                        index_file=str(_app_dir / "image_chunks.json"),
+                    )
+                    logger.info(
+                        "Whole-slide rendering for %s: %d rendered, %d indexed",
+                        file_id, slide_result.get("rendered", 0),
+                        slide_result.get("indexed", 0),
+                    )
+                except Exception as exc:
+                    logger.warning(
+                        "Whole-slide rendering skipped for %s: %s", file_id, exc
+                    )
 
             # ── Auto-run vision on any images that came back without keywords ──
             # The inline vision call inside extract_and_index_single_file can

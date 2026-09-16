@@ -1,0 +1,261 @@
+{
+  "0": {
+    "status": "generated",
+    "custom_instructions": ""
+  },
+  "1": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "This Statement of Work (SOW) is entered into between METRO and Bristlecone Incorporated under the <LEGAL: governing Master Services Agreement / Inbound Services Agreement / Consulting Agreement and date>.\n\n| Field | Details |\n|---|---|\n| Contract / SOW ID | <CONFIRM: contract / SOW ID> |\n| SOW Effective Date | January 2026 |\n| SOW End Date | October 2026 |\n| Governing Agreement | <LEGAL: governing Master Services Agreement / Inbound Services Agreement / Consulting Agreement and date> |\n| Amendment / Supersedes | New SOW |\n| Agreement Duration | 10 months |\n| Delivery Location | Remote / Offshore with METRO stakeholder collaboration |",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "3": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 3.1 Background\nMETRO is implementing SAP Cloud ALM to establish Technical Monitoring and Change Request Management aligned with its S/4 RISE migration plan. The engagement covers Cloud ALM tenant setup, standard change management, monitoring and alerting use cases, dashboards, and transition support through hypercare.\n\nMETRO's current-state drivers include the move toward SAP's strategic ALM platform, the need to reduce migration effort from legacy change and operations processes, and the need for standardized monitoring across SAP S/4HANA Cloud, BTP applications, MII, Datasphere, Ariba, and integration flows. Key pain points addressed by this engagement are fragmented operational visibility, limited end-to-end monitoring, and the need for a structured ChaRM process with defined transport routes, release strategies, approvals, notifications, and dashboards.\n\nThe business objective is to put in place a production-ready Cloud ALM foundation by the September 2026 go-live, with non-production monitoring, Dev and QA ChaRM cycle testing, production deployment, and October 2026 hypercare and transition to the METRO team.\n\n### 3.2 Objectives\n- Implement SAP Cloud ALM for Technical Monitoring and Change Request Management in line with the S/4 RISE migration roadmap.\n- Configure the SAP Cloud ALM tenant, user management, and core landscape connectivity required for the agreed use cases.\n- Establish standard change management with configured workflows, transport routes, release strategies, and end-to-end Dev and QA test cycles.\n- Enable monitoring for system health, applications, jobs, user performance, integrations, alerts, and notifications across the in-scope SAP landscape.\n- Deliver operational dashboards for health monitoring and change management.\n- Support production deployment, issue resolution, knowledge transfer, and transition during hypercare.\n- Exclude SAP Cloud ALM++ capabilities from this engagement.\n\n### 3.3 Indicative To-Be Process Flow\nThe target state is a single SAP Cloud ALM-driven operating model for change control and technical monitoring. METRO's in-scope SAP systems and integrations will connect to Cloud ALM, where landscape data, monitoring signals, alerts, and change records are managed through standardized workflows. Change requests will move through defined ChaRM cycles across Dev, QA, and Production, while monitoring use cases provide operational visibility, alerting, and dashboard-based oversight for both project and run-state teams.\n\n<IMAGE id=\"bc2c9706ab7b\"/>\n\nThe indicative flow is: Cloud ALM subscription and onboarding, landscape and connectivity readiness, monitoring use-case and metric finalization, ChaRM design and transport-sequence mapping, non-production configuration and testing, production deployment aligned to S/4 migration, and hypercare transition to METRO. The resulting process is intended to give METRO a governed release path, faster issue visibility, and a consistent operational control layer across the in-scope environment.",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "3.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "3.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "3.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4": {
+    "status": "in-progress",
+    "custom_instructions": "",
+    "draft_content": "### 4.1 Geographical Scope\nThe services under this SOW will be delivered for METRO’s SAP Cloud ALM implementation supporting the S/4 RISE migration program. In scope are the METRO SAP landscape and delivery activities required for non-production and production rollout across the environments participating in the January 2026 to October 2026 implementation window. Country rollout sequencing, if different from the core migration plan, will follow the approved S/4 program deployment plan.\n\n### 4.2 Process Scope\nIn scope are the SAP Cloud ALM processes required to establish Technical Monitoring and Standard Change Request Management for METRO, including:\n- Standard change management for change lifecycle control, transport sequencing, approvals, and release execution\n- Monitoring use-case definition and metric finalization for the target landscape\n- System health monitoring and application monitoring\n- Job and automation monitoring\n- User performance monitoring for SAP S/4HANA\n- Integration and exception monitoring for S/4 and Integration Suite\n- Notification and alert management\n- Dashboarding for operations and change management\n- Production transition, issue resolution, and hypercare support through October 2026\n\n### 4.3 Technical Scope\nIn scope are the technical activities needed to configure and operationalize SAP Cloud ALM for METRO, including tenant onboarding, subaccount setup, landscape readiness, prerequisite configuration, data flow setup from connected SAP systems to Cloud ALM, ChaRM workflow configuration, transport route and release strategy setup, and end-to-end testing for the first Dev-to-QA change cycle. Monitoring configuration covers non-production setup during realization and production integration during deploy and hypercare. The implementation is aligned to the S/4 RISE migration timeline and includes connectivity planning for supported use cases.\n\n<IMAGE id=\"410e29befe04\"/>\n\n### 4.4 Services Scope\nBristlecone will provide the following services as part of this engagement:\n- Project management and delivery coordination aligned to the January 2026 to October 2026 plan\n- Solution design for SAP Cloud ALM Technical Monitoring and Standard Change Management\n- SAP Cloud ALM onboarding and tenant configuration\n- Landscape readiness assessment and prerequisite configuration support\n- Configuration of monitoring, alerting, notifications, dashboards, and ChaRM workflows\n- Transport governance design, route setup, and release strategy configuration\n- End-to-end testing support for Dev and QA change cycles\n- Train-the-trainer workshop delivery and SOP support for end users\n- Deployment support for production integration\n- Hypercare, issue resolution, document updates, and transition support to the METRO team\n\n### 4.5 Application Scope\nThe following application areas and functionalities are in scope:\n- SAP Cloud ALM tenant and user management\n- SAP Cloud ALM Standard Change Management\n- SAP S/4HANA Cloud monitoring use cases\n- SAP BTP application monitoring\n- SAP Datasphere monitoring\n- SAP Ariba monitoring\n- SAP Integration Suite integration monitoring\n- SAP landscape data flow to Cloud ALM\n- Standard health monitoring dashboard\n- Change Management dashboard\n- Configured change workflow, release strategy, and transport route setup\n\n### 4.6 Integration Scope\n| # | Integration | Source System | Target System | Notes |\n|---|---|---|---|---|\n| 1 | Landscape data flow to Cloud ALM | SAP S/4HANA Cloud | SAP Cloud ALM | Data flow setup for operational monitoring use cases |\n| 2 | Application monitoring integration | SAP BTP applications | SAP Cloud ALM | Monitoring of application health and performance |\n| 3 | Analytics/monitoring integration | SAP Datasphere | SAP Cloud ALM | Included as part of target monitored landscape |\n| 4 | Application monitoring integration | SAP Ariba | SAP Cloud ALM | Included for operational visibility where connected |\n| 5 | Integration monitoring | SAP Integration Suite | SAP Cloud ALM | Covers integration and exception monitoring |\n| 6 | ChaRM transport sequence integration | DEV landscape | QA landscape | First wave of change cycle tested end-to-end |\n| 7 | ChaRM production integration | QA landscape / approved transport path | Production landscape | Production mapping and deployment support during deploy/hypercare |\n| 8 | Monitoring alert and notification setup | Connected monitored systems | SAP Cloud ALM | Alerting and notification configuration for approved use cases |\n\n### 4.7 Exclusions\nThe following items are out of scope under this SOW:\n- SAP Cloud ALM++ capabilities\n- Business Process Monitoring, Configuration & Security Analysis, Intelligent Event Processing, Test Management, Quality Gate Management, Defect Management, Document Management, Deployment Management, and other SAP Cloud ALM capabilities not expressly listed in this section\n- Custom development, enhancement, or remediation outside standard SAP Cloud ALM configuration for Technical Monitoring and Standard Change Management\n- Scope expansion beyond the agreed monitored landscape, use cases, or transport governance model without approved change control\n- Support for non-SAP applications or third-party tools except where expressly included through approved integrations with SAP Integration Suite\n- Post-hypercare managed support beyond October 2026 under this SOW\n- Country-specific rollout, compliance, or localization activities not required for the agreed SAP Cloud ALM setup and transition model",
+    "draft_sources": [
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx",
+      "Metro_SAP_CALM_Proposal.pptx"
+    ]
+  },
+  "4.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.5": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.6": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "4.7": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "5": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "6": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "6.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "6.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "7.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "8": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "9": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "10": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "11": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "12": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "12.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "12.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "13.5": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "14": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "14.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "15": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "16.4": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "17": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "18": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "19.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "20": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "21": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.1": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.2": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "22.3": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "23": {
+    "status": "not-started",
+    "custom_instructions": ""
+  },
+  "24": {
+    "status": "not-started",
+    "custom_instructions": ""
+  }
+}

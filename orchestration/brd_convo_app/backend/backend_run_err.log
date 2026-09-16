@@ -1,0 +1,540 @@
+INFO:     Started server process [5100]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8010 (Press CTRL+C to quit)
+2026-09-10 14:37:47,463 | INFO | ProjectRoutes | Created project f8dcc57a: CALM
+2026-09-10 14:37:58,789 | INFO | ProjectRoutes | Ingested Metro_SAP_CALM_Proposal.pptx → f8dcc57a (source, 15359875 bytes)
+2026-09-10 14:37:58,794 | INFO | ProjectRoutes | Chunking started in background for 6581c97e
+2026-09-10 14:37:58,804 | INFO | ChunkingPipeline | Processing Metro_SAP_CALM_Proposal.pptx (project=f8dcc57a, file=6581c97e)
+2026-09-10 14:38:26,228 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:38:26,233 | INFO | openai._base_client | Retrying request to /chat/completions in 0.494306 seconds
+2026-09-10 14:38:28,070 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:38:28,076 | WARNING | ChunkingPipeline | Vision describe failed for 'PPTX: Metro_SAP_CALM_Proposal.pptx, Slide 1 image: Picture 2': Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 14:38:30,302 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:38:30,308 | INFO | openai._base_client | Retrying request to /chat/completions in 0.471380 seconds
+2026-09-10 14:38:31,159 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:38:31,164 | WARNING | ChunkingPipeline | Vision describe failed for 'PPTX: Metro_SAP_CALM_Proposal.pptx, Slide 6 image: Graphic 2': Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 14:38:32,337 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:38:32,343 | INFO | openai._base_client | Retrying request to /chat/completions in 0.379480 seconds
+2026-09-10 14:38:33,573 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:38:33,579 | WARNING | ChunkingPipeline | Vision describe failed for 'PPTX: Metro_SAP_CALM_Proposal.pptx, Slide 7 image: Picture 4': Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 14:38:34,359 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:38:34,365 | INFO | openai._base_client | Retrying request to /chat/completions in 0.404184 seconds
+2026-09-10 14:38:35,155 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:38:35,157 | WARNING | ChunkingPipeline | Vision describe failed for 'PPTX: Metro_SAP_CALM_Proposal.pptx, Slide 7 image: Picture 2': Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 14:38:35,512 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:38:35,519 | INFO | openai._base_client | Retrying request to /chat/completions in 0.410122 seconds
+2026-09-10 14:38:36,274 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:38:36,281 | WARNING | ChunkingPipeline | Vision describe failed for 'PPTX: Metro_SAP_CALM_Proposal.pptx, Slide 7 image: Picture 11': Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 14:38:36,283 | ERROR | ChunkingPipeline | Vision circuit breaker tripped after 5 failures — disabling vision for the rest of this run
+2026-09-10 14:38:36,289 | INFO | ChunkingPipeline | PPTX Metro_SAP_CALM_Proposal.pptx: 8 slides, 0 image(s) described
+2026-09-10 14:38:36,729 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:38:36,730 | INFO | openai._base_client | Retrying request to /chat/completions in 0.382399 seconds
+2026-09-10 14:38:37,479 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:38:37,485 | WARNING | ChunkingPipeline | Batch LLM keyword extraction failed: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — falling back to local
+2026-09-10 14:38:37,492 | INFO | ChunkingPipeline | Generating embeddings for 8 chunks from Metro_SAP_CALM_Proposal.pptx …
+2026-09-10 14:38:40,485 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:38:40,488 | INFO | openai._base_client | Retrying request to /embeddings in 0.447513 seconds
+2026-09-10 14:39:14,682 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:39:39,969 | INFO | openai._base_client | Retrying request to /embeddings in 0.951778 seconds
+2026-09-10 14:39:41,789 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:39:41,795 | WARNING | ChunkingPipeline | Embedding generation skipped for Metro_SAP_CALM_Proposal.pptx: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — chunks saved without embeddings, call /embed-chunks to backfill
+2026-09-10 14:39:41,796 | INFO | ChunkingPipeline | Produced 8 chunks from Metro_SAP_CALM_Proposal.pptx (keywords via LLM batch (20/call))
+2026-09-10 14:39:41,800 | INFO | ChunkingPipeline | Saved 0 chunks to C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\uploads\f8dcc57a\chunks.json
+2026-09-10 14:39:41,804 | INFO | ChunkingPipeline | Saved 8 chunks to C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\uploads\f8dcc57a\chunks.json
+2026-09-10 14:40:06,852 | INFO | app.image_extractor | Extracted 60 images from pptx Metro_SAP_CALM_Proposal.pptx
+2026-09-10 14:40:06,855 | INFO | app.image_extractor | Deduped 60 → 59 images from Metro_SAP_CALM_Proposal.pptx before vision
+2026-09-10 14:40:07,974 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:40:07,975 | INFO | openai._base_client | Retrying request to /chat/completions in 0.463826 seconds
+2026-09-10 14:40:09,336 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:40:09,338 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\c955075ab39d.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 14:40:10,333 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:40:10,335 | INFO | openai._base_client | Retrying request to /chat/completions in 0.456522 seconds
+2026-09-10 14:40:11,235 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:40:11,241 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\d8884093f499.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 14:40:11,630 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:40:11,633 | INFO | openai._base_client | Retrying request to /chat/completions in 0.400264 seconds
+2026-09-10 14:40:12,430 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:40:12,437 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\6b34b4fc95c9.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 14:40:12,794 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:40:12,800 | INFO | openai._base_client | Retrying request to /chat/completions in 0.426608 seconds
+2026-09-10 14:40:14,166 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:40:14,173 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\876a0b21fad4.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 14:40:18,941 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:40:18,944 | INFO | openai._base_client | Retrying request to /chat/completions in 0.492333 seconds
+2026-09-10 14:40:19,809 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:40:19,814 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\e6979888b94e.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 14:40:19,816 | ERROR | app.image_extractor | Vision circuit breaker tripped after 5 consecutive failures — skipping vision for remaining images in this run.
+2026-09-10 14:40:19,819 | INFO | app.image_extractor | Extracted 59 images from Metro_SAP_CALM_Proposal.pptx
+2026-09-10 14:40:19,856 | INFO | app.image_extractor | Appended 0 new images to image_chunks.json (total: 3717)
+2026-09-10 14:40:19,859 | INFO | ProjectRoutes | Image extraction complete for 6581c97e: 59 found, 0 new
+2026-09-10 14:40:20,233 | INFO | SlideRenderer | Slide picker: 6 slide(s) look like diagrams in Metro_SAP_CALM_Proposal.pptx -> [3, 4, 5, 6, 7, 8]
+2026-09-10 14:40:23,033 | INFO | SOWTemplateRoutes | Applied SOW template 0c27be4e (Bristlecone SOW Template (2025)) to project f8dcc57a — 15 sections, engagement=tm
+2026-09-10 14:40:23,074 | INFO | SOWReviewGate | Review checklist loaded: 101 checkpoints across 11 categories
+2026-09-10 14:40:28,902 | INFO | azure.identity._credentials.environment | No environment configuration found.
+2026-09-10 14:40:28,943 | INFO | azure.identity._credentials.managed_identity | ManagedIdentityCredential will use IMDS
+2026-09-10 14:40:28,948 | WARNING | app.claude_provider | claude_provider(azure): SSL verification DISABLED (AZURE_SSL_VERIFY=false).
+2026-09-10 14:40:28,950 | INFO | app.claude_provider | claude_provider: using Azure OpenAI deployment gpt-5.4 at https://ai-adoption-coe.services.ai.azure.com (timeout=300.0s, max_retries=0)
+2026-09-10 14:40:28,951 | INFO | azure.core.pipeline.policies.http_logging_policy | Request URL: 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=REDACTED'
+Request method: 'GET'
+Request headers:
+    'User-Agent': 'azsdk-python-identity/1.25.3 Python/3.14.6 (Windows-11-10.0.26200-SP0)'
+No body was attached to the request
+2026-09-10 14:40:33,179 | INFO | azure.identity._credentials.chained | DefaultAzureCredential acquired a token from AzureCliCredential
+2026-09-10 14:40:48,100 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 14:40:48,112 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=4075 budget=2000 effort=none
+2026-09-10 14:40:48,117 | INFO | SOWKeyFacts | Key facts extracted for f8dcc57a: 11 field(s) populated (assumptions, client_name, duration, effective_start_date, end_date, go_live_date, in_scope, key_milestones, notable_dates, project_name, scope_summary)
+2026-09-10 14:40:51,678 | INFO | SlideRenderer | Rendered 6 slide(s) from Metro_SAP_CALM_Proposal.pptx
+2026-09-10 14:40:51,903 | INFO | app.image_index | Loaded 3717 images from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-09-10 14:40:51,910 | INFO | app.image_index | Image index loaded: C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-09-10 14:40:52,637 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:40:52,639 | INFO | openai._base_client | Retrying request to /chat/completions in 0.498165 seconds
+2026-09-10 14:40:53,797 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:40:53,804 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\499576837090.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 14:40:54,219 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:40:54,223 | INFO | openai._base_client | Retrying request to /chat/completions in 0.383646 seconds
+2026-09-10 14:40:55,000 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:40:55,008 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\410e29befe04.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 14:40:55,380 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:40:55,386 | INFO | openai._base_client | Retrying request to /chat/completions in 0.458487 seconds
+2026-09-10 14:40:56,180 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:40:56,187 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\055a5f5a9b18.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 14:40:56,554 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:40:56,561 | INFO | openai._base_client | Retrying request to /chat/completions in 0.455169 seconds
+2026-09-10 14:40:57,454 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:40:57,458 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\57aeb9cf761c.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 14:40:57,861 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:40:57,865 | INFO | openai._base_client | Retrying request to /chat/completions in 0.431952 seconds
+2026-09-10 14:40:58,653 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:40:58,659 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\70df01b38c53.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 14:40:58,660 | ERROR | app.image_extractor | Vision circuit breaker tripped after 5 consecutive failures — skipping vision for remaining images in this run.
+2026-09-10 14:40:58,758 | INFO | app.image_extractor | Appended 0 new images to image_chunks.json (total: 3717)
+2026-09-10 14:40:59,273 | INFO | app.image_index | Loaded 3717 images from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-09-10 14:40:59,307 | INFO | app.image_index | Image index reloaded: 3717 records
+2026-09-10 14:40:59,311 | INFO | SlideRenderer | Whole-slide rendering for Metro_SAP_CALM_Proposal.pptx: 6 rendered, 0 newly indexed
+2026-09-10 14:40:59,312 | INFO | ProjectRoutes | Whole-slide rendering for 6581c97e: 6 rendered, 0 indexed
+2026-09-10 14:40:59,325 | INFO | rerun_vision | APP_DIR      : C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app
+2026-09-10 14:40:59,328 | INFO | rerun_vision | image_chunks : C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-09-10 14:40:59,329 | INFO | rerun_vision | extracted_dir: C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images
+2026-09-10 14:40:59,391 | INFO | ProjectRoutes | Vision retry: 5 image(s) from Metro_SAP_CALM_Proposal.pptx still need analysis — running now.
+2026-09-10 14:40:59,453 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 14:40:59,456 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=152 budget=500 effort=none
+2026-09-10 14:40:59,456 | INFO | app.image_injection | Image relevance check for 'SOW Overview': 2 candidate(s) -> 0 kept
+2026-09-10 14:41:00,127 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:41:00,133 | INFO | openai._base_client | Retrying request to /chat/completions in 0.413640 seconds
+2026-09-10 14:41:00,909 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:41:00,912 | ERROR | rerun_vision | Vision call failed for 6b34b4fc95c9.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 14:41:01,257 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:41:01,260 | INFO | openai._base_client | Retrying request to /chat/completions in 0.480833 seconds
+2026-09-10 14:41:02,123 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:41:02,129 | ERROR | rerun_vision | Vision call failed for 876a0b21fad4.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 14:41:02,516 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:41:02,518 | INFO | openai._base_client | Retrying request to /chat/completions in 0.467532 seconds
+2026-09-10 14:41:03,342 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:41:03,343 | ERROR | rerun_vision | Vision call failed for e6979888b94e.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 14:41:06,201 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:41:06,204 | INFO | openai._base_client | Retrying request to /chat/completions in 0.445006 seconds
+2026-09-10 14:41:07,986 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:41:07,988 | ERROR | rerun_vision | Vision call failed for faa2c1acf984.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 14:41:08,347 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:41:08,354 | INFO | openai._base_client | Retrying request to /chat/completions in 0.422598 seconds
+2026-09-10 14:41:09,218 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 14:41:09,221 | ERROR | rerun_vision | Vision call failed for 7c31b045ac4e.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 14:41:09,223 | ERROR | rerun_vision | Vision circuit breaker tripped after 5 consecutive failures — skipping vision for remaining images in this run.
+2026-09-10 14:41:09,787 | INFO | app.image_index | Loaded 3717 images from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-09-10 14:41:09,822 | INFO | app.image_index | Image index reloaded: 3717 records
+2026-09-10 14:41:09,826 | INFO | ProjectRoutes | Image index reloaded after upload: 3717 records
+2026-09-10 14:41:09,829 | INFO | ProjectRoutes | Chunking complete for 6581c97e — 8 chunks (project total: 8)
+2026-09-10 14:41:12,512 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 14:41:12,520 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=700 budget=1100 effort=none
+2026-09-10 14:42:13,684 | INFO | SOWSectionRoutes | Approved SOW section 0 (family: ['0']) for project f8dcc57a
+2026-09-10 14:42:20,723 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 14:42:20,730 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=98 budget=500 effort=none
+2026-09-10 14:42:20,732 | INFO | app.image_injection | Image relevance check for 'Scope of Work': 1 candidate(s) -> 1 kept
+2026-09-10 14:42:44,275 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 14:42:44,281 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=8163 budget=3200 effort=none
+2026-09-10 14:44:24,489 | INFO | SOWSectionRoutes | Approved SOW section 1 (family: ['1', '1.1', '1.2', '1.3', '1.4']) for project f8dcc57a
+2026-09-10 14:44:30,707 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 14:44:30,711 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=80 budget=500 effort=none
+2026-09-10 14:44:30,714 | INFO | app.image_injection | Image relevance check for 'General Terms': 1 candidate(s) -> 1 kept
+2026-09-10 14:44:47,191 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 14:44:47,197 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=4012 budget=2100 effort=none
+2026-09-10 14:46:14,469 | INFO | SOWSectionRoutes | Approved SOW section 2 (family: ['2.1', '2.2', '2.3']) for project f8dcc57a
+2026-09-10 14:46:32,262 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 14:46:32,264 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=length chars=3579 budget=700 effort=none
+2026-09-10 14:46:32,265 | WARNING | app.claude_provider | claude_provider(azure): response truncated (finish_reason=length, 3579 chars) — retrying once with budget=1400.
+2026-09-10 14:46:57,017 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 14:46:57,018 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=4294 budget=1400 effort=none
+2026-09-10 14:47:52,822 | INFO | SOWSectionRoutes | Approved SOW section 3 (family: ['3']) for project f8dcc57a
+2026-09-10 14:48:08,953 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 14:48:09,041 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=3027 budget=2500 effort=none
+2026-09-10 14:48:31,771 | INFO | SOWSectionRoutes | Approved SOW section 4 (family: ['4', '4.1', '4.2']) for project f8dcc57a
+2026-09-10 14:48:42,259 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 14:48:42,262 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=214 budget=500 effort=none
+2026-09-10 14:48:42,263 | INFO | app.image_injection | Image relevance check for 'Change request/Amendments': 2 candidate(s) -> 0 kept
+2026-09-10 14:49:00,589 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 14:49:00,590 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=3088 budget=700 effort=none
+2026-09-10 14:49:22,143 | INFO | SOWSectionRoutes | Approved SOW section 5 (family: ['5']) for project f8dcc57a
+2026-09-10 15:03:26,212 | INFO | SOWReviewGate | SOW f8dcc57a finalized by suraj.mm1@bristlecone.com
+2026-09-10 15:03:37,808 | INFO | SOWReviewGate | SOW f8dcc57a reopened by suraj.mm1@bristlecone.com
+2026-09-10 15:03:47,356 | INFO | SOWWorkflow | Converted Markdown tables to Bristlecone-styled Word tables: METRO_SOW.docx
+2026-09-10 15:03:47,568 | INFO | Screen3Routes | Embedded image 70df01b38c53 from 70df01b38c53.png
+2026-09-10 15:03:47,585 | INFO | Screen3Routes | Embedded image 055a5f5a9b18 from 055a5f5a9b18.png
+2026-09-10 15:03:47,680 | INFO | Screen3Routes | Image placeholders resolved in METRO_SOW.docx
+2026-09-10 15:03:47,851 | INFO | SOWSectionRoutes | Exported SOW for project f8dcc57a → METRO_SOW.docx (template=0c27be4e)
+2026-09-10 16:05:23,811 | INFO | ProjectRoutes | Created project ddcfc6d8: COT
+2026-09-10 16:05:46,007 | INFO | ProjectRoutes | Ingested Google’s Silicon COT Supply Chain Proposal.pptx → ddcfc6d8 (source, 10260441 bytes)
+2026-09-10 16:05:46,017 | INFO | ProjectRoutes | Chunking started in background for 8d40fb7f
+2026-09-10 16:05:46,031 | INFO | ChunkingPipeline | Processing Google’s Silicon COT Supply Chain Proposal.pptx (project=ddcfc6d8, file=8d40fb7f)
+2026-09-10 16:05:54,508 | INFO | ChunkingPipeline | PPTX Google’s Silicon COT Supply Chain Proposal.pptx: 166 slides, 0 image(s) described
+2026-09-10 16:05:58,135 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:05:58,137 | INFO | openai._base_client | Retrying request to /chat/completions in 0.417823 seconds
+2026-09-10 16:05:58,145 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:05:58,148 | INFO | openai._base_client | Retrying request to /chat/completions in 0.412761 seconds
+2026-09-10 16:05:58,346 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:05:58,349 | INFO | openai._base_client | Retrying request to /chat/completions in 0.472163 seconds
+2026-09-10 16:05:59,198 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:05:59,226 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:05:59,229 | INFO | openai._base_client | Retrying request to /chat/completions in 0.389749 seconds
+2026-09-10 16:05:59,234 | WARNING | ChunkingPipeline | Batch LLM keyword extraction failed: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — falling back to local
+2026-09-10 16:05:59,667 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:05:59,689 | WARNING | ChunkingPipeline | Batch LLM keyword extraction failed: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — falling back to local
+2026-09-10 16:05:59,876 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:05:59,908 | WARNING | ChunkingPipeline | Batch LLM keyword extraction failed: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — falling back to local
+2026-09-10 16:05:59,930 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:05:59,933 | INFO | openai._base_client | Retrying request to /chat/completions in 0.478187 seconds
+2026-09-10 16:06:00,354 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:00,361 | INFO | openai._base_client | Retrying request to /chat/completions in 0.454798 seconds
+2026-09-10 16:06:00,522 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:00,525 | WARNING | ChunkingPipeline | Batch LLM keyword extraction failed: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — falling back to local
+2026-09-10 16:06:00,554 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:00,560 | INFO | openai._base_client | Retrying request to /chat/completions in 0.405180 seconds
+2026-09-10 16:06:00,892 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:00,925 | WARNING | ChunkingPipeline | Batch LLM keyword extraction failed: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — falling back to local
+2026-09-10 16:06:01,046 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:01,076 | INFO | openai._base_client | Retrying request to /chat/completions in 0.394573 seconds
+2026-09-10 16:06:01,565 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:01,573 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:01,596 | WARNING | ChunkingPipeline | Batch LLM keyword extraction failed: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — falling back to local
+2026-09-10 16:06:01,602 | INFO | openai._base_client | Retrying request to /chat/completions in 0.393616 seconds
+2026-09-10 16:06:02,135 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:02,143 | WARNING | ChunkingPipeline | Batch LLM keyword extraction failed: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — falling back to local
+2026-09-10 16:06:02,195 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:02,201 | WARNING | ChunkingPipeline | Batch LLM keyword extraction failed: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — falling back to local
+2026-09-10 16:06:02,853 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:02,862 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:02,868 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:02,878 | INFO | openai._base_client | Retrying request to /chat/completions in 0.466564 seconds
+2026-09-10 16:06:02,880 | INFO | openai._base_client | Retrying request to /chat/completions in 0.465356 seconds
+2026-09-10 16:06:02,884 | WARNING | ChunkingPipeline | Batch LLM keyword extraction failed: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — falling back to local
+2026-09-10 16:06:04,017 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:04,024 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:04,048 | WARNING | ChunkingPipeline | Batch LLM keyword extraction failed: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — falling back to local
+2026-09-10 16:06:04,052 | WARNING | ChunkingPipeline | Batch LLM keyword extraction failed: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — falling back to local
+2026-09-10 16:06:04,065 | INFO | ChunkingPipeline | Generating embeddings for 202 chunks from Google’s Silicon COT Supply Chain Proposal.pptx …
+2026-09-10 16:06:07,563 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:07,566 | INFO | openai._base_client | Retrying request to /embeddings in 0.394568 seconds
+2026-09-10 16:06:07,609 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:07,613 | INFO | openai._base_client | Retrying request to /embeddings in 0.471790 seconds
+2026-09-10 16:06:07,919 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:07,921 | INFO | openai._base_client | Retrying request to /embeddings in 0.464678 seconds
+2026-09-10 16:06:08,200 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:08,202 | INFO | openai._base_client | Retrying request to /embeddings in 0.807310 seconds
+2026-09-10 16:06:08,984 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:08,986 | INFO | openai._base_client | Retrying request to /embeddings in 0.823671 seconds
+2026-09-10 16:06:09,515 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:09,559 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:09,563 | INFO | openai._base_client | Retrying request to /embeddings in 0.959561 seconds
+2026-09-10 16:06:10,594 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:11,915 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:11,918 | WARNING | ChunkingPipeline | Embedding generation skipped for Google’s Silicon COT Supply Chain Proposal.pptx: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — chunks saved without embeddings, call /embed-chunks to backfill
+2026-09-10 16:06:11,920 | INFO | ChunkingPipeline | Produced 202 chunks from Google’s Silicon COT Supply Chain Proposal.pptx (keywords via LLM batch (20/call))
+2026-09-10 16:06:11,926 | INFO | ChunkingPipeline | Saved 0 chunks to C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\uploads\ddcfc6d8\chunks.json
+2026-09-10 16:06:11,973 | INFO | ChunkingPipeline | Saved 202 chunks to C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\uploads\ddcfc6d8\chunks.json
+2026-09-10 16:06:14,446 | WARNING | app.image_extractor | pptx image extract failed on slide 3 shape Graphic 22: no embedded image
+2026-09-10 16:06:14,450 | WARNING | app.image_extractor | pptx image extract failed on slide 3 shape Graphic 23: no embedded image
+2026-09-10 16:06:14,452 | WARNING | app.image_extractor | pptx image extract failed on slide 3 shape Graphic 24: no embedded image
+2026-09-10 16:06:15,397 | WARNING | app.image_extractor | pptx image extract failed on slide 18 shape Graphic 17: no embedded image
+2026-09-10 16:06:15,472 | WARNING | app.image_extractor | pptx image extract failed on slide 23 shape Graphic 24: no embedded image
+2026-09-10 16:06:15,513 | WARNING | app.image_extractor | pptx image extract failed on slide 27 shape Graphic 21: no embedded image
+2026-09-10 16:06:15,518 | WARNING | app.image_extractor | pptx image extract failed on slide 27 shape Graphic 23: no embedded image
+2026-09-10 16:06:15,520 | WARNING | app.image_extractor | pptx image extract failed on slide 27 shape Graphic 31: no embedded image
+2026-09-10 16:06:15,522 | WARNING | app.image_extractor | pptx image extract failed on slide 27 shape Graphic 33: no embedded image
+2026-09-10 16:06:15,525 | WARNING | app.image_extractor | pptx image extract failed on slide 27 shape Graphic 35: no embedded image
+2026-09-10 16:06:15,526 | WARNING | app.image_extractor | pptx image extract failed on slide 27 shape Graphic 37: no embedded image
+2026-09-10 16:06:15,532 | WARNING | app.image_extractor | pptx image extract failed on slide 29 shape Graphic 80: no embedded image
+2026-09-10 16:06:15,536 | WARNING | app.image_extractor | pptx image extract failed on slide 29 shape Graphic 83: no embedded image
+2026-09-10 16:06:15,539 | WARNING | app.image_extractor | pptx image extract failed on slide 29 shape Graphic 86: no embedded image
+2026-09-10 16:06:15,544 | WARNING | app.image_extractor | pptx image extract failed on slide 29 shape Graphic 89: no embedded image
+2026-09-10 16:06:15,550 | WARNING | app.image_extractor | pptx image extract failed on slide 29 shape Graphic 92: no embedded image
+2026-09-10 16:06:15,637 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 34: no embedded image
+2026-09-10 16:06:15,640 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 35: no embedded image
+2026-09-10 16:06:15,642 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 36: no embedded image
+2026-09-10 16:06:15,644 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 37: no embedded image
+2026-09-10 16:06:15,647 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 38: no embedded image
+2026-09-10 16:06:15,648 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 39: no embedded image
+2026-09-10 16:06:15,650 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 40: no embedded image
+2026-09-10 16:06:15,652 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 77: no embedded image
+2026-09-10 16:06:15,654 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 78: no embedded image
+2026-09-10 16:06:15,656 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 79: no embedded image
+2026-09-10 16:06:15,658 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 80: no embedded image
+2026-09-10 16:06:15,660 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 81: no embedded image
+2026-09-10 16:06:15,661 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 82: no embedded image
+2026-09-10 16:06:15,663 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 83: no embedded image
+2026-09-10 16:06:15,666 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 84: no embedded image
+2026-09-10 16:06:15,669 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 85: no embedded image
+2026-09-10 16:06:15,672 | WARNING | app.image_extractor | pptx image extract failed on slide 33 shape Graphic 86: no embedded image
+2026-09-10 16:06:15,732 | WARNING | app.image_extractor | pptx image extract failed on slide 36 shape Graphic 61: no embedded image
+2026-09-10 16:06:15,743 | WARNING | app.image_extractor | pptx image extract failed on slide 37 shape Graphic 61: no embedded image
+2026-09-10 16:06:15,792 | WARNING | app.image_extractor | pptx image extract failed on slide 41 shape Graphic 30: no embedded image
+2026-09-10 16:06:15,796 | WARNING | app.image_extractor | pptx image extract failed on slide 41 shape Graphic 32: no embedded image
+2026-09-10 16:06:16,236 | WARNING | app.image_extractor | pptx image extract failed on slide 63 shape Graphic 120: no embedded image
+2026-09-10 16:06:16,239 | WARNING | app.image_extractor | pptx image extract failed on slide 63 shape Graphic 121: no embedded image
+2026-09-10 16:06:16,288 | WARNING | app.image_extractor | pptx image extract failed on slide 64 shape Graphic 145: no embedded image
+2026-09-10 16:06:16,353 | WARNING | app.image_extractor | pptx image extract failed on slide 66 shape Graphic 25: no embedded image
+2026-09-10 16:06:16,356 | WARNING | app.image_extractor | pptx image extract failed on slide 66 shape Graphic 26: no embedded image
+2026-09-10 16:06:16,553 | WARNING | app.image_extractor | pptx image extract failed on slide 69 shape Graphic 30: no embedded image
+2026-09-10 16:06:16,556 | WARNING | app.image_extractor | pptx image extract failed on slide 69 shape Graphic 32: no embedded image
+2026-09-10 16:06:16,578 | WARNING | app.image_extractor | pptx image extract failed on slide 71 shape Image 3: no embedded image
+2026-09-10 16:06:16,933 | WARNING | app.image_extractor | pptx image extract failed on slide 74 shape Graphic 5: no embedded image
+2026-09-10 16:06:19,345 | WARNING | app.image_extractor | pptx image extract failed on slide 77 shape Graphic 9: no embedded image
+2026-09-10 16:06:19,347 | WARNING | app.image_extractor | pptx image extract failed on slide 77 shape Graphic 11: no embedded image
+2026-09-10 16:06:20,386 | WARNING | app.image_extractor | pptx image extract failed on slide 100 shape Graphic 61: no embedded image
+2026-09-10 16:06:20,427 | WARNING | app.image_extractor | pptx image extract failed on slide 103 shape Graphic 61: no embedded image
+2026-09-10 16:06:26,236 | INFO | app.image_extractor | Extracted 64 images from pptx Google’s Silicon COT Supply Chain Proposal.pptx
+2026-09-10 16:06:26,240 | INFO | app.image_extractor | Deduped 64 → 62 images from Google’s Silicon COT Supply Chain Proposal.pptx before vision
+2026-09-10 16:06:34,992 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:34,996 | INFO | openai._base_client | Retrying request to /chat/completions in 0.382486 seconds
+2026-09-10 16:06:45,445 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:45,467 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\7708e0bbe6ed.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 16:06:45,981 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:46,012 | INFO | openai._base_client | Retrying request to /chat/completions in 0.479015 seconds
+2026-09-10 16:06:46,959 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:46,981 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\423cd1944fb6.jpg: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 16:06:47,464 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:47,496 | INFO | openai._base_client | Retrying request to /chat/completions in 0.438775 seconds
+2026-09-10 16:06:48,450 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:48,482 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\ef4d5494e6f7.jpg: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 16:06:48,969 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:48,999 | INFO | openai._base_client | Retrying request to /chat/completions in 0.381902 seconds
+2026-09-10 16:06:49,842 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:49,846 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\15aa16cb3962.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 16:06:50,390 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:50,423 | INFO | openai._base_client | Retrying request to /chat/completions in 0.490973 seconds
+2026-09-10 16:06:51,458 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:06:51,490 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\46b718a66550.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 16:06:51,492 | ERROR | app.image_extractor | Vision circuit breaker tripped after 5 consecutive failures — skipping vision for remaining images in this run.
+2026-09-10 16:06:51,495 | INFO | app.image_extractor | Extracted 62 images from Google’s Silicon COT Supply Chain Proposal.pptx
+2026-09-10 16:06:51,644 | INFO | app.image_extractor | Appended 0 new images to image_chunks.json (total: 3717)
+2026-09-10 16:06:51,656 | INFO | ProjectRoutes | Image extraction complete for 8d40fb7f: 62 found, 0 new
+2026-09-10 16:06:55,604 | INFO | SlideRenderer | Slide picker: 24 slide(s) look like diagrams in Google’s Silicon COT Supply Chain Proposal.pptx -> [4, 5, 7, 10, 13, 14, 18, 19, 23, 29, 30, 34, 35, 41, 62, 66, 68, 69, 73, 83, 85, 88, 100, 105]
+2026-09-10 16:07:14,316 | INFO | SOWTemplateRoutes | Applied SOW template 0c27be4e (Bristlecone SOW Template (2025)) to project ddcfc6d8 — 15 sections, engagement=tm
+2026-09-10 16:07:21,093 | INFO | SlideRenderer | Rendered 24 slide(s) from Google’s Silicon COT Supply Chain Proposal.pptx
+2026-09-10 16:07:23,555 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:07:23,572 | INFO | openai._base_client | Retrying request to /chat/completions in 0.477851 seconds
+2026-09-10 16:07:27,085 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:07:27,086 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\5da59ed2ab61.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 16:07:30,263 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:07:30,302 | INFO | openai._base_client | Retrying request to /chat/completions in 0.429321 seconds
+2026-09-10 16:07:32,127 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:07:32,133 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\afc31c3ce3e3.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 16:07:33,276 | INFO | azure.identity._internal.decorators | AzureCliCredential.get_token_info succeeded
+2026-09-10 16:07:33,280 | INFO | azure.identity._credentials.default | DefaultAzureCredential acquired a token from AzureCliCredential
+2026-09-10 16:07:34,044 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:07:34,059 | INFO | openai._base_client | Retrying request to /chat/completions in 0.402800 seconds
+2026-09-10 16:07:36,027 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:07:36,030 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\6faf7c73e18a.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 16:07:38,912 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:07:38,936 | INFO | openai._base_client | Retrying request to /chat/completions in 0.479865 seconds
+2026-09-10 16:07:43,254 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:07:43,258 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\560d19db71f9.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 16:07:45,410 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:07:45,450 | INFO | openai._base_client | Retrying request to /chat/completions in 0.438608 seconds
+2026-09-10 16:07:48,216 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-10 16:07:48,256 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\15fd8fcbdad0.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-10 16:07:48,259 | ERROR | app.image_extractor | Vision circuit breaker tripped after 5 consecutive failures — skipping vision for remaining images in this run.
+2026-09-10 16:07:49,295 | INFO | app.image_extractor | Appended 0 new images to image_chunks.json (total: 3717)
+2026-09-10 16:07:51,597 | INFO | app.image_index | Loaded 3717 images from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-09-10 16:07:51,648 | INFO | app.image_index | Image index reloaded: 3717 records
+2026-09-10 16:07:51,651 | INFO | SlideRenderer | Whole-slide rendering for Google’s Silicon COT Supply Chain Proposal.pptx: 24 rendered, 0 newly indexed
+2026-09-10 16:07:51,653 | INFO | ProjectRoutes | Whole-slide rendering for 8d40fb7f: 24 rendered, 0 indexed
+2026-09-10 16:07:51,733 | INFO | ProjectRoutes | Vision retry: 1 image(s) from Google’s Silicon COT Supply Chain Proposal.pptx still need analysis — running now.
+2026-09-10 16:07:52,206 | INFO | app.image_index | Loaded 3717 images from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-09-10 16:07:52,284 | INFO | app.image_index | Image index reloaded: 3717 records
+2026-09-10 16:07:52,288 | INFO | ProjectRoutes | Image index reloaded after upload: 3717 records
+2026-09-10 16:07:52,299 | INFO | ProjectRoutes | Chunking complete for 8d40fb7f — 202 chunks (project total: 202)
+2026-09-10 16:07:55,519 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 16:07:55,688 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=length chars=8096 budget=2000 effort=none
+2026-09-10 16:07:55,690 | WARNING | app.claude_provider | claude_provider(azure): response truncated (finish_reason=length, 8096 chars) — retrying once with budget=4000.
+2026-09-10 16:08:34,135 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 16:08:34,272 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=10026 budget=4000 effort=none
+2026-09-10 16:08:34,280 | INFO | SOWKeyFacts | Key facts extracted for ddcfc6d8: 16 field(s) populated (assumptions, client_name, commercials, delivery_locations, duration, effective_start_date, end_date, engagement_model, go_live_date, in_scope, key_milestones, notable_dates, out_of_scope, project_name, scope_summary, team_size)
+2026-09-10 16:08:36,948 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 16:08:36,992 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=371 budget=500 effort=none
+2026-09-10 16:08:36,996 | INFO | app.image_injection | Image relevance check for 'SOW Overview': 5 candidate(s) -> 3 kept
+2026-09-10 16:08:44,164 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 16:08:44,206 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=648 budget=1100 effort=none
+2026-09-10 16:09:57,276 | INFO | SOWSectionRoutes | Approved SOW section 0 (family: ['0']) for project ddcfc6d8
+2026-09-10 16:10:07,556 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 16:10:07,577 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=393 budget=500 effort=none
+2026-09-10 16:10:07,586 | INFO | app.image_injection | Image relevance check for 'Scope of Work': 5 candidate(s) -> 5 kept
+2026-09-10 16:10:14,366 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 16:10:14,370 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=392 budget=500 effort=none
+2026-09-10 16:10:14,373 | INFO | app.image_injection | Image relevance check for 'Scope of Work': 5 candidate(s) -> 5 kept
+2026-09-10 16:10:34,381 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 16:10:34,395 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=8178 budget=3200 effort=none
+2026-09-10 16:10:36,812 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 16:10:36,836 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=6939 budget=3200 effort=none
+2026-09-10 16:10:38,857 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 16:10:38,887 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=147 budget=500 effort=none
+2026-09-10 16:10:38,890 | INFO | app.image_injection | Image relevance check for 'General Terms': 1 candidate(s) -> 0 kept
+2026-09-10 16:10:55,580 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 16:10:55,592 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=4282 budget=2100 effort=none
+2026-09-10 16:11:00,566 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 16:11:00,571 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=248 budget=500 effort=none
+2026-09-10 16:11:00,572 | INFO | app.image_injection | Image relevance check for 'Deliverables acceptance management': 3 candidate(s) -> 0 kept
+2026-09-10 16:11:38,626 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 16:11:38,629 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=1387 budget=700 effort=none
+2026-09-10 16:11:51,437 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 16:11:51,459 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=2701 budget=2500 effort=none
+2026-09-10 16:11:54,113 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 16:11:54,135 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=386 budget=500 effort=none
+2026-09-10 16:11:54,144 | INFO | app.image_injection | Image relevance check for 'Change request/Amendments': 5 candidate(s) -> 0 kept
+2026-09-10 16:11:57,667 | INFO | SOWSectionRoutes | Approved SOW section 1 (family: ['1', '1.1', '1.2', '1.3', '1.4']) for project ddcfc6d8
+2026-09-10 16:12:04,449 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-10 16:12:04,460 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=2702 budget=700 effort=none
+2026-09-10 16:12:10,702 | INFO | SOWSectionRoutes | Approved SOW section 2 (family: ['2.1', '2.2', '2.3']) for project ddcfc6d8
+2026-09-10 16:12:22,987 | INFO | SOWSectionRoutes | Approved SOW section 3 (family: ['3']) for project ddcfc6d8
+2026-09-10 16:12:52,880 | INFO | SOWSectionRoutes | Approved SOW section 4 (family: ['4', '4.1', '4.2']) for project ddcfc6d8
+2026-09-10 16:13:02,123 | INFO | SOWSectionRoutes | Approved SOW section 5 (family: ['5']) for project ddcfc6d8
+2026-09-10 16:13:08,885 | INFO | SOWWorkflow | Converted Markdown tables to Bristlecone-styled Word tables: Google_SOW.docx
+2026-09-10 16:13:09,147 | INFO | Screen3Routes | Embedded image 2e59963f943e from 2e59963f943e.png
+2026-09-10 16:13:09,258 | INFO | Screen3Routes | Image placeholders resolved in Google_SOW.docx
+2026-09-10 16:13:09,389 | INFO | SOWSectionRoutes | Exported SOW for project ddcfc6d8 → Google_SOW.docx (template=0c27be4e)
+2026-09-10 18:04:40,237 | INFO | SOWTemplateRoutes | Applied SOW template 0c27be4e (Bristlecone SOW Template (2025)) to project ddcfc6d8 — 15 sections, engagement=fixed_cost
+2026-09-10 18:04:45,813 | INFO | SOWTemplateRoutes | Applied SOW template 0c27be4e (Bristlecone SOW Template (2025)) to project ddcfc6d8 — 15 sections, engagement=tm
+2026-09-16 11:31:59,886 | INFO | ProjectRoutes | Deleted project ddcfc6d8 (COT) — 1 files removed, folder_removed=True
+2026-09-16 11:45:07,473 | INFO | ProjectRoutes | Created project 4a01b7d6: Calm
+2026-09-16 11:45:33,837 | INFO | ProjectRoutes | Ingested Metro_SAP_CALM_Proposal.pptx → 4a01b7d6 (source, 15359875 bytes)
+2026-09-16 11:45:33,854 | INFO | ProjectRoutes | Chunking started in background for abc30ec2
+2026-09-16 11:45:33,883 | INFO | ChunkingPipeline | Processing Metro_SAP_CALM_Proposal.pptx (project=4a01b7d6, file=abc30ec2)
+2026-09-16 11:45:35,340 | INFO | ChunkingPipeline | PPTX Metro_SAP_CALM_Proposal.pptx: 8 slides, 0 image(s) described
+2026-09-16 11:45:38,968 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:45:38,979 | INFO | openai._base_client | Retrying request to /chat/completions in 0.389361 seconds
+2026-09-16 11:45:40,455 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:45:40,515 | WARNING | ChunkingPipeline | Batch LLM keyword extraction failed: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — falling back to local
+2026-09-16 11:45:40,520 | INFO | ChunkingPipeline | Generating embeddings for 8 chunks from Metro_SAP_CALM_Proposal.pptx …
+2026-09-16 11:45:58,470 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:45:58,500 | INFO | openai._base_client | Retrying request to /embeddings in 0.469219 seconds
+2026-09-16 11:46:00,129 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:46:00,133 | INFO | openai._base_client | Retrying request to /embeddings in 0.897165 seconds
+2026-09-16 11:46:02,714 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:46:02,716 | WARNING | ChunkingPipeline | Embedding generation skipped for Metro_SAP_CALM_Proposal.pptx: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}} — chunks saved without embeddings, call /embed-chunks to backfill
+2026-09-16 11:46:02,717 | INFO | ChunkingPipeline | Produced 8 chunks from Metro_SAP_CALM_Proposal.pptx (keywords via LLM batch (20/call))
+2026-09-16 11:46:02,728 | INFO | ChunkingPipeline | Saved 0 chunks to C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\uploads\4a01b7d6\chunks.json
+2026-09-16 11:46:02,733 | INFO | ChunkingPipeline | Saved 8 chunks to C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\uploads\4a01b7d6\chunks.json
+2026-09-16 11:46:26,480 | INFO | app.image_extractor | Extracted 60 images from pptx Metro_SAP_CALM_Proposal.pptx
+2026-09-16 11:46:26,489 | INFO | app.image_extractor | Deduped 60 → 59 images from Metro_SAP_CALM_Proposal.pptx before vision
+2026-09-16 11:46:27,973 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:46:27,975 | INFO | openai._base_client | Retrying request to /chat/completions in 0.432607 seconds
+2026-09-16 11:46:29,553 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:46:29,597 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\c955075ab39d.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-16 11:46:30,000 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:46:30,021 | INFO | openai._base_client | Retrying request to /chat/completions in 0.431702 seconds
+2026-09-16 11:46:31,388 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:46:31,429 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\d8884093f499.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-16 11:46:31,861 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:46:31,900 | INFO | openai._base_client | Retrying request to /chat/completions in 0.427853 seconds
+2026-09-16 11:46:32,734 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:46:32,777 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\6b34b4fc95c9.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-16 11:46:33,196 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:46:33,199 | INFO | openai._base_client | Retrying request to /chat/completions in 0.476924 seconds
+2026-09-16 11:46:34,109 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:46:34,115 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\876a0b21fad4.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-16 11:46:34,521 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:46:34,562 | INFO | openai._base_client | Retrying request to /chat/completions in 0.435640 seconds
+2026-09-16 11:46:35,431 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:46:35,473 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\e6979888b94e.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-16 11:46:35,477 | ERROR | app.image_extractor | Vision circuit breaker tripped after 5 consecutive failures — skipping vision for remaining images in this run.
+2026-09-16 11:46:35,482 | INFO | app.image_extractor | Extracted 59 images from Metro_SAP_CALM_Proposal.pptx
+2026-09-16 11:46:35,614 | INFO | app.image_extractor | Appended 0 new images to image_chunks.json (total: 3717)
+2026-09-16 11:46:35,625 | INFO | ProjectRoutes | Image extraction complete for abc30ec2: 59 found, 0 new
+2026-09-16 11:46:36,388 | INFO | SlideRenderer | Slide picker: 6 slide(s) look like diagrams in Metro_SAP_CALM_Proposal.pptx -> [3, 4, 5, 6, 7, 8]
+2026-09-16 11:46:50,732 | INFO | SOWTemplateRoutes | Applied SOW template 0c27be4e (Bristlecone SOW Template (2025)) to project 4a01b7d6 — 15 sections, engagement=tm
+2026-09-16 11:47:02,053 | INFO | SlideRenderer | Rendered 6 slide(s) from Metro_SAP_CALM_Proposal.pptx
+2026-09-16 11:47:04,198 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:47:04,201 | INFO | openai._base_client | Retrying request to /chat/completions in 0.476316 seconds
+2026-09-16 11:47:05,576 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:47:05,596 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\499576837090.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-16 11:47:06,641 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:47:06,645 | INFO | openai._base_client | Retrying request to /chat/completions in 0.380194 seconds
+2026-09-16 11:47:07,452 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:47:07,479 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\410e29befe04.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-16 11:47:08,098 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:47:08,138 | INFO | openai._base_client | Retrying request to /chat/completions in 0.422831 seconds
+2026-09-16 11:47:09,058 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:47:09,059 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\055a5f5a9b18.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-16 11:47:09,540 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:47:09,542 | INFO | openai._base_client | Retrying request to /chat/completions in 0.388617 seconds
+2026-09-16 11:47:10,628 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:47:10,631 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\57aeb9cf761c.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-16 11:47:11,588 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:47:11,595 | INFO | openai._base_client | Retrying request to /chat/completions in 0.413766 seconds
+2026-09-16 11:47:12,632 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-09-16 11:47:12,638 | ERROR | app.image_extractor | Vision analysis failed for C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\extracted_images\70df01b38c53.png: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+2026-09-16 11:47:12,641 | ERROR | app.image_extractor | Vision circuit breaker tripped after 5 consecutive failures — skipping vision for remaining images in this run.
+2026-09-16 11:47:12,974 | INFO | app.image_extractor | Appended 0 new images to image_chunks.json (total: 3717)
+2026-09-16 11:47:14,031 | INFO | app.image_index | Loaded 3717 images from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-09-16 11:47:14,395 | INFO | app.image_index | Image index reloaded: 3717 records
+2026-09-16 11:47:14,397 | INFO | SlideRenderer | Whole-slide rendering for Metro_SAP_CALM_Proposal.pptx: 6 rendered, 0 newly indexed
+2026-09-16 11:47:14,398 | INFO | ProjectRoutes | Whole-slide rendering for abc30ec2: 6 rendered, 0 indexed
+2026-09-16 11:47:14,466 | INFO | ProjectRoutes | Vision retry: 5 image(s) from Metro_SAP_CALM_Proposal.pptx still need analysis — running now.
+2026-09-16 11:47:15,047 | INFO | app.image_index | Loaded 3717 images from C:\Users\Suraj.mm1\Downloads\docgenplatform-feature-doc-quality-fixes-sohan\orchestration\brd_convo_app\backend\app\image_chunks.json
+2026-09-16 11:47:15,081 | INFO | app.image_index | Image index reloaded: 3717 records
+2026-09-16 11:47:15,082 | INFO | ProjectRoutes | Image index reloaded after upload: 3717 records
+2026-09-16 11:47:15,093 | INFO | ProjectRoutes | Chunking complete for abc30ec2 — 8 chunks (project total: 8)
+2026-09-16 11:47:16,433 | INFO | azure.identity._internal.decorators | AzureCliCredential.get_token_info succeeded
+2026-09-16 11:47:16,442 | INFO | azure.identity._credentials.default | DefaultAzureCredential acquired a token from AzureCliCredential
+2026-09-16 11:47:29,968 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-16 11:47:30,022 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=4202 budget=2000 effort=none
+2026-09-16 11:47:30,033 | INFO | SOWKeyFacts | Key facts extracted for 4a01b7d6: 11 field(s) populated (assumptions, client_name, duration, effective_start_date, end_date, go_live_date, in_scope, key_milestones, notable_dates, project_name, scope_summary)
+2026-09-16 11:47:32,675 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-16 11:47:32,716 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=185 budget=500 effort=none
+2026-09-16 11:47:32,723 | INFO | app.image_injection | Image relevance check for 'SOW Overview': 2 candidate(s) -> 0 kept
+2026-09-16 11:47:36,953 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-16 11:47:36,957 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=623 budget=1100 effort=none
+2026-09-16 11:48:37,070 | INFO | SOWSectionRoutes | Approved SOW section 0 (family: ['0']) for project 4a01b7d6
+2026-09-16 11:48:52,750 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-16 11:48:52,756 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=105 budget=500 effort=none
+2026-09-16 11:48:52,759 | INFO | app.image_injection | Image relevance check for 'Scope of Work': 1 candidate(s) -> 1 kept
+2026-09-16 11:49:14,521 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-16 11:49:14,526 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=7887 budget=3200 effort=none
+2026-09-16 11:49:15,938 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-16 11:49:15,941 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=88 budget=500 effort=none
+2026-09-16 11:49:15,943 | INFO | app.image_injection | Image relevance check for 'General Terms': 1 candidate(s) -> 1 kept
+2026-09-16 11:49:29,411 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-16 11:49:29,420 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=3572 budget=2100 effort=none
+2026-09-16 11:49:31,075 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-16 11:49:31,083 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=102 budget=500 effort=none
+2026-09-16 11:49:31,087 | INFO | app.image_injection | Image relevance check for 'Deliverables acceptance management': 1 candidate(s) -> 0 kept
+2026-09-16 11:49:41,595 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-16 11:49:41,598 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=length chars=3802 budget=700 effort=none
+2026-09-16 11:49:41,601 | WARNING | app.claude_provider | claude_provider(azure): response truncated (finish_reason=length, 3802 chars) — retrying once with budget=1400.
+2026-09-16 11:49:42,614 | INFO | SOWSectionRoutes | Approved SOW section 1 (family: ['1', '1.1', '1.2', '1.3', '1.4']) for project 4a01b7d6
+2026-09-16 11:50:03,198 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-16 11:50:03,221 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=7580 budget=1400 effort=none
+2026-09-16 11:50:11,777 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-16 11:50:11,811 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=2261 budget=2500 effort=none
+2026-09-16 11:50:13,697 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-16 11:50:13,716 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=190 budget=500 effort=none
+2026-09-16 11:50:13,718 | INFO | app.image_injection | Image relevance check for 'Change request/Amendments': 2 candidate(s) -> 1 kept
+2026-09-16 11:50:25,008 | INFO | SOWSectionRoutes | Approved SOW section 2 (family: ['2.1', '2.2', '2.3']) for project 4a01b7d6
+2026-09-16 11:50:25,711 | INFO | httpx | HTTP Request: POST https://ai-adoption-coe.services.ai.azure.com/openai/deployments/gpt-5.4/chat/completions?api-version=2025-01-01-preview "HTTP/1.1 200 OK"
+2026-09-16 11:50:25,715 | INFO | app.claude_provider | claude_provider(azure): gen=1/2 deployment=gpt-5.4 finish=stop chars=2176 budget=700 effort=none
+2026-09-16 11:50:35,057 | INFO | SOWSectionRoutes | Approved SOW section 3 (family: ['3']) for project 4a01b7d6
+2026-09-16 11:50:41,750 | INFO | SOWSectionRoutes | Approved SOW section 4 (family: ['4', '4.1', '4.2']) for project 4a01b7d6
+2026-09-16 11:50:49,648 | INFO | SOWSectionRoutes | Approved SOW section 5 (family: ['5']) for project 4a01b7d6
+2026-09-16 11:50:59,337 | INFO | SOWWorkflow | Converted Markdown tables to Bristlecone-styled Word tables: Metro_SOW.docx
+2026-09-16 11:50:59,605 | INFO | Screen3Routes | Embedded image 70df01b38c53 from 70df01b38c53.png
+2026-09-16 11:50:59,696 | INFO | Screen3Routes | Image placeholders resolved in Metro_SOW.docx
+2026-09-16 11:50:59,850 | INFO | SOWSectionRoutes | Exported SOW for project 4a01b7d6 → Metro_SOW.docx (template=0c27be4e)

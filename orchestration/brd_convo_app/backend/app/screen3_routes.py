@@ -5935,6 +5935,166 @@ def _iter_all_paragraphs(parent):
     return paras
 
 
+# Leave room below a full-width figure for its caption and some body text, so
+# a tall diagram doesn't push everything onto the next page by itself.
+_MAX_FIGURE_HEIGHT_IN = 6.8
+
+
+def _usable_width_inches(doc, para) -> float:
+    """Printable width available to a figure at this paragraph's position.
+
+    A figure inside a table cell has to fit the cell, not the page — sizing
+    everything to the page width is what made images overflow their cell and
+    silently widen the table.
+    """
+    from docx.shared import Emu
+
+    try:
+        section = doc.sections[0]
+        page_w = section.page_width - section.left_margin - section.right_margin
+        page_in = Emu(page_w).inches
+    except Exception:
+        page_in = 6.5
+
+    # Walk up to a containing table cell, if there is one.
+    try:
+        el = para._element.getparent()
+        while el is not None:
+            if el.tag.endswith("}tc"):
+                tc_w = el.find(
+                    "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}tcPr/"
+                    "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}tcW")
+                if tc_w is not None:
+                    w = tc_w.get("{http://schemas.openxmlformats.org/wordprocessingml/2006/main}w")
+                    typ = tc_w.get("{http://schemas.openxmlformats.org/wordprocessingml/2006/main}type")
+                    if w and typ == "dxa":
+                        # dxa = twentieths of a point; less a little cell padding.
+                        return max(0.5, (int(w) / 1440.0) - 0.16)
+                return max(0.5, page_in / 2.0)
+            el = el.getparent()
+    except Exception:
+        pass
+    return page_in
+
+
+def _fit_image_size(img_path, max_width_in: float):
+    """Return (width_in, height_in) that preserves aspect ratio and fits the page.
+
+    Every figure used to be embedded at a flat `width=Inches(5.5)`, which is
+    wrong in both directions: a 192x192 icon was upscaled to 5.5 inches of
+    blur, and a tall portrait diagram became 5.5 inches wide and far taller
+    than the page, overflowing onto following pages. Native size is respected
+    as an upper bound (never upscale) and height is capped so a figure cannot
+    exceed the printable area.
+    """
+    try:
+        from PIL import Image
+        with Image.open(str(img_path)) as im:
+            px_w, px_h = im.size
+            dpi = im.info.get("dpi") or (96, 96)
+            dpi_x = float(dpi[0]) if dpi and dpi[0] else 96.0
+            dpi_y = float(dpi[1]) if dpi and len(dpi) > 1 and dpi[1] else dpi_x
+        if px_w <= 0 or px_h <= 0:
+            return max_width_in, None
+        # Absurd dpi metadata is common in exported art; fall back to 96.
+        if not (20 <= dpi_x <= 1200):
+            dpi_x = 96.0
+        if not (20 <= dpi_y <= 1200):
+            dpi_y = 96.0
+
+        native_w = px_w / dpi_x
+        aspect = px_h / float(px_w)
+
+        width = min(native_w, max_width_in)
+
+        # Honouring dpi alone renders a 700px diagram saved at 300 dpi as a
+        # 2-inch postage stamp nobody can read. Anything with enough pixels to
+        # be a real figure (rather than an icon) gets a legibility floor.
+        if px_w >= 600:
+            width = max(width, min(max_width_in, max_width_in * 0.6))
+
+        height = width * aspect
+        if height > _MAX_FIGURE_HEIGHT_IN:
+            height = _MAX_FIGURE_HEIGHT_IN
+            width = height / aspect if aspect else max_width_in
+        return width, height
+    except Exception:
+        return max_width_in, None
+
+
+_HEADING_NUM_RE = re.compile(r"^\d+(\.\d+)*[.)]?\s+\S")
+
+
+def _nearest_heading_text(doc, para) -> str:
+    """Text of the closest heading above `para`, for judging where it sits.
+
+    Section headings in generated documents are a mix of real Word Heading
+    styles (template path) and hand-formatted numbered paragraphs (the
+    branded path), so both shapes are recognised here.
+    """
+    try:
+        body = list(doc.element.body)
+        idx = body.index(para._element)
+    except Exception:
+        return ""
+    from docx.text.paragraph import Paragraph
+    for el in reversed(body[:idx]):
+        if not el.tag.endswith("}p"):
+            continue
+        p = Paragraph(el, para._parent)
+        text = (p.text or "").strip()
+        if not text or len(text) > 140:
+            continue
+        style = ""
+        try:
+            style = p.style.name or ""
+        except Exception:
+            pass
+        if style.startswith("Heading") or _HEADING_NUM_RE.match(text):
+            return text
+    return ""
+
+
+def _pick_best_section_for_image(caption: str, description: str,
+                                 headings: list) -> int:
+    """Choose which of several competing sections should keep one image.
+
+    Returns an index into `headings`. Falls back to word-overlap scoring when
+    the model is unavailable, and to the first occurrence if that ties.
+    """
+    numbered = "\n".join(f"{i + 1}. {h or '(untitled section)'}"
+                         for i, h in enumerate(headings))
+    prompt = (
+        "One figure has been placed in several sections of a document. It "
+        "belongs in exactly one of them.\n\n"
+        f"FIGURE TITLE: {caption}\n"
+        f"FIGURE CONTENT: {(description or '')[:600]}\n\n"
+        f"CANDIDATE SECTIONS:\n{numbered}\n\n"
+        "Reply with only the number of the single section where this figure "
+        "most directly illustrates the subject matter. No explanation."
+    )
+    try:
+        from app.claude_provider import completion_from_prompt
+        reply = completion_from_prompt(prompt, max_tokens=10, temperature=0.0)
+        m = re.search(r"\d+", reply or "")
+        if m:
+            choice = int(m.group()) - 1
+            if 0 <= choice < len(headings):
+                return choice
+    except Exception as e:
+        logger.warning("Figure placement check failed (%s) — using word overlap", e)
+
+    # Fallback: overlap between the figure's vocabulary and each heading.
+    vocab = set(re.findall(r"[a-z0-9]{3,}", f"{caption} {description}".lower()))
+    best_i, best_score = 0, -1
+    for i, h in enumerate(headings):
+        words = set(re.findall(r"[a-z0-9]{3,}", (h or "").lower()))
+        score = len(vocab & words)
+        if score > best_score:
+            best_i, best_score = i, score
+    return best_i
+
+
 def _resolve_images_in_docx(docx_path: Path) -> list:
     """Post-process DOCX to replace <IMAGE id="..."/> tags with embedded images.
 
@@ -5943,6 +6103,7 @@ def _resolve_images_in_docx(docx_path: Path) -> list:
     import re, json
     from docx import Document
     from docx.shared import Inches
+    from docx.enum.text import WD_ALIGN_PARAGRAPH
 
     EXTRACTED_DIR = Path(__file__).parent / "extracted_images"
     IMAGE_CHUNKS = Path(__file__).parent / "image_chunks.json"
@@ -5967,13 +6128,55 @@ def _resolve_images_in_docx(docx_path: Path) -> list:
             (i, p) for i, p in enumerate(_iter_all_paragraphs(doc)) if TAG_RE.search(p.text)
         ]
 
+        # ── One figure, one home ────────────────────────────────────────────
+        # Sections are generated by independent calls that cannot see each
+        # other's choices, so a genuinely good diagram is offered to — and
+        # accepted by — several of them. In a real export that put the same
+        # "To-Be Integration Flow" under both 3.3 Process Flow and 5 Proposed
+        # Architecture, and the same delivery framework under both 4.4
+        # Services Scope and 6.1 Implementation Methodology: five placements
+        # of three images. Repetition in a client deliverable reads as a
+        # mistake, so each image is kept in exactly one section — and not
+        # simply the first, because the first is often the weaker fit (the
+        # delivery framework belonged under 6.1, not 4.4).
+        placements: dict = {}
+        for _, para in paras_to_process:
+            for g1, g2, g3 in TAG_RE.findall(para.text):
+                iid = g1 or g2 or g3
+                if iid:
+                    placements.setdefault(iid, []).append(para)
+
+        dropped: set = set()
+        for iid, paras in placements.items():
+            if len(paras) < 2:
+                continue
+            headings = [_nearest_heading_text(doc, p) for p in paras]
+            meta = image_meta.get(iid, {})
+            keep = _pick_best_section_for_image(
+                meta.get("caption", "") or iid,
+                meta.get("description", "") or "",
+                headings,
+            )
+            for i, p in enumerate(paras):
+                if i != keep:
+                    dropped.add((id(p), iid))
+            logger.info(
+                "Figure %s appeared in %d sections %s — keeping it under %r",
+                iid, len(paras), headings, headings[keep] if headings else "?")
+
         for _, para in reversed(paras_to_process):
             # Extract image_id from whichever capture group matched
             ids = [g1 or g2 or g3 for g1, g2, g3 in TAG_RE.findall(para.text) if g1 or g2 or g3]
+            ids = [i for i in ids if (id(para), i) not in dropped]
             p_elem = para._element
             p_parent = p_elem.getparent()
             pos = list(p_parent).index(p_elem)
             p_parent.remove(p_elem)
+            # Removing the placeholder is itself a change: when every image on
+            # this line was dropped as a duplicate nothing is embedded below,
+            # and without this the file would be saved still carrying the raw
+            # <IMAGE .../> text.
+            modified = True
 
             insert_pos = pos
             for image_id in reversed(ids):
@@ -5989,7 +6192,15 @@ def _resolve_images_in_docx(docx_path: Path) -> list:
 
                 if img_path and img_path.exists():
                     img_para = doc.add_paragraph()
-                    img_para.add_run().add_picture(str(img_path), width=Inches(5.5))
+                    img_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                    max_w = _usable_width_inches(doc, para)
+                    fit_w, fit_h = _fit_image_size(img_path, max_w)
+                    run = img_para.add_run()
+                    if fit_h:
+                        run.add_picture(str(img_path), width=Inches(fit_w),
+                                        height=Inches(fit_h))
+                    else:
+                        run.add_picture(str(img_path), width=Inches(fit_w))
                     ip = img_para._element
                     ip.getparent().remove(ip)
                     p_parent.insert(insert_pos, ip)

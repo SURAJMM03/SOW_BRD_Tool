@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bristlecone SOW — Review Gate</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#F7F7F7;--surface:#FFFFFF;--surface2:#F0F0F0;--surface3:#E8E8E8;
+      --border:#DDDDDD;--border-hover:#AAAAAA;
+      --accent:#0070C0;--accent-glow:rgba(0,112,192,0.15);--accent-soft:rgba(0,112,192,0.08);
+      --green:#0F6E56;--green-soft:rgba(15,110,86,0.1);
+      --amber:#854F0B;--amber-soft:rgba(133,79,11,0.1);
+      --red:#A32D2D;--red-soft:rgba(163,45,45,0.1);
+      --text:#1A1A1A;--text-sec:#666666;--text-dim:#999999;
+      --r:6px;--rlg:10px;
+      --font:'Segoe UI',system-ui,sans-serif;--mono:'Consolas','Courier New',monospace;
+    }
+    body{background:var(--bg);color:var(--text);font-family:var(--font);height:100vh;display:flex;flex-direction:column;overflow:hidden}
+
+    .topnav{background:var(--surface);border-bottom:1px solid var(--border);padding:0 28px;height:52px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+    .nav-left{display:flex;align-items:center;gap:12px}
+    .logo-mark{width:32px;height:32px;background:#003366;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff}
+    .nav-title{font-size:14px;font-weight:600}
+    .nav-subtitle{font-size:10px;color:var(--text-dim);letter-spacing:.5px;text-transform:uppercase}
+    .nav-user{display:flex;align-items:center;gap:8px}
+    .uav{width:28px;height:28px;border-radius:7px;background:var(--surface3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:11px}
+    .uname{font-size:12px;font-weight:500}
+    .backlink{font-size:11.5px;color:var(--accent);cursor:pointer;font-weight:600}
+
+    .main{flex:1;overflow-y:auto;padding:20px 28px 60px}
+    .wrap{max-width:1080px;margin:0 auto}
+
+    .hdr{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:16px}
+    .hdr h1{font-size:19px;font-weight:700;margin-bottom:3px}
+    .hdr p{font-size:12px;color:var(--text-sec);max-width:600px;line-height:1.5}
+
+    .statepill{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+    .statepill.draft{background:var(--amber-soft);color:var(--amber)}
+    .statepill.final{background:var(--green-soft);color:var(--green)}
+
+    .cards{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:16px}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rlg);padding:11px 13px}
+    .card .n{font-size:20px;font-weight:700;line-height:1.1}
+    .card .l{font-size:10.5px;color:var(--text-sec);margin-top:2px}
+    .card.ok .n{color:var(--green)} .card.warn .n{color:var(--amber)} .card.bad .n{color:var(--red)}
+
+    .panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--rlg);margin-bottom:16px;overflow:hidden}
+    .panel-hd{padding:11px 15px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .panel-hd h3{font-size:12.5px;font-weight:700}
+    .panel-hd .sub{font-size:11px;color:var(--text-dim);font-weight:500}
+    .panel-bd{padding:13px 15px}
+
+    .refline{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--text-sec)}
+    .refline b{color:var(--text)}
+    .refpath{font-family:var(--mono);font-size:10.5px;color:var(--text-dim);word-break:break-all}
+
+    .flag{border-left:3px solid var(--red);background:var(--red-soft);border-radius:0 6px 6px 0;padding:8px 11px;margin-bottom:7px}
+    .flag.medium{border-left-color:var(--amber);background:var(--amber-soft)}
+    .flag-t{font-size:11.5px;font-weight:700;display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+    .flag-k{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;padding:1px 6px;border-radius:3px;background:rgba(0,0,0,.07)}
+    .flag-d{font-size:11px;color:var(--text-sec);margin-top:3px;line-height:1.45}
+
+    .filters{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+    .fbtn{padding:4px 10px;border-radius:6px;border:1px solid var(--border);background:transparent;font-family:var(--font);font-size:11px;font-weight:600;color:var(--text-sec);cursor:pointer}
+    .fbtn.on{background:var(--accent);border-color:var(--accent);color:#fff}
+
+    .cat{border-top:1px solid var(--border)}
+    .cat:first-child{border-top:none}
+    .cat-hd{padding:9px 15px;background:var(--surface2);display:flex;align-items:center;justify-content:space-between;font-size:11.5px;font-weight:700;cursor:pointer}
+    .cat-hd .cc{font-size:10.5px;font-weight:600;color:var(--text-sec)}
+    .cond{font-size:9px;font-weight:700;padding:1px 6px;border-radius:3px;background:var(--surface3);color:var(--text-sec);text-transform:uppercase;letter-spacing:.3px;margin-left:6px}
+
+    .cp{padding:10px 15px;border-top:1px solid var(--border);display:grid;grid-template-columns:44px 1fr 300px;gap:12px;align-items:start}
+    .cp:hover{background:var(--surface2)}
+    .cp-id{font-family:var(--mono);font-size:10.5px;color:var(--text-dim);padding-top:2px}
+    .cp-txt{font-size:12px;line-height:1.45}
+    .cp-meta{font-size:10.5px;color:var(--text-dim);margin-top:3px}
+    .risk{font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px;text-transform:uppercase}
+    .risk.High{background:var(--red-soft);color:var(--red)}
+    .risk.Medium{background:var(--amber-soft);color:var(--amber)}
+    .risk.Low{background:var(--surface3);color:var(--text-sec)}
+
+    .cp-ctl{display:flex;flex-direction:column;gap:6px}
+    .seg{display:flex;gap:3px}
+    .seg button{flex:1;padding:4px 6px;border-radius:5px;border:1px solid var(--border);background:var(--surface);font-family:var(--font);font-size:10.5px;font-weight:600;color:var(--text-sec);cursor:pointer;white-space:nowrap}
+    .seg button:hover{border-color:var(--border-hover)}
+    .seg button.on.validated{background:var(--green);border-color:var(--green);color:#fff}
+    .seg button.on.waived{background:var(--amber);border-color:var(--amber);color:#fff}
+    .seg button.on.na{background:var(--text-sec);border-color:var(--text-sec);color:#fff}
+    .inp{width:100%;padding:5px 8px;border-radius:5px;border:1px solid var(--border);background:var(--surface);font-family:var(--font);font-size:11px;color:var(--text)}
+    .inp::placeholder{color:var(--text-dim)}
+    .inp.req{border-color:var(--red)}
+    .savedmark{font-size:10px;color:var(--green);font-weight:600}
+
+    .footer{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--border);padding:11px 28px;display:flex;align-items:center;justify-content:center;gap:16px;z-index:20}
+    .footer-in{width:100%;max-width:1080px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .gate-msg{font-size:11.5px;color:var(--text-sec)}
+    .gate-msg b{color:var(--red)}
+    .cta{padding:9px 20px;border-radius:var(--r);border:none;background:var(--green);color:#fff;font-family:var(--font);font-size:12.5px;font-weight:700;cursor:pointer}
+    .cta:disabled{background:var(--surface3);color:var(--text-dim);cursor:not-allowed}
+    .btn2{padding:8px 14px;border-radius:var(--r);border:1px solid var(--border);background:transparent;color:var(--text-sec);font-family:var(--font);font-size:12px;font-weight:600;cursor:pointer}
+
+    #tc{position:fixed;top:64px;right:20px;display:flex;flex-direction:column;gap:8px;z-index:100}
+    .t{padding:9px 14px;border-radius:8px;font-size:12px;display:flex;gap:8px;align-items:center;background:var(--surface);border:1px solid var(--border);box-shadow:0 4px 12px rgba(0,0,0,.09)}
+    .t.error{border-color:var(--red);color:var(--red)} .t.success{border-color:var(--green);color:var(--green)}
+    .muted{color:var(--text-dim);font-size:11.5px}
+  </style>
+</head>
+<body>
+<script>
+  (function() { if (!sessionStorage.getItem('auth_user')) window.location.replace('/'); })();
+</script>
+
+<nav class="topnav">
+  <div class="nav-left">
+    <div class="logo-mark">B</div>
+    <div><div class="nav-title">Bristlecone SOW Automation</div><div class="nav-subtitle">Review Gate</div></div>
+  </div>
+  <div class="backlink" id="back-link">&#8592; Back to Draft &amp; Review</div>
+  <div class="nav-user"><span class="uname" id="nav-uname"></span><div class="uav" id="nav-uav"></div></div>
+</nav>
+
+<div id="tc"></div>
+
+<main class="main">
+  <div class="wrap">
+    <div class="hdr">
+      <div>
+        <h1>Pre-signature review gate</h1>
+        <p>Every checkpoint has to be validated, waived or marked not applicable before this
+           SOW can move to final. A waiver needs a named approver.</p>
+      </div>
+      <div class="statepill draft" id="statepill">DRAFT</div>
+    </div>
+
+    <div class="cards">
+      <div class="card"><div class="n" id="c-total">–</div><div class="l">Checkpoints</div></div>
+      <div class="card ok"><div class="n" id="c-val">–</div><div class="l">Validated</div></div>
+      <div class="card warn"><div class="n" id="c-wav">–</div><div class="l">Waived</div></div>
+      <div class="card"><div class="n" id="c-na">–</div><div class="l">Not applicable</div></div>
+      <div class="card bad"><div class="n" id="c-open">–</div><div class="l">Still open</div></div>
+    </div>
+
+    <!-- US-02: legally reviewed baseline -->
+    <div class="panel">
+      <div class="panel-hd">
+        <h3>Legal baseline</h3>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button class="btn2" id="recheck-btn" onclick="recheck()">Re-check this SOW</button>
+          <button class="btn2" onclick="window.open('/api/sow/reference/download','_blank')"
+                  id="dl-ref">Download baseline</button>
+        </div>
+      </div>
+      <div class="panel-bd">
+        <div class="refline" id="refline"><span class="muted">Loading…</span></div>
+        <div id="flags" style="margin-top:11px"></div>
+      </div>
+    </div>
+
+    <!-- US-04 / US-05 / US-06: scope, acceptance and change-control content checks -->
+    <div class="panel">
+      <div class="panel-hd">
+        <h3>SOW content checks
+          <span class="sub">scope · acceptance · change control · commercials · governance · risk · KPIs</span></h3>
+        <button class="btn2" id="scope-btn" onclick="runScopeCheck()">Run checks</button>
+      </div>
+      <div class="panel-bd">
+        <div id="scope-flags"><span class="muted">Not run yet.</span></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-hd">
+        <h3>Compliance checklist <span class="sub" id="cl-src">from SOW_SKILL.md</span></h3>
+        <div class="filters">
+          <button class="fbtn on" data-f="all" onclick="setFilter('all')">All</button>
+          <button class="fbtn" data-f="open" onclick="setFilter('open')">Open only</button>
+          <button class="fbtn" data-f="waived" onclick="setFilter('waived')">Waived</button>
+          <button class="btn2" onclick="bulkValidateVisible()">Mark visible validated</button>
+        </div>
+      </div>
+      <div id="cats"></div>
+    </div>
+  </div>
+</main>
+
+<div class="footer">
+  <div class="footer-in">
+    <div class="gate-msg" id="gate-msg">Loading…</div>
+    <div style="display:flex;gap:9px">
+      <button class="btn2" id="reopen-btn" style="display:none" onclick="reopenSow()">Reopen for edits</button>
+      <button class="cta" id="final-btn" disabled onclick="finalizeSow()">Mark SOW final</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const PROJECT_ID = new URLSearchParams(location.search).get('project_id') || '';
+document.getElementById('back-link').onclick = () =>
+  window.location.href = `/sow-workflow?project_id=${PROJECT_ID}`;
+
+(function() {
+  const raw = sessionStorage.getItem('auth_user');
+  const email = raw ? (JSON.parse(raw).email || '') : '';
+  document.getElementById('nav-uname').textContent = email;
+  const parts = email.split('@')[0].split(/[._]/).filter(Boolean);
+  document.getElementById('nav-uav').textContent =
+    parts.slice(0,2).map(p => p.charAt(0).toUpperCase()).join('') || '?';
+})();
+
+function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function toast(m,ty='info'){
+  const c=document.getElementById('tc'),t=document.createElement('div');t.className=`t ${ty}`;
+  t.innerHTML=`<span>${ty==='error'?'⚠':ty==='success'?'✓':'ℹ'}</span><span>${esc(m)}</span>`;
+  c.appendChild(t);setTimeout(()=>t.remove(),5000);
+}
+
+let review = null;
+let filter = 'all';
+const collapsed = new Set();
+
+async function load(){
+  const res = await fetch(`/api/sow/review/${PROJECT_ID}`);
+  if (!res.ok) { toast('Could not load the review checklist.', 'error'); return; }
+  review = await res.json();
+  renderSummary();
+  renderCheckpoints();
+  renderFlags();
+  renderScopeFlags();
+}
+
+async function loadReference(){
+  const el = document.getElementById('refline');
+  try {
+    const res = await fetch('/api/sow/reference');
+    const d = await res.json();
+    if (!d.has_reference) {
+      el.innerHTML = `<span class="muted">No legally reviewed baseline has been filed yet —
+        deviation checking is unavailable until one is uploaded.</span>`;
+      document.getElementById('dl-ref').disabled = true;
+      document.getElementById('recheck-btn').disabled = true;
+      return;
+    }
+    const c = d.current;
+    el.innerHTML = `
+      <span>Version <b>${esc(c.version)}</b></span>
+      <span>Legal review date <b>${esc(c.effective_date)}</b></span>
+      <span>${c.clause_count} clauses</span>
+      <span>${d.superseded_count} superseded ${d.superseded_files_retained ? '' : '(copies removed)'}</span>
+      <div style="flex-basis:100%"></div>
+      <span class="refpath">${esc(c.path)}</span>`;
+  } catch(e) {
+    el.innerHTML = '<span class="muted">Could not load the baseline.</span>';
+  }
+}
+
+function renderSummary(){
+  const c = review.counts;
+  document.getElementById('c-total').textContent = review.total;
+  document.getElementById('c-val').textContent   = c.validated;
+  document.getElementById('c-wav').textContent   = c.waived;
+  document.getElementById('c-na').textContent    = c.na;
+  document.getElementById('c-open').textContent  = c.open;
+
+  const isFinal = review.status === 'final';
+  const pill = document.getElementById('statepill');
+  pill.className = 'statepill ' + (isFinal ? 'final' : 'draft');
+  pill.textContent = isFinal ? 'FINAL' : 'DRAFT';
+
+  const btn = document.getElementById('final-btn');
+  const msg = document.getElementById('gate-msg');
+  document.getElementById('reopen-btn').style.display = isFinal ? 'inline-block' : 'none';
+
+  if (isFinal) {
+    btn.disabled = true;
+    btn.textContent = 'SOW is final';
+    const who = review.finalized_by ? ` by ${esc(review.finalized_by)}` : '';
+    const when = review.finalized_at ? ` on ${esc(review.finalized_at.slice(0,10))}` : '';
+    msg.innerHTML = `Finalized${who}${when}. Reopen to change any answer.`;
+  } else if (review.can_finalize) {
+    btn.disabled = false;
+    btn.textContent = 'Mark SOW final';
+    msg.textContent = 'All checkpoints resolved — this SOW can be finalized.';
+  } else {
+    btn.disabled = true;
+    btn.textContent = 'Mark SOW final';
+    msg.innerHTML = `<b>${review.counts.open}</b> checkpoint(s) still open — resolve every one to finalize.`;
+  }
+}
+
+function renderFlags(){
+  const el = document.getElementById('flags');
+  const flags = review.legal_review_flags || [];
+  if (!flags.length) {
+    el.innerHTML = `<div class="muted">No clause deviations flagged against the baseline.</div>`;
+    return;
+  }
+  el.innerHTML = `<div style="font-size:11.5px;font-weight:700;margin-bottom:7px">
+      ${flags.length} clause deviation(s) flagged for Legal review</div>` +
+    flags.map(f => `
+      <div class="flag ${esc(f.severity)}">
+        <div class="flag-t">
+          <span class="flag-k">${esc((f.kind||'').replace(/_/g,' '))}</span>
+          <span>${esc(f.clause_title || '')}</span>
+          ${f.section_title ? `<span class="muted">↔ ${esc(f.section_title)}</span>` : ''}
+        </div>
+        <div class="flag-d">${esc(f.detail)}</div>
+      </div>`).join('');
+}
+
+const STORY_LABEL = {
+  'US-04': 'Scope definition',
+  'US-05': 'Acceptance & deemed acceptance',
+  'US-06': 'Change request process',
+  'US-07': 'Commercial terms',
+  'US-08': 'Governance & escalation',
+  'US-09': 'Risk register ownership',
+  'US-10': 'KPIs, SLAs & success metrics',
+  'US-11': 'Onboarding & access provisioning',
+  'US-12': 'Asset management & return',
+  'US-13': 'Term & termination',
+  'US-14': 'Back-to-back vendor alignment',
+  'US-15': 'Contractor & vendor compliance',
+};
+
+function renderScopeFlags(){
+  const el = document.getElementById('scope-flags');
+  const flags = review.scope_check_flags || [];
+  if (!flags.length) {
+    el.innerHTML = review.scope_checked
+      ? `<div class="muted">All scope, acceptance and change-control checks passed.</div>`
+      : `<div class="muted">Not run yet — use <b>Run checks</b> to verify scope boundaries,
+           acceptance windows, change control, commercial terms, governance, risk
+           ownership and KPIs.</div>`;
+    return;
+  }
+  const groups = {};
+  for (const f of flags) (groups[f.story] = groups[f.story] || []).push(f);
+  el.innerHTML = Object.keys(groups).sort().map(story => `
+    <div style="margin-bottom:11px">
+      <div style="font-size:11.5px;font-weight:700;margin-bottom:6px">
+        ${esc(story)} — ${esc(STORY_LABEL[story] || '')}
+        <span class="muted">(${groups[story].length})</span>
+      </div>
+      ${groups[story].map(f => `
+        <div class="flag ${esc(f.severity)}">
+          <div class="flag-t">
+            <span class="flag-k">${esc((f.kind||'').replace(/_/g,' '))}</span>
+            <span>${esc(f.area_label || '')}</span>
+            ${f.section_id ? `<span class="muted">§${esc(f.section_id)}</span>` : ''}
+          </div>
+          <div class="flag-d">${esc(f.detail)}</div>
+          ${f.evidence ? `<div class="flag-d" style="font-family:var(--mono);font-size:10px">
+              ${esc(f.evidence)}</div>` : ''}
+        </div>`).join('')}
+    </div>`).join('');
+}
+
+async function runScopeCheck(){
+  const btn = document.getElementById('scope-btn');
+  btn.disabled = true;
+  try {
+    const res = await fetch(`/api/sow/scope-check/${PROJECT_ID}`, {method: 'POST'});
+    const d = await res.json();
+    if (!res.ok) throw new Error(d.detail || 'Check failed');
+    review.scope_check_flags = d.flags;
+    review.scope_checked = true;
+    renderScopeFlags();
+    toast(d.flag_count
+      ? `${d.flag_count} issue(s) found (${d.high_count} high).`
+      : 'Scope, acceptance and change-control checks all passed.',
+      d.high_count ? 'error' : 'success');
+  } catch(e) { toast(e.message || 'Check failed', 'error'); }
+  finally { btn.disabled = false; }
+}
+
+function renderCheckpoints(){
+  const wrap = document.getElementById('cats');
+  const isFinal = review.status === 'final';
+  const groups = {};
+  for (const cp of review.checkpoints) {
+    if (filter === 'open'   && cp.state !== 'open')   continue;
+    if (filter === 'waived' && cp.state !== 'waived') continue;
+    (groups[cp.category_id] = groups[cp.category_id] || {name: cp.category, conditional: cp.conditional, items: []}).items.push(cp);
+  }
+  const keys = Object.keys(groups).sort((a,b) =>
+    parseFloat(a.split('.')[1]) - parseFloat(b.split('.')[1]));
+  if (!keys.length) { wrap.innerHTML = `<div class="panel-bd muted">Nothing matches this filter.</div>`; return; }
+
+  wrap.innerHTML = keys.map(k => {
+    const g = groups[k];
+    const openN = g.items.filter(i => i.state === 'open').length;
+    const isCol = collapsed.has(k);
+    return `
+    <div class="cat">
+      <div class="cat-hd" onclick="toggleCat('${k}')">
+        <span>${isCol ? '▸' : '▾'} ${esc(k)} ${esc(g.name)}
+          ${g.conditional ? '<span class="cond">Conditional</span>' : ''}</span>
+        <span class="cc">${openN ? openN + ' open' : 'all resolved'} · ${g.items.length}</span>
+      </div>
+      ${isCol ? '' : g.items.map(cp => cpRow(cp, isFinal)).join('')}
+    </div>`;
+  }).join('');
+}
+
+function cpRow(cp, isFinal){
+  const dis = isFinal ? 'disabled' : '';
+  const needReason   = review.reason_required_states.includes(cp.state) && !cp.reason;
+  const needApprover = review.approver_required_states.includes(cp.state) && !cp.approver;
+  return `
+  <div class="cp">
+    <div class="cp-id">${esc(cp.id)}</div>
+    <div>
+      <div class="cp-txt">${esc(cp.text)}</div>
+      <div class="cp-meta">
+        <span class="risk ${esc(cp.risk)}">${esc(cp.risk)}</span>
+        ${cp.precedent ? ' · precedent: ' + esc(cp.precedent) : ''}
+        ${cp.updated_by ? ' · by ' + esc(cp.updated_by) : ''}
+      </div>
+    </div>
+    <div class="cp-ctl">
+      <div class="seg">
+        <button class="${cp.state==='validated'?'on validated':''}" ${dis}
+                onclick="setState('${cp.id}','validated')">Validated</button>
+        <button class="${cp.state==='waived'?'on waived':''}" ${dis}
+                onclick="setState('${cp.id}','waived')">Waive</button>
+        <button class="${cp.state==='na'?'on na':''}" ${dis}
+                onclick="setState('${cp.id}','na')">N/A</button>
+      </div>
+      ${cp.state !== 'open' ? `
+        <input class="inp ${needReason?'req':''}" id="r-${cp.id}" ${dis}
+               placeholder="${review.reason_required_states.includes(cp.state)
+                             ? 'Reason (required)' : 'Reason (optional)'}"
+               value="${esc(cp.reason)}"
+               onchange="saveDetail('${cp.id}','${cp.state}')">
+        ${cp.state === 'waived' ? `
+          <input class="inp ${needApprover?'req':''}" id="a-${cp.id}" ${dis}
+                 placeholder="Approver name (required)" value="${esc(cp.approver)}"
+                 onchange="saveDetail('${cp.id}','waived')">` : ''}
+        ${cp.state !== 'open' && !isFinal ? `
+          <span class="savedmark" style="cursor:pointer" onclick="setState('${cp.id}','open')">clear</span>` : ''}
+      ` : ''}
+    </div>
+  </div>`;
+}
+
+function toggleCat(k){ collapsed.has(k) ? collapsed.delete(k) : collapsed.add(k); renderCheckpoints(); }
+function setFilter(f){
+  filter = f;
+  document.querySelectorAll('.fbtn').forEach(b => b.classList.toggle('on', b.dataset.f === f));
+  renderCheckpoints();
+}
+
+async function post(cpId, state, reason, approver){
+  const res = await fetch(`/api/sow/review/${PROJECT_ID}/checkpoint`, {
+    method: 'POST', headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({checkpoint_id: cpId, state, reason: reason||'', approver: approver||''}),
+  });
+  const data = await res.json();
+  if (!res.ok) { toast(data.detail || 'Could not save.', 'error'); return false; }
+  review = data;
+  review.legal_review_flags = review.legal_review_flags || [];
+  review.scope_check_flags = review.scope_check_flags || [];
+  return true;
+}
+
+async function setState(cpId, state){
+  const cp = review.checkpoints.find(c => c.id === cpId);
+  const prevFlags = review.legal_review_flags, prevScope = review.scope_check_flags;
+  // Waive and N/A need their supporting text before the server will accept
+  // them, so stage the choice locally and let the reviewer type it in.
+  if (state !== 'open' && review.reason_required_states.includes(state) && !cp.reason) {
+    cp.state = state; renderCheckpoints(); renderSummary();
+    const box = document.getElementById('r-' + cpId); if (box) box.focus();
+    return;
+  }
+  const ok = await post(cpId, state, cp.reason, cp.approver);
+  if (ok) { review.legal_review_flags = prevFlags; review.scope_check_flags = prevScope; renderCheckpoints(); renderSummary(); }
+}
+
+async function saveDetail(cpId, state){
+  const r = document.getElementById('r-' + cpId);
+  const a = document.getElementById('a-' + cpId);
+  const prevFlags = review.legal_review_flags, prevScope = review.scope_check_flags;
+  const ok = await post(cpId, state, r ? r.value : '', a ? a.value : '');
+  if (ok) { review.legal_review_flags = prevFlags; review.scope_check_flags = prevScope; renderCheckpoints(); renderSummary(); }
+}
+
+async function bulkValidateVisible(){
+  if (review.status === 'final') { toast('Reopen the SOW first.', 'error'); return; }
+  const targets = review.checkpoints.filter(cp =>
+    cp.state === 'open' &&
+    (filter === 'all' || (filter === 'open' && cp.state === 'open')));
+  if (!targets.length) { toast('Nothing open to mark.', 'info'); return; }
+  if (!confirm(`Mark ${targets.length} open checkpoint(s) as validated?\n\n` +
+               `Only do this when you have actually checked them against the SOW.`)) return;
+  const prevFlags = review.legal_review_flags, prevScope = review.scope_check_flags;
+  for (const cp of targets) {
+    const res = await fetch(`/api/sow/review/${PROJECT_ID}/checkpoint`, {
+      method: 'POST', headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({checkpoint_id: cp.id, state: 'validated'}),
+    });
+    if (res.ok) review = await res.json();
+  }
+  review.legal_review_flags = prevFlags; review.scope_check_flags = prevScope;
+  renderCheckpoints(); renderSummary();
+  toast(`${targets.length} checkpoint(s) marked validated.`, 'success');
+}
+
+async function recheck(){
+  const btn = document.getElementById('recheck-btn');
+  btn.disabled = true;
+  try {
+    const res = await fetch(`/api/sow/reference/check/${PROJECT_ID}`, {method: 'POST'});
+    const d = await res.json();
+    if (!res.ok) throw new Error(d.detail || 'Check failed');
+    if (!d.available) { toast('No baseline filed — nothing to compare against.', 'error'); return; }
+    await load();
+    toast(`Checked ${d.compared} clause(s) — ${d.flags.length} flagged.`,
+          d.flags.length ? 'error' : 'success');
+  } catch(e) { toast(e.message || 'Check failed', 'error'); }
+  finally { btn.disabled = false; }
+}
+
+async function finalizeSow(){
+  const btn = document.getElementById('final-btn');
+  btn.disabled = true;
+  try {
+    const res = await fetch(`/api/sow/review/${PROJECT_ID}/finalize`, {method:'POST'});
+    const d = await res.json();
+    if (!res.ok) throw new Error(d.detail || 'Could not finalize');
+    review = d; review.legal_review_flags = review.legal_review_flags || [];
+  review.scope_check_flags = review.scope_check_flags || [];
+    renderSummary(); renderCheckpoints();
+    toast('SOW marked final.', 'success');
+  } catch(e) { toast(e.message, 'error'); renderSummary(); }
+}
+
+async function reopenSow(){
+  if (!confirm('Reopen this SOW for edits? Its status returns to draft.')) return;
+  const res = await fetch(`/api/sow/review/${PROJECT_ID}/reopen`, {method:'POST'});
+  const d = await res.json();
+  if (!res.ok) { toast(d.detail || 'Could not reopen', 'error'); return; }
+  review = d; review.legal_review_flags = review.legal_review_flags || [];
+  review.scope_check_flags = review.scope_check_flags || [];
+  renderSummary(); renderCheckpoints();
+  toast('SOW reopened — status is draft.', 'success');
+}
+
+if (!PROJECT_ID) {
+  document.getElementById('gate-msg').textContent = 'No project selected.';
+} else {
+  loadReference();
+  load();
+}
+</script>
+</body>
+</html>

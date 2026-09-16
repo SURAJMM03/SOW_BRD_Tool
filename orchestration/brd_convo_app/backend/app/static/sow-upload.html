@@ -165,7 +165,7 @@
     <div class="zl">Source Documents</div>
     <div class="zs">Drag &amp; drop or click to browse</div>
     <div class="zf"><span class="ft">PDF</span><span class="ft">DOCX</span><span class="ft">TXT</span><span class="ft">XLSX</span><span class="ft">PPTX</span><span class="ft">PNG</span><span class="ft">JPG</span></div>
-    <div class="zlim">Up to 50 MB per file · Multiple files</div>
+    <div class="zlim">Up to 200 MB per file · Multiple files</div>
   </div>
 
   <div class="repo-bar" id="repoBar">
@@ -211,7 +211,7 @@
 
 <script>
 const F=[]; let fid=0;
-const SE=['pdf','docx','doc','txt','xlsx','xlsm','xls','pptx','ppt','png','jpg','jpeg','gif','webp','bmp'], MX=50*1024*1024;
+const SE=['pdf','docx','doc','txt','xlsx','xlsm','xls','pptx','ppt','png','jpg','jpeg','gif','webp','bmp'], MX=200*1024*1024;
 
 const PROJECT_ID = new URLSearchParams(window.location.search).get('project_id');
 if (!PROJECT_ID) window.location.href = '/sow-projects';
@@ -236,7 +236,7 @@ function hf(objs){
   for(const f of objs){
     const ext=f.name.split('.').pop().toLowerCase();
     if(!SE.includes(ext)){tw(`"${f.name}" — invalid format.`,'error');continue}
-    if(f.size>MX){tw(`"${f.name}" exceeds 50 MB.`,'error');continue}
+    if(f.size>MX){tw(`"${f.name}" exceeds 200 MB.`,'error');continue}
     const e={id:++fid,name:f.name,size:f.size,ext,status:'uploading',progress:0,serverId:null};
     F.push(e); syncView(); appendRow(e); uploadFile(f,e);
   }

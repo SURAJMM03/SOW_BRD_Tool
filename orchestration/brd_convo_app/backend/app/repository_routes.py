@@ -89,7 +89,7 @@ VALID_SOURCE_EXTS = {
     ".pptx", ".ppt",
     ".png", ".jpg", ".jpeg", ".gif", ".webp", ".bmp",
 }
-MAX_FILE_SIZE = 50 * 1024 * 1024
+MAX_FILE_SIZE = 200 * 1024 * 1024
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

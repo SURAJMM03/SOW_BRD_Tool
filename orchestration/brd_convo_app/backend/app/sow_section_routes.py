@@ -31,17 +31,22 @@ import threading
 import uuid
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Set
 
 from fastapi import APIRouter, HTTPException, UploadFile, File, Form
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
 from app.claude_provider import completion_from_prompt
-from app.image_injection import get_relevant_images, format_images_for_context
+from app.image_injection import (get_relevant_images, format_images_for_context,
+                                 filter_already_used,
+                                 verify_image_relevance)
 from app.sow_template_routes import (
     FALLBACK_SECTIONS, TABLE_SECTION_IDS, DIAGRAM_PRIORITY_SECTION_IDS,
     get_default_template,
+)
+from app.sow_engagement_templates import (
+    engagement_guidance, engagement_premise, engagement_table_ids,
 )
 
 logger = logging.getLogger("SOWSectionRoutes")
@@ -147,7 +152,8 @@ def _save_attachments_store(store: Dict, pid: str) -> None:
 # structure) is applied to a project. Public so that module can import it.
 # ─────────────────────────────────────────────────────────────────────────────
 
-def seed_project_sections(project_id: str, sections: List[Dict], template_id: Optional[str] = None) -> None:
+def seed_project_sections(project_id: str, sections: List[Dict], template_id: Optional[str] = None,
+                          engagement_type: Optional[str] = None) -> None:
     active = [
         {
             "id": s["id"], "title": s["title"], "level": s.get("level", 1),
@@ -158,7 +164,16 @@ def seed_project_sections(project_id: str, sections: List[Dict], template_id: Op
         }
         for s in sections
     ]
-    _save_sections_store({"active": active, "archived": [], "template_id": template_id}, project_id)
+    # Stamp the engagement template's version alongside the key so a draft can
+    # always be traced back to the exact template revision that produced it
+    # (see sow_engagement_templates' "version-controlled" note).
+    from app.sow_engagement_templates import get_engagement_template
+    eng_tpl = get_engagement_template(engagement_type)
+    _save_sections_store({
+        "active": active, "archived": [], "template_id": template_id,
+        "engagement_type": engagement_type,
+        "engagement_template_version": eng_tpl["version"] if eng_tpl else None,
+    }, project_id)
     kw = _load_keyword_store(project_id)
     for s in sections:
         sid = s["id"]
@@ -169,6 +184,13 @@ def seed_project_sections(project_id: str, sections: List[Dict], template_id: Op
 
 def get_project_template_id(project_id: str) -> Optional[str]:
     return _load_sections_store(project_id).get("template_id")
+
+
+def get_project_engagement_type(project_id: str) -> Optional[str]:
+    """The engagement type chosen for this project, or None for a project
+    seeded before US-01 (or from a custom template with no type chosen).
+    None means engagement-neutral guidance — the pre-US-01 behaviour."""
+    return _load_sections_store(project_id).get("engagement_type")
 
 
 def _ensure_seeded(project_id: str) -> None:
@@ -244,8 +266,12 @@ SECTION_GUIDANCE: Dict[str, str] = {
          "from the source material rather than describing it in prose alone).",
     "4": "Scope of Work — Geographical/Process/Technical/Services/Application Scope; "
          "Integration Scope as a table (# | Integration | Source System | Target System | "
-         "Notes); Exclusions (bullets — never leave placeholder-only if the source material "
-         "gives any hint of what's out of scope).",
+         "Notes). Every scope statement must be specific to THIS engagement — name the "
+         "client's actual systems, sites, processes and volumes from the source material. "
+         "A sentence that would read identically on any other client's SOW is not scope, "
+         "it is boilerplate: cut it or replace it with the specific fact. Where a boundary "
+         "is genuinely undecided, emit a <CONFIRM: …> placeholder rather than a vague "
+         "generality.",
     "5": "Proposed Architecture — solution architecture, deployment model, change-governance "
          "structure. Include an architecture diagram here if one is available from the "
          "source material.",
@@ -254,33 +280,76 @@ SECTION_GUIDANCE: Dict[str, str] = {
          "Phases/Releases as a table (Phase/Release | Scope/Modules | Regions | Indicative "
          "Timeline | Status).",
     "7": "Project Management — Governance Model; Roles & Responsibilities as a table (Role | "
-         "Party | Location | Responsibilities); Work Schedule.",
+         "Party | Location | Responsibilities); Work Schedule; Escalation Matrix; Key "
+         "Contacts. Governance is only real if a reader can tell WHO meets, HOW OFTEN, and "
+         "WHO to call when something goes wrong — cover all three.",
     "8": "Personnel Requirements — bullets on language, background, domain familiarity, "
          "file-format/standards knowledge, methodology experience, certifications.",
     "9": "Key Deliverables — table (# | Deliverable | Description | Responsible Party | Due "
          "Date | Acceptance Criteria). Only list deliverables explicitly described in the "
-         "source; mark unconfirmed dates with a placeholder rather than 'TBD'.",
-    "10": "Key Assumptions — bullets, project-specific, no generic boilerplate. Deviations "
-          "trigger the Change Management Process.",
-    "11": "Acceptance Criteria — table (Phase/Deliverable | Acceptance Criteria | Sign-off "
-          "Party | Timeline for Review). Criteria must be objective/measurable — never "
-          "'client satisfaction' with no test.",
-    "12": "Obligations — Bristlecone Obligations (bullets); Client Obligations (bullets).",
+         "source; mark unconfirmed dates with a placeholder rather than 'TBD'. Every "
+         "deliverable must be specific to this engagement — a named artefact whose content "
+         "is described, not a generic category like \"documentation\" or \"training\".",
+    "10": "Key Assumptions — bullets, each one specific to this engagement and testable "
+          "(a reader must be able to tell whether it held). Name the actual systems, teams, "
+          "environments, data or dates the assumption depends on. Generic filler such as "
+          "\"the client will be cooperative\" or \"resources will be available\" is not an "
+          "assumption — either make it concrete or drop it. State explicitly that if an "
+          "assumption does not hold, the Change Management Process applies and cost/timeline "
+          "may be revised.",
+    "11": "Acceptance Criteria — table (Deliverable/Milestone | Acceptance Criteria | "
+          "Sign-off Party | Review Window). Three things are mandatory. (1) Criteria must be "
+          "MEASURABLE per deliverable or milestone — a named test, threshold, count or "
+          "document state a reviewer can check objectively; never 'client satisfaction', "
+          "'high quality' or 'works as expected'. (2) The Review Window must be an explicit "
+          "number of days and must say whether they are BUSINESS or CALENDAR days "
+          "(e.g. 'ten (10) business days from submission'). (3) Immediately after the table, "
+          "state the deemed-acceptance rule in its own sentence: if the client does not issue "
+          "a written rejection identifying the specific failed criterion within the review "
+          "window, the deliverable is deemed accepted automatically on expiry of that window. "
+          "Also state the re-submission cycle for a rejected deliverable.",
+    "12": "Obligations — Bristlecone Obligations (bullets); Client Obligations (bullets); "
+          "Subcontractor & Vendor Alignment; Contractor & Vendor Compliance.",
     "13": "Commercials — Engagement Model; Rate Card & Pyramid Structure as a table "
           "(Role/Band | Location | Rate USD/day | Rate Type | Effective Date | Notes); Shift "
           "Allowance; Travel & Expenses; Invoicing & Payment Terms.",
-    "14": "Performance Reporting & KPIs — table (Report | Frequency | Recipients | Key "
-          "Metrics); SLAs & Targets (mark 'Not Applicable' explicitly if this is an "
-          "implementation-only engagement — do not leave silent).",
-    "15": "Risks — table (# | Risk Description | Likelihood | Impact | Mitigation). Start "
-          "from standard risks (deferred scope decisions, custom code/integration overrun, "
-          "key SME unavailability, non-objective acceptance criteria) and add any "
+    "14": "Performance Reporting & KPIs — table (Metric | Definition | Target | Measurement "
+          "Frequency | Measurement Method | Data Source | Owner). Every metric must be "
+          "MEASURABLE with a numeric or clearly binary target — never \"good performance\" "
+          "or \"timely delivery\". Every row must say HOW it is measured and from WHICH "
+          "system or artefact the data comes; a metric with no data source cannot be "
+          "reported. Follow the table with a reporting table (Report | Frequency | "
+          "Recipients). Then state the consequence of an SLA breach (service credits, "
+          "remediation plan, escalation per the Escalation Matrix) — or, if this engagement "
+          "carries no service credits, say that explicitly: \"No service credits or "
+          "financial penalties apply to this engagement.\" Silence on breach consequences is "
+          "not acceptable.",
+    "15": "Risks — table (# | Risk Description | Likelihood | Impact | Mitigation | Risk "
+          "Owner). Likelihood and Impact must each be a rating (High/Medium/Low) — never "
+          "blank. Every risk needs a mitigation approach that names a concrete action, not "
+          "\"monitor closely\". Every risk needs a named Risk Owner giving BOTH the party "
+          "and the role (e.g. \"Bristlecone — Engagement Manager\" or \"Customer — IT "
+          "Lead\"); a risk owned by nobody is not managed. Start from standard risks "
+          "(deferred scope decisions, custom code/integration overrun, key SME "
+          "unavailability, non-objective acceptance criteria) and add any "
           "engagement-specific risk the source material surfaces.",
     "16": "Governance & Risk Mitigation — Milestone Deliverables Matrix; Deferred Scope "
-          "Decisions (bullets); Integration & Custom Code Safeguards; Change Control.",
-    "17": "Change Management Process — table (Step | Activity | Owner | Timeline), using the "
-          "standard 6-step flow (CR raised → CR logged → impact assessment → CR "
-          "reviewed/approved → SOW amendment/addendum → CR closure).",
+          "Decisions (bullets); Integration & Custom Code Safeguards; Change Control. Where "
+          "this section discusses escalation, refer to the Escalation Matrix rather than "
+          "restating different response times.",
+    "17": "Change Management Process — the formal Change Request route for any scope "
+          "deviation. Required content, all four parts. (1) The workflow as a table "
+          "(Step | Activity | Owner | Turnaround), using the six-step flow: CR raised → CR "
+          "logged → impact assessment → CR reviewed/approved → SOW amendment/addendum → CR "
+          "closure. Every step needs a named owning role AND an explicit turnaround time in "
+          "business days. (2) Name the approvers on BOTH sides by role (e.g. Client Project "
+          "Sponsor and Bristlecone Engagement Manager) and say who holds final authority. "
+          "(3) State that a commercial AND timeline impact assessment is MANDATORY for every "
+          "CR without exception — a CR cannot be approved without both, and the assessment "
+          "must quantify cost impact and schedule impact even when the answer is nil. "
+          "(4) State plainly that no work on a change begins until the CR is approved and "
+          "signed by both parties, and that unapproved work is not chargeable and does not "
+          "extend any agreed date.",
     "18": "Security & Data Protection — bullets (patching/AV, encryption in transit/at rest, "
           "least privilege, information-security-policy compliance, incident reporting "
           "window, regulatory compliance e.g. GDPR/SOC2/ISO 27001).",
@@ -323,25 +392,103 @@ SECTION_GUIDANCE: Dict[str, str] = {
            "testing, deployment, hypercare, OCM, etc. as applicable).",
     "4.5": "Application Scope — application functionalities in scope.",
     "4.6": "Integration Scope as a table (# | Integration | Source System | Target System | Notes).",
-    "4.7": "Exclusions (bullets — high-priority section; never leave placeholder-only if the "
-           "source material gives any hint of what's out of scope).",
+    "4.7": "Exclusions (Out of Scope) — high-priority. Bullets, each stating explicitly what "
+           "Bristlecone will NOT do, using plain negative wording (\"X is not included\", "
+           "\"no Y will be provided\", \"excludes Z\"). Name the specific thing excluded — "
+           "systems, environments, geographies, data migration, training, licences, "
+           "third-party costs, post-go-live support beyond the stated hypercare window. "
+           "Do not describe what IS in scope here, and never leave this section as a "
+           "placeholder alone if the source material hints at any boundary. Close with the "
+           "catch-all: anything not expressly stated as in scope in this SOW is excluded "
+           "and requires a change request.",
+    "4.8": "Dependencies — table (# | Dependency | Owning Party | Needed By | Impact if Late). "
+           "EVERY row must name the owning party in the Owning Party column, and it must be "
+           "exactly one of: Customer, Bristlecone, or a named third party (e.g. \"Third "
+           "party — SAP\"). A dependency with no named owner is not a dependency, it is an "
+           "assumption — either assign it or move it to Key Assumptions. Follow the table "
+           "with one line stating that a missed dependency date is handled through the "
+           "Change Management Process.",
     "6.1": "Implementation Methodology — delivery methodology. Include a relevant "
            "implementation/rollout diagram if the source material has one.",
     "6.2": "Project Phases/Releases as a table (Phase/Release | Scope/Modules | Regions | "
            "Indicative Timeline | Status).",
-    "7.1": "Governance Model — oversight structure, escalation paths.",
+    "7.1": "Governance Model & Forums — table (Forum | Purpose | Cadence | Participants | "
+           "Chair). List every governance body that will actually meet (e.g. daily stand-up, "
+           "weekly project review, monthly steering committee), each with an explicit cadence "
+           "(daily/weekly/fortnightly/monthly) and named participant ROLES from BOTH parties. "
+           "A forum with no cadence or no named participants is not governance.",
     "7.2": "Roles & Responsibilities as a table (Role | Party | Location | Responsibilities).",
     "7.3": "Work Schedule — bullets.",
+    "7.4": "Escalation Matrix — table (Level | Trigger | Client Role | Bristlecone Role | "
+           "Response Time | Resolution Target). Exactly three levels, L1 through L3, each "
+           "with a named ROLE on BOTH sides (never just \"management\") and an explicit "
+           "response time in hours or business days. Say what escalates a matter to the next "
+           "level (unresolved after the resolution target, or severity).",
+    "7.5": "Key Contacts — table (Name | Role | Party | Email | Phone). Both parties must be "
+           "represented. Use <CONFIRM: …> placeholders for details the source material does "
+           "not give — never invent a name, email address or phone number. Add one line "
+           "stating that contact details are maintained by both parties and updated in "
+           "writing without needing a change request.",
+    "8.1": "Onboarding & Access Provisioning — table (# | Onboarding Step | Owning Party | "
+           "Expected Duration | Prerequisite). Cover the whole path to a billable engineer: "
+           "background verification, client induction, laptop/VDI issue, network and VPN "
+           "access, application accounts and roles, and any client-specific training. Every "
+           "step needs an owning party and an expected duration in business days. Under the "
+           "table, list the CUSTOMER obligations separately — VPN and remote-access "
+           "provisioning, named application licences, physical site or badge access, and "
+           "sponsor sign-off — each with the date or lead time it is needed by. Close with "
+           "the delay consequence stated plainly: what happens to the schedule (milestone "
+           "dates move by the elapsed delay) AND to billing (whether allocated resources are "
+           "chargeable while blocked, or whether the delay is handled as a change request). "
+           "This last sentence is the point of the section; never omit it.",
+    "8.2": "Asset Management & Return — table (Asset Type | Issued By | Issued To | Tracking "
+           "Reference | Return Trigger | Return Timeline). Cover laptops, VDI or VPN tokens, "
+           "access cards, mobile devices and named software licences. Describe how issuance "
+           "is recorded and tracked (an asset register with a unique reference per item). "
+           "State return obligations for BOTH triggers: project closure or termination, and "
+           "individual resource rollover or replacement mid-engagement — each with a return "
+           "timeline in business days. Finish with accountability for loss or non-return: who "
+           "bears the cost, how it is recovered (deduction from final settlement or invoice "
+           "for replacement value), and who certifies that all assets are accounted for at "
+           "closure.",
     "12.1": "Bristlecone Obligations — bullets.",
     "12.2": "Client Obligations — bullets.",
+    "12.3": "Subcontractor & Vendor Alignment — back-to-back cover, so Bristlecone never owes "
+            "the client more than it can pass through to a vendor. Table (Obligation | "
+            "Customer SOW Commitment | Vendor Contract Term | Aligned?) covering scope, "
+            "SLAs/KPIs, acceptance basis, liability caps and payment terms. Three rules must "
+            "be stated in words: (1) vendor scope, SLAs and acceptance terms MIRROR this SOW; "
+            "(2) the vendor's acceptance basis matches this engagement model — where "
+            "deliverables govern acceptance, vendor acceptance is deliverable-based and is "
+            "NOT replaced by timesheet approval; (3) vendor payment terms are compatible with "
+            "the customer credit period, i.e. the vendor is paid no sooner than the client "
+            "pays plus a stated buffer, so Bristlecone does not fund the gap. Flag any "
+            "misalignment explicitly rather than leaving a row blank.",
+    "12.4": "Contractor & Vendor Compliance — all four of POSH (Prevention of Sexual "
+            "Harassment), the Code of Conduct, ISMS (information security management) and "
+            "PIMS (privacy information management) are CONTRACTUALLY BINDING on every vendor "
+            "and on each of their personnel, flowed down through the vendor contract. Name "
+            "all four explicitly. State that documented evidence of acknowledgement or "
+            "training completion is required from each individual BEFORE any system, data or "
+            "site access is granted, and name who verifies it. State the consequences of "
+            "non-compliance (access revocation, removal of the individual from the "
+            "engagement, and termination of the vendor contract for material breach) and "
+            "Bristlecone's and the client's audit rights over vendor compliance records, "
+            "with the notice period for an audit.",
     "13.1": "Engagement Model — Fixed Price / Time & Material / Fixed Monthly / AMS retainer.",
     "13.2": "Rate Card & Pyramid Structure as a table (Role/Band | Location | Rate USD/day | Rate "
             "Type | Effective Date | Notes).",
     "13.3": "Shift Allowance — bullets.",
     "13.4": "Travel & Expenses — reimbursement terms.",
     "13.5": "Invoicing & Payment Terms.",
-    "14.1": "SLAs & Targets — mark 'Not Applicable' explicitly if this is an implementation-only "
-            "engagement, do not leave silent.",
+    "14.1": "SLAs, Targets & Breach Consequences — table (SLA | Target | Measurement Method | "
+            "Data Source | Reporting Frequency). Targets must be numeric or clearly binary, "
+            "and every row must say how it is measured and from which system or artefact the "
+            "data comes. Immediately after the table, state the consequence of a breach — "
+            "service credits with their calculation, a remediation plan with a deadline, or "
+            "escalation per the Escalation Matrix. If this engagement carries no service "
+            "credits or financial penalties (e.g. an implementation-only engagement), say so "
+            "in an explicit sentence — do not leave it silent.",
     "16.1": "Milestone Deliverables Matrix — reference the Key Deliverables and Commercials "
             "sections.",
     "16.2": "Deferred Scope Decisions — bullets.",
@@ -357,15 +504,52 @@ SECTION_GUIDANCE: Dict[str, str] = {
 }
 
 
-def _guidance_for_section(section_id: str) -> str:
+def _guidance_for_section(section_id: str, engagement_type: Optional[str] = None,
+                          tpl_guidance: Optional[Dict[str, str]] = None,
+                          tpl_strict: bool = False) -> str:
     """Exact match first, else fall back to the parent top-level id (e.g.
     '3.1' -> '3') so a granular real-template sub-section still gets sensible
     guidance even though SECTION_GUIDANCE's detailed entries are keyed mostly
-    by the fallback template's top-level ids."""
+    by the fallback template's top-level ids.
+
+    When the project has an engagement type (US-01), that template's guidance
+    wins outright for the sections it covers — Commercials, Acceptance
+    Criteria and Key Deliverables read very differently on a T&M engagement
+    than on a Fixed Cost one, and a merge of the two would produce a section
+    that describes both billing models at once. Everything the engagement
+    template says nothing about falls through to the shared guidance below,
+    so only the commercially-sensitive sections diverge."""
+    override = engagement_guidance(engagement_type, section_id)
+    if override:
+        return override
+
+    # A library template may carry guidance keyed by its OWN numbering. It
+    # wins over the built-in map, because the built-in map is keyed by a
+    # different document's numbering and would otherwise describe a
+    # different subject entirely (see get_template_guidance).
+    if tpl_guidance:
+        if section_id in tpl_guidance:
+            return tpl_guidance[section_id]
+        parent = section_id.split(".")[0]
+        if parent in tpl_guidance:
+            return tpl_guidance[parent]
+
+    # `tpl_strict` says this template's numbering is known NOT to line up with
+    # the built-in numbering, so silence is safer than confidently wrong
+    # guidance — the section's own title still reaches the prompt.
+    if tpl_strict:
+        return ""
+
     if section_id in SECTION_GUIDANCE:
         return SECTION_GUIDANCE[section_id]
     parent = section_id.split(".")[0]
     return SECTION_GUIDANCE.get(parent, "")
+
+
+def _table_ids_for(engagement_type: Optional[str]) -> Set[str]:
+    """The shared table sections plus any the engagement template adds (a
+    T&M rate card, a Fixed Cost milestone payment schedule)."""
+    return TABLE_SECTION_IDS | engagement_table_ids(engagement_type)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -405,6 +589,69 @@ def _split_combined_content(text: str, block_ids: List[str]) -> Dict[str, str]:
 IMAGE_SUGGESTED_SECTION_IDS = set(DIAGRAM_PRIORITY_SECTION_IDS) | {
     sid for sid, guidance in SECTION_GUIDANCE.items() if "diagram" in guidance.lower()
 }
+
+
+# Subject matter that a figure genuinely helps explain. Matched against a
+# section's own title and guidance text, so this works for any SOW template.
+#
+# DIAGRAM_PRIORITY_SECTION_IDS lists bare section numbers ("3", "5", "6",
+# "3.3", "6.1") from the fallback template. Those numbers mean nothing in a
+# client's own template — section 3 might be Commercials and the architecture
+# section might be 9 — so relying on them alone forced figures into whichever
+# sections happened to carry those numbers while leaving the real
+# architecture and process-flow sections treated as prose. The id set is kept
+# as an additional signal for the fallback template rather than the only one.
+_DIAGRAM_TITLE_WORDS = re.compile(
+    r"\b("
+    r"architecture|landscape|topology|"
+    r"process\s+flow|to-?be|as-?is|workflow|swimlane|"
+    r"integration|interface|data\s+flow|"
+    r"solution\s+design|system\s+design|technical\s+design|"
+    r"methodology|approach|framework|operating\s+model|"
+    r"governance\s+model|delivery\s+model|engagement\s+model|"
+    r"roadmap|timeline|phases|releases|milestones|"
+    r"org(?:anisation|anization)?\s+chart|raci|"
+    r"scope\s+overview|solution\s+overview"
+    r")\b", re.I)
+
+
+def _section_wants_diagram(section_ids, sec_lookup=None, extra_text: str = "") -> bool:
+    """Whether a figure is expected in this section, judged from its subject.
+
+    The section's own title is the authority whenever one is known, because it
+    is the only signal that means the same thing in every template. Both
+    id-keyed sources — DIAGRAM_PRIORITY_SECTION_IDS and SECTION_GUIDANCE — are
+    keyed to the *fallback* template's numbering, so consulting them for a
+    client template whose numbering differs reads another section's meaning
+    entirely: it marked "Commercial Terms", "Termination for Convenience" and
+    "Key Assumptions" as diagram-worthy purely because the fallback template
+    happens to describe diagrams at those same numbers. They are therefore
+    used only when no title is available to judge from.
+    """
+    ids = [section_ids] if isinstance(section_ids, str) else list(section_ids or [])
+
+    titles = [extra_text] if extra_text else []
+    if sec_lookup:
+        for sid in ids:
+            entry = sec_lookup.get(sid) or {}
+            if isinstance(entry, dict) and entry.get("title"):
+                titles.append(entry["title"])
+
+    if titles:
+        joined = " ".join(titles)
+        return bool(_DIAGRAM_TITLE_WORDS.search(joined)) or "diagram" in joined.lower()
+
+    # No title to go on — fall back to the fallback template's own id-keyed
+    # signals, which are correct for projects actually using that template.
+    # Only an explicit mention of a diagram counts here: _DIAGRAM_TITLE_WORDS
+    # is tuned for terse titles, and against paragraphs of guidance prose
+    # incidental words like "approach" match almost everything.
+    for sid in ids:
+        if sid in DIAGRAM_PRIORITY_SECTION_IDS:
+            return True
+        if "diagram" in _guidance_for_section(sid).lower():
+            return True
+    return False
 
 
 NO_LEAK_RULES = """Hard rules for this draft:
@@ -488,24 +735,62 @@ def _keyword_search_chunks(chunks: List[Dict], query: str, top_k: int = 6) -> Li
 
 
 def _search_chunks(chunks: List[Dict], query: str, top_k: int = 6) -> List[Dict]:
-    """Semantic (embedding) search when the project's chunks have embeddings
-    (chunking_pipeline embeds every chunk automatically whenever OPENAI_API_KEY
-    is set, regardless of the SEARCH_BACKEND flag that gates BRD's own
-    retrieval) — falls back to keyword overlap otherwise, or if the embedding
-    call itself fails (e.g. no API key, network issue)."""
+    """Hybrid retrieval: semantic (embedding) results blended with keyword
+    overlap results, falling back to keyword alone when the project's chunks
+    have no embeddings (chunking_pipeline embeds every chunk automatically
+    whenever OPENAI_API_KEY is set, regardless of the SEARCH_BACKEND flag that
+    gates BRD's own retrieval) or the embedding call itself fails.
+
+    Previously this was strictly either/or: if semantic search returned ANY
+    hit above its threshold, keyword search was never consulted. That silently
+    lost chunks whose wording matches the query exactly but whose overall topic
+    does not — the common shape for short factual lines (a date, an ID, a
+    location) sitting on a slide that is mostly about something else. Reserving
+    a slice of the budget for keyword hits keeps those recoverable while
+    leaving semantic ranking in charge of the majority of the window.
+    """
     if not chunks or not query.strip():
         return []
 
+    semantic_hits: List[Dict] = []
     if any(c.get("embedding") for c in chunks):
         try:
             from app.semantic_search import semantic_search
-            hits = semantic_search(query, chunks, top_k=top_k, min_score=0.2)
-            if hits:
-                return [c for _, c in hits]
+            semantic_hits = [c for _, c in
+                             semantic_search(query, chunks, top_k=top_k, min_score=0.2)]
         except Exception as exc:
             logger.warning("Semantic search failed, falling back to keyword search: %s", exc)
 
-    return _keyword_search_chunks(chunks, query, top_k=top_k)
+    if not semantic_hits:
+        return _keyword_search_chunks(chunks, query, top_k=top_k)
+
+    # Keep at least one slot (a quarter of the window) for keyword-only hits.
+    keyword_slots = max(1, top_k // 4)
+    merged = semantic_hits[: top_k - keyword_slots]
+
+    def _identity(c: Dict) -> str:
+        # chunk_id is an int in some pipelines and a str in others — coerce so
+        # the two never hash as different chunks.
+        cid = c.get("chunk_id")
+        return f"id:{cid}" if cid is not None else _chunk_text(c)[:120]
+
+    seen = {_identity(c) for c in merged}
+    for c in _keyword_search_chunks(chunks, query, top_k=top_k):
+        if len(merged) >= top_k:
+            break
+        if _identity(c) not in seen:
+            seen.add(_identity(c))
+            merged.append(c)
+
+    # Backfill from semantic if keyword produced too few distinct extras.
+    for c in semantic_hits:
+        if len(merged) >= top_k:
+            break
+        if _identity(c) not in seen:
+            seen.add(_identity(c))
+            merged.append(c)
+
+    return merged
 
 
 def _load_all_project_chunks(project_id: str) -> List[Dict]:
@@ -538,7 +823,35 @@ def _project_source_doc_names(project_id: str) -> set:
     return names
 
 
-def _relevant_images_for_section(project_id: str, query: str, section_ids) -> List[Dict]:
+_IMAGE_TAG_ID_RE = re.compile(r'<IMAGE id="([^"]+)"\s*/?>')
+
+
+def _used_image_ids(project_id: str) -> set:
+    """Image ids already embedded in this project's drafted/approved sections.
+
+    Read fresh from the section stores on each call rather than cached, since
+    sections are drafted one HTTP request at a time and the set grows as the
+    document is built up.
+    """
+    used: set = set()
+    try:
+        for store, key in ((_load_approved_store(project_id), "sections"),
+                           (_load_sections_store(project_id), "active")):
+            blob = store.get(key)
+            entries = blob.values() if isinstance(blob, dict) else (blob or [])
+            for entry in entries:
+                if isinstance(entry, dict):
+                    text = entry.get("content") or ""
+                else:
+                    text = str(entry or "")
+                used.update(_IMAGE_TAG_ID_RE.findall(text))
+    except Exception as e:
+        logger.debug("Could not read used image ids for %s: %s", project_id, e)
+    return used
+
+
+def _relevant_images_for_section(project_id: str, query: str, section_ids,
+                                 section_title: str = "") -> List[Dict]:
     """`section_ids` may be a single id (str, back-compat) or a list — a
     combined family generate call biases top_k using ANY member's presence
     in DIAGRAM_PRIORITY_SECTION_IDS, since the diagram-worthy sub-section is
@@ -547,10 +860,38 @@ def _relevant_images_for_section(project_id: str, query: str, section_ids) -> Li
     doc_names = _project_source_doc_names(project_id)
     if not doc_names:
         return []
-    top_k = 4 if any(sid in DIAGRAM_PRIORITY_SECTION_IDS for sid in ids) else 2
-    hits = get_relevant_images(query, top_k=top_k * 5)
-    scoped = [h for h in hits if h.get("source_doc") in doc_names]
-    return scoped[:top_k]
+    # Retrieve a wider candidate set than we intend to offer. The relevance
+    # verifier downstream removes most of it, and starting from top_k=2 left
+    # nothing to choose from once the wrong ones were dropped.
+    top_k = 8 if _section_wants_diagram(ids, extra_text=section_title) else 5
+    # The project filter goes INTO the search, not after it. Fetching a global
+    # top-k and filtering the survivors starved this badly: the image index is
+    # shared across every project (thousands of records), so on a real project
+    # whose deck contributed 118 images, the global top-20 for a section query
+    # contained none of them at all — sections were offered zero images and no
+    # <IMAGE> tag was ever emitted. Also prefers real diagrams over the vendor
+    # logos that otherwise match generic section vocabulary.
+    candidates = get_relevant_images(
+        query,
+        top_k=top_k,
+        source_docs=doc_names,
+        prefer_diagrams=True,
+    )
+    # Skip anything an earlier section of this same document already used, so
+    # this section falls through to its own next-best figure rather than
+    # repeating one the reader has already seen.
+    candidates = filter_already_used(candidates, _used_image_ids(project_id))
+    if not candidates:
+        return []
+    # Keyword retrieval cannot distinguish a diagram of this section's subject
+    # from a logo sitting on a slide that mentions it, so the shortlist is
+    # confirmed against what the section is actually about before any of it is
+    # offered to the generator for embedding.
+    return verify_image_relevance(
+        candidates,
+        section_title=section_title or ", ".join(str(i) for i in ids),
+        section_context=query,
+    )
 
 
 def _format_attachment_context(block_id: str, title: str, attachments: List[Dict]) -> str:
@@ -571,6 +912,13 @@ def _format_attachment_context(block_id: str, title: str, attachments: List[Dict
                 f'  EMBED INSTRUCTION: <IMAGE id="{att["image_id"]}"/> — this image is '
                 f"attached directly to this sub-part; include it unless clearly irrelevant."
             )
+        if att.get("kind") == "document" and att.get("image_ids"):
+            for image_id in att["image_ids"]:
+                parts.append(
+                    f'  EMBED INSTRUCTION: <IMAGE id="{image_id}"/> — this image/flowchart '
+                    f"was extracted from the attached document above; include it if relevant "
+                    f"to this sub-part."
+                )
     return "\n".join(parts)
 
 
@@ -609,6 +957,7 @@ def list_sow_sections(project_id: str):
     approved = _load_approved_store(project_id)
     active = sections_store.get("active", [])
     approved_sections = approved.get("sections", {})
+    table_ids = _table_ids_for(sections_store.get("engagement_type"))
 
     out = []
     for s in active:
@@ -631,12 +980,17 @@ def list_sow_sections(project_id: str):
             "level": s.get("level", 1),
             "status": status,
             "custom_instructions": entry.get("custom_instructions", ""),
-            "is_table_section": any(bid in TABLE_SECTION_IDS for bid in family),
+            "is_table_section": any(bid in table_ids for bid in family),
             "has_content": has_content,
             "draft_content": entry.get("draft_content", ""),
             "draft_sources": entry.get("draft_sources", []),
             "child_count": len(family) - 1,
-            "image_suggested": any(bid in IMAGE_SUGGESTED_SECTION_IDS for bid in family),
+            # Judged from the section's subject matter, not its number, so the
+            # hint is right for any template's numbering.
+            "image_suggested": (
+                any(bid in IMAGE_SUGGESTED_SECTION_IDS for bid in family)
+                or _section_wants_diagram(family, extra_text=s["title"])
+            ),
             # Every id (parent + children) this section drafts as one unit —
             # used by the attachment panel so the reviewer can target a
             # specific sub-part (e.g. "3.3 Indicative To-Be Process Flow")
@@ -644,7 +998,13 @@ def list_sow_sections(project_id: str):
             "family": [{"id": bid, "title": next(x["title"] for x in active if x["id"] == bid)}
                        for bid in family],
         })
-    return {"project_id": project_id, "template_id": sections_store.get("template_id"), "sections": out}
+    return {
+        "project_id": project_id,
+        "template_id": sections_store.get("template_id"),
+        "engagement_type": sections_store.get("engagement_type"),
+        "engagement_template_version": sections_store.get("engagement_template_version"),
+        "sections": out,
+    }
 
 
 @router.post("/sections/{section_id}/generate")
@@ -669,6 +1029,15 @@ def generate_sow_section(section_id: str, req: GenerateRequest):
     sec_lookup = {s["id"]: s for s in active_sections}
     blocks = _draftable_blocks(section_id, active_sections)
 
+    # US-01: the engagement type chosen at the start of drafting decides which
+    # commercial/acceptance language this section gets. None (a pre-US-01
+    # project) keeps the engagement-neutral guidance.
+    engagement_type = sections_store.get("engagement_type")
+    table_ids = _table_ids_for(engagement_type)
+    # A custom template's own guidance, keyed by its own section numbering.
+    from app.sow_template_routes import get_template_guidance
+    tpl_guidance, tpl_strict = get_template_guidance(sections_store.get("template_id"))
+
     from app.project_routes import PROJECTS
     client_name = PROJECTS.get(project_id, {}).get("client", "") or ""
 
@@ -690,15 +1059,42 @@ def generate_sow_section(section_id: str, req: GenerateRequest):
     prior_context = "\n\n".join(context_parts)
 
     is_combined = len(blocks) > 1
-    is_table = any(bid in TABLE_SECTION_IDS for bid in blocks)
+    is_table = any(bid in table_ids for bid in blocks)
 
     # Retrieval query aggregates every block's own title+guidance vocabulary,
     # not just the (possibly container) parent's bare title — a combined
     # family needs recall across every sub-topic it's about to draft.
-    query = " ".join(f"{sec_lookup[b]['title']} {_guidance_for_section(b)}" for b in blocks)
+    query = " ".join(f"{sec_lookup[b]['title']} {_guidance_for_section(b, engagement_type, tpl_guidance, tpl_strict)}" for b in blocks)
     query = f"{query} {req.custom_instructions}".strip()
+
+    # Separate, title-only query for image retrieval. Stored sections carry no
+    # guidance of their own, so _guidance_for_section falls back to the
+    # DEFAULT template's text keyed by section number — on a client template
+    # that numbers things differently, that is a different section's
+    # vocabulary entirely, and feeding it to the image index retrieves figures
+    # for a topic this section is not about. The section's own title and its
+    # sub-section titles are the only description that is accurate in every
+    # template, so image search uses those.
+    image_query = " ".join(
+        sec_lookup[b]["title"] for b in blocks if sec_lookup.get(b, {}).get("title")
+    )
+    image_query = f"{image_query} {req.custom_instructions}".strip()
     chunks = _load_all_project_chunks(project_id)
     matches = _search_chunks(chunks, query, top_k=6)
+
+    # Project-wide fact sheet (dates, client, duration, locations …), extracted
+    # once per project and cached. Per-section similarity search reliably
+    # misses these — a line like "June 2026 kickoff to Feb 2028 Go-live" ranked
+    # 50th of 60 for this section's own query on a real deck — so they are
+    # injected directly rather than left to win a retrieval lottery. See
+    # sow_key_facts.py for the full rationale.
+    try:
+        from app.sow_key_facts import extract_key_facts, format_facts_for_context
+        key_facts = extract_key_facts(project_id, chunks, client_hint=client_name)
+        facts_block = format_facts_for_context(key_facts)
+    except Exception as exc:
+        logger.warning("Key-fact extraction unavailable for %s: %s", project_id, exc)
+        facts_block = ""
     # Cap must stay >= CHUNK_SIZE_CHARS — a lower cap here (previously a flat
     # 1500 against chunks that can be up to 2000 chars) silently truncated
     # exactly the kind of trailing table content (phase/date tables often
@@ -710,7 +1106,8 @@ def generate_sow_section(section_id: str, req: GenerateRequest):
         for c in matches
     )
 
-    image_hits = _relevant_images_for_section(project_id, query, blocks)
+    image_hits = _relevant_images_for_section(project_id, image_query, blocks,
+                                              section_title=sec.get("title", ""))
 
     if is_combined:
         # One combined prompt drafts every sub-part in this family together,
@@ -720,11 +1117,11 @@ def generate_sow_section(section_id: str, req: GenerateRequest):
         block_instructions = []
         for i, bid in enumerate(blocks, 1):
             title = sec_lookup[bid]["title"]
-            b_guidance = _guidance_for_section(bid)
+            b_guidance = _guidance_for_section(bid, engagement_type, tpl_guidance, tpl_strict)
             marker = _marker_line(bid, title)
             line = (f'{i}. Introduce this sub-part with the exact line "{marker}", '
                     f"then draft: {b_guidance or title}")
-            if bid in TABLE_SECTION_IDS:
+            if bid in table_ids:
                 line += " (use a Markdown table for this one)."
             prior = approved_sections.get(bid)
             if prior:
@@ -745,7 +1142,7 @@ def generate_sow_section(section_id: str, req: GenerateRequest):
         )
     else:
         bid = blocks[0]
-        guidance = _guidance_for_section(bid)
+        guidance = _guidance_for_section(bid, engagement_type, tpl_guidance, tpl_strict)
         section_heading_text = f"SECTION TO DRAFT: {sec['title']}\n\n" + (
             f"Drafting guidance for this section: {guidance}" if guidance else ""
         )
@@ -753,7 +1150,17 @@ def generate_sow_section(section_id: str, req: GenerateRequest):
         if atts:
             section_heading_text += "\n\n" + _format_attachment_context(bid, sec["title"], atts)
 
-    research_context = f"""{section_heading_text}
+    # The engagement premise goes ABOVE the section guidance so it frames every
+    # section, not just the ones with engagement-specific guidance of their
+    # own: an Executive Summary or a Key Assumptions section that mentions
+    # billing has to describe the same model as Commercials does. It is also
+    # the only engagement signal a custom client template gets, since that
+    # template's own section ids never match the guidance keys.
+    engagement_block = engagement_premise(engagement_type)
+
+    research_context = f"""{engagement_block}
+
+{section_heading_text}
 
 {NO_LEAK_RULES}
 {"At least one sub-part of this section uses a table, per the shape described above." if is_table else "This section is prose/bullets — do not introduce a table."}
@@ -764,6 +1171,8 @@ def generate_sow_section(section_id: str, req: GenerateRequest):
 
 {('Client name: ' + client_name) if client_name else ''}
 
+{facts_block}
+
 {('Already-approved earlier sections (for consistency — do not contradict):' + chr(10) + prior_context) if prior_context else ''}
 
 {('Relevant source material found for this section:' + chr(10) + source_block) if source_block else 'No specific source material was found for this section — use placeholders for anything not confirmed.'}
@@ -771,7 +1180,14 @@ def generate_sow_section(section_id: str, req: GenerateRequest):
 {('Additional instructions from the reviewer: ' + req.custom_instructions) if req.custom_instructions else ''}
 """
     if image_hits:
-        research_context += "\n" + format_images_for_context(image_hits)
+        # Sections whose subject matter calls for a figure must actually carry
+        # one — see format_images_for_context's require_at_least_one note.
+        # Decided from the section's title and guidance rather than its
+        # number, so this holds for any template's numbering.
+        research_context += "\n" + format_images_for_context(
+            image_hits,
+            require_at_least_one=_section_wants_diagram(blocks, sec_lookup=sec_lookup),
+        )
 
     if is_combined:
         task_instruction = (
@@ -795,7 +1211,7 @@ def generate_sow_section(section_id: str, req: GenerateRequest):
 
     if is_combined:
         max_tokens = min(
-            sum(SOW_MAX_OUTPUT_TOKENS_TABLE if b in TABLE_SECTION_IDS else SOW_MAX_OUTPUT_TOKENS
+            sum(SOW_MAX_OUTPUT_TOKENS_TABLE if b in table_ids else SOW_MAX_OUTPUT_TOKENS
                 for b in blocks),
             SOW_MAX_OUTPUT_TOKENS_COMBINED_CAP,
         )
@@ -1004,6 +1420,42 @@ def get_all_active_sections_with_status(project_id: str) -> List[Dict]:
     return out
 
 
+def get_sections_for_review(project_id: str) -> List[Dict]:
+    """Like get_all_active_sections_with_status, but falls back to a section's
+    UNAPPROVED draft text when it has no approved content yet.
+
+    The review checks (legal baseline, US-04/05/06 scope checks) are meant to
+    be run while drafting, not only after every section is signed off — an
+    author who has to approve a section before they can find out it is missing
+    its deemed-acceptance clause will approve first and discover later. A
+    combined family's draft lives on the parent id as one marker-delimited
+    blob, so it is split back onto each block's own id with the same splitter
+    the approve step uses; otherwise a child like "4.8 Dependencies" would
+    look empty right up until approval.
+    """
+    sections = get_all_active_sections_with_status(project_id)
+    kw = _load_keyword_store(project_id)
+    active = _load_sections_store(project_id).get("active", [])
+    by_id = {s["id"]: s for s in sections}
+
+    for parent_id, entry in kw.items():
+        draft = (entry or {}).get("draft_content")
+        if not draft:
+            continue
+        blocks = _draftable_blocks(parent_id, active)
+        pieces = _split_combined_content(draft, blocks) if len(blocks) > 1 else {parent_id: draft}
+        if len(blocks) > 1 and not pieces:
+            # Markers absent (an older or hand-edited draft) — keep the whole
+            # blob on the parent rather than dropping it entirely.
+            pieces = {parent_id: draft}
+        for bid, text in pieces.items():
+            sec = by_id.get(bid)
+            if sec is not None and not (sec.get("content") or "").strip():
+                sec["content"] = text
+                sec["content_is_draft"] = True
+    return sections
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Export — assemble approved sections into a real .docx, using whichever
 # template (the project's own custom upload, else the org default, else the
@@ -1134,6 +1586,70 @@ async def upload_sow_attachment(
         # every other section's general retrieval.
         record["extracted_text"] = extracted_text[:4000]
 
+        # Also pull any embedded images/flowcharts (e.g. PPTX slide diagrams,
+        # DOCX figures) out of the attached document and index them the same
+        # way a directly-uploaded image is, so the LLM can place them via
+        # <IMAGE id="..."/> just like the kind=="image" branch above. Without
+        # this, an attached PPTX only ever contributed its text — every
+        # embedded diagram was silently dropped.
+        try:
+            from app.image_extractor import ImageExtractor
+            extractor = ImageExtractor(output_dir=str(_EXTRACTED_IMAGES_DIR))
+            image_records = extractor.process_single_file(str(saved_path))
+            for img_rec in image_records:
+                # process_single_file names source_doc after the on-disk path
+                # (the attachment_id-based filename); restore the original,
+                # human-readable filename so Browse Images and captions make
+                # sense, and tag it to this section like the image branch does.
+                img_rec["source_doc"] = filename
+                img_rec["sow_section_id"] = section_id
+                img_rec["sow_project_id"] = project_id
+            extractor.append_to_index(image_records, index_file=str(_IMAGE_CHUNKS_PATH))
+            image_ids = [r["image_id"] for r in image_records if r.get("image_id")]
+
+            # An attached deck gets whole-slide rendering too, for the same
+            # reason project uploads do: a native-shape flowchart has no
+            # embedded image to extract. Best-effort — see slide_renderer.
+            if ext in ("pptx", "ppt"):
+                try:
+                    from app.slide_renderer import (
+                        pick_diagram_slides, render_slides,
+                    )
+                    import tempfile
+                    picks = pick_diagram_slides(str(saved_path))
+                    if picks:
+                        with tempfile.TemporaryDirectory(prefix="sow_slide_") as tmp:
+                            for slide_no, png in sorted(
+                                    render_slides(str(saved_path), tmp, picks).items()):
+                                meta = extractor._save_image_record(
+                                    Path(png).read_bytes(), "png",
+                                    source_doc=filename, page_number=slide_no,
+                                )
+                                if not meta:
+                                    continue
+                                vision = extractor._minimal_vision_record(
+                                    meta["file_path"],
+                                    source_context=f"{filename}, slide {slide_no}",
+                                )
+                                rec = {**meta, **vision}
+                                rec.pop("image_path", None)
+                                rec["render_kind"] = "slide"
+                                rec["sow_section_id"] = section_id
+                                rec["sow_project_id"] = project_id
+                                extractor.append_to_index(
+                                    [rec], index_file=str(_IMAGE_CHUNKS_PATH))
+                                image_ids.append(meta["image_id"])
+                except Exception as exc:
+                    logger.warning("Whole-slide rendering skipped for attachment "
+                                   "%s: %s", filename, exc)
+
+            if image_ids:
+                record["image_ids"] = image_ids
+                from app.image_index import reload_image_index
+                reload_image_index()
+        except Exception as exc:
+            logger.warning("Could not extract images from attachment %s: %s", filename, exc)
+
     store = _load_attachments_store(project_id)
     store.setdefault("attachments", {}).setdefault(section_id, []).append(record)
     _save_attachments_store(store, project_id)
@@ -1175,7 +1691,20 @@ def delete_sow_attachment(section_id: str, attachment_id: str, project_id: str):
     except Exception as exc:
         logger.warning("Could not delete attachment file %s: %s", match.get("file_path"), exc)
 
+    # Key on (image_id, source_doc) — the same pair append_to_index dedupes
+    # on — not image_id alone. image_id is a hash of the raw bytes, so an
+    # identical image (e.g. a shared logo, or the same deck already indexed
+    # from a project-level upload) can legitimately have several index
+    # records under the same image_id but different source_doc. Matching by
+    # image_id alone would delete every other document's record too.
+    source_doc_key = (match.get("filename") or "").lower()
+    id_pairs_to_remove: set = set()
     if match.get("kind") == "image" and match.get("image_id"):
+        id_pairs_to_remove.add((match["image_id"], source_doc_key))
+    if match.get("kind") == "document" and match.get("image_ids"):
+        id_pairs_to_remove.update((iid, source_doc_key) for iid in match["image_ids"])
+
+    if id_pairs_to_remove:
         # Attachment-scoped images aren't shared with any library — full
         # removal from the shared index is correct here, not just untagging.
         # _save_image_record wrote a SEPARATE physical copy into
@@ -1184,19 +1713,31 @@ def delete_sow_attachment(section_id: str, attachment_id: str, project_id: str):
         # above — both must be cleaned up or the extracted_images/ copy
         # leaks forever once its index record is gone.
         try:
+            def _pair(c):
+                return (c.get("image_id"), (c.get("source_doc") or "").lower())
+
             chunks = _load_json(_IMAGE_CHUNKS_PATH, [])
-            image_record = next((c for c in chunks if c.get("image_id") == match["image_id"]), None)
-            chunks = [c for c in chunks if c.get("image_id") != match["image_id"]]
-            _save_json(_IMAGE_CHUNKS_PATH, chunks)
+            removed_records = [c for c in chunks if _pair(c) in id_pairs_to_remove]
+            remaining = [c for c in chunks if _pair(c) not in id_pairs_to_remove]
+            _save_json(_IMAGE_CHUNKS_PATH, remaining)
             from app.image_index import reload_image_index
             reload_image_index()
-            if image_record and image_record.get("file_path"):
-                extracted_fp = Path(image_record["file_path"])
-                if extracted_fp.exists():
-                    extracted_fp.unlink()
+            # Only unlink the physical file if no surviving record (from a
+            # different source_doc that happens to share the same binary,
+            # hence the same image_id) still points at it — one physical
+            # file is shared across every record with that image_id.
+            remaining_ids = {c.get("image_id") for c in remaining}
+            for image_record in removed_records:
+                if image_record.get("image_id") in remaining_ids:
+                    continue
+                fp = image_record.get("file_path")
+                if fp:
+                    extracted_fp = Path(fp)
+                    if extracted_fp.exists():
+                        extracted_fp.unlink()
         except Exception as exc:
-            logger.warning("Could not remove attachment image %s from index: %s",
-                           match.get("image_id"), exc)
+            logger.warning("Could not remove attachment image(s) %s from index: %s",
+                           id_pairs_to_remove, exc)
 
     return {"ok": True}
 
