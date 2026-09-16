@@ -36,10 +36,10 @@ router = APIRouter(prefix="/api/sow", tags=["sow-review"])
 
 
 def _actor(request: Request) -> str:
-    """The signed-in user's email, for the audit fields. The API auth
-    middleware puts the session user on request.state; falling back to "" (not
-    an error) keeps these endpoints usable when REQUIRE_API_AUTH is off in a
-    dev environment."""
+    """The signed-in user's email, for the audit fields. The identity
+    middleware puts the host-provided user on request.state; falling back to ""
+    (not an error) keeps these endpoints usable in a dev environment where no
+    host identity header is set."""
     user = getattr(request.state, "user", None) or {}
     return user.get("email", "") if isinstance(user, dict) else ""
 

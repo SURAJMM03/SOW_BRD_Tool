@@ -1278,12 +1278,6 @@
 </head>
 <body>
 <script>
-  // Auth guard — redirect to login if not authenticated
-  (function() {
-    if (!sessionStorage.getItem('auth_user')) {
-      window.location.replace('/');
-    }
-  })();
 
 // CHUNK BROWSER
 let _aC=[],_fC=[],_sC=new Set(),_cbSearchTimer=null,_cbSemanticEnabled=false;

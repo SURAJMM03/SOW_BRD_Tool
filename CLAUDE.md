@@ -33,10 +33,16 @@ the background.
   It reads its own `.env` from `infrastructure/unified_mcp/.env` (not the
   backend's) — its auto-discovery doesn't find the backend's `.env` in this
   repo's nested folder layout, so both need their own copy of any shared key.
-- `app/auth.py` bootstraps a single admin account on first run from
-  `ADMIN_EMAIL` in the backend `.env` (random one-time password printed to
-  stdout if `ADMIN_PASSWORD` isn't set). Everyone else signs up and is
-  approved by that admin from the UI.
+- This app has **no login of its own** — it is meant to be mounted inside a
+  host application that has already signed the user in. `app/identity.py`
+  reads that identity off a request header (`AUTH_USER_HEADER`, default
+  `X-Forwarded-User`); `main.py` rejects `/api/*` calls that arrive without
+  one and injects the user into every page's `<head>` as
+  `window.CURRENT_USER`. Because a header is trusted, the app must only be
+  reachable *through* that host/proxy — bind it to localhost and make the
+  proxy overwrite the header rather than forward a client-supplied one.
+  To run it standalone (no host in front), set `DEV_FALLBACK_USER` in the
+  backend `.env` to the email to assume.
 - Azure's conditional-access MFA claim expires well before the `az` CLI
   session looks expired — `az account show` can succeed while real Azure
   OpenAI calls still fail with `AADSTS50078`. If generation 500s with a

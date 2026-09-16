@@ -1,6 +1,6 @@
 ---
 name: setup-app
-description: Use when the user asks to "set up the application", "set up this project", "install/provision this repo", or first-time-configure the Kinaxis Blueprint Document platform (BRD/SOW generator). Creates Python venvs for both services, installs dependencies, writes real .env files from the .env.example templates, creates the user's own admin login with a one-time password, and logs the Azure CLI in for Azure OpenAI access. Run once per machine, before "start application".
+description: Use when the user asks to "set up the application", "set up this project", "install/provision this repo", or first-time-configure the Kinaxis Blueprint Document platform (BRD/SOW generator). Creates Python venvs for both services, installs dependencies, writes real .env files from the .env.example templates and logs the Azure CLI in for Azure OpenAI access. Run once per machine, before "start application".
 ---
 
 # Setting up the Blueprint Document platform
@@ -48,8 +48,10 @@ For **both** of these folders — `infrastructure/unified_mcp/` and
 Use AskUserQuestion (or just ask in chat if that tool isn't available) — don't
 guess these:
 
-1. **Their own email address** (the one they'll log into the app with — should
-   be their real Bristlecone email, e.g. `firstname.lastname@bristlecone.com`).
+1. **Their own email address** — used as `DEV_FALLBACK_USER` to attribute
+   their work when the app runs standalone, with no host application in front
+   of it. Should be their real Bristlecone email, e.g.
+   `firstname.lastname@bristlecone.com`.
 2. **Do they have a Serper API key already** (free tier at https://serper.dev),
    or should web-research features be left unconfigured for now (the app
    still works for document generation without it — only the "research this
@@ -58,19 +60,17 @@ guess these:
 ## 4. Wire the answers into the .env files
 
 In `orchestration/brd_convo_app/backend/.env`:
-- Set `ADMIN_EMAIL=<their email, lowercase>`.
-- Leave `ADMIN_PASSWORD` commented out / unset — a one-time password gets
-  generated automatically on first startup (step 6).
+- This app has no login of its own — the host application signs the user in
+  and forwards the identity on a header. Leave `AUTH_USER_HEADER` at its
+  default (`X-Forwarded-User`) unless the host uses a different one.
+- For a standalone install (no host app in front yet), set
+  `DEV_FALLBACK_USER=<their email, lowercase>` so the app has someone to
+  attribute work to. Leave it unset once it is mounted behind the host.
 
 In `infrastructure/unified_mcp/.env`:
 - If they gave you a Serper key, set `SERPER_API_KEY=<key>` and keep
   `WEB_SEARCH_BACKEND=serper`.
 - If not, leave the placeholder — don't invent a key.
-
-If `orchestration/brd_convo_app/backend/app/users.db` already exists from a
-previous run on this machine, **ask before deleting it** — it holds real
-account data. If the user confirms a fresh start, delete it so the admin
-bootstrap below creates a clean account for the new email.
 
 ## 5. Azure CLI login
 
@@ -97,32 +97,10 @@ Check whether `az` is usable: `az --version`.
   sign-in with their Bristlecone account (MFA required) before you continue.
   Wait for the command to return successfully.
 
-## 6. Bootstrap the admin account and capture the one-time password
-
-Start the backend once, briefly, just to trigger `auth.init_db()`:
-
-```
-cd orchestration/brd_convo_app/backend
-PYTHONUNBUFFERED=1 venv\Scripts\python.exe -m uvicorn app.main:app --host 0.0.0.0 --port 8010
-```
-
-Run it in the background, wait a couple seconds for "Application startup
-complete", then read the log. Look for a line like:
-
-```
-[AUTH] ADMIN_PASSWORD not set — generated a one-time admin password:
-[AUTH]   <email> / <generated-password>
-```
-
-Capture that password. It is only ever printed this once — if you miss it,
-delete `app/users.db` and restart to regenerate it. Then stop this instance
-(the real long-running start happens via the "start application" flow, not
-this bootstrap run) — kill the background process.
-
-## 7. Report back to the user
+## 6. Report back to the user
 
 Tell them, plainly:
-- Their login email and the generated one-time password (tell them to save
-  it now — there's no "change password" flow yet, it's just their real
-  password going forward).
+- That there is no login screen: whoever the host application has signed in
+  is who the tool runs as. If this is a standalone install, that is the
+  `DEV_FALLBACK_USER` email you set in step 4.
 - That setup is complete and they should now say **"start application"**.

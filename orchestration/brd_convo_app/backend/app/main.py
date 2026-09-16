@@ -49,15 +49,7 @@ try:
     from app.image_repo_routes import router as image_repo_router
 except ImportError:
     image_repo_router = None
-from app.auth import (
-    init_db,
-    signup_user,
-    login_user,
-    approve_user,
-    create_session,
-    validate_session,
-    delete_session,
-)
+from app.identity import resolve_user, current_user
 
 logging.basicConfig(
     level=logging.INFO,
@@ -66,9 +58,6 @@ logging.basicConfig(
 logger = logging.getLogger("BRDConvoAPI")
 
 app = FastAPI(title="Blueprint Document Conversational API", version="0.1.0")
-
-# Initialise auth DB on startup (creates users.db + default admin if absent)
-init_db()
 
 BASE_DIR = Path(__file__).parent
 
@@ -122,83 +111,42 @@ async def _unhandled_exception_handler(request: _Request, exc: Exception):
     logger.exception("Unhandled error on %s %s", request.method, request.url.path)
     return _JSONResponse(status_code=500, content={"detail": f"Internal server error: {exc}"})
 
-# ── Session auth middleware ───────────────────────────────────────────────────
-# When REQUIRE_API_AUTH=true, all /api/* routes require a valid session cookie
-# (set by POST /login). Defaults to false for local single-user use — set it
-# to true in .env before exposing this app to other users or a network.
+# ── Upstream identity middleware ──────────────────────────────────────────────
+# This app has no login of its own — the host application signs the user in
+# and forwards the identity on every request (see identity.py). Attach it to
+# the request here, and refuse /api/* calls that arrive without one so the API
+# is never served to an unidentified caller.
 from fastapi import Request
 from fastapi.responses import JSONResponse
 
-SESSION_COOKIE = "brd_session"
-# Secure by default: API auth is ON unless explicitly disabled with
-# REQUIRE_API_AUTH=false in .env (local single-user development only).
-REQUIRE_API_AUTH = os.getenv("REQUIRE_API_AUTH", "true").lower() != "false"
-
-if not REQUIRE_API_AUTH:
-    logging.getLogger("BRDConvoAPI").warning(
-        "API auth is DISABLED (REQUIRE_API_AUTH=false — local mode). Remove this "
-        "override from .env before exposing this app beyond your own machine."
-    )
-
 @app.middleware("http")
-async def require_session_on_api(request: Request, call_next):
+async def attach_upstream_user(request: Request, call_next):
+    user = resolve_user(request)
+    request.state.user = user
     if (
-        REQUIRE_API_AUTH
+        user is None
         and request.url.path.startswith("/api/")
         and request.method != "OPTIONS"
     ):
-        user = validate_session(request.cookies.get(SESSION_COOKIE, ""))
-        if user is None:
-            return JSONResponse(
-                status_code=401,
-                content={"detail": "Not authenticated. Please log in."},
-            )
-        request.state.user = user
+        return JSONResponse(
+            status_code=401,
+            content={
+                "detail": "No signed-in user was forwarded by the host "
+                          "application. Check the AUTH_USER_HEADER setting."
+            },
+        )
     return await call_next(request)
 
-# ── Auth routes ───────────────────────────────────────────────────────────────
+# ── Identity route ────────────────────────────────────────────────────────────
 from pydantic import BaseModel as _BaseModel
-from fastapi.responses import HTMLResponse as _HTMLResponse
-
-class SignupRequest(_BaseModel):
-    email: str
-    password: str
-    role: str = "document_editor"
-
-class LoginRequest(_BaseModel):
-    email: str
-    password: str
 
 class ChatRequest(_BaseModel):
     message: str = ""
 
-@app.post("/signup")
-def signup(req: SignupRequest):
-    return signup_user(req.email, req.password, req.role)
-
-@app.post("/login")
-def login(req: LoginRequest):
-    result = login_user(req.email, req.password)
-    if not result.get("success"):
-        return result
-    token = create_session(req.email.strip().lower(), result.get("role") or "document_editor")
-    response = JSONResponse(content=result)
-    response.set_cookie(
-        SESSION_COOKIE,
-        token,
-        httponly=True,
-        samesite="lax",
-        max_age=12 * 3600,
-        path="/",
-    )
-    return response
-
-@app.post("/logout")
-def logout(request: Request):
-    delete_session(request.cookies.get(SESSION_COOKIE, ""))
-    response = JSONResponse(content={"success": True})
-    response.delete_cookie(SESSION_COOKIE, path="/")
-    return response
+@app.get("/api/me")
+def whoami(request: Request):
+    """Whoever the host application says is signed in."""
+    return current_user(request)
 
 @app.post("/chat")
 def legacy_chat(req: ChatRequest):
@@ -211,27 +159,6 @@ def legacy_chat(req: ChatRequest):
         "download_url": None,
         "preview": None,
     }
-
-@app.get("/approve/{token}")
-def approve(token: str):
-    result = approve_user(token)
-    if result["success"]:
-        approved_page = BASE_DIR / "static" / "approved.html"
-        return FileResponse(
-            str(approved_page) if approved_page.exists()
-            else str(BASE_DIR / "static" / "index.html")
-        )
-    return _HTMLResponse(
-        content=f"""<html><body style="font-family:'Segoe UI',sans-serif;text-align:center;
-        padding:60px;background:#F7F7F7;color:#1A1A1A;">
-        <div style="max-width:420px;margin:0 auto;background:#fff;border-radius:12px;
-        padding:40px;box-shadow:0 4px 24px rgba(0,0,0,0.08);border:1px solid #ddd;">
-        <div style="font-size:48px;margin-bottom:16px;">⚠️</div>
-        <h2 style="color:#A32D2D;">{result['message']}</h2>
-        <p style="color:#888;margin-top:12px;">Please contact your administrator.</p>
-        </div></body></html>""",
-        status_code=400
-    )
 
 # ── Register project/upload API routes ──
 app.include_router(project_router)
@@ -265,108 +192,136 @@ app.include_router(sow_review_router)
 if image_repo_router is not None:
     app.include_router(image_repo_router)
 
+# ── Page rendering ────────────────────────────────────────────────────────────
+# Every page is served with the host-provided identity injected into <head>,
+# so page scripts can read it synchronously (window.CURRENT_USER, and the
+# legacy sessionStorage "auth_user" key) without a round trip on load.
+import json as _json
+from fastapi.responses import Response as _Response
+_LT = chr(92) + "u003c"   # the JS escape for "<", built without a backslash literal
+
+def _page(name: str, request: Request) -> _Response:
+    raw = (BASE_DIR / "static" / name).read_bytes()
+    # _LT below keeps a "<" in the host header from closing this script tag.
+    blob = _json.dumps(current_user(request)).replace("<", _LT)
+    boot = (
+        "<script>window.CURRENT_USER=" + blob + ";"
+        "try{sessionStorage.setItem('auth_user',JSON.stringify(window.CURRENT_USER));}"
+        "catch(e){}</script>"
+    ).encode("utf-8")
+    k = raw.lower().find(b"<head>")
+    raw = raw[:k + 6] + boot + raw[k + 6:] if k != -1 else boot + raw
+    return _Response(
+        content=raw,
+        media_type="text/html",
+        headers={"Cache-Control": "no-store"},
+    )
+
 # ── Page routes ──
 @app.get("/")
-def landing():
-    """Landing page — Login screen (Screen 1)."""
-    return FileResponse(BASE_DIR / "static" / "index.html")
+def landing(request: Request):
+    """Entry point — the tool picker. There is no login screen: the host
+    application has already signed the user in by the time they get here.
+    Served directly rather than redirected so the /brd-generator mount prefix
+    is preserved."""
+    return _page("choose.html", request)
 
 @app.get("/choose")
-def choose_page():
+def choose_page(request: Request):
     """Post-login hub: pick BRD Tool or SOW Tool."""
-    return FileResponse(BASE_DIR / "static" / "choose.html", headers={"Cache-Control": "no-store"})
+    return _page("choose.html", request)
 
 @app.get("/projects")
-def projects_page():
-    return FileResponse(BASE_DIR / "static" / "projects.html", headers={"Cache-Control": "no-store"})
+def projects_page(request: Request):
+    return _page("projects.html", request)
 
 @app.get("/upload")
-def upload_page():
-    return FileResponse(BASE_DIR / "static" / "document-upload.html", headers={"Cache-Control": "no-store"})
+def upload_page(request: Request):
+    return _page("document-upload.html", request)
 
 @app.get("/editor")
-def editor_page():
+def editor_page(request: Request):
     """Blueprint Document Template Editor (Screen 3)."""
-    return FileResponse(BASE_DIR / "static" / "screen3.html")
+    return _page("screen3.html", request)
 
 @app.get("/update-editor")
-def update_editor_page():
+def update_editor_page(request: Request):
     """Template Editor for the Update Existing Document workflow (Screen 3 — Update variant)."""
-    return FileResponse(BASE_DIR / "static" / "update-editor.html", headers={"Cache-Control": "no-store"})
+    return _page("update-editor.html", request)
 
 @app.get("/update-generating")
-def update_generating_page():
+def update_generating_page(request: Request):
     """Generation monitor for the Update Existing Document workflow (merged export)."""
-    return FileResponse(BASE_DIR / "static" / "update-generating.html", headers={"Cache-Control": "no-store"})
+    return _page("update-generating.html", request)
 
 @app.get("/generating")
-def generating_page():
+def generating_page(request: Request):
     """Section-wise generation monitor."""
-    return FileResponse(BASE_DIR / "static" / "generating.html", headers={"Cache-Control": "no-store"})
+    return _page("generating.html", request)
 
 @app.get("/sow-hub")
-def sow_hub_page():
+def sow_hub_page(request: Request):
     """SOW Tool landing page — choose Review a SOW vs. Draft a SOW. This is
     what /choose's "SOW Tool" card leads to; it never links to the BRD tool."""
-    return FileResponse(BASE_DIR / "static" / "sow-hub.html", headers={"Cache-Control": "no-store"})
+    return _page("sow-hub.html", request)
 
 @app.get("/sow")
-def sow_page():
+def sow_page(request: Request):
     """SOW Tool — review an existing SOW against Bristlecone's checklist.
     The section-by-section drafting flow lives at /sow-projects onward."""
-    return FileResponse(BASE_DIR / "static" / "sow.html", headers={"Cache-Control": "no-store"})
+    return _page("sow.html", request)
 
 @app.get("/sow-projects")
-def sow_projects_page():
+def sow_projects_page(request: Request):
     """SOW tool's own Projects hub (workflow=sow), separate from BRD projects."""
-    return FileResponse(BASE_DIR / "static" / "sow-projects.html", headers={"Cache-Control": "no-store"})
+    return _page("sow-projects.html", request)
 
 @app.get("/sow-upload")
-def sow_upload_page():
+def sow_upload_page(request: Request):
     """Upload source material (and link reference/sample-SOW repositories) for a SOW project."""
-    return FileResponse(BASE_DIR / "static" / "sow-upload.html", headers={"Cache-Control": "no-store"})
+    return _page("sow-upload.html", request)
 
 @app.get("/sow-templates")
-def sow_templates_page():
+def sow_templates_page(request: Request):
     """Choose the Bristlecone default template or a client's custom template for a SOW project."""
-    return FileResponse(BASE_DIR / "static" / "sow-templates.html", headers={"Cache-Control": "no-store"})
+    return _page("sow-templates.html", request)
 
 @app.get("/sow-workflow")
-def sow_workflow_page():
+def sow_workflow_page(request: Request):
     """Section-by-section SOW draft, review, and approval."""
-    return FileResponse(BASE_DIR / "static" / "sow-workflow.html", headers={"Cache-Control": "no-store"})
+    return _page("sow-workflow.html", request)
 
 @app.get("/sow-review")
-def sow_review_page():
+def sow_review_page(request: Request):
     """Mandatory pre-signature review gate (US-03) + legal baseline (US-02)."""
-    return FileResponse(BASE_DIR / "static" / "sow-review.html", headers={"Cache-Control": "no-store"})
+    return _page("sow-review.html", request)
 
 @app.get("/sow-skill")
-def sow_skill_page():
+def sow_skill_page(request: Request):
     """Assisted skill-learning: analyze sample SOWs and propose an update to SOW_SKILL.md."""
-    return FileResponse(BASE_DIR / "static" / "sow-skill.html", headers={"Cache-Control": "no-store"})
+    return _page("sow-skill.html", request)
 
 @app.get("/repositories")
-def repositories_page():
+def repositories_page(request: Request):
     """Repository management page."""
-    return FileResponse(BASE_DIR / "static" / "repositories.html", headers={"Cache-Control": "no-store"})
+    return _page("repositories.html", request)
 
 @app.get("/templates")
-def templates_page():
+def templates_page(request: Request):
     """Template library management page."""
-    return FileResponse(BASE_DIR / "static" / "templates.html", headers={"Cache-Control": "no-store"})
+    return _page("templates.html", request)
 
 @app.get("/image-repo")
-def image_repo_page():
+def image_repo_page(request: Request):
     """Image Repository — import and manage process diagrams and screenshots."""
-    return FileResponse(BASE_DIR / "static" / "image_repo.html", headers={"Cache-Control": "no-store"})
+    return _page("image_repo.html", request)
 
 @app.get("/help")
-def help_page():
+def help_page(request: Request):
     """Author's guide and cheat sheet."""
-    return FileResponse(BASE_DIR / "static" / "help.html", headers={"Cache-Control": "no-store"})
+    return _page("help.html", request)
 
 @app.get("/assistant")
-def assistant_page():
+def assistant_page(request: Request):
     """Standalone full-page AI Optimization Assistant (BlueYonder-style Q&A)."""
-    return FileResponse(BASE_DIR / "static" / "assistant.html", headers={"Cache-Control": "no-store"})
+    return _page("assistant.html", request)

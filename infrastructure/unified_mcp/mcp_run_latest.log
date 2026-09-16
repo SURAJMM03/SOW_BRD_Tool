@@ -1,2 +1,5 @@
 INFO:     127.0.0.1:56599 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:53107 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56875 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56876 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63058 - "GET / HTTP/1.1" 200 OK

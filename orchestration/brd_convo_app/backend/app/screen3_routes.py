@@ -2737,25 +2737,9 @@ class GenerateRequest(BaseModel):
 # ROUTES
 # ─────────────────────────────────────────────────────────────────────────────
 
-@router.get("/editor", response_class=HTMLResponse)
-def screen3_ui():
-    """
-    Serve Screen 3 HTML.
-    File lives at: orchestration/brd_convo_app/backend/app/static/screen3.html
-    """
-    html_path = Path(__file__).parent / "static" / "screen3.html"
-    # Tell the browser never to use a cached copy — we ship UI fixes
-    # frequently and stale cached HTML is the #1 cause of "fix not working"
-    # reports.
-    return HTMLResponse(
-        content=html_path.read_text(encoding="utf-8"),
-        status_code=200,
-        headers={
-            "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
-            "Pragma": "no-cache",
-            "Expires": "0",
-        },
-    )
+# NOTE: GET /editor is served by main.py's page handler, which injects the
+# host-provided identity into the page. A duplicate here would shadow it
+# (routers are registered first) and the page would render with no user.
 
 
 @router.get("/api/sections")

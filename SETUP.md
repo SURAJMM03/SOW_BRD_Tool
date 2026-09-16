@@ -18,7 +18,9 @@
 
    Claude will create the Python environments, install dependencies, and ask
    you for two things:
-   - **Your own email address** — this becomes your login for the app.
+   - **Your own email address** — used to attribute your work. The app has
+     no login of its own; when it is mounted inside the main application,
+     whoever is signed in there is who it runs as.
    - **A Serper API key**, if you have one ([free tier here](https://serper.dev))
      — optional, only needed for the web-research step.
 
@@ -26,8 +28,6 @@
    normal Bristlecone login + MFA) — this is what lets document generation
    call Azure OpenAI under your own identity.
 
-   When it's done, it will print your **login email and a one-time
-   password** — save that password now, it's only shown once.
 
 4. Type:
 
@@ -80,13 +80,14 @@ venv\Scripts\python.exe kinaxis_http_server.py
 cd orchestration/brd_convo_app/backend
 py -m venv venv
 venv\Scripts\python.exe -m pip install -r requirements.txt
-copy .env.example .env   # set ADMIN_EMAIL to your own email
+copy .env.example .env   # set DEV_FALLBACK_USER to your own email
 az login --tenant 0876713d-a522-4b15-a887-3e9dacb1c635 --scope "https://cognitiveservices.azure.com/.default"
 venv\Scripts\python.exe -m uvicorn app.main:app --host 0.0.0.0 --port 8010
 ```
 
-The first backend startup prints your one-time admin password to the
-terminal — copy it before it scrolls away. Then open http://localhost:8010.
+Then open http://localhost:8010 — there is no login screen. Standalone, the
+app runs as `DEV_FALLBACK_USER`; mounted behind the main application, it runs
+as whoever that application forwards in the `X-Forwarded-User` header.
 
 If `az` isn't installed and you don't have admin rights for the MSI
 installer, install it into its own short-path venv instead of the backend's:

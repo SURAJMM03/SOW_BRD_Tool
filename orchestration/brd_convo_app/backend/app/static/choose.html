@@ -32,16 +32,11 @@
     .choice-card:hover{border-color:var(--accent);box-shadow:0 4px 18px rgba(0,112,192,.10)}
     .choice-card .dot{width:40px;height:40px;border-radius:9px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;margin-bottom:14px}
     .choice-card h3{font-size:17px;font-weight:650;color:var(--text);margin-bottom:8px}
+    .nav-user{font-size:12px;color:var(--text-sec);font-weight:600}
     .choice-card p{font-size:12.5px;color:var(--text-sec);line-height:1.55}
   </style>
 </head>
 <body>
-<script>
-  (function(){
-    if(!sessionStorage.getItem("auth_user")) window.location.replace("/");
-  })();
-</script>
-
 <nav class="topnav">
   <div class="nav-left">
     <div class="logo">K</div>
@@ -50,7 +45,7 @@
       <div class="subtitle">Choose a tool</div>
     </div>
   </div>
-  <button class="btn" onclick="logout()">Log out</button>
+  <div class="nav-user" id="nav-user"></div>
 </nav>
 
 <div class="wrap">
@@ -75,11 +70,11 @@
 </div>
 
 <script>
-async function logout(){
-  try{ await fetch("/logout", { method: "POST" }); }catch(e){}
-  sessionStorage.removeItem("auth_user");
-  window.location.href = "/";
-}
+  // Identity comes from the host application (injected into <head> by main.py).
+  (function(){
+    var u = (window.CURRENT_USER || {}).email || "";
+    document.getElementById("nav-user").textContent = u;
+  })();
 </script>
 </body>
 </html>

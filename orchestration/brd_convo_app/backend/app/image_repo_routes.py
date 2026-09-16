@@ -29,8 +29,8 @@ from fastapi import APIRouter, Depends, Form, HTTPException, UploadFile, File
 from fastapi.responses import FileResponse, JSONResponse
 
 # S3-backed build has auth_middleware/storage/data_store; this local build
-# falls back to plain filesystem storage and relies on main.py's session
-# middleware for auth (REQUIRE_API_AUTH).
+# falls back to plain filesystem storage and relies on main.py's upstream
+# identity middleware, which rejects /api/* calls carrying no host identity.
 try:
     from app.auth_middleware import require_authenticated  # type: ignore
     from app.storage import storage  # type: ignore
