@@ -75,9 +75,14 @@ complete" with no traceback.
 ## 5. Report back
 
 Tell the user:
-- The app is running at **http://localhost:8010**.
-- Log in with the email + password from setup (or whatever they've since
-  changed it to).
+- The app is running at **http://localhost:8010**, opening on the SOW tool.
+- There is no login. The app takes the signed-in user from a header the host
+  application sets, and falls back to `DEV_FALLBACK_USER` from the backend
+  `.env` when running standalone like this.
 - If they ever see "Internal server error" mentioning
   `DefaultAzureCredential` / `AADSTS50078`, their Azure MFA session expired —
   just say "start application" again and this skill will refresh it.
+- `GET /api/diagnostics` reports what this environment can actually do —
+  which document formats it can read, whether uploads are writable, and
+  whether the LLM credentials resolve. Add `?probe=true` to make one live
+  call. Reach for it first whenever something "doesn't work" on a host.

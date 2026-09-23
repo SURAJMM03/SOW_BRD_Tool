@@ -43,6 +43,7 @@ from app.sow_template_routes import router as sow_template_router
 from app.sow_section_routes import router as sow_section_router
 from app.sow_skill_routes import router as sow_skill_router
 from app.sow_review_routes import router as sow_review_router
+from app.diagnostics_routes import router as diagnostics_router
 # image_repo_routes is optional — keep startup resilient if the module
 # hasn't been committed to this checkout yet.
 try:
@@ -119,6 +120,25 @@ async def _unhandled_exception_handler(request: _Request, exc: Exception):
 from fastapi import Request
 from fastapi.responses import JSONResponse
 
+# DEV_FALLBACK_USER makes every request authenticate as one fixed person even
+# with no identity header. That is what lets the app run standalone on a
+# laptop — and on a reachable host it means anyone who finds the URL is signed
+# in. It is invisible from the UI, so say it loudly at startup rather than
+# letting a deployment quietly run open.
+from app.identity import DEV_FALLBACK_USER as _FALLBACK_USER
+
+if _FALLBACK_USER:
+    logger.warning(
+        "=" * 78 + "\n"
+        "  DEV_FALLBACK_USER is set (%s).\n"
+        "  Every request is treated as this user even with NO identity header,\n"
+        "  so anyone who can reach this server is signed in. That is intended\n"
+        "  only for running standalone on a developer machine.\n"
+        "  On a hosted instance: unset DEV_FALLBACK_USER and have the fronting\n"
+        "  proxy set %s — overwriting any client-supplied value.\n"
+        "  Check GET /api/diagnostics to confirm.\n" + "=" * 78,
+        _FALLBACK_USER, os.getenv("AUTH_USER_HEADER", "X-Forwarded-User"))
+
 @app.middleware("http")
 async def attach_upstream_user(request: Request, call_next):
     user = resolve_user(request)
@@ -187,6 +207,8 @@ app.include_router(sow_section_router)
 app.include_router(sow_skill_router)
 # Legal baseline (US-02) + mandatory pre-signature review gate (US-03)
 app.include_router(sow_review_router)
+# Environment triage for hosted installs — readers, storage, LLM credentials
+app.include_router(diagnostics_router)
 
 # ── Register Image Repository API routes ──
 if image_repo_router is not None:
@@ -220,16 +242,21 @@ def _page(name: str, request: Request) -> _Response:
 # ── Page routes ──
 @app.get("/")
 def landing(request: Request):
-    """Entry point — the tool picker. There is no login screen: the host
-    application has already signed the user in by the time they get here.
+    """Entry point — the SOW tool.
+
+    This deployment is SOW-only: opening the app goes straight to the SOW hub
+    rather than a picker. The BRD screens are still routed (a bookmark or an
+    in-flight project keeps working) but nothing navigates to them.
+
     Served directly rather than redirected so the /brd-generator mount prefix
-    is preserved."""
-    return _page("choose.html", request)
+    is preserved. There is no login screen: the host application has already
+    signed the user in by the time they get here."""
+    return _page("sow-hub.html", request)
 
 @app.get("/choose")
 def choose_page(request: Request):
-    """Post-login hub: pick BRD Tool or SOW Tool."""
-    return _page("choose.html", request)
+    """Kept so an old bookmark still lands somewhere useful — the SOW hub."""
+    return _page("sow-hub.html", request)
 
 @app.get("/projects")
 def projects_page(request: Request):

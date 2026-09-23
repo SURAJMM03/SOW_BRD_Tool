@@ -1,21 +1,32 @@
 # Kinaxis Blueprint Document platform
 
-Auth-gated internal tool for generating BRD/SOW documents. Two independent
+Internal tool for drafting and reviewing SOW documents. Two independent
 Python/FastAPI services must both be running:
 
 | # | Service | Folder | Port |
 |---|---------|--------|------|
 | 1 | MCP Web Tools server (web search, doc retrieval) | `infrastructure/unified_mcp/` | 8000 |
-| 2 | Backend + web UI (auth, projects, generation) | `orchestration/brd_convo_app/backend/` | 8010 |
+| 2 | Backend + web UI (projects, generation) | `orchestration/brd_convo_app/backend/` | 8010 |
 
-Document generation calls Azure OpenAI via the signed-in user's own Azure AD
-identity (`DefaultAzureCredential` / `az login`), not a shared API key.
+Opening the app goes straight to the SOW tool. The BRD screens are still
+routed so an existing project or bookmark keeps working, but nothing in the
+UI navigates to them.
+
+Document generation calls Azure OpenAI via Azure AD (`DefaultAzureCredential`),
+not a shared API key — `az login` on a laptop, a service principal or managed
+identity on a server (see the backend `.env.example`).
+
+**When something "doesn't work", start at `GET /api/diagnostics`.** It reports
+which document formats this environment can actually read, whether the upload
+directory is writable, whether the identity header is arriving, and whether
+the LLM credentials resolve — `?probe=true` makes one live call. It exists
+because the laptop and the hosted box differ in ways that fail quietly.
 
 ## First time on this machine
 
 If the user asks to set up, install, or provision this repo, use the
 **setup-app** skill — it creates the venvs, installs dependencies, writes
-real `.env` files, creates the user's own admin login, and signs in Azure CLI.
+real `.env` files, and signs in Azure CLI.
 
 ## Every time they want to run it
 

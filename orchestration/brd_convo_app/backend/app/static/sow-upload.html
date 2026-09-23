@@ -86,6 +86,7 @@
     .file-list.visible{display:flex}
 
     .fr{display:grid;grid-template-columns:28px 1fr 80px 22px;align-items:center;gap:8px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:8px 10px}
+    .err-why{color:var(--red);line-height:1.45;margin-top:3px;white-space:normal}
     .fti{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:8px;font-family:var(--mono);font-weight:700;text-transform:uppercase;background:var(--accent-soft);color:var(--accent)}
     .fi{min-width:0}
     .fn{font-size:11px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -252,11 +253,22 @@ async function uploadFile(file, entry){
         startStatusPoll(entry);
       } else {
         let msg='Upload failed'; try{ msg=JSON.parse(xhr.responseText).detail||msg; }catch(_){}
+        entry.error_detail=msg;
         entry.status='error'; entry.progress=100; updateRow(entry);
         tw(`"${entry.name}" — ${msg}`,'error');
       }
     });
-    xhr.addEventListener('error',()=>{ entry.status='error'; updateRow(entry); tw(`"${entry.name}" — network error`,'error'); });
+    // A blocked upload and a dropped connection look identical to XHR. On a
+    // corporate network the far more likely cause is a DLP/web proxy refusing
+    // the upload, so say so rather than just "network error".
+    xhr.addEventListener('error',()=>{
+      entry.status='error'; entry.progress=100;
+      entry.error_detail='The upload did not reach the server. If your network shows a '
+        +'"blocked by your IT administrator" message, a corporate web filter is refusing '
+        +'uploads to this site — that has to be allowed by IT. Otherwise check your connection.';
+      updateRow(entry);
+      tw(`"${entry.name}" — upload blocked or connection lost`,'error');
+    });
     xhr.send(fd);
   }catch(err){ entry.status='error'; updateRow(entry); tw(`"${entry.name}" — ${err.message}`,'error'); }
 }
@@ -268,7 +280,7 @@ async function loadExistingFiles(){
     if(!res.ok) return;
     const files=await res.json();
     for(const f of files){
-      const e={id:++fid,serverId:f.id,name:f.name,size:f.size,ext:f.ext,status:f.status,progress:f.progress};
+      const e={id:++fid,serverId:f.id,name:f.name,size:f.size,ext:f.ext,status:f.status,progress:f.progress,error_detail:f.error_detail||''};
       F.push(e); syncView(); appendRow(e);
       if(f.status==='uploaded'||f.status==='chunking') startStatusPoll(e);
     }
@@ -286,8 +298,15 @@ function startStatusPoll(entry){
       if(!server){ clearInterval(iv); return; }
       entry.status=server.status; entry.progress=server.progress;
       updateRow(entry); updateCTA();
+      entry.error_detail=server.error_detail||'';
+      updateRow(entry);
       if(server.status==='indexed'){ clearInterval(iv); tw(`"${entry.name}" indexed — ${server.chunk_count} chunks`,'success'); }
-      else if(server.status==='error'){ clearInterval(iv); tw(`"${entry.name}" chunking failed`,'error'); }
+      else if(server.status==='error'){
+        clearInterval(iv);
+        // Pass the server's reason through verbatim — it names the missing
+        // reader or the unreadable file, which "chunking failed" never did.
+        tw(`"${entry.name}" — ${server.error_detail||'could not be read'}`,'error');
+      }
     }catch(err){}
   },3000);
 }
@@ -298,8 +317,13 @@ function syncView(){
 }
 function rowHtml(e){
   const badgeLabel={uploading:'Uploading',chunking:'Chunking',uploaded:'Uploaded',indexed:'Indexed',error:'Error'}[e.status]||e.status;
+  // The reason belongs on the row, not only in a toast that disappears — a
+  // failure nobody can read afterwards is why "it just doesn't work" gets
+  // reported instead of the actual cause.
+  const why = (e.status === 'error' && e.error_detail)
+    ? `<div class="fm err-why">${esc(e.error_detail)}</div>` : '';
   return `<div class="fti">${e.ext}</div>
-    <div class="fi"><div class="fn">${esc(e.name)}</div><div class="fm">${fs(e.size)}</div>
+    <div class="fi"><div class="fn">${esc(e.name)}</div><div class="fm">${fs(e.size)}</div>${why}
     <div class="pt2"><div class="pb ${e.status}" style="width:${e.progress}%"></div></div></div>
     <span class="sb ${e.status}">${badgeLabel}</span>
     <button class="rx" onclick="removeFile(${e.id})" title="Remove"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>`;

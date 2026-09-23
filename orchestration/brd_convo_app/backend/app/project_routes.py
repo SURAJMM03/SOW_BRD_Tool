@@ -206,6 +206,30 @@ def _auto_rerun_vision_for_file(
     return {"checked": len(targets), "updated": updated, "skipped": skipped}
 
 
+def _no_text_reason(file_path: Path) -> str:
+    """Explain a zero-chunk extraction in terms the user can act on.
+
+    The common cause on a hosted box is a reader that is not installed there but
+    is on the developer's laptop, so name the missing piece rather than saying
+    the file was empty.
+    """
+    try:
+        from app.diagnostics_routes import reader_status
+    except ImportError:
+        reader_status = None
+
+    ext = file_path.suffix.lower()
+    if reader_status is not None:
+        fmt = reader_status()["formats"].get(ext)
+        if fmt and not fmt["readable"]:
+            return (f"No text could be read from this {ext} file because this server "
+                    f"cannot read that format ({fmt['detail']}). Fix: {fmt['fix']}. "
+                    "See GET /api/diagnostics.")
+    return (f"No text could be read from this {ext} file. It may be a scanned or "
+            "image-only document, password-protected, or corrupt. If other files of "
+            "the same type also fail, check GET /api/diagnostics for a missing reader.")
+
+
 def _run_chunking_background(file_id: str, project_id: str, file_path: Path):
     """
     Background thread that chunks a file and updates its status.
@@ -264,8 +288,25 @@ def _run_chunking_background(file_id: str, project_id: str, file_path: Path):
 
         total_chunks = len(existing) + file_chunk_count
 
-        # Update status to indexed
+        # Zero chunks is a FAILURE, not a quiet success.
+        #
+        # Every extractor in chunking_pipeline gives up by returning [] rather
+        # than raising — a missing reader library, a legacy .ppt with no
+        # LibreOffice to convert it, an unreadable file. Marking that "indexed"
+        # is how a hosted install ends up claiming it read a document it never
+        # opened: the upload goes green, the workflow lets the user continue,
+        # and the failure only surfaces much later as "the tool can't see my
+        # content". Fail here instead, and say what is actually wrong.
         if file_id in FILES:
+            if file_chunk_count == 0:
+                FILES[file_id]["status"] = "error"
+                FILES[file_id]["progress"] = 100
+                FILES[file_id]["chunk_count"] = 0
+                FILES[file_id]["error_detail"] = _no_text_reason(file_path)
+                logger.error("Extracted 0 chunks from %s — %s",
+                             file_path.name, FILES[file_id]["error_detail"])
+                _save_state()
+                return
             FILES[file_id]["status"] = "indexed"
             FILES[file_id]["progress"] = 100
             FILES[file_id]["chunk_count"] = file_chunk_count
