@@ -200,8 +200,8 @@ document.getElementById('back-link').onclick = () =>
 (function() {
   const raw = sessionStorage.getItem('auth_user');
   const email = raw ? (JSON.parse(raw).email || '') : '';
-  document.getElementById('nav-uname').textContent = email;
   const parts = email.split('@')[0].split(/[._]/).filter(Boolean);
+  document.getElementById('nav-uname').textContent = parts.map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(' ') || email || '—';
   document.getElementById('nav-uav').textContent =
     parts.slice(0,2).map(p => p.charAt(0).toUpperCase()).join('') || '?';
 })();

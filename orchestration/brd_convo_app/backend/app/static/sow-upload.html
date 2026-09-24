@@ -119,6 +119,7 @@
     .t{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:10px 14px;font-size:12px;display:flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(0,0,0,.2);max-width:340px}
     .t.error{border-color:var(--red)}.t.success{border-color:var(--green)}
     .hi{display:none}
+      @media(max-width:900px){.nav-steps{display:none}}
   </style>
 </head>
 <body>
@@ -132,9 +133,11 @@
     <div class="sc"></div>
     <div class="nav-step active"><span class="sn">2</span><span>Upload</span></div>
     <div class="sc"></div>
-    <div class="nav-step"><span class="sn">3</span><span>Template</span></div>
+    <div class="nav-step"><span class="sn">3</span><span>Pitch Score</span></div>
     <div class="sc"></div>
-    <div class="nav-step"><span class="sn">4</span><span>Draft &amp; Review</span></div>
+    <div class="nav-step"><span class="sn">4</span><span>Template</span></div>
+    <div class="sc"></div>
+    <div class="nav-step"><span class="sn">5</span><span>Draft &amp; Review</span></div>
   </div>
   <div class="nav-user"><span class="uname" id="nav-uname"></span><div class="uav" id="nav-uav"></div></div>
 </nav>
@@ -197,7 +200,7 @@
   <div class="cta-area">
     <div class="cta-hint" id="ch" style="display:none"><span id="cht"></span></div>
     <button class="cta-btn primary" id="cb" disabled>
-      Choose template
+      Continue to Pitch Score
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </button>
   </div>
@@ -355,7 +358,8 @@ function updateCTA(){
   else if(anyProcessing){ hint.style.display='flex'; hint.className='cta-hint warning'; ht.textContent='Files are being processed…'; }
   else { hint.style.display='none'; }
 }
-document.getElementById('cb').addEventListener('click',()=>{ window.location.href = `/sow-templates?project_id=${PROJECT_ID}`; });
+// Next stop is the advisory pitch score; it links on to the template step.
+document.getElementById('cb').addEventListener('click',()=>{ window.location.href = `/sow-pitch-score?project_id=${PROJECT_ID}`; });
 
 let linkedRepos=[], allRepos=[];
 async function loadLinkedRepos(){

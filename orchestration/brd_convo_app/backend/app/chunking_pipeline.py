@@ -1344,6 +1344,24 @@ def _has_openai_key() -> bool:
     return bool(os.getenv("OPENAI_API_KEY", "").strip())
 
 
+def _disable_openai_if_permanent(exc: Exception) -> None:
+    """An exhausted quota or rejected key fails the same way on every call,
+    yet each upload paid for it again — a round of retries and backoff per
+    step (30s+ per file) before falling back. On the first such error, drop
+    the key for the rest of this process so every OpenAI-gated path goes
+    straight to its fallback. Restarting the backend re-reads the key."""
+    msg = str(exc).lower()
+    permanent = any(m in msg for m in (
+        "insufficient_quota", "credit_balance_exhausted", "invalid_api_key",
+        "incorrect api key", "error code: 401"))
+    if permanent and os.environ.pop("OPENAI_API_KEY", None):
+        global _KW_CLIENT, _VISION_CLIENT
+        _KW_CLIENT = None
+        _VISION_CLIENT = None
+        logger.warning("OpenAI key disabled until restart (%s) — using local "
+                       "keywords, no embeddings or image vision.", msg[:120])
+
+
 def extract_keywords_llm(text: str, n: int = KEYWORDS_PER_CHUNK) -> list[str]:
     """Single-chunk LLM keyword extraction — kept for compatibility. Prefer extract_keywords_llm_batch."""
     results = extract_keywords_llm_batch([text], n)
@@ -1429,6 +1447,7 @@ No explanation, no markdown.
 
     except Exception as e:
         logger.warning("Batch LLM keyword extraction failed: %s — falling back to local", e)
+        _disable_openai_if_permanent(e)
         return [extract_keywords_local(t, n) for t in texts]
 
 
@@ -1572,6 +1591,10 @@ def process_file(
         chunk["keywords"] = kws
 
     # Pass 3 — generate embeddings (always, when OpenAI key is available)
+    if not _has_openai_key():
+        logger.info("No OPENAI_API_KEY — %s chunks saved without embeddings", doc_name)
+        logger.info("Produced %d chunks from %s (keywords via %s)", len(chunks), doc_name, method)
+        return chunks
     try:
         try:
             from app.semantic_search import embed_texts
@@ -1584,6 +1607,7 @@ def process_file(
             chunk["embedding"] = emb
         logger.info("Embeddings ready for %s", doc_name)
     except Exception as e:
+        _disable_openai_if_permanent(e)
         logger.warning(
             "Embedding generation skipped for %s: %s "
             "— chunks saved without embeddings, call /embed-chunks to backfill",

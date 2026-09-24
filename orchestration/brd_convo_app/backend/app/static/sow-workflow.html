@@ -123,6 +123,7 @@
     .t.error{border-color:var(--red)}.t.success{border-color:var(--green)}
     .spin{animation:spin 1s linear infinite}
     @keyframes spin{to{transform:rotate(360deg)}}
+      @media(max-width:900px){.topnav{height:auto;flex-wrap:wrap;gap:8px;padding:8px 12px}.nav-right{flex-wrap:wrap}.body{flex-direction:column}.sidebar{width:auto;max-height:220px;border-right:none;border-bottom:1px solid var(--border)}.content{padding:16px}.action-row{flex-wrap:wrap}}
   </style>
 </head>
 <body>
@@ -567,6 +568,9 @@ async function generateCurrentSection(){
   icon.style.display = 'none';
   spinner.style.display = '';
   label.textContent = 'Generating…';
+  // Approve/Discard act on the editor text, which is a placeholder until the
+  // draft arrives — hide them so the placeholder can't be approved.
+  document.getElementById('approve-row').style.display = 'none';
   document.getElementById('draft-empty').style.display = 'none';
   const ta = document.getElementById('draft-text');
   ta.classList.add('visible');
@@ -586,6 +590,8 @@ async function generateCurrentSection(){
     ta.value = data.content;
     ta.disabled = false;
     document.getElementById('approve-row').style.display = 'flex';
+    document.getElementById('preview-btn').disabled = false;
+    document.getElementById('editor-btn').disabled = false;
 
     const meta = document.getElementById('meta-row');
     const chips = [];
@@ -595,10 +601,14 @@ async function generateCurrentSection(){
 
     await loadSectionsQuiet(); // refresh status dot to in-progress
   } catch(e) {
-    ta.value = '';
-    ta.classList.remove('visible');
-    document.getElementById('draft-empty').style.display = 'flex';
-    document.getElementById('draft-empty').textContent = 'Generation failed — try again.';
+    if (s.draft_content || s.has_content) {
+      renderContent();  // put back the draft/approved text that was there before
+    } else {
+      ta.value = '';
+      ta.classList.remove('visible');
+      document.getElementById('draft-empty').style.display = 'flex';
+      document.getElementById('draft-empty').textContent = 'Generation failed — try again.';
+    }
     toast(e.message || 'Generation failed', 'error');
   } finally {
     btn.disabled = false;

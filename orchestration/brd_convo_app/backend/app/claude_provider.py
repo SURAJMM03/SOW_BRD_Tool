@@ -93,6 +93,15 @@ def _get_client():
         raise RuntimeError(
             "CLAUDE_API_KEY is not set. Add it to your .env file or environment."
         )
+    if api_key.strip().strip('"').lower().startswith("your-"):
+        # The .env.example placeholder — Anthropic would answer with an opaque
+        # 401 "API key is invalid". Say what is actually wrong instead.
+        raise RuntimeError(
+            f"LLM_PROVIDER={os.getenv('LLM_PROVIDER')!r} routes generation to Anthropic, "
+            "but CLAUDE_API_KEY is still the .env.example placeholder. Set "
+            "LLM_PROVIDER=azure to use Azure OpenAI, or supply a real Anthropic key. "
+            "See GET /api/diagnostics."
+        )
     http_client = _build_httpx_client()
     if http_client is not None:
         return Anthropic(api_key=api_key, http_client=http_client)

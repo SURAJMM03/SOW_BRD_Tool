@@ -1263,6 +1263,10 @@ def approve_sow_section(section_id: str, req: ApproveRequest):
         )
     if not req.content or not req.content.strip():
         raise HTTPException(400, "Cannot approve empty content")
+    # The editor shows this placeholder while a draft is being generated;
+    # approving it would replace the section with the placeholder text.
+    if req.content.strip().startswith("Drafting this section"):
+        raise HTTPException(409, "This section is still being drafted — wait for the draft, then approve it.")
 
     family = _family_ids(section_id, active_sections)
     blocks = _draftable_blocks(section_id, active_sections)
@@ -1884,7 +1888,11 @@ def render_section_preview_html(combined_text: str, family: List[Dict], style_pr
         content = (split.get(bid) or "").strip()
         if not content:
             continue
-        parts.append(f'<h3 style="{heading_style}">{html.escape(bid)} {html.escape(f["title"])}</h3>')
+        # Ids like "0" (SOW_TEMPLATE_2's overview), "cover" or "appA" are
+        # internal keys, not section numbers — don't print them as one.
+        number = bid if bid[:1].isdigit() and bid != "0" else ""
+        label = f"{number} {f['title']}".strip()
+        parts.append(f'<h3 style="{heading_style}">{html.escape(label)}</h3>')
         parts.append(_render_block_body_html(content, style_profile))
     parts.append("</div>")
     return "\n".join(parts)

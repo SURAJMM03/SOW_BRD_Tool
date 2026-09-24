@@ -1,0 +1,287 @@
+{
+  "fingerprint": "627caab713c4a06e",
+  "facts": {
+    "client_name": "PPG",
+    "project_name": "ChatPro Phase 3",
+    "effective_start_date": "August 2026",
+    "end_date": "Week 22 from mobilization (derived from 22-week plan including hypercare)",
+    "duration": "22 weeks (derived from mobilization to go-live/hypercare)",
+    "go_live_date": "Week 21 from mobilization",
+    "key_milestones": [
+      {
+        "name": "RFP released to Participants via ePro/Jaggaer",
+        "date": "August 12th"
+      },
+      {
+        "name": "Participant questions due via ePro/Jaggaer Message Board",
+        "date": "August 18th"
+      },
+      {
+        "name": "All Participant Demo Session",
+        "date": "August 18th"
+      },
+      {
+        "name": "PPG Responses to submitted questions sent to Participants",
+        "date": "August 24th"
+      },
+      {
+        "name": "RFP Proposals due within ePro/Jaggaer",
+        "date": "September 2nd"
+      },
+      {
+        "name": "PPG Proposal Evaluation / Review Period",
+        "date": "Week of Aug 31 & Sep 7"
+      },
+      {
+        "name": "Oral Presentations with down-selected Participants",
+        "date": "Week of Sep 7 /14"
+      },
+      {
+        "name": "Final Award Decision",
+        "date": "End of October"
+      },
+      {
+        "name": "Assessment complete and scope locked",
+        "date": "End of Week 5"
+      },
+      {
+        "name": "Design baseline signed off",
+        "date": "End of Week 8"
+      },
+      {
+        "name": "Increment 1 business preview",
+        "date": "Week 11"
+      },
+      {
+        "name": "Increment 2 business preview",
+        "date": "Week 15"
+      },
+      {
+        "name": "Feature complete and code freeze",
+        "date": "Week 18"
+      },
+      {
+        "name": "UAT sign-off",
+        "date": "End of Week 20"
+      },
+      {
+        "name": "Production go-live",
+        "date": "Week 21"
+      },
+      {
+        "name": "Hypercare complete / exit gate",
+        "date": "Week 22"
+      }
+    ],
+    "delivery_locations": [
+      "Pittsburgh",
+      "USCA",
+      "EMEA",
+      "LATAM",
+      "APAC",
+      "70 countries around the world"
+    ],
+    "engagement_model": "Fixed fee by milestone / milestone-linked commercial structure",
+    "team_size": "18.75 FTE at program peak; six-person assessment team; peak 18\u201319 FTE from week 6",
+    "scope_summary": "Support ChatPro Phase 3 for PPG by assessing the current platform, completing data readiness work, and implementing new procurement intelligence capabilities on top of the existing production platform. Scope includes demand and price forecasting integration, should-cost, supplier and pricing analytics, alternative supplier identification, supply risk and opportunity identification, AI-driven decision support, and export-ready business outputs with source/date/confidence transparency.",
+    "in_scope": [
+      "Assess the current ChatPro platform",
+      "Data Quality Assessment Report",
+      "Data Readiness and AI Readiness Scorecard",
+      "Source-to-Target Data Mapping",
+      "Data Governance Recommendations",
+      "Remediation Roadmap with effort estimates",
+      "Executive Summary Presentation for Steering Committee review",
+      "Demand forecasting integration",
+      "Price forecasting integration",
+      "Historical supplier analysis",
+      "Historical pricing analysis",
+      "Should-cost analysis",
+      "Alternative supplier identification",
+      "Opportunity identification",
+      "Supply risk analysis",
+      "AI-driven decision support",
+      "Business-friendly outputs suitable for Excel and PowerPoint",
+      "User-facing transparency into source, date, and confidence",
+      "Guidance when required information is missing or incomplete",
+      "Business Value Realization Plan",
+      "Curated procurement data products (7)",
+      "Multi-agent layer, guardrails and confidence model",
+      "Application, workspace, Genie orchestration and exports",
+      "Enablement, training and playbooks",
+      "Cutover readiness, runbooks, production deployment",
+      "Hypercare, tuning and value register activation"
+    ],
+    "out_of_scope": [
+      "Source-of-truth hierarchy (PPG-owned)",
+      "No active-active replication is planned for this phase",
+      "ETL (not in current scope)",
+      "Data mesh is not required today for Phase 3",
+      "The innovation agenda in Section 13 is explicitly post-go-live",
+      "Should-cost coverage at go-live is a prioritized material set rather than the full portfolio"
+    ],
+    "governing_agreement": "PPG standard Master Service Agreement, SLA, and Statements of Work",
+    "contract_or_sow_id": "RFP- 001397",
+    "commercials": [
+      "Pricing model: Not-to-exceed fixed fee by milestone, aligned to the 22-week plan",
+      "Assessment complete and scope locked (W5): USD 83,182",
+      "Design baseline signed off (W8): USD 77,212",
+      "Increment 1 business preview (W11): USD 77,193",
+      "Increment 2 business preview (W15): USD 108,080",
+      "Feature complete and code freeze (W18): USD 67,673",
+      "Sizing the opportunity (illustrative): on PPG\u2019s $10B managed annual spend, every 1% realized should-cost closure \u2248 $100M gross opportunity"
+    ],
+    "assumptions": [
+      "The existing Azure and Databricks landscape is available and reused without architectural change",
+      "Mosaic AI capabilities \u2014 Agent Framework, Model Serving, Foundation Model APIs, Vector Search, Genie \u2014 are enabled with capacity for the projected workload",
+      "Environments and CI/CD are extendable to agent, prompt, semantic and evaluation artifacts",
+      "Platform capacity and cost for additional compute, serving and storage is provisioned by the client",
+      "Access to ERP purchase order, invoice, contract, material master, BoM and routing data",
+      "The demand forecast is a consumable feed at a defined grain, horizon and cadence, with history to assess accuracy",
+      "The price forecast is consumable, or index series are licensed such that a forward price can be modeled",
+      "Internal cost model logic, conversion and yield assumptions, and the PPG hierarchy are available",
+      "Required external subscriptions are held or procured, with license terms permitting the intended use",
+      "A client product owner with authority to prioritize and sign off",
+      "Subject matter experts \u2014 managers, planners, cost analysts, stewards \u2014 available at an agreed cadence",
+      "AD groups and role definitions agreed with security; Unity Catalog entitlements configured",
+      "Security, architecture and governance review points scheduled in advance, off the critical path",
+      "Source-of-truth hierarchy confirmed and delivered by PPG's ChatPro team before build begins",
+      "Data completeness gaps identified in the Data Quality Assessment addressed by PPG before go-live",
+      "Early Category Manager engagement to validate and refine LLM-generated should-cost starting points",
+      "SME availability for prompt validation, cost-model review, and output sign-off designated by PPG",
+      "Confidence-scoring methodology agreed jointly during design, not retrofitted after UAT",
+      "UAT structured around Exhibit A's predefined prompts, graded by category managers",
+      "Early CARB engagement and approval for any component outside PPG's approved stack",
+      "Three Category Managers at roughly four hours a week each are available during weeks 3 to 20",
+      "Security and architecture review slots at weeks 5, 8 and 19 are pre-booked and combined into single sessions",
+      "At every gate, decisions returned within three business days",
+      "Scope frozen at the week-5 gate; later changes go to a post-go-live backlog"
+    ],
+    "notable_dates": [
+      {
+        "date": "August 2026",
+        "what_it_refers_to": "RFP Guidelines document date"
+      },
+      {
+        "date": "Q4 2025",
+        "what_it_refers_to": "PPG Procurement team successfully launched ChatPro"
+      },
+      {
+        "date": "August 12th",
+        "what_it_refers_to": "RFP released to participants"
+      },
+      {
+        "date": "August 18th",
+        "what_it_refers_to": "Participant questions due"
+      },
+      {
+        "date": "August 18th",
+        "what_it_refers_to": "All Participant Demo Session"
+      },
+      {
+        "date": "August 24th",
+        "what_it_refers_to": "PPG responses to submitted questions sent to participants"
+      },
+      {
+        "date": "September 2nd",
+        "what_it_refers_to": "RFP proposals due within ePro/Jaggaer"
+      },
+      {
+        "date": "September 02, 2026",
+        "what_it_refers_to": "Conversational BI for Procurement deck date"
+      },
+      {
+        "date": "Week of Aug 31 & Sep 7",
+        "what_it_refers_to": "PPG proposal evaluation / review period"
+      },
+      {
+        "date": "Week of Sep 7 /14",
+        "what_it_refers_to": "Oral presentations with down-selected participants"
+      },
+      {
+        "date": "End of October",
+        "what_it_refers_to": "Final award decision"
+      },
+      {
+        "date": "mid 2026",
+        "what_it_refers_to": "Recommended maturity level by mid 2026"
+      },
+      {
+        "date": "2030",
+        "what_it_refers_to": "Recommended maturity level by 2030"
+      },
+      {
+        "date": "End of Week 2",
+        "what_it_refers_to": "Source access and non-production environments requested by next steps"
+      },
+      {
+        "date": "End of Week 5",
+        "what_it_refers_to": "Assessment complete and scope locked / Steering gate"
+      },
+      {
+        "date": "End of Week 8",
+        "what_it_refers_to": "Design baseline signed off"
+      },
+      {
+        "date": "Week 11",
+        "what_it_refers_to": "Increment 1 business preview"
+      },
+      {
+        "date": "Week 15",
+        "what_it_refers_to": "Increment 2 business preview"
+      },
+      {
+        "date": "Week 18",
+        "what_it_refers_to": "Feature complete and code freeze"
+      },
+      {
+        "date": "End of Week 20",
+        "what_it_refers_to": "UAT sign-off / go-no-go decision"
+      },
+      {
+        "date": "Week 21",
+        "what_it_refers_to": "Production go-live"
+      },
+      {
+        "date": "Week 22",
+        "what_it_refers_to": "Hypercare through week 22 / end of go-live stage"
+      },
+      {
+        "date": "Weeks 1\u201322",
+        "what_it_refers_to": "Product Owner commitment window; Databricks/platform administrator commitment window"
+      },
+      {
+        "date": "Weeks 3\u201320",
+        "what_it_refers_to": "Category Manager SME commitment window"
+      },
+      {
+        "date": "Weeks 1\u201316",
+        "what_it_refers_to": "Data steward commitment window"
+      },
+      {
+        "date": "Weeks 1\u201310",
+        "what_it_refers_to": "Source system SME commitment window"
+      },
+      {
+        "date": "Weeks 3\u20135, 19\u201322",
+        "what_it_refers_to": "Finance analyst commitment windows"
+      },
+      {
+        "date": "Weeks 16\u201321",
+        "what_it_refers_to": "UAT coordinator commitment window"
+      },
+      {
+        "date": "Weeks 5, 8 and 19",
+        "what_it_refers_to": "Security and architecture review slots"
+      },
+      {
+        "date": "Weeks 3 to 20",
+        "what_it_refers_to": "Three Category Managers roughly four hours/week each for co-design, previews and UAT"
+      },
+      {
+        "date": "2020",
+        "what_it_refers_to": "PPG net sales over $15 billion"
+      }
+    ]
+  }
+}

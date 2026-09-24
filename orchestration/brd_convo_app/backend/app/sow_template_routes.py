@@ -30,6 +30,7 @@ from __future__ import annotations
 
 import json
 import logging
+import shutil
 import uuid
 from datetime import datetime
 from pathlib import Path
@@ -56,6 +57,10 @@ SOW_TEMPLATES_STORE_PATH = _THIS_DIR / "sow_templates_store.json"
 # this library's own template_id instead of a project_id.
 SOW_TEMPLATE_FILES_DIR = _THIS_DIR / "sow_template_files"
 SOW_TEMPLATE_FILES_DIR.mkdir(exist_ok=True)
+
+# Version-controlled copy of the org default template (JSON entry + .docx),
+# restored into the library by _load_templates when no default is marked.
+SOW_TEMPLATE_DEFAULTS_DIR = _THIS_DIR / "sow_template_defaults"
 
 
 def _detect_sections_with_own_content(docx_bytes: bytes, sections: List[Dict]) -> set:
@@ -159,13 +164,61 @@ DIAGRAM_PRIORITY_SECTION_IDS = {"3", "5", "6", "3.3", "6.1"}
 # Storage helpers
 # ─────────────────────────────────────────────────────────────────────────────
 
-def _load_templates() -> List[Dict]:
+def _read_store() -> List[Dict]:
     if SOW_TEMPLATES_STORE_PATH.exists():
         try:
             return json.loads(SOW_TEMPLATES_STORE_PATH.read_text(encoding="utf-8"))
         except Exception:
             pass
     return []
+
+
+def _bundled_default() -> Optional[Dict]:
+    """The version-controlled copy of the org default (SOW_TEMPLATE_2) that
+    ships in sow_template_defaults/ — read-only, never edited at runtime."""
+    for p in sorted(SOW_TEMPLATE_DEFAULTS_DIR.glob("*.json")):
+        try:
+            return json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            logger.warning("Unreadable bundled SOW template %s", p)
+    return None
+
+
+def _load_templates() -> List[Dict]:
+    """The template library, with the bundled default restored whenever no
+    template is marked default.
+
+    sow_templates_store.json is mutable runtime state, so a hosted install can
+    easily end up without the default (store not deployed, reset, or the
+    default deleted). The template step then silently falls back to the long
+    built-in engagement structure instead of SOW_TEMPLATE_2. Restoring it here
+    keeps every host on the same default without a manual re-import."""
+    templates = _read_store()
+    if any(t.get("is_default") for t in templates):
+        return templates
+
+    bundled = _bundled_default()
+    if not bundled:
+        return templates
+
+    existing = next((t for t in templates if t["id"] == bundled["id"]), None)
+    if existing:
+        existing["is_default"] = True
+    else:
+        templates.append(dict(bundled, is_default=True))
+
+    docx_src = SOW_TEMPLATE_DEFAULTS_DIR / f"{bundled['id']}.docx"
+    docx_dst = SOW_TEMPLATE_FILES_DIR / f"{bundled['id']}.docx"
+    try:
+        if docx_src.exists() and not docx_dst.exists():
+            shutil.copyfile(docx_src, docx_dst)
+        _save_templates(templates)
+        logger.info("Restored bundled default SOW template %s (%s)",
+                    bundled["id"], bundled.get("name"))
+    except OSError as exc:
+        # Read-only storage: still serve the default for this request.
+        logger.warning("Could not persist bundled default SOW template: %s", exc)
+    return templates
 
 
 def _save_templates(templates: List[Dict]) -> None:

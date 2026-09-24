@@ -24,6 +24,13 @@ try:
 except ImportError:
     pass
 
+# An OPENAI_API_KEY left at the .env.example placeholder counts as "set"
+# everywhere the pipeline checks for it, so every upload made doomed OpenAI
+# calls (keywords, embeddings, vision) and waited out their retries before
+# falling back. Treat it as unset so those paths go straight to the fallback.
+if os.getenv("OPENAI_API_KEY", "").strip().strip('"').lower().startswith("your-"):
+    os.environ.pop("OPENAI_API_KEY", None)
+
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
@@ -43,6 +50,7 @@ from app.sow_template_routes import router as sow_template_router
 from app.sow_section_routes import router as sow_section_router
 from app.sow_skill_routes import router as sow_skill_router
 from app.sow_review_routes import router as sow_review_router
+from app.pitch_scorecard_routes import router as pitch_scorecard_router
 from app.diagnostics_routes import router as diagnostics_router
 # image_repo_routes is optional — keep startup resilient if the module
 # hasn't been committed to this checkout yet.
@@ -207,6 +215,8 @@ app.include_router(sow_section_router)
 app.include_router(sow_skill_router)
 # Legal baseline (US-02) + mandatory pre-signature review gate (US-03)
 app.include_router(sow_review_router)
+# Advisory pitch-deck scorecard, run on the uploaded deck before the SOW is drafted
+app.include_router(pitch_scorecard_router)
 # Environment triage for hosted installs — readers, storage, LLM credentials
 app.include_router(diagnostics_router)
 
@@ -222,6 +232,22 @@ import json as _json
 from fastapi.responses import Response as _Response
 _LT = chr(92) + "u003c"   # the JS escape for "<", built without a backslash literal
 
+# Every page does `const data = await res.json(); if (!res.ok) throw new
+# Error(data.detail)`. Behind a proxy, a timeout or 502 comes back as an HTML
+# page, so users saw "Unexpected token '<'"; and a 422 carries `detail` as a
+# list, shown as "[object Object]". This makes both read as plain messages
+# for every page at once.
+_SAFE_JSON_JS = (
+    "<script>(function(){var P=Response.prototype,J=P.json;"
+    "P.json=async function(){var r=this,t=await r.clone().text(),d;"
+    "try{d=JSON.parse(t)}catch(e){throw new Error(r.ok?'The server sent an unexpected response \\u2014 please try again.'"
+    ":'Server error '+r.status+(r.statusText?' ('+r.statusText+')':'')+' \\u2014 please try again.')}"
+    "if(!r.ok&&d&&d.detail&&typeof d.detail!=='string'){try{d.detail=Array.isArray(d.detail)?"
+    "d.detail.map(function(x){return x&&x.msg?((x.loc||[]).slice(1).join('.')+' '+x.msg).trim():JSON.stringify(x)}).join('; ')"
+    ":JSON.stringify(d.detail)}catch(e){}}return d};})();</script>"
+)
+
+
 def _page(name: str, request: Request) -> _Response:
     raw = (BASE_DIR / "static" / name).read_bytes()
     # _LT below keeps a "<" in the host header from closing this script tag.
@@ -230,6 +256,10 @@ def _page(name: str, request: Request) -> _Response:
         "<script>window.CURRENT_USER=" + blob + ";"
         "try{sessionStorage.setItem('auth_user',JSON.stringify(window.CURRENT_USER));}"
         "catch(e){}</script>"
+        + _SAFE_JSON_JS +
+        # Empty icon, so the browser doesn't request /favicon.ico — a 404
+        # there shows up as a console error on every page.
+        '<link rel="icon" href="data:,">'
     ).encode("utf-8")
     k = raw.lower().find(b"<head>")
     raw = raw[:k + 6] + boot + raw[k + 6:] if k != -1 else boot + raw
@@ -307,6 +337,11 @@ def sow_projects_page(request: Request):
 def sow_upload_page(request: Request):
     """Upload source material (and link reference/sample-SOW repositories) for a SOW project."""
     return _page("sow-upload.html", request)
+
+@app.get("/sow-pitch-score")
+def sow_pitch_score_page(request: Request):
+    """Advisory quality score for the uploaded pitch/RFP deck, before drafting."""
+    return _page("sow-pitch-score.html", request)
 
 @app.get("/sow-templates")
 def sow_templates_page(request: Request):

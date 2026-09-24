@@ -1,4 +1,18 @@
-INFO:     Started server process [3460]
+2026-09-24 13:03:58,368 | WARNING | BRDConvoAPI | ==============================================================================
+  DEV_FALLBACK_USER is set (suraj.mm1@bristlecone.com).
+  Every request is treated as this user even with NO identity header,
+  so anyone who can reach this server is signed in. That is intended
+  only for running standalone on a developer machine.
+  On a hosted instance: unset DEV_FALLBACK_USER and have the fronting
+  proxy set X-Forwarded-User — overwriting any client-supplied value.
+  Check GET /api/diagnostics to confirm.
+==============================================================================
+INFO:     Started server process [7024]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8010 (Press CTRL+C to quit)
+2026-09-24 13:04:31,262 | INFO | PitchScorecard | Pitch rubric loaded: 14 categories, 57 criteria
+2026-09-24 13:04:36,240 | INFO | SOWReviewGate | Review checklist loaded: 101 checkpoints across 11 categories
+2026-09-24 13:06:14,551 | INFO | ProjectRoutes | Created project 413711b9: tmp
+2026-09-24 13:06:15,607 | INFO | SOWTemplateRoutes | Applied Time & Materials SOW template v1.4.0 to project 413711b9 — 54 sections
+2026-09-24 13:06:16,413 | INFO | ProjectRoutes | Deleted project 413711b9 (tmp) — 0 files removed, folder_removed=True

@@ -526,6 +526,15 @@ def delete_project(project_id: str):
                 "Project %s removed from app, but its folder could not be fully "
                 "deleted (files may be open/locked): %s", project_id, proj_dir,
             )
+    # Per-project workflow state lives beside this module as
+    # <kind>_<project_id>.json (sow_sections_, sow_approved_, sow_facts_,
+    # sow_review_, pitch_score_, screen3_*, …). Without this, every deleted
+    # project left its drafts behind.
+    for state_file in Path(__file__).parent.glob(f"*_{project_id}.json"):
+        try:
+            state_file.unlink()
+        except OSError as exc:
+            logger.warning("Could not remove %s: %s", state_file.name, exc)
     logger.info("Deleted project %s (%s) — %d files removed, folder_removed=%s",
                 project_id, name, len(to_remove), folder_removed)
     return {"deleted": True, "project_id": project_id,

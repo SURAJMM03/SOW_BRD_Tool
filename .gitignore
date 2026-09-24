@@ -50,3 +50,6 @@ Thumbs.db
 *.bak_edit
 *.bak_rich
 *.bak_merge
+
+# Per-project pitch scorecards — generated review state, not source
+orchestration/brd_convo_app/backend/app/pitch_score_*.json

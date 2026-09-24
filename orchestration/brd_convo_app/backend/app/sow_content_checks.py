@@ -253,15 +253,20 @@ def _flag(area: str, kind: str, severity: str, detail: str,
 
 def _locate(area: str, sections: List[Dict]) -> Optional[Dict]:
     ids, keywords, blocked = _AREAS[area]
+
+    def _fits(s: Dict) -> bool:
+        t = _norm(s.get("title", ""))
+        return not any(b in t for b in blocked) and any(k in t for k in keywords)
+
+    # The ids are the built-in template's numbering. A custom template numbers
+    # its own sections (SOW_TEMPLATE_2's "4" is Commercial Terms, not Scope of
+    # Work), so an id match only counts when the title agrees with it.
     by_id = {s.get("id"): s for s in sections}
     for sid in ids:
-        if sid in by_id:
+        if sid in by_id and _fits(by_id[sid]):
             return by_id[sid]
     for s in sections:
-        t = _norm(s.get("title", ""))
-        if any(b in t for b in blocked):
-            continue
-        if any(k in t for k in keywords):
+        if _fits(s):
             return s
     return None
 

@@ -92,6 +92,8 @@
     .tc{position:fixed;top:60px;right:20px;z-index:300;display:flex;flex-direction:column;gap:6px}
     .t{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:10px 14px;font-size:12px;display:flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(0,0,0,.15);max-width:340px}
     .t.error{border-color:var(--red)}.t.success{border-color:var(--green)}
+      @media(max-width:900px){.nav-steps{display:none}}
+    @media(max-width:700px){.opt-grid,.eng-grid{grid-template-columns:1fr!important}}
   </style>
 </head>
 <body>
@@ -105,9 +107,11 @@
     <div class="sc"></div>
     <div class="nav-step done" style="cursor:pointer" id="nav-upload"><span class="sn">&#10003;</span><span>Upload</span></div>
     <div class="sc"></div>
-    <div class="nav-step active"><span class="sn">3</span><span>Template</span></div>
+    <div class="nav-step done" style="cursor:pointer" id="nav-pitch"><span class="sn">&#10003;</span><span>Pitch Score</span></div>
     <div class="sc"></div>
-    <div class="nav-step"><span class="sn">4</span><span>Draft &amp; Review</span></div>
+    <div class="nav-step active"><span class="sn">4</span><span>Template</span></div>
+    <div class="sc"></div>
+    <div class="nav-step"><span class="sn">5</span><span>Draft &amp; Review</span></div>
   </div>
   <div class="nav-user"><span class="uname" id="nav-uname"></span><div class="uav" id="nav-uav"></div></div>
 </nav>
@@ -203,6 +207,7 @@
 const PROJECT_ID = new URLSearchParams(window.location.search).get('project_id');
 if (!PROJECT_ID) window.location.href = '/sow-projects';
 document.getElementById('nav-upload').onclick = () => window.location.href = `/sow-upload?project_id=${PROJECT_ID}`;
+document.getElementById('nav-pitch').onclick = () => window.location.href = `/sow-pitch-score?project_id=${PROJECT_ID}`;
 
 function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
 function toast(m,ty='info'){
@@ -236,7 +241,9 @@ async function init(){
   const defaultDesc = document.getElementById('default-desc');
   if (resolveInfo && resolveInfo.default_template_id) {
     defaultBadge.style.display = 'inline-block';
-    defaultDesc.textContent = `Uses "${resolveInfo.default_template_name}" — Bristlecone's own branded SOW template.`;
+    const def = templates.find(t => t.id === resolveInfo.default_template_id);
+    const count = def ? ` (${def.section_count} sections)` : '';
+    defaultDesc.textContent = `Uses "${resolveInfo.default_template_name}"${count} — Bristlecone's own branded SOW template.`;
   } else {
     defaultDesc.textContent = "The standard Bristlecone SOW structure for the engagement type you pick above.";
   }
@@ -253,6 +260,11 @@ async function init(){
   }
 }
 
+// With a branded default template in the library, the document structure
+// comes from that template — the engagement template's own section count
+// would describe a structure that isn't going to be used.
+function hasDefaultTemplate(){ return !!(resolveInfo && resolveInfo.default_template_id); }
+
 function renderEngagementTypes(){
   const el = document.getElementById('eng-grid');
   if (!engagementTypes.length) {
@@ -266,7 +278,7 @@ function renderEngagementTypes(){
       <p>${esc(e.description)}</p>
       <div class="eng-meta">
         <span class="eng-tag">Billing: ${esc(e.billing_basis)}</span>
-        <span>${e.section_count} sections · template v${esc(e.version)}</span>
+        <span>${hasDefaultTemplate() ? '' : `${e.section_count} sections · `}template v${esc(e.version)}</span>
       </div>
     </div>`).join('');
 }

@@ -40,7 +40,10 @@
       "Bash(curl -s -o /dev/null -w 'slide image:  %{http_code} \\(%{content_type}, %{size_download} bytes\\)\\\\n' -H 'Cookie: brd_session=__TRACKED_VAR__' http://127.0.0.1:8010/api/sow/images/c8d8e19bae62)",
       "Bash(curl -s -H 'Cookie: brd_session=__TRACKED_VAR__' http://127.0.0.1:8010/api/sow/sections/3/preview?project_id=cf0e9e53)",
       "Bash(rm -f \"C:/Users/Suraj.mm1/AppData/Local/Temp/claude/c--Users-Suraj-mm1-Downloads-docgenplatform-feature-doc-quality-fixes-sohan/3c80d355-496c-47f5-9c1e-93e82154e597/scratchpad/\"*.py)",
-      "Bash(rm -rf \"C:/Users/Suraj.mm1/AppData/Local/Temp/claude/c--Users-Suraj-mm1-Downloads-docgenplatform-feature-doc-quality-fixes-sohan/3c80d355-496c-47f5-9c1e-93e82154e597/scratchpad/slides\")"
+      "Bash(rm -rf \"C:/Users/Suraj.mm1/AppData/Local/Temp/claude/c--Users-Suraj-mm1-Downloads-docgenplatform-feature-doc-quality-fixes-sohan/3c80d355-496c-47f5-9c1e-93e82154e597/scratchpad/slides\")",
+      "Bash(./venv/Scripts/python.exe -c ' *)",
+      "Bash(awk '{print \"  store mtime:\", $6, $7}')",
+      "Bash(curl -s \"http://127.0.0.1:8010/api/sow/pitch-score/d0dc7177\" --max-time 20)"
     ]
   }
 }

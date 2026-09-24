@@ -44,9 +44,9 @@
   #brd-chat-panel{position:fixed;top:0;right:0;height:100vh;width:390px;max-width:92vw;z-index:99999;
     background:var(--surface,#fff);border-left:1px solid var(--border,#ddd);
     box-shadow:-8px 0 28px rgba(0,0,0,.16);display:flex;flex-direction:column;
-    transform:translateX(105%);transition:transform .25s cubic-bezier(.4,0,.2,1);
+    transform:translateX(105%);visibility:hidden;transition:transform .25s cubic-bezier(.4,0,.2,1),visibility 0s .25s;
     font-family:var(--font,'Segoe UI',sans-serif);color:var(--text,#1a1a1a);}
-  #brd-chat-panel.open{transform:translateX(0);}
+  #brd-chat-panel.open{transform:translateX(0);visibility:visible;transition:transform .25s cubic-bezier(.4,0,.2,1);}
   #brd-chat-panel.full{width:100vw;max-width:100vw;}
   #brd-chat-panel.full #brd-chat-scopebar,
   #brd-chat-panel.full #brd-chat-msgs,

@@ -1,0 +1,260 @@
+{
+  "fingerprint": "fbf78a2f71f5d4bc",
+  "facts": {
+    "client_name": "Google",
+    "project_name": "Google\u2019s Silicon COT Supply Chain Process Implementation",
+    "effective_start_date": "June 2026",
+    "end_date": "December 2027 (derived from Phase 3 scaling Apr to Dec 2027, with Hypercare shown through Dec 2027)",
+    "duration": "18 months",
+    "go_live_date": "April 2027 (business go-live); January 2027 (technical go-live)",
+    "key_milestones": [
+      {
+        "name": "Phase 1 \u2014 Manufacturing Visibility",
+        "date": "Before Thanksgiving 2026"
+      },
+      {
+        "name": "Phase 1 \u2014 TSMC MVP / Cut first TSMC PO",
+        "date": "December 4, 2026"
+      },
+      {
+        "name": "Phase 2 \u2014 Full MVP",
+        "date": "January 25, 2027"
+      },
+      {
+        "name": "Technical go-live",
+        "date": "January 2027"
+      },
+      {
+        "name": "Business go-live",
+        "date": "April 2027"
+      },
+      {
+        "name": "Phase 2 \u2014 Business Go-Live + Q2 Hypercare",
+        "date": "Q2 2027"
+      },
+      {
+        "name": "Phase 3 \u2014 Expanded Scope",
+        "date": "Q3/Q4 2027"
+      },
+      {
+        "name": "Phase 3 Scaling",
+        "date": "April to December 2027"
+      },
+      {
+        "name": "Phase 3: Scaling (cost table)",
+        "date": "July 2027 to December 2027"
+      }
+    ],
+    "delivery_locations": [
+      "Taiwan",
+      "TSMC",
+      "KYEC",
+      "SPIL",
+      "Google Hub",
+      "Warehouse",
+      "US",
+      "India",
+      "Offshore proposed"
+    ],
+    "engagement_model": "Monthly Fixed Fee Milestone; Phase 3 priced monthly fixed cost (implies fixed price)",
+    "team_size": "6 roles listed for Phase 3 team composition (Program Manager - US, Process Consultant - US, MM Consultant - India, PP Consultant - India, Kinaxis Architect - India, Kinaxis Consultant - India)",
+    "scope_summary": "Implement Google's Silicon Customer Owned Tooling (COT) supply chain across SAP S/4HANA, Kinaxis, and E2Open to move from black-box operations to end-to-end manufacturing traceability, partner collaboration, and yield-aware planning. Scope includes phased delivery of manufacturing visibility, business go-live, expanded scope, integrations, procurement/logistics processes, and organizational change management for the Silicon business.",
+    "in_scope": [
+      "AS-IS and requirement gathering for Kinaxis and S/4HANA",
+      "TO-BE finalization",
+      "Design and configure Kinaxis",
+      "Configure SAP S/4HANA PP/MM modules for silicon manufacturing process",
+      "Leverage E2Open integration for partner collaboration (TSMC, OSATs)",
+      "Kinaxis-SAP and E2Open integration for supply planning and collaboration",
+      "Comprehensive OCM delivery and end-user adoption tracking/reporting",
+      "Customer Owned Tooling (COT) process implementation",
+      "End-to-end supply chain visibility",
+      "Constrained supply planning with yield",
+      "Material master",
+      "Batch/lot traceability",
+      "Production planning",
+      "Quality management",
+      "Materials management",
+      "Supply Planning",
+      "Constraint Planning",
+      "Inventory Planning",
+      "Analytics and Reporting",
+      "SAP material master (wafer, raw materials, substrate)",
+      "TSMC inventory PO + GR via E2Open",
+      "OSAT subcontracting PO structure (SPIL/KYEC)",
+      "Full lot traceability wafer\u2192die\u2192pkg/assembly\u2192FG",
+      "4-step OSAT routing in SAP",
+      "Lot genealogy in Silicon Data Hub",
+      "WIP snapshot to Kinaxis at each handoff",
+      "SAP lot information at wafer GR",
+      "Yield recording per lot",
+      "Test data SFTP to Silicon Data Hub",
+      "Unit-level test data in Silicon Data Hub",
+      "Yield summaries per lot to Kinaxis",
+      "XY die location fusion at probe",
+      "Yield exception signals to Kinaxis real-time",
+      "AI/Arcus yield prediction model",
+      "Cost modeling configuration in SAP",
+      "OSAT service charge structure defined",
+      "Actual costing runs against WIP events",
+      "Yield variance posting per lot close",
+      "Cost visibility per lot in SAP",
+      "Full product costing with yield-adjusted margins",
+      "Finance analytics in BigQuery/reporting layer",
+      "TSMC vendor master and schedule agreement",
+      "Wafer inventory PO live before Dec 4 deadline",
+      "UMTC substrate PO",
+      "OSAT subcontracting POs (KYEC & SPIL)",
+      "SAP STOs for intra-Taiwan OSAT-to-OSAT movements",
+      "Trade compliance design and Amber Road integration scoped",
+      "Amber Road configured; export/import docs Taiwan to USA",
+      "Wafer demand signal to TSMC + planning BOM from GPLM",
+      "Basic wafer supply plan below SoC level via G-Plan",
+      "Yield-adjusted netting + die bank as inventory buffer",
+      "OSAT capacity constraints + supply and constraint planning",
+      "Demand signals and commits automated",
+      "Full scenario simulation, multi-sourcing",
+      "TSMC structured commits + OSAT commit/recommit flows",
+      "OSAT WIP events, ASN and intra-Taiwan shipment visibility",
+      "Build Kinaxis setup to consume additional inbound data from E2Open: capacity info and CM data \u2013 TSMC, KYEC, SPIL",
+      "Use existing Google integration framework / existing data template with modifications"
+    ],
+    "out_of_scope": [
+      "CO/FICO configuration owned by Google internal team \u2014 out of Bristlecone scope",
+      "Material valuation, costing, yield accounting, TMS, EWM and Commercial Invoice APIs are either handled by Corp Eng/ASCII or are completely out of scope for Bristlecone",
+      "Manufacturing collaboration and Silicon Data Hub net new integrations are not in scope of Bristlecone",
+      "Logistics Mapping \u2013 WMS and TMS (not confirmed; listed as if confirmed in scope)"
+    ],
+    "commercials": [
+      "Total Cost: USD 4,670,603",
+      "FY26 Cost (June to Dec): USD 2,514,940",
+      "FY27 Cost (Jan to June): USD 2,155,663",
+      "Monthly Fixed Fee Milestone: USD 359,277",
+      "Phase 3 Scaling monthly cost: USD 134,489.12"
+    ],
+    "assumptions": [
+      "Material valuation, costing, yield accounting, TMS, EWM and Commercial Invoice APIs are either handled by Corp Eng/ASCII or are completely out of scope for Bristlecone.",
+      "BOM explosion owned by PLM sharing GPNs/BOMs with CM partners can largely be leveraged from present instance SAP and Kinaxis consumes.",
+      "TSMC PO capability must be live by Dec 4 \u2014 hard deadline; 22-week fab runway bounds upstream readiness.",
+      "Google owns WIP after probe completion at TSMC only \u2014 not before; ownership transfers at goods receipt; Google to confirm.",
+      "All Phase 1 and Phase 2 manufacturing steps occur within Taiwan \u2014 no international mid-stream flows until Phase 3.",
+      "Inventory POs issued to TSMC and UMTC for wafer and substrate procurement; subcontracting POs issued to OSATs for all transformation steps.",
+      "Silicon Data Hub is system of record for unit-level test data and yield inputs into Kinaxis.",
+      "Manufacturing strategy is Make-to-Stock through die bank and Make-to-Order from die bank to finished goods.",
+      "Lot genealogy and yield capture will reside in E2Open and the Silicon Data Hub, not SAP.",
+      "UMTC substrate has an 18-week lead time and a substrate PO may need to be cut before Kinaxis is live.",
+      "Kinaxis workbooks shall be recreated on a new instance with existing references.",
+      "Yield and MLS functionalities shall be a new configuration.",
+      "Preferred to retain Google\u2019s existing integration framework used for machine planning.",
+      "Existing integration will be leveraged and incremental delta interface will be in scope, subject to discovery analysis.",
+      "Subcontracting PO model: Google issues components to OSAT, OSAT transforms, Google receives finished part.",
+      "Schedule agreements for high-volume/rolling TSMC wafer orders \u2014 not individual POs.",
+      "B-parts and C-parts tracked separately.",
+      "EDI for existing partners; B2B/file-based or manual for others.",
+      "Google-owned tooling must be capitalized with depreciation tracked.",
+      "All Phase 1/2 manufacturing moves are within Taiwan and managed via Google Cloud Logistics for intra-Taiwan moves.",
+      "Quanta acts as exporter of record for finished goods shipped from Taiwan to Google USA.",
+      "Google becomes importer of record for finished goods entering the USA under COT.",
+      "GPlan is the primary middleware integrating PLM, SAP, and Kinaxis.",
+      "Integration between PLM to S/4HANA and Kinaxis to S/4 will be done through existing GPLAN/SAL API framework and Google internal team will configure."
+    ],
+    "notable_dates": [
+      {
+        "date": "June 2026",
+        "what_it_refers_to": "Proposal date / project start shown on title slide"
+      },
+      {
+        "date": "Before Thanksgiving 2026",
+        "what_it_refers_to": "Phase 1 Manufacturing Visibility target"
+      },
+      {
+        "date": "December 4, 2026",
+        "what_it_refers_to": "Hard deadline for TSMC PO capability / cut first TSMC PO / Phase 1 TSMC MVP milestone"
+      },
+      {
+        "date": "Q2 2027 (Apr)",
+        "what_it_refers_to": "Phase 2 business go-live timing"
+      },
+      {
+        "date": "Q2 2027",
+        "what_it_refers_to": "Phase 2 hypercare window"
+      },
+      {
+        "date": "January 2027",
+        "what_it_refers_to": "Technical go-live"
+      },
+      {
+        "date": "April 2027",
+        "what_it_refers_to": "Business go-live"
+      },
+      {
+        "date": "January 25, 2027",
+        "what_it_refers_to": "Phase 2 Full MVP milestone / Kinaxis project timeline go-live"
+      },
+      {
+        "date": "Q3/Q4 2027",
+        "what_it_refers_to": "Phase 3 expanded scope timing"
+      },
+      {
+        "date": "April to December 2027",
+        "what_it_refers_to": "Phase 3 scaling window"
+      },
+      {
+        "date": "July 2027 to December 2027",
+        "what_it_refers_to": "Phase 3 scaling cost table period"
+      },
+      {
+        "date": "Q1-Q2 2027",
+        "what_it_refers_to": "Phase 3 scale milestone timing on phased approach slide 79 / slide 47"
+      },
+      {
+        "date": "early 2028",
+        "what_it_refers_to": "Reference for Phase 3 expanded scope in assumption about international mid-stream flows"
+      },
+      {
+        "date": "week of May 26",
+        "what_it_refers_to": "Scheduled follow-up with Google trade compliance and legal teams"
+      },
+      {
+        "date": "6/2/26",
+        "what_it_refers_to": "Notes mention waiting for schedule from Rams / E2Open detail"
+      },
+      {
+        "date": "W37",
+        "what_it_refers_to": "KYEC + SPIL on OCM plan"
+      },
+      {
+        "date": "4 weeks",
+        "what_it_refers_to": "Hyper Care Support / transition to AMS team"
+      },
+      {
+        "date": "2 weeks of Christmas break",
+        "what_it_refers_to": "S/4HANA timeline planning note"
+      },
+      {
+        "date": "10 weeks after first go live",
+        "what_it_refers_to": "Second go-live occurs 10 weeks after first go-live per S/4HANA timeline note"
+      },
+      {
+        "date": "18-week lead time",
+        "what_it_refers_to": "UMTC substrate lead time"
+      },
+      {
+        "date": "22-week fab runway",
+        "what_it_refers_to": "Bound on upstream readiness for Dec 4 TSMC PO deadline"
+      },
+      {
+        "date": "Q2-Q3 2026",
+        "what_it_refers_to": "Phase 1 Foundation on SmartArt timeline"
+      },
+      {
+        "date": "Q3-Q4 2026",
+        "what_it_refers_to": "Phase 2 Visibility & Control on SmartArt timeline"
+      },
+      {
+        "date": "2027",
+        "what_it_refers_to": "Phase 3 Full Analytical Capability on SmartArt timeline"
+      }
+    ]
+  }
+}

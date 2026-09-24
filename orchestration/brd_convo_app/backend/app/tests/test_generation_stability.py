@@ -63,6 +63,13 @@ def _make_no_blocks_response():
 class TestClaudeProviderRetry:
     """Backend: completion_from_prompt retries on empty / malformed content."""
 
+    @pytest.fixture(autouse=True)
+    def _anthropic_provider(self, monkeypatch):
+        # These exercise the Anthropic path; the default provider is Azure,
+        # and CLAUDE_MOCK would short-circuit before the client is called.
+        monkeypatch.setenv("LLM_PROVIDER", "anthropic")
+        monkeypatch.delenv("CLAUDE_MOCK", raising=False)
+
     def _import_provider(self):
         # Re-import so each test gets a clean module state.
         import importlib
